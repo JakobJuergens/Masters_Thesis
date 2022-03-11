@@ -11,6 +11,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3}Simulation Study}{1}{section.3}%
 \defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1}Use of High-Performance Computing}{1}{subsection.3.1}%
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4}Application}{1}{section.4}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5}Bibliography}{2}{section.5}%
