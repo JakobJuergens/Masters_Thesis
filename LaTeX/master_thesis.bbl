@@ -47,7 +47,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{The Annals of Mathematical Statistics}
-      \field{note}{Publisher: Institute of Mathematical Statistics}
       \field{number}{2}
       \field{title}{Asymptotic {Theory} of {Certain} "{Goodness} of {Fit}" {Criteria} {Based} on {Stochastic} {Processes}}
       \field{volume}{23}
@@ -99,15 +98,10 @@
       \field{labeltitlesource}{title}
       \field{issn}{1368-4221}
       \field{journaltitle}{The Econometrics Journal}
-      \field{note}{Publisher: [Royal Economic Society, Wiley]}
       \field{number}{S1}
       \field{title}{Goodness-of-fit tests for functional data}
-      \field{urlday}{10}
-      \field{urlmonth}{3}
-      \field{urlyear}{2022}
       \field{volume}{12}
       \field{year}{2009}
-      \field{urldateera}{ce}
       \field{pages}{S1\bibrangedash S18}
       \range{pages}{-1}
       \verb{urlraw}
@@ -180,7 +174,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{The Annals of Mathematical Statistics}
-      \field{month}{12}
       \field{number}{4}
       \field{title}{The {Kolmogorov}-{Smirnov}, {Cramer}-von {Mises} {Tests}}
       \field{volume}{28}
@@ -205,9 +198,6 @@
            given={Randall\bibnamedelima L.},
            giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod},
            givenun=0}}%
-      }
-      \list{location}{1}{%
-        {Chichester, West Sussex, UK}%
       }
       \list{publisher}{2}{%
         {John Wiley}%
@@ -244,12 +234,6 @@
            given={Matthew},
            giveni={M\bibinitperiod},
            givenun=0}}%
-      }
-      \list{language}{1}{%
-        {eng}%
-      }
-      \list{location}{1}{%
-        {Boca Raton London New York}%
       }
       \list{publisher}{1}{%
         {CRC Press}%
@@ -290,9 +274,6 @@
       \list{language}{1}{%
         {en}%
       }
-      \list{location}{1}{%
-        {New York, NY}%
-      }
       \list{publisher}{1}{%
         {Springer New York}%
       }
@@ -311,11 +292,7 @@
       \field{isbn}{978-0-387-98864-1 978-0-387-27605-2}
       \field{series}{Springer {Texts} in {Statistics}}
       \field{title}{Testing {Statistical} {Hypotheses}}
-      \field{urlday}{10}
-      \field{urlmonth}{3}
-      \field{urlyear}{2022}
       \field{year}{2005}
-      \field{urldateera}{ce}
       \verb{doi}
       \verb 10.1007/0-387-27605-X
       \endverb
@@ -335,12 +312,6 @@
            giveni={B\bibinitperiod\bibinitdelim W\bibinitperiod},
            givenun=0}}%
       }
-      \list{language}{1}{%
-        {en}%
-      }
-      \list{location}{1}{%
-        {New York, NY}%
-      }
       \list{publisher}{1}{%
         {Springer New York}%
       }
@@ -359,11 +330,7 @@
       \field{isbn}{978-0-387-40080-8 978-0-387-22751-1}
       \field{series}{Springer {Series} in {Statistics}}
       \field{title}{Functional {Data} {Analysis}}
-      \field{urlday}{10}
-      \field{urlmonth}{3}
-      \field{urlyear}{2022}
       \field{year}{2005}
-      \field{urldateera}{ce}
       \verb{doi}
       \verb 10.1007/b98888
       \endverb
@@ -385,9 +352,6 @@
            given={Jon\bibnamedelima A.},
            giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
            givenun=0}}%
-      }
-      \list{location}{1}{%
-        {New York, NY}%
       }
       \list{publisher}{1}{%
         {Springer New York}%
