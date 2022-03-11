@@ -3,18 +3,32 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2}Theory}{1}{section.2}%
+\contentsline {section}{\numberline {2}Functional Data Analysis}{1}{section.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1}Functional Data Analysis}{1}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.1}Hilbert Space of Square Integrable Functions}{1}{subsection.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2}Permutation Tests}{1}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.2}Random Functions}{1}{subsection.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Simulation Study}{1}{section.3}%
+\contentsline {subsection}{\numberline {2.3}Probability Measures on $\mathbb {L}^2$}{1}{subsection.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Use of High-Performance Computing}{1}{subsection.3.1}%
+\contentsline {section}{\numberline {3}Cram\'{e}r-von Mises Tests}{1}{section.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Application}{1}{section.4}%
+\contentsline {section}{\numberline {4}Permutation Tests}{1}{section.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Bibliography}{2}{section.5}%
+\contentsline {subsection}{\numberline {4.1}Size and Power}{1}{subsection.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Versicherung an Eides statt}{3}{section.6}%
+\contentsline {section}{\numberline {5}Test by Bugni and Horowitz (2021)}{1}{section.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Simulation Study}{1}{section.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1}Use of High-Performance Computing}{1}{subsection.6.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2}Simulation Setup}{1}{subsection.6.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.3}Results}{1}{subsection.6.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7}Application}{1}{section.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8}Bibliography}{2}{section.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9}Versicherung an Eides statt}{3}{section.9}%
