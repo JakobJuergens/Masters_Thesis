@@ -152,6 +152,49 @@
       \verb 10.1002/jae.2846
       \endverb
     \endentry
+    \entry{buning_nichtparametrische_2013}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=ee46292485332edd7cb749ba9db67e6a}{%
+           family={Büning},
+           familyi={B\bibinitperiod},
+           given={Herbert},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cb6441a749d67258d4e4ef455bd0d487}{%
+           family={Trenkler},
+           familyi={T\bibinitperiod},
+           given={Götz},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {De Gruyter}%
+      }
+      \strng{namehash}{2cda2e4daa3c910395bbb02931c8c566}
+      \strng{fullhash}{2cda2e4daa3c910395bbb02931c8c566}
+      \strng{bibnamehash}{2cda2e4daa3c910395bbb02931c8c566}
+      \strng{authorbibnamehash}{2cda2e4daa3c910395bbb02931c8c566}
+      \strng{authornamehash}{2cda2e4daa3c910395bbb02931c8c566}
+      \strng{authorfullhash}{2cda2e4daa3c910395bbb02931c8c566}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-11-090299-0}
+      \field{title}{Nichtparametrische statistische {Methoden}}
+      \field{year}{2013}
+      \verb{doi}
+      \verb 10.1515/9783110902990
+      \endverb
+      \verb{urlraw}
+      \verb https://www.degruyter.com/document/doi/10.1515/9783110902990/html?lang=en
+      \endverb
+      \verb{url}
+      \verb https://www.degruyter.com/document/doi/10.1515/9783110902990/html?lang=en
+      \endverb
+    \endentry
     \entry{darling_kolmogorov-smirnov_1957}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=358393b08a304998becf153bd446d1e0}{%
@@ -183,6 +226,78 @@
       \verb{doi}
       \verb 10.1214/aoms/1177706788
       \endverb
+    \endentry
+    \entry{dunn_multiple_1961}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=0b0af97d4f9c67ace0f8c55bd08f9072}{%
+           family={Dunn},
+           familyi={D\bibinitperiod},
+           given={Olive\bibnamedelima Jean},
+           giveni={O\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0b0af97d4f9c67ace0f8c55bd08f9072}
+      \strng{fullhash}{0b0af97d4f9c67ace0f8c55bd08f9072}
+      \strng{bibnamehash}{0b0af97d4f9c67ace0f8c55bd08f9072}
+      \strng{authorbibnamehash}{0b0af97d4f9c67ace0f8c55bd08f9072}
+      \strng{authornamehash}{0b0af97d4f9c67ace0f8c55bd08f9072}
+      \strng{authorfullhash}{0b0af97d4f9c67ace0f8c55bd08f9072}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0162-1459}
+      \field{journaltitle}{Journal of the American Statistical Association}
+      \field{note}{Publisher: Taylor \& Francis}
+      \field{number}{293}
+      \field{title}{Multiple {Comparisons} among {Means}}
+      \field{volume}{56}
+      \field{year}{1961}
+      \field{pages}{52\bibrangedash 64}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1080/01621459.1961.10482090
+      \endverb
+    \endentry
+    \entry{gibbons_nonparametric_2021}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=fc8593603ee238076d4abd81776e4d33}{%
+           family={Gibbons},
+           familyi={G\bibinitperiod},
+           given={Jean\bibnamedelima Dickinson},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=10e0fde066c805e6d5692888f4947b74}{%
+           family={Chakraborti},
+           familyi={C\bibinitperiod},
+           given={Subhabrata},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Boca Raton}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press}%
+      }
+      \strng{namehash}{d5542a12f0fcea71315aeab8e5059388}
+      \strng{fullhash}{d5542a12f0fcea71315aeab8e5059388}
+      \strng{bibnamehash}{d5542a12f0fcea71315aeab8e5059388}
+      \strng{authorbibnamehash}{d5542a12f0fcea71315aeab8e5059388}
+      \strng{authornamehash}{d5542a12f0fcea71315aeab8e5059388}
+      \strng{authorfullhash}{d5542a12f0fcea71315aeab8e5059388}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{6th edition}
+      \field{isbn}{978-1-138-08744-6}
+      \field{title}{Nonparametric statistical inference}
+      \field{year}{2021}
     \endentry
     \entry{hsing_theoretical_2015}{book}{}
       \name{author}{2}{}{%

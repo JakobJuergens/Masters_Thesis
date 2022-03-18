@@ -10,11 +10,26 @@
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{bbm}
 \usepackage[font=small,skip=2pt]{caption}
 \usepackage[
 backend=biber,
 style=authoryear,
 ]{biblatex}
+\usepackage{amsthm}% http://ctan.org/pkg/amsthm
+
+\newtheoremstyle{assumpstyle}
+{\topsep} % Space above
+{\topsep} % Space below
+{} % Body font
+{} % Indent amount
+{\bfseries} % Theorem head font
+{.} % Punctuation after theorem head
+{.5em} % Space after theorem head
+{} % Theorem head spec (can be left empty, meaning `normal')
+
+\theoremstyle{assumpstyle} \newtheorem{assumption}{Assumption}
+\theoremstyle{assumpstyle} \newtheorem{definition}{Definition}
 
 
 \addbibresource{thesis_bibliography.bib}
@@ -82,11 +97,38 @@ style=authoryear,
 		\begin{itemize}
 			\item \cite{darling_kolmogorov-smirnov_1957}
 			\item \cite{anderson_asymptotic_1952}
+			\item \cite{buning_nichtparametrische_2013}
 		\end{itemize}
 	
 		\subsection{Empirical Distribution Functions}
+			
+			\cite{gibbons_nonparametric_2021}
+			\begin{definition} Order Statistic
+				
+				Let $\{x_i \: \vert \: i = 1, \dots , n\}$ be a random sample from a population with continuous cumulative distribution function $F_X$. Then there almost surely exists a unique ordered arrangement within the sample. 
+				
+				$$X_{(1)} < X_{(2)} < \dots < X_{(n)}$$
+				
+				$X_{(r)} \quad r \in \{1, \dots, n\}$ is called the rth-order statistic.	
+			\end{definition}
+		
+			\begin{definition}	Empirical Distribution Function
+				\begin{equation}
+					F_{n}(x) = \begin{cases}
+						0 & \quad \text{if} \quad  x < x_{(1)} \\
+						\frac{r}{n} & \quad \text{if} \quad  x_{(r)} \leq x < x_{(r + 1)} \\
+						1 & \quad \text{if} \quad  x \geq x_{(n)}
+					\end{cases}
+				\end{equation}
+			\end{definition}
 		
 		\subsection{Cram\'{e}r-von Mises Statistics}
+			
+			\cite{buning_nichtparametrische_2013}
+			\begin{equation}
+				C_{m,n} = \left(\frac{nm}{n+m}\right) \int_{-\infty}^{\infty}\left(F_{m}(x) - G_{n}(x)\right)^{2} \mathrm{d} \left(\frac{m F_{m}(x) + n G_{n}(x)}{m+n}\right)
+			\end{equation}
+			
 		
 		\subsection{Asymptotic Distributions}
 		
@@ -102,7 +144,14 @@ style=authoryear,
 		
 		\subsection{Permutation Test for Equality of scalar-valued Distributions}
 		
-	\section{Test by Bugni and Horowitz (2021)}
+	\section{Multiple Testing}
+		\begin{itemize}
+			\item \cite{dunn_multiple_1961}
+		\end{itemize}
+		
+		\subsection{Bonferroni Correction}	
+		
+	\section{Test by Bugni and Horowitz (2021) - Two Samples}
 		\begin{itemize}
 			\item \cite{bugni_permutation_2021}
 			\item \cite{bugni_goodness--fit_2009}
@@ -110,9 +159,66 @@ style=authoryear,
 	
 		\subsection{Nullhypothesis}
 		
+		\subsection{Assumptions}
+		
+			\begin{assumption} Contains two assumptions
+				\begin{enumerate}
+					\item $X(t)$ and $Y(t)$ are separable, $\mu$-measurable stochastic processes.
+					\item $\{X_i(t) \: \vert \: i = 1, \dots, n\}$ is an independent random sample of the process $X(t)$. \\
+					$\{Y_i(t) \: \vert \: i = 1, \dots, m\}$ is an independent random sample of $Y(t)$ and is independent of $\{X_i(t) \: \vert \: i = 1, \dots, n\}$.
+				\end{enumerate}
+			\end{assumption}
+		
+			\begin{assumption}
+				$\mathbb{E}X(t)$ and $\mathbb{E}Y(t)$ exist and are finite for all $t \in [0, T]$.
+			\end{assumption}
+		
+			\begin{assumption}
+				$X_i(t)$ and $Y_i(t)$ are observed for all $t \in \mathcal{I}$.
+			\end{assumption}
+	
+		
+			
+		
 		\subsection{Cram\'{e}r-von Mises type Test}
 		
+			Distribution Functions
+			\begin{equation}
+				\begin{split}
+					F_X(z) &= \mathbb{P}\left[X(t) \leq z(t) \quad \forall t \in \mathcal{I}\right] \\
+					F_Y(z) &= \mathbb{P}\left[Y(t) \leq z(t) \quad \forall t \in \mathcal{I}\right]
+				\end{split}
+			\end{equation}
+		
+			Empirical Distribution Functions
+			\begin{equation}
+				\begin{split}
+					\hat{F}_X(z) &= \frac{1}{n} \sum_{i = 1}^{n}\mathbbm{1}\left[X_i(t) \leq z(t) \quad \forall t \in \mathcal{I}\right] \\
+					\hat{F}_Y(z) &= \frac{1}{m} \sum_{i = 1}^{m}\mathbbm{1}\left[Y_i(t) \leq z(t) \quad \forall t \in \mathcal{I}\right]
+				\end{split}
+			\end{equation}
+			
+			Test statistic
+			\begin{equation}
+				\tau = \int_{\mathbb{L}^2(\mathcal{I})}\left[F_X(z) - F_Y(z)\right]^2 \mathrm{d} \mu(z)
+			\end{equation}
+			
+			Sample analog:
+			\begin{equation}
+				\tau_{n,m} = (n+m) \int_{\mathbb{L}^2(\mathcal{I})}\left[\hat{F}_X(z) - \hat{F}_Y(z)\right]^2 \mathrm{d} \mu(z)
+			\end{equation}
+		
 		\subsection{Mean focused Test}
+			
+			Test statistic
+			\begin{equation}
+				\nu = \int_{0}^{T} \left[\mathbb{E}X(t) - \mathbb{E}Y(t)\right]^2 \mathrm{d}t
+			\end{equation}
+		
+			Sample Analog
+			\begin{equation}
+				\nu_{n,m} = (n+m) \int_{0}^{T} \left[\hat{\mathbb{E}}X(t) - \hat{\mathbb{E}}Y(t)\right]^2 \mathrm{d}t
+			\end{equation}
 		
 		\subsection{Combined Permutation Test}
 		

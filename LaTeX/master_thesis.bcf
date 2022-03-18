@@ -2350,10 +2350,14 @@
     <bcf:citekey order="3">hsing_theoretical_2015</bcf:citekey>
     <bcf:citekey order="4">darling_kolmogorov-smirnov_1957</bcf:citekey>
     <bcf:citekey order="5">anderson_asymptotic_1952</bcf:citekey>
-    <bcf:citekey order="6">lehmann_testing_2005</bcf:citekey>
-    <bcf:citekey order="7">van_der_vaart_weak_1996</bcf:citekey>
-    <bcf:citekey order="8">bugni_permutation_2021</bcf:citekey>
-    <bcf:citekey order="9">bugni_goodness--fit_2009</bcf:citekey>
+    <bcf:citekey order="6">buning_nichtparametrische_2013</bcf:citekey>
+    <bcf:citekey order="7">gibbons_nonparametric_2021</bcf:citekey>
+    <bcf:citekey order="8">buning_nichtparametrische_2013</bcf:citekey>
+    <bcf:citekey order="9">lehmann_testing_2005</bcf:citekey>
+    <bcf:citekey order="10">van_der_vaart_weak_1996</bcf:citekey>
+    <bcf:citekey order="11">dunn_multiple_1961</bcf:citekey>
+    <bcf:citekey order="12">bugni_permutation_2021</bcf:citekey>
+    <bcf:citekey order="13">bugni_goodness--fit_2009</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
