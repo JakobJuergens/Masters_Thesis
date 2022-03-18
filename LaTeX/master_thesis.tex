@@ -88,6 +88,21 @@ style=authoryear,
 		\end{itemize}
 	
 		\subsection{Hilbert Space of Square Integrable Functions}
+			\begin{definition} Hilbert Spaces
+				
+				content...
+			\end{definition}
+		
+			\begin{definition} Square Integrable Functions
+				
+				A function $f: A \rightarrow \mathbb{R}$ is called square integrable if the following condition holds.
+				\begin{equation}
+					\int_{A} \left[f(t)\right]^2\mathrm{d}t < \infty
+				\end{equation}
+				The set of all square integrable functions on $A$ is denoted by $\mathbb{L}^2(A)$.
+			\end{definition}
+		
+		\subsection{Bases of $\mathbb{L}^2$}
 	
 		\subsection{Random Functions}
 		
@@ -109,7 +124,7 @@ style=authoryear,
 				
 				$$X_{(1)} < X_{(2)} < \dots < X_{(n)}$$
 				
-				$X_{(r)} \quad r \in \{1, \dots, n\}$ is called the rth-order statistic.	
+				$X_{(r)} \quad r \in \{1, \dots, n\}$ is called the $r$th-order statistic.	
 			\end{definition}
 		
 			\begin{definition}	Empirical Distribution Function
@@ -122,7 +137,9 @@ style=authoryear,
 				\end{equation}
 			\end{definition}
 		
-		\subsection{Cram\'{e}r-von Mises Statistics}
+		\subsection{Nullhypothesis}
+		
+		\subsection{Cram\'{e}r-von Mises Statistic}
 			
 			\cite{buning_nichtparametrische_2013}
 			\begin{equation}
@@ -131,6 +148,18 @@ style=authoryear,
 			
 		
 		\subsection{Asymptotic Distributions}
+		
+	\section{Multiple Testing}
+		\begin{itemize}
+			\item \cite{dunn_multiple_1961}
+		\end{itemize}
+	
+		\subsection{Bonferroni Correction}	
+			Bonferroni Inequality / Boole's Inequality
+			\begin{equation}
+				\mathbb{P}\left[\bigcup_{i = 1}^{\infty} A_i\right] \leq \sum_{i = 1}^{\infty} \mathbb{P}\left[A_i\right]
+			\end{equation}
+			for a countable set of events $A_1, A_2, \dots$.
 		
 	\section{Permutation Tests}
 		\begin{itemize}
@@ -142,22 +171,28 @@ style=authoryear,
 	
 		\subsection{Size and Power}
 		
-		\subsection{Permutation Test for Equality of scalar-valued Distributions}
-		
-	\section{Multiple Testing}
-		\begin{itemize}
-			\item \cite{dunn_multiple_1961}
-		\end{itemize}
-		
-		\subsection{Bonferroni Correction}	
-		
 	\section{Test by Bugni and Horowitz (2021) - Two Samples}
 		\begin{itemize}
 			\item \cite{bugni_permutation_2021}
 			\item \cite{bugni_goodness--fit_2009}
 		\end{itemize}
 	
+		Distribution Functions
+		\begin{equation}
+			\begin{split}
+				F_X(z) &= \mathbb{P}\left[X(t) \leq z(t) \quad \forall t \in \mathcal{I}\right] \quad z \in \mathbb{L}^2(\mathcal{I})\\
+				F_Y(z) &= \mathbb{P}\left[Y(t) \leq z(t) \quad \forall t \in \mathcal{I}\right] \quad z \in \mathbb{L}^2(\mathcal{I})
+			\end{split}
+		\end{equation}
+	
 		\subsection{Nullhypothesis}
+			\begin{equation}
+				\begin{split}
+					H_0: \quad &F_X(z) = F_Y(z) \quad \forall z \in \mathbb{L}^2(\mathcal{I}) \\
+					H_1: \quad &\mathbb{P}_{\mu}\left[F_X(Z) \neq F_Y(Z)\right] > 0
+				\end{split}
+			\end{equation}
+			Here, $\mu$ is a probability measure on $\mathbb{L}^2(\mathcal{I})$ and $Z$ is a random function with probability distribution $\mu$. {\color{red} Doesn't this leave out the case where the Probability functions only differ on a set of $\mu$-measure zero?}
 		
 		\subsection{Assumptions}
 		
@@ -182,14 +217,6 @@ style=authoryear,
 		
 		\subsection{Cram\'{e}r-von Mises type Test}
 		
-			Distribution Functions
-			\begin{equation}
-				\begin{split}
-					F_X(z) &= \mathbb{P}\left[X(t) \leq z(t) \quad \forall t \in \mathcal{I}\right] \\
-					F_Y(z) &= \mathbb{P}\left[Y(t) \leq z(t) \quad \forall t \in \mathcal{I}\right]
-				\end{split}
-			\end{equation}
-		
 			Empirical Distribution Functions
 			\begin{equation}
 				\begin{split}
@@ -208,19 +235,45 @@ style=authoryear,
 				\tau_{n,m} = (n+m) \int_{\mathbb{L}^2(\mathcal{I})}\left[\hat{F}_X(z) - \hat{F}_Y(z)\right]^2 \mathrm{d} \mu(z)
 			\end{equation}
 		
+			Critical values for Permutation Test Statistic
+			\begin{equation}
+				t^{*}_{n,m}(1-\alpha) = \inf \left\{\frac{1}{Q} \sum_{i = 1}^{Q} \mathbbm{1}\left[\tau_{n,m,q} \leq t\right] \geq 1 - \alpha \quad \vert \quad t \in \mathbb{R}\right\}
+			\end{equation}
+		
 		\subsection{Mean focused Test}
 			
 			Test statistic
 			\begin{equation}
-				\nu = \int_{0}^{T} \left[\mathbb{E}X(t) - \mathbb{E}Y(t)\right]^2 \mathrm{d}t
+				\nu = \int_{\mathcal{I}} \left[\mathbb{E}X(t) - \mathbb{E}Y(t)\right]^2 \mathrm{d}t
 			\end{equation}
+		
+			Mean Estimators
+			\begin{multicols}{2}
+				\noindent
+				\begin{equation}
+					\hat{\mathbb{E}}X(t) = \frac{1}{n}\sum_{i = 1}^{n} X_i(t)
+				\end{equation}
+				\begin{equation}
+					\hat{\mathbb{E}}Y(t) = \frac{1}{m}\sum_{i = 1}^{m} Y_i(t)
+				\end{equation}
+			\end{multicols}
+			
 		
 			Sample Analog
 			\begin{equation}
-				\nu_{n,m} = (n+m) \int_{0}^{T} \left[\hat{\mathbb{E}}X(t) - \hat{\mathbb{E}}Y(t)\right]^2 \mathrm{d}t
+				\nu_{n,m} = (n+m) \int_{\mathcal{I}} \left[\hat{\mathbb{E}}X(t) - \hat{\mathbb{E}}Y(t)\right]^2 \mathrm{d}t
+			\end{equation}
+		
+			Critical values for Permutation Test Statistic
+			\begin{equation}
+				t^{*}_{n,m}(1-\alpha) = \inf \left\{\frac{1}{Q} \sum_{i = 1}^{Q} \mathbbm{1}\left[\nu_{n,m,q} \leq t\right] \geq 1 - \alpha \quad \vert \quad t \in \mathbb{R}\right\}
 			\end{equation}
 		
 		\subsection{Combined Permutation Test}
+			Bonferroni inequality under $H_0$ leads to
+			\begin{equation}
+				\max(\alpha_{\tau}, \alpha_{\nu}) \leq \mathbb{P}\left[(\phi_{n,m} > 0) \cup (\tilde{\phi}_{n,m} > 0)\right] \leq \alpha_{\tau} + \alpha_{\nu}
+			\end{equation}
 		
 		\subsection{Properties}
 		
@@ -237,6 +290,8 @@ style=authoryear,
 		\subsection{Results}
 		
 	\section{Application}
+	
+	\section{Outlook}
 	
 	\newpage
 	\section{Bibliography}
