@@ -9,7 +9,6 @@ Description: More about what it does (maybe more than one line)
 License: What license is it under?
 Encoding: UTF-8
 Imports:
-  gtools,
   dplyr
 LazyData: true
 RoxygenNote: 7.1.2

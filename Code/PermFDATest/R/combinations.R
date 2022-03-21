@@ -29,13 +29,13 @@ next_cbn <- function(cbn = NULL, n, k) {
   }
 
   # check if cbn contains no duplicates
-  if(any(duplicated(cbn))){
-    stop('cbn contains duplicates.')
+  if (any(duplicated(cbn))) {
+    stop("cbn contains duplicates.")
   }
 
   # check if all entries of cbn are integers in the correct range
-  if(!all(cbn %in% 1:n)){
-    stop('cbn contains entries that are not in 1:n.')
+  if (!all(cbn %in% 1:n)) {
+    stop("cbn contains entries that are not in 1:n.")
   }
 
   # if no further combination can be generated throw error
@@ -63,4 +63,35 @@ next_cbn <- function(cbn = NULL, n, k) {
   cbn <- which(cbn.bin == 1)
 
   return(cbn)
+}
+
+#' Given an integer n and a vector smpl1 containing elements of 1:n,
+#' return a list containing smpl1 and its counterpart smpl2
+#'
+#' @param n An integer specifying the sample 1:n to be split
+#' @param smpl1 a vector containing elements of 1:n
+#' @return A list containing two vectors smpl1 and smpl2. These are disjunct
+#' and their union is 1:n.
+#' @examples
+#' sample_inds(n = 10, smpl1 = c(1,4,3,6))
+sample_inds <- function(n, smpl1) {
+  # check if smpl1 has compatible length
+  if (length(smpl1) > n) {
+    stop(paste0(
+      "smpl1 has length: ", length(smpl1),
+      " but n is chosen as: ", n
+    ))
+  }
+
+  # check if smpl1 contains no duplicates
+  if (any(duplicated(smpl1))) {
+    stop("smpl1 contains duplicates.")
+  }
+
+  # check if all entries of smpl1 are integers in the correct range
+  if (!all(smpl1 %in% 1:n)) {
+    stop("smpl1 contains entries that are not in 1:n.")
+  }
+
+  return(list("smpl1" = smpl1, "smpl2" = setdiff(1:n, smpl1)))
 }
