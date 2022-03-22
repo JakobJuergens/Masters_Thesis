@@ -99,14 +99,39 @@ style=authoryear,
 				\begin{equation}
 					\int_{A} \left[f(t)\right]^2\mathrm{d}t < \infty
 				\end{equation}
-				The set of all square integrable functions on $A$ is denoted by $\mathbb{L}^2(A)$.
+				The set of all square integrable functions on $A$ is denoted by $\mathbb{L}_2(A)$.
 			\end{definition}
 		
-		\subsection{Bases of $\mathbb{L}^2$}
+		\subsection{Bases of $\mathbb{L}_2$}
+			\begin{itemize}
+				\item Orthogonality
+				\item Orthonormality
+				\item Fourier Basis
+			\end{itemize}
 	
 		\subsection{Random Functions}
 		
-		\subsection{Probability Measures on $\mathbb{L}^2$}
+		\subsection{Probability Measures on $\mathbb{L}_2$}
+			\begin{itemize}
+				\item Kolmogorov Extension Theorem
+				\item \cite{gihman_theory_2004}
+			\end{itemize}
+		
+		\subsection{Functional Integration on $\mathbb{L}_2$}
+			\begin{itemize}
+				\item \cite{skorohod_integration_1974}
+				\item Perturbation theory
+			\end{itemize}
+		
+			Functional Integral:
+			\begin{equation}
+				\int_{\mathbb{L}_2(\mathcal{I})} G\left[f\right] \left[Df\right] = \int_{-\infty}^{\infty}\dots\int_{-\infty}^{\infty} G\left[f\right] \prod_{x} \mathrm{d}f(x)
+			\end{equation}
+		
+			If a representation in terms of an orthogonal functional basis is possible:
+			\begin{equation}
+				\int_{\mathbb{L}_2(\mathcal{I})} G\left[f\right] \left[Df\right] = \int_{-\infty}^{\infty}\dots\int_{-\infty}^{\infty} G\left(f_1, f_2, \dots\right) \prod_{n} \mathrm{d}f_n
+			\end{equation}
 		
 	\section{Cram\'{e}r-von Mises Tests}
 		\begin{itemize}
@@ -180,19 +205,19 @@ style=authoryear,
 		Distribution Functions
 		\begin{equation}
 			\begin{split}
-				F_X(z) &= \mathbb{P}\left[X(t) \leq z(t) \quad \forall t \in \mathcal{I}\right] \quad z \in \mathbb{L}^2(\mathcal{I})\\
-				F_Y(z) &= \mathbb{P}\left[Y(t) \leq z(t) \quad \forall t \in \mathcal{I}\right] \quad z \in \mathbb{L}^2(\mathcal{I})
+				F_X(z) &= \mathbb{P}\left[X(t) \leq z(t) \quad \forall t \in \mathcal{I}\right] \quad z \in \mathbb{L}_2(\mathcal{I})\\
+				F_Y(z) &= \mathbb{P}\left[Y(t) \leq z(t) \quad \forall t \in \mathcal{I}\right] \quad z \in \mathbb{L}_2(\mathcal{I})
 			\end{split}
 		\end{equation}
 	
 		\subsection{Nullhypothesis}
 			\begin{equation}
 				\begin{split}
-					H_0: \quad &F_X(z) = F_Y(z) \quad \forall z \in \mathbb{L}^2(\mathcal{I}) \\
+					H_0: \quad &F_X(z) = F_Y(z) \quad \forall z \in \mathbb{L}_2(\mathcal{I}) \\
 					H_1: \quad &\mathbb{P}_{\mu}\left[F_X(Z) \neq F_Y(Z)\right] > 0
 				\end{split}
 			\end{equation}
-			Here, $\mu$ is a probability measure on $\mathbb{L}^2(\mathcal{I})$ and $Z$ is a random function with probability distribution $\mu$. {\color{red} Doesn't this leave out the case where the Probability functions only differ on a set of $\mu$-measure zero?}
+			Here, $\mu$ is a probability measure on $\mathbb{L}_2(\mathcal{I})$ and $Z$ is a random function with probability distribution $\mu$. {\color{red} Doesn't this leave out the case where the Probability functions only differ on a set of $\mu$-measure zero?}
 		
 		\subsection{Assumptions}
 		
@@ -227,12 +252,12 @@ style=authoryear,
 			
 			Test statistic
 			\begin{equation}
-				\tau = \int_{\mathbb{L}^2(\mathcal{I})}\left[F_X(z) - F_Y(z)\right]^2 \mathrm{d} \mu(z)
+				\tau = \int_{\mathbb{L}_2(\mathcal{I})}\left[F_X(z) - F_Y(z)\right]^2 \mathrm{d} \mu(z)
 			\end{equation}
 			
 			Sample analog:
 			\begin{equation}
-				\tau_{n,m} = (n+m) \int_{\mathbb{L}^2(\mathcal{I})}\left[\hat{F}_X(z) - \hat{F}_Y(z)\right]^2 \mathrm{d} \mu(z)
+				\tau_{n,m} = (n+m) \int_{\mathbb{L}_2(\mathcal{I})}\left[\hat{F}_X(z) - \hat{F}_Y(z)\right]^2 \mathrm{d} \mu(z)
 			\end{equation}
 		
 			Critical values for Permutation Test Statistic

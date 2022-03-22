@@ -299,6 +299,47 @@
       \field{title}{Nonparametric statistical inference}
       \field{year}{2021}
     \endentry
+    \entry{gihman_theory_2004}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=50ba0d923f0b873a4bbd7e13f706388f}{%
+           family={Gihman},
+           familyi={G\bibinitperiod},
+           given={Iosif\bibnamedelima Il’ich},
+           giveni={I\bibinitperiod\bibinitdelim I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2c4442cfc53895d0304728e0e5cf6522}{%
+           family={Skorokhod},
+           familyi={S\bibinitperiod},
+           given={Anatoliĭ\bibnamedelima Vladimirovich},
+           giveni={A\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{817a07c50a9483a6af71c29e9ff8c8b7}
+      \strng{fullhash}{817a07c50a9483a6af71c29e9ff8c8b7}
+      \strng{bibnamehash}{817a07c50a9483a6af71c29e9ff8c8b7}
+      \strng{authorbibnamehash}{817a07c50a9483a6af71c29e9ff8c8b7}
+      \strng{authornamehash}{817a07c50a9483a6af71c29e9ff8c8b7}
+      \strng{authorfullhash}{817a07c50a9483a6af71c29e9ff8c8b7}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-540-20284-4}
+      \field{series}{Classics in {Mathematics}}
+      \field{title}{The {Theory} of {Stochastic} {Processes} {I}}
+      \field{year}{2004}
+      \verb{doi}
+      \verb 10.1007/978-3-642-61943-4
+      \endverb
+    \endentry
     \entry{hsing_theoretical_2015}{book}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=396cd532137675b4da218b8464d025e8}{%
@@ -448,6 +489,40 @@
       \field{year}{2005}
       \verb{doi}
       \verb 10.1007/b98888
+      \endverb
+    \endentry
+    \entry{skorohod_integration_1974}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=cf74ce336d0e27c6293c0d0b210a8e1a}{%
+           family={Skorohod},
+           familyi={S\bibinitperiod},
+           given={A.\bibnamedelimi V.},
+           giveni={A\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{cf74ce336d0e27c6293c0d0b210a8e1a}
+      \strng{fullhash}{cf74ce336d0e27c6293c0d0b210a8e1a}
+      \strng{bibnamehash}{cf74ce336d0e27c6293c0d0b210a8e1a}
+      \strng{authorbibnamehash}{cf74ce336d0e27c6293c0d0b210a8e1a}
+      \strng{authornamehash}{cf74ce336d0e27c6293c0d0b210a8e1a}
+      \strng{authorfullhash}{cf74ce336d0e27c6293c0d0b210a8e1a}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-642-65634-7}
+      \field{title}{Integration in {Hilbert} {Space}}
+      \field{year}{1974}
+      \verb{doi}
+      \verb 10.1007/978-3-642-65632-3
       \endverb
     \endentry
     \entry{van_der_vaart_weak_1996}{book}{}
