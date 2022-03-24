@@ -24,13 +24,12 @@ style=authoryear,
 {} % Body font
 {} % Indent amount
 {\bfseries} % Theorem head font
-{.} % Punctuation after theorem head
+{\newline} % Punctuation after theorem head
 {.5em} % Space after theorem head
 {} % Theorem head spec (can be left empty, meaning `normal')
 
 \theoremstyle{assumpstyle} \newtheorem{assumption}{Assumption}
 \theoremstyle{assumpstyle} \newtheorem{definition}{Definition}
-
 
 \addbibresource{thesis_bibliography.bib}
 \onehalfspacing
@@ -88,18 +87,44 @@ style=authoryear,
 		\end{itemize}
 	
 		\subsection{Hilbert Space of Square Integrable Functions}
-			\begin{definition} Hilbert Spaces
-				
+			\begin{definition}[Inner Product]
+				A function $\langle \cdot , \cdot \rangle : \mathbb{V}^2 \rightarrow \mathbb{R}$ on a vector space $\mathbb{V}$ is called an inner product if the following four conditions hold for all $v, v_1, v_2 \in \mathbb{V}$ and $a_1, a_2 \in \mathbb{R}$.
+				\begin{multicols}{2}
+					\begin{enumerate}
+						\item $\langle v,v \rangle \geq 0$
+						\item $\langle v,v \rangle = 0$ if $v = 0$
+						\item $\langle a_1 v_1 + a_2 v_2, v \rangle = a_1 \langle v_1, v \rangle + a_2 \langle v_2, v \rangle$
+						\item $\langle v_1, v_2 \rangle = \overline{\langle v_2, v_1 \rangle}$
+					\end{enumerate}
+				\end{multicols}
+			\end{definition}
+			
+			\cite{hsing_theoretical_2015}
+			\begin{definition}[Inner Product Space]
+				A vector space with an associated inner product is called an inner product space.
+			\end{definition}
+		
+			\cite{hsing_theoretical_2015}
+			\begin{definition}[Hilbert Space]
+				A complete inner product space is called a Hilbert space.
+			\end{definition}
+		
+			\begin{definition}[Basis of a Hilbert Space]
 				content...
 			\end{definition}
 		
-			\begin{definition} Square Integrable Functions
+			\begin{definition}[Separable Hilbert Space]
+				content...
+			\end{definition}
+		
+			\begin{definition}[Hilbert Space of Square Integrable Functions]
 				
+				The space of square integrable functions on a closed interval $A$ together with the norm $\langle f,g\rangle = \int_A f(t)g(t) \mathrm{d}t$ is a Hilbert space.
 				A function $f: A \rightarrow \mathbb{R}$ is called square integrable if the following condition holds.
 				\begin{equation}
 					\int_{A} \left[f(t)\right]^2\mathrm{d}t < \infty
 				\end{equation}
-				The set of all square integrable functions on $A$ is denoted by $\mathbb{L}_2(A)$.
+				The Hilbert space of all square integrable functions on $A$ is denoted by $\mathbb{L}_2(A)$.
 			\end{definition}
 		
 		\subsection{Bases of $\mathbb{L}_2$}

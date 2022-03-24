@@ -7,25 +7,25 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1}Hilbert Space of Square Integrable Functions}{1}{subsection.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2}Bases of $\mathbb {L}_2$}{1}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.2}Bases of $\mathbb {L}_2$}{2}{subsection.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3}Random Functions}{1}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.3}Random Functions}{2}{subsection.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4}Probability Measures on $\mathbb {L}_2$}{1}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.4}Probability Measures on $\mathbb {L}_2$}{2}{subsection.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5}Functional Integration on $\mathbb {L}_2$}{1}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.5}Functional Integration on $\mathbb {L}_2$}{2}{subsection.2.5}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3}Cram\'{e}r-von Mises Tests}{2}{section.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1}Empirical Distribution Functions}{2}{subsection.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}Nullhypothesis}{2}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2}Nullhypothesis}{3}{subsection.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3}Cram\'{e}r-von Mises Statistic}{2}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.3}Cram\'{e}r-von Mises Statistic}{3}{subsection.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4}Asymptotic Distributions}{2}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.4}Asymptotic Distributions}{3}{subsection.3.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Multiple Testing}{2}{section.4}%
+\contentsline {section}{\numberline {4}Multiple Testing}{3}{section.4}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.1}Bonferroni Correction}{3}{subsection.4.1}%
 \defcounter {refsection}{0}\relax 
@@ -37,21 +37,21 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6}Test by Bugni and Horowitz (2021) - Two Samples}{3}{section.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1}Nullhypothesis}{3}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.1}Nullhypothesis}{4}{subsection.6.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2}Assumptions}{3}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.2}Assumptions}{4}{subsection.6.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.3}Cram\'{e}r-von Mises type Test}{4}{subsection.6.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.4}Mean focused Test}{4}{subsection.6.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.5}Combined Permutation Test}{4}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.5}Combined Permutation Test}{5}{subsection.6.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.6}Properties}{4}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.6}Properties}{5}{subsection.6.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Simulation Study}{4}{section.7}%
+\contentsline {section}{\numberline {7}Simulation Study}{5}{section.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1}Use of High-Performance Computing}{4}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.1}Use of High-Performance Computing}{5}{subsection.7.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {7.2}Simulation Setup}{5}{subsection.7.2}%
 \defcounter {refsection}{0}\relax 
