@@ -91,6 +91,17 @@ style=authoryear,
 		\end{itemize}
 	
 	\section{Functional Data Analysis}\label{FDA}
+		The overarching concept of functional data analysis is to incorporate observations that are functional in nature. In this context, a functional observation can often be understood as a smooth curve. 
+		
+		\begin{figure}[H]
+			\includegraphics[width = \textwidth]{../Graphics/growth\_curves.PDF}
+			\caption{Human Growth Curves up to the Age of 18}
+		\end{figure}
+		
+		In many cases functional data analysis restricts its scope to subsets of the functions $f:\mathbb{R} \rightarrow \mathbb{R}$.
+		As these are inherently infinite-dimensional, it is necessary to introduce additional theory to appropriately deal with their unique properties.
+		
+		
 		\begin{itemize}
 			\item \cite{ramsay_functional_2005}
 			\item \cite{kokoszka_introduction_2021}
@@ -211,6 +222,8 @@ style=authoryear,
 		\subsection{Asymptotic Distributions}
 		
 	\section{Multiple Testing}\label{Multiple_Testing}
+		When testing statistical hypotheses, it is often helpful or even necessary to test multiple hypotheses independently of each other. One setting where this could be useful is when we want to combine the desirable properties of two tests, as is done by \cite{bugni_permutation_2021}. If the tests do not perfectly depend on each other\footnote{If the tests perfectly depend on each other, one of the tests is superfluous.}, this creates a problem relating to the size of the combined test.
+		
 		\begin{itemize}
 			\item \cite{dunn_multiple_1961}
 		\end{itemize}
@@ -223,8 +236,8 @@ style=authoryear,
 			for a countable set of events $A_1, A_2, \dots$.
 		
 	\section{Permutation Tests}\label{Permutation_Tests}
-		In layman's terms, the idea of a permutation test is the following: if two samples show distinctly different properties, that will lead to differences in an appropriately chosen summary statistic. If we were to permute the elements of the groups randomly, we would expect these differences to disappear.\\
-		
+		In layman's terms, the idea of a permutation test is the following: if two samples show distinctly different properties, that will lead to differences in an appropriately chosen summary statistic. If we were to permute the elements of the groups randomly, we would expect these differences to disappear.
+		Permutation tests formalize this intuition. 
 		
 		\begin{itemize}
 			\item \cite{lehmann_testing_2005}
@@ -232,6 +245,7 @@ style=authoryear,
 		\end{itemize}
 	
 		\subsection{Functional Principle of Permutation Tests}
+			Let $\{x_1, x_2, \dots, x_n\}$ and $\{y_1, y_2, \dots, y_m\}$ be two data sets.
 		
 			Number of Permutations: $(n+m)!$\\
 			Number of Combinations: $\binom{m+n}{m}$\\
@@ -343,25 +357,28 @@ style=authoryear,
 				\noindent
 				\begin{equation}
 					\phi_{n,m} = \begin{cases}
-						1 \: \text{if} \quad \tau_{n,m} > t^{*}_{n,m}(1-\alpha) \\
-						a \: \text{if} \quad \tau_{n,m} = t^{*}_{n,m}(1-\alpha) \\
-						0 \: \text{if} \quad \tau_{n,m} < t^{*}_{n,m}(1-\alpha) \\
+						1 &\text{if} \ \tau_{n,m} > t^{*}_{n,m}(1-\alpha_{\tau}) \\
+						a_{\tau} &\text{if} \ \tau_{n,m} = t^{*}_{n,m}(1-\alpha_{\tau}) \\
+						0 &\text{if} \ \tau_{n,m} < t^{*}_{n,m}(1-\alpha_{\tau}) \\
 					\end{cases}
 				\end{equation}
 				\begin{equation}
 					\tilde{\phi}_{n,m} = \begin{cases}
-						1 \: \text{if} \quad \nu_{n,m} > t^{*}_{n,m}(1-\alpha) \\
-						a \: \text{if} \quad \nu_{n,m} = t^{*}_{n,m}(1-\alpha) \\
-						0 \: \text{if} \quad \nu_{n,m} < t^{*}_{n,m}(1-\alpha) \\
+						1 &\text{if} \ \nu_{n,m} > t^{*}_{n,m}(1-\alpha_{\nu}) \\
+						a_{\nu} &\text{if} \ \nu_{n,m} = t^{*}_{n,m}(1-\alpha_{\nu}) \\
+						0 &\text{if} \ \nu_{n,m} < t^{*}_{n,m}(1-\alpha_{\nu}) \\
 					\end{cases}
 				\end{equation}
 			\end{multicols}
-			where 
+			$a_\tau$ and $a_\nu$ are given by the following equations to ensure that the expected values of $\phi$ and $\tilde{\phi}$ have the desired values.
 			\begin{multicols}{2}
 				\begin{itemize}
-					\item $a = \frac{Q\alpha - Q^{+}}{Q^{0}}$ 
-					\item $Q^{+} = \sum_{q = 1}^{Q}\mathbbm{1}\left[\tau_{n,m,q} > t^{*}_{n,m}(1-\alpha)\right]$
-					\item $Q^{0} = \sum_{q = 1}^{Q}\mathbbm{1}\left[\tau_{n,m,q} = t^{*}_{n,m}(1-\alpha)\right]$
+					\item $a_{\tau} = \frac{Q\alpha_{\tau} - Q_{\tau}^{+}}{Q_{\tau}^{0}}$ 
+					\item $Q_{\tau}^{+} = \sum_{q = 1}^{Q}\mathbbm{1}\left[\tau_{n,m,q} > t^{*}_{n,m}(1-\alpha_{\tau})\right]$
+					\item $Q_{\tau}^{0} = \sum_{q = 1}^{Q}\mathbbm{1}\left[\tau_{n,m,q} = t^{*}_{n,m}(1-\alpha_{\tau})\right]$
+					\item $a_{\nu} = \frac{Q\alpha_{\nu} - Q_{\nu}^{+}}{Q_{\nu}^{0}}$ 
+					\item $Q_{\nu}^{+} = \sum_{q = 1}^{Q}\mathbbm{1}\left[\nu{n,m,q} > t^{*}_{n,m}(1-\alpha_{\nu})\right]$
+					\item $Q_{\nu}^{0} = \sum_{q = 1}^{Q}\mathbbm{1}\left[\nu{n,m,q} = t^{*}_{n,m}(1-\alpha_{\nu})\right]$
 				\end{itemize} 
 			\end{multicols}
 			
@@ -373,11 +390,19 @@ style=authoryear,
 		\subsection{Properties}
 		
 	\section{Simulation Study}\label{Simulation_Study}
-	
+		\subsection{Implementation as an R package}
+			All analyses in this thesis have been conducted with R\footcite{R}. I implemented the two-sample variant of the test presented taken from \cite{bugni_permutation_2021} in an R package called \textit{PermFDATest}. The R package and all code that has been used to produce the following results are publicly available as part of a GitHub repository\footnote{\href{https://github.com/JakobJuergens/Masters_Thesis}{https://github.com/JakobJuergens/Masters\_Thesis}} that complements this thesis.
+			
+			\begin{itemize}
+				\item \cite{fda}
+				\item \cite{tidyverse}
+				\item \cite{refund}
+			\end{itemize}
+			
 		\subsection{Use of High-Performance Computing}
+			The simulations presented as part of this thesis have been conducted on bonna\footnote{\href{https://www.dice.uni-bonn.de/de/hpc/hpc-a-bonn/infrastruktur}{https://www.dice.uni-bonn.de/de/hpc/hpc-a-bonn/infrastruktur}}. bonna is the high performance computing cluster provided by the University of Bonn. The implementation is heavily parallelized and makes use of a SLURM scheduling system. However, slight modifications of the provided code suffice to run it on personal computers.
 			\begin{itemize}
 				\item bonna - HPC/A-Cluster der Universität Bonn
-				\item \url{https://www.dice.uni-bonn.de/de/hpc/hpc-a-bonn/infrastruktur}
 			\end{itemize}
 	
 		\subsection{Simulation Setup}
@@ -393,11 +418,13 @@ style=authoryear,
 	\printbibliography[heading=none]
 	
 	\newpage
+	\pagenumbering{roman}
+	\setcounter{page}{1}
 	\section{Appendix}
 	
 	\newpage
-	
-	\section{Versicherung an Eides statt}	
+	\thispagestyle{empty}
+	\section*{Versicherung an Eides statt}	
 	
 		\vspace{3cm}
 		

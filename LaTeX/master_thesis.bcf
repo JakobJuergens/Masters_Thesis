@@ -2359,11 +2359,17 @@
     <bcf:citekey order="12">buning_nichtparametrische_2013</bcf:citekey>
     <bcf:citekey order="13">gibbons_nonparametric_2021</bcf:citekey>
     <bcf:citekey order="14">buning_nichtparametrische_2013</bcf:citekey>
-    <bcf:citekey order="15">dunn_multiple_1961</bcf:citekey>
-    <bcf:citekey order="16">lehmann_testing_2005</bcf:citekey>
-    <bcf:citekey order="17">van_der_vaart_weak_1996</bcf:citekey>
-    <bcf:citekey order="18">bugni_permutation_2021</bcf:citekey>
-    <bcf:citekey order="19">bugni_goodness--fit_2009</bcf:citekey>
+    <bcf:citekey order="15">bugni_permutation_2021</bcf:citekey>
+    <bcf:citekey order="16">dunn_multiple_1961</bcf:citekey>
+    <bcf:citekey order="17">lehmann_testing_2005</bcf:citekey>
+    <bcf:citekey order="18">van_der_vaart_weak_1996</bcf:citekey>
+    <bcf:citekey order="19">bugni_permutation_2021</bcf:citekey>
+    <bcf:citekey order="20">bugni_goodness--fit_2009</bcf:citekey>
+    <bcf:citekey order="21">R</bcf:citekey>
+    <bcf:citekey order="22">bugni_permutation_2021</bcf:citekey>
+    <bcf:citekey order="23">fda</bcf:citekey>
+    <bcf:citekey order="24">tidyverse</bcf:citekey>
+    <bcf:citekey order="25">refund</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
