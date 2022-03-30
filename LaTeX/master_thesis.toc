@@ -39,7 +39,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.1}Nullhypothesis}{4}{subsection.6.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2}Assumptions}{4}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.2}Assumptions}{5}{subsection.6.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.3}Cram\'{e}r-von Mises type Test}{5}{subsection.6.3}%
 \defcounter {refsection}{0}\relax 

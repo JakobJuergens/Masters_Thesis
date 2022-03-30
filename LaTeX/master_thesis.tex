@@ -81,7 +81,7 @@ style=authoryear,
 		
 		This question can also occur in functional data analysis, where each observation in a data set is itself a smooth curve. \cite{bugni_permutation_2021} develop a permutation test that tries to answer this question by combining two distinct test statistics. To explore their approach, it is first necessary to introduce some theoretical concepts.
 		Section \ref{FDA} introduces the necessary concepts from functional data analysis. Section \ref{CvM_Tests} explores the theory around Cram\'{e}r-von Mises tests. Section \ref{Multiple_Testing} introduces the Bonferroni Correction for multiple testing problems and Section \ref{Permutation_Tests} finally introduces the necessary background in Permutation Testing.\\
-		After explaining these concepts, section \ref{Bugni_Horowitz_2021} focuses on the test developed in \cite{bugni_permutation_2021} for the case of a two sample test. Section \ref{Simulation_Study} replicates the results from the paper and section \ref{Application} explores their usefulness in an application to {\color{red} Thema der Anwendung}.
+		After explaining these concepts, section \ref{Bugni_Horowitz_2021} focuses on the test developed in \cite{bugni_permutation_2021} for the case of a two sample test. Section \ref{Simulation_Study} replicates the results from the simulation study in the paper and section \ref{Application} explores their usefulness in an application to {\color{red} Thema der Anwendung}.
 		
 		
 		
@@ -223,6 +223,9 @@ style=authoryear,
 			for a countable set of events $A_1, A_2, \dots$.
 		
 	\section{Permutation Tests}\label{Permutation_Tests}
+		In layman's terms, the idea of a permutation test is the following: if two samples show distinctly different properties, that will lead to differences in an appropriately chosen summary statistic. If we were to permute the elements of the groups randomly, we would expect these differences to disappear.\\
+		
+		
 		\begin{itemize}
 			\item \cite{lehmann_testing_2005}
 			\item \cite{van_der_vaart_weak_1996}
@@ -303,7 +306,7 @@ style=authoryear,
 		
 			Critical values for Permutation Test Statistic
 			\begin{equation}
-				t^{*}_{n,m}(1-\alpha) = \inf \left\{\frac{1}{Q} \sum_{i = 1}^{Q} \mathbbm{1}\left[\tau_{n,m,q} \leq t\right] \geq 1 - \alpha \quad \vert \quad t \in \mathbb{R}\right\}
+				t^{*}_{n,m}(1-\alpha) = \inf \left\{t \in \mathbb{R} \quad \vert \quad \frac{1}{Q} \sum_{i = 1}^{Q} \mathbbm{1}\left[\tau_{n,m,q} \leq t\right] \geq 1 - \alpha \right\}
 			\end{equation}
 		
 		\subsection{Mean focused Test}
@@ -323,7 +326,6 @@ style=authoryear,
 					\hat{\mathbb{E}}Y(t) = \frac{1}{m}\sum_{i = 1}^{m} Y_i(t)
 				\end{equation}
 			\end{multicols}
-			
 		
 			Sample Analog
 			\begin{equation}
@@ -332,10 +334,37 @@ style=authoryear,
 		
 			Critical values for Permutation Test Statistic
 			\begin{equation}
-				t^{*}_{n,m}(1-\alpha) = \inf \left\{\frac{1}{Q} \sum_{i = 1}^{Q} \mathbbm{1}\left[\nu_{n,m,q} \leq t\right] \geq 1 - \alpha \quad \vert \quad t \in \mathbb{R}\right\}
+				t^{*}_{n,m}(1-\alpha) = \inf \left\{t \in \mathbb{R} \quad \vert \quad \frac{1}{Q} \sum_{i = 1}^{Q} \mathbbm{1}\left[\nu_{n,m,q} \leq t\right] \geq 1 - \alpha \right\}
 			\end{equation}
 		
 		\subsection{Combined Permutation Test}
+			Define for the two underlying tests the following objects.
+			\begin{multicols}{2}
+				\noindent
+				\begin{equation}
+					\phi_{n,m} = \begin{cases}
+						1 \: \text{if} \quad \tau_{n,m} > t^{*}_{n,m}(1-\alpha) \\
+						a \: \text{if} \quad \tau_{n,m} = t^{*}_{n,m}(1-\alpha) \\
+						0 \: \text{if} \quad \tau_{n,m} < t^{*}_{n,m}(1-\alpha) \\
+					\end{cases}
+				\end{equation}
+				\begin{equation}
+					\tilde{\phi}_{n,m} = \begin{cases}
+						1 \: \text{if} \quad \nu_{n,m} > t^{*}_{n,m}(1-\alpha) \\
+						a \: \text{if} \quad \nu_{n,m} = t^{*}_{n,m}(1-\alpha) \\
+						0 \: \text{if} \quad \nu_{n,m} < t^{*}_{n,m}(1-\alpha) \\
+					\end{cases}
+				\end{equation}
+			\end{multicols}
+			where 
+			\begin{multicols}{2}
+				\begin{itemize}
+					\item $a = \frac{Q\alpha - Q^{+}}{Q^{0}}$ 
+					\item $Q^{+} = \sum_{q = 1}^{Q}\mathbbm{1}\left[\tau_{n,m,q} > t^{*}_{n,m}(1-\alpha)\right]$
+					\item $Q^{0} = \sum_{q = 1}^{Q}\mathbbm{1}\left[\tau_{n,m,q} = t^{*}_{n,m}(1-\alpha)\right]$
+				\end{itemize} 
+			\end{multicols}
+			
 			Bonferroni inequality under $H_0$ leads to
 			\begin{equation}
 				\max(\alpha_{\tau}, \alpha_{\nu}) \leq \mathbb{P}\left[(\phi_{n,m} > 0) \cup (\tilde{\phi}_{n,m} > 0)\right] \leq \alpha_{\tau} + \alpha_{\nu}
