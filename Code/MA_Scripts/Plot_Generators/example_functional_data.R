@@ -29,12 +29,12 @@ growth_plot <- ggplot(data = growth_tibble) +
   theme_light() +
   labs(y = 'Height in cm') +
   theme(
-    legend.position = c(.05,.85),
-    legend.text = element_text(size = 20),
+    legend.position = c(.08,.8),
+    legend.text = element_text(size = 26),
     legend.title = element_text(size = 30),
     plot.title = element_text(size = 30),
-    axis.title = element_text(size = 20),
-    axis.text = element_text(size = 20),
+    axis.title = element_text(size = 26),
+    axis.text = element_text(size = 26),
   ) +
   guides(color = guide_legend(override.aes = list(lwd = 5)))
 

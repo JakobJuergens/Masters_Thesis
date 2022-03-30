@@ -1,5 +1,5 @@
-\documentclass[11pt,twoside,a4paper]{article}
-\usepackage[lmargin=3cm, rmargin = 3cm, vmargin=2cm]{geometry}
+\documentclass[12pt, a4paper]{article}
+\usepackage[left=3cm, right = 2cm, vmargin=2cm]{geometry}
 \usepackage{microtype}
 \usepackage{graphicx}
 \usepackage{hyperref}
@@ -10,6 +10,7 @@
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{titlesec}
 \usepackage{bbm}
 \usepackage[font=small,skip=2pt]{caption}
 \usepackage[
@@ -30,6 +31,9 @@ style=authoryear,
 
 \theoremstyle{MAstyle} \newtheorem{assumption}{Assumption}
 \theoremstyle{MAstyle} \newtheorem{definition}{Definition}
+
+\titleformat*{\section}{\Large\bfseries}
+\titleformat*{\subsection}{\large\bfseries}
 
 \addbibresource{thesis_bibliography.bib}
 \onehalfspacing
@@ -91,11 +95,12 @@ style=authoryear,
 		\end{itemize}
 	
 	\section{Functional Data Analysis}\label{FDA}
-		The overarching concept of functional data analysis is to incorporate observations that are functional in nature. In this context, a functional observation can often be understood as a smooth curve. 
+		The overarching concept of functional data analysis is to incorporate observations that are functional in nature. In this context, a functional observation can often be understood as a smooth curve. A classical example of this is shown in Figure \ref{growth_curves}. It presents data provided in the R package \textit{fda}\footcite{fda} and shows growth curves of 93 humans up to the age of 18.
 		
 		\begin{figure}[H]
 			\includegraphics[width = \textwidth]{../Graphics/growth\_curves.PDF}
 			\caption{Human Growth Curves up to the Age of 18}
+			\label{growth_curves}
 		\end{figure}
 		
 		In many cases functional data analysis restricts its scope to subsets of the functions $f:\mathbb{R} \rightarrow \mathbb{R}$.
@@ -254,7 +259,7 @@ style=authoryear,
 	
 		\subsection{Size and Power}
 		
-	\section{Test by Bugni and Horowitz (2021) - Two Samples}\label{Bugni_Horowitz_2021}
+	\section{Test by Bugni and Horowitz (2021)}\label{Bugni_Horowitz_2021}
 		\begin{itemize}
 			\item \cite{bugni_permutation_2021}
 			\item \cite{bugni_goodness--fit_2009}
@@ -301,12 +306,16 @@ style=authoryear,
 		\subsection{Cram\'{e}r-von Mises type Test}
 		
 			Empirical Distribution Functions
-			\begin{equation}
-				\begin{split}
-					\hat{F}_X(z) &= \frac{1}{n} \sum_{i = 1}^{n}\mathbbm{1}\left[X_i(t) \leq z(t) \quad \forall t \in \mathcal{I}\right] \\
-					\hat{F}_Y(z) &= \frac{1}{m} \sum_{i = 1}^{m}\mathbbm{1}\left[Y_i(t) \leq z(t) \quad \forall t \in \mathcal{I}\right]
-				\end{split}
-			\end{equation}
+			\begin{multicols}{2}
+				\noindent
+				\begin{equation*}
+					\hat{F}_X(z) = \frac{1}{n} \sum_{i = 1}^{n}\mathbbm{1}\left[X_i(t) \leq z(t) \ \forall t \in \mathcal{I}\right]
+				\end{equation*}
+				\begin{equation}
+					\hat{F}_Y(z) = \frac{1}{m} \sum_{i = 1}^{m}\mathbbm{1}\left[Y_i(t) \leq z(t) \ \forall t \in \mathcal{I}\right]
+				\end{equation}
+			\end{multicols}
+			
 			
 			Test statistic
 			\begin{equation}
@@ -333,9 +342,9 @@ style=authoryear,
 			Mean Estimators
 			\begin{multicols}{2}
 				\noindent
-				\begin{equation}
+				\begin{equation*}
 					\hat{\mathbb{E}}X(t) = \frac{1}{n}\sum_{i = 1}^{n} X_i(t)
-				\end{equation}
+				\end{equation*}
 				\begin{equation}
 					\hat{\mathbb{E}}Y(t) = \frac{1}{m}\sum_{i = 1}^{m} Y_i(t)
 				\end{equation}
@@ -355,13 +364,13 @@ style=authoryear,
 			Define for the two underlying tests the following objects.
 			\begin{multicols}{2}
 				\noindent
-				\begin{equation}
+				\begin{equation*}
 					\phi_{n,m} = \begin{cases}
 						1 &\text{if} \ \tau_{n,m} > t^{*}_{n,m}(1-\alpha_{\tau}) \\
 						a_{\tau} &\text{if} \ \tau_{n,m} = t^{*}_{n,m}(1-\alpha_{\tau}) \\
 						0 &\text{if} \ \tau_{n,m} < t^{*}_{n,m}(1-\alpha_{\tau}) \\
 					\end{cases}
-				\end{equation}
+				\end{equation*}
 				\begin{equation}
 					\tilde{\phi}_{n,m} = \begin{cases}
 						1 &\text{if} \ \nu_{n,m} > t^{*}_{n,m}(1-\alpha_{\nu}) \\
@@ -401,10 +410,7 @@ style=authoryear,
 			
 		\subsection{Use of High-Performance Computing}
 			The simulations presented as part of this thesis have been conducted on bonna\footnote{\href{https://www.dice.uni-bonn.de/de/hpc/hpc-a-bonn/infrastruktur}{https://www.dice.uni-bonn.de/de/hpc/hpc-a-bonn/infrastruktur}}. bonna is the high performance computing cluster provided by the University of Bonn. The implementation is heavily parallelized and makes use of a SLURM scheduling system. However, slight modifications of the provided code suffice to run it on personal computers.
-			\begin{itemize}
-				\item bonna - HPC/A-Cluster der Universität Bonn
-			\end{itemize}
-	
+
 		\subsection{Simulation Setup}
 		
 		\subsection{Results}
@@ -418,6 +424,7 @@ style=authoryear,
 	\printbibliography[heading=none]
 	
 	\newpage
+	\cleardoublepage
 	\pagenumbering{roman}
 	\setcounter{page}{1}
 	\section{Appendix}
