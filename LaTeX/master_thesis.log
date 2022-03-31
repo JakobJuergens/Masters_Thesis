@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.1.26)  31 MAR 2022 16:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.1.26)  31 MAR 2022 17:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -909,69 +909,57 @@ LaTeX Warning: No \author given.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./master_thesis.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./master_thesis.toc
+[2])
 \tf@toc=\write5
 \openout5 = `master_thesis.toc'.
 
-
-[2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 85--86
+ [3]
+Underfull \hbox (badness 10000) in paragraph at lines 82--84
 
  []
 
-<../Graphics/growth_curves.PDF, id=200, 1445.4pt x 433.62pt>
+<../Graphics/growth_curves.PDF, id=205, 1445.4pt x 433.62pt>
 File: ../Graphics/growth_curves.PDF Graphic file (type pdf)
 <use ../Graphics/growth_curves.PDF>
-Package pdftex.def Info: ../Graphics/growth_curves.PDF  used on input line 94.
+Package pdftex.def Info: ../Graphics/growth_curves.PDF  used on input line 93.
 (pdftex.def)             Requested size: 455.24411pt x 136.57117pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.98 		E
+l.97 		E
         ven though the measurements were taken at discrete ages, it is clear...
 [1]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) h
 as been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.145 				\begin{equation}
+l.144 				\begin{equation}
                            [2 <../Graphics/growth_curves.PDF>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 153.
+(hyperref)                removing `math shift' on input line 152.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 153.
+(hyperref)                removing `subscript' on input line 152.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 153.
+(hyperref)                removing `math shift' on input line 152.
 
-<../Graphics/fourier_basis.PDF, id=242, 1445.4pt x 433.62pt>
+<../Graphics/fourier_basis.PDF, id=247, 1445.4pt x 433.62pt>
 File: ../Graphics/fourier_basis.PDF Graphic file (type pdf)
 <use ../Graphics/fourier_basis.PDF>
-Package pdftex.def Info: ../Graphics/fourier_basis.PDF  used on input line 170.
+Package pdftex.def Info: ../Graphics/fourier_basis.PDF  used on input line 169.
 
 (pdftex.def)             Requested size: 455.24411pt x 136.57117pt.
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 178.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 178.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 178.
-
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.181 				\item \cite
-                     {gihman_theory_2004} [3 <../Graphics/fourier_basis.PDF>]
+l.178 			\end{definition}
+                          [3 <../Graphics/fourier_basis.PDF>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 184.
@@ -984,27 +972,39 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 184.
 
-[4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 287--289
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 190.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 190.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 190.
+
+[4] [5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 295--297
 
  []
 
-[6]
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 344
+[7]
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 352
 .
  (/usr/share/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [7]
-Overfull \hbox (5.8789pt too wide) in paragraph at lines 421--422
+) [8]
+Overfull \hbox (5.8789pt too wide) in paragraph at lines 429--430
 []$\OML/cmm/m/it/12 Q[] \OT1/cmr/m/n/12 (-20) = [][] \U/bbm/m/n/12 1 []$ 
  []
 
 
-Overfull \hbox (3.96915pt too wide) in paragraph at lines 422--423
+Overfull \hbox (3.96915pt too wide) in paragraph at lines 430--431
 []$\OML/cmm/m/it/12 Q[] \OT1/cmr/m/n/12 (-20) = [][] \U/bbm/m/n/12 1 []$ 
  []
 
-[8] [9]
+[9]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1013,19 +1013,19 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 ] [2] (./master_thesis.aux)
 Package rerunfilecheck Info: File `master_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 8395B917AEBD2D0CB870954D75DD7BA9;5305.
+(rerunfilecheck)             Checksum: 8DCF68B56F4FB1F781C20592771E59FB;5413.
 Package logreq Info: Writing requests to 'master_thesis.run.xml'.
 \openout1 = `master_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23259 strings out of 478353
- 402493 string characters out of 5854635
- 1170594 words of memory out of 5000000
- 40844 multiletter control sequences out of 15000+600000
- 419962 words of font info for 151 fonts, out of 8000000 for 9000
+ 23273 strings out of 478353
+ 402622 string characters out of 5854635
+ 1167594 words of memory out of 5000000
+ 40845 multiletter control sequences out of 15000+600000
+ 420207 words of font info for 156 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,25n,63p,1010b,1731s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,25n,63p,1010b,1969s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1055,10 +1055,10 @@ cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><
 /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/f
 onts/type1/public/cm-super/sfrm1200.pfb>
-Output written on master_thesis.pdf (16 pages, 287129 bytes).
+Output written on master_thesis.pdf (16 pages, 287570 bytes).
 PDF statistics:
- 510 PDF objects out of 1000 (max. 8388607)
- 446 compressed objects within 5 object streams
- 112 named destinations out of 1000 (max. 500000)
- 35603 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 518 PDF objects out of 1000 (max. 8388607)
+ 454 compressed objects within 5 object streams
+ 115 named destinations out of 1000 (max. 500000)
+ 35611 words of extra memory for PDF output out of 35830 (max. 10000000)
 
