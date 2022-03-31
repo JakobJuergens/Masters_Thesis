@@ -19,6 +19,39 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{anderson_distribution_1962}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9f551bf4b2ca69aea9ce920ba4cd1357}{%
+           family={Anderson},
+           familyi={A\bibinitperiod},
+           given={T.\bibnamedelimi W.},
+           giveni={T\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9f551bf4b2ca69aea9ce920ba4cd1357}
+      \strng{fullhash}{9f551bf4b2ca69aea9ce920ba4cd1357}
+      \strng{bibnamehash}{9f551bf4b2ca69aea9ce920ba4cd1357}
+      \strng{authorbibnamehash}{9f551bf4b2ca69aea9ce920ba4cd1357}
+      \strng{authornamehash}{9f551bf4b2ca69aea9ce920ba4cd1357}
+      \strng{authorfullhash}{9f551bf4b2ca69aea9ce920ba4cd1357}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Annals of Mathematical Statistics}
+      \field{note}{Publisher: Institute of Mathematical Statistics}
+      \field{number}{3}
+      \field{title}{On the {Distribution} of the {Two}-{Sample} {Cramer}-von {Mises} {Criterion}}
+      \field{volume}{33}
+      \field{year}{1962}
+      \field{pages}{1148\bibrangedash 1159}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1214/aoms/1177704477
+      \endverb
+    \endentry
     \entry{anderson_asymptotic_1952}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=9f551bf4b2ca69aea9ce920ba4cd1357}{%
@@ -259,6 +292,40 @@
       \range{pages}{13}
       \verb{doi}
       \verb 10.1080/01621459.1961.10482090
+      \endverb
+    \endentry
+    \entry{fisz_result_1960}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a5ab54ceaf75bfe2366f93ea4678a1f5}{%
+           family={Fisz},
+           familyi={F\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a5ab54ceaf75bfe2366f93ea4678a1f5}
+      \strng{fullhash}{a5ab54ceaf75bfe2366f93ea4678a1f5}
+      \strng{bibnamehash}{a5ab54ceaf75bfe2366f93ea4678a1f5}
+      \strng{authorbibnamehash}{a5ab54ceaf75bfe2366f93ea4678a1f5}
+      \strng{authornamehash}{a5ab54ceaf75bfe2366f93ea4678a1f5}
+      \strng{authorfullhash}{a5ab54ceaf75bfe2366f93ea4678a1f5}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0003-4851, 2168-8990}
+      \field{journaltitle}{The Annals of Mathematical Statistics}
+      \field{note}{Publisher: Institute of Mathematical Statistics}
+      \field{number}{2}
+      \field{title}{On a {Result} by {M}. {Rosenblatt} {Concerning} the {Von} {Mises}-{Smirnov} {Test}}
+      \field{volume}{31}
+      \field{year}{1960}
+      \field{pages}{427\bibrangedash 429}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.1214/aoms/1177705905
       \endverb
     \endentry
     \entry{gibbons_nonparametric_2021}{book}{}
@@ -662,6 +729,43 @@
       \field{year}{2005}
       \verb{doi}
       \verb 10.1007/b98888
+      \endverb
+    \endentry
+    \entry{rosenblatt_limit_1952}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c4f89a917e2c0b620d8d49d9c5b7c5d3}{%
+           family={Rosenblatt},
+           familyi={R\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c4f89a917e2c0b620d8d49d9c5b7c5d3}
+      \strng{fullhash}{c4f89a917e2c0b620d8d49d9c5b7c5d3}
+      \strng{bibnamehash}{c4f89a917e2c0b620d8d49d9c5b7c5d3}
+      \strng{authorbibnamehash}{c4f89a917e2c0b620d8d49d9c5b7c5d3}
+      \strng{authornamehash}{c4f89a917e2c0b620d8d49d9c5b7c5d3}
+      \strng{authorfullhash}{c4f89a917e2c0b620d8d49d9c5b7c5d3}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0003-4851}
+      \field{journaltitle}{The Annals of Mathematical Statistics}
+      \field{note}{Publisher: Institute of Mathematical Statistics}
+      \field{number}{4}
+      \field{title}{Limit {Theorems} {Associated} with {Variants} of the {Von} {Mises} {Statistic}}
+      \field{volume}{23}
+      \field{year}{1952}
+      \field{pages}{617\bibrangedash 623}
+      \range{pages}{7}
+      \verb{urlraw}
+      \verb https://www.jstor.org/stable/2236587
+      \endverb
+      \verb{url}
+      \verb https://www.jstor.org/stable/2236587
       \endverb
     \endentry
     \entry{skorohod_integration_1974}{book}{}

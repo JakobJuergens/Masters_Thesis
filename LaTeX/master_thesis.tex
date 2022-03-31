@@ -10,6 +10,7 @@
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{mathtools}
 \usepackage{titlesec}
 \usepackage{bbm}
 \usepackage[font=small,skip=2pt]{caption}
@@ -41,7 +42,7 @@ style=authoryear,
 
 \begin{document}
 	
-	\title{{\huge Bugni and Horowitz (2021) Permutation Tests for the Equality of Distributions of Functional Data}}
+	\title{{\huge Bugni and Horowitz (2021) Permutation Tests\\ for the Equality of Distributions of\\ Functional Data}}
 	\date{}
 	\maketitle
 	\thispagestyle{empty}
@@ -49,7 +50,7 @@ style=authoryear,
 	\begin{center}
 		
 		\Large
-		Master Thesis presented to the\\
+		Master's Thesis presented to the\\
 		Department of Economics at the\\
 		Rheinische Friedrich-Wilhelms-Universität Bonn
 		\vspace{1.5cm}
@@ -86,22 +87,15 @@ style=authoryear,
 		This question can also occur in functional data analysis, where each observation in a data set is itself a smooth curve. \cite{bugni_permutation_2021} develop a permutation test that tries to answer this question by combining two distinct test statistics. To explore their approach, it is first necessary to introduce some theoretical concepts.
 		Section \ref{FDA} introduces the necessary concepts from functional data analysis. Section \ref{CvM_Tests} explores the theory around Cram\'{e}r-von Mises tests. Section \ref{Multiple_Testing} introduces the Bonferroni Correction for multiple testing problems and Section \ref{Permutation_Tests} finally introduces the necessary background in Permutation Testing.\\
 		After explaining these concepts, section \ref{Bugni_Horowitz_2021} focuses on the test developed in \cite{bugni_permutation_2021} for the case of a two sample test. Section \ref{Simulation_Study} replicates the results from the simulation study in the paper and section \ref{Application} explores their usefulness in an application to {\color{red} Thema der Anwendung}.
-		
-		
-		
-		\begin{itemize}
-			\item Introduce general idea and possible hypothesis to test
-			\item Maybe focus on two sample setting
-		\end{itemize}
 	
 	\section{Functional Data Analysis}\label{FDA}
 		The overarching concept of functional data analysis is to incorporate observations that are functional in nature. In this context, a functional observation can often be understood as a smooth curve. A classical example of this is shown in Figure \ref{growth_curves}. It presents data provided in the R package \textit{fda}\footcite{fda} and shows growth curves of 93 humans up to the age of 18.
-		
 		\begin{figure}[H]
 			\includegraphics[width = \textwidth]{../Graphics/growth\_curves.PDF}
 			\caption{Human Growth Curves up to the Age of 18}
 			\label{growth_curves}
 		\end{figure}
+		Even though the measurements were taken at discrete ages, it is clear that each human has a height at every point in time. The data points are only measurements of this continuous curve. The higher the measurement frequency, the closer we get to data that resembles the curve itself.
 		
 		In many cases functional data analysis restricts its scope to subsets of the functions $f:\mathbb{R} \rightarrow \mathbb{R}$.
 		As these are inherently infinite-dimensional, it is necessary to introduce additional theory to appropriately deal with their unique properties.
@@ -154,12 +148,30 @@ style=authoryear,
 				The Hilbert space of all square integrable functions on $A$ is denoted by $\mathbb{L}_2(A)$.
 			\end{definition}
 		
+			In most cases, $A$ is chosen as a closed interval of $\mathbb{R}$. So without loss of generality, we can reduce our treatment to the case of $A = [0,1]$.
+		
 		\subsection{Bases of $\mathbb{L}_2$}
 			\begin{itemize}
 				\item Orthogonality
 				\item Orthonormality
-				\item Fourier Basis
 			\end{itemize}
+			
+			One commonly used orthonormal basis of $\mathbb{L}^2([0,1])$ is the Fourier Basis. It consists of a series of functions $\left(\phi_{i}^{F}(x)\right)_{i \in \mathbb{N}}$ taken from the terms of the sine-cosine form of the Fourier series.
+			\begin{equation}
+				\phi_{i}^{F}(x) = 
+				\begin{cases}
+					1 & \text{if} \quad i = 1\\
+					\sqrt{2} \cos(\pi i x) & \text{if} \quad i \quad \text{is even} \\
+					\sqrt{2} \sin(\pi (i-1)x) & \text{otherwise}
+				\end{cases}
+			\end{equation}
+			Figure \ref{fourier_basis} shows the first seven Fourier basis functions on $[0,1]$.
+			\begin{figure}[H]
+				\includegraphics[width = \textwidth]{../Graphics/fourier\_basis.PDF}
+				\caption{The first seven Fourier basis functions}
+				\label{fourier_basis}
+			\end{figure}
+			A proof that the Fourier basis is in fact an orthonormal basis of $\mathbb{L}^2([0,1])$ can be found in section 2.4 of \cite{hsing_theoretical_2015}.
 	
 		\subsection{Random Functions}
 		
@@ -186,6 +198,9 @@ style=authoryear,
 			\end{equation}
 		
 	\section{Cram\'{e}r-von Mises Tests}\label{CvM_Tests}
+		In applied econometrics, it is often interesting to ask whether the same stochastic process generated the observations in two distinct data sets. In an experimental setting, we could ask whether a treatment assigned at random to a subset of agents changed the distribution of an outcome variable. 
+		One approach to answering this question is given by the two-sample Cram\'{e}r-von Mises test.
+		
 		\begin{itemize}
 			\item \cite{darling_kolmogorov-smirnov_1957}
 			\item \cite{anderson_asymptotic_1952}
@@ -215,26 +230,42 @@ style=authoryear,
 			\end{definition}
 		
 		\subsection{Nullhypothesis}
-		
-		\subsection{Cram\'{e}r-von Mises Statistic}
+			Let $\{x_1, \dots , x_n\}$ and $\{y_1, \dots , y_m\}$ be two data sets generated by random variables $X \sim_{\text{i.i.d.}} F(t)$ and $Y \sim_{\text{i.i.d.}} G(t)$.
+			Then, we can formulate the Nullhypothesis that both samples were generated by random variables following the same distribution function.
+			\begin{equation}
+				\begin{split}
+					H_0&: F(t) = G(t) \quad \forall t \in \mathbb{R}\\
+					H_1&: \exists t \in \mathbb{R} \quad \text{s.t.} \quad F(t) \neq G(t)
+				\end{split}
+			\end{equation}
+			
+		\subsection{Two-Sample Cram\'{e}r-von Mises Statistic}
 			
 			\cite{buning_nichtparametrische_2013}
 			\begin{equation}
 				C_{m,n} = \left(\frac{nm}{n+m}\right) \int_{-\infty}^{\infty}\left(F_{m}(x) - G_{n}(x)\right)^{2} \mathrm{d} \left(\frac{m F_{m}(x) + n G_{n}(x)}{m+n}\right)
 			\end{equation}
-			
+			\cite{anderson_distribution_1962} explores the small sample distribution of this test statistic and provides a comparison to the limiting distribution derived by \cite{rosenblatt_limit_1952} and \cite{fisz_result_1960}.
 		
 		\subsection{Asymptotic Distributions}
+			As shown by the previously mentioned authors, under the Nullhypothesis that both samples were independently generated by random variables sharing the same distribution function, we can find the following limiting distribution of $C_{m,n}$.
+			\begin{equation}
+				\begin{split}
+					C_{m,n} &\xrightarrow{\text{d}} \int_{0}^{1} \left(Z(u) + \left(1 + \lambda\right)^{-\frac{1}{2}} f(u) - \left[\frac{\lambda}{1+\lambda}\right]^{\frac{1}{2}}g(u)\right)^2 \mathrm{d}u \\
+					\text{as} \quad &n \rightarrow \infty, \quad m \rightarrow \infty, \quad \frac{n}{m} \rightarrow \lambda \in \mathbb{R}
+				\end{split}
+			\end{equation}
+			Here, $Z(u)$ is a Gaussian stochastic process with the following properties.
+			\begin{itemize}
+				\item $\mathbb{E}\left[Z(u)\right] = 0 \quad \forall u \in [0,1]$
+				\item $Cov\left(Z(u), Z(v)\right) = \min(u,v) - uv \quad \forall u,v \in [0,1]$
+			\end{itemize}		
 		
 	\section{Multiple Testing}\label{Multiple_Testing}
-		When testing statistical hypotheses, it is often helpful or even necessary to test multiple hypotheses independently of each other. One setting where this could be useful is when we want to combine the desirable properties of two tests, as is done by \cite{bugni_permutation_2021}. If the tests do not perfectly depend on each other\footnote{If the tests perfectly depend on each other, one of the tests is superfluous.}, this creates a problem relating to the size of the combined test.
-		
-		\begin{itemize}
-			\item \cite{dunn_multiple_1961}
-		\end{itemize}
+		When testing statistical hypotheses, it is often helpful or even necessary to test multiple hypotheses independently of each other. One setting where this could be useful is when we want to combine the desirable properties of two tests, as is done by \cite{bugni_permutation_2021}. If the tests do not perfectly depend on each other, this creates a problem relating to the size of the combined test.
 	
 		\subsection{Bonferroni Correction}	
-			Bonferroni Inequality / Boole's Inequality
+			The most straightforward correction for this multiple testing problem is the so-called Bonferroni Correction. Introduced by \cite{dunn_multiple_1961}, it is based on Boole's Inequality, which is sometimes referred to as the Bonferroni Inequality.
 			\begin{equation}
 				\mathbb{P}\left[\bigcup_{i = 1}^{\infty} A_i\right] \leq \sum_{i = 1}^{\infty} \mathbb{P}\left[A_i\right]
 			\end{equation}
@@ -409,7 +440,7 @@ style=authoryear,
 			\end{itemize}
 			
 		\subsection{Use of High-Performance Computing}
-			The simulations presented as part of this thesis have been conducted on bonna\footnote{\href{https://www.dice.uni-bonn.de/de/hpc/hpc-a-bonn/infrastruktur}{https://www.dice.uni-bonn.de/de/hpc/hpc-a-bonn/infrastruktur}}. bonna is the high performance computing cluster provided by the University of Bonn. The implementation is heavily parallelized and makes use of a SLURM scheduling system. However, slight modifications of the provided code suffice to run it on personal computers.
+			The simulations presented as part of this thesis have been conducted on \textit{bonna}\footnote{\href{https://www.dice.uni-bonn.de/de/hpc/hpc-a-bonn/infrastruktur}{https://www.dice.uni-bonn.de/de/hpc/hpc-a-bonn/infrastruktur}}. \textit{bonna} is the high performance computing cluster provided by the University of Bonn. The implementation is heavily parallelized and makes use of a SLURM scheduling system. However, slight modifications of the provided code suffice to run it on personal computers.
 
 		\subsection{Simulation Setup}
 		
