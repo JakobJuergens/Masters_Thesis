@@ -30,8 +30,8 @@ style=authoryear,
 {.5em} % Space after theorem head
 {} % Theorem head spec (can be left empty, meaning `normal')
 
-\theoremstyle{MAstyle} \newtheorem{assumption}{Assumption}
-\theoremstyle{MAstyle} \newtheorem{definition}{Definition}
+\theoremstyle{MAstyle} \newtheorem{assumption}{Assumption}[subsection]
+\theoremstyle{MAstyle} \newtheorem{definition}{Definition}[subsection]
 
 \titleformat*{\section}{\Large\bfseries}
 \titleformat*{\subsection}{\large\bfseries}
@@ -118,6 +118,7 @@ style=authoryear,
 					\end{enumerate}
 				\end{multicols}
 			\end{definition}
+			{\color{red} Das Komplex-Konjugierte macht keinen Sinn, wenn ich das Feld auf die Reellen Zahlen beschraenke...}
 			
 			\cite{hsing_theoretical_2015}
 			\begin{definition}[Inner Product Space]
@@ -146,8 +147,9 @@ style=authoryear,
 				\end{equation}
 				The Hilbert space of all square integrable functions on $A$ is denoted by $\mathbb{L}_2(A)$.
 			\end{definition}
-		
+			
 			In most cases, $A$ is chosen as a closed interval of $\mathbb{R}$. So without loss of generality, we can reduce our treatment to the case of $A = [0,1]$.
+			Deviating from the norm in functional data analysis, \cite{bugni_permutation_2021} define two functions to be distinct even if they differ only on a set of Lebesgue-measure zero.
 		
 		\subsection{Bases of $\mathbb{L}_2$}
 			\begin{itemize}
@@ -270,16 +272,21 @@ style=authoryear,
 				\item $Cov\left(Z(u), Z(v)\right) = \min(u,v) - uv \quad \forall u,v \in [0,1]$
 			\end{itemize}		
 		
-	\section{Multiple Testing}\label{Multiple_Testing}
-		When testing statistical hypotheses, it is often helpful or even necessary to test multiple hypotheses independently of each other. One setting where this could be useful is when we want to combine the desirable properties of two tests, as is done by \cite{bugni_permutation_2021}. If the tests do not perfectly depend on each other, this creates a problem relating to the size of the combined test.
-	
-		\subsection{Bonferroni Correction}	
-			The most straightforward correction for this multiple testing problem is the so-called Bonferroni Correction. Introduced by \cite{dunn_multiple_1961}, it is based on Boole's Inequality, which is sometimes referred to as the Bonferroni Inequality.
-			\begin{equation}
-				\mathbb{P}\left[\bigcup_{i = 1}^{\infty} A_i\right] \leq \sum_{i = 1}^{\infty} \mathbb{P}\left[A_i\right]
-			\end{equation}
-			for a countable set of events $A_1, A_2, \dots$.
-		
+%	\section{Multiple Testing}\label{Multiple_Testing}
+%		When testing statistical hypotheses, it is often helpful or even necessary to test multiple hypotheses independently of each other. One setting where this could be useful is when we want to combine the desirable properties of two tests, as is done by \cite{bugni_permutation_2021}. If the tests do not perfectly depend on each other, this creates a problem relating to the size of the combined test.
+%		
+%		\begin{definition}[Family-wise Error Rate]
+%			content...
+%		\end{definition}
+%	
+%		\subsection{Bonferroni Correction}	
+%			The most straightforward correction for this multiple testing problem is the so-called Bonferroni Correction. Introduced by \cite{dunn_multiple_1961}, it is based on Boole's Inequality, which is sometimes referred to as the Bonferroni Inequality.
+%			\begin{equation}
+%				\mathbb{P}\left[\bigcup_{i = 1}^{\infty} A_i\right] \leq \sum_{i = 1}^{\infty} \mathbb{P}\left[A_i\right]
+%			\end{equation}
+%			for a countable set of events $A_1, A_2, \dots$.
+			
+			
 	\section{Permutation Tests}\label{Permutation_Tests}
 		In layman's terms, the idea of a permutation test is the following: if two samples show distinctly different properties, that will lead to differences in an appropriately chosen summary statistic. If we were to permute the elements of the groups randomly, we would expect these differences to disappear.
 		Permutation tests formalize this intuition. 
@@ -290,12 +297,21 @@ style=authoryear,
 		\end{itemize}
 	
 		\subsection{Functional Principle of Permutation Tests}
-			Let $\{x_1, x_2, \dots, x_n\}$ and $\{y_1, y_2, \dots, y_m\}$ be two data sets.
 		
+			One on the defining features of each test is its Nullhypothesis. For the case of randomization tests, we can formulate it quite generally. Let $X$ be data taking values in a sample space $\mathcal{X}$. Then, the hypothesis is that the probability law $P$ generating $X$ belongs to a family of distributions $\Omega_0$. \cite{lehmann_testing_2005} define an assumption called the randomization hypothesis that allows for the construction of randomization tests. As permutation tests are a special case of randomization tests, we can specialize this definition to the case under consideration.
+			\begin{assumption}[Randomization Hypothesis]
+				 Let $G$ be a finite group of transformations $g: \mathcal{X} \rightarrow \mathcal{X}$. Under the Nullhypothesis of the randomization test, the distribution of $X$ is invariant under the transformations $g \in G$. In other words, $gX$ and $X$ have the same distribution whenever $X$ has distribution $P \in \Omega_0$.
+			\end{assumption}
+		
+			\cite{lehmann_testing_2005} explore the example of testing for the equality of the generating probability laws of two independent samples. This is precisely the relevant application for the permutation variant of the two-sample Cram\'{e}r-von Mises test that \cite{bugni_permutation_2021} extend to the setting of functional data. \\
+			
+		 
 			Number of Permutations: $(n+m)!$\\
 			Number of Combinations: $\binom{m+n}{m}$\\
 			
 			For my implementation, I chose the latter variant.
+			
+		
 	
 		\subsection{Size and Power}
 		
@@ -320,7 +336,7 @@ style=authoryear,
 					H_1: \quad &\mathbb{P}_{\mu}\left[F_X(Z) \neq F_Y(Z)\right] > 0
 				\end{split}
 			\end{equation}
-			Here, $\mu$ is a probability measure on $\mathbb{L}_2(\mathcal{I})$ and $Z$ is a random function with probability distribution $\mu$. {\color{red} Doesn't this leave out the case where the Probability functions only differ on a set of $\mu$-measure zero?}
+			Here, $\mu$ is a probability measure on $\mathbb{L}_2(\mathcal{I})$ and $Z$ is a random function with probability distribution $\mu$. Deviating from the norm in functional data analysis, the authors assume that two functions $z_1, z_2 \in \mathbb{L}_2(\mathcal{I})$ are distinct even if they only differ on a set of Lebesgue-measure zero.\footnote{Does this create a problem about the Fourier basis being a complete orthonormal basis of the space?} {\color{red} Doesn't this leave out the case where the Probability functions only differ on a set of $\mu$-measure zero?}
 		
 		\subsection{Assumptions}
 		
@@ -332,14 +348,20 @@ style=authoryear,
 				\end{enumerate}
 			\end{assumption}
 		
+			\begin{definition}[Separable Stochastic Process]
+				{\color{red} From Wikipedia:} A real-valued continuous time stochastic process $X$ with a probability space $\left(\Omega, \mathcal{F}, \mathcal{P}\right)$ is separable if its index set $T$ has a dense countable subset $U \subset T$ and there is a set $\Omega_0 \subset \Omega$ of probability zero, so $\mathcal{P}\left(\Omega_0\right) = 0$, such that for every open set $G \subset T$ and every closed set $F \subset \mathbb{R}$ the two events $\left\{X_t \in F \quad \forall t \in G \cap U\right\}$ and $\left\{X_t \in F \quad \forall t \in G\right\}$ differ from each other at most on a subset $\Omega_0$.
+			\end{definition}
+		
+			In less theoretical terms this means that the process is determined by its values on a countable subset of points of its index set.
+		
 			\begin{assumption}
 				$\mathbb{E}X(t)$ and $\mathbb{E}Y(t)$ exist and are finite for all $t \in [0, T]$.
 			\end{assumption}
 		
-			\begin{assumption}
+			\begin{assumption}\label{continuous_observation}
 				$X_i(t)$ and $Y_i(t)$ are observed for all $t \in \mathcal{I}$.
 			\end{assumption}
-	
+			Assumption \ref{continuous_observation} can be relaxed and a similar test can be constructed for the case of discretely observed processes. This variation of the test will not be addressed in this thesis. However, \cite{bugni_permutation_2021} provide a description of how to extend their idea to this common scenario.
 		
 			
 		
@@ -437,6 +459,11 @@ style=authoryear,
 			\end{equation}
 		
 		\subsection{Properties}
+		
+	\section{Closed Testing Procedures}
+		
+	\section{Variant for Alternatives in Specific Frequency Ranges}
+		
 		
 	\section{Simulation Study}\label{Simulation_Study}
 		\subsection{Implementation as an R package}

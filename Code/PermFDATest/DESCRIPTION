@@ -10,7 +10,9 @@ Description: This package implements the two-sample variant of the permutation
 License: What license is it under?
 Encoding: UTF-8
 Imports:
-  dplyr
+  dplyr,
+  fda,
+  purrr
 LazyData: true
 RoxygenNote: 7.1.2
 Suggests: 

@@ -260,40 +260,6 @@
       \verb 10.1214/aoms/1177706788
       \endverb
     \endentry
-    \entry{dunn_multiple_1961}{article}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=0b0af97d4f9c67ace0f8c55bd08f9072}{%
-           family={Dunn},
-           familyi={D\bibinitperiod},
-           given={Olive\bibnamedelima Jean},
-           giveni={O\bibinitperiod\bibinitdelim J\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{0b0af97d4f9c67ace0f8c55bd08f9072}
-      \strng{fullhash}{0b0af97d4f9c67ace0f8c55bd08f9072}
-      \strng{bibnamehash}{0b0af97d4f9c67ace0f8c55bd08f9072}
-      \strng{authorbibnamehash}{0b0af97d4f9c67ace0f8c55bd08f9072}
-      \strng{authornamehash}{0b0af97d4f9c67ace0f8c55bd08f9072}
-      \strng{authorfullhash}{0b0af97d4f9c67ace0f8c55bd08f9072}
-      \field{sortinit}{D}
-      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issn}{0162-1459}
-      \field{journaltitle}{Journal of the American Statistical Association}
-      \field{note}{Publisher: Taylor \& Francis}
-      \field{number}{293}
-      \field{title}{Multiple {Comparisons} among {Means}}
-      \field{volume}{56}
-      \field{year}{1961}
-      \field{pages}{52\bibrangedash 64}
-      \range{pages}{13}
-      \verb{doi}
-      \verb 10.1080/01621459.1961.10482090
-      \endverb
-    \endentry
     \entry{fisz_result_1960}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=a5ab54ceaf75bfe2366f93ea4678a1f5}{%
