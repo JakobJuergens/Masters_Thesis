@@ -2,20 +2,20 @@
 % Please edit documentation in R/mean_estimators.R
 \name{linear_interpolation}
 \alias{linear_interpolation}
-\title{This function approximates an observation on a specified grid
-using linear interpolation}
+\title{This is a helper function that performs linear interpolation for the
+linear_mean_estimator function.}
 \usage{
 linear_interpolation(observation, grid)
 }
 \arguments{
-\item{observation:}{Placeholder}
+\item{observation:}{Single Functional Observation}
 
-\item{grid:}{Placeholder}
+\item{grid:}{grid to be used for the approximation by linear interpolation}
 }
 \value{
-Placeholder
+An approximated observation at the desired grid points.
 }
 \description{
-This function approximates an observation on a specified grid
-using linear interpolation
+This is a helper function that performs linear interpolation for the
+linear_mean_estimator function.
 }
