@@ -112,7 +112,7 @@ perm_crit_value_full <- function(alpha = 0.05, Q, sample1, sample2, t_stat_func,
 #' @export
 perm_crit_value_approx <- function(alpha = 0.05, Q, approxQ, sample1, sample2, t_stat_func, ...) {
   # choose which combinations to use for approximation by sampling with replacement
-  combination_index <- sample(x = 1:Q, size = approxQ, replace = TRUE)
+  combination_index <- sample(x = 1:Q, size = approxQ, replace = FALSE)
 
   # concatenate samples to form one data set
   data <- append(sample1, sample2)

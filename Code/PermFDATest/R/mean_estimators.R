@@ -19,6 +19,9 @@ mean_estimator <- function(sample, interpolation_mode = "linear",
   if (interpolation_mode == "fourier") {
     return(fourier_mean_estimator(sample = sample, domain = domain, n_basis = n_basis, grid = grid))
   }
+  if (interpolation_mode == "bspline") {
+    return(bspline_mean_estimator(sample = sample, domain = domain, n_basis = n_basis, grid = grid))
+  }
   if (interpolation_mode == "eigen") {
     return(eigenbasis_mean_estimator(sample = sample, domain = domain, n_basis = n_basis, grid = grid))
   } else {
@@ -119,6 +122,53 @@ fourier_mean_estimator <- function(sample, domain, n_basis, grid) {
 }
 
 #' This function finds the estimated mean function from a given sample using
+#' an approximation using a truncated cubic bspline basis
+#'
+#' @param sample: sample, specified as a list where each element is one observation
+#' @param domain: vector with beginning and endpoint of the closed interval
+#' that is the domain of the stochastic processes
+#' @param n_basis: the number of basis functions used in the approximation
+#'
+#' @return A function describing the mean function
+bspline_mean_estimator <- function(sample, domain, n_basis, grid) {
+  # Create Fourier Basis of chosen size
+  bspline_basis <- fda::create.bspline.basis(
+    rangeval = domain, nbasis = n_basis, norder = 4
+  )
+  # Fit sample using Fourier Basis
+  fitted_sample <- purrr::map(
+    .x = sample,
+    .f = function(obs) {
+      fda::smooth.basis(
+        argvals = obs$args,
+        y = obs$vals,
+        fdParobj = bspline_basis
+      )
+    }
+  )
+  # extract coefficients from fitted sample
+  fitted_coefficients <- matrix(
+    data = unlist(purrr::map(
+      .x = fitted_sample,
+      .f = function(fitted_obs) {
+        fitted_obs$fd$coefs
+      }
+    )), nrow = n_basis, ncol = length(sample), byrow = FALSE
+  )
+  # get average cofficients to calculate mean function as fd object
+  avg_coefs <- rowMeans(fitted_coefficients)
+  # create mean fd object
+  mean_fd_obj <- fda::fd(
+    coef = avg_coefs,
+    basis = fitted_sample[[1]]$fd$basis
+  )
+  # return mean object
+  return(mean_function = function(x) {
+    fda::eval.fd(evalarg = x, fdobj = mean_fd_obj)
+  })
+}
+
+#' This function finds the estimated mean function from a given sample using
 #' an approximation using a truncated Eigenbasis (Karhunen-Loeve Representation)
 #' Currently non-functional!
 #'
@@ -129,8 +179,11 @@ fourier_mean_estimator <- function(sample, domain, n_basis, grid) {
 #'
 #' @return A function describing the mean function
 eigenbasis_mean_estimator <- function(sample, domain, n_basis, grid) {
+  # figure out number of basis functions to use for the construction of the
+  # functional principal components
+  nbasis <- min(c(100, unlist(purrr::map(.x = sample, .f = ~ length(.x$args)))))
   # Create cubic bspline Basis with many functions
-  bspline_basis <- fda::create.bspline.basis(rangeval = domain, nbasis = 100, norder = 4)
+  bspline_basis <- fda::create.bspline.basis(rangeval = domain, nbasis = nbasis, norder = 4)
   # Fit sample using Fourier Basis
   fitted_sample <- purrr::map(
     .x = sample,

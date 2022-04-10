@@ -54,3 +54,7 @@ test_that("Fourier Mean Estimator works", {
     des_outcome$vals
   )
 })
+
+test_that("Eigenfunction Mean Estimator works", {
+  grid <- seq(0, 1, length.out = 20)
+})

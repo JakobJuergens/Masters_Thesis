@@ -15,7 +15,14 @@
 #'
 #' @export
 means_t_stat <- function(sample1, sample2, interpolation_mode = "linear", domain = c(0, 1),
-                       n_basis = NA, grid) {
+                         n_basis = NA, grid) {
+  if (interpolation_mode == "eigen") {
+    stop(paste0(
+      "interpolation_mode == 'eigen' is currently not functional for the means-based test. ",
+      "However, in the context of the means test it does not add useful functionality."
+    ))
+  }
+
   # calculate sample mean functions for both samples
   smpl1_mean <- mean_estimator(
     sample = sample1, interpolation_mode = interpolation_mode,
@@ -36,7 +43,7 @@ means_t_stat <- function(sample1, sample2, interpolation_mode = "linear", domain
   }
   # if functional methods were chosen, directly use the provided functions
   # to create the squared difference of the means
-  else if (interpolation_mode %in% c("fourier", "eigen")) {
+  else if (interpolation_mode %in% c("fourier", "bspline")) {
     interpolation_func <- function(x) {
       (smpl1_mean(x) - smpl2_mean(x))^2
     }
