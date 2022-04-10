@@ -3,7 +3,8 @@
 \name{eigenbasis_mean_estimator}
 \alias{eigenbasis_mean_estimator}
 \title{This function finds the estimated mean function from a given sample using
-an approximation using a truncated Eigenbasis (Karhunen-Loeve Representation)}
+an approximation using a truncated Eigenbasis (Karhunen-Loeve Representation)
+Currently non-functional!}
 \usage{
 eigenbasis_mean_estimator(sample, domain, n_basis, grid)
 }
@@ -14,13 +15,12 @@ eigenbasis_mean_estimator(sample, domain, n_basis, grid)
 that is the domain of the stochastic processes}
 
 \item{n_basis:}{the number of basis functions used in the approximation}
-
-\item{grid:}{grid used for the approximation of the mean function}
 }
 \value{
-An estimate of the mean function in the usual observation format
+A function describing the mean function
 }
 \description{
 This function finds the estimated mean function from a given sample using
 an approximation using a truncated Eigenbasis (Karhunen-Loeve Representation)
+Currently non-functional!
 }

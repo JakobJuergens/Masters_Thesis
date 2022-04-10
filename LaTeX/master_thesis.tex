@@ -30,8 +30,8 @@ style=authoryear,
 {.5em} % Space after theorem head
 {} % Theorem head spec (can be left empty, meaning `normal')
 
-\theoremstyle{MAstyle} \newtheorem{assumption}{Assumption}[subsection]
-\theoremstyle{MAstyle} \newtheorem{definition}{Definition}[subsection]
+\theoremstyle{MAstyle} \newtheorem{assumption}{Assumption}[section]
+\theoremstyle{MAstyle} \newtheorem{definition}{Definition}[section]
 
 \titleformat*{\section}{\Large\bfseries}
 \titleformat*{\subsection}{\large\bfseries}
@@ -305,8 +305,19 @@ style=authoryear,
 		
 			\cite{lehmann_testing_2005} explore the example of testing for the equality of the generating probability laws of two independent samples. This is precisely the relevant application for the permutation variant of the two-sample Cram\'{e}r-von Mises test that \cite{bugni_permutation_2021} extend to the setting of functional data. \\
 			
+			\begin{definition}[Permutation]
+				Let $S$ be a set, then a permutation of $S$ is a bijective function $\pi: S \rightarrow S$.
+			\end{definition}
+			If $S$ is a finite set with $N$ elements, there are $N!$ different permutations. If we apply this idea to the setting of two samples with $n$ and $m$ observations respectively, there are $(n+m)!$ permutations in the combined set of observations.
+			
+			\begin{equation}
+				\begin{split}
+					\Pi_N &= \left\{\pi: \left\{1, \dots, N \right\} \rightarrow \left\{1, \dots, N \right\} \ \vert \ \pi \ \text{is a permutation of} \ \left\{1, \dots, N \right\}\right\} \\
+					G &= \left\{g:\mathbb{R}^N \rightarrow \mathbb{R}^N \ \vert \ \exists \pi \in \Pi_N \ \forall x \in \mathbb{R}^N \ g(x) = \left(x_{\pi(1)}, \dots, x_{\pi(N)}\right) \right\}
+				\end{split}
+			\end{equation}
+			
 		 
-			Number of Permutations: $(n+m)!$\\
 			Number of Combinations: $\binom{m+n}{m}$\\
 			
 			For my implementation, I chose the latter variant.

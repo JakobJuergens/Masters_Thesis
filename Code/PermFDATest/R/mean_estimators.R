@@ -43,7 +43,7 @@ linear_mean_estimator <- function(sample, domain, grid) {
   grid_sample <- purrr::map(
     .x = sample,
     .f = function(obs) {
-      linear_interpolation(observation = obs, grid = grid)
+      approx(x = obs$args, y = obs$vals, xout = grid, method = "linear")
     }
   )
   # create contaioner for mean function
@@ -60,7 +60,7 @@ linear_mean_estimator <- function(sample, domain, grid) {
         mean(x = unlist(
           purrr::map(
             .x = 1:length(sample),
-            .f = function(j) grid_sample[[j]]$vals[i]
+            .f = function(j) grid_sample[[j]]$y[i]
           )
         ), na.rm = TRUE)
       }
@@ -70,47 +70,6 @@ linear_mean_estimator <- function(sample, domain, grid) {
   return(est_mean)
 }
 
-#' This is a helper function that performs linear interpolation for the
-#' linear_mean_estimator function.
-#'
-#' @param observation: Single Functional Observation
-#' @param grid: grid to be used for the approximation by linear interpolation
-#'
-#' @return An approximated observation at the desired grid points.
-linear_interpolation <- function(observation, grid) {
-  # Extract objects
-  args <- observation$args
-  vals <- observation$vals
-  # Check if args are compatible with chosen grid
-  if (min(args) > min(grid) | max(args) < max(grid)) {
-    stop(paste0(
-      "In linear interpolation: the end points of the observation lie within",
-      "the desired grid. Linear Interpolation not possible."
-    ))
-  }
-  # Create container for approximation values at grid
-  grid_vals <- rep(x = NA_real_, times = length(grid))
-  for (i in 1:length(grid)) {
-    # if point occurs in sample, take the value
-    if (grid[i] %in% args) {
-      grid_vals[i] <- vals[which(args == grid[i])]
-    } else {
-      # determine left and right measurement point for interpolation
-      left_arg <- max(args[which(args < grid[i])])
-      right_arg <- min(args[which(args > grid[i])])
-      # determine correpsonding values
-      left_val <- vals[which(args == left_arg)]
-      right_val <- vals[which(args == right_arg)]
-      # calculate slope between points
-      slope <- (right_val - left_val) / (right_arg - left_arg)
-      # calculate linear interpolation for grid point
-      grid_vals[i] <- left_val + (grid[i] - left_arg) * slope
-    }
-  }
-  # return object in the typical format of an observation
-  return(list(args = grid, vals = grid_vals))
-}
-
 #' This function finds the estimated mean function from a given sample using
 #' an approximation using a truncated Fourier basis
 #'
@@ -118,17 +77,14 @@ linear_interpolation <- function(observation, grid) {
 #' @param domain: vector with beginning and endpoint of the closed interval
 #' that is the domain of the stochastic processes
 #' @param n_basis: the number of basis functions used in the approximation
-#' @param grid: grid used for the approximation of the mean function
 #'
-#' @return An estimate of the mean function in the usual observation format
+#' @return A function describing the mean function
 fourier_mean_estimator <- function(sample, domain, n_basis, grid) {
   # Create Fourier Basis of chosen size
   fourier_basis <- fda::create.fourier.basis(
     rangeval = domain, nbasis = n_basis,
     period = domain[2] - domain[1]
   )
-  # Evaluate basis at grid points
-  fourier_basis_eval <- fda::eval.basis(evalarg = grid, basisobj = fourier_basis)
   # Fit sample using Fourier Basis
   fitted_sample <- purrr::map(
     .x = sample,
@@ -149,12 +105,17 @@ fourier_mean_estimator <- function(sample, domain, n_basis, grid) {
       }
     )), nrow = n_basis, ncol = length(sample), byrow = FALSE
   )
-  # get matrix with approximated values of functions
-  sample_approx <- fourier_basis_eval %*% fitted_coefficients
-  # get column-wise mean of matrix
-  mean_vals <- rowMeans(sample_approx)
+  # get average cofficients to calculate mean function as fd object
+  avg_coefs <- rowMeans(fitted_coefficients)
+  # create mean fd object
+  mean_fd_obj <- fda::fd(
+    coef = avg_coefs,
+    basis = fitted_sample[[1]]$fd$basis
+  )
   # return mean object
-  return(list(args = grid, vals = mean_vals))
+  return(mean_function = function(x) {
+    fda::eval.fd(evalarg = x, fdobj = mean_fd_obj)
+  })
 }
 
 #' This function finds the estimated mean function from a given sample using
@@ -165,9 +126,8 @@ fourier_mean_estimator <- function(sample, domain, n_basis, grid) {
 #' @param domain: vector with beginning and endpoint of the closed interval
 #' that is the domain of the stochastic processes
 #' @param n_basis: the number of basis functions used in the approximation
-#' @param grid: grid used for the approximation of the mean function
 #'
-#' @return An estimate of the mean function in the usual observation format
+#' @return A function describing the mean function
 eigenbasis_mean_estimator <- function(sample, domain, n_basis, grid) {
   # Create cubic bspline Basis with many functions
   bspline_basis <- fda::create.bspline.basis(rangeval = domain, nbasis = 100, norder = 4)
@@ -195,9 +155,8 @@ eigenbasis_mean_estimator <- function(sample, domain, n_basis, grid) {
   # conduct fpca (centerfns doesn't make sense here because we're looking for
   # the mean, but this is just for testing purposes)
   sample_fpca <- fda::pca.fd(fdobj = combined_fd_obj, nharm = n_basis, centerfns = TRUE)
-  # return mean object
-  return(list(
-    args = grid,
-    vals = fda::eval.fd(evalarg = grid, fdobj = sample_fpca$meanfd)
-  ))
+  # return mean function
+  return(mean_function = function(x) {
+    fda::eval.fd(evalarg = x, fdobj = sample_fpca$meanfd)
+  })
 }

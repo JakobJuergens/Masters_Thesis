@@ -10,7 +10,8 @@ means_test(
   sample2,
   interpolation_mode = "linear",
   domain = c(0, 1),
-  n_basis = NA
+  n_basis = NA,
+  grid
 )
 }
 \arguments{
@@ -26,6 +27,8 @@ that is the domain of the stochastic processes}
 
 \item{n_basis:}{if interpolation mode is choses as a basis based method,
 this determines the number of basis functions used in the approximation}
+
+\item{grid:}{grid used for the approximation of the mean function}
 
 \item{...:}{additional arguments that are relayed to t_stat_func}
 }
