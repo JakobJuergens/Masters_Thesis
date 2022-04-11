@@ -13,7 +13,8 @@ Imports:
   dplyr,
   fda,
   purrr,
-  stats
+  stats,
+  MASS
 LazyData: true
 RoxygenNote: 7.1.2
 Suggests: 

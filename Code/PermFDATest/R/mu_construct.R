@@ -58,3 +58,35 @@ fourier_coef_mean <- function(w_func, basis_func, domain = c(0, 1)) {
   # return appropriate mean object
   return(coef_mean)
 }
+
+#' This function samples a desired distribution of fourier coefficients
+#' around a mean that's determined by the function w
+#'
+#' @param w_func: function that is large in the areas of the domain the
+#' investigator expects differences in the distribution functions
+#' @param basis: type of functional basis to use (has to be an orthogonal basis)
+#' @param n_basis: number of basis functions
+#' @param domain: vector of two points (start and endpoint of the closed interval)
+#' @param u_sample_func: function that can be used to sample from for the error terms
+#' around the specified mean - each observation should be a vector of length n_sample
+#' and the function should have an argument n to determine the number of observations sampled
+#' (for example multivariate normal of appropriate dimension)
+#' @param ...: further parameters that are given to u_sample_func
+#'
+#' @return: A list of length n containing vectors of sampled fourier coefficients
+#' of length n_basis
+fourier_coef_sample <- function(n = 1, w_func, basis = "fourier", n_basis,
+                                u_sample_func, domain = c(0, 1), ...) {
+  # calculate means of fourier coefficients
+  means <- fourier_basis_coef_means(
+    w_func = w_func, basis = basis,
+    n_basis = n_basis, domain = domain
+  )
+  # one example for u_sample_func
+  # function(n){MASS::mvrnorm(n = n, mu = rep(0, 15), Sigma = diag(rep(1, times = 15)))}
+
+  # realizations of the fourier coefficients
+  realizations <- means + u_sample_func(n = n, ...)
+  # return realizations
+  return(realizations)
+}
