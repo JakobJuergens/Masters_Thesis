@@ -194,7 +194,7 @@ style=authoryear,
 				A random variable that realizes in a function space, e.g. $\mathbb{L}^2[0,1]$, is called a random function.
 			\end{definition}
 		
-		\subsection{Probability Measures on $\mathbb{L}_2$}
+		\subsection{Probability Measures on $\mathbb{L}_2$}\label{prob_measures_l2}
 			\begin{itemize}
 				\item Kolmogorov Extension Theorem
 				\item \cite{gihman_theory_2004}
@@ -427,22 +427,51 @@ style=authoryear,
 			\end{equation}
 		
 		\subsection{Construction of the Measure $\mu$}
+			As introduced in Section \ref{prob_measures_l2}, it is possible to construct a probability measure on the space of square integrable functions. For the calculation of the Cram\'{e}r-von Mises type test, we need to construct one such probability measure that is suitable to detect the kind of alternative we expect to find.
+			\cite{bugni_permutation_2021} approach this problem by first constructing a random function that induces a probability measure. This random function is chosen using a function $w(t):\mathcal{I} \rightarrow \mathbb{R}$ that is supposed to be chosen large in the parts of $\mathcal{I}$ where possible differences between the empirical distribution functions are expected to be large.
+			\begin{equation}
+				Z(t) = \sum_{k = 1}^{\infty} b_k \psi_k(t)
+			\end{equation}
 		
+			\begin{equation}
+				\sum_{k = 1}^{\infty} b_k^2 < \infty \quad \text{a.s.}
+			\end{equation}
+		
+			\begin{equation}
+				Z(t) = \sum_{k = 1}^{K} b_k \psi_k(t)
+			\end{equation}
+		
+			\begin{equation}
+				\mathbb{E}\left[Z(t)\right] = \sum_{k = 1}^{K} \mathbb{E}\left[b_k\right] \psi_k(t)
+			\end{equation}
+		
+			\begin{equation}
+				\mathbb{E}\left[b_k\right] = \int_{\mathcal{I}}w(t)\psi_k(t) \mathrm{d}t
+			\end{equation}
+		
+			\begin{equation}
+				b_k = \mathbb{E}\left[b_k\right] + \rho_k U_k
+			\end{equation}
+		
+			\begin{equation}
+				\sum_{k = 1}^{\infty} \rho_k^2 < \infty 
+			\end{equation}
+			
 		\subsection{Mean focused Test}
 			
 			Test statistic
 			\begin{equation}
-				\nu = \int_{\mathcal{I}} \left[\mathbb{E}X(t) - \mathbb{E}Y(t)\right]^2 \mathrm{d}t
+				\nu = \int_{\mathcal{I}} \big(\mathbb{E}\left[X(t)\right] - \mathbb{E}\left[Y(t)\right]\big)^2 \mathrm{d}t
 			\end{equation}
 		
 			Mean Estimators
 			\begin{multicols}{2}
 				\noindent
 				\begin{equation*}
-					\hat{\mathbb{E}}X(t) = \frac{1}{n}\sum_{i = 1}^{n} X_i(t)
+					\hat{\mathbb{E}}\left[X(t)\right] = \frac{1}{n}\sum_{i = 1}^{n} X_i(t)
 				\end{equation*}
 				\begin{equation}
-					\hat{\mathbb{E}}Y(t) = \frac{1}{m}\sum_{i = 1}^{m} Y_i(t)
+					\hat{\mathbb{E}}\left[Y(t)\right] = \frac{1}{m}\sum_{i = 1}^{m} Y_i(t)
 				\end{equation}
 			\end{multicols}
 		
@@ -549,7 +578,6 @@ style=authoryear,
 					content...
 				\end{definition}
 		
-			\subsubsection{Bonferroni Correction}	
 				The most straightforward correction for this multiple testing problem is the so-called Bonferroni Correction. Introduced by \cite{dunn_multiple_1961}, it is based on Boole's Inequality, which is sometimes referred to as the Bonferroni Inequality.
 				\begin{equation}
 						\mathbb{P}\left[\bigcup_{i = 1}^{\infty} A_i\right] \leq \sum_{i = 1}^{\infty} \mathbb{P}\left[A_i\right]

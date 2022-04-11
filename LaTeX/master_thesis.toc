@@ -45,34 +45,32 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.5}Mean focused Test}{10}{subsection.5.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6}Combined Permutation Test}{10}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.6}Combined Permutation Test}{11}{subsection.5.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.7}Finite Sample Properties under the Nullhypothesis}{10}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.7}Finite Sample Properties under the Nullhypothesis}{11}{subsection.5.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.8}Asymptotic Properties under the Alternative}{11}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.8}Asymptotic Properties under the Alternative}{12}{subsection.5.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Closed Testing Procedures}{11}{section.6}%
+\contentsline {section}{\numberline {6}Closed Testing Procedures}{12}{section.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Variant for Alternatives in Specific Frequency Ranges}{11}{section.7}%
+\contentsline {section}{\numberline {7}Variant for Alternatives in Specific Frequency Ranges}{12}{section.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Simulation Study}{11}{section.8}%
+\contentsline {section}{\numberline {8}Simulation Study}{12}{section.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1}Implementation as an R package}{11}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.1}Implementation as an R package}{12}{subsection.8.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2}Use of High-Performance Computing}{11}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.2}Use of High-Performance Computing}{12}{subsection.8.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.3}Simulation Setup}{11}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.3}Simulation Setup}{12}{subsection.8.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.4}Results}{11}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.4}Results}{12}{subsection.8.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Application}{11}{section.9}%
+\contentsline {section}{\numberline {9}Application}{12}{section.9}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10}Outlook}{11}{section.10}%
+\contentsline {section}{\numberline {10}Outlook}{12}{section.10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {11}Bibliography}{12}{section.11}%
+\contentsline {section}{\numberline {11}Bibliography}{13}{section.11}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {12}Appendix}{i}{section.12}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {12.1}Multiple Testing}{i}{subsection.12.1}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {12.1.1}Bonferroni Correction}{i}{subsubsection.12.1.1}%
