@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.1.26)  10 APR 2022 23:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.1.26)  11 APR 2022 10:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -735,24 +735,24 @@ File: l3backend-pdftex.def 2021-12-14 L3 backend support: PDF output (pdfTeX)
 (./master_thesis.aux)
 \openout1 = `master_thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -788,12 +788,12 @@ LaTeX Font Info:    ... okay on input line 43.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 43.
-Package microtype Info: Applying patch `item' on input line 43.
-Package microtype Info: Applying patch `toc' on input line 43.
-Package microtype Info: Applying patch `eqnum' on input line 43.
+LaTeX Info: Redefining \microtypecontext on input line 46.
+Package microtype Info: Applying patch `item' on input line 46.
+Package microtype Info: Applying patch `toc' on input line 46.
+Package microtype Info: Applying patch `eqnum' on input line 46.
 
-Package microtype Warning: Unable to apply patch `footnote' on input line 43.
+Package microtype Warning: Unable to apply patch `footnote' on input line 46.
 
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
@@ -801,7 +801,7 @@ Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 43.
+LaTeX Info: Redefining \showhyphens on input line 46.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -831,7 +831,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 43.
+Package hyperref Info: Link coloring OFF on input line 46.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -844,9 +844,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count440
 )
-LaTeX Info: Redefining \ref on input line 43.
-LaTeX Info: Redefining \pageref on input line 43.
-LaTeX Info: Redefining \nameref on input line 43.
+LaTeX Info: Redefining \ref on input line 46.
+LaTeX Info: Redefining \pageref on input line 46.
+LaTeX Info: Redefining \nameref on input line 46.
 
 (./master_thesis.out) (./master_thesis.out)
 \@outlinefile=\write4
@@ -885,9 +885,9 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'master_thesis.bbl' found.
 
 (./master_thesis.bbl)
-Package biblatex Info: Reference section=0 on input line 43.
-Package biblatex Info: Reference segment=0 on input line 43.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 48.
+Package biblatex Info: Reference section=0 on input line 46.
+Package biblatex Info: Reference segment=0 on input line 46.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 51.
 
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -895,7 +895,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 48.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 51.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -915,107 +915,98 @@ LaTeX Warning: No \author given.
 \openout5 = `master_thesis.toc'.
 
  [3]
-Underfull \hbox (badness 10000) in paragraph at lines 82--84
+Underfull \hbox (badness 10000) in paragraph at lines 85--87
 
  []
 
 
-LaTeX Warning: Reference `Multiple_Testing' on page 1 undefined on input line 8
-7.
+LaTeX Warning: Reference `Multiple_Testing' on page 1 undefined on input line 9
+0.
 
 <../Graphics/growth_curves.PDF, id=209, 1445.4pt x 433.62pt>
 File: ../Graphics/growth_curves.PDF Graphic file (type pdf)
 <use ../Graphics/growth_curves.PDF>
-Package pdftex.def Info: ../Graphics/growth_curves.PDF  used on input line 93.
+Package pdftex.def Info: ../Graphics/growth_curves.PDF  used on input line 96.
 (pdftex.def)             Requested size: 455.24411pt x 136.57117pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.97 		E
-        ven though the measurements were taken at discrete ages, it is clear...
+l.100 		E
+         ven though the measurements were taken at discrete ages, it is clea...
 [1]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) h
 as been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.138 			\end{definition}
+l.141 			\end{definition}
                           [2 <../Graphics/growth_curves.PDF>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 153.
+(hyperref)                removing `math shift' on input line 156.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 153.
+(hyperref)                removing `subscript' on input line 156.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 153.
+(hyperref)                removing `math shift' on input line 156.
 
 <../Graphics/fourier_basis.PDF, id=251, 1445.4pt x 433.62pt>
 File: ../Graphics/fourier_basis.PDF Graphic file (type pdf)
 <use ../Graphics/fourier_basis.PDF>
-Package pdftex.def Info: ../Graphics/fourier_basis.PDF  used on input line 178.
+Package pdftex.def Info: ../Graphics/fourier_basis.PDF  used on input line 181.
 
 (pdftex.def)             Requested size: 455.24411pt x 136.57117pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.182 			A
+l.185 			A
            proof that the Fourier basis is in fact an orthonormal basis of $...
 [3]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 193.
+(hyperref)                removing `math shift' on input line 196.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 193.
+(hyperref)                removing `subscript' on input line 196.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 193.
+(hyperref)                removing `math shift' on input line 196.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 199.
+(hyperref)                removing `math shift' on input line 202.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 199.
+(hyperref)                removing `subscript' on input line 202.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 199.
+(hyperref)                removing `math shift' on input line 202.
 
 [4 <../Graphics/fourier_basis.PDF>] [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 323--324
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 337--338
-
- []
-
-[7] [8]
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 398
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 320
 .
- (/usr/share/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+
+(/usr/share/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [9]
-Overfull \hbox (5.8789pt too wide) in paragraph at lines 475--476
-[]$\OML/cmm/m/it/12 Q[] \OT1/cmr/m/n/12 (-20) = [][] \U/bbm/m/n/12 1 []$ 
+)
+Underfull \hbox (badness 10000) in paragraph at lines 340--341
+
  []
 
 
-Overfull \hbox (3.96915pt too wide) in paragraph at lines 476--477
-[]$\OML/cmm/m/it/12 Q[] \OT1/cmr/m/n/12 (-20) = [][] \U/bbm/m/n/12 1 []$ 
+Underfull \hbox (badness 10000) in paragraph at lines 354--355
+
  []
 
-
-Overfull \hbox (10.74855pt too wide) in paragraph at lines 501--501
+[7] [8] [9]
+Overfull \hbox (10.74855pt too wide) in paragraph at lines 518--518
 |[]\OT1/cmr/bx/n/17.28 (-20) Variant for Al-ter-na-tives in Spe-cific Fre-quenc
 y Ranges| 
  []
@@ -1038,10 +1029,10 @@ Package logreq Info: Writing requests to 'master_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23288 strings out of 478353
- 402756 string characters out of 5854635
- 1168774 words of memory out of 5000000
- 40849 multiletter control sequences out of 15000+600000
+ 23306 strings out of 478353
+ 403149 string characters out of 5854635
+ 1170521 words of memory out of 5000000
+ 40866 multiletter control sequences out of 15000+600000
  420209 words of font info for 156 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,25n,63p,1010b,1969s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1077,10 +1068,10 @@ cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><
 /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/f
 onts/type1/public/cm-super/sfrm1200.pfb>
-Output written on master_thesis.pdf (18 pages, 298586 bytes).
+Output written on master_thesis.pdf (18 pages, 300646 bytes).
 PDF statistics:
- 545 PDF objects out of 1000 (max. 8388607)
- 479 compressed objects within 5 object streams
- 126 named destinations out of 1000 (max. 500000)
+ 548 PDF objects out of 1000 (max. 8388607)
+ 482 compressed objects within 5 object streams
+ 127 named destinations out of 1000 (max. 500000)
  35619 words of extra memory for PDF output out of 35830 (max. 10000000)
 
