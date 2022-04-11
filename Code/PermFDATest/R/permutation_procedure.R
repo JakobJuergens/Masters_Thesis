@@ -12,7 +12,7 @@
 #' @param ...: additional arguments that are relayed to t_stat_func
 #'
 #' @export
-perm_crit_value <- function(alpha = 0.05, full = TRUE, approxQ,
+perm_crit_value <- function(alpha = 0.05, full = TRUE, approxQ = NULL,
                             sample1, sample2, t_stat_func, ...) {
   if (full == FALSE & missing(approxQ)) {
     stop("If full == FALSE is chosen, approxQ has to be provided.")
@@ -26,7 +26,7 @@ perm_crit_value <- function(alpha = 0.05, full = TRUE, approxQ,
   # set Q to the number of combinations with the chosen sample sizes
   Q <- choose(n = length(sample1) + length(sample2), k = length(sample1))
 
-  if (approxQ > Q) {
+  if (!missing(approxQ) && (approxQ > Q)) {
     warning("approxQ is larger than the number of distinct combinations.
              Instead, all combinations are considered.")
     full <- TRUE
@@ -76,6 +76,7 @@ perm_crit_value_full <- function(alpha = 0.05, Q, sample1, sample2, t_stat_func,
 
   # iterate over combinations
   for (i in 1:Q) {
+    # message(paste0('Now in Iteration:', i))
     # get next combination
     cur_cbn <- next_cbn(cbn = cur_cbn, n = n_1 + n_2, k = n_1)
     # get list of sample1 and sample2

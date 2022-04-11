@@ -280,22 +280,7 @@ style=authoryear,
 			\begin{itemize}
 				\item $\mathbb{E}\left[Z(u)\right] = 0 \quad \forall u \in [0,1]$
 				\item $Cov\left(Z(u), Z(v)\right) = \min(u,v) - uv \quad \forall u,v \in [0,1]$
-			\end{itemize}		
-		
-%	\section{Multiple Testing}\label{Multiple_Testing}
-%		When testing statistical hypotheses, it is often helpful or even necessary to test multiple hypotheses independently of each other. One setting where this could be useful is when we want to combine the desirable properties of two tests, as is done by \cite{bugni_permutation_2021}. If the tests do not perfectly depend on each other, this creates a problem relating to the size of the combined test.
-%		
-%		\begin{definition}[Family-wise Error Rate]
-%			content...
-%		\end{definition}
-%	
-%		\subsection{Bonferroni Correction}	
-%			The most straightforward correction for this multiple testing problem is the so-called Bonferroni Correction. Introduced by \cite{dunn_multiple_1961}, it is based on Boole's Inequality, which is sometimes referred to as the Bonferroni Inequality.
-%			\begin{equation}
-%				\mathbb{P}\left[\bigcup_{i = 1}^{\infty} A_i\right] \leq \sum_{i = 1}^{\infty} \mathbb{P}\left[A_i\right]
-%			\end{equation}
-%			for a countable set of events $A_1, A_2, \dots$.
-			
+			\end{itemize}					
 			
 	\section{Permutation Tests}\label{Permutation_Tests}
 		In layman's terms, the idea of a permutation test is the following: if two samples show distinctly different properties, that will lead to differences in an appropriately chosen summary statistic. If we were to permute the elements of the groups randomly, we would expect these differences to disappear.
@@ -548,6 +533,20 @@ style=authoryear,
 	\pagenumbering{roman}
 	\setcounter{page}{1}
 	\section{Appendix}
+	
+		\subsection{Multiple Testing}\label{Multiple_Testing}
+			When testing statistical hypotheses, it is often helpful or even necessary to test multiple hypotheses independently of each other. One setting where this could be useful is when we want to combine the desirable properties of two tests, as is done by \cite{bugni_permutation_2021}. If the tests do not perfectly depend on each other, this creates a problem relating to the size of the combined test.
+			
+			\begin{definition}[Family-wise Error Rate]
+					content...
+				\end{definition}
+		
+			\subsubsection{Bonferroni Correction}	
+				The most straightforward correction for this multiple testing problem is the so-called Bonferroni Correction. Introduced by \cite{dunn_multiple_1961}, it is based on Boole's Inequality, which is sometimes referred to as the Bonferroni Inequality.
+				\begin{equation}
+						\mathbb{P}\left[\bigcup_{i = 1}^{\infty} A_i\right] \leq \sum_{i = 1}^{\infty} \mathbb{P}\left[A_i\right]
+					\end{equation}
+				for a countable set of events $A_1, A_2, \dots$.
 	
 	\newpage
 	\thispagestyle{empty}

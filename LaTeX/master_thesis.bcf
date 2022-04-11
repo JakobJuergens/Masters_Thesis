@@ -2378,6 +2378,8 @@
     <bcf:citekey order="31">fda</bcf:citekey>
     <bcf:citekey order="32">tidyverse</bcf:citekey>
     <bcf:citekey order="33">refund</bcf:citekey>
+    <bcf:citekey order="34">bugni_permutation_2021</bcf:citekey>
+    <bcf:citekey order="35">dunn_multiple_1961</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.1.26)  11 APR 2022 10:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.1.26)  11 APR 2022 10:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -919,11 +919,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--87
 
  []
 
-
-LaTeX Warning: Reference `Multiple_Testing' on page 1 undefined on input line 9
-0.
-
-<../Graphics/growth_curves.PDF, id=209, 1445.4pt x 433.62pt>
+<../Graphics/growth_curves.PDF, id=220, 1445.4pt x 433.62pt>
 File: ../Graphics/growth_curves.PDF Graphic file (type pdf)
 <use ../Graphics/growth_curves.PDF>
 Package pdftex.def Info: ../Graphics/growth_curves.PDF  used on input line 96.
@@ -952,7 +948,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 156.
 
-<../Graphics/fourier_basis.PDF, id=251, 1445.4pt x 433.62pt>
+<../Graphics/fourier_basis.PDF, id=262, 1445.4pt x 433.62pt>
 File: ../Graphics/fourier_basis.PDF Graphic file (type pdf)
 <use ../Graphics/fourier_basis.PDF>
 Package pdftex.def Info: ../Graphics/fourier_basis.PDF  used on input line 181.
@@ -990,23 +986,23 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 202.
 
 [4 <../Graphics/fourier_basis.PDF>] [5] [6]
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 320
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 305
 .
 
 (/usr/share/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
-Underfull \hbox (badness 10000) in paragraph at lines 340--341
+Underfull \hbox (badness 10000) in paragraph at lines 325--326
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 354--355
+Underfull \hbox (badness 10000) in paragraph at lines 339--340
 
  []
 
 [7] [8] [9]
-Overfull \hbox (10.74855pt too wide) in paragraph at lines 518--518
+Overfull \hbox (10.74855pt too wide) in paragraph at lines 503--503
 |[]\OT1/cmr/bx/n/17.28 (-20) Variant for Al-ter-na-tives in Spe-cific Fre-quenc
 y Ranges| 
  []
@@ -1019,20 +1015,22 @@ Package microtype Info: Loading generic protrusion settings for font family
  [12] [13] [1
 
 ] [2] (./master_thesis.aux)
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `master_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 49ED9825EDC43C924BF7DDDE9E5EF6F9;6118.
+(rerunfilecheck)             Checksum: 0F3ADA045CCB00BA656EE259B113134D;6439.
+
+
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
+
 Package logreq Info: Writing requests to 'master_thesis.run.xml'.
 \openout1 = `master_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23306 strings out of 478353
- 403149 string characters out of 5854635
- 1170521 words of memory out of 5000000
- 40866 multiletter control sequences out of 15000+600000
+ 23265 strings out of 478353
+ 402862 string characters out of 5854635
+ 1169834 words of memory out of 5000000
+ 40820 multiletter control sequences out of 15000+600000
  420209 words of font info for 156 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,25n,63p,1010b,1969s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1068,10 +1066,10 @@ cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><
 /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/f
 onts/type1/public/cm-super/sfrm1200.pfb>
-Output written on master_thesis.pdf (18 pages, 300646 bytes).
+Output written on master_thesis.pdf (18 pages, 303416 bytes).
 PDF statistics:
- 548 PDF objects out of 1000 (max. 8388607)
- 482 compressed objects within 5 object streams
- 127 named destinations out of 1000 (max. 500000)
- 35619 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 565 PDF objects out of 1000 (max. 8388607)
+ 499 compressed objects within 5 object streams
+ 132 named destinations out of 1000 (max. 500000)
+ 35635 words of extra memory for PDF output out of 35830 (max. 10000000)
 

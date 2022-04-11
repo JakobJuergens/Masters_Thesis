@@ -3,7 +3,7 @@
 #' @param sample1: first sample, specified as a list where each element is one observation
 #' @param sample2: second sample, specified as a list where each element is one observation
 #' @param interpolation_mode: string that determines the mode of interpolation between
-#' discrete measurement points.
+#' discrete measurement points. (Recommendation: 'bspline')
 #' @param domain: vector with beginning and endpoint of the closed interval
 #' that is the domain of the stochastic processes
 #' @param n_basis: if interpolation mode is choses as a basis based method,
@@ -54,4 +54,39 @@ means_t_stat <- function(sample1, sample2, interpolation_mode = "linear", domain
   test_value <- integrate(f = interpolation_func, lower = domain[1], upper = domain[2])
   # return the value of the integral
   return(test_value$value)
+}
+
+#' This function calculates / approximates the critical value for the means based test
+#'
+#' @param sample1: first sample, specified as a list where each element is one observation
+#' @param sample2: second sample, specified as a list where each element is one observation
+#' @param interpolation_mode: string that determines the mode of interpolation between
+#' discrete measurement points. (Recommendation: 'bspline')
+#' @param domain: vector with beginning and endpoint of the closed interval
+#' that is the domain of the stochastic processes
+#' @param n_basis: if interpolation mode is choses as a basis based method,
+#' this determines the number of basis functions used in the approximation
+#' @param grid: grid used for the approximation of the mean function
+#'
+#' @return The value of the t statistic for means based test
+#' for the chosen samples.
+#'
+#' @export
+means_crit_value <- function(alpha = 0.05, full = TRUE, approxQ, sample1, sample2,
+                             interpolation_mode = "linear", domain = c(0, 1),
+                             n_basis = NA, grid){
+
+  if(missing(approxQ)){
+    critical_value <- perm_crit_value(alpha = alpha, full = full,
+                                      sample1 = sample1, sample2 = sample2, t_stat_func = means_t_stat,
+                                      interpolation_mode = interpolation_mode, domain = domain,
+                                      n_basis = n_basis, grid = grid)
+  } else{
+    critical_value <- perm_crit_value(alpha = alpha, full = full, approxQ = approxQ,
+                                      sample1 = sample1, sample2 = sample2, t_stat_func = means_t_stat,
+                                      interpolation_mode = interpolation_mode, domain = domain,
+                                      n_basis = n_basis, grid = grid)
+  }
+
+  return(critical_value)
 }
