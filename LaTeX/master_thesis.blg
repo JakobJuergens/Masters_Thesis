@@ -1,20 +1,20 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is 'master_thesis.blg'
-[38] biber:340> INFO - === Mo Apr 11, 2022, 10:40:48
-[47] Biber.pm:415> INFO - Reading 'master_thesis.bcf'
-[87] Biber.pm:952> INFO - Found 21 citekeys in bib section 0
-[95] Biber.pm:4340> INFO - Processing section 0
-[103] Biber.pm:4531> INFO - Looking for bibtex format file 'thesis_bibliography.bib' for section 0
-[105] bibtex.pm:1689> INFO - LaTeX decoding ...
-[119] bibtex.pm:1494> INFO - Found BibTeX data source 'thesis_bibliography.bib'
-[149] Utils.pm:395> WARN - ISBN '978-0-387-40080-8 978-0-387-22751-1' in entry 'ramsay_functional_2005' is invalid - run biber with '--validate_datamodel' for details.
-[152] Utils.pm:395> WARN - ISBN '978-1-03-209659-9 978-1-4987-4634-2' in entry 'kokoszka_introduction_2021' is invalid - run biber with '--validate_datamodel' for details.
-[173] Utils.pm:395> WARN - ISBN '978-0-387-98864-1 978-0-387-27605-2' in entry 'lehmann_testing_2005' is invalid - run biber with '--validate_datamodel' for details.
-[176] Utils.pm:395> WARN - ISBN '978-1-4757-2547-6 978-1-4757-2545-2' in entry 'van_der_vaart_weak_1996' is invalid - run biber with '--validate_datamodel' for details.
-[232] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[232] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[232] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[232] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
-[246] bbl.pm:654> INFO - Writing 'master_thesis.bbl' with encoding 'UTF-8'
-[259] bbl.pm:757> INFO - Output to master_thesis.bbl
-[259] Biber.pm:128> INFO - WARNINGS: 4
+[51] biber:340> INFO - === Mo Apr 11, 2022, 14:56:18
+[60] Biber.pm:415> INFO - Reading 'master_thesis.bcf'
+[111] Biber.pm:952> INFO - Found 22 citekeys in bib section 0
+[121] Biber.pm:4340> INFO - Processing section 0
+[127] Biber.pm:4531> INFO - Looking for bibtex format file 'thesis_bibliography.bib' for section 0
+[128] bibtex.pm:1689> INFO - LaTeX decoding ...
+[142] bibtex.pm:1494> INFO - Found BibTeX data source 'thesis_bibliography.bib'
+[171] Utils.pm:395> WARN - ISBN '978-0-387-40080-8 978-0-387-22751-1' in entry 'ramsay_functional_2005' is invalid - run biber with '--validate_datamodel' for details.
+[174] Utils.pm:395> WARN - ISBN '978-1-03-209659-9 978-1-4987-4634-2' in entry 'kokoszka_introduction_2021' is invalid - run biber with '--validate_datamodel' for details.
+[199] Utils.pm:395> WARN - ISBN '978-0-387-98864-1 978-0-387-27605-2' in entry 'lehmann_testing_2005' is invalid - run biber with '--validate_datamodel' for details.
+[201] Utils.pm:395> WARN - ISBN '978-1-4757-2547-6 978-1-4757-2545-2' in entry 'van_der_vaart_weak_1996' is invalid - run biber with '--validate_datamodel' for details.
+[259] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[259] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[259] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[259] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[274] bbl.pm:654> INFO - Writing 'master_thesis.bbl' with encoding 'UTF-8'
+[287] bbl.pm:757> INFO - Output to master_thesis.bbl
+[287] Biber.pm:128> INFO - WARNINGS: 4

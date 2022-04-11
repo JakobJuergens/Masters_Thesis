@@ -185,12 +185,13 @@ style=authoryear,
 			A proof that the Fourier basis is in fact an orthonormal basis of $\mathbb{L}^2([0,1])$ can be found in section 2.4 of \cite{hsing_theoretical_2015}.
 	
 		\subsection{Random Functions}
+			Random functions are a special case of general random variables. To understand their connection to the general concepts it is therefore useful to remind ourselves of the definition of a random variable. Paraphrasing from \cite{bauer_probability_2011} this can take the following form.
 			\begin{definition}[Random Variable]
-				content...
+				Let $\left(\Omega, \mathcal{A}, \mathcal{P}\right)$ be a probability space and $\left(\Omega', \mathcal{A}'\right)$ be a measure space. Then every $\mathcal{A}$-$\mathcal{A}'$-measurable function $X:\Omega \rightarrow \Omega'$ is called a $\left(\Omega', \mathcal{A}'\right)$-random variable.
 			\end{definition}
 		
 			\begin{definition}[Random Function]
-				content...
+				A random variable that realizes in a function space, e.g. $\mathbb{L}^2[0,1]$, is called a random function.
 			\end{definition}
 		
 		\subsection{Probability Measures on $\mathbb{L}_2$}
@@ -204,7 +205,7 @@ style=authoryear,
 				\item Perturbation theory
 			\end{itemize}
 		
-			Functional Integral:
+			In one of the test statistics used in \cite{bugni_permutation_2021}, it is necessary to integrate over a function space. Therefore, it is necessary to explore the ideas of functional integration and integration on Hilbert spaces more general. Because of the special case relevant to the test statistic, integration on separable Hilbert spaces shall take a special focus.
 			\begin{equation}
 				\int_{\mathbb{L}_2(\mathcal{I})} G\left[f\right] \left[Df\right] = \int_{-\infty}^{\infty}\dots\int_{-\infty}^{\infty} G\left[f\right] \prod_{x} \mathrm{d}f(x)
 			\end{equation}
@@ -293,7 +294,7 @@ style=authoryear,
 		\subsection{Functional Principle of Permutation Tests}
 		
 			One on the defining features of each test is its Nullhypothesis. For the case of randomization tests, we can formulate it quite generally. Let $X$ be data taking values in a sample space $\mathcal{X}$. Then, the hypothesis is that the probability law $P$ generating $X$ belongs to a family of distributions $\Omega_0$. \cite{lehmann_testing_2005} define an assumption called the randomization hypothesis that allows for the construction of randomization tests. As permutation tests are a special case of randomization tests, we can specialize this definition to the case under consideration.
-			\begin{assumption}[Randomization Hypothesis]
+			\begin{assumption}[Randomization Hypothesis]\label{rand_hypo}
 				 Let $G$ be a finite group of transformations $g: \mathcal{X} \rightarrow \mathcal{X}$. Under the Nullhypothesis of the randomization test, the distribution of $X$ is invariant under the transformations $g \in G$. In other words, $gX$ and $X$ have the same distribution whenever $X$ has distribution $P \in \Omega_0$.
 			\end{assumption}
 			Under this assumption one can construct a permutation test based on any test statistic $T:\mathcal{X} \rightarrow \mathbb{R}$ that is suitable to test the Nullhypothesis under consideration. Suppose that $G$ has $M$ elements, then given $X = x$, let 
@@ -321,6 +322,11 @@ style=authoryear,
 					\end{equation*}
 				
 			\end{definition}
+			Under Assumption \ref{rand_hypo}, it is possible to show that, given a test statistic $T = T(X)$, the resulting test $\phi$ has size $\alpha$.
+			\begin{equation}
+				\mathbb{E}_{P}\left[\phi(X)\right] = \alpha \quad \forall P \in \Omega_0
+			\end{equation}
+			
 		
 			\cite{lehmann_testing_2005} explore the example of testing for the equality of the generating probability laws of two independent samples. This is precisely the relevant application for the permutation variant of the two-sample Cram\'{e}r-von Mises test that \cite{bugni_permutation_2021} extend to the setting of functional data. \\
 			

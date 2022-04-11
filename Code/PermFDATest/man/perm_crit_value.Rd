@@ -8,7 +8,7 @@ permutation test}
 perm_crit_value(
   alpha = 0.05,
   full = TRUE,
-  approxQ,
+  approxQ = NULL,
   sample1,
   sample2,
   t_stat_func,
