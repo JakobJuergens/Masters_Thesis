@@ -126,7 +126,7 @@ style=authoryear,
 			\end{definition}
 
 			\begin{definition}[Hilbert Space]
-				An inner product space that is complete with respect to the distance induced by the norm $\vert\vert v \vert\vert = \sqrt{\langle v, v\rangle}$ is called a Hilbert space.
+				An inner product space that is complete with respect to the distance induced by the norm $\| v \| = \sqrt{\langle v, v\rangle}$ is called a Hilbert space.
 			\end{definition}
 		
 			\begin{definition}[Closed Span]
@@ -135,7 +135,7 @@ style=authoryear,
 		
 			{\color{red} This is verbatim!}
 			\begin{definition}[Orthonormal Sequence in a Hilbert Space]
-				Let $\{x_n\}$ be a countable collection of elements in a Hilbert space such that every finite subcollection of $\{x_n\}$ is linearly independent. Define $e_1 = \frac{x_1}{\vert\vert x_1 \vert\vert}$ and $e_i = \frac{v_i}{\vert\vert v_i \vert\vert}$ for 
+				Let $\{x_n\}$ be a countable collection of elements in a Hilbert space such that every finite subcollection of $\{x_n\}$ is linearly independent. Define $e_1 = \frac{x_1}{\| x_1 \|}$ and $e_i = \frac{v_i}{\| v_i \|}$ for 
 				$$v_i = x_i - \sum_{j = 1}^{i - 1}\langle x_i, e_j\rangle e_j.$$
 				Then, $\{e_n\}$ is an orthonormal sequence and $\overline{{\textit{span}\left(\{x_n\}\right)}} = \overline{{\textit{span}\left(\{e_n\}\right)}}$
 			\end{definition}
@@ -161,14 +161,14 @@ style=authoryear,
 			\end{definition}
 			
 			In most cases, $A$ is chosen as a closed interval of $\mathbb{R}$. So without loss of generality, we can reduce our treatment to the case of $A = [0,1]$.\\
-			Deviating from the norm in functional data analysis, \cite{bugni_permutation_2021} define two functions to be distinct even if they differ only on a set of Lebesgue-measure zero. This creates some theoretical challenges, as the resulting object is not a Hilbert space anymore. This becomes clear, when checking the for the properties of the norm induced by the inner product $\vert \vert v \vert \vert = \sqrt{\langle v, v\rangle}$.
-			One of the properties that has to be fulfilled by a norm is $\vert\vert v \vert \vert = 0 \Longleftrightarrow v = 0$.\\
+			Deviating from the norm in functional data analysis, \cite{bugni_permutation_2021} define two functions to be distinct even if they differ only on a set of Lebesgue-measure zero. This creates some theoretical challenges, as the resulting object is not a Hilbert space anymore. This becomes clear, when checking the for the properties of the norm induced by the inner product $\| v \| = \sqrt{\langle v, v\rangle}$.
+			One of the properties that has to be fulfilled by a norm is $\| v \| = 0 \Longleftrightarrow v = 0$.\\
 			
 			To show this, consider the following example. Let $f:[0,1] \rightarrow \mathbb{R}$ be given by $f(x) = \mathbbm{1}\left[x = 0.5\right]$. Then we can evaluate the following expression to create a contradiction to the norm properties.
 			\begin{equation}
-				\vert\vert f \vert \vert = \sqrt{\langle f, f\rangle} = \sqrt{\int_{0}^{1} \left[f(t)\right]^2\mathrm{d}t } = 0
+				\| f \| = \sqrt{\langle f, f\rangle} = \sqrt{\int_{0}^{1} \left[f(t)\right]^2\mathrm{d}t } = 0
 			\end{equation}
-			As $f$ is not the zero element of this space, this is a violation of the norm properties and the defined space should more correctly be treated as a pseudometric space. \\
+			As $f$ is not the zero element of this space, this is a violation of the norm properties. $\| v \| = \sqrt{\langle v, v\rangle}$ is a seminorm and the defined space should more correctly be treated as a pseudometric space. One problem that is created by this convention is, that if we give the space the topology induced by the seminorm, the resulting space would not be Hausdorff. Thus, limits in the later part of \cite{bugni_permutation_2021} would not be defined.\\
 			
 			In the following, I will therefore restrict my analysis to {\color{red} Hier weiterschreiben!}
 

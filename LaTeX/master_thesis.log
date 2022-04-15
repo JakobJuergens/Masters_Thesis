@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.4.15)  15 APR 2022 17:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.4.15)  15 APR 2022 20:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -967,7 +967,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 177.
 
-<../Graphics/fourier_basis.PDF, id=281, 1445.4pt x 433.62pt>
+<../Graphics/fourier_basis.PDF, id=282, 1445.4pt x 433.62pt>
 File: ../Graphics/fourier_basis.PDF Graphic file (type pdf)
 <use ../Graphics/fourier_basis.PDF>
 Package pdftex.def Info: ../Graphics/fourier_basis.PDF  used on input line 190.
@@ -1086,10 +1086,10 @@ cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><
 /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/f
 onts/type1/public/cm-super/sfrm1200.pfb>
-Output written on master_thesis.pdf (20 pages, 315449 bytes).
+Output written on master_thesis.pdf (20 pages, 315845 bytes).
 PDF statistics:
- 598 PDF objects out of 1000 (max. 8388607)
- 529 compressed objects within 6 object streams
+ 599 PDF objects out of 1000 (max. 8388607)
+ 530 compressed objects within 6 object streams
  141 named destinations out of 1000 (max. 500000)
  39739 words of extra memory for PDF output out of 42996 (max. 10000000)
 
