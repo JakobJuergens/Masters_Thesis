@@ -1,76 +1,39 @@
-\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {english}{}\relax 
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2}Functional Data Analysis}{1}{section.2}%
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1}Hilbert Space of Square Integrable Functions}{2}{subsection.2.1}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2}Bases of $\mathbb {L}_2$}{3}{subsection.2.2}%
-\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2}Bases of $\mathbb {L}_2$}{4}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Random Functions}{4}{subsection.2.3}%
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4}Probability Measures on $\mathbb {L}_2$}{4}{subsection.2.4}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5}Functional Integration on $\mathbb {L}_2$}{4}{subsection.2.5}%
-\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.5}Functional Integration on $\mathbb {L}_2$}{5}{subsection.2.5}%
 \contentsline {section}{\numberline {3}Cram\'{e}r-von Mises Tests}{5}{section.3}%
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1}Empirical Distribution Functions}{5}{subsection.3.1}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}Assumptions}{5}{subsection.3.2}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3}Nullhypothesis}{5}{subsection.3.3}%
-\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2}Assumptions}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Nullhypothesis}{6}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Two-Sample Cram\'{e}r-von Mises Statistic}{6}{subsection.3.4}%
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.5}Asymptotic Distribution}{6}{subsection.3.5}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Permutation Tests}{6}{section.4}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1}Functional Principle of Permutation Tests}{6}{subsection.4.1}%
-\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Permutation Tests}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Functional Principle of Permutation Tests}{7}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Size and Power}{8}{subsection.4.2}%
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5}Test by Bugni and Horowitz (2021)}{8}{section.5}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1}Assumptions}{8}{subsection.5.1}%
-\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1}Assumptions}{9}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Nullhypothesis}{9}{subsection.5.2}%
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.3}Cram\'{e}r-von Mises type Test}{9}{subsection.5.3}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4}Construction of the Measure $\mu $}{10}{subsection.5.4}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.5}Mean focused Test}{10}{subsection.5.5}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6}Combined Permutation Test}{11}{subsection.5.6}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.7}Finite Sample Properties under the Nullhypothesis}{11}{subsection.5.7}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.8}Asymptotic Properties under the Alternative}{12}{subsection.5.8}%
-\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.4}Asymptotics for the Cram\'{e}r-von Mises type Test}{10}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Construction of the Measure $\mu $}{10}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Mean focused Test}{11}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Combined Permutation Test}{11}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Finite Sample Properties under the Nullhypothesis}{12}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.9}Asymptotic Properties under the Alternative}{12}{subsection.5.9}%
 \contentsline {section}{\numberline {6}Closed Testing Procedures}{12}{section.6}%
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7}Variant for Alternatives in Specific Frequency Ranges}{12}{section.7}%
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {8}Simulation Study}{12}{section.8}%
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.1}Implementation as an R package}{12}{subsection.8.1}%
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.2}Use of High-Performance Computing}{12}{subsection.8.2}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.3}Simulation Setup}{12}{subsection.8.3}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.4}Results}{12}{subsection.8.4}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Application}{12}{section.9}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10}Outlook}{12}{section.10}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {11}Bibliography}{13}{section.11}%
-\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.3}Simulation Setup}{13}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Results}{13}{subsection.8.4}%
+\contentsline {section}{\numberline {9}Application}{13}{section.9}%
+\contentsline {section}{\numberline {10}Outlook}{13}{section.10}%
+\contentsline {section}{\numberline {11}Bibliography}{14}{section.11}%
 \contentsline {section}{\numberline {12}Appendix}{i}{section.12}%
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {12.1}Multiple Testing}{i}{subsection.12.1}%

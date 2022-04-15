@@ -100,16 +100,14 @@ style=authoryear,
 		Even though the measurements were taken at discrete ages, it is clear that each human has a height at every point in time. The data points are only measurements of this continuous curve. The higher the measurement frequency, the closer we get to data that resembles the curve itself.
 		
 		In many cases functional data analysis restricts its scope to subsets of the functions $f:\mathbb{R} \rightarrow \mathbb{R}$.
-		As these are inherently infinite-dimensional, it is necessary to introduce additional theory to appropriately deal with their unique properties.
-		
+		As these are inherently infinite-dimensional, it is necessary to introduce additional theory to appropriately deal with their unique properties. Sections \ref{Square_Integrable_Functions} and \ref{bases_L2} closely follow \cite{hsing_theoretical_2015} who provides a detailed introduction into the theory of functional data analysis.
 		
 		\begin{itemize}
 			\item \cite{ramsay_functional_2005}
 			\item \cite{kokoszka_introduction_2021}
-			\item \cite{hsing_theoretical_2015}
 		\end{itemize}
 	
-		\subsection{Hilbert Space of Square Integrable Functions}
+		\subsection{Hilbert Space of Square Integrable Functions}\label{Square_Integrable_Functions}
 			\begin{definition}[Inner Product]
 				A function $\langle \cdot , \cdot \rangle : \mathbb{V}^2 \rightarrow \mathbb{F}$ on a vector space $\mathbb{V}$ over a field $\mathbb{F}$ is called an inner product if the following four conditions hold for all $v, v_1, v_2 \in \mathbb{V}$ and $a_1, a_2 \in \mathbb{F}$.
 				\begin{multicols}{2}
@@ -121,24 +119,36 @@ style=authoryear,
 					\end{enumerate}
 				\end{multicols}
 			\end{definition}
-			As this thesis is limited to the case $\mathbb{F} = \mathbb{R}$, property 4 can be restated as $\langle v_1, v_2 \rangle = \langle v_2, v_1 \rangle$, as the complex conjugate of a real number is the number itself.
+			As this thesis is limited to the case $\mathbb{F} = \mathbb{R}$, property 4 can be restated as $\langle v_1, v_2 \rangle = \langle v_2, v_1 \rangle$, as the complex conjugate of a real number is the number itself. Similar to the case of Euclidean space, we say that two elements $v_1$ and $v_2$ of the inner product space are orthogonal if $\langle v_1, v_2 \rangle = 0$.
 			
 			\begin{definition}[Inner Product Space]
 				A vector space with an associated inner product is called an inner product space.
 			\end{definition}
-		
-			\cite{hsing_theoretical_2015}
+
 			\begin{definition}[Hilbert Space]
 				An inner product space that is complete with respect to the distance induced by the norm $\vert\vert v \vert\vert = \sqrt{\langle v, v\rangle}$ is called a Hilbert space.
 			\end{definition}
 		
-			\begin{definition}[Basis of a Hilbert Space]
-				content...
+			\begin{definition}[Closed Span]
+				The closed span of a subset $A$ of some normed space, e.g. a normed vector space or a Hilbert space, is the closure of $\textit{span}\left(A\right)$ with respect to the distance induced by the norm of the space. In the following it is denoted by $\overline{{\textit{span}\left(A\right)}}$.
+			\end{definition}
+		
+			{\color{red} This is verbatim!}
+			\begin{definition}[Orthonormal Sequence in a Hilbert Space]
+				Let $\{x_n\}$ be a countable collection of elements in a Hilbert space such that every finite subcollection of $\{x_n\}$ is linearly independent. Define $e_1 = \frac{x_1}{\vert\vert x_1 \vert\vert}$ and $e_i = \frac{v_i}{\vert\vert v_i \vert\vert}$ for 
+				$$v_i = x_i - \sum_{j = 1}^{i - 1}\langle x_i, e_j\rangle e_j.$$
+				Then, $\{e_n\}$ is an orthonormal sequence and $\overline{{\textit{span}\left(\{x_n\}\right)}} = \overline{{\textit{span}\left(\{e_n\}\right)}}$
+			\end{definition}
+		
+			{\color{red} This is verbatim!}
+			\begin{definition}[Orthonormal Basis of a Hilbert Space]
+				An orthonormal sequence $\{e_n\}$ in a Hilbert space $\mathbb{H}$ is called an orthonormal basis of $\mathbb{H}$ if $\overline{{\textit{span}\left(\{e_n\}\right)}} = \mathbb{H}$.
 			\end{definition}
 		
 			\begin{definition}[Separable Hilbert Space]
-				content...
+				A Hilbert space that possesses a countable complete orthonormal basis is called separable Hilbert space.
 			\end{definition}
+			Using the axiom of choice, it is possible to show that every Hilbert space possesses an orthonormal basis, which will be used in the derivation of an asymptotic distribution for a test statistic later in this thesis.
 		
 			\begin{definition}[Hilbert Space of Square Integrable Functions]
 				
@@ -153,19 +163,7 @@ style=authoryear,
 			In most cases, $A$ is chosen as a closed interval of $\mathbb{R}$. So without loss of generality, we can reduce our treatment to the case of $A = [0,1]$.
 			Deviating from the norm in functional data analysis, \cite{bugni_permutation_2021} define two functions to be distinct even if they differ only on a set of Lebesgue-measure zero.
 		
-		\subsection{Bases of $\mathbb{L}_2$}
-		
-			\begin{definition}[Closed Span]
-				content...
-			\end{definition}
-		
-			\begin{definition}[Basis of a Hilbert Space]
-				content...
-			\end{definition}
-		
-			\begin{definition}[Orthogonal and Orthonormal Bases]
-				content...
-			\end{definition}
+		\subsection{Bases of $\mathbb{L}_2$}\label{bases_L2}
 			
 			One commonly used orthonormal basis of $\mathbb{L}^2([0,1])$ is the Fourier Basis. It consists of a series of functions $\left(\phi_{i}^{F}(x)\right)_{i \in \mathbb{N}}$ taken from the terms of the sine-cosine form of the Fourier series.
 			\begin{equation}
@@ -182,7 +180,7 @@ style=authoryear,
 				\caption{The first seven Fourier basis functions}
 				\label{fourier_basis}
 			\end{figure}
-			A proof that the Fourier basis is in fact an orthonormal basis of $\mathbb{L}^2([0,1])$ can be found in section 2.4 of \cite{hsing_theoretical_2015}.
+			A proof that the Fourier basis is in fact an orthonormal basis of $\mathbb{L}^2([0,1])$ can be found in section 2.4 of \cite{hsing_theoretical_2015}. As the Fourier basis is a countable orthonormal basis of $\mathbb{L}^2([0,1])$, we can follow that $\mathbb{L}^2([0,1])$ is a separable Hilbert space, which will be useful in further parts of this thesis.
 	
 		\subsection{Random Functions}
 			Random functions are a special case of general random variables. To understand their connection to the general concepts it is therefore useful to remind ourselves of the definition of a random variable. Paraphrasing from \cite{bauer_probability_2011} this can take the following form.
@@ -349,10 +347,6 @@ style=authoryear,
 		\subsection{Size and Power}
 		
 	\section{Test by Bugni and Horowitz (2021)}\label{Bugni_Horowitz_2021}
-		\begin{itemize}
-			\item \cite{bugni_permutation_2021}
-			\item \cite{bugni_goodness--fit_2009}
-		\end{itemize}
 	
 		In \cite{bugni_permutation_2021}, the authors devise a permutation test for the equality of the distribution of two samples of functional data. To define the exact hypothesis, it is therefore necessary to define a distribution function for a random variable realizing in $\mathbb{L}_2(\mathcal{I})$.
 		\begin{definition}[Distribution Function of a Random Function]
@@ -426,37 +420,36 @@ style=authoryear,
 				t^{*}_{n,m}(1-\alpha) = \inf \left\{t \in \mathbb{R} \quad \vert \quad \frac{1}{Q} \sum_{i = 1}^{Q} \mathbbm{1}\left[\tau_{n,m,q} \leq t\right] \geq 1 - \alpha \right\}
 			\end{equation}
 		
+		\subsection{Asymptotics for the Cram\'{e}r-von Mises type Test}
+			Similar to the case presented in \cite{bugni_goodness--fit_2009}, we can derive an asymptotic distribution for the Cram\'{e}r-von Mises type test. Even though this is not necessary to perform the described permutation test, it is an interesting benchmark to compare the test procedure.
+		
 		\subsection{Construction of the Measure $\mu$}
 			As introduced in Section \ref{prob_measures_l2}, it is possible to construct a probability measure on the space of square integrable functions. For the calculation of the Cram\'{e}r-von Mises type test, we need to construct one such probability measure that is suitable to detect the kind of alternative we expect to find.
 			\cite{bugni_permutation_2021} approach this problem by first constructing a random function that induces a probability measure. This random function is chosen using a function $w(t):\mathcal{I} \rightarrow \mathbb{R}$ that is supposed to be chosen large in the parts of $\mathcal{I}$ where possible differences between the empirical distribution functions are expected to be large.
-			\begin{equation}
+			
+			\begin{equation}\label{non_truncated}
 				Z(t) = \sum_{k = 1}^{\infty} b_k \psi_k(t)
-			\end{equation}
-		
-			\begin{equation}
+				\quad \text{s.t.} \quad
 				\sum_{k = 1}^{\infty} b_k^2 < \infty \quad \text{a.s.}
 			\end{equation}
-		
-			\begin{equation}
-				Z(t) = \sum_{k = 1}^{K} b_k \psi_k(t)
+
+			\begin{equation}\label{truncation}
+				Z_K(t) = \sum_{k = 1}^{K} b_k \psi_k(t)
 			\end{equation}
 		
 			\begin{equation}
-				\mathbb{E}\left[Z(t)\right] = \sum_{k = 1}^{K} \mathbb{E}\left[b_k\right] \psi_k(t)
-			\end{equation}
-		
-			\begin{equation}
+				\mathbb{E}\left[Z_K(t)\right] = \sum_{k = 1}^{K} \mathbb{E}\left[b_k\right] \psi_k(t)
+				\quad \text{where} \quad
 				\mathbb{E}\left[b_k\right] = \int_{\mathcal{I}}w(t)\psi_k(t) \mathrm{d}t
 			\end{equation}
 		
 			\begin{equation}
 				b_k = \mathbb{E}\left[b_k\right] + \rho_k U_k
-			\end{equation}
-		
-			\begin{equation}
+				\quad \text{s.t.} \quad
 				\sum_{k = 1}^{\infty} \rho_k^2 < \infty 
 			\end{equation}
 			
+			In \cite{bugni_goodness--fit_2009}, the authors show that the approximation of the probability measure, which is induced by the approximation of the random variable in Equation \ref{truncation}, converges appropriately to the probability measure induced by the random variable in Equation \ref{non_truncated}. Here, appropriately means, that integrals with respect to the approximation, henceforth called $\mu_K$, converge to their corresponding integral evaluated with respect to $\mu$.
 		\subsection{Mean focused Test}
 			
 			Test statistic
