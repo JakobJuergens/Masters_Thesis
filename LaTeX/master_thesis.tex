@@ -160,9 +160,20 @@ style=authoryear,
 				The Hilbert space of all square integrable functions on $A$ is denoted by $\mathbb{L}_2(A)$.
 			\end{definition}
 			
-			In most cases, $A$ is chosen as a closed interval of $\mathbb{R}$. So without loss of generality, we can reduce our treatment to the case of $A = [0,1]$.
-			Deviating from the norm in functional data analysis, \cite{bugni_permutation_2021} define two functions to be distinct even if they differ only on a set of Lebesgue-measure zero.
-		
+			In most cases, $A$ is chosen as a closed interval of $\mathbb{R}$. So without loss of generality, we can reduce our treatment to the case of $A = [0,1]$.\\
+			Deviating from the norm in functional data analysis, \cite{bugni_permutation_2021} define two functions to be distinct even if they differ only on a set of Lebesgue-measure zero. This creates some theoretical challenges, as the resulting object is not a Hilbert space anymore. This becomes clear, when checking the for the properties of the norm induced by the inner product $\vert \vert v \vert \vert = \sqrt{\langle v, v\rangle}$.
+			One of the properties that has to be fulfilled by a norm is $\vert\vert v \vert \vert = 0 \Longleftrightarrow v = 0$.\\
+			
+			To show this, consider the following example. Let $f:[0,1] \rightarrow \mathbb{R}$ be given by $f(x) = \mathbbm{1}\left[x = 0.5\right]$. Then we can evaluate the following expression to create a contradiction to the norm properties.
+			\begin{equation}
+				\vert\vert f \vert \vert = \sqrt{\langle f, f\rangle} = \sqrt{\int_{0}^{1} \left[f(t)\right]^2\mathrm{d}t } = 0
+			\end{equation}
+			As $f$ is not the zero element of this space, this is a violation of the norm properties and the defined space should more correctly be treated as a pseudometric space. \\
+			
+			In the following, I will therefore restrict my analysis to {\color{red} Hier weiterschreiben!}
+
+			
+			
 		\subsection{Bases of $\mathbb{L}_2$}\label{bases_L2}
 			
 			One commonly used orthonormal basis of $\mathbb{L}^2([0,1])$ is the Fourier Basis. It consists of a series of functions $\left(\phi_{i}^{F}(x)\right)_{i \in \mathbb{N}}$ taken from the terms of the sine-cosine form of the Fourier series.
