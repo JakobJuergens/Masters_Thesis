@@ -6,11 +6,11 @@
 \contentsline {subsection}{\numberline {2.3}Random Functions}{5}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Probability Measures on $\mathbb {L}_2$}{5}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Functional Integration on $\mathbb {L}_2$}{5}{subsection.2.5}%
-\contentsline {section}{\numberline {3}Cram\'{e}r-von Mises Tests}{5}{section.3}%
+\contentsline {section}{\numberline {3}Cram\'{e}r-von Mises Tests}{6}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Empirical Distribution Functions}{6}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Assumptions}{6}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Nullhypothesis}{6}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Two-Sample Cram\'{e}r-von Mises Statistic}{6}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.4}Two-Sample Cram\'{e}r-von Mises Statistic}{7}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}Asymptotic Distribution}{7}{subsection.3.5}%
 \contentsline {section}{\numberline {4}Permutation Tests}{7}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Functional Principle of Permutation Tests}{7}{subsection.4.1}%
@@ -19,21 +19,21 @@
 \contentsline {subsection}{\numberline {5.1}Assumptions}{9}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Nullhypothesis}{10}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Cram\'{e}r-von Mises type Test}{10}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Asymptotics for the Cram\'{e}r-von Mises type Test}{10}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Construction of the Measure $\mu $}{10}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}Mean focused Test}{11}{subsection.5.6}%
-\contentsline {subsection}{\numberline {5.7}Combined Permutation Test}{11}{subsection.5.7}%
-\contentsline {subsection}{\numberline {5.8}Finite Sample Properties under the Nullhypothesis}{12}{subsection.5.8}%
-\contentsline {subsection}{\numberline {5.9}Asymptotic Properties under the Alternative}{12}{subsection.5.9}%
-\contentsline {section}{\numberline {6}Closed Testing Procedures}{12}{section.6}%
-\contentsline {section}{\numberline {7}Variant for Alternatives in Specific Frequency Ranges}{12}{section.7}%
-\contentsline {section}{\numberline {8}Simulation Study}{12}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Implementation as an R package}{12}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Use of High-Performance Computing}{13}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Simulation Setup}{13}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}Results}{13}{subsection.8.4}%
-\contentsline {section}{\numberline {9}Application}{13}{section.9}%
-\contentsline {section}{\numberline {10}Outlook}{13}{section.10}%
-\contentsline {section}{\numberline {11}Bibliography}{14}{section.11}%
+\contentsline {subsection}{\numberline {5.4}Asymptotics for the Cram\'{e}r-von Mises type Test}{11}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Construction of the Measure $\mu $}{11}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Mean focused Test}{12}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Combined Permutation Test}{12}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Finite Sample Properties under the Nullhypothesis}{13}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.9}Asymptotic Properties under the Alternative}{13}{subsection.5.9}%
+\contentsline {section}{\numberline {6}Closed Testing Procedures}{13}{section.6}%
+\contentsline {section}{\numberline {7}Variant for Alternatives in Specific Frequency Ranges}{13}{section.7}%
+\contentsline {section}{\numberline {8}Simulation Study}{13}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Implementation as an R package}{13}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Use of High-Performance Computing}{14}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Simulation Setup}{14}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Results}{14}{subsection.8.4}%
+\contentsline {section}{\numberline {9}Application}{14}{section.9}%
+\contentsline {section}{\numberline {10}Outlook}{14}{section.10}%
+\contentsline {section}{\numberline {11}Bibliography}{15}{section.11}%
 \contentsline {section}{\numberline {12}Appendix}{i}{section.12}%
 \contentsline {subsection}{\numberline {12.1}Multiple Testing}{i}{subsection.12.1}%

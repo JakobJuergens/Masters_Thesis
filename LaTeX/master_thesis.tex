@@ -142,7 +142,7 @@ style=authoryear,
 		
 			{\color{red} This is verbatim!}
 			\begin{definition}[Orthonormal Basis of a Hilbert Space]
-				An orthonormal sequence $\{e_n\}$ in a Hilbert space $\mathbb{H}$ is called an orthonormal basis of $\mathbb{H}$ if $\overline{{\textit{span}\left(\{e_n\}\right)}} = \mathbb{H}$.
+				An orthonormal sequence $\{e_n\}$ in a Hilbert space $\mathbb{H}$ is called an orthonormal basis of $\mathbb{H}$ if $\overline{{\textit{span}\left(\{e_n\}\right)}} = \mathbb{H}$. Bases like this are typically called Schauder bases to differentiate them from Hamel bases which are often used in the study of vector spaces. The difference between these is that a Schauder basis can represent elements of the corresponding space as infinite sums of its elements, whereas a Hamel basis can only use finite linear combinations.
 			\end{definition}
 		
 			\begin{definition}[Separable Hilbert Space]
@@ -168,7 +168,19 @@ style=authoryear,
 			\begin{equation}
 				\| f \| = \sqrt{\langle f, f\rangle} = \sqrt{\int_{0}^{1} \left[f(t)\right]^2\mathrm{d}t } = 0
 			\end{equation}
-			As $f$ is not the zero element of this space, this is a violation of the norm properties. $\| v \| = \sqrt{\langle v, v\rangle}$ is a seminorm and the defined space should more correctly be treated as a pseudometric space. One problem that is created by this convention is, that if we give the space the topology induced by the seminorm, the resulting space would not be Hausdorff. Thus, limits in the later part of \cite{bugni_permutation_2021} would not be defined.\\
+			As $f$ is not the zero element of this space, this is a violation of the norm property called positive definiteness. Positive definiteness apllied to the case at hand, states that $\forall v \in \mathbb{L}_2\left([0.1]\right) \| v \| = 0 \implies v(x) = 0 \quad \forall x \in [0,1]$  $\forall v \in $. Instead, $\| v \| = \sqrt{\langle v, v\rangle}$ is a seminorm and the defined space should more correctly be treated as a pseudometric space.\\
+			
+			\begin{definition}[Pseudometric Space]
+				content...
+			\end{definition}
+			
+			\begin{definition}[Hausdorff Space]
+				content...
+			\end{definition}
+			
+			One problem that is created by this convention is, that if we give the space the topology induced by the seminorm, the resulting space would not be Hausdorff. Thus, limits in the later part of \cite{bugni_permutation_2021} would not be defined.\\
+			
+			
 			
 			In the following, I will therefore restrict my analysis to {\color{red} Hier weiterschreiben!}
 
@@ -460,7 +472,18 @@ style=authoryear,
 				\sum_{k = 1}^{\infty} \rho_k^2 < \infty 
 			\end{equation}
 			
-			In \cite{bugni_goodness--fit_2009}, the authors show that the approximation of the probability measure, which is induced by the approximation of the random variable in Equation \ref{truncation}, converges appropriately to the probability measure induced by the random variable in Equation \ref{non_truncated}. Here, appropriately means, that integrals with respect to the approximation, henceforth called $\mu_K$, converge to their corresponding integral evaluated with respect to $\mu$.
+			In \cite{bugni_goodness--fit_2009}, the authors show that the approximation of the probability measure, which is induced by the approximation of the random variable in Equation \ref{truncation}, converges appropriately to the probability measure induced by the random variable in Equation \ref{non_truncated}. Here, appropriately means, that integrals with respect to the approximation, henceforth called $\mu_K$, converge to their corresponding integral evaluated with respect to $\mu$.\\
+			
+			At this point it is again interesting to look at the convention that two elements of $\mathbb{L}_2(\mathcal{I})$ are distinct even if they differ only on a nonempty set of Lebesgue-measure zero. One problem that this convention entails is the fact that the Fourier basis is an almost everywhere basis of $\mathbb{L}_2\left(\mathcal{I}\right)$. This means, that in many cases point-wise convergence of a sum as shown in Equation \ref{non_truncated} is not fulfilled. In more basic terms, this implies that using the Fourier basis, it is impossible to construct some functions in $\mathbb{L}_2\left(\mathcal{I}\right)$ under the authors convention even using a non-truncated representation as shown in Equation \ref{non_truncated}.			
+			In a typical scenario where we are not interested in the specific function of $\mathbb{L}_2\left(\mathcal{I}\right)$ but only their equivalence classes, this does not pose a problem. 
+			This in turn implies that a probability measure that is constructed as shown in the previous section cannot give positive weight to many functions in the space $\mathbb{L}_2(\mathcal{I})$ if we use the convention used by the authors. Namely, for any function in $\mathbb{L}_2(\mathcal{I})$ for which the Fourier series fails to converge point-wise, we cannot assign a positive probability. This in turn could be a potential problem for the method described in the paper, if this is necessary for its working principle.\\
+			
+			One well known example of a function whose Fourier series diverges in $x=0$ is the following. {\color{red} Das ist von Wikipedia! Richtige Citation raussuchen.}
+			\begin{equation}
+				f(x) = \sum_{n = 1}^{\infty} \frac{1}{n^2}\sin\left[\left(2^{n^3} + 1\right)\frac{x}{2}\right]
+			\end{equation}
+			This representation looks somewhat different from the Fourier basis presented in earlier parts of this thesis. This has to do with the fact, that the Fourier basis when used in other parts of mathematics, such as harmonic analysis, is often constructed using only sine functions.
+			
 		\subsection{Mean focused Test}
 			
 			Test statistic
