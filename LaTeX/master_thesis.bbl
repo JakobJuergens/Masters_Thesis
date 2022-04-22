@@ -682,6 +682,95 @@
       \verb 10.1007/0-387-27605-X
       \endverb
     \endentry
+    \entry{magnano_generation_2007}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=c424651f046da0f8cd87e1ad920377a3}{%
+           family={Magnano},
+           familyi={M\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c8d3a53335baafa9d84796c99d43b9d9}{%
+           family={Boland},
+           familyi={B\bibinitperiod},
+           given={J.\bibnamedelimi W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{8fb2d427a5dde0e4e288ebc0236e726e}
+      \strng{fullhash}{8fb2d427a5dde0e4e288ebc0236e726e}
+      \strng{bibnamehash}{8fb2d427a5dde0e4e288ebc0236e726e}
+      \strng{authorbibnamehash}{8fb2d427a5dde0e4e288ebc0236e726e}
+      \strng{authornamehash}{8fb2d427a5dde0e4e288ebc0236e726e}
+      \strng{authorfullhash}{8fb2d427a5dde0e4e288ebc0236e726e}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Energy}
+      \field{month}{11}
+      \field{number}{11}
+      \field{title}{Generation of synthetic sequences of electricity demand: {Application} in {South} {Australia}}
+      \field{volume}{32}
+      \field{year}{2007}
+      \field{pages}{2230\bibrangedash 2243}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1016/j.energy.2007.04.001
+      \endverb
+    \endentry
+    \entry{magnano_generation_2008}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=c424651f046da0f8cd87e1ad920377a3}{%
+           family={Magnano},
+           familyi={M\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c8d3a53335baafa9d84796c99d43b9d9}{%
+           family={Boland},
+           familyi={B\bibinitperiod},
+           given={J.\bibnamedelimi W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=2,uniquepart=given,hash=1259905307fefc49d47e90935f47ff89}{%
+           family={Hyndman},
+           familyi={H\bibinitperiod},
+           given={R.\bibnamedelimi J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=2}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{3d090b993c67705d2e72c8cdb3c4c473}
+      \strng{fullhash}{3d090b993c67705d2e72c8cdb3c4c473}
+      \strng{bibnamehash}{3d090b993c67705d2e72c8cdb3c4c473}
+      \strng{authorbibnamehash}{3d090b993c67705d2e72c8cdb3c4c473}
+      \strng{authornamehash}{3d090b993c67705d2e72c8cdb3c4c473}
+      \strng{authorfullhash}{3d090b993c67705d2e72c8cdb3c4c473}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Environmetrics}
+      \field{number}{8}
+      \field{title}{Generation of synthetic sequences of half-hourly temperature}
+      \field{volume}{19}
+      \field{year}{2008}
+      \field{pages}{818\bibrangedash 835}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1002/env.905
+      \endverb
+    \endentry
     \entry{R}{manual}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=dcdebb6b35bff7c0568bf8c50ef8626d}{%
@@ -841,12 +930,12 @@
            given={Han\bibnamedelima Lin},
            giveni={H\bibinitperiod\bibinitdelim L\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=2f709db8a046ae1d056e75c1f3aad31c}{%
+        {{un=2,uniquepart=given,hash=2f709db8a046ae1d056e75c1f3aad31c}{%
            family={Hyndman},
            familyi={H\bibinitperiod},
            given={Rob\bibnamedelima J},
            giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod},
-           givenun=0}}%
+           givenun=2}}%
       }
       \strng{namehash}{d8620da0a217bfc6214c1949e3cc56b2}
       \strng{fullhash}{d8620da0a217bfc6214c1949e3cc56b2}

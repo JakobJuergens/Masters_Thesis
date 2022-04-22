@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.4.15)  20 APR 2022 20:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.4.15)  22 APR 2022 14:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -913,7 +913,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--87
 
  []
 
-<../Graphics/growth_curves.PDF, id=226, 1445.4pt x 433.62pt>
+<../Graphics/growth_curves.PDF, id=231, 1445.4pt x 433.62pt>
 File: ../Graphics/growth_curves.PDF Graphic file (type pdf)
 <use ../Graphics/growth_curves.PDF>
 Package pdftex.def Info: ../Graphics/growth_curves.PDF  used on input line 96.
@@ -966,7 +966,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 214.
 
-<../Graphics/fourier_basis.PDF, id=299, 1445.4pt x 433.62pt>
+<../Graphics/fourier_basis.PDF, id=304, 1445.4pt x 433.62pt>
 File: ../Graphics/fourier_basis.PDF Graphic file (type pdf)
 <use ../Graphics/fourier_basis.PDF>
 Package pdftex.def Info: ../Graphics/fourier_basis.PDF  used on input line 227.
@@ -1036,30 +1036,41 @@ Overfull \hbox (10.74855pt too wide) in paragraph at lines 592--592
 y Ranges| 
  []
 
-[14] [15]
+[14]
+<../Graphics/electricity_demand_curves.PDF, id=467, 1445.4pt x 433.62pt>
+File: ../Graphics/electricity_demand_curves.PDF Graphic file (type pdf)
+<use ../Graphics/electricity_demand_curves.PDF>
+Package pdftex.def Info: ../Graphics/electricity_demand_curves.PDF  used on inp
+ut line 617.
+(pdftex.def)             Requested size: 455.24411pt x 136.57117pt.
+ [15 <../Graphics/electricity_demand_curves.PDF>]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
  [16] [17] [1
 
-] [2] (./master_thesis.aux)
+] [2]
+(./master_thesis.aux)
 Package rerunfilecheck Info: File `master_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: DFF5C3F9EEFAE507BD169F1FD55681E9;6780.
+(rerunfilecheck)             Checksum: B6432BAFE85DBA78D0ED3159CA1B2C2B;7007.
 Package logreq Info: Writing requests to 'master_thesis.run.xml'.
 \openout1 = `master_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23576 strings out of 478276
- 408828 string characters out of 5853013
- 1172931 words of memory out of 5000000
- 41170 multiletter control sequences out of 15000+600000
- 487693 words of font info for 170 fonts, out of 8000000 for 9000
+ 23607 strings out of 478276
+ 409738 string characters out of 5853013
+ 1173171 words of memory out of 5000000
+ 41189 multiletter control sequences out of 15000+600000
+ 487917 words of font info for 173 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,25n,68p,1010b,2048s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exi
+ 60i,25n,68p,1010b,2068s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exi
 st, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist
+, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
 , replaced by a fixed one
@@ -1090,10 +1101,10 @@ cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><
 /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/f
 onts/type1/public/cm-super/sfrm1200.pfb>
-Output written on master_thesis.pdf (22 pages, 325727 bytes).
+Output written on master_thesis.pdf (22 pages, 452016 bytes).
 PDF statistics:
- 630 PDF objects out of 1000 (max. 8388607)
- 559 compressed objects within 6 object streams
- 156 named destinations out of 1000 (max. 500000)
- 39739 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 656 PDF objects out of 1000 (max. 8388607)
+ 583 compressed objects within 6 object streams
+ 161 named destinations out of 1000 (max. 500000)
+ 39752 words of extra memory for PDF output out of 42996 (max. 10000000)
 
