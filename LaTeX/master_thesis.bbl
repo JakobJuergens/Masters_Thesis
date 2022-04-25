@@ -121,6 +121,42 @@
       \verb 10.1515/9783110814668
       \endverb
     \endentry
+    \entry{boyd_computing_2006}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=486ac7c1aa499d38fdee312b1bd201fb}{%
+           family={Boyd},
+           familyi={B\bibinitperiod},
+           given={John\bibnamedelima P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{486ac7c1aa499d38fdee312b1bd201fb}
+      \strng{fullhash}{486ac7c1aa499d38fdee312b1bd201fb}
+      \strng{bibnamehash}{486ac7c1aa499d38fdee312b1bd201fb}
+      \strng{authorbibnamehash}{486ac7c1aa499d38fdee312b1bd201fb}
+      \strng{authornamehash}{486ac7c1aa499d38fdee312b1bd201fb}
+      \strng{authorfullhash}{486ac7c1aa499d38fdee312b1bd201fb}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1573-2703}
+      \field{journaltitle}{Journal of Engineering Mathematics}
+      \field{number}{3}
+      \field{title}{Computing the zeros, maxima and inflection points of {Chebyshev}, {Legendre} and {Fourier} series: solving transcendental equations by spectral interpolation and polynomial rootfinding}
+      \field{volume}{56}
+      \field{year}{2006}
+      \field{pages}{203\bibrangedash 219}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1007/s10665-006-9087-5
+      \endverb
+    \endentry
     \entry{bugni_goodness--fit_2009}{article}{}
       \name{author}{4}{ul=2}{%
         {{un=0,uniquepart=base,hash=75553dd7ba268f5a25ff4563739f9c5e}{%
