@@ -8,14 +8,17 @@
 #' @return TRUE or FALSE depending on wheter func_a is always bigger than
 #' func_b
 func_comparison <- function(func_a, func_b, domain = c(0,1)){
-
+  # This could be done via evaluation at a fine grid...
+  # or more sophisticated by finding the zeros of the difference
+  # There is literature for the case of a Fourier series
+  # https://math.stackexchange.com/questions/370996/roots-of-a-finite-fourier-series
 }
 
 #' Returns the value of an empirical distribution function of a given sample
 #' for a given function
 #'
 #' @param sample: Sample of functional data
-#' @param func_b: Function to evaluate the empirical distribution function at
+#' @param func: Function to evaluate the empirical distribution function at
 #' @param domain: Domain of the functions in both the sample and the comparison
 #' function
 #'
