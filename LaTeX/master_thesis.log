@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.4.15)  26 APR 2022 00:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.4.15)  27 APR 2022 00:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1064,10 +1064,10 @@ Package logreq Info: Writing requests to 'master_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23624 strings out of 478276
- 410055 string characters out of 5853013
- 1173262 words of memory out of 5000000
- 41198 multiletter control sequences out of 15000+600000
+ 23626 strings out of 478276
+ 410079 string characters out of 5853013
+ 1173267 words of memory out of 5000000
+ 41199 multiletter control sequences out of 15000+600000
  488015 words of font info for 175 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,25n,68p,1010b,2048s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1107,10 +1107,10 @@ cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><
 f-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/cm-super/sfrm1200.pfb>
-Output written on master_thesis.pdf (23 pages, 467087 bytes).
+Output written on master_thesis.pdf (23 pages, 467477 bytes).
 PDF statistics:
- 679 PDF objects out of 1000 (max. 8388607)
- 602 compressed objects within 7 object streams
- 165 named destinations out of 1000 (max. 500000)
+ 681 PDF objects out of 1000 (max. 8388607)
+ 604 compressed objects within 7 object streams
+ 166 named destinations out of 1000 (max. 500000)
  39760 words of extra memory for PDF output out of 42996 (max. 10000000)
 

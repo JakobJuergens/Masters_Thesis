@@ -66,4 +66,7 @@ reg_tibble <- tibble(
 
 # perform functional regression
 regression_fd <- with(reg_tibble, large_functional_data)
-freg_test <- fda::fRegress(regression_fd ~ year + month + weekday, data = reg_tibble)
+trend_cycl_reg <- fda::fRegress(regression_fd ~ year + month + weekday, data = reg_tibble)
+
+# extract object without trend and month cyclical component
+
