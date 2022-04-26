@@ -10,7 +10,7 @@ empirical_dist_func(sample, func, domain = c(0, 1))
 \arguments{
 \item{sample:}{Sample of functional data}
 
-\item{func_b:}{Function to evaluate the empirical distribution function at}
+\item{func:}{Function to evaluate the empirical distribution function at}
 
 \item{domain:}{Domain of the functions in both the sample and the comparison
 function}

@@ -79,3 +79,25 @@ obs_generator_2 <- function(domain = c(0, 1), n_points = 100) {
   # return observation
   return(list(args = args, vals = vals))
 }
+
+
+#' This function translates a sample generated with the sample_generator
+#' functions into a functional data set
+#'
+#' @param sample: Sample to translate
+#' @param domain: beginning and endpoint of domain (closed interval)
+#' @param n_fourier_basis: number of fourier basis functions to use
+#'
+#' @return: A sample in the typical format
+quick_funcify <- function(sample, domain = c(0,1), n_fourier_basis){
+  fourier_basis <- fda::create.fourier.basis(rangeval = domain, nbasis = n_fourier_basis)
+
+  data_fd <- purrr::map(
+    .x = sample,
+    .f = function(obs){
+      fda::smooth.basis(argvals = obs$args, y = obs$vals, fdParobj = fourier_basis)
+      }
+  )
+
+  return(data_fd)
+}

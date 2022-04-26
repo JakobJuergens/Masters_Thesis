@@ -18,37 +18,52 @@ demands <- list(
   sat_demand = fds::saturdaydemand
 )
 
-# first combine all observations into a single tibble
-# for further processing
-
-demand_tibble <- as_tibble(
-  matrix(data = NA, nrow = 7*48*508, ncol = 4)
+# translate to list of functional observations
+# create basis for functional representation
+# Fourier basis should work well due to approximately cyclical data
+fourier_basis <- fda::create.fourier.basis(
+  rangeval = c(0, 24), nbasis = 17, period = 24
 )
 
-names(demand_tibble) <- c('week', 'weekday', 'time', 'demand')
+# express demand data as functional objects
+f_demands <- purrr::map(
+  .x = demands,
+  .f = function(day_demand) {
+    fda::smooth.basis(
+      argvals = seq(0.5, 24, by = 0.5),
+      y = day_demand$y,
+      fdParobj = fourier_basis
+    )
+  }
+)
 
-for(i in 1:508){
-  demand_tibble$week[(7*48*(i-1) + 1):(7*48*i)] <- i
-  demand_tibble$weekday[(7*48*(i-1) + 1):(7*48*i)] <- rep(x = 0:6, each = 48)
-  demand_tibble$demand[(7*48*(i-1) + 1):(7*48*i)] <- unlist(
-    purrr::map(
-      .x = demands,
-      .f = function(wd_demand){wd_demand$y[,i]}
-    ))
-  demand_tibble$time[(7*48*(i-1) + 1):(7*48*i)] <- unlist(
-    purrr::map(
-      .x = demands,
-      .f = function(wd_demand){wd_demand$x}
-    ))
+# put into useful format
+f_demand_list <- list()
+coefficients <- list()
+my_basis <- f_demands[[1]]$fd$basis
+for(i in 1:7){
+  # get coefficients
+  coefficients[[i]] <- f_demands[[i]]$fd$coefs
 }
+coefficient_matrix <- matrix(data = NA, nrow = 17, ncol = 7*508)
+for(i in 1:(7*508)){
+  # combine into one coefficient matrix
+  coefficient_matrix[,i] <- coefficients[[((i-1) %% 7) + 1]][ , (i-1)%/%7 + 1]
+}
+# create functional object from combined matrix
+large_functional_data <- fda::fd(coef = coefficient_matrix, basisobj = fourier_basis)
 
-# add correct date column
-demand_tibble <- demand_tibble %>%
-  mutate(day = 7*(week - 1) + weekday,
-         DATE = as_date(x = day, origin = as_date('1997-07-06')),
-         weekday = weekdays(DATE),
-         month = month(DATE),
-         year = year(DATE),
-         time = time / 2) %>%
-  select(!c(day, week))
+# create regressor tibble
+reg_tibble <- tibble(
+  constant = rep(1, times = ncol(large_functional_data$coefs)),
+  DAY = 1:ncol(large_functional_data$coefs),
+  DATE = as_date(DAY, origin = as_date('1997-07-06')),
+  month = as_factor(month(DATE)),
+  weekday = as_factor(weekdays(DATE)),
+  year = year(DATE) - 1997
+) %>%
+  select(!c(DAY, DATE))
 
+# perform functional regression
+regression_fd <- with(reg_tibble, large_functional_data)
+freg_test <- fda::fRegress(regression_fd ~ year + month + weekday, data = reg_tibble)
