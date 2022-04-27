@@ -67,6 +67,11 @@ reg_tibble <- tibble(
 # perform functional regression
 regression_fd <- with(reg_tibble, large_functional_data)
 trend_cycl_reg <- fda::fRegress(regression_fd ~ year + month + weekday, data = reg_tibble)
+trend_cycl_reg_no_weekday <- fda::fRegress(regression_fd ~ year + month, data = reg_tibble)
 
 # extract object without trend and month cyclical component
+cleaned_coefs <- trend_cycl_reg_no_weekday$yfdobj$coefs - trend_cycl_reg_no_weekday$yhatfdobj$coefs
 
+# generate fd object from this
+cleaned_fd <- fda::fd(coef = cleaned_coefs, basisobj = fourier_basis)
+saveRDS(cleaned_fd, '../../Data/cleaned_electricity_demand_fd.RDS')
