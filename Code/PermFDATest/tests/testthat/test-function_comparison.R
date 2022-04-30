@@ -1,0 +1,25 @@
+test_that("Zero calculation works via fourier coefficients with basis of period 2*pi", {
+  fourier_basis <- fda::create.fourier.basis(rangeval = c(0, 2*pi), nbasis = 15,
+                                             period = 2*pi)
+
+  func_a <- fda::fd(coef = c(1,1,1, rep(0, times = 11), 0.5),
+                    basisobj = fourier_basis)
+
+  func_b <- fda::fd(coef = c(1,1,1, rep(0, times = 11), -0.5),
+                    basisobj = fourier_basis)
+
+  # extract fourier coefficients
+  coef_a <- func_a$coefs
+  coef_b <- func_b$coefs
+
+  # calculate zeroes of the difference
+  zeroes <- sort(
+    fourier_zeroes(func_a = coef_a, func_b = coef_b, domain = c(0, 2*pi)) %% (2*pi)
+    )
+
+  zeroes_true <- unlist(purrr::map(.x = 1:14,
+                            .f = ~ (pi*.x)/7 - pi/14))
+
+  # expect similar values
+  expect_equal(object = zeroes, expected = zeroes_true)
+})

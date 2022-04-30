@@ -91,7 +91,7 @@ style=authoryear,
 		Section \ref{FDA} introduces the necessary concepts from functional data analysis. 
 		Section \ref{CvM_Tests} explores the theory around Cram\'{e}r-von Mises tests and section \ref{Permutation_Tests} introduces the necessary background in Permutation Testing.
 		After explaining these concepts, section \ref{Bugni_Horowitz_2021} focuses on the test developed in \cite{bugni_permutation_2021} for the case of a two-sample test. Section \ref{Simulation_Study} replicates the results from the simulation study in the paper and expands on certain aspects. Section \ref{Application} explores their usefulness in an application to half-hourly electricity demand data from Adelaide.
-		Finally, Section \ref{Outlook} gives an Outlook on possible extensions of the underlying idea to use and addresses some problems and shortcomings of the presented results.
+		Finally, Section \ref{Outlook} gives an Outlook on possible extensions of the underlying idea and addresses some problems and shortcomings of the presented results.
 	
 	\section{Functional Data Analysis}\label{FDA}
 		The overarching concept of functional data analysis is to incorporate observations that are functional in nature. In this context, a functional observation can often be understood as a smooth curve. A classical example of this is shown in Figure \ref{growth_curves}. It presents data provided in the R package \textit{fda}\footcite{fda} and shows growth curves of 93 humans up to the age of 18.
@@ -101,7 +101,6 @@ style=authoryear,
 			\label{growth_curves}
 		\end{figure}
 		Even though the measurements were taken at discrete ages, it is clear that each human has a height at every point in time. The data points are only measurements of this continuous curve. The higher the measurement frequency, the closer we get to data that resembles the curve itself.
-		
 		In many cases functional data analysis restricts its scope to subsets of the functions $f:\mathbb{R} \rightarrow \mathbb{R}$.
 		As these are inherently infinite-dimensional, it is necessary to introduce additional theory to appropriately deal with their unique properties. Sections \ref{Square_Integrable_Functions} and \ref{bases_L2} closely follow \cite{hsing_theoretical_2015} who provides a detailed introduction into the theory of functional data analysis.
 		
@@ -163,17 +162,12 @@ style=authoryear,
 				To give the space the properties that are typically desired in Functional data analysis, it is typically defined as a space of equivalence classes, where to functions are seen as equivalent if they differ at most on a set of Lebesgue-measure zero. The Hilbert space of all square integrable functions on $\mathcal{I}$ is denoted by $\mathbb{L}_2(\mathcal{I})$.
 			\end{definition}
 			
-			In most cases, $A$ is chosen as a closed interval of $\mathbb{R}$. So without loss of generality, we can reduce our treatment to the case of $\mathcal{I} = [0,1]$.
-			Deviating from the norm in functional data analysis, \cite{bugni_permutation_2021} define two functions to be distinct even if they differ only on a set of Lebesgue-measure zero. To distinguish between the typical case, let $\mathbb{L}_2(\mathcal{I})$ denote the square-integrable functions as defined in the standard case and $\mathbb{L}^{*}_2(\mathcal{I})$ the square-integrable functions under the the convention from \cite{bugni_permutation_2021}.\\
+			In most cases, $A$ is chosen as a closed interval of $\mathbb{R}$. Without loss of generality, we can reduce our treatment to the case of $\mathcal{I} = [0,1]$.
 			
-			Using $\mathbb{L}^{*}_2(\mathcal{I})$ creates some interesting theoretical challenges, as the resulting object is not a Hilbert space. This becomes clear, when checking the for the properties of the norm induced by the inner product $\| v \| = \sqrt{\langle v, v\rangle}$.
-			One of the properties that has to be fulfilled by a norm is $\| v \| = 0 \Longleftrightarrow v = 0$.			
-			To show this, consider the following example. Let $f:[0,1] \rightarrow \mathbb{R}$ be given by $f(x) = \mathbbm{1}\left[x = 0.5\right]$. Then we can evaluate the following expression to create a contradiction to the norm properties.
-			\begin{equation}
-				\| f \| = \sqrt{\langle f, f\rangle} = \sqrt{\int_{0}^{1} \left[f(t)\right]^2\mathrm{d}t } = 0
-			\end{equation}
-			As $f$ is not the zero element of this space, this is a violation of the norm property called positive definiteness. Positive definiteness applied to the case at hand, states that $\forall v \in \mathbb{L}_2\left(\mathcal{I}\right) \| v \| = 0 \implies v(x) = 0 \quad \forall x \in \mathcal{I}$  $\forall v \in $. Instead, $\| v \| = \sqrt{\langle v, v\rangle}$ is a seminorm and the defined space should more correctly be treated as a pseudometric space.\\
+			\subsection{$\mathbb{L}_2(\mathcal{I})$ as defined in \cite{bugni_permutation_2021}}
+			Deviating from the norm in functional data analysis, \cite{bugni_permutation_2021} define two square-integrable functions to be distinct even if they differ only on a set of Lebesgue-measure zero. To distinguish between the typical case presented in the previous section, let $\mathbb{L}_2(\mathcal{I})$ denote the Hilbert space of square-integrable functions and $\mathbb{L}^{*}_2(\mathcal{I})$ the square-integrable functions under the the convention from \cite{bugni_permutation_2021}.\\
 			
+			Using $\mathbb{L}^{*}_2(\mathcal{I})$ creates some interesting theoretical challenges, as the resulting object is in fact not a Hilbert space. To understand the theoretical problems that can occur, I first introduce some additional concepts to illustrate the challenges.
 			\begin{definition}[Norm and Seminorm]
 				A function $p : \mathbb{V} \rightarrow \mathbb{F}$ on a vector space $\mathbb{V}$ over a field $\mathbb{F}$ is called a norm if the following four conditions hold for all $v,u \in \mathbb{V}$ and $s \in \mathbb{F}$.
 				\begin{multicols}{2}
@@ -186,7 +180,7 @@ style=authoryear,
 				\end{multicols}
 				If $p : \mathbb{V} \rightarrow \mathbb{F}$ fulfills only properties (1) to (3) it is called a seminorm.
 			\end{definition}
-		
+			
 			In the same way a norm induces a distance on its corresponding normed vectorspace, a seminorm $p$ induces a so-called pseudometric $d$. It is given by $d(v,u) = p(u-v)$.
 			
 			{\color{red} This is from Wikipedia!!!}
@@ -201,6 +195,14 @@ style=authoryear,
 				\end{multicols}
 				Therefore, deviating from a metric space, two distinct points in a pseudometric space can have a distance of zero $d(x,y) = 0$ for $x \neq y$.
 			\end{definition}
+			
+			That $\mathbb{L}^{*}_2(\mathcal{I})$ is not a Hilbert space becomes clear, when checking the for the properties of the norm induced by the inner product $\| v \| = \sqrt{\langle v, v\rangle}$.
+			One of the properties that has to be fulfilled by a norm is $\| v \| = 0 \Longleftrightarrow v = 0$.			
+			Let $f:[0,1] \rightarrow \mathbb{R}$ be given by $f(x) = \mathbbm{1}\left[x = 0.5\right]$. Then we can evaluate the following expression to create a contradiction to the norm properties.
+			\begin{equation}
+				\| f \| = \sqrt{\langle f, f\rangle} = \sqrt{\int_{0}^{1} \left[f(t)\right]^2\mathrm{d}t } = 0
+			\end{equation}
+			As $f$ is not the zero element of this space, this is a violation of positive definiteness. Positive definiteness applied to the case at hand, states that $\forall v \in \mathbb{L}_2\left(\mathcal{I}\right) \| v \| = 0 \implies v(x) = 0 \quad \forall x \in \mathcal{I}$  $\forall v \in $. Instead, $\| v \| = \sqrt{\langle v, v\rangle}$ is a seminorm and the defined space should more correctly be treated as a pseudometric space.\\
 			
 			{\color{red} This is from Wikipedia!!!}
 			\begin{definition}[Hausdorff Space]

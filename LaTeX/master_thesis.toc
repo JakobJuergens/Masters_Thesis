@@ -2,11 +2,12 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
 \contentsline {section}{\numberline {2}Functional Data Analysis}{1}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Hilbert Space of Square Integrable Functions}{2}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Bases of $\mathbb {L}_2$}{5}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Random Functions}{6}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Probability Measures on $\mathbb {L}_2$}{6}{subsection.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.1}Probability Measures induced by Random Functions}{6}{subsubsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.5}Functional Integration on $\mathbb {L}_2$}{6}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.2}$\mathbb {L}_2(\mathcal {I})$ as defined in \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Bases of $\mathbb {L}_2$}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Random Functions}{6}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Probability Measures on $\mathbb {L}_2$}{6}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Probability Measures induced by Random Functions}{6}{subsubsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.6}Functional Integration on $\mathbb {L}_2$}{6}{subsection.2.6}%
 \contentsline {section}{\numberline {3}Cram\'{e}r-von Mises Tests}{7}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Empirical Distribution Functions}{7}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Assumptions}{7}{subsection.3.2}%

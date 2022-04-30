@@ -13,9 +13,7 @@ fourier_basis_coef_means <- function(w_func, basis = "fourier", n_basis, domain 
   # create chosen basis (has to be orthogonal basis!)
   if (basis == "fourier") {
     my_basis <- fda::create.fourier.basis(
-      rangeval = domain, nbasis = n_basis,
-      period = domain[2] - domain[1]
-    )
+      rangeval = domain, nbasis = n_basis)
   } else {
     stop("Chosen basis not implemented.")
   }
@@ -68,14 +66,11 @@ fourier_coef_mean <- function(w_func, basis_func, domain = c(0, 1)) {
 #' @param n_basis: number of basis functions
 #' @param domain: vector of two points (start and endpoint of the closed interval)
 #' @param u_sample_func: function that can be used to sample from for the error terms
-#' around the specified mean - each observation should be a vector of length n_sample
-#' and the function should have an argument n to determine the number of observations sampled
-#' (for example multivariate normal of appropriate dimension)
+#' around the specified mean
 #' @param ...: further parameters that are given to u_sample_func
 #'
-#' @return: A list of length n containing vectors of sampled fourier coefficients
-#' of length n_basis
-fourier_coef_sample <- function(n = 1, w_func, basis = "fourier", n_basis,
+#' @return: A vector of length n_basis of sampled fourier coefficients
+fourier_coef_sample <- function(w_func, basis = "fourier", n_basis,
                                 u_sample_func, domain = c(0, 1), ...) {
   # calculate means of fourier coefficients
   means <- fourier_basis_coef_means(
@@ -86,7 +81,7 @@ fourier_coef_sample <- function(n = 1, w_func, basis = "fourier", n_basis,
   # function(n){MASS::mvrnorm(n = n, mu = rep(0, 15), Sigma = diag(rep(1, times = 15)))}
 
   # realizations of the fourier coefficients
-  realizations <- means + u_sample_func(n = n, ...)
+  realizations <- means + u_sample_func(n = 1, ...)
   # return realizations
   return(realizations)
 }

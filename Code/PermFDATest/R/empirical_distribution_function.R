@@ -1,19 +1,3 @@
-#' This function checks if one function is bigger than another function for all
-#' points in a closed interval
-#'
-#' @param func_a: Function one
-#' @param func_b: Function two
-#' @param domain: interval to check
-#'
-#' @return TRUE or FALSE depending on wheter func_a is always bigger than
-#' func_b
-func_comparison <- function(func_a, func_b, domain = c(0,1)){
-  # This could be done via evaluation at a fine grid...
-  # or more sophisticated by finding the zeros of the difference
-  # There is literature for the case of a Fourier series
-  # https://math.stackexchange.com/questions/370996/roots-of-a-finite-fourier-series
-}
-
 #' Returns the value of an empirical distribution function of a given sample
 #' for a given function
 #'
