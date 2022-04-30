@@ -471,6 +471,8 @@ style=authoryear,
 				\tau_{n,m} = (n+m) \int_{\mathbb{L}_2(\mathcal{I})}\left[\hat{F}_X(z) - \hat{F}_Y(z)\right]^2 \mathrm{d} \mu(z)
 			\end{equation}
 		
+			{\color{red} Explain Monte-Carlo Integration here as it is important for the implementation in the package.}
+		
 			Critical values for Permutation Test Statistic
 			\begin{equation}
 				t^{*}_{n,m}(1-\alpha) = \inf \left\{t \in \mathbb{R} \quad \vert \quad \frac{1}{Q} \sum_{i = 1}^{Q} \mathbbm{1}\left[\tau_{n,m,q} \leq t\right] \geq 1 - \alpha \right\}
@@ -616,8 +618,10 @@ style=authoryear,
 			The simulations presented as part of this thesis have been conducted on \textit{bonna}\footnote{\href{https://www.dice.uni-bonn.de/de/hpc/hpc-a-bonn/infrastruktur}{https://www.dice.uni-bonn.de/de/hpc/hpc-a-bonn/infrastruktur}}. \textit{bonna} is the high performance computing cluster provided by the University of Bonn. The implementation is heavily parallelized and makes use of a SLURM scheduling system. However, slight modifications of the provided code suffice to run it on personal computers.
 
 		\subsection{Particularities of the Implementation}
+			For my implementation in the package that is provided in the GitHub repository corresponding to this thesis, I chose some slightly unusual methods to increase the package's performance. I want to present some in the following as they present opportunities for performance gains that are somewhat interesting on their own.
 			\begin{itemize}
-				\item \cite{boyd_computing_2006} - For the evaluation of the empirical distribution function.
+				\item For the evaluation of the empirical distribution function, I make use of a result \cite{boyd_computing_2006} that simplifies the problem of finding the zeroes of a finite Fourier series to an eigenvalue problem for a matrix that is defined in terms of the Fourier coefficients. If the chosen basis is the Fourier basis this is more rigorous than the grid based approach used for the other basis types and faster then potential numerical methods to approximate the zeroes in a more general setting.
+				\item For other chosen basis types, including the imperical Eigenbasis, a grid is chosen by the user to check if all evaluations of the difference function are bigger than zero. Or correspondingly if all evaluated points of function a are bigger than those of function b.
 			\end{itemize}
 
 		\subsection{Simulation Setup}

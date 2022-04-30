@@ -16,6 +16,17 @@ function_sample <- function(w_func, basis = "fourier", n_basis,
                             u_sample_func, domain = c(0, 1), ...) {
 
   # generate fourier coefficients
-  fourier_coefs <- fourier_coef_sample(w_func = w_func, basis = basis, n_basis = n_basis,
-                                       u_sample_func = u_sample_func, domain = domain, ...)
+  fourier_coefs <- fourier_coef_sample(
+    w_func = w_func, basis = basis, n_basis = n_basis,
+    u_sample_func = u_sample_func, domain = domain, ...
+  )
+
+  # generate basis for generation of functional object
+  if (basis == "fourier") {
+
+  } else if (basis == "eigen") {
+
+  } else {
+    stop("Chosen basis type not implemented.")
+  }
 }
