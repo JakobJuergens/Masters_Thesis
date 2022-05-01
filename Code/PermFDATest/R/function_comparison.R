@@ -4,7 +4,7 @@
 #' @param func_a: Function one
 #' @param func_b: Function two
 #' @param domain: interval to check
-#' @param fourier_coef: If true: func_a and func_b are interpreted as vectors of
+#' @param fourier: If true: func_a and func_b are interpreted as vectors of
 #' fourier coefficients for the same fourier basis. This can be used to solve this
 #' problem more efficiently.
 #' @param grid: if fourier_coef == FALSE, this decides the grid that is used to check
@@ -12,7 +12,7 @@
 #'
 #' @return TRUE or FALSE depending on wheter func_a is always bigger than
 #' func_b
-func_comparison <- function(func_a, func_b, domain = c(0, 1), fourier_coef = FALSE,
+func_comparison <- function(func_a, func_b, domain = c(0, 1), fourier = FALSE,
                             grid = NULL) {
   # This could be done via evaluation at a fine grid...
   # or more sophisticated by finding the zeros of the difference
@@ -20,7 +20,7 @@ func_comparison <- function(func_a, func_b, domain = c(0, 1), fourier_coef = FAL
   # https://math.stackexchange.com/questions/370996/roots-of-a-finite-fourier-series
 
   # currently only works for basis with period 2*pi
-  if (fourier_coef == TRUE) {
+  if (fourier == TRUE) {
     return(func_comparison_fourier(func_a = func_a, func_b = func_b, domain = domain))
   }
   # otherwise use grid_based approach

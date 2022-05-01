@@ -5,13 +5,7 @@
 \title{This function checks if one function is bigger than another function for all
 points in a closed interval}
 \usage{
-func_comparison(
-  func_a,
-  func_b,
-  domain = c(0, 1),
-  fourier_coef = FALSE,
-  grid = NULL
-)
+func_comparison(func_a, func_b, domain = c(0, 1), fourier = FALSE, grid = NULL)
 }
 \arguments{
 \item{func_a:}{Function one}
@@ -20,7 +14,7 @@ func_comparison(
 
 \item{domain:}{interval to check}
 
-\item{fourier_coef:}{If true: func_a and func_b are interpreted as vectors of
+\item{fourier:}{If true: func_a and func_b are interpreted as vectors of
 fourier coefficients for the same fourier basis. This can be used to solve this
 problem more efficiently.}
 
