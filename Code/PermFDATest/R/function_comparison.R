@@ -35,8 +35,8 @@ func_comparison <- function(func_a, func_b, domain = c(0, 1), fourier_coef = FAL
 #' This function checks if one function is bigger than another function for all
 #' points in a closed interval
 #'
-#' @param func_a: Fourier coefficients for Function one
-#' @param func_b: Fourier coefficients for Function two
+#' @param func_a: fd object for Function one
+#' @param func_b: fd object for Function two
 #' @param domain: interval to check
 #'
 #' @return TRUE or FALSE depending on wheter func_a is always bigger than
@@ -50,6 +50,13 @@ func_comparison_fourier <- function(func_a, func_b, domain = c(0, 1)) {
   }
   # if no zeroes exists on the domain check on an arbitrary point if func_a
   # is bigger then func b
+  else{
+    check_val_a <- fda::eval.fd(evalarg = mean(domain), fdobj = func_a)
+    check_val_b <- fda::eval.fd(evalarg = mean(domain), fdobj = func_b)
+    # if return whether function a is bigger than function b for all points in
+    # the specified domain
+    return(all(check_val_a > check_val_b))
+  }
 
 }
 
@@ -57,13 +64,13 @@ func_comparison_fourier <- function(func_a, func_b, domain = c(0, 1)) {
 #' given in terms of the fourier coefficients of the same fourier basis
 #' based on https://math.stackexchange.com/questions/370996/roots-of-a-finite-fourier-series
 #'
-#' @param func_a: Fourier coefficients for Function one
-#' @param func_b: Fourier coefficients for Function two
+#' @param func_a: fd object for Function one
+#' @param func_b: fd object for Function two
 #' @param domain: interval to check
 #'
 #' @return The zeroes of the difference function
 fourier_zeroes <- function(func_a, func_b, domain = c(0, 1)) {
-  diff_coefs <- func_a - func_b
+  diff_coefs <- func_a$coefs - func_b$coefs
   cos_coefs <- diff_coefs[which(1:length(diff_coefs) %% 2 == 1)]
   sin_coefs <- diff_coefs[which(1:length(diff_coefs) %% 2 == 0)]
   N <- length(sin_coefs)

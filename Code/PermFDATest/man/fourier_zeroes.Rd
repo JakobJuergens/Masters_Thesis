@@ -3,14 +3,15 @@
 \name{fourier_zeroes}
 \alias{fourier_zeroes}
 \title{This function calculates the zeroes of the difference of two functions
-given in terms of the fourier coefficients of the same fourier basis}
+given in terms of the fourier coefficients of the same fourier basis
+based on https://math.stackexchange.com/questions/370996/roots-of-a-finite-fourier-series}
 \usage{
 fourier_zeroes(func_a, func_b, domain = c(0, 1))
 }
 \arguments{
-\item{func_a:}{Fourier coefficients for Function one}
+\item{func_a:}{fd object for Function one}
 
-\item{func_b:}{Fourier coefficients for Function two}
+\item{func_b:}{fd object for Function two}
 
 \item{domain:}{interval to check}
 }
@@ -20,4 +21,5 @@ The zeroes of the difference function
 \description{
 This function calculates the zeroes of the difference of two functions
 given in terms of the fourier coefficients of the same fourier basis
+based on https://math.stackexchange.com/questions/370996/roots-of-a-finite-fourier-series
 }
