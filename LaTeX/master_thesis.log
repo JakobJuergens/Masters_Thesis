@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.4.15)  30 APR 2022 21:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.4.15)  3 MAY 2022 12:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1062,32 +1062,32 @@ y Ranges|
  []
 
 [14] [15]
-<../Graphics/electricity_demand_curves.PDF, id=497, 1445.4pt x 433.62pt>
+<../Graphics/electricity_demand_curves.PDF, id=499, 1445.4pt x 433.62pt>
 File: ../Graphics/electricity_demand_curves.PDF Graphic file (type pdf)
 <use ../Graphics/electricity_demand_curves.PDF>
 Package pdftex.def Info: ../Graphics/electricity_demand_curves.PDF  used on inp
-ut line 637.
+ut line 638.
 (pdftex.def)             Requested size: 455.24411pt x 136.57117pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 643--645
+Underfull \hbox (badness 10000) in paragraph at lines 644--646
 
  []
 
 [16 <../Graphics/electricity_demand_curves.PDF>]
-<../Graphics/electricity_demand_curves_cleaned.PDF, id=515, 1445.4pt x 433.62pt
+<../Graphics/electricity_demand_curves_cleaned.PDF, id=517, 1445.4pt x 433.62pt
 >
 File: ../Graphics/electricity_demand_curves_cleaned.PDF Graphic file (type pdf)
 
 <use ../Graphics/electricity_demand_curves_cleaned.PDF>
 Package pdftex.def Info: ../Graphics/electricity_demand_curves_cleaned.PDF  use
-d on input line 664.
+d on input line 665.
 (pdftex.def)             Requested size: 455.24411pt x 136.57117pt.
  [17 <../Graphics/electricity_demand_curves_cleaned.PDF>]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [18] [19] [1
+ [18] [19] [20] [1
 
 ] [2] (./master_thesis.aux)
 Package rerunfilecheck Info: File `master_thesis.out' has not changed.
@@ -1097,10 +1097,10 @@ Package logreq Info: Writing requests to 'master_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23644 strings out of 478276
- 410660 string characters out of 5853013
- 1173350 words of memory out of 5000000
- 41212 multiletter control sequences out of 15000+600000
+ 23651 strings out of 478276
+ 410825 string characters out of 5853013
+ 1173405 words of memory out of 5000000
+ 41217 multiletter control sequences out of 15000+600000
  488015 words of font info for 175 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,25n,68p,1010b,2733s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1140,10 +1140,10 @@ cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><
 f-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/cm-super/sfrm1200.pfb>
-Output written on master_thesis.pdf (24 pages, 592787 bytes).
+Output written on master_thesis.pdf (25 pages, 593848 bytes).
 PDF statistics:
- 708 PDF objects out of 1000 (max. 8388607)
- 628 compressed objects within 7 object streams
- 170 named destinations out of 1000 (max. 500000)
+ 717 PDF objects out of 1000 (max. 8388607)
+ 636 compressed objects within 7 object streams
+ 172 named destinations out of 1000 (max. 500000)
  39781 words of extra memory for PDF output out of 42996 (max. 10000000)
 

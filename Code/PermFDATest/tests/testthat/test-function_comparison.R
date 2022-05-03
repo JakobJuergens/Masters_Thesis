@@ -52,7 +52,7 @@ test_that("Function Comparison works via fourier coefficients with basis of peri
   comp <- func_comparison_fourier(func_a = func_a, func_b = func_b, domain = c(0, 2*pi))
 
   # expect similar values
-  expect_equal(object = comp, expected = TRUE)
+  expect_equal(object = comp, expected = FALSE)
 })
 
 test_that("Function Comparison works via fourier coefficients with basis of period 1", {
@@ -69,6 +69,6 @@ test_that("Function Comparison works via fourier coefficients with basis of peri
   comp <- func_comparison_fourier(func_a = func_a, func_b = func_b, domain = c(0, 1))
 
   # expect similar values
-  expect_equal(object = comp, expected = TRUE)
+  expect_equal(object = comp, expected = FALSE)
 })
 

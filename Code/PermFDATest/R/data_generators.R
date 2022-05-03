@@ -95,7 +95,7 @@ quick_funcify <- function(sample, domain = c(0,1), n_fourier_basis){
   data_fd <- purrr::map(
     .x = sample,
     .f = function(obs){
-      fda::smooth.basis(argvals = obs$args, y = obs$vals, fdParobj = fourier_basis)
+      fda::smooth.basis(argvals = obs$args, y = obs$vals, fdParobj = fourier_basis)$fd
       }
   )
 

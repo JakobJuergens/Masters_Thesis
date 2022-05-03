@@ -85,3 +85,18 @@ fourier_coef_sample <- function(w_func, basis = "fourier", n_basis,
   # return realizations
   return(realizations)
 }
+
+#' This function is used to draw the rho coefficients used in the construction
+#' of the mu measure as described in the paper. These have to falls into l2
+#' However, it is often advisable to specify these yourself.
+#'
+rho_draw <- function(n_basis, coef_vector = NULL){
+  if(!is.null(coef_vector) & length(coef_vector) == n_basis){
+    return(coef_vector)
+  }
+
+  # otherwise generate entries from a square summable sequence
+  else{
+
+  }
+}

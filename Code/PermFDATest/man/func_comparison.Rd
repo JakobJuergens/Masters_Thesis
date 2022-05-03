@@ -2,7 +2,7 @@
 % Please edit documentation in R/function_comparison.R
 \name{func_comparison}
 \alias{func_comparison}
-\title{This function checks if one function is bigger than another function for all
+\title{This function checks if one function is smaller than another function for all
 points in a closed interval}
 \usage{
 func_comparison(func_a, func_b, domain = c(0, 1), fourier = FALSE, grid = NULL)
@@ -26,6 +26,6 @@ TRUE or FALSE depending on wheter func_a is always bigger than
 func_b
 }
 \description{
-This function checks if one function is bigger than another function for all
+This function checks if one function is smaller than another function for all
 points in a closed interval
 }

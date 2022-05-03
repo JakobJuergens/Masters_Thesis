@@ -1,4 +1,4 @@
-#' This function checks if one function is bigger than another function for all
+#' This function checks if one function is smaller than another function for all
 #' points in a closed interval
 #'
 #' @param func_a: Function one
@@ -32,7 +32,7 @@ func_comparison <- function(func_a, func_b, domain = c(0, 1), fourier = FALSE,
   }
 }
 
-#' This function checks if one function is bigger than another function for all
+#' This function checks if one function is smaller than another function for all
 #' points in a closed interval
 #'
 #' @param func_a: fd object for Function one
@@ -46,6 +46,7 @@ func_comparison_fourier <- function(func_a, func_b, domain = c(0, 1)) {
   zeroes <- fourier_zeroes(func_a = func_a, func_b = func_b, domain = domain)
   # if zeroes exists on the domain, then return false
   if(length(zeroes != 0)){
+    # Das hier muss noch überarbeitet werden !!!
     return(FALSE)
   }
   # if no zeroes exists on the domain check on an arbitrary point if func_a
@@ -55,7 +56,7 @@ func_comparison_fourier <- function(func_a, func_b, domain = c(0, 1)) {
     check_val_b <- fda::eval.fd(evalarg = mean(domain), fdobj = func_b)
     # if return whether function a is bigger than function b for all points in
     # the specified domain
-    return(all(check_val_a > check_val_b))
+    return(all(check_val_a <= check_val_b))
   }
 
 }
@@ -115,7 +116,7 @@ fourier_zeroes <- function(func_a, func_b, domain = c(0, 1)) {
   return(real_zeroes)
 }
 
-#' This function checks if one function is bigger than another function for all
+#' This function checks if one function is smaller than another function for all
 #' points in a closed interval
 #'
 #' @param func_a: Fourier coefficients for Function one
@@ -126,5 +127,24 @@ fourier_zeroes <- function(func_a, func_b, domain = c(0, 1)) {
 #' @return TRUE or FALSE depending on wheter func_a is always bigger than
 #' func_b
 func_comparison_grid <- function(func_a, func_b, domain = c(0, 1), grid) {
-
+  # check if functions are fd objects
+  if(fda::is.fd(func_a) & fda::is.fd(func_b)){
+    # if both functions are fd objects, then use eval.fd for comparison on grid
+  } else if(xor(fda::is.fd(func_a), fda::is.fd(func_b))){
+    # this is currently not implemented because it's tedious and a weird usecase
+    stop(paste0('It is currently not implemented that one function in the ',
+                'function comparison is an fd object'))
+  } else{
+    # here I assume that both functions are jsut functions that can be evaluated
+    # at a single point of the real line
+    grid_a <- unlist(purrr::map(.x = grid, .f = ~ func_a(.x)))
+    grid_b <- unlist(purrr::map(.x = grid, .f = ~ func_b(.x)))
+    # compare grid values
+    grid_compare <- grid_a <= grid_b
+    # check if all points in grid_b are weakly bigger than in grid_a
+    # and return correpsonding boolean
+    return(all(grid_compare))
+  }
+  # quick debugging message
+  stop("You shouldn't arrive here... (func_comparison_grid)")
 }

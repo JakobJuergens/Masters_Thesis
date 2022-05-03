@@ -15,7 +15,10 @@ empirical_dist_func(
 )
 }
 \arguments{
-\item{sample:}{Sample of functional data}
+\item{sample:}{Sample of functional data. This has to be in a slighly weird
+format as the sample has to be provided as a list of singular fd objects,
+each representing a single observation. A wrapper function to transform from
+the typical format to this is provided in:}
 
 \item{func:}{Function to evaluate the empirical distribution function at}
 
