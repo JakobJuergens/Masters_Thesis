@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.4.15)  3 MAY 2022 12:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.4.15)  3 MAY 2022 23:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -913,7 +913,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 86--88
 
  []
 
-<../Graphics/growth_curves.PDF, id=249, 1445.4pt x 433.62pt>
+<../Graphics/growth_curves.PDF, id=251, 1445.4pt x 433.62pt>
 File: ../Graphics/growth_curves.PDF Graphic file (type pdf)
 <use ../Graphics/growth_curves.PDF>
 Package pdftex.def Info: ../Graphics/growth_curves.PDF  used on input line 99.
@@ -991,7 +991,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 219.
 
-<../Graphics/fourier_basis.PDF, id=322, 1445.4pt x 433.62pt>
+<../Graphics/fourier_basis.PDF, id=324, 1445.4pt x 433.62pt>
 File: ../Graphics/fourier_basis.PDF Graphic file (type pdf)
 <use ../Graphics/fourier_basis.PDF>
 Package pdftex.def Info: ../Graphics/fourier_basis.PDF  used on input line 232.
@@ -1056,31 +1056,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 512--515
  []
 
 [12] [13]
-Overfull \hbox (10.74855pt too wide) in paragraph at lines 602--602
+Overfull \hbox (10.74855pt too wide) in paragraph at lines 603--603
 |[]\OT1/cmr/bx/n/17.28 (-20) Variant for Al-ter-na-tives in Spe-cific Fre-quenc
 y Ranges| 
  []
 
 [14] [15]
-<../Graphics/electricity_demand_curves.PDF, id=499, 1445.4pt x 433.62pt>
+<../Graphics/electricity_demand_curves.PDF, id=498, 1445.4pt x 433.62pt>
 File: ../Graphics/electricity_demand_curves.PDF Graphic file (type pdf)
 <use ../Graphics/electricity_demand_curves.PDF>
 Package pdftex.def Info: ../Graphics/electricity_demand_curves.PDF  used on inp
-ut line 638.
+ut line 639.
 (pdftex.def)             Requested size: 455.24411pt x 136.57117pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 644--646
+Underfull \hbox (badness 10000) in paragraph at lines 645--647
 
  []
 
 [16 <../Graphics/electricity_demand_curves.PDF>]
-<../Graphics/electricity_demand_curves_cleaned.PDF, id=517, 1445.4pt x 433.62pt
+<../Graphics/electricity_demand_curves_cleaned.PDF, id=518, 1445.4pt x 433.62pt
 >
 File: ../Graphics/electricity_demand_curves_cleaned.PDF Graphic file (type pdf)
 
 <use ../Graphics/electricity_demand_curves_cleaned.PDF>
 Package pdftex.def Info: ../Graphics/electricity_demand_curves_cleaned.PDF  use
-d on input line 665.
+d on input line 666.
 (pdftex.def)             Requested size: 455.24411pt x 136.57117pt.
  [17 <../Graphics/electricity_demand_curves_cleaned.PDF>]
 Package microtype Info: Loading generic protrusion settings for font family
@@ -1097,11 +1097,11 @@ Package logreq Info: Writing requests to 'master_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23651 strings out of 478276
- 410825 string characters out of 5853013
- 1173405 words of memory out of 5000000
- 41217 multiletter control sequences out of 15000+600000
- 488015 words of font info for 175 fonts, out of 8000000 for 9000
+ 23656 strings out of 478276
+ 410892 string characters out of 5853013
+ 1173536 words of memory out of 5000000
+ 41220 multiletter control sequences out of 15000+600000
+ 488064 words of font info for 176 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,25n,68p,1010b,2733s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exi
@@ -1140,10 +1140,10 @@ cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><
 f-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/cm-super/sfrm1200.pfb>
-Output written on master_thesis.pdf (25 pages, 593848 bytes).
+Output written on master_thesis.pdf (25 pages, 594421 bytes).
 PDF statistics:
- 717 PDF objects out of 1000 (max. 8388607)
- 636 compressed objects within 7 object streams
+ 720 PDF objects out of 1000 (max. 8388607)
+ 639 compressed objects within 7 object streams
  172 named destinations out of 1000 (max. 500000)
  39781 words of extra memory for PDF output out of 42996 (max. 10000000)
 

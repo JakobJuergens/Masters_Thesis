@@ -90,7 +90,7 @@ style=authoryear,
 		This question can also occur in functional data analysis, where each observation in a data set is itself a smooth curve. \cite{bugni_permutation_2021} develop a permutation test that tries to answer this question by combining two test statistics. To explore their approach, it is first necessary to introduce some theoretical concepts.
 		Section \ref{FDA} introduces the necessary concepts from functional data analysis. 
 		Section \ref{CvM_Tests} explores the theory around Cram\'{e}r-von Mises tests and section \ref{Permutation_Tests} introduces the necessary background in Permutation Testing.
-		After explaining these concepts, section \ref{Bugni_Horowitz_2021} focuses on the test developed in \cite{bugni_permutation_2021} for the case of a two-sample test. Section \ref{Simulation_Study} replicates the results from the simulation study in the paper and expands on certain aspects. Section \ref{Application} explores their usefulness in an application to half-hourly electricity demand data from Adelaide.
+		After explaining these concepts, section \ref{Bugni_Horowitz_2021} focuses on the test developed in \cite{bugni_permutation_2021} for the case of a two-sample test. Section \ref{closed_testing} introduces the concept of closed testing procedures, which is used in Section \ref{frequency_identification} to develop an extension to the original test, that could be used to identify specific types of violations of the nullhypothesis. Section \ref{Simulation_Study} replicates the results from the simulation study in the paper and expands on certain aspects. Section \ref{Application} explores their usefulness in an application to half-hourly electricity demand data from Adelaide.
 		Finally, Section \ref{Outlook} gives an Outlook on possible extensions of the underlying idea and addresses some problems and shortcomings of the presented results.
 	
 	\section{Functional Data Analysis}\label{FDA}
@@ -597,10 +597,11 @@ style=authoryear,
 		
 		\subsection{Asymptotic Properties under the Alternative}
 		
-	\section{Closed Testing Procedures}
+	\section{Closed Testing Procedures}\label{closed_testing}
+		If we find a violation of the hypothesis it would be interesting to identify where or more precisely in what frequency the violation occurs. One approach to this question is to introduce what is called a closed testing procedure that identifies the basis functions that are relevant to the violation of the nullhypothesis. 			
 		
-	\section{Variant for Alternatives in Specific Frequency Ranges}
-		
+	\section{Variant for Alternatives in Specific Frequency Ranges}\label{frequency_identification}
+		If we use the idea described in the previous section for the test introduced in \cite{bugni_permutation_2021}, this could lead to the following extension.
 		
 	\section{Simulation Study}\label{Simulation_Study}
 		To learn more about the potential practical applications of this method, it is useful to study its properties in a simulation. \cite{bugni_permutation_2021} studied an array of different setups that give an idea of the performance in different settings and this thesis will replicate some of these results and explore some where the method struggles.
