@@ -93,6 +93,9 @@ fourier_zeroes <- function(func_a, func_b, domain = c(0, 1)) {
   sin_coefs <- diff_coefs[which(1:length(diff_coefs) %% 2 == 0)]
   N <- length(sin_coefs)
 
+  # This function currently only works if the last coefficient is non-zero
+  # so implement a check for that case
+
   h_coefs <- c(
     # the first N coefficients
     unlist(purrr::map(
@@ -144,6 +147,10 @@ fourier_zeroes <- function(func_a, func_b, domain = c(0, 1)) {
 #' @return TRUE or FALSE depending on wheter func_a is always bigger than
 #' func_b
 func_comparison_grid <- function(func_a, func_b, domain = c(0, 1), grid) {
+  # check if grid contains point outside the domain
+  if(any(grid < domain[1] | grid > domain[2])){
+    stop('grid for function comparison contains points outside the domain.')
+  }
   # check if functions are fd objects
   if(fda::is.fd(func_a) & fda::is.fd(func_b)){
     # if both functions are fd objects, then use eval.fd for comparison on grid
@@ -152,7 +159,7 @@ func_comparison_grid <- function(func_a, func_b, domain = c(0, 1), grid) {
     stop(paste0('It is currently not implemented that one function in the ',
                 'function comparison is an fd object'))
   } else{
-    # here I assume that both functions are jsut functions that can be evaluated
+    # here I assume that both functions are just functions that can be evaluated
     # at a single point of the real line
     grid_a <- unlist(purrr::map(.x = grid, .f = ~ func_a(.x)))
     grid_b <- unlist(purrr::map(.x = grid, .f = ~ func_b(.x)))

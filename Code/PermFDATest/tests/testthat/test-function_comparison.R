@@ -112,3 +112,27 @@ test_that(paste0("Function Comparison works via fourier coefficients with basis 
   expect_equal(object = comp_2, expected = FALSE)
 })
 
+test_that('Function Comparison via grid works', {
+
+  func_a <- function(x){1+sin(x)}
+  func_b <- function(x){-1 + sin(x)}
+
+  # two functions that share zeros
+  func_c <- function(x){1 + cos(2*pi*x)}
+  func_d <- function(x){-1 - cos(2*pi*x)}
+
+
+  test_grid <- seq(0,1, length.out = 250)
+
+  comp_1 <- func_comparison_grid(func_a = func_a, func_b = func_b, domain = c(0,1), grid = test_grid)
+  comp_2 <- func_comparison_grid(func_a = func_b, func_b = func_a, domain = c(0,1), grid = test_grid)
+
+  comp_3 <- func_comparison_grid(func_a = func_c, func_b = func_d, domain = c(0,1), grid = test_grid)
+  comp_4 <- func_comparison_grid(func_a = func_d, func_b = func_c, domain = c(0,1), grid = test_grid)
+
+  # expect similar values
+  expect_equal(object = comp_1, expected = FALSE)
+  expect_equal(object = comp_2, expected = TRUE)
+  expect_equal(object = comp_3, expected = FALSE)
+  expect_equal(object = comp_4, expected = TRUE)
+})
