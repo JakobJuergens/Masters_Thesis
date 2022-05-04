@@ -48,11 +48,11 @@ fourier_basis_coef_means <- function(w_func, basis = "fourier", n_basis, domain 
 #' @return: Double that is the desired mean of the fourier coefficient
 fourier_coef_mean <- function(w_func, basis_func, domain = c(0, 1)) {
   # define function to integrate over
-  prod_func <- function(x) {
+  prod_func <- Vectorize(FUN = function(x) {
     return(w_func(x) * basis_func(x))
-  }
+  })
   # integrate over product function
-  coef_mean <- integrate(f = prod_func, lower = domain[1], upper = domain[2])$value
+  coef_mean <- integrate(f = prod_func, lower = domain[1], upper = domain[2], subdivisions = 1000)$value
   # return appropriate mean object
   return(coef_mean)
 }
@@ -81,7 +81,7 @@ fourier_coef_sample <- function(w_func, basis = "fourier", n_basis,
   # function(n){MASS::mvrnorm(n = n, mu = rep(0, 15), Sigma = diag(rep(1, times = 15)))}
 
   # realizations of the fourier coefficients
-  realizations <- means + u_sample_func(n = 1, ...)
+  realizations <- means + u_sample_func(n_basis = n_basis, ...)
   # return realizations
   return(realizations)
 }

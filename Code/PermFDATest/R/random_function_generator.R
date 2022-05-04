@@ -23,9 +23,18 @@ function_sample <- function(w_func, basis = "fourier", n_basis,
 
   # generate basis for generation of functional object
   if (basis == "fourier") {
+    # generate basis to create an appropriate fd object
+    fourier_basis <- fda::create.fourier.basis(rangeval = domain, nbasis = n_basis,
+                                               period = domain[2] - domain[1])
+    # create an fd object with the generated fourier coefficients
+    sample_function <- fda::fd(coef = fourier_coefs, basisobj = fourier_basis)
+    # return an fd object!
+    return(sample_function)
 
   } else if (basis == "eigen") {
-
+    stop(paste0("Currently not implemented. In the future, it will be possible to ",
+         "give a sample as an argument and generate a random function in terms ",
+         "of its empirical eigenbasis."))
   } else {
     stop("Chosen basis type not implemented.")
   }
