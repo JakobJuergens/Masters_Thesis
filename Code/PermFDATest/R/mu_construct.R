@@ -64,6 +64,8 @@ fourier_coef_mean <- function(w_func, basis_func, domain = c(0, 1)) {
 #' investigator expects differences in the distribution functions
 #' @param basis: type of functional basis to use (has to be an orthogonal basis)
 #' @param n_basis: number of basis functions
+#' @param rho: a vector of length n_basis from a square summable sequence that is used
+#' as scaling terms for the error terms
 #' @param domain: vector of two points (start and endpoint of the closed interval)
 #' @param u_sample_func: function that can be used to sample from for the error terms
 #' around the specified mean
@@ -71,32 +73,15 @@ fourier_coef_mean <- function(w_func, basis_func, domain = c(0, 1)) {
 #'
 #' @return: A vector of length n_basis of sampled fourier coefficients
 fourier_coef_sample <- function(w_func, basis = "fourier", n_basis,
-                                u_sample_func, domain = c(0, 1), ...) {
+                                u_sample_func, rho, domain = c(0, 1), ...) {
   # calculate means of fourier coefficients
   means <- fourier_basis_coef_means(
     w_func = w_func, basis = basis,
     n_basis = n_basis, domain = domain
   )
-  # one example for u_sample_func
-  # function(n){MASS::mvrnorm(n = n, mu = rep(0, 15), Sigma = diag(rep(1, times = 15)))}
 
   # realizations of the fourier coefficients
-  realizations <- means + u_sample_func(n_basis = n_basis, ...)
+  realizations <- means + rho * u_sample_func(n_basis = n_basis, ...)
   # return realizations
   return(realizations)
-}
-
-#' This function is used to draw the rho coefficients used in the construction
-#' of the mu measure as described in the paper. These have to falls into l2
-#' However, it is often advisable to specify these yourself.
-#'
-rho_draw <- function(n_basis, coef_vector = NULL){
-  if(!is.null(coef_vector) & length(coef_vector) == n_basis){
-    return(coef_vector)
-  }
-
-  # otherwise generate entries from a square summable sequence
-  else{
-
-  }
 }

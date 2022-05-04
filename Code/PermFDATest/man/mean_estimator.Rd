@@ -16,7 +16,7 @@ mean_estimator(
 \item{sample:}{sample, specified as a list where each element is one observation}
 
 \item{interpolation_mode:}{string that determines the mode of interpolation between
-discrete measurement points. Options: 'linear', 'fourier', 'eigen'}
+discrete measurement points. Options: 'linear', 'fourier', 'bspline'}
 
 \item{domain:}{vector with beginning and endpoint of the closed interval
 that is the domain of the stochastic processes}

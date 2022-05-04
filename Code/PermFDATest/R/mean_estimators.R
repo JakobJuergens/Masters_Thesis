@@ -2,7 +2,7 @@
 #'
 #' @param sample: sample, specified as a list where each element is one observation
 #' @param interpolation_mode: string that determines the mode of interpolation between
-#' discrete measurement points. Options: 'linear', 'fourier', 'eigen'
+#' discrete measurement points. Options: 'linear', 'fourier', 'bspline'
 #' @param domain: vector with beginning and endpoint of the closed interval
 #' that is the domain of the stochastic processes
 #' @param n_basis: if interpolation mode is a basis based method,
@@ -22,9 +22,7 @@ mean_estimator <- function(sample, interpolation_mode = "linear",
   if (interpolation_mode == "bspline") {
     return(bspline_mean_estimator(sample = sample, domain = domain, n_basis = n_basis, grid = grid))
   }
-  if (interpolation_mode == "eigen") {
-    return(eigenbasis_mean_estimator(sample = sample, domain = domain, n_basis = n_basis, grid = grid))
-  } else {
+  else {
     (
       stop("Chosen Interpolation Mode is not available.")
     )
@@ -165,51 +163,5 @@ bspline_mean_estimator <- function(sample, domain, n_basis, grid) {
   # return mean object
   return(mean_function = function(x) {
     fda::eval.fd(evalarg = x, fdobj = mean_fd_obj)
-  })
-}
-
-#' This function finds the estimated mean function from a given sample using
-#' an approximation using a truncated Eigenbasis (Karhunen-Loeve Representation)
-#' Currently non-functional!
-#'
-#' @param sample: sample, specified as a list where each element is one observation
-#' @param domain: vector with beginning and endpoint of the closed interval
-#' that is the domain of the stochastic processes
-#' @param n_basis: the number of basis functions used in the approximation
-#'
-#' @return A function describing the mean function
-eigenbasis_mean_estimator <- function(sample, domain, n_basis, grid) {
-  # figure out number of basis functions to use for the construction of the
-  # functional principal components
-  nbasis <- min(c(100, unlist(purrr::map(.x = sample, .f = ~ length(.x$args)))))
-  # Create cubic bspline Basis with many functions
-  bspline_basis <- fda::create.bspline.basis(rangeval = domain, nbasis = nbasis, norder = 4)
-  # Fit sample using Fourier Basis
-  fitted_sample <- purrr::map(
-    .x = sample,
-    .f = function(obs) {
-      fda::smooth.basis(
-        argvals = obs$args,
-        y = obs$vals,
-        fdParobj = bspline_basis
-      )$fd
-    }
-  )
-  # combine fd objects for fpca
-  combined_fd_obj <- fda::fd(
-    coef = matrix(
-      data = unlist(
-        purrr::map(.x = fitted_sample, .f = function(obs) obs$coefs)
-      ),
-      nrow = 100, ncol = length(sample), byrow = FALSE
-    ),
-    basis = fitted_sample[[1]]$basis
-  )
-  # conduct fpca (centerfns doesn't make sense here because we're looking for
-  # the mean, but this is just for testing purposes)
-  sample_fpca <- fda::pca.fd(fdobj = combined_fd_obj, nharm = n_basis, centerfns = TRUE)
-  # return mean function
-  return(mean_function = function(x) {
-    fda::eval.fd(evalarg = x, fdobj = sample_fpca$meanfd)
   })
 }
