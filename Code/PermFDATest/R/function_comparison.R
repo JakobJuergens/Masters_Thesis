@@ -32,22 +32,39 @@ func_comparison <- function(func_a, func_b, domain = c(0, 1), fourier = FALSE,
   }
 }
 
-#' This function checks if one function is smaller than another function for all
+#' This function checks if one function is weakly smaller than another function for all
 #' points in a closed interval
 #'
 #' @param func_a: fd object for Function one
 #' @param func_b: fd object for Function two
 #' @param domain: interval to check
 #'
-#' @return TRUE or FALSE depending on wheter func_a is always bigger than
+#' @return TRUE or FALSE depending on wheter func_a is always weakly smaller than
 #' func_b
 func_comparison_fourier <- function(func_a, func_b, domain = c(0, 1)) {
   # find zeroes of the difference function
   zeroes <- fourier_zeroes(func_a = func_a, func_b = func_b, domain = domain)
   # if zeroes exists on the domain, then return false
   if(length(zeroes != 0)){
-    # Das hier muss noch überarbeitet werden !!!
-    return(FALSE)
+    # create grid of points to check between the zeroes
+    if(length(zeroes > 1)){
+      inner_points <- unlist(purrr::map(.x = 2:length(zeroes),
+                                        .f = ~ mean(c(zeroes[.x - 1], zeroes[.x]))))
+    }
+    checking_grid <- c(domain[1], inner_points, domain[2])
+    # evaluate functions on checking grid, to determine if one function is always
+    # weakly bigger
+    check_val_a <- fda::eval.fd(evalarg = checking_grid, fdobj = func_a)
+    check_val_b <- fda::eval.fd(evalarg = checking_grid, fdobj = func_b)
+    # return
+    if(all(check_val_b >= check_val_a)){
+      # this is the case we want to check for: there are zeroes but function_b
+      # is still always weakly bigger
+      return(TRUE)
+    }
+    else{
+      return(FALSE)
+    }
   }
   # if no zeroes exists on the domain check on an arbitrary point if func_a
   # is bigger then func b
@@ -110,7 +127,7 @@ fourier_zeroes <- function(func_a, func_b, domain = c(0, 1)) {
   # calculate zeroes
   zeroes_b <- complex(real = 0, imaginary = -1) * log(eigen_b)
   # real zeroes
-  real_zeroes <- sort((Re(zeroes_b[which((abs(Im(zeroes_b)) < 10^(-12)))]) / (2*pi) * (domain[2] - domain[1]))
+  real_zeroes <- sort((Re(zeroes_b[which((abs(Im(zeroes_b)) < 10^(-8)))]) / (2*pi) * (domain[2] - domain[1]))
                       %% (domain[2] - domain[1]))
   # return the real zeroes
   return(real_zeroes)

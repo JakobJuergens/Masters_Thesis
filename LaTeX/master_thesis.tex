@@ -479,7 +479,13 @@ style=authoryear,
 			\end{equation}
 		
 		\subsection{Asymptotics for the Cram\'{e}r-von Mises type Test}
-			Similar to the case presented in \cite{bugni_goodness--fit_2009}, we can derive an asymptotic distribution for the Cram\'{e}r-von Mises type test. Even though this is not necessary to perform the described permutation test, it is an interesting benchmark to compare the test procedure.
+			Similar to the case presented in \cite{bugni_goodness--fit_2009}, we can derive an asymptotic distribution for the Cram\'{e}r-von Mises type test. Even though this is not necessary to perform the described permutation test, it is an interesting benchmark to compare the test procedure. \\
+			
+			Under the nullhypothesis and mild regularity conditions, it is possible to show that 
+			\begin{equation}
+				(n+m)^{\frac{1}{2}} \left[\hat{F}_X(z) - \hat{F}_Y(z)\right]
+			\end{equation}
+			converges to a mean-zero Gaussian process. For the derivation look in Appendix \ref{asymp_deriv}.
 		
 		\subsection{Construction of the Measure $\mu$}
 			As introduced in Section \ref{prob_measures_l2}, it is possible to construct a probability measure on the space of square integrable functions. For the calculation of the Cram\'{e}r-von Mises type test, we need to construct one such probability measure that is suitable to detect the kind of alternative we expect to find.
@@ -692,7 +698,9 @@ style=authoryear,
 						\mathbb{P}\left[\bigcup_{i = 1}^{\infty} A_i\right] \leq \sum_{i = 1}^{\infty} \mathbb{P}\left[A_i\right]
 					\end{equation}
 				for a countable set of events $A_1, A_2, \dots$.
-	
+		
+		\subsection{Derivation of Asymptotic Distribution}\label{asymp_deriv}
+			Here I will derive the asymptotic distribution
 	\newpage
 	\thispagestyle{empty}
 	\section*{Versicherung an Eides statt}	

@@ -30,10 +30,10 @@
 \contentsline {section}{\numberline {6}Closed Testing Procedures}{14}{section.6}%
 \contentsline {section}{\numberline {7}Variant for Alternatives in Specific Frequency Ranges}{14}{section.7}%
 \contentsline {section}{\numberline {8}Simulation Study}{14}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Implementation as an R package}{14}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.1}Implementation as an R package}{15}{subsection.8.1}%
 \contentsline {subsection}{\numberline {8.2}Use of High-Performance Computing}{15}{subsection.8.2}%
 \contentsline {subsection}{\numberline {8.3}Particularities of the Implementation}{15}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}Simulation Setup}{15}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.4}Simulation Setup}{16}{subsection.8.4}%
 \contentsline {subsection}{\numberline {8.5}Results}{16}{subsection.8.5}%
 \contentsline {section}{\numberline {9}Application}{16}{section.9}%
 \contentsline {subsection}{\numberline {9.1}Potential Problems and Solutions}{16}{subsection.9.1}%
@@ -41,3 +41,4 @@
 \contentsline {section}{\numberline {11}Bibliography}{18}{section.11}%
 \contentsline {section}{\numberline {12}Appendix}{i}{section.12}%
 \contentsline {subsection}{\numberline {12.1}Multiple Testing}{i}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Derivation of Asymptotic Distribution}{i}{subsection.12.2}%

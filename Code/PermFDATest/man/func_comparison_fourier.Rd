@@ -2,7 +2,7 @@
 % Please edit documentation in R/function_comparison.R
 \name{func_comparison_fourier}
 \alias{func_comparison_fourier}
-\title{This function checks if one function is smaller than another function for all
+\title{This function checks if one function is weakly smaller than another function for all
 points in a closed interval}
 \usage{
 func_comparison_fourier(func_a, func_b, domain = c(0, 1))
@@ -15,10 +15,10 @@ func_comparison_fourier(func_a, func_b, domain = c(0, 1))
 \item{domain:}{interval to check}
 }
 \value{
-TRUE or FALSE depending on wheter func_a is always bigger than
+TRUE or FALSE depending on wheter func_a is always weakly smaller than
 func_b
 }
 \description{
-This function checks if one function is smaller than another function for all
+This function checks if one function is weakly smaller than another function for all
 points in a closed interval
 }
