@@ -45,12 +45,12 @@ empirical_dist_func <- function(sample, func, domain = c(0, 1), grid = NULL,
 #' @return An approximated value of the empirical distribution function
 empirical_dist_func_fourier <- function(sample, func, domain = c(0, 1), n_fourier_basis) {
   # determine functions that are bigger than the comparison function everywhere
-  bigger <- unlist(purrr::map(
+  wkl_smaller <- unlist(purrr::map(
     .x = sample,
     .f = ~ func_comparison_fourier(func_a = .x, func_b = func, domain = domain)
   ))
   # return mean
-  return(mean(bigger))
+  return(mean(wkl_smaller))
 }
 
 #' Returns the value of an empirical distribution function of a given sample
@@ -64,5 +64,11 @@ empirical_dist_func_fourier <- function(sample, func, domain = c(0, 1), n_fourie
 #'
 #' @return An approximated value of the empirical distribution function
 empirical_dist_func_grid <- function(sample, func, domain = c(0, 1), grid = NULL) {
-
+  # determine functions that are bigger than the comparison function everywhere
+  wkl_smaller <- unlist(purrr::map(
+    .x = sample,
+    .f = ~ func_comparison_grid(func_a = .x, func_b = func, domain = domain, grid = grid)
+  ))
+  # return mean
+  return(mean(wkl_smaller))
 }
