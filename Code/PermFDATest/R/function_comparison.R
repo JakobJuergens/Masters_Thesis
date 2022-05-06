@@ -93,8 +93,19 @@ fourier_zeroes <- function(func_a, func_b, domain = c(0, 1)) {
   sin_coefs <- diff_coefs[which(1:length(diff_coefs) %% 2 == 0)]
   N <- length(sin_coefs)
 
+  # check if all entries of coefficient vector are zero
+  # Then the function is weakly bigger
+  if(all(diff_coefs == 0)){
+    return(c())
+  }
+
   # This function currently only works if the last coefficient is non-zero
   # so implement a check for that case
+  while(cos_coefs[N+1] == 0 & sin_coefs[N] == 0){
+    cos_coefs <- cos_coefs[-(N+1)]
+    sin_coefs <- sin_coefs[-N]
+    N <- N-1
+  }
 
   h_coefs <- c(
     # the first N coefficients
