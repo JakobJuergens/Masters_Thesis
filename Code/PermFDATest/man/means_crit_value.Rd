@@ -12,7 +12,7 @@ means_crit_value(
   sample2,
   interpolation_mode = "linear",
   domain = c(0, 1),
-  n_basis = NA,
+  n_basis = NULL,
   grid
 )
 }

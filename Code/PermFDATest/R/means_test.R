@@ -14,14 +14,8 @@
 #' for the chosen samples.
 #'
 #' @export
-means_t_stat <- function(sample1, sample2, interpolation_mode = "linear", domain = c(0, 1),
-                         n_basis = NA, grid) {
-  if (interpolation_mode == "eigen") {
-    stop(paste0(
-      "interpolation_mode == 'eigen' is currently not functional for the means-based test. ",
-      "However, in the context of the means test it does not add useful functionality."
-    ))
-  }
+means_t_stat <- function(sample1, sample2, interpolation_mode = "bspline", domain = c(0, 1),
+                         n_basis = NULL, grid = NULL) {
 
   # calculate sample mean functions for both samples
   smpl1_mean <- mean_estimator(
@@ -74,7 +68,7 @@ means_t_stat <- function(sample1, sample2, interpolation_mode = "linear", domain
 #' @export
 means_crit_value <- function(alpha = 0.05, full = TRUE, approxQ, sample1, sample2,
                              interpolation_mode = "linear", domain = c(0, 1),
-                             n_basis = NA, grid){
+                             n_basis = NULL, grid){
 
   if(missing(approxQ)){
     critical_value <- perm_crit_value(alpha = alpha, full = full,

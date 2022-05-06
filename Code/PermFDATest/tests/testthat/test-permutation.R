@@ -34,3 +34,75 @@ test_that("Full Permutation Procedure works for scalar mean setting.", {
   expect_equal(object = t_val, expected = exp)
 })
 
+test_that("Full Permutation Procedure works for mean based test for interpolation_mode = 'bspline'.",{
+
+  grid = seq(from = 0, to = 1, length.out = 100)
+
+  # create two sample with two observations each for a trivial case
+  sample1 <- list(
+    list(args = grid,
+         vals = rep(0, times = length(grid))),
+    list(args = grid,
+         vals = rep(0.5, times = length(grid)))
+  )
+  sample2 <- list(
+    list(args = grid,
+         vals = rep(1, times = length(grid))),
+    list(args = grid,
+         vals = rep(1.5, times = length(grid)))
+  )
+  sample3 <- list(
+    list(args = grid,
+         vals = grid),
+    list(args = grid,
+         vals = grid)
+  )
+
+  Q_1 <- choose(n = length(sample1) + length(sample2), k = length(sample1))
+
+  t_val_1 <- perm_crit_value_full(alpha = 0.05, Q = Q_1, sample1 = sample1, sample2 = sample2,
+                                  t_stat_func = means_t_stat, interpolation_mode = "bspline", domain = c(0,1),
+                                  n_basis = 15)
+
+  diff_1 <- c(-1, -0.5, 0, 0, 0.5, 1)^2
+  t_real_1 <- quantile(x = diff_1, probs = 0.95, names = FALSE)
+
+  expect_equal(object = t_val_1, expected = t_real_1)
+
+})
+
+test_that("Full Permutation Procedure works for mean based test for interpolation_mode = 'linear'.",{
+
+  grid = seq(from = 0, to = 1, length.out = 100)
+
+  # create two sample with two observations each for a trivial case
+  sample1 <- list(
+    list(args = grid,
+         vals = rep(0, times = length(grid))),
+    list(args = grid,
+         vals = rep(0.5, times = length(grid)))
+  )
+  sample2 <- list(
+    list(args = grid,
+         vals = rep(1, times = length(grid))),
+    list(args = grid,
+         vals = rep(1.5, times = length(grid)))
+  )
+  sample3 <- list(
+    list(args = grid,
+         vals = grid),
+    list(args = grid,
+         vals = grid)
+  )
+
+  Q_1 <- choose(n = length(sample1) + length(sample2), k = length(sample1))
+
+  t_val_1 <- perm_crit_value_full(alpha = 0.05, Q = Q_1, sample1 = sample1, sample2 = sample2,
+                                  t_stat_func = means_t_stat, interpolation_mode = "linear", domain = c(0,1),
+                                  grid = seq(0,1, length.out = 1000))
+
+  diff_1 <- c(-1, -0.5, 0, 0, 0.5, 1)^2
+  t_real_1 <- quantile(x = diff_1, probs = 0.95, names = FALSE)
+
+  expect_equal(object = t_val_1, expected = t_real_1)
+})

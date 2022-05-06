@@ -7,10 +7,10 @@
 means_t_stat(
   sample1,
   sample2,
-  interpolation_mode = "linear",
+  interpolation_mode = "bspline",
   domain = c(0, 1),
-  n_basis = NA,
-  grid
+  n_basis = NULL,
+  grid = NULL
 )
 }
 \arguments{
