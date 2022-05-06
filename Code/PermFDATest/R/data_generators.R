@@ -101,3 +101,30 @@ quick_funcify <- function(sample, domain = c(0,1), n_fourier_basis){
 
   return(data_fd)
 }
+
+#' This function transforms a sample of functional data as it is typically generated
+#' by functions from the package fda into the format that is used for example
+#' for the function empirical_dist_func
+#'
+#' @param orgnl_sample: fda object representing multiple observations;
+#' one observation per column of the coef object
+#'
+#' @return: sample in the format that is used by this package;
+#' list containing elements, each of which is a single observation
+func_sample_transform <- function(orgnl_sample) {
+  # ectract basis object from original sample
+  obj_basis <- orgnl_sample$basis
+  # find number of observatioons
+  n_obs <- ncol(orgnl_sample$coefs)
+  # generate new sample by transforming each observation into its own
+  # fd object
+  new_sample <- purrr::map(
+    .x = 1:n_obs,
+    .f = ~ fda::fd(
+      coef = orgnl_sample$coef[, .x],
+      basisobj = obj_basis
+    )
+  )
+  # return new sample
+  return(new_sample)
+}
