@@ -7,7 +7,7 @@ around a mean that's determined by the function w}
 \usage{
 fourier_coef_sample(
   w_func,
-  basis = "fourier",
+  basis,
   n_basis,
   rho,
   u_sample_func,
