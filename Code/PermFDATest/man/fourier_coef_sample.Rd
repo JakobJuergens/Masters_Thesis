@@ -9,8 +9,8 @@ fourier_coef_sample(
   w_func,
   basis = "fourier",
   n_basis,
-  u_sample_func,
   rho,
+  u_sample_func,
   domain = c(0, 1),
   ...
 )

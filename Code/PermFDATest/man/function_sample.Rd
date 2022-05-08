@@ -8,7 +8,7 @@ measure mu.}
 \usage{
 function_sample(
   w_func,
-  basis = "fourier",
+  basis,
   n_basis,
   rho,
   u_sample_func,

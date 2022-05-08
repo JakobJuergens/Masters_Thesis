@@ -3,26 +3,20 @@
 #'
 #' @param w_func: function that is large in the areas of the domain the
 #' investigator expects differences in the distribution functions
-#' @param basis: type of functional basis to use (has to be an orthogonal basis)
+#' @param basis: basis created by fda
 #' @param n_basis: number of basis functions
 #' @param domain: vector of two points (start and endpoint of the closed interval)
 #'
 #' @return: Vector of length n_basis containing the resulting means of the
 #' fourier coefficients
-fourier_basis_coef_means <- function(w_func, basis = "fourier", n_basis, domain = c(0, 1)) {
-  # create chosen basis (has to be orthogonal basis!)
-  if (basis == "fourier") {
-    my_basis <- fda::create.fourier.basis(
-      rangeval = domain, nbasis = n_basis)
-  } else {
-    stop("Chosen basis not implemented.")
-  }
+fourier_basis_coef_means <- function(w_func, basis, domain = c(0, 1)) {
+
   # extract basis functions as function objects
   basis_functions <- purrr::map(
     .x = 1:n_basis,
     .f = function(i) {
       basis_func <- function(x) {
-        fda::eval.basis(evalarg = x, basisobj = my_basis)[1, i]
+        fda::eval.basis(evalarg = x, basisobj = basis)[1, i]
       }
     }
   )
@@ -72,8 +66,8 @@ fourier_coef_mean <- function(w_func, basis_func, domain = c(0, 1)) {
 #' @param ...: further parameters that are given to u_sample_func
 #'
 #' @return: A vector of length n_basis of sampled fourier coefficients
-fourier_coef_sample <- function(w_func, basis = "fourier", n_basis,
-                                u_sample_func, rho, domain = c(0, 1), ...) {
+fourier_coef_sample <- function(w_func, basis = "fourier", n_basis, rho,
+                                u_sample_func, domain = c(0, 1), ...) {
   # calculate means of fourier coefficients
   means <- fourier_basis_coef_means(
     w_func = w_func, basis = basis,
@@ -102,8 +96,25 @@ fourier_coef_sample <- function(w_func, basis = "fourier", n_basis,
 #' @param ...: further parameters that are given to u_sample_func
 #'
 #' @return: A functional object that represents the sampled function
-function_sample <- function(w_func, basis = "fourier", n_basis, rho,
+function_sample <- function(w_func, basis, n_basis, rho,
                             u_sample_func, domain = c(0, 1), ...) {
+
+  # generate basis for generation of functional object
+  if (basis == "fourier") {
+    # generate basis to create an appropriate fd object
+    basis <- fda::create.fourier.basis(
+      rangeval = domain, nbasis = n_basis,
+      period = domain[2] - domain[1]
+    )
+  } else if (basis == "eigen") {
+    stop(paste0(
+      "Currently not implemented. In the future, it will be possible to ",
+      "give a sample as an argument and generate a random function in terms ",
+      "of its empirical eigenbasis."
+    ))
+  } else {
+    stop("Chosen basis type not implemented.")
+  }
 
   # generate fourier coefficients
   fourier_coefs <- fourier_coef_sample(
@@ -111,21 +122,8 @@ function_sample <- function(w_func, basis = "fourier", n_basis, rho,
     u_sample_func = u_sample_func, domain = domain, ...
   )
 
-  # generate basis for generation of functional object
-  if (basis == "fourier") {
-    # generate basis to create an appropriate fd object
-    fourier_basis <- fda::create.fourier.basis(rangeval = domain, nbasis = n_basis,
-                                               period = domain[2] - domain[1])
-    # create an fd object with the generated fourier coefficients
-    sample_function <- fda::fd(coef = fourier_coefs, basisobj = fourier_basis)
-    # return an fd object!
-    return(sample_function)
-
-  } else if (basis == "eigen") {
-    stop(paste0("Currently not implemented. In the future, it will be possible to ",
-                "give a sample as an argument and generate a random function in terms ",
-                "of its empirical eigenbasis."))
-  } else {
-    stop("Chosen basis type not implemented.")
-  }
+  # create an fd object with the generated fourier coefficients
+  sample_function <- fda::fd(coef = fourier_coefs, basisobj = fourier_basis)
+  # return an fd object!
+  return(sample_function)
 }

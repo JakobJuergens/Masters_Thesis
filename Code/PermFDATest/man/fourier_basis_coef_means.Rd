@@ -5,13 +5,13 @@
 \title{This function calculates the means of the fourier coefficients as described
 in section 5 of Bugni, Horowitz (2021) for a chosen basis and a function  w}
 \usage{
-fourier_basis_coef_means(w_func, basis = "fourier", n_basis, domain = c(0, 1))
+fourier_basis_coef_means(w_func, basis, domain = c(0, 1))
 }
 \arguments{
 \item{w_func:}{function that is large in the areas of the domain the
 investigator expects differences in the distribution functions}
 
-\item{basis:}{type of functional basis to use (has to be an orthogonal basis)}
+\item{basis:}{basis created by fda}
 
 \item{n_basis:}{number of basis functions}
 
