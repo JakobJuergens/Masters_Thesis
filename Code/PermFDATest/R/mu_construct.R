@@ -94,18 +94,20 @@ fourier_coef_sample <- function(w_func, basis = "fourier", n_basis,
 #' investigator expects differences in the distribution functions
 #' @param basis: type of functional basis to use (has to be an orthogonal basis)
 #' @param n_basis: number of basis functions
+#' @param rho: a vector of length n_basis from a square summable sequence that is used
+#' as scaling terms for the error terms
 #' @param domain: vector of two points (start and endpoint of the closed interval)
 #' @param u_sample_func: function that can be used to sample from for the error terms
 #' around the specified mean
 #' @param ...: further parameters that are given to u_sample_func
 #'
 #' @return: A functional object that represents the sampled function
-function_sample <- function(w_func, basis = "fourier", n_basis,
+function_sample <- function(w_func, basis = "fourier", n_basis, rho,
                             u_sample_func, domain = c(0, 1), ...) {
 
   # generate fourier coefficients
   fourier_coefs <- fourier_coef_sample(
-    w_func = w_func, basis = basis, n_basis = n_basis,
+    w_func = w_func, basis = basis, n_basis = n_basis, rho = rho,
     u_sample_func = u_sample_func, domain = domain, ...
   )
 

@@ -10,6 +10,7 @@ function_sample(
   w_func,
   basis = "fourier",
   n_basis,
+  rho,
   u_sample_func,
   domain = c(0, 1),
   ...
@@ -22,6 +23,9 @@ investigator expects differences in the distribution functions}
 \item{basis:}{type of functional basis to use (has to be an orthogonal basis)}
 
 \item{n_basis:}{number of basis functions}
+
+\item{rho:}{a vector of length n_basis from a square summable sequence that is used
+as scaling terms for the error terms}
 
 \item{domain:}{vector of two points (start and endpoint of the closed interval)}
 

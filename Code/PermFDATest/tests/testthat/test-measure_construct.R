@@ -19,3 +19,19 @@ test_that("The calculation of the means of the fourier coefficients works for th
 
   expect_equal(object = round(x = coef_means, digits = 8), expected = c(1, rep(0, times = 14)))
 })
+
+test_that("The generation of random Fourier coefficients works", {
+  # create the weight function
+  w_func <- function(x){return(1)}
+  # choose n_basis
+  n_basis <- 15
+  # create vector of rho's
+  rho <- seq(from = 2, to = 0.25, length.out = n_basis)
+  # draw random function
+  rand_func <- function_sample(w_func = w_func, basis = "fourier", n_basis = n_basis,
+                               rho = rho, u_sample_func = u_unif, domain = c(0,1))
+
+  # check properties of returned object
+  expect_equal(object = fda::is.fd(rand_func), expected = TRUE)
+  expect_equal(object = nrow(rand_func$coefs), expected = n_basis)
+})
