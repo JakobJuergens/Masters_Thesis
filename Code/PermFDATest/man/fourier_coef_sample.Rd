@@ -19,7 +19,7 @@ fourier_coef_sample(
 \item{w_func:}{function that is large in the areas of the domain the
 investigator expects differences in the distribution functions}
 
-\item{basis:}{type of functional basis to use (has to be an orthogonal basis)}
+\item{basis:}{basis created by fda}
 
 \item{n_basis:}{number of basis functions}
 
