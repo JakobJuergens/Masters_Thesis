@@ -8,7 +8,6 @@ are chosen randomly.}
 \usage{
 perm_crit_value_approx(
   alpha = 0.05,
-  Q,
   approxQ,
   sample1,
   sample2,
@@ -18,8 +17,6 @@ perm_crit_value_approx(
 }
 \arguments{
 \item{alpha:}{Size of the test}
-
-\item{Q:}{possible number of combinations}
 
 \item{approxQ:}{integer specifying the number of combinations to be used for
 the approximation of the critical value}

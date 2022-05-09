@@ -66,7 +66,7 @@ fourier_coef_mean_eigen <- function(w_func, basis_func, domain = c(0, 1)) {
 #'
 #' @return: A vector of length n_basis of sampled fourier coefficients
 fourier_coef_sample_eigen <- function(w_func, eigen_func_obj, n_basis, rho,
-                                u_sample_func, domain = c(0, 1), ...) {
+                                      u_sample_func, domain = c(0, 1), ...) {
   # calculate means of fourier coefficients
   means <- fourier_basis_coef_means_eigen(
     w_func = w_func, eigen_func_obj = eigen_func_obj,
@@ -97,6 +97,11 @@ fourier_coef_sample_eigen <- function(w_func, eigen_func_obj, n_basis, rho,
 #' @return: A functional object that represents the sampled function
 function_sample_eigen <- function(w_func, eigen_func_obj, n_basis, rho,
                                   u_sample_func, domain = c(0, 1), ...) {
-
-
+  # generate fourier coefficients
+  fourier_coefs <- fourier_coef_sample_eigen(
+    w_func = w_func, eigen_func_obj = eigen_func_obj, n_basis = n_basis, rho = rho,
+    u_sample_func = u_sample_func, domain = domain, ...
+  )
+  # extract basis object from eigen_func_obj
+  basis <- eigen_func_obj$basis
 }

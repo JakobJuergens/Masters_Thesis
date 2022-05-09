@@ -7,13 +7,13 @@
 means_crit_value(
   alpha = 0.05,
   full = TRUE,
-  approxQ,
+  approxQ = NULL,
   sample1,
   sample2,
   interpolation_mode = "linear",
   domain = c(0, 1),
   n_basis = NULL,
-  grid
+  grid = NULL
 )
 }
 \arguments{
@@ -22,7 +22,7 @@ means_crit_value(
 \item{sample2:}{second sample, specified as a list where each element is one observation}
 
 \item{interpolation_mode:}{string that determines the mode of interpolation between
-discrete measurement points. (Recommendation: 'bspline')}
+discrete measurement points. (Recommendation: 'linear')}
 
 \item{domain:}{vector with beginning and endpoint of the closed interval
 that is the domain of the stochastic processes}

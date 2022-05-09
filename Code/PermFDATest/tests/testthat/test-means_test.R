@@ -26,6 +26,50 @@ test_that("Calculation of Means based test statistic works", {
   output_2 <- means_t_stat(sample1 = sample_1, sample2 = sample_3, interpolation_mode = 'bspline',
                               domain = c(0,1), grid = grid, n_basis = 11)
 
-  expect_equal(output_1, 1)
-  expect_equal(output_2, 1/3)
+  expect_equal(object = output_1, expected = 1)
+  expect_equal(object = output_2, expected = 1/3)
+})
+
+test_that("Calculation of Critical Value for Means-based Test works", {
+  grid = seq(0,1, length.out = 100)
+
+  sample_1 <- rep(
+    x = list(list(
+      args = grid,
+      vals = rep(1, times = length(grid))
+    )), times = 4)
+
+  sample_2 <- rep(
+    x = list(list(
+      args = grid,
+      vals = rep(0, times = length(grid))
+    )), times = 4)
+
+  crit_val <- means_crit_value(alpha = 0.05, full = TRUE, sample1 = sample_1,
+                               sample2 = sample_2, interpolation_mode = 'linear',
+                               domain = c(0,1), grid = seq(0,1, length.out = 100))
+
+  expect_equal(object = 0, expected = 1)
+})
+
+test_that("Approximation of Critical Value for Means-based Test works", {
+  grid = seq(0,1, length.out = 100)
+
+  sample_1 <- rep(
+    x = list(list(
+      args = grid,
+      vals = rep(1, times = length(grid))
+    )), times = 20)
+
+  sample_2 <- rep(
+    x = list(list(
+      args = grid,
+      vals = rep(0, times = length(grid))
+    )), times = 20)
+
+  crit_val <- means_crit_value(alpha = 0.05, full = FALSE, approxQ = 10, sample1 = sample_1,
+                               sample2 = sample_2, interpolation_mode = 'linear',
+                               domain = c(0,1), grid = seq(0,1, length.out = 100))
+
+  expect_equal(object = 0, expected = 1)
 })

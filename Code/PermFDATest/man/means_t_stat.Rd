@@ -7,7 +7,7 @@
 means_t_stat(
   sample1,
   sample2,
-  interpolation_mode = "bspline",
+  interpolation_mode = "linear",
   domain = c(0, 1),
   n_basis = NULL,
   grid = NULL
