@@ -99,7 +99,7 @@ perm_crit_value_full <- function(alpha = 0.05, Q, sample1, sample2, t_stat_func,
 
 #' This function derives the critical value for the permutation test by considering
 #' a specified number of combinations. The specific combinations that are considered
-#' are chosen randomly.
+#' are chosen randomly with replacement.
 #'
 #' @param alpha: Size of the test
 #' @param approxQ: integer specifying the number of combinations to be used for
@@ -120,10 +120,14 @@ perm_crit_value_approx <- function(alpha = 0.05, approxQ, sample1, sample2, t_st
   n_2 <- length(sample2)
 
   # iterate over combinations
+  # previously, this worked as in the full version and sampled combinations
+  # without replacement. However, this resulted in large performance problems as
+  # the loop iterated over unreasonably many elements which were not used in the
+  # actual approximation.
   for (i in 1:approxQ) {
     # generate a random combination
     index_1 <- sample(x = 1:(n_1+n_2), size = n_1, replace = FALSE)
-    index_2 <- setdiff(x = 1:(n_1+n_2), y = index_2)
+    index_2 <- setdiff(x = 1:(n_1+n_2), y = index_1)
     # create samples
     cur_sample1 <- data[index_1]
     cur_sample2 <- data[index_2]

@@ -67,7 +67,7 @@ test_that("Approximation of Critical Value for Means-based Test works", {
       vals = rep(0, times = length(grid))
     )), times = 20)
 
-  crit_val <- means_crit_value(alpha = 0.05, full = FALSE, approxQ = 10, sample1 = sample_1,
+  crit_val <- means_crit_value(alpha = 0.05, full = FALSE, approxQ = 100, sample1 = sample_1,
                                sample2 = sample_2, interpolation_mode = 'linear',
                                domain = c(0,1), grid = seq(0,1, length.out = 100))
 

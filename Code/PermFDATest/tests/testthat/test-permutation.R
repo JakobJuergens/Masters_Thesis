@@ -116,9 +116,7 @@ test_that("Approximation Permutation Procedure works for trivial setting.", {
   sample1 <- as.list(1:4)
   sample2 <- as.list(5:8)
 
-  Q <- choose(n = length(sample1) + length(sample2), k = length(sample1))
-
-  t_val <- perm_crit_value_approx(alpha = 0.05, Q = Q, approxQ = 10, sample1 = sample1,
+  t_val <- perm_crit_value_approx(alpha = 0.05, approxQ = 10, sample1 = sample1,
                                 sample2 = sample2, t_stat_func = trivial_tstat_func)
 
   expect_equal(object = t_val, expected = 0.5)
