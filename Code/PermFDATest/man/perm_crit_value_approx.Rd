@@ -4,7 +4,7 @@
 \alias{perm_crit_value_approx}
 \title{This function derives the critical value for the permutation test by considering
 a specified number of combinations. The specific combinations that are considered
-are chosen randomly.}
+are chosen randomly with replacement.}
 \usage{
 perm_crit_value_approx(
   alpha = 0.05,
@@ -32,5 +32,5 @@ the approximation of the critical value}
 \description{
 This function derives the critical value for the permutation test by considering
 a specified number of combinations. The specific combinations that are considered
-are chosen randomly.
+are chosen randomly with replacement.
 }
