@@ -14,7 +14,7 @@
 #' for the chosen samples.
 #'
 #' @export
-means_t_stat <- function(sample1, sample2, interpolation_mode = "linear", domain = c(0, 1),
+means_tstat <- function(sample1, sample2, interpolation_mode = "linear", domain = c(0, 1),
                          n_basis = NULL, grid = NULL) {
 
   # calculate sample mean functions for both samples
@@ -50,7 +50,8 @@ means_t_stat <- function(sample1, sample2, interpolation_mode = "linear", domain
   return(test_value$value)
 }
 
-#' This function calculates / approximates the critical value for the means based test
+#' This function calculates realizations of the means based test statistic
+#' over a specified number of permuations
 #'
 #' @param sample1: first sample, specified as a list where each element is one observation
 #' @param sample2: second sample, specified as a list where each element is one observation
@@ -66,24 +67,24 @@ means_t_stat <- function(sample1, sample2, interpolation_mode = "linear", domain
 #' for the chosen samples.
 #'
 #' @export
-means_crit_value <- function(alpha = 0.05, full = TRUE, approxQ = NULL, sample1, sample2,
+means_tstats <- function(full = TRUE, approxQ = NULL, sample1, sample2,
                              interpolation_mode = "linear", domain = c(0, 1),
                              n_basis = NULL, grid = NULL) {
   if (full == TRUE) {
-    critical_value <- perm_crit_value(
-      alpha = alpha, full = full,
-      sample1 = sample1, sample2 = sample2, t_stat_func = means_t_stat,
+    tstats <- perm_tstats(
+      full = full,
+      sample1 = sample1, sample2 = sample2, t_stat_func = means_tstat,
       interpolation_mode = interpolation_mode, domain = domain,
       n_basis = n_basis, grid = grid
     )
   } else if(full == FALSE){
-    critical_value <- perm_crit_value(
-      alpha = alpha, full = full, approxQ = approxQ,
-      sample1 = sample1, sample2 = sample2, t_stat_func = means_t_stat,
+    tstats <- perm_tstats(
+      full = full, approxQ = approxQ,
+      sample1 = sample1, sample2 = sample2, t_stat_func = means_tstat,
       interpolation_mode = interpolation_mode, domain = domain,
       n_basis = n_basis, grid = grid
     )
   }
 
-  return(critical_value)
+  return(tstats)
 }

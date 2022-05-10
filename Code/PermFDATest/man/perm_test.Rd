@@ -5,14 +5,15 @@
 \title{This function performs the task of the permutation test function (called phi
 in the corresponding paper)}
 \usage{
-perm_test(alpha, crit_value, realized_value)
+perm_test(alpha, realizations, realized_value)
 }
 \arguments{
 \item{alpha:}{Significance Level of the test}
 
-\item{crit_value:}{critical value of the permutation test}
+\item{realizations:}{vector of realizations of the test statistic over
+permutations}
 
-\item{realized_value:}{realized value of the test statistic}
+\item{realized_value:}{realized value of the test statistic in original permutation}
 }
 \value{
 : The value of the permutation test function

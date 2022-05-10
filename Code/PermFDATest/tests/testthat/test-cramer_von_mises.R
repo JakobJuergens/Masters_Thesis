@@ -26,5 +26,5 @@ test_that("Cramer-von Mises Test gives output in the correct format", {
 
   # check some simple theoretical properties
   expect_equal(object = is.numeric(tau_hat), expected = TRUE)
-  expect_equal(object = (tau_hat > 0), expected = TRUE)
+  expect_equal(object = (tau_hat >= 0), expected = TRUE)
 })

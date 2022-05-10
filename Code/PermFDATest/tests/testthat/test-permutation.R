@@ -9,9 +9,10 @@ test_that("Full Permutation Procedure works for trivial setting.", {
 
   Q <- choose(n = length(sample1) + length(sample2), k = length(sample1))
 
-  t_val <- perm_crit_value_full(alpha = 0.05, Q = Q, sample1 = sample1,
-                                sample2 = sample2, t_stat_func = trivial_tstat_func)
+  t_vals <- perm_tstats_full(Q = Q, sample1 = sample1,
+                             sample2 = sample2, t_stat_func = trivial_tstat_func)
 
+  crit_value <- crit_val(realizations = t_vals, alpha = 0.05)
   expect_equal(object = t_val, expected = 0.5)
 })
 
@@ -26,12 +27,13 @@ test_that("Full Permutation Procedure works for scalar mean setting.", {
 
   Q <- choose(n = length(sample1) + length(sample2), k = length(sample1))
 
-  t_val <- perm_crit_value_full(alpha = 0.05, Q = Q, sample1 = sample1,
+  t_vals <- perm_tstats_full(Q = Q, sample1 = sample1,
                                 sample2 = sample2, t_stat_func = mean_tstat_func)
 
+  crit_value <- crit_val(realizations = t_vals, alpha = 0.05)
   diff <-  7 - 2*c(2, 7/3, 8/3, 3, 8/3, 3, 10/3, 10/3, 11/3, 12/3, 3, 10/3, 11/3, 11/3, 12/3, 13/3, 12/3, 13/3, 14/3, 15/3)
   exp <- quantile(x = diff, probs = 0.95, names = FALSE)
-  expect_equal(object = t_val, expected = exp)
+  expect_equal(object = crit_value, expected = exp)
 })
 
 test_that("Full Permutation Procedure works for mean based test for interpolation_mode = 'bspline'.",{
@@ -60,14 +62,15 @@ test_that("Full Permutation Procedure works for mean based test for interpolatio
 
   Q_1 <- choose(n = length(sample1) + length(sample2), k = length(sample1))
 
-  t_val_1 <- perm_crit_value_full(alpha = 0.05, Q = Q_1, sample1 = sample1, sample2 = sample2,
-                                  t_stat_func = means_t_stat, interpolation_mode = "bspline", domain = c(0,1),
+  t_vals <- perm_tstats_full(Q = Q_1, sample1 = sample1, sample2 = sample2,
+                                  t_stat_func = means_tstat, interpolation_mode = "bspline", domain = c(0,1),
                                   n_basis = 15)
+  crit_value_1 <- crit_val(realizations = t_vals, alpha = 0.05)
 
   diff_1 <- c(-1, -0.5, 0, 0, 0.5, 1)^2
   t_real_1 <- quantile(x = diff_1, probs = 0.95, names = FALSE)
 
-  expect_equal(object = t_val_1, expected = t_real_1)
+  expect_equal(object = crit_value_1, expected = t_real_1)
 
 })
 
@@ -97,14 +100,15 @@ test_that("Full Permutation Procedure works for mean based test for interpolatio
 
   Q_1 <- choose(n = length(sample1) + length(sample2), k = length(sample1))
 
-  t_val_1 <- perm_crit_value_full(alpha = 0.05, Q = Q_1, sample1 = sample1, sample2 = sample2,
-                                  t_stat_func = means_t_stat, interpolation_mode = "linear", domain = c(0,1),
+  t_vals_1 <- perm_tstats_full(Q = Q_1, sample1 = sample1, sample2 = sample2,
+                                  t_stat_func = means_tstat, interpolation_mode = "linear", domain = c(0,1),
                                   grid = seq(0,1, length.out = 1000))
+  crit_value_1 <- crit_val(realizations = t_vals_1, alpha = 0.05)
 
   diff_1 <- c(-1, -0.5, 0, 0, 0.5, 1)^2
   t_real_1 <- quantile(x = diff_1, probs = 0.95, names = FALSE)
 
-  expect_equal(object = t_val_1, expected = t_real_1)
+  expect_equal(object = crit_value_1, expected = t_real_1)
 })
 
 test_that("Approximation Permutation Procedure works for trivial setting.", {
@@ -116,8 +120,8 @@ test_that("Approximation Permutation Procedure works for trivial setting.", {
   sample1 <- as.list(1:4)
   sample2 <- as.list(5:8)
 
-  t_val <- perm_crit_value_approx(alpha = 0.05, approxQ = 10, sample1 = sample1,
+  t_vals <- perm_tstats_approx(approxQ = 10, sample1 = sample1,
                                 sample2 = sample2, t_stat_func = trivial_tstat_func)
-
-  expect_equal(object = t_val, expected = 0.5)
+  crit_value <- crit_val(realizations = t_vals, alpha = 0.05)
+  expect_equal(object = crit_value, expected = 0.5)
 })

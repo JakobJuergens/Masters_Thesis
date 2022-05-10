@@ -20,10 +20,10 @@ test_that("Calculation of Means based test statistic works", {
       vals = seq(0, 1, length.out = length(grid))
     )), times = 20)
 
-  output_1 <- means_t_stat(sample1 = sample_1, sample2 = sample_2, interpolation_mode = 'linear',
+  output_1 <- means_tstat(sample1 = sample_1, sample2 = sample_2, interpolation_mode = 'linear',
                          domain = c(0,1), grid = grid)
 
-  output_2 <- means_t_stat(sample1 = sample_1, sample2 = sample_3, interpolation_mode = 'bspline',
+  output_2 <- means_tstat(sample1 = sample_1, sample2 = sample_3, interpolation_mode = 'bspline',
                               domain = c(0,1), grid = grid, n_basis = 11)
 
   expect_equal(object = output_1, expected = 1)
@@ -45,9 +45,11 @@ test_that("Calculation of Critical Value for Means-based Test works", {
       vals = rep(0, times = length(grid))
     )), times = 4)
 
-  crit_val <- means_crit_value(alpha = 0.05, full = TRUE, sample1 = sample_1,
+  tstats <- means_tstats(full = TRUE, sample1 = sample_1,
                                sample2 = sample_2, interpolation_mode = 'linear',
                                domain = c(0,1), grid = seq(0,1, length.out = 100))
+
+  crit_value <- crit_val(realizations = tstats, alpha = 0.05)
 
   expect_equal(object = 0, expected = 1)
 })
@@ -67,9 +69,11 @@ test_that("Approximation of Critical Value for Means-based Test works", {
       vals = rep(0, times = length(grid))
     )), times = 20)
 
-  crit_val <- means_crit_value(alpha = 0.05, full = FALSE, approxQ = 100, sample1 = sample_1,
+  tstats <- means_tstats(full = FALSE, approxQ = 100, sample1 = sample_1,
                                sample2 = sample_2, interpolation_mode = 'linear',
                                domain = c(0,1), grid = seq(0,1, length.out = 100))
+
+  crit_value <- crit_val(realizations = tstats, alpha = 0.05)
 
   expect_equal(object = 0, expected = 1)
 })
