@@ -13,7 +13,8 @@ cramer_von_mises_tstat_grid(
   rho,
   u_sample_func,
   grid = NULL,
-  n_func
+  n_func,
+  ...
 )
 }
 \arguments{
@@ -41,6 +42,8 @@ comparison}
 
 \item{n_func:}{number of functions used for the Monte-Carlo Integration in the
 approximation of tau}
+
+\item{...:}{additional arguments given to u_sample_func}
 }
 \value{
 : The value of the t-statistic for the Cramer-von Mises test

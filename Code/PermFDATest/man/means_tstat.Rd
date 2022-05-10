@@ -19,7 +19,7 @@ means_tstat(
 \item{sample2:}{second sample, specified as a list where each element is one observation}
 
 \item{interpolation_mode:}{string that determines the mode of interpolation between
-discrete measurement points. (Recommendation: 'bspline')}
+discrete measurement points. (Recommendation: 'linear')}
 
 \item{domain:}{vector with beginning and endpoint of the closed interval
 that is the domain of the stochastic processes}
