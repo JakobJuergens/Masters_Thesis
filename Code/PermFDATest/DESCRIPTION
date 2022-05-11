@@ -14,7 +14,8 @@ Imports:
   fda,
   purrr,
   stats,
-  MASS
+  MASS,
+  parallel
 LazyData: true
 RoxygenNote: 7.1.2
 Suggests: 

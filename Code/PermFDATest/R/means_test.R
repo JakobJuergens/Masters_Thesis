@@ -53,6 +53,10 @@ means_tstat <- function(sample1, sample2, interpolation_mode = "linear", domain 
 #' This function calculates realizations of the means based test statistic
 #' over a specified number of permuations
 #'
+#' @param full: Boolean that decides whether all combinations are considered
+#' if FALSE, approxQ has to be provided
+#' @param approxQ: integer specifying the number of combinations to be used for
+#' the approximation of the critical value
 #' @param sample1: first sample, specified as a list where each element is one observation
 #' @param sample2: second sample, specified as a list where each element is one observation
 #' @param interpolation_mode: string that determines the mode of interpolation between
