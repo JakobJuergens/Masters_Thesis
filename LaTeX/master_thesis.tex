@@ -634,10 +634,10 @@ style=authoryear,
 			\end{itemize}
 
 		\subsection{Simulation Setup}
-		As part of this thesis, I take inspiration from the simulation study from \cite{bugni_permutation_2021} and shine more light on specific settings that offer insight into the potential benefits and problems of the method. In particular, I decided to simulate the following four settings. Deviating from the original paper, I focus on the two sample setting and use a sample size of 20 observations per sample.
+		As part of this thesis, I take inspiration from the simulation study from \cite{bugni_permutation_2021} and shine more light on specific settings that offer insight into the potential benefits and problems of the method. Deviating from the original paper, I focus on the two sample setting and use a sample size of 20 observations per sample and focus on three distinct violations of the Nullhypothesis.
 		
 		\begin{enumerate}
-			\item \textbf{Identical Data Generating Processes}
+			\item \textbf{Identical Data Generating Processes} (No violation)
 			\item \textbf{Mean Shift}
 			\item \textbf{Correlation Shift}
 			\item \textbf{Variance Shift}
@@ -652,8 +652,19 @@ style=authoryear,
 			\label{settings}
 		\end{figure}
 	
-		To describe the specific processes that are used in the simulation, I introduce the notation used in \cite{bugni_permutation_2021} shortly to then describe the data generating processes mathematically.
-		{\color{red} Add description of data generating processes here!}
+		To describe the specific processes that are used in the simulation, I introduce the notation used in \cite{bugni_permutation_2021} shortly to then describe the data generating processes mathematically. I generate the data on the closed interval $\left[0,1\right]$ by discretely generating observations and fitting a fourier curve to the discrete data to obtain functional observations. Let $\mathcal{I} = \left\{0, 1, 2, \dots, 100\right\}$ be the index set of the discrete points on the unit interval, then we construct the observations in the following way.
+		
+		\begin{enumerate}
+			\item Describe Here!
+		\end{enumerate}
+		
+		\begin{multicols}{2}
+			\begin{enumerate}
+				\item $\mathbb{E}\left[X_s(t)\right] = \mu_s(t)$
+				\item $\text{Var}\left[X_s(t)\right] = \sigma^2_s(t)$
+				\item $\text{Corr}\left[X_s(t), X_s(t-1)\right] = \rho_s(t) \\ \forall t \in \mathcal{I} \ \text{with} \ t > 1$
+			\end{enumerate}
+		\end{multicols}
 		
 		
 		\subsection{Results}

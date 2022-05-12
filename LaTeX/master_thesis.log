@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.4.15)  12 MAY 2022 22:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.4.15)  12 MAY 2022 23:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1094,32 +1094,28 @@ File: ../Graphics/Settings_comparison.PDF Graphic file (type pdf)
 Package pdftex.def Info: ../Graphics/Settings_comparison.PDF  used on input lin
 e 649.
 (pdftex.def)             Requested size: 500.77129pt x 300.45526pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[16 <../Graphics/Settings_comparison.PDF>]
-<../Graphics/electricity_demand_curves.PDF, id=522, 1445.4pt x 433.62pt>
+ [16 <../Graphics/Settings_comparison.PDF>]
+<../Graphics/electricity_demand_curves.PDF, id=523, 1445.4pt x 433.62pt>
 File: ../Graphics/electricity_demand_curves.PDF Graphic file (type pdf)
 <use ../Graphics/electricity_demand_curves.PDF>
 Package pdftex.def Info: ../Graphics/electricity_demand_curves.PDF  used on inp
-ut line 685.
+ut line 696.
 (pdftex.def)             Requested size: 455.24411pt x 136.57117pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 691--693
+Underfull \hbox (badness 10000) in paragraph at lines 702--704
 
  []
 
 [17 <../Graphics/electricity_demand_curves.PDF>]
-<../Graphics/electricity_demand_curves_cleaned.PDF, id=543, 1445.4pt x 433.62pt
+<../Graphics/electricity_demand_curves_cleaned.PDF, id=547, 1445.4pt x 433.62pt
 >
 File: ../Graphics/electricity_demand_curves_cleaned.PDF Graphic file (type pdf)
 
 <use ../Graphics/electricity_demand_curves_cleaned.PDF>
 Package pdftex.def Info: ../Graphics/electricity_demand_curves_cleaned.PDF  use
-d on input line 712.
+d on input line 723.
 (pdftex.def)             Requested size: 455.24411pt x 136.57117pt.
- [18 <../Graphics/electricity_demand_curves_cleaned.PDF>] [19]
+ [18] [19 <../Graphics/electricity_demand_curves_cleaned.PDF>]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1134,8 +1130,8 @@ Package logreq Info: Writing requests to 'master_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23754 strings out of 478276
- 412655 string characters out of 5853013
+ 23758 strings out of 478276
+ 412683 string characters out of 5853013
  1173516 words of memory out of 5000000
  41305 multiletter control sequences out of 15000+600000
  488015 words of font info for 175 fonts, out of 8000000 for 9000
@@ -1177,10 +1173,10 @@ cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><
 f-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/cm-super/sfrm1200.pfb>
-Output written on master_thesis.pdf (27 pages, 1422487 bytes).
+Output written on master_thesis.pdf (27 pages, 1439727 bytes).
 PDF statistics:
- 752 PDF objects out of 1000 (max. 8388607)
- 667 compressed objects within 7 object streams
- 182 named destinations out of 1000 (max. 500000)
+ 756 PDF objects out of 1000 (max. 8388607)
+ 671 compressed objects within 7 object streams
+ 186 named destinations out of 1000 (max. 500000)
  39794 words of extra memory for PDF output out of 42996 (max. 10000000)
 

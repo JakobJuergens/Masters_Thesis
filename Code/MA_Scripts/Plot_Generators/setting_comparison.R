@@ -126,8 +126,8 @@ plots <- purrr::map(
 )
 
 # determine limits for y-axis
-y_min <- floor(min(unlist(purrr::map(.x = plot_list, .f = ~ min(.x$y)))))
-y_max <- ceiling(max(unlist(purrr::map(.x = plot_list, .f = ~ max(.x$y)))))
+y_min <- min(unlist(purrr::map(.x = plot_list, .f = ~ min(.x$y))))
+y_max <- max(unlist(purrr::map(.x = plot_list, .f = ~ max(.x$y))))
 
 # combine plots using patchwork
 comb_plot <- ((plots[[1]] | plots[[2]]) /

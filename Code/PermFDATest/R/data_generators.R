@@ -425,7 +425,7 @@ sim_4_generator <- function(n_obs_1, n_obs_2, mean, rho, sigma, sigma_shift, gri
   sample_2 <- purrr::map(
     .x = 1:n_obs_1,
     .f = function(i) {
-      list(args = grid, vals = X_2[i, ] + mean_shift)
+      list(args = grid, vals = X_2[i, ])
     }
   )
   # bring into functional format
