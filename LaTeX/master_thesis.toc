@@ -40,6 +40,7 @@
 \contentsline {section}{\numberline {10}Outlook}{18}{section.10}%
 \contentsline {paragraph}{Simulations for Different Measures}{18}{section.10}%
 \contentsline {paragraph}{Simulation Settings where the Distribution of Fourier Coefficients is changed}{18}{section.10}%
+\contentsline {paragraph}{Simulations for Unbalanced Sample Sizes}{18}{section.10}%
 \contentsline {paragraph}{Application that has a more complex difference structure}{18}{section.10}%
 \contentsline {section}{\numberline {11}Bibliography}{19}{section.11}%
 \contentsline {section}{\numberline {12}Appendix}{i}{section.12}%

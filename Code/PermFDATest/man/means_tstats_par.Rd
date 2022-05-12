@@ -8,7 +8,7 @@ over the permutations.}
 \usage{
 means_tstats_par(
   cl,
-  full = TRUE,
+  seeds,
   approxQ = NULL,
   sample1,
   sample2,
@@ -21,8 +21,7 @@ means_tstats_par(
 \arguments{
 \item{cl:}{cluster object created by parallel package}
 
-\item{full:}{Boolean that decides whether all combinations are considered
-if FALSE, approxQ has to be provided}
+\item{seeds:}{Seeds for reproducibility (vector of length approxQ)}
 
 \item{approxQ:}{integer specifying the number of combinations to be used for
 the approximation of the critical value}

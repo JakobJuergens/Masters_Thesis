@@ -23,6 +23,7 @@
 #' @param ...: additional arguments given to u_sample_func
 #'
 #' @return: Realizations of the t-statistic for the Cramer-von Mises test
+#' @export
 cramer_von_mises_tstats <- function(full = TRUE, approxQ = NULL, sample1, sample2, type = 'fourier',
                                     domain = c(0, 1), basis = NULL, grid = NULL, eigen_func_obj = NULL,
                                     w_func, rho, u_sample_func, n_func, ...){

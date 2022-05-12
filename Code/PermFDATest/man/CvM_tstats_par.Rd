@@ -8,10 +8,11 @@ over the permutations.}
 \usage{
 CvM_tstats_par(
   cl,
-  full = TRUE,
+  seeds,
   approxQ = NULL,
   sample1,
   sample2,
+  type = "fourier",
   domain = c(0, 1),
   basis = NULL,
   grid = NULL,
@@ -26,8 +27,7 @@ CvM_tstats_par(
 \arguments{
 \item{cl:}{cluster object created by parallel package}
 
-\item{full:}{Boolean that decides whether all combinations are considered
-if FALSE, approxQ has to be provided}
+\item{seeds:}{Seeds for reproducibility (vector of length approxQ)}
 
 \item{approxQ:}{integer specifying the number of combinations to be used for
 the approximation of the critical value}
@@ -35,6 +35,8 @@ the approximation of the critical value}
 \item{sample1:}{first sample, specified as a list where each element is one observation}
 
 \item{sample2:}{second sample, specified as a list where each element is one observation}
+
+\item{type:}{type of computation to use (options are: 'fourier', 'eigen', and 'grid' )}
 
 \item{domain:}{Domain of the functional observations}
 

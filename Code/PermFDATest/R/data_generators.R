@@ -6,11 +6,12 @@
 #' @return: A sample in the typical format
 sample_generator_1 <- function(n_obs = 100, domain = c(0, 1)) {
   # generate random number of measurement points for each observation
-  n_points <- unlist(purrr::map(.x = n_obs, .f = ~sample(x = 50:150, replace = TRUE)))
+  n_points <- unlist(purrr::map(.x = n_obs, .f = ~ sample(x = 50:150, replace = TRUE)))
 
-  return(purrr::map(.x = 1:n_obs,
-                    .f = function(i) obs_generator_1(domain = domain, n_points = n_points[i]))
-         )
+  return(purrr::map(
+    .x = 1:n_obs,
+    .f = function(i) obs_generator_1(domain = domain, n_points = n_points[i])
+  ))
 }
 
 #' This function generates an observation for testing purposes
@@ -47,11 +48,12 @@ obs_generator_1 <- function(domain = c(0, 1), n_points = 100) {
 #' @return: A sample in the typical format
 sample_generator_2 <- function(n_obs = 100, domain = c(0, 1)) {
   # generate random number of measurement points for each observation
-  n_points <- unlist(purrr::map(.x = n_obs, .f = ~sample(x = 50:150, replace = TRUE)))
+  n_points <- unlist(purrr::map(.x = n_obs, .f = ~ sample(x = 50:150, replace = TRUE)))
 
-  return(purrr::map(.x = 1:n_obs,
-                    .f = function(i) obs_generator_2(domain = domain, n_points = n_points[i]))
-  )
+  return(purrr::map(
+    .x = 1:n_obs,
+    .f = function(i) obs_generator_2(domain = domain, n_points = n_points[i])
+  ))
 }
 
 #' This function generates an observation for testing purposes
@@ -89,14 +91,14 @@ obs_generator_2 <- function(domain = c(0, 1), n_points = 100) {
 #' @param n_fourier_basis: number of fourier basis functions to use
 #'
 #' @return: A sample in the typical format
-quick_funcify <- function(sample, domain = c(0,1), n_fourier_basis){
+quick_funcify <- function(sample, domain = c(0, 1), n_fourier_basis) {
   fourier_basis <- fda::create.fourier.basis(rangeval = domain, nbasis = n_fourier_basis)
 
   data_fd <- purrr::map(
     .x = sample,
-    .f = function(obs){
+    .f = function(obs) {
       fda::smooth.basis(argvals = obs$args, y = obs$vals, fdParobj = fourier_basis)$fd
-      }
+    }
   )
 
   return(data_fd)
@@ -127,4 +129,59 @@ func_sample_transform <- function(orgnl_sample) {
   )
   # return new sample
   return(new_sample)
+}
+
+#' This function generates two samples for the simulation of type 1
+#' as described in my master's thesis.
+#'
+#' @param n_obs_1: Number of observations in sample 1
+#' @param n_obs_2: Number of observations in sample 2
+#' @param grid: grid at which observations are generated
+#' @param rho: vector describing the autocorrelation of the process
+#' same length as vector grid
+#'
+#' @return: list containing the two samples in a functional format
+#' @export
+sim_1_generator <- function(n_obs_1, n_obs_2, grid, rho) {
+  # Generate xi's as described in the paper
+  XI_1 <- matrix(
+    data = rnorm(n = n_obs_1 * length(grid), mean = 0, sd = 1),
+    nrow = n_obs_1, ncol = length(grid)
+  )
+  XI_2 <- matrix(
+    data = rnorm(n = n_obs_1 * length(grid), mean = 0, sd = 1),
+    nrow = n_obs_1, ncol = length(grid)
+  )
+  # Set up containers for the x's
+  X_1 <- matrix(data = NA, nrow = n_obs_1, ncol = length(grid))
+  X_2 <- matrix(data = NA, nrow = n_obs_1, ncol = length(grid))
+  # fill first column with the first column of XI matrices
+  X_1[, 1] <- XI_1[, 1]
+  X_2[, 1] <- XI_2[, 1]
+  # iterate through rest of the entries:
+  for (i in 2:length(grid)) {
+    X_1[, i] <- rho[i] * X_1[, i - 1] + XI_1[, i] * sqrt(1 - rho[i]^2)
+    X_2[, i] <- rho[i] * X_2[, i - 1] + XI_2[, i] * sqrt(1 - rho[i]^2)
+  }
+  # bring into format for quick_funcify
+  sample_1 <- purrr::map(
+    .x = 1:n_obs_1,
+    .f = function(i) {
+      list(args = grid, vals = X_1[i, ])
+    }
+  )
+  sample_2 <- purrr::map(
+    .x = 1:n_obs_1,
+    .f = function(i) {
+      list(args = grid, vals = X_2[i, ])
+    }
+  )
+  # bring into functional format
+  sample_1_f <- quick_funcify(sample = sample_1, domain = c(0, 1), n_fourier_basis = 15)
+  sample_2_f <- quick_funcify(sample = sample_2, domain = c(0, 1), n_fourier_basis = 15)
+  # return as list
+  return(list(
+    sample_1 = sample_1, sample_2 = sample_2,
+    sample_1_f = sample_1_f, sample_2_f = sample_2_f
+  ))
 }

@@ -7,6 +7,7 @@
 #' @param realized_value: realized value of the test statistic in original permutation
 #'
 #' @return: The value of the permutation test function
+#' @export
 perm_test <- function(alpha, realizations, realized_value) {
   # calculate critical value
   crit_value <- crit_val(realizations = realizations, alpha = alpha)
@@ -33,6 +34,7 @@ perm_test <- function(alpha, realizations, realized_value) {
 #' @param alpha: significance level of the test
 #'
 #' @return: Critical Value for the test
+#' @export
 crit_val <- function(realizations, alpha = 0.05) {
   # returns the fitting quantile
   return(quantile(x = realizations, probs = 1 - alpha, names = FALSE))
