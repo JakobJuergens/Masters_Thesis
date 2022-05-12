@@ -20,12 +20,16 @@ approxQ <- 10000
 n_func <- 1000
 # generate a grid for the data generation
 gen_grid <- seq(from = 0, to = 1, length.out = 101)
-# generate rhos for the data generation 
+# generate mean function for the data generation
+gen_mean <- rep(x = 0, times = length(gen_grid))
+# generate rhos for the data generation
 gen_rho <- gen_grid^2
+# generate sigmas for the data generation
+gen_sigma <- rep(x = 1, length.out = length(gen_grid))
 
 # save inputs to list and save in input folder
 inputs <- list(
-  sample_size = sample_size, approxQ = approxQ, n_func = n_func, 
-  gen_grid = gen_grid, gen_rho = gen_rho
+  sample_size = sample_size, approxQ = approxQ, n_func = n_func,
+  gen_grid = gen_grid, gen_mean = gen_mean, gen_rho = gen_rho, gen_sigma = gen_sigma
 )
 saveRDS(object = inputs, file = paste0(input_path, "inputs.RDS"))
