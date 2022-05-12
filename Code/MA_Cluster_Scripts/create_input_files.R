@@ -23,7 +23,7 @@ gen_grid <- seq(from = 0, to = 1, length.out = 101)
 # generate mean function for the data generation
 gen_mean <- rep(x = 0, times = length(gen_grid))
 # generate rhos for the data generation
-gen_rho <- seq(from = 1, to = 0, length.out = 101)^2
+gen_rho <- rep(x = 0.5, times = length(gen_grid))
 # generate sigmas for the data generation
 gen_sigma <- rep(x = 1, length.out = length(gen_grid))
 
