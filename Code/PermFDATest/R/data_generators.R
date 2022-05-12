@@ -113,6 +113,7 @@ quick_funcify <- function(sample, domain = c(0, 1), n_fourier_basis) {
 #'
 #' @return: sample in the format that is used by this package;
 #' list containing elements, each of which is a single observation
+#' @export
 func_sample_transform <- function(orgnl_sample) {
   # ectract basis object from original sample
   obj_basis <- orgnl_sample$basis
@@ -129,6 +130,30 @@ func_sample_transform <- function(orgnl_sample) {
   )
   # return new sample
   return(new_sample)
+}
+
+#' This function transforms a sample of functional data as it is used by this package
+#' into the format that is used by the package fda
+#'
+#' @param orgnl_sample: fda object representing multiple observations;
+#' as a list of individual fda objects
+#'
+#' @return: sample in the format that is used by fda
+#' @export
+func_sample_transform2 <- function(orgnl_sample) {
+  # ectract basis object from original sample
+  obj_basis <- orgnl_sample[[1]]$basis
+  # find number of observatioons
+  n_obs <- length(orgnl_sample)
+  # generate new sample by transforming each observation into its own
+  # fd object
+  coefs <- matrix(data = unlist(
+    purrr::map(
+    .x = 1:n_obs,
+    .f = ~ orgnl_sample[[.x]]$coefs
+  )), nrow = obj_basis$nbasis, ncol = n_obs, byrow = FALSE)
+  # return new sample
+  return(fda::fd(coef = coefs, basisobj = obj_basis))
 }
 
 #' This function generates two samples for the simulation of type 1
