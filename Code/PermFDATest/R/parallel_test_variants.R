@@ -3,6 +3,7 @@
 #' over the permutations.
 #'
 #' @param cl: cluster object created by parallel package
+#' @param seeds: Seeds for reproducibility (vector of length approxQ)
 #' @param approxQ: integer specifying the number of combinations to be used for
 #' the approximation of the critical value
 #' @param sample1: first sample, specified as a list where each element is one observation
@@ -18,10 +19,12 @@
 #' @return Realizations of the t-statistic for the Mean based test
 #'
 #' @export
-means_tstats_par <- function(cl, approxQ = NULL, sample1, sample2,
+means_tstats_par <- function(cl, seeds, approxQ = NULL, sample1, sample2,
                              interpolation_mode = "linear", domain = c(0, 1),
                              n_basis = NULL, grid = NULL) {
-  helper_func <- function() {
+  helper_func <- function(seed) {
+    set.seed(seed)
+
     index_1 <- sample(x = 1:(length(sample1) + length(sample2)), size = length(sample1), replace = FALSE)
     index_2 <- setdiff(x = 1:(length(sample1) + length(sample2)), y = index_1)
 
@@ -38,8 +41,8 @@ means_tstats_par <- function(cl, approxQ = NULL, sample1, sample2,
   }
 
   tstats <- parallel::clusterApply(
-    cl = cl, x = 1:approxQ,
-    fun = helper_func
+    cl = cl, x = seeds,
+    fun = ~ helper_func(seed = x)
   )
 
   return(tstats)
@@ -50,6 +53,7 @@ means_tstats_par <- function(cl, approxQ = NULL, sample1, sample2,
 #' over the permutations.
 #'
 #' @param cl: cluster object created by parallel package
+#' @param seeds: Seeds for reproducibility (vector of length approxQ)
 #' @param approxQ: integer specifying the number of combinations to be used for
 #' the approximation of the critical value
 #' @param sample1: first sample, specified as a list where each element is one observation
@@ -72,10 +76,12 @@ means_tstats_par <- function(cl, approxQ = NULL, sample1, sample2,
 #' @return Realizations of the t-statistic for the Cramer-von Mises test
 #'
 #' @export
-CvM_tstats_par <- function(cl, approxQ = NULL, sample1, sample2, type = "fourier",
+CvM_tstats_par <- function(cl, seeds, approxQ = NULL, sample1, sample2, type = "fourier",
                            domain = c(0, 1), basis = NULL, grid = NULL, eigen_func_obj = NULL,
                            w_func, rho, u_sample_func, n_func, ...) {
-  helper_func <- function() {
+  helper_func <- function(seed) {
+    set.seed(seed)
+
     index_1 <- sample(x = 1:(length(sample1) + length(sample2)), size = length(sample1), replace = FALSE)
     index_2 <- setdiff(x = 1:(length(sample1) + length(sample2)), y = index_1)
 
@@ -93,7 +99,7 @@ CvM_tstats_par <- function(cl, approxQ = NULL, sample1, sample2, type = "fourier
   }
 
   tstats <- parallel::clusterApply(
-    cl = cl, x = 1:approxQ,
-    fun = helper_func
+    cl = cl, x = seeds,
+    fun = ~ helper_func(seed = x)
   )
 }

@@ -13,6 +13,7 @@
 \usepackage{mathtools}
 \usepackage{titlesec}
 \usepackage{bbm}
+\usepackage{booktabs}
 \usepackage[font=small,skip=2pt]{caption}
 \usepackage[
 backend=biber,
@@ -633,9 +634,39 @@ style=authoryear,
 			\end{itemize}
 
 		\subsection{Simulation Setup}
-		As part of this thesis, I replicate part of the simulation study from \cite{bugni_permutation_2021}. In particular, I decided to study the following setup. {\color{red}Hier weiterschreiben}
+		As part of this thesis, I take inspiration from the simulation study from \cite{bugni_permutation_2021} and shine more light on specific settings that offer insight into the potential benefits and problems of the method. In particular, I decided to simulate the following four settings. Deviating from the original paper, I focus on the two sample setting and use a sample size of 20 observations per sample.
+		
+		\begin{enumerate}
+			\item \textbf{Identical Data Generating Processes}
+			\item \textbf{Pure Mean Shift}
+			\item \textbf{Pure Correlation Shift}
+			\item \textbf{Combined Mean and Correlation Shift}
+		\end{enumerate}
+	
+		To describe the specific processes that are used in the simulation, I introduce the notation used in \cite{bugni_permutation_2021} shortly to then describe the data generating processes mathematically.
+		{\color{red} Add description of data generating processes here!}
+		
 		
 		\subsection{Results}
+		Taking a look at the results from the simulation study, it is interesting to compare the empirical rejection probabilities for different types of violations of the Nullhypothesis.
+		
+		\begin{table}[h!]
+			\centering
+			\begin{tabular}{lccccc}\toprule
+				\textbf{Test}	&$\left(\alpha_{\tau}, \alpha_{\nu}\right) $ &\textbf{Setting 1} &\textbf{Setting 2}	&\textbf{Setting 3} &\textbf{Setting 4}\\
+				\midrule
+				Means-Test		& -	& -	& -  & - & - \\
+				CvM-Test 		& -	& -	& -  & - & - \\
+				\midrule
+				Combined		& (0.04, 0.01)		& -	& -  & - & - \\
+								& (0.03, 0.02)	& -	& -  & - & - \\
+								& (0.025, 0.025)		& -	& -  & - & - \\
+								& (0.02, 0.03)	& -	& -  & - & - \\
+								& (0.01, 0.04)	& -	& -  & - & - \\
+				\bottomrule
+			\end{tabular}
+			\caption{Empirical Rejection Probabilities}
+		\end{table}
 		
 	\section{Application}\label{Application}
 		To test the real-world merits of the method, I will compare electricity demand data from Adelaide which is provided as part of the \textit{fds}\footcite{fds} package for R. This data set presents half-hourly energy demand in megawatts and was originally used by \cite{magnano_generation_2007} and \cite{magnano_generation_2008}.\\
@@ -675,6 +706,23 @@ style=authoryear,
 			\end{figure}
 	
 	\section{Outlook}\label{Outlook}
+		After studying the method developed by \cite{bugni_permutation_2021} in detail there are a few points that might be interesting for further research. In the following I name a few that could be very interesting extension to this thesis.
+		
+		\paragraph{Simulations for Different Measures}
+		
+		\paragraph{Simulation Settings where the Distribution of Fourier Coefficients is changed}
+			\begin{itemize}
+				\item Use dgp similar to the way we construct the measure (draw fourier coefficients from some distribution)
+				\item Same mean for fourier coefficients, but different distribution of error terms
+			\end{itemize}
+		
+		\paragraph{Application that has a more complex difference structure}
+			\begin{itemize}
+				\item Audio-Curves
+				\item Movement-Curves
+			\end{itemize}
+		
+		
 	
 	\newpage
 	\section{Bibliography}
