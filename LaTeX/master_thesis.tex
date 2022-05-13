@@ -634,13 +634,41 @@ style=authoryear,
 			\end{itemize}
 
 		\subsection{Simulation Setup}
-		As part of this thesis, I take inspiration from the simulation study from \cite{bugni_permutation_2021} and shine more light on specific settings that offer insight into the potential benefits and problems of the method. Deviating from the original paper, I focus on the two sample setting and use a sample size of 20 observations per sample and focus on three distinct violations of the Nullhypothesis.
+		As part of this thesis, I take inspiration from the simulation study from \cite{bugni_permutation_2021} and shine more light on specific settings that offer insight into the potential benefits and problems of the method. To describe the specific processes that are used in the simulation, I introduce the notation used in \cite{bugni_permutation_2021} shortly to then describe the data generating processes mathematically. I generate the data on the closed interval $\left[0,1\right]$ by discretely generating observations and fitting a fourier curve to the discrete data to obtain functional observations. Let $\mathcal{T} = \left\{0, 0.01, 0.02, \dots, 1\right\}$ be the index set of the discrete points on the unit interval, then we construct the observations in the following way.
 		
 		\begin{enumerate}
-			\item \textbf{Identical Data Generating Processes} (No violation)
-			\item \textbf{Mean Shift}
-			\item \textbf{Correlation Shift}
-			\item \textbf{Variance Shift}
+			\item Draw random variables $\left\{\xi_{i,s} \ \vert \ (i,t) \in \left\{1, \dots, 20\right\} \times \mathcal{T} ; s = 1,2 \right\}$ independently from the $\mathcal{N}(0,1)$ distribution.
+			\item For all $i = 1, \dots, 20$ and $s = 1,2$, set $\tilde{X}_{i,s}(0) = \xi_{i,s}(0)$.
+			\item For all $i = 1, \dots, 20$; $s = 1,2$ and $t = 0.01, \dots, 1$, set $\tilde{X}_{i,s}(t) = \rho_{s}(t)\tilde{X}_{i,s}(t-0.01) + \xi_{i,s}(t)\sqrt{1-\rho_s^2(t)}$ where $\rho_{s}(t)$ is a parameter as defined below.
+			\item For all $i = 1, \dots, 20$; $s = 1,2$ and $t \in \mathcal{T}$, set $X_{i,s}(t) = \mu_s(t) + \sigma_s(t)\tilde{X}_{i,s}(t)$ where $\mu_s(t)$ and $\sigma_s(t)$ are parameters as defined below.
+		\end{enumerate}
+		The resulting random variables $\left\{X_{i,s}(t) \ \vert \ t \in \mathcal{T}; \ i = 1, \dots, 20; \ s = 1,2\right\}$ are normally distributed with the following properties.
+		\begin{multicols}{2}
+			\begin{enumerate}
+				\item $\mathbb{E}\left[X_s(t)\right] = \mu_s(t)$
+				\item $\text{Var}\left[X_s(t)\right] = \sigma^2_s(t)$
+				\item $\text{Corr}\left[X_s(t), X_s(t-1)\right] = \rho_s(t) \\ \forall t \in \mathcal{I} \ \text{with} \ t > 1$
+			\end{enumerate}
+		\end{multicols}
+		As can be seen in the mathematical description above, deviating from the original paper, I focus on the two sample setting and use a sample size of 20 observations per sample. I focus on three distinct violations of the Nullhypothesis described in the following. For each of the following settings I construct sample 1 identically as a reference point to compare the different settings. The parameters for sample 1 are therefore chosen as follows.
+		\begin{multicols}{2}
+			\begin{enumerate}
+				\item $\mu_1(t) = 0 \quad \forall t = 0.01, \dots, 1$
+				\item $\sigma_1(t) = 1 \quad \forall t = 0.01, \dots, 1$
+				\item $ \rho_1(t) = 0.8 \quad \forall t = 0.01, \dots, 1$
+			\end{enumerate}
+		\end{multicols}
+		For the second sample, I chose three different violations of the Null hypothesis and a benchmark case where the Null hypothesis is correct.
+		\begin{enumerate}
+			\item \textbf{Identical Data Generating Processes}\\
+				  The first setting is the benchmark where both samples are generated using the same random function.
+			\item \textbf{Mean Shift}\\
+				  The second setting introduces a shifted mean function. This is one possible violation where \cite{bugni_permutation_2021} describe weak power of the Cramer-von Mises type test. Deviating from sample 1, sample 2 has mean function 
+				  $$\mu_2(t) = 4.84 x (x-1) \quad t \in \mathcal{T}$$
+			\item \textbf{Correlation Shift}\\
+			 	  The third setting violates the Null hypothesis by changing the correlation structure between neighboring observations. Here, observations are less persistent due to a lower, but still constant choice of the correlation parameter.
+			 	  $$\rho_2(t) = 0.8 \quad \forall t = 0.01, \dots, 1$$
+			\item \textbf{Variance Shift}\\
 		\end{enumerate}
 	
 		\begin{figure}[H]
@@ -651,21 +679,6 @@ style=authoryear,
 			Sample 1 in red, Sample 2 in blue}
 			\label{settings}
 		\end{figure}
-	
-		To describe the specific processes that are used in the simulation, I introduce the notation used in \cite{bugni_permutation_2021} shortly to then describe the data generating processes mathematically. I generate the data on the closed interval $\left[0,1\right]$ by discretely generating observations and fitting a fourier curve to the discrete data to obtain functional observations. Let $\mathcal{I} = \left\{0, 1, 2, \dots, 100\right\}$ be the index set of the discrete points on the unit interval, then we construct the observations in the following way.
-		
-		\begin{enumerate}
-			\item Describe Here!
-		\end{enumerate}
-		
-		\begin{multicols}{2}
-			\begin{enumerate}
-				\item $\mathbb{E}\left[X_s(t)\right] = \mu_s(t)$
-				\item $\text{Var}\left[X_s(t)\right] = \sigma^2_s(t)$
-				\item $\text{Corr}\left[X_s(t), X_s(t-1)\right] = \rho_s(t) \\ \forall t \in \mathcal{I} \ \text{with} \ t > 1$
-			\end{enumerate}
-		\end{multicols}
-		
 		
 		\subsection{Results}
 		Taking a look at the results from the simulation study, it is interesting to compare the empirical rejection probabilities for different types of violations of the Nullhypothesis.

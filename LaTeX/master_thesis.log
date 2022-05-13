@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.4.15)  12 MAY 2022 23:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.13)  13 MAY 2022 15:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **master_thesis.tex
 (./master_thesis.tex
 LaTeX2e <2021-11-15> patch level 1
-L3 programming layer <2022-02-24>
+L3 programming layer <2022-04-10>
 (/usr/share/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
 (/usr/share/texmf-dist/tex/latex/base/size12.clo
@@ -724,15 +724,15 @@ Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Document encoding is UTF8 ....
 
 (/usr/share/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2022-02-24 L3 programming layer (loader) 
+Package: expl3 2022-04-10 L3 programming layer (loader) 
 
 (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2022-04-14 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count435
 \l__pdf_internal_box=\box102
 ))
 Package biblatex Info: ... and expl3
-(biblatex)             2022-02-24 L3 programming layer (loader) 
+(biblatex)             2022-04-10 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
 
@@ -939,14 +939,16 @@ File: ../Graphics/growth_curves.PDF Graphic file (type pdf)
 Package pdftex.def Info: ../Graphics/growth_curves.PDF  used on input line 100.
 
 (pdftex.def)             Requested size: 455.24411pt x 136.57117pt.
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.104 		E
          ven though the measurements were taken at discrete ages, it is clea...
-[1]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) h
-as been already used, duplicate ignored
+[1]
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.137 			\end{definition}
@@ -979,6 +981,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Underfull \hbox (badness 10000) in paragraph at lines 169--170
 
  []
+
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
 been already used, duplicate ignored
@@ -1087,40 +1090,47 @@ Overfull \hbox (10.74855pt too wide) in paragraph at lines 610--610
 y Ranges| 
  []
 
-[14] [15]
-<../Graphics/Settings_comparison.PDF, id=500, 1445.4pt x 867.24pt>
-File: ../Graphics/Settings_comparison.PDF Graphic file (type pdf)
-<use ../Graphics/Settings_comparison.PDF>
-Package pdftex.def Info: ../Graphics/Settings_comparison.PDF  used on input lin
-e 649.
-(pdftex.def)             Requested size: 500.77129pt x 300.45526pt.
- [16 <../Graphics/Settings_comparison.PDF>]
-<../Graphics/electricity_demand_curves.PDF, id=523, 1445.4pt x 433.62pt>
-File: ../Graphics/electricity_demand_curves.PDF Graphic file (type pdf)
-<use ../Graphics/electricity_demand_curves.PDF>
-Package pdftex.def Info: ../Graphics/electricity_demand_curves.PDF  used on inp
-ut line 696.
-(pdftex.def)             Requested size: 455.24411pt x 136.57117pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 702--704
+[14] [15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 671--672
 
  []
 
-[17 <../Graphics/electricity_demand_curves.PDF>]
-<../Graphics/electricity_demand_curves_cleaned.PDF, id=547, 1445.4pt x 433.62pt
+<../Graphics/Settings_comparison.PDF, id=518, 1445.4pt x 867.24pt>
+File: ../Graphics/Settings_comparison.PDF Graphic file (type pdf)
+<use ../Graphics/Settings_comparison.PDF>
+Package pdftex.def Info: ../Graphics/Settings_comparison.PDF  used on input lin
+e 677.
+(pdftex.def)             Requested size: 500.77129pt x 300.45526pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[17 <../Graphics/Settings_comparison.PDF>]
+<../Graphics/electricity_demand_curves.PDF, id=538, 1445.4pt x 433.62pt>
+File: ../Graphics/electricity_demand_curves.PDF Graphic file (type pdf)
+<use ../Graphics/electricity_demand_curves.PDF>
+Package pdftex.def Info: ../Graphics/electricity_demand_curves.PDF  used on inp
+ut line 709.
+(pdftex.def)             Requested size: 455.24411pt x 136.57117pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 715--717
+
+ []
+
+[18 <../Graphics/electricity_demand_curves.PDF>]
+<../Graphics/electricity_demand_curves_cleaned.PDF, id=558, 1445.4pt x 433.62pt
 >
 File: ../Graphics/electricity_demand_curves_cleaned.PDF Graphic file (type pdf)
 
 <use ../Graphics/electricity_demand_curves_cleaned.PDF>
 Package pdftex.def Info: ../Graphics/electricity_demand_curves_cleaned.PDF  use
-d on input line 723.
+d on input line 736.
 (pdftex.def)             Requested size: 455.24411pt x 136.57117pt.
- [18] [19 <../Graphics/electricity_demand_curves_cleaned.PDF>]
+ [19 <../Graphics/electricity_demand_curves_cleaned.PDF>] [20]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [20] [21] [22] [1
+ [21] [22] [23] [1
 
 ] [2] (./master_thesis.aux)
 Package rerunfilecheck Info: File `master_thesis.out' has not changed.
@@ -1130,27 +1140,33 @@ Package logreq Info: Writing requests to 'master_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23758 strings out of 478276
- 412683 string characters out of 5853013
- 1173516 words of memory out of 5000000
- 41305 multiletter control sequences out of 15000+600000
+ 23788 strings out of 478238
+ 413464 string characters out of 5850456
+ 1174469 words of memory out of 5000000
+ 41359 multiletter control sequences out of 15000+600000
  488015 words of font info for 175 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,25n,68p,1010b,2733s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exi
-st, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist
+, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist
 , replaced by a fixed one
 
+
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
 , replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
 , replaced by a fixed one
 
+
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
 , replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
@@ -1173,10 +1189,10 @@ cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><
 f-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/cm-super/sfrm1200.pfb>
-Output written on master_thesis.pdf (27 pages, 1439727 bytes).
+Output written on master_thesis.pdf (28 pages, 1443840 bytes).
 PDF statistics:
- 756 PDF objects out of 1000 (max. 8388607)
- 671 compressed objects within 7 object streams
- 186 named destinations out of 1000 (max. 500000)
+ 769 PDF objects out of 1000 (max. 8388607)
+ 683 compressed objects within 7 object streams
+ 193 named destinations out of 1000 (max. 500000)
  39794 words of extra memory for PDF output out of 42996 (max. 10000000)
 

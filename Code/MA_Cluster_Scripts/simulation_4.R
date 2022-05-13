@@ -14,6 +14,7 @@ gen_grid <- inputs$gen_grid
 gen_mean <- inputs$gen_mean
 gen_rho <- inputs$gen_rho
 gen_sigma <- inputs$gen_sigma
+sigma_shift <- inputs$sigma_shift
 
 # read in seeds and generate string version
 full_seeds <- readRDS(paste0(input_path, "seeds.RDS"))

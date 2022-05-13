@@ -13,9 +13,6 @@ gen_rho <- inputs$gen_rho
 gen_sigma <- inputs$gen_sigma
 
 # set parameters for plotting (currently manually here)
-mean_shift <- seq(from = -1.1, to = 1.1, length.out = length(gen_grid))^2 - 1.1^2
-rho_shift <- rep(x = -0.5, times = length(gen_grid))
-sigma_shift <- seq(from = 0, to = 0.5, length.out = length(gen_grid))
 plot_grid <- seq(from = 0, to = 1, length.out = 1001)
 
 # generate samples

@@ -26,10 +26,15 @@ gen_mean <- rep(x = 0, times = length(gen_grid))
 gen_rho <- rep(x = 0.5, times = length(gen_grid))
 # generate sigmas for the data generation
 gen_sigma <- rep(x = 1, length.out = length(gen_grid))
+# generate shift vectors for simulations
+mean_shift <- seq(from = -1.1, to = 1.1, length.out = length(gen_grid))^2 - 1.1^2
+rho_shift <- rep(x = -0.5, times = length(gen_grid))
+sigma_shift <- seq(from = 0, to = 0.5, length.out = length(gen_grid))
 
 # save inputs to list and save in input folder
 inputs <- list(
   sample_size = sample_size, approxQ = approxQ, n_func = n_func,
-  gen_grid = gen_grid, gen_mean = gen_mean, gen_rho = gen_rho, gen_sigma = gen_sigma
+  gen_grid = gen_grid, gen_mean = gen_mean, gen_rho = gen_rho, gen_sigma = gen_sigma,
+  mean_shift = mean_shift, rho_shift = rho_shift, sigma_shift = sigma_shift
 )
 saveRDS(object = inputs, file = paste0(input_path, "inputs.RDS"))
