@@ -11,13 +11,15 @@ saveRDS(object = my_seeds, file = paste0(input_path, "seeds.RDS"))
 
 ##### Set parameters for Simulation #####
 
+# set number of basis functions used for simulations
+n_basis <- 25
 # set sample size for generated samples
 sample_size <- 20
 # number of permutations used for the approximation of the test statistcs
 approxQ <- 10000
 # number of functions used for the Monte-Carlo Integration used in the approximation
 # of the test statistic tau for the CvM test
-n_func <- 1000
+n_func <- 4000
 # generate a grid for the data generation
 gen_grid <- seq(from = 0, to = 1, length.out = 101)
 # generate mean function for the data generation
@@ -33,7 +35,7 @@ sigma_shift <- seq(from = 0, to = 0.5, length.out = length(gen_grid))
 
 # save inputs to list and save in input folder
 inputs <- list(
-  sample_size = sample_size, approxQ = approxQ, n_func = n_func,
+  n_basis = n_basis, sample_size = sample_size, approxQ = approxQ, n_func = n_func,
   gen_grid = gen_grid, gen_mean = gen_mean, gen_rho = gen_rho, gen_sigma = gen_sigma,
   mean_shift = mean_shift, rho_shift = rho_shift, sigma_shift = sigma_shift
 )

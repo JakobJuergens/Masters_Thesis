@@ -7,6 +7,7 @@ output_path <- "Outputs/"
 
 # read in inputs
 inputs <- readRDS(paste0(input_path, "inputs.RDS"))
+n_basis <- inputs$n_basis
 sample_size <- inputs$sample_size
 approxQ <- inputs$approxQ
 n_func <- inputs$n_func
@@ -37,7 +38,8 @@ main_simu <- function(cl = cl, seed = task_seeds_int[i]) {
 
   # generate samples for procedure
   samples <- PermFDATest::sim_3_generator(
-    n_obs_1 = sample_size, n_obs_2 = sample_size, mean = gen_mean, grid = gen_grid, rho = gen_rho, sigma = gen_sigma
+    n_basis = n_basis, n_obs_1 = sample_size, n_obs_2 = sample_size, 
+    mean = gen_mean, grid = gen_grid, rho = gen_rho, sigma = gen_sigma
   )
 
   # calculate t-values using the package PermFDAtest
@@ -49,7 +51,7 @@ main_simu <- function(cl = cl, seed = task_seeds_int[i]) {
 
   # second: values for the Cramer von Mises test
   # and the objects necessary to calculate them
-  fourier_basis <- fda::create.fourier.basis(rangeval = c(0, 1), nbasis = 15, period = 1)
+  fourier_basis <- fda::create.fourier.basis(rangeval = c(0, 1), nbasis = n_basis, period = 1)
   w_func <- function(x) {
     return(1)
   }

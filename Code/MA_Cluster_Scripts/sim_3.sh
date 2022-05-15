@@ -8,10 +8,10 @@
 
 #SBATCH --time=100
 
-#SBATCH --job-name=MA_Simulation_1
+#SBATCH --job-name=MA_Simulation_3
 
 #SBATCH --output=txt_outputs/output%A%a.txt
 
 ###beginning of executable commands
 
-Rscript simulation_1.R
+Rscript simulation_3.R

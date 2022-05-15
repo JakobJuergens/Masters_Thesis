@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.13)  13 MAY 2022 19:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.13)  15 MAY 2022 13:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1098,27 +1098,27 @@ Package pdftex.def Info: ../Graphics/Settings_comparison.PDF  used on input lin
 e 679.
 (pdftex.def)             Requested size: 500.77129pt x 300.45526pt.
  [17 <../Graphics/Settings_comparison.PDF>]
-<../Graphics/electricity_demand_curves.PDF, id=538, 1445.4pt x 433.62pt>
+<../Graphics/electricity_demand_curves.PDF, id=537, 1445.4pt x 433.62pt>
 File: ../Graphics/electricity_demand_curves.PDF Graphic file (type pdf)
 <use ../Graphics/electricity_demand_curves.PDF>
 Package pdftex.def Info: ../Graphics/electricity_demand_curves.PDF  used on inp
-ut line 711.
+ut line 712.
 (pdftex.def)             Requested size: 455.24411pt x 136.57117pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 717--719
+ [18]
+Underfull \hbox (badness 10000) in paragraph at lines 718--720
 
  []
 
-[18 <../Graphics/electricity_demand_curves.PDF>]
-<../Graphics/electricity_demand_curves_cleaned.PDF, id=558, 1445.4pt x 433.62pt
+[19 <../Graphics/electricity_demand_curves.PDF>]
+<../Graphics/electricity_demand_curves_cleaned.PDF, id=565, 1445.4pt x 433.62pt
 >
 File: ../Graphics/electricity_demand_curves_cleaned.PDF Graphic file (type pdf)
 
 <use ../Graphics/electricity_demand_curves_cleaned.PDF>
 Package pdftex.def Info: ../Graphics/electricity_demand_curves_cleaned.PDF  use
-d on input line 738.
+d on input line 739.
 (pdftex.def)             Requested size: 455.24411pt x 136.57117pt.
- [19] [20 <../Graphics/electricity_demand_curves_cleaned.PDF>]
+ [20 <../Graphics/electricity_demand_curves_cleaned.PDF>]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1182,7 +1182,7 @@ cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><
 f-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/cm-super/sfrm1200.pfb>
-Output written on master_thesis.pdf (28 pages, 1443938 bytes).
+Output written on master_thesis.pdf (28 pages, 1445192 bytes).
 PDF statistics:
  769 PDF objects out of 1000 (max. 8388607)
  683 compressed objects within 7 object streams

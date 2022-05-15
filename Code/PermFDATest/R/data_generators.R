@@ -159,6 +159,7 @@ func_sample_transform2 <- function(orgnl_sample) {
 #' This function generates two samples for the simulation of type 1
 #' as described in my master's thesis.
 #'
+#' @param n_basis: number of fourier basis functions used
 #' @param n_obs_1: Number of observations in sample 1
 #' @param n_obs_2: Number of observations in sample 2
 #' @param mean: vector of same length as grid, that specifies the mean function
@@ -170,7 +171,7 @@ func_sample_transform2 <- function(orgnl_sample) {
 #'
 #' @return: list containing the two samples in a functional format
 #' @export
-sim_1_generator <- function(n_obs_1, n_obs_2, mean, rho, sigma, grid) {
+sim_1_generator <- function(n_basis, n_obs_1, n_obs_2, mean, rho, sigma, grid) {
   # Generate xi's as described in the paper
   XI_1 <- matrix(
     data = rnorm(n = n_obs_1 * length(grid), mean = 0, sd = 1),
@@ -216,8 +217,8 @@ sim_1_generator <- function(n_obs_1, n_obs_2, mean, rho, sigma, grid) {
     }
   )
   # bring into functional format
-  sample_1_f <- quick_funcify(sample = sample_1, domain = c(0, 1), n_fourier_basis = 25)
-  sample_2_f <- quick_funcify(sample = sample_2, domain = c(0, 1), n_fourier_basis = 25)
+  sample_1_f <- quick_funcify(sample = sample_1, domain = c(0, 1), n_fourier_basis = n_basis)
+  sample_2_f <- quick_funcify(sample = sample_2, domain = c(0, 1), n_fourier_basis = n_basis)
   # return as list
   return(list(
     sample_1 = sample_1, sample_2 = sample_2,
@@ -228,6 +229,7 @@ sim_1_generator <- function(n_obs_1, n_obs_2, mean, rho, sigma, grid) {
 #' This function generates two samples for the simulation of type 2
 #' as described in my master's thesis.
 #'
+#' @param n_basis: number of fourier basis functions used
 #' @param n_obs_1: Number of observations in sample 1
 #' @param n_obs_2: Number of observations in sample 2
 #' @param mean: vector of same length as grid, that specifies the mean function
@@ -241,7 +243,7 @@ sim_1_generator <- function(n_obs_1, n_obs_2, mean, rho, sigma, grid) {
 #'
 #' @return: list containing the two samples in a functional format
 #' @export
-sim_2_generator <- function(n_obs_1, n_obs_2, mean, mean_shift, rho, sigma, grid) {
+sim_2_generator <- function(n_basis, n_obs_1, n_obs_2, mean, mean_shift, rho, sigma, grid) {
   # Generate xi's as described in the paper
   XI_1 <- matrix(
     data = rnorm(n = n_obs_1 * length(grid), mean = 0, sd = 1),
@@ -287,8 +289,8 @@ sim_2_generator <- function(n_obs_1, n_obs_2, mean, mean_shift, rho, sigma, grid
     }
   )
   # bring into functional format
-  sample_1_f <- quick_funcify(sample = sample_1, domain = c(0, 1), n_fourier_basis = 25)
-  sample_2_f <- quick_funcify(sample = sample_2, domain = c(0, 1), n_fourier_basis = 25)
+  sample_1_f <- quick_funcify(sample = sample_1, domain = c(0, 1), n_fourier_basis = n_basis)
+  sample_2_f <- quick_funcify(sample = sample_2, domain = c(0, 1), n_fourier_basis = n_basis)
   # return as list
   return(list(
     sample_1 = sample_1, sample_2 = sample_2,
@@ -299,6 +301,7 @@ sim_2_generator <- function(n_obs_1, n_obs_2, mean, mean_shift, rho, sigma, grid
 #' This function generates two samples for the simulation of type 3
 #' as described in my master's thesis.
 #'
+#' @param n_basis: number of fourier basis functions used
 #' @param n_obs_1: Number of observations in sample 1
 #' @param n_obs_2: Number of observations in sample 2
 #' @param mean: vector of same length as grid, that specifies the mean function
@@ -312,7 +315,7 @@ sim_2_generator <- function(n_obs_1, n_obs_2, mean, mean_shift, rho, sigma, grid
 #'
 #' @return: list containing the two samples in a functional format
 #' @export
-sim_3_generator <- function(n_obs_1, n_obs_2, mean, rho, rho_shift, sigma, grid) {
+sim_3_generator <- function(n_basis, n_obs_1, n_obs_2, mean, rho, rho_shift, sigma, grid) {
   # Generate xi's as described in the paper
   XI_1 <- matrix(
     data = rnorm(n = n_obs_1 * length(grid), mean = 0, sd = 1),
@@ -358,8 +361,8 @@ sim_3_generator <- function(n_obs_1, n_obs_2, mean, rho, rho_shift, sigma, grid)
     }
   )
   # bring into functional format
-  sample_1_f <- quick_funcify(sample = sample_1, domain = c(0, 1), n_fourier_basis = 25)
-  sample_2_f <- quick_funcify(sample = sample_2, domain = c(0, 1), n_fourier_basis = 25)
+  sample_1_f <- quick_funcify(sample = sample_1, domain = c(0, 1), n_fourier_basis = n_basis)
+  sample_2_f <- quick_funcify(sample = sample_2, domain = c(0, 1), n_fourier_basis = n_basis)
   # return as list
   return(list(
     sample_1 = sample_1, sample_2 = sample_2,
@@ -370,6 +373,7 @@ sim_3_generator <- function(n_obs_1, n_obs_2, mean, rho, rho_shift, sigma, grid)
 #' This function generates two samples for the simulation of type 4
 #' as described in my master's thesis.
 #'
+#' @param n_basis: number of fourier basis functions used
 #' @param n_obs_1: Number of observations in sample 1
 #' @param n_obs_2: Number of observations in sample 2
 #' @param mean: vector of same length as grid, that specifies the mean function
@@ -383,7 +387,7 @@ sim_3_generator <- function(n_obs_1, n_obs_2, mean, rho, rho_shift, sigma, grid)
 #'
 #' @return: list containing the two samples in a functional format
 #' @export
-sim_4_generator <- function(n_obs_1, n_obs_2, mean, rho, sigma, sigma_shift, grid) {
+sim_4_generator <- function(n_basis, n_obs_1, n_obs_2, mean, rho, sigma, sigma_shift, grid) {
   # Generate xi's as described in the paper
   XI_1 <- matrix(
     data = rnorm(n = n_obs_1 * length(grid), mean = 0, sd = 1),
@@ -429,8 +433,8 @@ sim_4_generator <- function(n_obs_1, n_obs_2, mean, rho, sigma, sigma_shift, gri
     }
   )
   # bring into functional format
-  sample_1_f <- quick_funcify(sample = sample_1, domain = c(0, 1), n_fourier_basis = 25)
-  sample_2_f <- quick_funcify(sample = sample_2, domain = c(0, 1), n_fourier_basis = 25)
+  sample_1_f <- quick_funcify(sample = sample_1, domain = c(0, 1), n_fourier_basis = n_basis)
+  sample_2_f <- quick_funcify(sample = sample_2, domain = c(0, 1), n_fourier_basis = n_basis)
   # return as list
   return(list(
     sample_1 = sample_1, sample_2 = sample_2,

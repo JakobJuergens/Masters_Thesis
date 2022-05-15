@@ -5,9 +5,11 @@
 \title{This function generates two samples for the simulation of type 3
 as described in my master's thesis.}
 \usage{
-sim_3_generator(n_obs_1, n_obs_2, mean, rho, rho_shift, sigma, grid)
+sim_3_generator(n_basis, n_obs_1, n_obs_2, mean, rho, rho_shift, sigma, grid)
 }
 \arguments{
+\item{n_basis:}{number of fourier basis functions used}
+
 \item{n_obs_1:}{Number of observations in sample 1}
 
 \item{n_obs_2:}{Number of observations in sample 2}
