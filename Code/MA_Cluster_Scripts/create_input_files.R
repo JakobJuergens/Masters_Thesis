@@ -4,7 +4,7 @@ set.seed(1234)
 input_path <- "Inputs/"
 output_path <- "Outputs/"
 # number of seeds / simulation runs
-n_seeds <- 100
+n_seeds <- 8
 # generate seeds and save them as RDS object
 my_seeds <- sample(x = 1:10e6, size = n_seeds, replace = FALSE)
 saveRDS(object = my_seeds, file = paste0(input_path, "seeds.RDS"))
@@ -16,10 +16,10 @@ n_basis <- 25
 # set sample size for generated samples
 sample_size <- 20
 # number of permutations used for the approximation of the test statistcs
-approxQ <- 10000
+approxQ <- 10 #1000 # 500 in Paper
 # number of functions used for the Monte-Carlo Integration used in the approximation
 # of the test statistic tau for the CvM test
-n_func <- 4000
+n_func <- 10 #4000
 # generate a grid for the data generation
 gen_grid <- seq(from = 0, to = 1, length.out = 101)
 # generate mean function for the data generation

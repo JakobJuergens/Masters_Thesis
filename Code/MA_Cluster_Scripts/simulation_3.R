@@ -81,7 +81,7 @@ cl <- parallel::makeForkCluster(n_cores)
 print(paste0("R-Cluster created: ", n_cores, " cores."))
 
 # call Package written for Master's Thesis in every forked instance
-clusterCall(cl = cl, fun = function() suppressMessages(library(PermFDATest)))
+parallel::clusterCall(cl = cl, fun = function() suppressMessages(library(PermFDATest)))
 print("Library SurvivR called in individual sessions.")
 
 # perform simulations
