@@ -2,11 +2,11 @@
 
 #SBATCH --array=1-2%2
 
-#SBATCH --cpus-per-task=16
+#SBATCH --cpus-per-task=2
 
-#SBATCH --mem-per-cpu=5000M
+#SBATCH --mem-per-cpu=4000M
 
-#SBATCH --time=0:20:0
+#SBATCH --time=0:10:0
 
 #SBATCH --account=ag_ifs_liebl
 

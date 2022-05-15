@@ -31,7 +31,7 @@ task_seeds_str <- string_seeds[seq(from = task_id, to = length(full_seeds), by =
 n_runs <- length(task_seeds_int)
 
 # Define Simulation Function
-main_simu <- function(cl = cl, seed = task_seeds_int[i]) {
+main_simu <- function(seed) {
   # set seed for replication purposes
   set.seed(seed)
 
@@ -54,7 +54,7 @@ main_simu <- function(cl = cl, seed = task_seeds_int[i]) {
   w_func <- function(x) {
     return(1)
   }
-  CvM_rho <- seq(from = 5, to = 1, length.out = 15)
+  CvM_rho <- seq(from = 5, to = 1, length.out = n_basis)
   tau_vals <- PermFDATest::cramer_von_mises_tstats(
     full = FALSE, approxQ = approxQ, sample1 = samples$sample_1_f, sample2 = samples$sample_2_f,
     type = "fourier", domain = c(0, 1), basis = fourier_basis, grid = NULL, eigen_func_obj = NULL,
@@ -75,22 +75,8 @@ print(paste0(
   " Running on node: ", Sys.getenv("SLURM_NODENAME")
 ))
 
-# create Cluster with parallel package
-cl <- parallel::makeForkCluster(n_cores)
-print(paste0("R-Cluster created: ", n_cores, " cores."))
-
-# call Package written for Master's Thesis in every forked instance
-parallel::clusterCall(cl = cl, fun = function() suppressMessages(library(PermFDATest)))
-print("Library SurvivR called in individual sessions.")
-
 # perform simulations
 for (i in 1:n_runs) {
-  print("")
-  main_simu(cl = cl, seed = task_seeds_int[i])
+  print(paste0("Run ", i, " of", n_runs, "."))
+  main_simu(seed = task_seeds_int[i])
 }
-
-# Stop cluster and print finishing message
-print("")
-parallel::stopCluster(cl)
-print("R-Cluster stopped.")
-rm(cl)
