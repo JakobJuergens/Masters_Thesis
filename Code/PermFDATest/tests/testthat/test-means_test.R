@@ -43,14 +43,14 @@ test_that("Calculation of Critical Value for Means-based Test works", {
     x = list(list(
       args = grid,
       vals = rep(1, times = length(grid))
-    )), times = 4
+    )), times = 3
   )
 
   sample_2 <- rep(
     x = list(list(
       args = grid,
       vals = rep(0, times = length(grid))
-    )), times = 4
+    )), times = 3
   )
 
   tstats <- means_tstats(

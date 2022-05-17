@@ -105,15 +105,26 @@ perm_tstats <- function(full = TRUE, approxQ = NULL,
 #' @export
 perm_tstats_full <- function(Q, sample1, sample2, t_stat_func, ...) {
   # concatenate samples to form one data set
-  data <- append(sample1, sample2)
+  if(is.matrix(sample1) & is.matrix(sample2)){
+    data <- cbind(sample1, sample2)
+  } else{
+    data <- append(sample1, sample2)
+  }
+  # set n_1 and n_2
+  if(is.matrix(sample1) & is.matrix(sample2)){
+    n_1 <- ncol(sample1)
+    n_2 <- ncol(sample2)
+  } else{
+    n_1 <- length(sample1)
+    n_2 <- length(sample2)
+  }
+  # determine number of combinations
+  Q <- choose(n = n_1 + n_2, k = n_1)
+
   # Initialize vector for realizations of t_stat
   t_stats <- rep(x = NA, times = Q)
-  # Initialize current combination as NULL
-  cur_cbn <- NULL
-  # set n_1 and n_2
-  n_1 <- length(sample1)
-  n_2 <- length(sample2)
 
+  cur_cbn <- NULL
   # iterate over combinations
   for (i in 1:Q) {
     # message(paste0('Now in Iteration:', i))
@@ -122,8 +133,13 @@ perm_tstats_full <- function(Q, sample1, sample2, t_stat_func, ...) {
     # get list of sample1 and sample2
     cur_samples <- sample_inds(n = n_1 + n_2, smpl1 = cur_cbn)
     # create samples
-    cur_sample1 <- data[cur_samples$smpl1]
-    cur_sample2 <- data[cur_samples$smpl2]
+    if(is.matrix(sample1) & is.matrix(sample2)){
+      cur_sample1 <- data[,cur_samples$smpl1]
+      cur_sample2 <- data[,cur_samples$smpl2]
+    } else{
+      cur_sample1 <- data[cur_samples$smpl1]
+      cur_sample2 <- data[cur_samples$smpl2]
+    }
     # calculate test statistic
     t_stats[i] <- t_stat_func(
       sample1 = cur_sample1, sample2 = cur_sample2, ...
@@ -148,13 +164,22 @@ perm_tstats_full <- function(Q, sample1, sample2, t_stat_func, ...) {
 #' @export
 perm_tstats_approx <- function(approxQ, sample1, sample2, t_stat_func, ...) {
   # concatenate samples to form one data set
-  data <- append(sample1, sample2)
+  if(is.matrix(sample1) & is.matrix(sample2)){
+    data <- cbind(sample1, sample2)
+  } else{
+    data <- append(sample1, sample2)
+  }
+
   # Initialize vector for realizations of t_stat
   t_stats <- rep(x = NA, times = approxQ)
   # set n_1 and n_2
-  n_1 <- length(sample1)
-  n_2 <- length(sample2)
-
+  if(is.matrix(sample1) & is.matrix(sample2)){
+    n_1 <- ncol(sample1)
+    n_2 <- ncol(sample2)
+  } else{
+    n_1 <- length(sample1)
+    n_2 <- length(sample2)
+  }
   # iterate over combinations
   # previously, this worked as in the full version and sampled combinations
   # without replacement. However, this resulted in large performance problems as
@@ -165,8 +190,13 @@ perm_tstats_approx <- function(approxQ, sample1, sample2, t_stat_func, ...) {
     index_1 <- sample(x = 1:(n_1+n_2), size = n_1, replace = FALSE)
     index_2 <- setdiff(x = 1:(n_1+n_2), y = index_1)
     # create samples
-    cur_sample1 <- data[index_1]
-    cur_sample2 <- data[index_2]
+    if(is.matrix(sample1) & is.matrix(sample2)){
+      cur_sample1 <- data[,index_1]
+      cur_sample2 <- data[,index_2]
+    } else{
+      cur_sample1 <- data[index_1]
+      cur_sample2 <- data[index_2]
+    }
     # calculate test statistic
     t_stats[i] <- t_stat_func(
       sample1 = cur_sample1, sample2 = cur_sample2, ...
