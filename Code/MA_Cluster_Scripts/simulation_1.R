@@ -9,7 +9,7 @@ output_path <- "Outputs/"
 inputs <- readRDS(paste0(input_path, "inputs.RDS"))
 n_basis <- inputs$n_basis
 sample_size <- inputs$sample_size
-approxQ <- 5 # inputs$approxQ
+approxQ <- inputs$approxQ
 n_func <- inputs$n_func
 gen_grid <- inputs$gen_grid
 gen_mean <- inputs$gen_mean

@@ -190,6 +190,9 @@ cramer_von_mises_tstat_grid <- function(sample1, sample2, domain = c(0, 1), basi
   emp_dist_vals_s1 <- rep(x = NA_real_, times = n_func)
   emp_dist_vals_s2 <- rep(x = NA_real_, times = n_func)
 
+  # determine n_basis
+  n_basis <- basis$nbasis
+
   # find mean values for fourier coefficients
   coef_means <- matrix(
     data = rep(

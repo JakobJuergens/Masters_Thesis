@@ -33,7 +33,7 @@ mean_shift <- seq(from = -1.1, to = 1.1, length.out = length(gen_grid))^2 - 1.1^
 rho_shift <- rep(x = -0.5, times = length(gen_grid))
 sigma_shift <- seq(from = 0, to = 0.5, length.out = length(gen_grid))
 # generate comparison grid for CvM statistic
-comparison_grid <- seq(from = 0, to = 1, length.out = 201)
+comparison_grid <- seq(from = 0, to = 1, length.out = 101)
 
 # save inputs to list and save in input folder
 inputs <- list(

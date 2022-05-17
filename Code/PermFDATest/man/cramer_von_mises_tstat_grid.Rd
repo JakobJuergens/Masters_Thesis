@@ -9,6 +9,7 @@ cramer_von_mises_tstat_grid(
   sample1,
   sample2,
   domain = c(0, 1),
+  basis,
   w_func,
   rho,
   u_sample_func,
