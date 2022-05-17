@@ -5,7 +5,7 @@
 \title{Returns the value of an empirical distribution function of a given sample
 for a given function}
 \usage{
-empirical_dist_func_fourier(sample, func, domain = c(0, 1), n_fourier_basis)
+empirical_dist_func_fourier(sample, func, domain = c(0, 1))
 }
 \arguments{
 \item{sample:}{Sample of functional data}
@@ -14,9 +14,6 @@ empirical_dist_func_fourier(sample, func, domain = c(0, 1), n_fourier_basis)
 
 \item{domain:}{Domain of the functions in both the sample and the comparison
 function}
-
-\item{n_fourier_basis:}{if fourier == TRUE, this decides the number of
-fourier basis functions to use}
 }
 \value{
 An approximated value of the empirical distribution function

@@ -10,7 +10,7 @@ fourier_eval(x, coefs, domain = c(0, 1))
 \arguments{
 \item{x:}{point or vector of points to evaluate the function at}
 
-\item{ceofs:}{matrix or vector of coefficients identifying the functional objects}
+\item{coefs:}{matrix or vector of coefficients identifying the functional objects}
 
 \item{domain:}{domain of the basis}
 

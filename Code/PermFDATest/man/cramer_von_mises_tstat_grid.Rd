@@ -19,9 +19,9 @@ cramer_von_mises_tstat_grid(
 )
 }
 \arguments{
-\item{sample1:}{first sample, specified as a list where each element is one observation}
+\item{sample1:}{first sample, specified as a matrix of fourier coefficients}
 
-\item{sample2:}{second sample, specified as a list where each element is one observation}
+\item{sample2:}{second sample, specified as a matrix of fourier coefficients}
 
 \item{domain:}{Domain of the functional observations}
 
