@@ -16,10 +16,10 @@ n_basis <- 25
 # set sample size for generated samples
 sample_size <- 20
 # number of permutations used for the approximation of the test statistcs
-approxQ <- 10 #1000 # 500 in Paper
+approxQ <- 500 #in Paper
 # number of functions used for the Monte-Carlo Integration used in the approximation
 # of the test statistic tau for the CvM test
-n_func <- 10 #4000
+n_func <- 4000
 # generate a grid for the data generation
 gen_grid <- seq(from = 0, to = 1, length.out = 101)
 # generate mean function for the data generation
@@ -32,11 +32,14 @@ gen_sigma <- rep(x = 1, length.out = length(gen_grid))
 mean_shift <- seq(from = -1.1, to = 1.1, length.out = length(gen_grid))^2 - 1.1^2
 rho_shift <- rep(x = -0.5, times = length(gen_grid))
 sigma_shift <- seq(from = 0, to = 0.5, length.out = length(gen_grid))
+# generate comparison grid for CvM statistic
+comparison_grid <- seq(from = 0, to = 1, length.out = 201)
 
 # save inputs to list and save in input folder
 inputs <- list(
   n_basis = n_basis, sample_size = sample_size, approxQ = approxQ, n_func = n_func,
   gen_grid = gen_grid, gen_mean = gen_mean, gen_rho = gen_rho, gen_sigma = gen_sigma,
-  mean_shift = mean_shift, rho_shift = rho_shift, sigma_shift = sigma_shift
+  mean_shift = mean_shift, rho_shift = rho_shift, sigma_shift = sigma_shift,
+  comparison_grid = comparison_grid
 )
 saveRDS(object = inputs, file = paste0(input_path, "inputs.RDS"))

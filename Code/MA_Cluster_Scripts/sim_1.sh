@@ -6,7 +6,7 @@
 
 #SBATCH --mem-per-cpu=4000M
 
-#SBATCH --time=0:10:0
+#SBATCH --time=0:30:0
 
 #SBATCH --account=ag_ifs_liebl
 

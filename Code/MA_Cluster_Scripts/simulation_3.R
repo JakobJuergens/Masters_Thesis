@@ -16,6 +16,7 @@ gen_mean <- inputs$gen_mean
 gen_rho <- inputs$gen_rho
 gen_sigma <- inputs$gen_sigma
 rho_shift <- inputs$rho_shift
+comparison_grid <- inputs$comparison_grid
 
 # read in seeds and generate string version
 full_seeds <- readRDS(paste0(input_path, "seeds.RDS"))
@@ -58,12 +59,12 @@ main_simu <- function(seed = task_seeds_int[i]) {
   CvM_rho <- seq(from = 5, to = 1, length.out = n_basis)
   tau_vals <- PermFDATest::cramer_von_mises_tstats(
     full = FALSE, approxQ = approxQ, sample1 = samples$sample_1_f, sample2 = samples$sample_2_f,
-    type = "fourier", domain = c(0, 1), basis = fourier_basis, grid = NULL, eigen_func_obj = NULL,
-    w_func = w_func, rho = CvM_rho, u_sample_func = PermFDATest::u_norm, n_func = n_func
+    type = "fourier", domain = c(0, 1), basis = fourier_basis, grid = comparison_grid, 
+    eigen_func_obj = NULL, w_func = w_func, rho = CvM_rho, u_sample_func = PermFDATest::u_norm, n_func = n_func
   )
 
   # save t_stats for further processing
-  t_stats <- list(nu_vals = nu_vals, tau_vals = tau_vals)
+  t_stats <- list(samples = samples, nu_vals = nu_vals, tau_vals = tau_vals)
   saveRDS(
     object = t_stats,
     file = paste0(output_path, "simulation_1/", toString(seed), "tstats.RDS")
@@ -78,6 +79,6 @@ print(paste0(
 
 # perform simulations
 for (i in 1:n_runs) {
-  print(paste0("Run ", i, " of", n_runs, "."))
+  print(paste0("Run ", i, " of ", n_runs, "."))
   main_simu(seed = task_seeds_int[i])
 }

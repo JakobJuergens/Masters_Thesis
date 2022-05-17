@@ -9,12 +9,13 @@ output_path <- "Outputs/"
 inputs <- readRDS(paste0(input_path, "inputs.RDS"))
 n_basis <- inputs$n_basis
 sample_size <- inputs$sample_size
-approxQ <- inputs$approxQ
+approxQ <- 5 # inputs$approxQ
 n_func <- inputs$n_func
 gen_grid <- inputs$gen_grid
 gen_mean <- inputs$gen_mean
 gen_rho <- inputs$gen_rho
 gen_sigma <- inputs$gen_sigma
+comparison_grid <- inputs$comparison_grid
 
 # read in seeds and generate string version
 full_seeds <- readRDS(paste0(input_path, "seeds.RDS"))
@@ -32,22 +33,25 @@ n_runs <- length(task_seeds_int)
 
 # Define Simulation Function
 main_simu <- function(seed) {
+  message(paste0('Current Seed: ', seed))
   # set seed for replication purposes
   set.seed(seed)
-
+  
   # generate samples for procedure
   samples <- PermFDATest::sim_1_generator(
     n_basis = n_basis, n_obs_1 = sample_size, n_obs_2 = sample_size, 
     mean = gen_mean, grid = gen_grid, rho = gen_rho, sigma = gen_sigma
   )
-
+  message('Samples Generated')
+  
   # calculate t-values using the package PermFDAtest
   # first: values for the means based test
   nu_vals <- PermFDATest::means_tstats(
     full = FALSE, approxQ = approxQ, sample1 = samples$sample_1, sample2 = samples$sample_2,
     interpolation_mode = "linear", domain = c(0, 1), n_basis = NULL, grid = gen_grid
   )
-
+  message('Values of the means based test statistic calculated.')
+  
   # second: values for the Cramer von Mises test
   # and the objects necessary to calculate them
   fourier_basis <- fda::create.fourier.basis(rangeval = c(0, 1), nbasis = n_basis, period = 1)
@@ -55,14 +59,16 @@ main_simu <- function(seed) {
     return(1)
   }
   CvM_rho <- seq(from = 5, to = 1, length.out = n_basis)
+  
   tau_vals <- PermFDATest::cramer_von_mises_tstats(
     full = FALSE, approxQ = approxQ, sample1 = samples$sample_1_f, sample2 = samples$sample_2_f,
-    type = "fourier", domain = c(0, 1), basis = fourier_basis, grid = NULL, eigen_func_obj = NULL,
-    w_func = w_func, rho = CvM_rho, u_sample_func = PermFDATest::u_norm, n_func = n_func
+    type = "grid", domain = c(0, 1), basis = fourier_basis, grid = comparison_grid, 
+    eigen_func_obj = NULL, w_func = w_func, rho = CvM_rho, u_sample_func = PermFDATest::u_norm, n_func = n_func
   )
-
+  message('Values of the CvM test statistic calculated.')
+  
   # save t_stats for further processing
-  t_stats <- list(nu_vals = nu_vals, tau_vals = tau_vals)
+  t_stats <- list(samples = samples, nu_vals = nu_vals, tau_vals = tau_vals)
   saveRDS(
     object = t_stats,
     file = paste0(output_path, "simulation_1/", toString(seed), "tstats.RDS")
@@ -75,8 +81,10 @@ print(paste0(
   " Running on node: ", Sys.getenv("SLURM_NODENAME")
 ))
 
+start <- Sys.time()
 # perform simulations
 for (i in 1:n_runs) {
-  print(paste0("Run ", i, " of", n_runs, "."))
+  print(paste0("Run ", i, " of ", n_runs, "."))
   main_simu(seed = task_seeds_int[i])
 }
+end <- Sys.time()
