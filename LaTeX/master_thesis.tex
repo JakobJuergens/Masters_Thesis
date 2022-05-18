@@ -36,6 +36,7 @@ style=authoryear,
 
 \theoremstyle{MAstyle} \newtheorem{assumption}{Assumption}[section]
 \theoremstyle{MAstyle} \newtheorem{definition}{Definition}[section]
+\theoremstyle{MAstyle} \newtheorem{theorem}{Theorem}[section]
 
 \titleformat*{\section}{\Large\bfseries}
 \titleformat*{\subsection}{\large\bfseries}
@@ -103,7 +104,7 @@ style=authoryear,
 		\end{figure}
 		Even though the measurements were taken at discrete ages, it is clear that each human has a height at every point in time. The data points are only measurements of this continuous curve. The higher the measurement frequency, the closer we get to data that resembles the curve itself.
 		In many cases functional data analysis restricts its scope to subsets of the functions $f:\mathbb{R} \rightarrow \mathbb{R}$.
-		As these are inherently infinite-dimensional, it is necessary to introduce additional theory to appropriately deal with their unique properties. Sections \ref{Square_Integrable_Functions} and \ref{bases_L2} closely follow \cite{hsing_theoretical_2015} who provides a detailed introduction into the theory of functional data analysis.
+		As these are inherently infinite-dimensional, it is necessary to introduce additional theory to appropriately deal with their unique properties. Sections \ref{Square_Integrable_Functions} and \ref{bases_L2} closely follow \cite{hsing_theoretical_2015} who provide a detailed introduction into the theory of functional data analysis.
 		
 		\begin{itemize}
 			\item \cite{ramsay_functional_2005}
@@ -124,13 +125,13 @@ style=authoryear,
 			\end{definition}
 			As this thesis is limited to the case $\mathbb{F} = \mathbb{R}$, property 4 can be restated as $\langle v_1, v_2 \rangle = \langle v_2, v_1 \rangle$, as the complex conjugate of a real number is the number itself. Similar to the case of Euclidean space, we say that two elements $v_1$ and $v_2$ of the inner product space are orthogonal if $\langle v_1, v_2 \rangle = 0$.
 			
-			\begin{definition}[Inner Product Space]
+			\begin{definition}[Inner Product Spaces and Hilbert Spaces]
 				A vector space with an associated inner product is called an inner product space.
-			\end{definition}
-
-			\begin{definition}[Hilbert Space]
 				An inner product space that is complete with respect to the distance induced by the norm $\| v \| = \sqrt{\langle v, v\rangle}$ is called a Hilbert space.
 			\end{definition}
+			Hilbert spaces play an important role in functional data analysis and many methods such as for example functional linear regression make extensive use of their properties. In the context of this thesis, the idea of Hilbert spaces is necessary to adequately describe objects such as random functions or probability measures on Hilbert spaces that are used extensively in \cite{bugni_permutation_2021}.\\
+			
+			Analogously to the case of a vector space, it is useful to express elements of a Hilbert space as linear combinations of a set of elements. However, as elements of Hilbert spaces can be potentially infinite dimensional, the classical idea of a finite basis that can be used to express every element has to be extended.
 		
 			\begin{definition}[Closed Span]
 				The closed span of a subset $A$ of some normed space, e.g. a normed vector space or a Hilbert space, is the closure of $\textit{span}\left(A\right)$ with respect to the distance induced by the norm of the space. In the following it is denoted by $\overline{{\textit{span}\left(A\right)}}$.
@@ -143,16 +144,20 @@ style=authoryear,
 				Then, $\{e_n\}$ is an orthonormal sequence and $\overline{{\textit{span}\left(\{x_n\}\right)}} = \overline{{\textit{span}\left(\{e_n\}\right)}}$
 			\end{definition}
 		
+			The definition of the closed span and orthonormal sequences makes it possible to define the analogon of the basis in finite dimensional vector spaces for the case of potentially infinite-dimensional Hilbert spaces.
+		
 			{\color{red} This is verbatim!}
 			\begin{definition}[Orthonormal Basis of a Hilbert Space]
 				An orthonormal sequence $\{e_n\}$ in a Hilbert space $\mathbb{H}$ is called an orthonormal basis of $\mathbb{H}$ if $\overline{{\textit{span}\left(\{e_n\}\right)}} = \mathbb{H}$. Bases like this are typically called Schauder bases to differentiate them from Hamel bases which are often used in the study of vector spaces. The difference between these is that a Schauder basis can represent elements of the corresponding space as infinite sums of its elements, whereas a Hamel basis can only use finite linear combinations.
 			\end{definition}
-		
+			
+			A special class of Hilbert spaces that is used in most contexts that are relevant in functional data analysis are so called separable Hilbert spaces. Their properties will allow significant simplifications in the calculation of specific test statistics that are at the core of \cite{bugni_permutation_2021}.
 			\begin{definition}[Separable Hilbert Space]
 				A Hilbert space that possesses a countable complete orthonormal basis is called separable Hilbert space.
 			\end{definition}
-			Using the axiom of choice, it is possible to show that every Hilbert space possesses an orthonormal basis, which will be used in the derivation of an asymptotic distribution for a test statistic later in this thesis.
-		
+			Using the axiom of choice, it is possible to show that every Hilbert space possesses an orthonormal basis, which will be used in the derivation of an asymptotic distribution for a test statistic later in this thesis.\\
+			
+			The Hilbert space that is most important in functional data analysis is the space of square integrable functions. However, this leads to the case that often square integrability is assumed by default and it is interesting to consider whether this property is actually necessary.		
 			\begin{definition}[Hilbert Space of Square Integrable Functions]
 				
 				The space of square integrable functions on a closed interval $\mathcal{I}$ together with the norm $\langle f,g\rangle = \int_{\mathcal{I}} f(t)g(t) \mathrm{d}t$ is a Hilbert space.
@@ -247,13 +252,14 @@ style=authoryear,
 			\end{definition}
 		
 		\subsection{Probability Measures on $\mathbb{L}_2$}\label{prob_measures_l2}
-			In later parts of this thesis, it will be important to evaluate expectations of a functional on $\mathbb{L}_2$. For this to make sense, it is necessary to explore how we can define probability measures on function spaces. Additionally, it is interesting to take a look at some special properties of the probability measures used in \cite{bugni_permutation_2021} as these allow for significant simplifications in the evaluation of terms in later parts of the paper.
-			\begin{itemize}
-				\item Kolmogorov Extension Theorem
-				\item \cite{gihman_theory_2004}
-			\end{itemize}
+			In later parts of this thesis, it will be important to evaluate expectations of a functional on $\mathbb{L}_2$. For this to make sense, it is necessary to explore how we can define probability measures on function spaces. Additionally, it is interesting to take a look at some special properties of the probability measures used in \cite{bugni_permutation_2021} as these allow for significant simplifications in the evaluation of terms in later parts of the paper. As the formal treatment of these aspects would be mathematically very involved, this section shall serve to give intuition. \cite{gihman_theory_2004} and \cite{skorohod_integration_1974} give a rigorous treatment of all the necessary theory.
+			
+			\begin{theorem}[Kolmogorov Extension Theorem]
+				content
+			\end{theorem}
 		
 			\subsubsection{Probability Measures induced by Random Functions}
+				If instead we assume an existing random function $Z(t)$, it is useful ... {\color{red} Hier weiterschreiben}
 		
 		\subsection{Functional Integration on $\mathbb{L}_2$}
 			\begin{itemize}
@@ -440,13 +446,14 @@ style=authoryear,
 			Assumption \ref{continuous_observation} can be relaxed and a similar test can be constructed for the case of discretely observed processes. This variation of the test will not be addressed in this thesis. However, \cite{bugni_permutation_2021} provide a description of how to extend their idea to this common scenario.
 	
 		\subsection{Nullhypothesis}
+			As with most permutation tests, the null hypothesis of the test presented by \cite{bugni_permutation_2021} is distributional in nature and is formulated by the authors as follows.
 			\begin{equation}
 				\begin{split}
 					H_0: \quad &F_X(z) = F_Y(z) \quad \forall z \in \mathbb{L}_2(\mathcal{I}) \\
 					H_1: \quad &\mathbb{P}_{\mu}\left[F_X(Z) \neq F_Y(Z)\right] > 0
 				\end{split}
 			\end{equation}
-			Here, $\mu$ is a probability measure on $\mathbb{L}_2(\mathcal{I})$ and $Z$ is a random function with probability distribution $\mu$. {\color{red} Doesn't this leave out the case where the Probability functions only differ on a set of $\mu$-measure zero?}
+			Here, $\mu$ is a probability measure on $\mathbb{L}_2(\mathcal{I})$ and $Z$ is a random function with probability distribution $\mu$. As can be seen by the formulation of the hypothesis, this test does not intend to have power against alternatives that differ only on a set of functions that have $\mu$-measure zero. Thereby, the choice of the measure is an important factor to consider when trying to use this test against a specific suspected alternative.  
 		
 		\subsection{Cram\'{e}r-von Mises type Test}
 		
@@ -684,9 +691,14 @@ style=authoryear,
 			Sample 1 in red, Sample 2 in blue}
 			\label{settings}
 		\end{figure}
-		For all simulations, I used the same truncation parameter for the construction of the measure $\mu$ and chose the same value of $K = 25$ as the original authors. In their paper the authors argue that their simulations led them to conclude that the simulated approximation of the power became flat at about $K = 20$ and chose $25$ to get a good approximation. Additionally I used the same parameter of $L = 4000$ for the number of functions used for the Monte-Carlo integration used for the approximation of $\tau$, the test statistic of the Cram\'{e}r-con Mises type test. In the original paper the authors chose to approximate the critical value of the permutation test with 500 randomly chosen permutations, which I copied for the sake of reproducing their results.\\
-		
-		For the choice of the parameters for the construction of the measure $\mu$, I followed the approach described in Section \ref{mu}. $w(t)$ is chosen as $\mu_1$ and the sequence $\left(\rho\right)_i$ is determined as twice the standard deviation of the corresponding Fourier coefficient in the first sample.
+		As described in the sections describing the test procedure theoretically, there is a number of parameter choices that has to be made to perform the simulation.
+		\begin{enumerate}
+			\item The truncation parameter $K$ for the construction of the random function inducing the measure $\mu$ as shown in Equation \ref{truncation}. The original authors argue that their simulations showed that the power of the test became flat at about $K = 20$ and chose $K = 25$. For the sake of reproducing their results I used the same choice.
+			\item The parameter $L$ determining the number of functions drawn according to $\mu$ in the approximation of the test statistic $\hat{\tau}_{n,m}$ of the Cram\'{e}r-von Mises type test. The authors of the original paper chose $L = 4000$ and preliminary testing confirmed that this choice seems to be reasonable in many settings when combined with reasonable choices for the construction of the measure $\mu$.
+			\item The number of permutations $Q$ used for the approximation of the permutation distribution of both test statistics. The authors chose a value of $Q = 500$ which I copied for the sake of reproducing their results.
+			\item For the construction of the measure $\mu$, the weight function $w(t)$, which I chose as described in section \ref{mu} using a slightly modified version of the method the authors used for the application in \cite{bugni_permutation_2021}.
+			\item Deviating from the choice of the original authors due to the results of preliminary testing, I chose the sequence $\left(\rho_i\right)_{i = 1, \dots, K}$ by checking the sample standard deviation of the corresponding Fourier coefficients in the first sample. I then doubled these values to increase variability in the functions drawn from $\mu$. This higher variability seemed to improve performance in preliminary tests, but should be studied in further experiments.
+		\end{enumerate}
 		
 		\subsection{Results}
 		Taking a look at the results from the simulation study, it is interesting to compare the empirical rejection probabilities for different types of violations of the Nullhypothesis.
@@ -750,6 +762,8 @@ style=authoryear,
 		After studying the method developed by \cite{bugni_permutation_2021} in detail there are a few points that might be interesting for further research. In the following I name a few that could be very interesting extension to this thesis.
 		
 		\paragraph{Simulations for Different Measures}
+		
+		\paragraph{Simulations comparing choices of $w(t)$ and  $\left(\rho_i\right)_{i = 1, \dots, K}$}
 		
 		\paragraph{Simulation Settings where the Distribution of Fourier Coefficients is changed}
 			\begin{itemize}
