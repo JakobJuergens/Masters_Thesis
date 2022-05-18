@@ -7,9 +7,9 @@ fourier_func <- function(x, domain = c(0, 1), num_func) {
   if (num_func == 1) {
     return(rep(x = 1 / sqrt(domain[2] - domain[1]), times = length(x)))
   } else if (num_func %% 2 == 0) {
-    return(1 / sqrt((domain[2] - domain[1]) / 2) * sin((num_func %/% 2) * (2 * pi) / (domain[2] - domain[1]) * (x - domain[1])))
+    return(sqrt(2) / sqrt((domain[2] - domain[1])) * sin((num_func %/% 2) * (2 * pi) / (domain[2] - domain[1]) * (x - domain[1])))
   } else {
-    return(1 / sqrt((domain[2] - domain[1]) / 2) * cos((num_func %/% 2) * (2 * pi) / (domain[2] - domain[1]) * (x - domain[1])))
+    return(sqrt(2) / sqrt((domain[2] - domain[1])) * cos((num_func %/% 2) * (2 * pi) / (domain[2] - domain[1]) * (x - domain[1])))
   }
 }
 
@@ -27,9 +27,9 @@ fourier_eval <- function(x, coefs, domain = c(0, 1)) {
   }
 
   if (is.matrix(coefs)) {
-    fourier_eval_matrix(x, coefs, domain = c(0, 1))
+    fourier_eval_matrix(x, coefs, domain = domain)
   } else if (is.vector(coefs)) {
-    fourier_eval_vec(x, coefs, domain = c(0, 1))
+    fourier_eval_vec(x, coefs, domain = domain)
   } else {
     stop("Argument coefs is misshaped.")
   }

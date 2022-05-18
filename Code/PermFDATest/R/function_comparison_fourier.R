@@ -1,22 +1,3 @@
-#' Returns the value of an empirical distribution function of a given sample
-#' for a given function
-#'
-#' @param sample: Sample of functional data
-#' @param func: Function to evaluate the empirical distribution function at
-#' @param domain: Domain of the functions in both the sample and the comparison
-#' function
-#'
-#' @return An approximated value of the empirical distribution function
-empirical_dist_func_fourier <- function(sample, func, domain = c(0, 1)) {
-  # determine functions that are bigger than the comparison function everywhere
-  wkl_smaller <- unlist(purrr::map(
-    .x = 1:ncol(sample),
-    .f = ~ func_comparison_fourier(func_a = sample[,.x], func_b = func, domain = domain)
-  ))
-  # return mean
-  return(mean(wkl_smaller))
-}
-
 #' This function checks if one function is weakly smaller than another function for all
 #' points in a closed interval
 #'
@@ -65,20 +46,32 @@ func_comparison_fourier <- function(func_a, func_b, domain = c(0, 1)) {
 #'
 #' @return The zeroes of the difference function
 fourier_zeroes <- function(func_a, func_b, domain = c(0, 1)) {
-  diff_coefs <- func_a - func_b
-  cos_coefs <- diff_coefs[which(1:length(diff_coefs) %% 2 == 1)]
-  sin_coefs <- diff_coefs[which(1:length(diff_coefs) %% 2 == 0)]
+  # determine number of elements in fourier series
+  n_basis <- length(func_a)
+  # determine unscaled fourier coefficients for difference fourier series
+  diff_coefs_nonscaled <- func_a - func_b
+  # determine scaling factors for using the method
+  scaling_factors <- c(
+    1 / sqrt(domain[2] - domain[1]),
+    rep(x = sqrt(2) / sqrt((domain[2] - domain[1])) , times = (n_basis - 1))
+  )
+  # determine scaled fourier coefficients
+  diff_coefs_scaled <- scaling_factors * diff_coefs_nonscaled
+  # extract sine and cosine coefficients
+  cos_coefs <- diff_coefs_scaled[which(1:length(diff_coefs) %% 2 == 1)]
+  sin_coefs <- diff_coefs_scaled[which(1:length(diff_coefs) %% 2 == 0)]
   N <- length(sin_coefs)
 
   # check if all entries of coefficient vector are zero
   # Then the function is weakly bigger
-  if (all(diff_coefs == 0)) {
-    return(c())
+  if (all(diff_coefs_scaled == 0)) {
+    return(TRUE)
   }
 
   # This function currently only works if the last coefficient is non-zero
   # so implement a check for that case
-  while (cos_coefs[N + 1] == 0 & sin_coefs[N] == 0) {
+  while ((cos_coefs[N + 1] == 0 & sin_coefs[N] == 0) |
+         (is.na(cos_coefs[N + 1]) & is.na(sin_coefs[N]))) {
     cos_coefs <- cos_coefs[-(N + 1)]
     sin_coefs <- sin_coefs[-N]
     N <- N - 1
@@ -115,11 +108,9 @@ fourier_zeroes <- function(func_a, func_b, domain = c(0, 1)) {
   }
   # calculate complex eigenvalues of matrix
   eigen_b <- eigen(x = B)$values
-  # calculate zeroes
-  zeroes_b <- complex(real = 0, imaginary = -1) * log(eigen_b)
   # real zeroes
   real_zeroes <- sort((Re(zeroes_b[which((abs(Im(zeroes_b)) < 10^(-8)))]) / (2 * pi) * (domain[2] - domain[1]))
-                      %% (domain[2] - domain[1]))
+                      %% (domain[2] - domain[1])) + domain[1]
   # return the real zeroes
   return(real_zeroes)
 }
