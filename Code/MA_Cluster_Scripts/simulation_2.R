@@ -49,22 +49,42 @@ main_simu <- function(seed = task_seeds_int[i]) {
     full = FALSE, approxQ = approxQ, sample1 = samples$sample_1, sample2 = samples$sample_2,
     interpolation_mode = "linear", domain = c(0, 1), n_basis = NULL, grid = gen_grid
   )
-
+  nu_real <- PermFDATest::means_tstat(
+    samples$sample_1, sample2 = samples$sample_2, interpolation_mode = "linear", 
+    domain = c(0,1), n_basis = NULL, grid = gen_grid)
+  message('Values of the means based test statistic calculated.')
+  
   # second: values for the Cramer von Mises test
   # and the objects necessary to calculate them
-  fourier_basis <- fda::create.fourier.basis(rangeval = c(0, 1), nbasis = n_basis, period = 1)
   w_func <- function(x) {
-    return(1)
+    median(x = unlist(
+      purrr::map(
+        .x = samples$sample_1, .f = ~ max(.x$vals)
+      )
+    )
+    )
   }
-  CvM_rho <- seq(from = 5, to = 1, length.out = n_basis)
-  tau_vals <- PermFDATest::cramer_von_mises_tstats(
-    full = FALSE, approxQ = approxQ, sample1 = samples$sample_1_f, sample2 = samples$sample_2_f,
-    type = "fourier", domain = c(0, 1), basis = fourier_basis, grid = comparison_grid,
-    eigen_func_obj = NULL, w_func = w_func, rho = CvM_rho, u_sample_func = PermFDATest::u_norm, n_func = n_func
+  CvM_rho <- unlist(
+    purrr::map(
+      .x = 1:n_basis, 
+      .f = ~ sd(PermFDATest::func_sample_transform2(samples$sample_1_f)$coefs[.x,])
+    )
+  )*2
+  
+  tau_vals <- PermFDATest::tau_realizations(
+    full = FALSE, approxQ = approxQ, 
+    sample1 = PermFDATest::func_sample_transform2(orgnl_sample = samples$sample_1_f)$coefs, 
+    sample2 = PermFDATest::func_sample_transform2(orgnl_sample = samples$sample_2_f)$coefs,
+    type = "fourier", domain = c(0, 1), w_func = w_func, rho = CvM_rho, 
+    u_sample_func = PermFDATest::u_norm, n_func = n_func
   )
-
+  message('Values of the CvM test statistic calculated.')
+  
   # save t_stats for further processing
-  t_stats <- list(samples = samples, nu_vals = nu_vals, tau_vals = tau_vals)
+  t_stats <- list(samples = samples, 
+                  nu_vals = nu_vals, nu_real = nu_real,
+                  tau_vals = tau_vals$tau_hat, tau_real = tau_vals$tau_realized)
+
   saveRDS(
     object = t_stats,
     file = paste0(output_path, "simulation_1/", toString(seed), "tstats.RDS")

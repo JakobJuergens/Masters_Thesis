@@ -58,7 +58,7 @@ tau_real_full <- function(sample1, sample2, type = "fourier",
   # determine means of the fourier coefficients for random functions
   coef_means <- matrix(
     data = rep(
-      x = fourier_basis_coef_means(w_func = w_func, basis = basis, n_basis = n_basis, domain = domain),
+      x = fourier_basis_coef_means(w_func = w_func, n_basis = n_basis, domain = domain),
       times = n_func
     ), nrow = n_basis, ncol = n_func, byrow = FALSE
   )
@@ -67,7 +67,7 @@ tau_real_full <- function(sample1, sample2, type = "fourier",
     data = unlist(
       purrr::map(
         .x = 1:n_func,
-        .f = ~ rho * u_sample_func(n_basis = n_basis, ...)
+        .f = function(i){rho * u_sample_func(n_basis = n_basis, ...)}
       )
     ), nrow = n_basis, ncol = n_func, byrow = FALSE
   )
@@ -116,7 +116,12 @@ tau_real_full <- function(sample1, sample2, type = "fourier",
     tau_hat[i] <- (n_1 + n_2) * mean(x = (emp_dist_vals_s1 - emp_dist_vals_s2)^2, na.rm = FALSE)
   }
 
-  return(tau_hat)
+  tau_realized <- (n_1 + n_2) * mean(
+    x = (colMeans(weakly_bigger[1:n_1, ]) - colMeans(weakly_bigger[(n_1 + 1):(n_1 + n_2), ]))^2,
+    na.rm = FALSE
+  )
+
+  return(list(tau_hat = tau_hat, tau_realized = tau_realized))
 }
 
 tau_real_approx <- function(sample1, sample2, approxQ, type = "fourier", grid = NULL,
@@ -133,7 +138,7 @@ tau_real_approx <- function(sample1, sample2, approxQ, type = "fourier", grid = 
   # determine means of the fourier coefficients for random functions
   coef_means <- matrix(
     data = rep(
-      x = fourier_basis_coef_means(w_func = w_func, basis = basis, n_basis = n_basis, domain = domain),
+      x = fourier_basis_coef_means(w_func = w_func, n_basis = n_basis, domain = domain),
       times = n_func
     ), nrow = n_basis, ncol = n_func, byrow = FALSE
   )
@@ -142,7 +147,7 @@ tau_real_approx <- function(sample1, sample2, approxQ, type = "fourier", grid = 
     data = unlist(
       purrr::map(
         .x = 1:n_func,
-        .f = ~ rho * u_sample_func(n_basis = n_basis, ...)
+        .f = function(i){rho * u_sample_func(n_basis = n_basis, ...)}
       )
     ), nrow = n_basis, ncol = n_func, byrow = FALSE
   )
@@ -187,5 +192,10 @@ tau_real_approx <- function(sample1, sample2, approxQ, type = "fourier", grid = 
     tau_hat[i] <- (n_1 + n_2) * mean(x = (emp_dist_vals_s1 - emp_dist_vals_s2)^2, na.rm = FALSE)
   }
 
-  return(tau_hat)
+  tau_realized <- (n_1 + n_2) * mean(
+    x = (colMeans(weakly_bigger[1:n_1, ]) - colMeans(weakly_bigger[(n_1 + 1):(n_1 + n_2), ]))^2,
+    na.rm = FALSE
+  )
+
+  return(list(tau_hat = tau_hat, tau_realized = tau_realized))
 }

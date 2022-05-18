@@ -3,13 +3,13 @@
 #'
 #' @param w_func: function that is large in the areas of the domain the
 #' investigator expects differences in the distribution functions
-#' @param basis: basis created by fda
 #' @param n_basis: number of basis functions
 #' @param domain: vector of two points (start and endpoint of the closed interval)
 #'
 #' @return: Vector of length n_basis containing the resulting means of the
 #' fourier coefficients
-fourier_basis_coef_means <- function(w_func, basis, n_basis, domain = c(0, 1)) {
+#' @export
+fourier_basis_coef_means <- function(w_func, n_basis, domain = c(0, 1)) {
 
   # extract basis functions as function objects
   basis_functions <- purrr::map(

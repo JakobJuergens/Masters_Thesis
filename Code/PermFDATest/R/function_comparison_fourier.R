@@ -58,8 +58,8 @@ fourier_zeroes <- function(func_a, func_b, domain = c(0, 1)) {
   # determine scaled fourier coefficients
   diff_coefs_scaled <- scaling_factors * diff_coefs_nonscaled
   # extract sine and cosine coefficients
-  cos_coefs <- diff_coefs_scaled[which(1:length(diff_coefs) %% 2 == 1)]
-  sin_coefs <- diff_coefs_scaled[which(1:length(diff_coefs) %% 2 == 0)]
+  cos_coefs <- diff_coefs_scaled[which(1:length(diff_coefs_scaled) %% 2 == 1)]
+  sin_coefs <- diff_coefs_scaled[which(1:length(diff_coefs_scaled) %% 2 == 0)]
   N <- length(sin_coefs)
 
   # check if all entries of coefficient vector are zero
@@ -108,6 +108,8 @@ fourier_zeroes <- function(func_a, func_b, domain = c(0, 1)) {
   }
   # calculate complex eigenvalues of matrix
   eigen_b <- eigen(x = B)$values
+  # calculate zeroes of fourier series
+  zeroes_b <- complex(real = 0, imaginary = -1)*log(eigen_b)
   # real zeroes
   real_zeroes <- sort((Re(zeroes_b[which((abs(Im(zeroes_b)) < 10^(-8)))]) / (2 * pi) * (domain[2] - domain[1]))
                       %% (domain[2] - domain[1])) + domain[1]

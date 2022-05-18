@@ -488,7 +488,7 @@ style=authoryear,
 			\end{equation}
 			converges to a mean-zero Gaussian process. For the derivation look in Appendix \ref{asymp_deriv}.
 		
-		\subsection{Construction of the Measure $\mu$}
+		\subsection{Construction of the Measure $\mu$}\label{mu}
 			As introduced in Section \ref{prob_measures_l2}, it is possible to construct a probability measure on the space of square integrable functions. For the calculation of the Cram\'{e}r-von Mises type test, we need to construct one such probability measure that is suitable to detect the kind of alternative we expect to find.
 			\cite{bugni_permutation_2021} approach this problem by first constructing a random function that induces a probability measure. This random function is chosen using a function $w(t):\mathcal{I} \rightarrow \mathbb{R}$ that is supposed to be chosen large in the parts of $\mathcal{I}$ where possible differences between the empirical distribution functions are expected to be large.
 			
@@ -513,6 +513,9 @@ style=authoryear,
 				\quad \text{s.t.} \quad
 				\sum_{k = 1}^{\infty} \rho_k^2 < \infty 
 			\end{equation}
+			To obtain a reasonable degree of power it is important to set the expected value of the random function $Z(t)$ in a region, where data is observed and optimally in a region where realizations of the random function inducing the measure $\mu$ are able to distinguish potential differences in the samples. This could for example be done by choosing $w(t)$ dependent on the data. In their application \cite{bugni_permutation_2021} set the distribution of the fourier coefficients manually, as $b_1 \sim \mathcal{N}(\mu_1, \frac{1}{K})$ and $b_k \sim \mathcal{N}(0, \frac{1}{K})$ where $\mu_1 = \textit{median}_i \left(\textit{max}_t\left\{X_i(t) \ | \ i = 1, \dots, n_1, t\in \mathcal{I}\right\}\right)$. This approach is similar to setting $w(t) = \mu_1(t)$ as this also ensures the same mean function. However, this approach gives more freedom to the way the expected value of the random function is ensured by allowing the mean of all Fourier coefficients to be determined by the data.
+			
+			Additionally, the choice of the sequence $(\rho)_i$ is of importance. The authors do not recommend a procedure for choosing these coefficients, but it seems reasonable to choose parameters that lie in the vicinity of the standard deviations for the Fourier coefficients of the first sample. This method might be a reasonable possibility to choose these parameters dependent on the data.\\
 			
 			In \cite{bugni_goodness--fit_2009}, the authors show that the approximation of the probability measure, which is induced by the approximation of the random variable in Equation \ref{truncation}, converges appropriately to the probability measure induced by the random variable in Equation \ref{non_truncated}. Here, appropriately means, that integrals with respect to the approximation, henceforth called $\mu_K$, converge to their corresponding integral evaluated with respect to $\mu$.\\
 			
@@ -681,7 +684,9 @@ style=authoryear,
 			Sample 1 in red, Sample 2 in blue}
 			\label{settings}
 		\end{figure}
-		For all simulations, I used the same truncation parameter for the construction of the measure $\mu$ and chose the same value of $K = 25$ as the original authors. In their paper the authors argue that their simulations led them to conclude that the simulated approximation of the power became flat at about $K = 20$ and chose $25$ to get a good approximation. Additionally I used the same parameter of $L = 4000$ for the number of functions used for the Monte-Carlo integration used for the approximation of $\tau$, the test statistic of the Cram\'{e}r-con Mises type test. In the original paper the authors chose to approximate the critical value of the permutation test with 500 randomly chosen permutations, which I copied for the sake of reproducing their results.
+		For all simulations, I used the same truncation parameter for the construction of the measure $\mu$ and chose the same value of $K = 25$ as the original authors. In their paper the authors argue that their simulations led them to conclude that the simulated approximation of the power became flat at about $K = 20$ and chose $25$ to get a good approximation. Additionally I used the same parameter of $L = 4000$ for the number of functions used for the Monte-Carlo integration used for the approximation of $\tau$, the test statistic of the Cram\'{e}r-con Mises type test. In the original paper the authors chose to approximate the critical value of the permutation test with 500 randomly chosen permutations, which I copied for the sake of reproducing their results.\\
+		
+		For the choice of the parameters for the construction of the measure $\mu$, I followed the approach described in Section \ref{mu}. $w(t)$ is chosen as $\mu_1$ and the sequence $\left(\rho\right)_i$ is determined as twice the standard deviation of the corresponding Fourier coefficient in the first sample.
 		
 		\subsection{Results}
 		Taking a look at the results from the simulation study, it is interesting to compare the empirical rejection probabilities for different types of violations of the Nullhypothesis.
