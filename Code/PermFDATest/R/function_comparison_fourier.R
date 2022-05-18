@@ -10,21 +10,30 @@
 #' @export
 func_comparison_fourier <- function(func_a, func_b, domain = c(0, 1)) {
   # find zeroes of the difference function
-  zeroes <- fourier_zeroes(func_a = func_a, func_b = func_b, domain = domain)
+  zeroes <- unique(
+    x = signif(
+      x = fourier_zeroes(func_a = func_a, func_b = func_b, domain = domain),
+      digits = 6
+      )
+    )
   # if zeroes exists on the domain, then return false
   if (length(zeroes != 0)) {
+    if(length(zeroes) == 1){
+      inner_points <- c(mean(c(domain[1], zeroes[1])), mean(c(domain[2], zeroes[1])))
+    }
     # create grid of points to check between the zeroes
-    if (length(zeroes > 1)) {
+    else if (length(zeroes > 1)) {
       inner_points <- unlist(purrr::map(
         .x = 2:length(zeroes),
         .f = ~ mean(c(zeroes[.x - 1], zeroes[.x]))
       ))
     }
-    checking_grid <- c(domain[1], inner_points, domain[2])
+    checking_grid <- c(domain[1], mean(c(domain[1], inner_points[1])), inner_points,
+                       mean(c(domain[2], inner_points[length(inner_points)])), domain[2])
     # evaluate functions on checking grid, to determine if one function is always
     # weakly bigger
-    check_val_a <- fourier_eval(x = checking_grid, coefs = func_a, domain = domain)
-    check_val_b <- fourier_eval(x = checking_grid, coefs = func_b, domain = domain)
+    check_val_a <- signif(x = fourier_eval(x = checking_grid, coefs = func_a, domain = domain), digits = 7)
+    check_val_b <- signif(x = fourier_eval(x = checking_grid, coefs = func_b, domain = domain), digits = 7)
   }
   # if no zeroes exists on the domain check on an arbitrary point if func_a
   # is bigger then func b

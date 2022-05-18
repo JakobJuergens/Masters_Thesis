@@ -48,8 +48,8 @@ main_simu <- function(seed) {
   # first: values for the means based test
   nu_vals <- PermFDATest::nu_realizations(
     full = FALSE, approxQ = approxQ, 
-    sample1 = PermFDATest::func_sample_transform2(orgnl_sample = samples$sample_1_f)$coefs, 
-    sample2 = PermFDATest::func_sample_transform2(orgnl_sample = samples$sample_2_f)$coefs,
+    sample1 = samples$sample_1_f,
+    sample2 = samples$sample_2_f,
     domain = c(0, 1)
   )
   
@@ -66,14 +66,14 @@ main_simu <- function(seed) {
   CvM_rho <- unlist(
     purrr::map(
       .x = 1:n_basis, 
-      .f = ~ sd(PermFDATest::func_sample_transform2(samples$sample_1_f)$coefs[.x,])
+      .f = ~ sd(samples$sample_1_f[.x,])
     )
   )*2
   
   tau_vals <- PermFDATest::tau_realizations(
     full = FALSE, approxQ = approxQ, 
-    sample1 = PermFDATest::func_sample_transform2(orgnl_sample = samples$sample_1_f)$coefs, 
-    sample2 = PermFDATest::func_sample_transform2(orgnl_sample = samples$sample_2_f)$coefs,
+    sample1 = samples$sample_1_f,
+    sample2 = samples$sample_2_f,
     type = "fourier", domain = c(0, 1), w_func = w_func, rho = CvM_rho, 
     u_sample_func = PermFDATest::u_norm, n_func = n_func
   )

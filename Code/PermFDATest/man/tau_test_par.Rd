@@ -8,13 +8,10 @@ over the permutations.}
 \usage{
 tau_test_par(
   cl,
-  seeds,
   approxQ = NULL,
   sample1,
   sample2,
   domain = c(0, 1),
-  type = "fourier",
-  grid = NULL,
   w_func,
   rho,
   u_sample_func,
@@ -25,8 +22,6 @@ tau_test_par(
 \arguments{
 \item{cl:}{cluster object created by parallel package}
 
-\item{seeds:}{Seeds for reproducibility (vector of length approxQ)}
-
 \item{approxQ:}{integer specifying the number of combinations to be used for
 the approximation of the critical value}
 
@@ -34,12 +29,7 @@ the approximation of the critical value}
 
 \item{sample2:}{second sample, specified as a list where each element is one observation}
 
-\item{type:}{type of computation to use (options are: 'fourier', 'eigen', and 'grid' )}
-
 \item{domain:}{Domain of the functional observations}
-
-\item{grid:}{if type grid is chosen, this specifies the grid for the function
-comparison}
 
 \item{w_func:}{weight function for construction of measure}
 
