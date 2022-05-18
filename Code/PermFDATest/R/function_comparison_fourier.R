@@ -7,6 +7,7 @@
 #'
 #' @return TRUE or FALSE depending on wheter func_a is always weakly smaller than
 #' func_b
+#' @export
 func_comparison_fourier <- function(func_a, func_b, domain = c(0, 1)) {
   # find zeroes of the difference function
   zeroes <- fourier_zeroes(func_a = func_a, func_b = func_b, domain = domain)

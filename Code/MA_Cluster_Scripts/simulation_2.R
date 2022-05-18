@@ -45,14 +45,12 @@ main_simu <- function(seed = task_seeds_int[i]) {
 
   # calculate t-values using the package PermFDAtest
   # first: values for the means based test
-  nu_vals <- PermFDATest::means_tstats(
-    full = FALSE, approxQ = approxQ, sample1 = samples$sample_1, sample2 = samples$sample_2,
-    interpolation_mode = "linear", domain = c(0, 1), n_basis = NULL, grid = gen_grid
+  nu_vals <- PermFDATest::nu_realizations(
+    full = FALSE, approxQ = approxQ, 
+    sample1 = PermFDATest::func_sample_transform2(orgnl_sample = samples$sample_1_f)$coefs, 
+    sample2 = PermFDATest::func_sample_transform2(orgnl_sample = samples$sample_2_f)$coefs,
+    domain = c(0, 1)
   )
-  nu_real <- PermFDATest::means_tstat(
-    samples$sample_1, sample2 = samples$sample_2, interpolation_mode = "linear", 
-    domain = c(0,1), n_basis = NULL, grid = gen_grid)
-  message('Values of the means based test statistic calculated.')
   
   # second: values for the Cramer von Mises test
   # and the objects necessary to calculate them
@@ -82,9 +80,8 @@ main_simu <- function(seed = task_seeds_int[i]) {
   
   # save t_stats for further processing
   t_stats <- list(samples = samples, 
-                  nu_vals = nu_vals, nu_real = nu_real,
+                  nu_vals = nu_vals$nu_hat, nu_real = nu_vals$nu_realized,
                   tau_vals = tau_vals$tau_hat, tau_real = tau_vals$tau_realized)
-
   saveRDS(
     object = t_stats,
     file = paste0(output_path, "simulation_1/", toString(seed), "tstats.RDS")
