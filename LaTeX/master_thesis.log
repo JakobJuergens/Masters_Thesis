@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.13)  18 MAY 2022 19:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.13)  19 MAY 2022 10:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1109,34 +1109,34 @@ y Ranges|
  []
 
 [16] [17]
-<../Graphics/Settings_comparison.PDF, id=523, 1445.4pt x 867.24pt>
+<../Graphics/Settings_comparison.PDF, id=524, 1445.4pt x 867.24pt>
 File: ../Graphics/Settings_comparison.PDF Graphic file (type pdf)
 <use ../Graphics/Settings_comparison.PDF>
 Package pdftex.def Info: ../Graphics/Settings_comparison.PDF  used on input lin
-e 689.
+e 687.
 (pdftex.def)             Requested size: 500.77129pt x 300.45526pt.
  [18] [19 <../Graphics/Settings_comparison.PDF>]
-<../Graphics/electricity_demand_curves.PDF, id=559, 1445.4pt x 433.62pt>
+<../Graphics/electricity_demand_curves.PDF, id=556, 1445.4pt x 433.62pt>
 File: ../Graphics/electricity_demand_curves.PDF Graphic file (type pdf)
 <use ../Graphics/electricity_demand_curves.PDF>
 Package pdftex.def Info: ../Graphics/electricity_demand_curves.PDF  used on inp
-ut line 729.
+ut line 728.
 (pdftex.def)             Requested size: 455.24411pt x 136.57117pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 735--737
+ [20]
+Underfull \hbox (badness 10000) in paragraph at lines 734--736
 
  []
 
-[20 <../Graphics/electricity_demand_curves.PDF>]
-<../Graphics/electricity_demand_curves_cleaned.PDF, id=579, 1445.4pt x 433.62pt
+[21 <../Graphics/electricity_demand_curves.PDF>]
+<../Graphics/electricity_demand_curves_cleaned.PDF, id=585, 1445.4pt x 433.62pt
 >
 File: ../Graphics/electricity_demand_curves_cleaned.PDF Graphic file (type pdf)
 
 <use ../Graphics/electricity_demand_curves_cleaned.PDF>
 Package pdftex.def Info: ../Graphics/electricity_demand_curves_cleaned.PDF  use
-d on input line 756.
+d on input line 755.
 (pdftex.def)             Requested size: 455.24411pt x 136.57117pt.
- [21] [22 <../Graphics/electricity_demand_curves_cleaned.PDF>]
+ [22 <../Graphics/electricity_demand_curves_cleaned.PDF>]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1144,15 +1144,23 @@ Package microtype Info: Loading generic protrusion settings for font family
  [23] [24] [25] [1
 
 ] [2] (./master_thesis.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `master_thesis.out' has not changed.
 (rerunfilecheck)             Checksum: FAF533D740B95FF8642BF02DEC64D98C;8112.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                master_thesis
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'master_thesis.run.xml'.
 \openout1 = `master_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23810 strings out of 478238
- 413650 string characters out of 5850456
+ 23811 strings out of 478238
+ 413657 string characters out of 5850456
  1176653 words of memory out of 5000000
  41372 multiletter control sequences out of 15000+600000
  488064 words of font info for 176 fonts, out of 8000000 for 9000
@@ -1200,10 +1208,10 @@ cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><
 f-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/cm-super/sfrm1200.pfb>
-Output written on master_thesis.pdf (30 pages, 1451479 bytes).
+Output written on master_thesis.pdf (30 pages, 1451575 bytes).
 PDF statistics:
  792 PDF objects out of 1000 (max. 8388607)
  703 compressed objects within 8 object streams
- 200 named destinations out of 1000 (max. 500000)
+ 201 named destinations out of 1000 (max. 500000)
  39794 words of extra memory for PDF output out of 42996 (max. 10000000)
 
