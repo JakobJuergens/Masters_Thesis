@@ -22,7 +22,7 @@ demands <- list(
 # create basis for functional representation
 # Fourier basis should work well due to approximately cyclical data
 fourier_basis <- fda::create.fourier.basis(
-  rangeval = c(0, 24), nbasis = 17, period = 24
+  rangeval = c(0, 24), nbasis = 25, period = 24
 )
 
 # express demand data as functional objects
@@ -45,13 +45,15 @@ for(i in 1:7){
   # get coefficients
   coefficients[[i]] <- f_demands[[i]]$fd$coefs
 }
-coefficient_matrix <- matrix(data = NA, nrow = 17, ncol = 7*508)
+coefficient_matrix <- matrix(data = NA, nrow = 25, ncol = 7*508)
 for(i in 1:(7*508)){
   # combine into one coefficient matrix
   coefficient_matrix[,i] <- coefficients[[((i-1) %% 7) + 1]][ , (i-1)%/%7 + 1]
 }
 # create functional object from combined matrix
 large_functional_data <- fda::fd(coef = coefficient_matrix, basisobj = fourier_basis)
+
+saveRDS(large_functional_data, '../../Data/fda_all_days.RDS')
 
 # create regressor tibble
 reg_tibble <- tibble(
@@ -62,16 +64,8 @@ reg_tibble <- tibble(
   weekday = as_factor(weekdays(DATE)),
   year = year(DATE) - 1997
 ) %>%
-  select(!c(DAY, DATE))
+  mutate(rownumber = 1:n()) %>%
+  group_by(year, month, weekday) %>%
+  mutate(n_wd = 1:n())
 
-# perform functional regression
-regression_fd <- with(reg_tibble, large_functional_data)
-trend_cycl_reg <- fda::fRegress(regression_fd ~ year + month + weekday, data = reg_tibble)
-trend_cycl_reg_no_weekday <- fda::fRegress(regression_fd ~ year + month, data = reg_tibble)
-
-# extract object without trend and month cyclical component
-cleaned_coefs <- trend_cycl_reg_no_weekday$yfdobj$coefs - trend_cycl_reg_no_weekday$yhatfdobj$coefs
-
-# generate fd object from this
-cleaned_fd <- fda::fd(coef = cleaned_coefs, basisobj = fourier_basis)
-saveRDS(cleaned_fd, '../../Data/cleaned_electricity_demand_fd.RDS')
+saveRDS(reg_tibble, '../../Data/electricity_demand_reg_tibble.RDS')

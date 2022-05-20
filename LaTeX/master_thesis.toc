@@ -42,8 +42,11 @@
 \contentsline {paragraph}{Simulations comparing choices of $w(t)$ and $\left (\rho _i\right )_{i = 1, \dots , K}$}{22}{section.10}%
 \contentsline {paragraph}{Simulation Settings where the Distribution of Fourier Coefficients is changed}{22}{section.10}%
 \contentsline {paragraph}{Simulations for Unbalanced Sample Sizes}{22}{section.10}%
-\contentsline {paragraph}{Application that has a more complex difference structure}{22}{section.10}%
-\contentsline {section}{\numberline {11}Bibliography}{23}{section.11}%
+\contentsline {paragraph}{Application that has a more complex difference structure}{23}{section.10}%
+\contentsline {section}{\numberline {11}Bibliography}{24}{section.11}%
 \contentsline {section}{\numberline {12}Appendix}{i}{section.12}%
 \contentsline {subsection}{\numberline {12.1}Multiple Testing}{i}{subsection.12.1}%
 \contentsline {subsection}{\numberline {12.2}Derivation of Asymptotic Distribution}{i}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Application Data Cleaning}{i}{subsection.12.3}%
+\contentsline {subsubsection}{\numberline {12.3.1}Excluded Holidays}{i}{subsubsection.12.3.1}%
+\contentsline {subsubsection}{\numberline {12.3.2}Detrending and Deseasoning Results}{i}{subsubsection.12.3.2}%

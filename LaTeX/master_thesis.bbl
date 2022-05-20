@@ -1070,42 +1070,8 @@
       \verb 10.1007/978-1-4757-2545-2
       \endverb
     \endentry
-    \entry{testthat}{article}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=1d0f6977ce2d043e298a59a1cd75b7ef}{%
-           family={Wickham},
-           familyi={W\bibinitperiod},
-           given={Hadley},
-           giveni={H\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{1d0f6977ce2d043e298a59a1cd75b7ef}
-      \strng{fullhash}{1d0f6977ce2d043e298a59a1cd75b7ef}
-      \strng{bibnamehash}{1d0f6977ce2d043e298a59a1cd75b7ef}
-      \strng{authorbibnamehash}{1d0f6977ce2d043e298a59a1cd75b7ef}
-      \strng{authornamehash}{1d0f6977ce2d043e298a59a1cd75b7ef}
-      \strng{authorfullhash}{1d0f6977ce2d043e298a59a1cd75b7ef}
-      \field{sortinit}{W}
-      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{The R Journal}
-      \field{title}{testthat: Get Started with Testing}
-      \field{volume}{3}
-      \field{year}{2011}
-      \field{pages}{5\bibrangedash 10}
-      \range{pages}{6}
-      \verb{urlraw}
-      \verb https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf
-      \endverb
-      \verb{url}
-      \verb https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf
-      \endverb
-    \endentry
     \entry{tidyverse}{article}{}
-      \name{author}{24}{ul=1}{%
+      \name{author}{24}{}{%
         {{un=0,uniquepart=base,hash=1d0f6977ce2d043e298a59a1cd75b7ef}{%
            family={Wickham},
            familyi={W\bibinitperiod},
