@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.13)  20 MAY 2022 23:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.13)  20 MAY 2022 23:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -934,7 +934,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 88--90
 
  []
 
-<../Graphics/growth_curves.PDF, id=271, 1445.4pt x 433.62pt>
+<../Graphics/growth_curves.PDF, id=286, 1445.4pt x 433.62pt>
 File: ../Graphics/growth_curves.PDF Graphic file (type pdf)
 <use ../Graphics/growth_curves.PDF>
 Package pdftex.def Info: ../Graphics/growth_curves.PDF  used on input line 101.
@@ -1027,7 +1027,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 225.
 
 [5]
-<../Graphics/fourier_basis.PDF, id=350, 1445.4pt x 433.62pt>
+<../Graphics/fourier_basis.PDF, id=365, 1445.4pt x 433.62pt>
 File: ../Graphics/fourier_basis.PDF Graphic file (type pdf)
 <use ../Graphics/fourier_basis.PDF>
 Package pdftex.def Info: ../Graphics/fourier_basis.PDF  used on input line 238.
@@ -1109,32 +1109,32 @@ y Ranges|
  []
 
 [16] [17]
-<../Graphics/Settings_comparison.PDF, id=540, 1445.4pt x 867.24pt>
+<../Graphics/Settings_comparison.PDF, id=555, 1445.4pt x 867.24pt>
 File: ../Graphics/Settings_comparison.PDF Graphic file (type pdf)
 <use ../Graphics/Settings_comparison.PDF>
 Package pdftex.def Info: ../Graphics/Settings_comparison.PDF  used on input lin
 e 687.
 (pdftex.def)             Requested size: 500.77129pt x 300.45526pt.
  [18] [19 <../Graphics/Settings_comparison.PDF>]
-<../Graphics/electricity_demand_curves.PDF, id=571, 1445.4pt x 433.62pt>
+<../Graphics/electricity_demand_curves.PDF, id=586, 1445.4pt x 433.62pt>
 File: ../Graphics/electricity_demand_curves.PDF Graphic file (type pdf)
 <use ../Graphics/electricity_demand_curves.PDF>
 Package pdftex.def Info: ../Graphics/electricity_demand_curves.PDF  used on inp
 ut line 728.
 (pdftex.def)             Requested size: 455.24411pt x 136.57117pt.
  [20]
-Underfull \hbox (badness 10000) in paragraph at lines 737--738
+Underfull \hbox (badness 10000) in paragraph at lines 739--740
 
  []
 
 [21 <../Graphics/electricity_demand_curves.PDF>]
-<../Graphics/electricity_demand_curves_cleaned.PDF, id=598, 1445.4pt x 433.62pt
+<../Graphics/electricity_demand_curves_cleaned.PDF, id=613, 1445.4pt x 433.62pt
 >
 File: ../Graphics/electricity_demand_curves_cleaned.PDF Graphic file (type pdf)
 
 <use ../Graphics/electricity_demand_curves_cleaned.PDF>
 Package pdftex.def Info: ../Graphics/electricity_demand_curves_cleaned.PDF  use
-d on input line 755.
+d on input line 758.
 (pdftex.def)             Requested size: 455.24411pt x 136.57117pt.
  [22 <../Graphics/electricity_demand_curves_cleaned.PDF>] [23]
 Package microtype Info: Loading generic protrusion settings for font family
@@ -1143,18 +1143,18 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
  [24] [25] [1
 
-] [2] (./master_thesis.aux)
+] [2] [3] (./master_thesis.aux)
 Package rerunfilecheck Info: File `master_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: AB6EBE6929D8BDC2E8B1A1E0098ED655;8710.
+(rerunfilecheck)             Checksum: C2654ABF01D5C124550F26595113C10A;9247.
 Package logreq Info: Writing requests to 'master_thesis.run.xml'.
 \openout1 = `master_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23819 strings out of 478238
- 413724 string characters out of 5850456
- 1176719 words of memory out of 5000000
- 41374 multiletter control sequences out of 15000+600000
+ 23826 strings out of 478238
+ 413852 string characters out of 5850456
+ 1176716 words of memory out of 5000000
+ 41377 multiletter control sequences out of 15000+600000
  488283 words of font info for 178 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,25n,68p,1068b,2733s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1205,10 +1205,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
 rm1200.pfb>
-Output written on master_thesis.pdf (30 pages, 1465733 bytes).
+Output written on master_thesis.pdf (31 pages, 1465989 bytes).
 PDF statistics:
- 814 PDF objects out of 1000 (max. 8388607)
- 723 compressed objects within 8 object streams
- 204 named destinations out of 1000 (max. 500000)
- 40330 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 835 PDF objects out of 1000 (max. 8388607)
+ 743 compressed objects within 8 object streams
+ 208 named destinations out of 1000 (max. 500000)
+ 40354 words of extra memory for PDF output out of 42996 (max. 10000000)
 

@@ -5,6 +5,10 @@ library(fda)
 library(stringr)
 library(lubridate)
 
+# read in data
+functional_data <- saveRDS('../../Data/fda_all_days_holiday_cleaned.RDS')
+regression_tibble <- saveRDS('../../Data/electricity_demand_reg_tibble_holiday_cleaned.RDS')
+
 # perform functional regression
 regression_fd <- with(reg_tibble, large_functional_data)
 trend_cycl_reg <- fda::fRegress(regression_fd ~ year + month + weekday, data = reg_tibble)
