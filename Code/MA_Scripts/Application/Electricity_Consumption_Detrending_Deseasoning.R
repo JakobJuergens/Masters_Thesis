@@ -6,16 +6,51 @@ library(stringr)
 library(lubridate)
 
 # read in data
-functional_data <- saveRDS('../../Data/fda_all_days_holiday_cleaned.RDS')
-regression_tibble <- saveRDS('../../Data/electricity_demand_reg_tibble_holiday_cleaned.RDS')
+large_functional_data <- readRDS('../../Data/fda_all_days_holiday_cleaned.RDS')
+reg_tibble <- readRDS('../../Data/electricity_demand_reg_tibble_holiday_cleaned.RDS')
+
+# create fourier basis
+fourier_basis <- fda::create.fourier.basis(
+  rangeval = c(0, 24), nbasis = 25, period = 24
+)
 
 # perform functional regression
 regression_fd <- with(reg_tibble, large_functional_data)
 trend_cycl_reg <- fda::fRegress(regression_fd ~ year + month + weekday, data = reg_tibble)
-trend_cycl_reg_no_weekday <- fda::fRegress(regression_fd ~ year + month, data = reg_tibble)
+
+saveRDS(trend_cycl_reg, '../../Data/electricity_demand_fReg.RDS')
 
 # extract object without trend and month cyclical component
-cleaned_coefs <- trend_cycl_reg_no_weekday$yfdobj$coefs - trend_cycl_reg_no_weekday$yhatfdobj$coefs
+# this has to be altered
+residual_coefs <- trend_cycl_reg$yfdobj$coefs - trend_cycl_reg$yhatfdobj$coefs
+weekday_coefs <- matrix(
+  data = unlist(
+    purrr::map(
+      .x = 1:ncol(residual_coefs),
+      .f = function(i) {
+        if (reg_tibble$weekday[i] == "Montag") {
+          return(rep(x = 0, times = nrow(residual_coefs)))
+        } else if (reg_tibble$weekday[i] == "Dienstag") {
+          return(trend_cycl_reg$betaestlist$weekday.Dienstag$fd$coefs)
+        } else if (reg_tibble$weekday[i] == "Mittwoch") {
+          return(trend_cycl_reg$betaestlist$weekday.Mittwoch$fd$coefs)
+        } else if (reg_tibble$weekday[i] == "Donnerstag") {
+          return(trend_cycl_reg$betaestlist$weekday.Donnerstag$fd$coefs)
+        } else if (reg_tibble$weekday[i] == "Freitag") {
+          return(trend_cycl_reg$betaestlist$weekday.Freitag$fd$coefs)
+        } else if (reg_tibble$weekday[i] == "Samstag") {
+          return(trend_cycl_reg$betaestlist$weekday.Samstag$fd$coefs)
+        } else if (reg_tibble$weekday[i] == "Sonntag") {
+          return(trend_cycl_reg$betaestlist$weekday.Sonntag$fd$coefs)
+        }
+      }
+    )
+  ), nrow = nrow(residual_coefs), ncol = ncol(residual_coefs), byrow = FALSE
+)
+
+cleaned_coefs <- matrix(
+  data = rep(trend_cycl_reg$betaestlist$const$fd$coefs, times = ncol(residual_coefs)),
+  nrow = nrow(residual_coefs), ncol = ncol(residual_coefs), byrow = FALSE) + residual_coefs + weekday_coefs
 
 # generate fd object from this
 cleaned_fd <- fda::fd(coef = cleaned_coefs, basisobj = fourier_basis)

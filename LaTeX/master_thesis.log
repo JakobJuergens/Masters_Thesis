@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.13)  20 MAY 2022 23:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.13)  22 MAY 2022 01:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1128,22 +1128,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 739--740
  []
 
 [21 <../Graphics/electricity_demand_curves.PDF>]
-<../Graphics/electricity_demand_curves_cleaned.PDF, id=613, 1445.4pt x 433.62pt
+<../Graphics/estimate_const_year.PDF, id=616, 1445.4pt x 433.62pt>
+File: ../Graphics/estimate_const_year.PDF Graphic file (type pdf)
+<use ../Graphics/estimate_const_year.PDF>
+Package pdftex.def Info: ../Graphics/estimate_const_year.PDF  used on input lin
+e 759.
+(pdftex.def)             Requested size: 500.77129pt x 150.22763pt.
+<../Graphics/estimate_months.PDF, id=617, 1445.4pt x 1806.75pt>
+File: ../Graphics/estimate_months.PDF Graphic file (type pdf)
+<use ../Graphics/estimate_months.PDF>
+Package pdftex.def Info: ../Graphics/estimate_months.PDF  used on input line 76
+7.
+(pdftex.def)             Requested size: 500.77129pt x 625.94846pt.
+ [22 <../Graphics/estimate_const_year.PDF>]
+<../Graphics/estimate_weekdays.PDF, id=633, 1445.4pt x 1806.75pt>
+File: ../Graphics/estimate_weekdays.PDF Graphic file (type pdf)
+<use ../Graphics/estimate_weekdays.PDF>
+Package pdftex.def Info: ../Graphics/estimate_weekdays.PDF  used on input line 
+775.
+(pdftex.def)             Requested size: 500.77129pt x 625.94846pt.
+ [23 <../Graphics/estimate_months.PDF>]
+<../Graphics/electricity_demand_curves_cleaned.PDF, id=645, 1445.4pt x 433.62pt
 >
 File: ../Graphics/electricity_demand_curves_cleaned.PDF Graphic file (type pdf)
 
 <use ../Graphics/electricity_demand_curves_cleaned.PDF>
 Package pdftex.def Info: ../Graphics/electricity_demand_curves_cleaned.PDF  use
-d on input line 758.
+d on input line 783.
 (pdftex.def)             Requested size: 455.24411pt x 136.57117pt.
- [22 <../Graphics/electricity_demand_curves_cleaned.PDF>] [23]
+ [24 <../Graphics/estimate_weekdays.PDF>] [25 <../Graphics/electricity_demand_c
+urves_cleaned.PDF>]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [24] [25] [1
+ [26]
+[27] [1
 
-] [2] [3] (./master_thesis.aux)
+] [2] (./master_thesis.aux)
 Package rerunfilecheck Info: File `master_thesis.out' has not changed.
 (rerunfilecheck)             Checksum: C2654ABF01D5C124550F26595113C10A;9247.
 Package logreq Info: Writing requests to 'master_thesis.run.xml'.
@@ -1151,13 +1173,17 @@ Package logreq Info: Writing requests to 'master_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23826 strings out of 478238
- 413852 string characters out of 5850456
- 1176716 words of memory out of 5000000
- 41377 multiletter control sequences out of 15000+600000
+ 23856 strings out of 478238
+ 414812 string characters out of 5850456
+ 1176902 words of memory out of 5000000
+ 41399 multiletter control sequences out of 15000+600000
  488283 words of font info for 178 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,25n,68p,1068b,2733s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist
+, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exist
 , replaced by a fixed one
@@ -1205,10 +1231,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
 rm1200.pfb>
-Output written on master_thesis.pdf (31 pages, 1465989 bytes).
+Output written on master_thesis.pdf (32 pages, 1516160 bytes).
 PDF statistics:
- 835 PDF objects out of 1000 (max. 8388607)
- 743 compressed objects within 8 object streams
- 208 named destinations out of 1000 (max. 500000)
- 40354 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 865 PDF objects out of 1000 (max. 8388607)
+ 766 compressed objects within 8 object streams
+ 213 named destinations out of 1000 (max. 500000)
+ 40369 words of extra memory for PDF output out of 42996 (max. 10000000)
 

@@ -45,6 +45,7 @@ pot_replacement_holidays <- reg_tibble %>%
     (month == 1 & day(DATE) == 1) | # New Year's
       (month == 1 & day(DATE) == 26) | # Australia Day
       (month == 4 & day(DATE) == 25) | # Anzac Day
+      (month == 12 & day(DATE) == 24) | # Christmas Eve
       (month == 12 & day(DATE) == 25) | # Christmas Day
       (month == 12 & day(DATE) == 26) | # Boxing Day
       (month == 12 & day(DATE) == 31) # New Year's Eve
@@ -56,6 +57,7 @@ substituted_holidays <- pot_replacement_holidays %>%
     (month == 1 & day(DATE) == 1 & weekday %in% c("Samstag", "Sonntag")) | # New Year's
       (month == 1 & day(DATE) == 26 & weekday %in% c("Samstag", "Sonntag")) | # Australia Day
       (month == 4 & day(DATE) == 25 & weekday %in% c("Samstag", "Sonntag")) | # Anzac Day
+      (month == 12 & day(DATE) == 24 & weekday %in% c("Samstag", "Sonntag")) | # Christmas Eve
       (month == 12 & day(DATE) == 25 & weekday %in% c("Samstag", "Sonntag")) | # Christmas Day
       (month == 12 & day(DATE) == 26 & weekday %in% c("Samstag", "Sonntag")) | # Boxing Day
       (month == 12 & day(DATE) == 31 & weekday == "Sonntag") # New Year's Eve

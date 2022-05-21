@@ -22,7 +22,7 @@ weekend_demand <- list(
 # create basis for functional representation
 # Fourier basis should work well due to approximately cyclical data
 fourier_basis <- fda::create.fourier.basis(
-  rangeval = c(0, 24), nbasis = 17, period = 24
+  rangeval = c(0, 24), nbasis = 25, period = 24
 )
 
 # express demand data as functional objects

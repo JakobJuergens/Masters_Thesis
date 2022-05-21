@@ -40,16 +40,16 @@
 \contentsline {subsubsection}{\numberline {9.1.1}Removal of Mondays and Fridays}{21}{subsubsection.9.1.1}%
 \contentsline {subsubsection}{\numberline {9.1.2}Holidays}{21}{subsubsection.9.1.2}%
 \contentsline {subsubsection}{\numberline {9.1.3}Detrending and Deseasoning}{21}{subsubsection.9.1.3}%
-\contentsline {section}{\numberline {10}Outlook}{22}{section.10}%
-\contentsline {paragraph}{Simulations for Different Measures}{22}{section.10}%
-\contentsline {paragraph}{Simulations comparing choices of $w(t)$ and $\left (\rho _i\right )_{i = 1, \dots , K}$}{22}{section.10}%
-\contentsline {paragraph}{Simulation Settings where the Distribution of Fourier Coefficients is changed}{23}{section.10}%
-\contentsline {paragraph}{Simulations for Unbalanced Sample Sizes}{23}{section.10}%
-\contentsline {paragraph}{Application that has a more complex difference structure}{23}{section.10}%
-\contentsline {section}{\numberline {11}Bibliography}{24}{section.11}%
+\contentsline {section}{\numberline {10}Outlook}{25}{section.10}%
+\contentsline {paragraph}{Simulations for Different Measures}{25}{section.10}%
+\contentsline {paragraph}{Simulations comparing choices of $w(t)$ and $\left (\rho _i\right )_{i = 1, \dots , K}$}{25}{section.10}%
+\contentsline {paragraph}{Simulation Settings where the Distribution of Fourier Coefficients is changed}{25}{section.10}%
+\contentsline {paragraph}{Simulations for Unbalanced Sample Sizes}{25}{section.10}%
+\contentsline {paragraph}{Application that has a more complex difference structure}{25}{section.10}%
+\contentsline {section}{\numberline {11}Bibliography}{26}{section.11}%
 \contentsline {section}{\numberline {12}Appendix}{i}{section.12}%
 \contentsline {subsection}{\numberline {12.1}Multiple Testing}{i}{subsection.12.1}%
 \contentsline {subsection}{\numberline {12.2}Derivation of Asymptotic Distribution}{i}{subsection.12.2}%
 \contentsline {subsection}{\numberline {12.3}Application Data Cleaning}{i}{subsection.12.3}%
 \contentsline {subsubsection}{\numberline {12.3.1}Excluded Holidays}{i}{subsubsection.12.3.1}%
-\contentsline {subsubsection}{\numberline {12.3.2}Detrending and Deseasoning Results}{ii}{subsubsection.12.3.2}%
+\contentsline {subsubsection}{\numberline {12.3.2}Detrending and Deseasoning Results}{i}{subsubsection.12.3.2}%

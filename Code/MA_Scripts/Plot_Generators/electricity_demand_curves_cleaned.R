@@ -6,13 +6,13 @@ library(stringr)
 
 # load cleaned_fd object
 cleaned_fd <- readRDS('../../Data/cleaned_electricity_demand_fd.RDS')
+reg_tibble <- readRDS('../../Data/electricity_demand_reg_tibble_holiday_cleaned.RDS')
 
 # extract relevant coefficients for wednesdays and saturdays
-# remember observations start on sunday(!)
-wednesday_index <- 3 + seq(from = 1, to = 7*52 + 1, by = 7)
+wednesday_index <- which(reg_tibble$weekday == 'Mittwoch')
 wednesday_coefficients <- cleaned_fd$coefs[, wednesday_index]
 
-saturday_index <- 6 + seq(from = 1, to = 7*52 + 1, by = 7)
+saturday_index <- which(reg_tibble$weekday == 'Samstag')
 saturday_coefficients <- cleaned_fd$coefs[, saturday_index]
 
 # generate their own fd objects
