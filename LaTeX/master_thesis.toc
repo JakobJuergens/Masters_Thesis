@@ -39,7 +39,8 @@
 \contentsline {subsection}{\numberline {9.1}Data Cleaning and Preprocessing}{21}{subsection.9.1}%
 \contentsline {subsubsection}{\numberline {9.1.1}Removal of Mondays and Fridays}{21}{subsubsection.9.1.1}%
 \contentsline {subsubsection}{\numberline {9.1.2}Holidays}{21}{subsubsection.9.1.2}%
-\contentsline {subsubsection}{\numberline {9.1.3}Detrending and Deseasoning}{21}{subsubsection.9.1.3}%
+\contentsline {subsubsection}{\numberline {9.1.3}Detrending and Deseasoning}{22}{subsubsection.9.1.3}%
+\contentsline {subsection}{\numberline {9.2}Test from \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{24}{subsection.9.2}%
 \contentsline {section}{\numberline {10}Outlook}{24}{section.10}%
 \contentsline {paragraph}{Simulations for Different Measures}{24}{section.10}%
 \contentsline {paragraph}{Simulations comparing choices of $w(t)$ and $\left (\rho _i\right )_{i = 1, \dots , K}$}{24}{section.10}%

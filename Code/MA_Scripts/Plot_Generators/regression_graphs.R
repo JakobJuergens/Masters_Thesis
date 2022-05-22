@@ -67,8 +67,8 @@ estimate_plots <- purrr::map(
       theme_light() +
       scale_x_continuous(breaks=seq(0, 24, 4)) +
       ggtitle(label = plot_titles[i]) +
-      labs(y = element_blank()) +
-      labs(x = element_blank()) +
+      labs(y = 'Demand in Megwatt') +
+      labs(x = 'Time') +
       theme(
         legend.position = 'bottom',
         legend.text = element_text(size = 26),
@@ -85,9 +85,9 @@ const_year_plot <- (ggplot(data = estimate_tibbles[[1]]) +
   geom_line(aes(x = x, y = y)) +
   theme_light() +
   scale_x_continuous(breaks = seq(0, 24, 4)) +
-  ggtitle(label = "Constant") +
-  labs(y = element_blank()) +
-  labs(x = element_blank()) +
+  ggtitle(label = "Constant Estimate") +
+  labs(y = 'Demand in Megwatt') +
+  labs(x = 'Time') +
   theme(
     legend.position = c(.08, .8),
     legend.text = element_text(size = 26),
@@ -101,9 +101,9 @@ const_year_plot <- (ggplot(data = estimate_tibbles[[1]]) +
     geom_line(aes(x = x, y = y)) +
     theme_light() +
     scale_x_continuous(breaks = seq(0, 24, 4)) +
-    ggtitle(label = "Year") +
+    ggtitle(label = "Year Estimate") +
     labs(y = element_blank()) +
-    labs(x = element_blank()) +
+    labs(x = 'Time') +
     theme(
       legend.position = c(.08, .8),
       legend.text = element_text(size = 26),
