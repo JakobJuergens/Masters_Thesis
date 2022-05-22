@@ -59,7 +59,7 @@ saveRDS(large_functional_data, '../../Data/fda_all_days.RDS')
 reg_tibble <- tibble(
   constant = rep(1, times = ncol(large_functional_data$coefs)),
   DAY = 1:ncol(large_functional_data$coefs),
-  DATE = as_date(DAY, origin = as_date('1997-07-06')),
+  DATE = as_date(DAY, origin = as_date('1997-07-05')),
   month = as_factor(month(DATE)),
   weekday = as_factor(weekdays(DATE)),
   year = year(DATE) - 1997
