@@ -5,7 +5,7 @@
 \contentsline {subsection}{\numberline {2.2}$\mathbb {L}_2(\mathcal {I})$ as defined in \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{4}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Bases of $\mathbb {L}_2$}{6}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Random Functions}{6}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Probability Measures on $\mathbb {L}_2$}{6}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.5}Probability Measures on $\mathbb {L}_2$}{7}{subsection.2.5}%
 \contentsline {subsubsection}{\numberline {2.5.1}Probability Measures induced by Random Functions}{7}{subsubsection.2.5.1}%
 \contentsline {subsection}{\numberline {2.6}Functional Integration on $\mathbb {L}_2$}{7}{subsection.2.6}%
 \contentsline {section}{\numberline {3}Cram\'{e}r-von Mises Tests}{7}{section.3}%
@@ -13,7 +13,7 @@
 \contentsline {subsection}{\numberline {3.2}Assumptions}{8}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Nullhypothesis}{8}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Two-Sample Cram\'{e}r-von Mises Statistic}{8}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Asymptotic Distribution}{8}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.5}Asymptotic Distribution}{9}{subsection.3.5}%
 \contentsline {section}{\numberline {4}Permutation Tests}{9}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Functional Principle of Permutation Tests}{9}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Size and Power}{11}{subsection.4.2}%
