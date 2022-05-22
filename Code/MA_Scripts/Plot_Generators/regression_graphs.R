@@ -26,8 +26,8 @@ estimate_tibbles <- purrr::map(
 plot_names <- c('Constant', 'Year', 'February', 'March',
                 'April', 'May', 'June', 'July', 'August',
                 'September', 'October', 'November', 'December',
-                'Tuesday', 'Wednesday', 'Thursday', 'Friday',
-                'Saturday', 'Sunday')
+                'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',
+                'Saturday')
 
 # create plot from each tibble
 estimate_plots <- purrr::map(

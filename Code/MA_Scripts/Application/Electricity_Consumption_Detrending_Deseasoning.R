@@ -26,10 +26,10 @@ residual_coefs <- trend_cycl_reg$yfdobj$coefs - trend_cycl_reg$yhatfdobj$coefs
 weekday_coefs <- matrix(
   data = unlist(
     purrr::map(
-      .x = 1:ncol(residual_coefs),
+      .x = 1:nrow(reg_tibble),
       .f = function(i) {
         if (reg_tibble$weekday[i] == "Montag") {
-          return(rep(x = 0, times = nrow(residual_coefs)))
+          return(trend_cycl_reg$betaestlist$weekday.Montag$fd$coefs)
         } else if (reg_tibble$weekday[i] == "Dienstag") {
           return(trend_cycl_reg$betaestlist$weekday.Dienstag$fd$coefs)
         } else if (reg_tibble$weekday[i] == "Mittwoch") {
@@ -41,7 +41,7 @@ weekday_coefs <- matrix(
         } else if (reg_tibble$weekday[i] == "Samstag") {
           return(trend_cycl_reg$betaestlist$weekday.Samstag$fd$coefs)
         } else if (reg_tibble$weekday[i] == "Sonntag") {
-          return(trend_cycl_reg$betaestlist$weekday.Sonntag$fd$coefs)
+          return(rep(x = 0, times = nrow(residual_coefs)))
         }
       }
     )

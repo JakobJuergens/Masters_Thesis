@@ -66,6 +66,8 @@ reg_tibble <- tibble(
 ) %>%
   mutate(rownumber = 1:n()) %>%
   group_by(year, month, weekday) %>%
-  mutate(n_wd = 1:n())
+  mutate(n_wd = 1:n()) %>%
+  ungroup() %>%
+  arrange(DATE)
 
 saveRDS(reg_tibble, '../../Data/electricity_demand_reg_tibble.RDS')
