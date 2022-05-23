@@ -617,10 +617,21 @@ style=authoryear,
 		\subsection{Asymptotic Properties under the Alternative}
 		
 	\section{Closed Testing Procedures}\label{closed_testing}
-		If we find a violation of the hypothesis it would be interesting to identify where or more precisely in what frequency the violation occurs. One approach to this question is to introduce what is called a closed testing procedure that identifies the basis functions that are relevant to the violation of the nullhypothesis. 			
+		If we find a violation of the hypothesis it would be interesting to identify where or more precisely in what frequency the violation occurs. One approach to this question is to introduce what is called a closed testing procedure that identifies the basis functions that are relevant to the violation of the nullhypothesis. The underlying idea was developed by \cite{marcus_closed_1976} and is applicable in settings where we are interested in testing a set of Nullhypotheses that is closed under intersection.
 		
 	\section{Variant for Alternatives in Specific Frequency Ranges}\label{frequency_identification}
-		If we use the idea described in the previous section for the test introduced in \cite{bugni_permutation_2021}, this could lead to the following extension.
+		If we use the idea described in the previous section for the test introduced in \cite{bugni_permutation_2021}, this could lead to the following extension. To make it clear how to apply the principle of a closed testing procedure to this setting, it is useful to reformulate the Nullhypothesis as follows.		
+		\begin{equation}
+			\begin{split}
+				H_0: \quad &F_X(z) = F_Y(z) \quad \text{a.e.} \quad \text{w.r.t.} \quad \mu_K \\
+				H_1: \quad &\mathbb{P}_{\mu}\left[F_X(Z) \neq F_Y(Z)\right] > 0
+			\end{split}
+		\end{equation}
+		 For a specific measure $\mu_K$ induced by a random variable as described in Equation \ref{truncation} for a truncation parameter $K$, we can reformulate the Nullhypothesis as such, as the constructed test will have no power against alternatives of $\mu_K$-measure zero.\\
+		 For a series of values for $K = 1, \dots, \mathcal{K}$, these hypotheses are closed under intersection. This becomes evident if we look at the space of possible realizations for each inducing random variable.
+		 
+		 {\color{red} HIER WEITERSCHREIBEN}
+
 		
 	\section{Simulation Study}\label{Simulation_Study}
 		To learn more about the potential practical applications of this method, it is useful to study its properties in a simulation. \cite{bugni_permutation_2021} studied an array of different setups that give an idea of the performance in different settings and this thesis will replicate some of these results and explore some where the method struggles.

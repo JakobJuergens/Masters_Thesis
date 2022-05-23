@@ -31,8 +31,8 @@
 \contentsline {section}{\numberline {7}Variant for Alternatives in Specific Frequency Ranges}{16}{section.7}%
 \contentsline {section}{\numberline {8}Simulation Study}{16}{section.8}%
 \contentsline {subsection}{\numberline {8.1}Implementation as an R package}{16}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Use of High-Performance Computing}{16}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Particularities of the Implementation}{16}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.2}Use of High-Performance Computing}{17}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Particularities of the Implementation}{17}{subsection.8.3}%
 \contentsline {subsection}{\numberline {8.4}Simulation Setup}{17}{subsection.8.4}%
 \contentsline {subsection}{\numberline {8.5}Results}{20}{subsection.8.5}%
 \contentsline {section}{\numberline {9}Application}{20}{section.9}%
