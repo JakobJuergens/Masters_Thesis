@@ -21,33 +21,33 @@
 \contentsline {subsection}{\numberline {5.1}Assumptions}{11}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Nullhypothesis}{12}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Cram\'{e}r-von Mises type Test}{12}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Asymptotics for the Cram\'{e}r-von Mises type Test}{12}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.4}Asymptotics for the Cram\'{e}r-von Mises type Test}{13}{subsection.5.4}%
 \contentsline {subsection}{\numberline {5.5}Construction of the Measure $\mu $}{13}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}Mean focused Test}{14}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.6}Mean focused Test}{15}{subsection.5.6}%
 \contentsline {subsection}{\numberline {5.7}Combined Permutation Test}{15}{subsection.5.7}%
-\contentsline {subsection}{\numberline {5.8}Finite Sample Properties under the Nullhypothesis}{15}{subsection.5.8}%
-\contentsline {subsection}{\numberline {5.9}Asymptotic Properties under the Alternative}{15}{subsection.5.9}%
-\contentsline {section}{\numberline {6}Closed Testing Procedures}{15}{section.6}%
+\contentsline {subsection}{\numberline {5.8}Finite Sample Properties under the Nullhypothesis}{16}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.9}Asymptotic Properties under the Alternative}{16}{subsection.5.9}%
+\contentsline {section}{\numberline {6}Closed Testing Procedures}{16}{section.6}%
 \contentsline {section}{\numberline {7}Variant for Alternatives in Specific Frequency Ranges}{16}{section.7}%
-\contentsline {section}{\numberline {8}Simulation Study}{16}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Implementation as an R package}{16}{subsection.8.1}%
+\contentsline {section}{\numberline {8}Simulation Study}{17}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Implementation as an R package}{17}{subsection.8.1}%
 \contentsline {subsection}{\numberline {8.2}Use of High-Performance Computing}{17}{subsection.8.2}%
 \contentsline {subsection}{\numberline {8.3}Particularities of the Implementation}{17}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}Simulation Setup}{17}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.4}Simulation Setup}{18}{subsection.8.4}%
 \contentsline {subsection}{\numberline {8.5}Results}{20}{subsection.8.5}%
-\contentsline {section}{\numberline {9}Application}{20}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Data Cleaning and Preprocessing}{21}{subsection.9.1}%
-\contentsline {subsubsection}{\numberline {9.1.1}Removal of Mondays and Fridays}{21}{subsubsection.9.1.1}%
-\contentsline {subsubsection}{\numberline {9.1.2}Holidays}{21}{subsubsection.9.1.2}%
+\contentsline {section}{\numberline {9}Application}{21}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Data Cleaning and Preprocessing}{22}{subsection.9.1}%
+\contentsline {subsubsection}{\numberline {9.1.1}Removal of Mondays and Fridays}{22}{subsubsection.9.1.1}%
+\contentsline {subsubsection}{\numberline {9.1.2}Holidays}{22}{subsubsection.9.1.2}%
 \contentsline {subsubsection}{\numberline {9.1.3}Detrending and Deseasoning}{22}{subsubsection.9.1.3}%
-\contentsline {subsection}{\numberline {9.2}Test from \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{24}{subsection.9.2}%
-\contentsline {section}{\numberline {10}Outlook}{24}{section.10}%
-\contentsline {paragraph}{Simulations for Different Measures}{24}{section.10}%
-\contentsline {paragraph}{Simulations comparing choices of $w(t)$ and $\left (\rho _i\right )_{i = 1, \dots , K}$}{24}{section.10}%
-\contentsline {paragraph}{Simulation Settings where the Distribution of Fourier Coefficients is changed}{24}{section.10}%
-\contentsline {paragraph}{Simulations for Unbalanced Sample Sizes}{24}{section.10}%
-\contentsline {paragraph}{Application that has a more complex difference structure}{24}{section.10}%
-\contentsline {section}{\numberline {11}Bibliography}{25}{section.11}%
+\contentsline {subsection}{\numberline {9.2}Test from \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{25}{subsection.9.2}%
+\contentsline {section}{\numberline {10}Outlook}{25}{section.10}%
+\contentsline {paragraph}{Simulations for Different Measures}{25}{section.10}%
+\contentsline {paragraph}{Simulations comparing choices of $w(t)$ and $\left (\rho _i\right )_{i = 1, \dots , K}$}{25}{section.10}%
+\contentsline {paragraph}{Simulation Settings where the Distribution of Fourier Coefficients is changed}{25}{section.10}%
+\contentsline {paragraph}{Simulations for Unbalanced Sample Sizes}{25}{section.10}%
+\contentsline {paragraph}{Application that has a more complex difference structure}{25}{section.10}%
+\contentsline {section}{\numberline {11}Bibliography}{26}{section.11}%
 \contentsline {section}{\numberline {12}Appendix}{i}{section.12}%
 \contentsline {subsection}{\numberline {12.1}Multiple Testing}{i}{subsection.12.1}%
 \contentsline {subsection}{\numberline {12.2}Derivation of Asymptotic Distribution}{i}{subsection.12.2}%

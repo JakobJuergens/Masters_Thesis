@@ -73,6 +73,7 @@
       \strng{authorbibnamehash}{61bd1d87a8742a71e0c9dcc1fa76fdd8}
       \strng{authornamehash}{61bd1d87a8742a71e0c9dcc1fa76fdd8}
       \strng{authorfullhash}{61bd1d87a8742a71e0c9dcc1fa76fdd8}
+      \field{extraname}{1}
       \field{sortinit}{A}
       \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
       \field{extradatescope}{labelyear}
@@ -88,6 +89,50 @@
       \range{pages}{20}
       \verb{doi}
       \verb 10.1214/aoms/1177729437
+      \endverb
+    \endentry
+    \entry{anderson_test_1954}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=9f551bf4b2ca69aea9ce920ba4cd1357}{%
+           family={Anderson},
+           familyi={A\bibinitperiod},
+           given={T.\bibnamedelimi W.},
+           giveni={T\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=358393b08a304998becf153bd446d1e0}{%
+           family={Darling},
+           familyi={D\bibinitperiod},
+           given={D.\bibnamedelimi A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{61bd1d87a8742a71e0c9dcc1fa76fdd8}
+      \strng{fullhash}{61bd1d87a8742a71e0c9dcc1fa76fdd8}
+      \strng{bibnamehash}{61bd1d87a8742a71e0c9dcc1fa76fdd8}
+      \strng{authorbibnamehash}{61bd1d87a8742a71e0c9dcc1fa76fdd8}
+      \strng{authornamehash}{61bd1d87a8742a71e0c9dcc1fa76fdd8}
+      \strng{authorfullhash}{61bd1d87a8742a71e0c9dcc1fa76fdd8}
+      \field{extraname}{2}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the American Statistical Association}
+      \field{month}{12}
+      \field{number}{268}
+      \field{title}{A {Test} of {Goodness} of {Fit}}
+      \field{urlday}{24}
+      \field{urlmonth}{5}
+      \field{urlyear}{2022}
+      \field{volume}{49}
+      \field{year}{1954}
+      \field{urldateera}{ce}
+      \field{pages}{765\bibrangedash 769}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1080/01621459.1954.10501232
       \endverb
     \endentry
     \entry{bauer_probability_2011}{book}{}
@@ -850,6 +895,38 @@
       \range{pages}{6}
       \verb{doi}
       \verb 10.2307/2335748
+      \endverb
+    \endentry
+    \entry{pettitt_two-sample_1976}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1e2f49d2bedfaec4541f716e87f3815f}{%
+           family={Pettitt},
+           familyi={P\bibinitperiod},
+           given={A.\bibnamedelimi N.},
+           giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1e2f49d2bedfaec4541f716e87f3815f}
+      \strng{fullhash}{1e2f49d2bedfaec4541f716e87f3815f}
+      \strng{bibnamehash}{1e2f49d2bedfaec4541f716e87f3815f}
+      \strng{authorbibnamehash}{1e2f49d2bedfaec4541f716e87f3815f}
+      \strng{authornamehash}{1e2f49d2bedfaec4541f716e87f3815f}
+      \strng{authorfullhash}{1e2f49d2bedfaec4541f716e87f3815f}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Biometrika}
+      \field{number}{1}
+      \field{title}{A {Two}-{Sample} {Anderson}--{Darling} {Rank} {Statistic}}
+      \field{volume}{63}
+      \field{year}{1976}
+      \field{pages}{161\bibrangedash 168}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.2307/2335097
       \endverb
     \endentry
     \entry{R}{manual}{}
