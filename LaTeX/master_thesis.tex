@@ -812,6 +812,33 @@ style=authoryear,
 				\caption{Pre-Processed Electricity Demand in Adelaide}
 				\label{electricity_demand_cleaned}
 			\end{figure}
+			
+			Applying this test to the cleaned data leads to the following p-values for the two underlying tests.
+			\begin{multicols}{2}
+				\begin{itemize}
+					\item $p_\nu = $ {\color{red}hier p-value ergaenzen}
+					\item $p_\tau = $ {\color{red}hier p-value ergaenzen}
+				\end{itemize}
+			\end{multicols}
+			Therefore using the same decision rules as in the simulation study, we come to the following rejection decisions.
+			\begin{table}[h!]
+				\centering
+				\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} c @{\extracolsep{\fill}} c}
+					\toprule
+					\textbf{Test}	&$\left(\alpha_{\tau}, \alpha_{\nu}\right) $ &\textbf{Rejection of the Null?} \\
+					\midrule
+					Means-Test		& -	& - \\
+					CvM-Test 		& -	& - \\
+					\midrule
+					Combined		& (0.04, 0.01)		& -	\\
+					& (0.03, 0.02)	& -	\\
+					& (0.025, 0.025)		& -	 \\
+					& (0.02, 0.03)	& -	\\
+					& (0.01, 0.04)	& -	\\
+					\bottomrule
+				\end{tabular*}
+				\caption{Results of the Test from \cite{bugni_permutation_2021}}
+			\end{table}
 	
 	\section{Outlook}\label{Outlook}
 		After studying the method developed by \cite{bugni_permutation_2021} in detail there are a few points that might be interesting for further research. In the following I name a few that could be very interesting extension to this thesis.

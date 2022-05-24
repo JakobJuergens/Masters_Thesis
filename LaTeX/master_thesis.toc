@@ -43,11 +43,11 @@
 \contentsline {subsection}{\numberline {9.2}Test from \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{25}{subsection.9.2}%
 \contentsline {section}{\numberline {10}Outlook}{25}{section.10}%
 \contentsline {paragraph}{Simulations for Different Measures}{25}{section.10}%
-\contentsline {paragraph}{Simulations comparing choices of $w(t)$ and $\left (\rho _i\right )_{i = 1, \dots , K}$}{25}{section.10}%
-\contentsline {paragraph}{Simulation Settings where the Distribution of Fourier Coefficients is changed}{25}{section.10}%
-\contentsline {paragraph}{Simulations for Unbalanced Sample Sizes}{25}{section.10}%
-\contentsline {paragraph}{Application that has a more complex difference structure}{25}{section.10}%
-\contentsline {section}{\numberline {11}Bibliography}{26}{section.11}%
+\contentsline {paragraph}{Simulations comparing choices of $w(t)$ and $\left (\rho _i\right )_{i = 1, \dots , K}$}{26}{section.10}%
+\contentsline {paragraph}{Simulation Settings where the Distribution of Fourier Coefficients is changed}{26}{section.10}%
+\contentsline {paragraph}{Simulations for Unbalanced Sample Sizes}{26}{section.10}%
+\contentsline {paragraph}{Application that has a more complex difference structure}{26}{section.10}%
+\contentsline {section}{\numberline {11}Bibliography}{27}{section.11}%
 \contentsline {section}{\numberline {12}Appendix}{i}{section.12}%
 \contentsline {subsection}{\numberline {12.1}Multiple Testing}{i}{subsection.12.1}%
 \contentsline {subsection}{\numberline {12.2}Derivation of Asymptotic Distribution}{i}{subsection.12.2}%
