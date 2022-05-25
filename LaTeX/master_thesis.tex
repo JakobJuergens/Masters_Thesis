@@ -92,7 +92,7 @@ style=authoryear,
 		This question can also occur in functional data analysis, where each observation in a data set is itself a smooth curve. \cite{bugni_permutation_2021} develop a permutation test that tries to answer this question by combining two test statistics. To explore their approach, it is first necessary to introduce some theoretical concepts.
 		Section \ref{FDA} introduces the necessary concepts from functional data analysis. 
 		Section \ref{CvM_Tests} explores the theory around Cram\'{e}r-von Mises tests and section \ref{Permutation_Tests} introduces the necessary background in Permutation Testing.
-		After explaining these concepts, section \ref{Bugni_Horowitz_2021} focuses on the test developed in \cite{bugni_permutation_2021} for the case of a two-sample test. Section \ref{closed_testing} introduces the concept of closed testing procedures, which is used in Section \ref{frequency_identification} to develop an extension to the original test, that could be used to identify specific types of violations of the nullhypothesis. Section \ref{Simulation_Study} replicates the results from the simulation study in the paper and expands on certain aspects. Section \ref{Application} explores their usefulness in an application to half-hourly electricity demand data from Adelaide.
+		After explaining these concepts, section \ref{Bugni_Horowitz_2021} focuses on the test developed in \cite{bugni_permutation_2021} for the case of a two-sample test. Section \ref{closed_testing} introduces the concept of closed testing procedures, which is used in Section \ref{closed_persistence_test} to develop an extension to the original test, that could be used to identify specific types of violations of the nullhypothesis relating to the persistence of the data generating processes. Section \ref{Simulation_Study} replicates the results from the simulation study in the paper and expands on certain aspects. Section \ref{Application} explores their usefulness in an application to half-hourly electricity demand data from Adelaide.
 		Finally, Section \ref{Outlook} gives an Outlook on possible extensions of the underlying idea and addresses some problems and shortcomings of the presented results.
 	
 	\section{Functional Data Analysis}\label{FDA}
@@ -528,7 +528,13 @@ style=authoryear,
 				\quad \text{s.t.} \quad
 				\sum_{k = 1}^{\infty} \rho_k^2 < \infty 
 			\end{equation}
-			To obtain a reasonable degree of power it is important to set the expected value of the random function $Z(t)$ in a region, where data is observed and optimally in a region where realizations of the random function inducing the measure $\mu$ are able to distinguish potential differences in the samples. This could for example be done by choosing $w(t)$ dependent on the data. In their application \cite{bugni_permutation_2021} set the distribution of the fourier coefficients manually, as $b_1 \sim \mathcal{N}(\mu_1, \frac{1}{K})$ and $b_k \sim \mathcal{N}(0, \frac{1}{K})$ where $\mu_1 = \textit{median}_i \left(\textit{max}_t\left\{X_i(t) \ | \ i = 1, \dots, n_1, t\in \mathcal{I}\right\}\right)$. This approach is similar to setting $w(t) = \mu_1(t)$ as this also ensures the same mean function. However, this approach gives more freedom to the way the expected value of the random function is ensured by allowing the mean of all Fourier coefficients to be determined by the data.
+			To obtain a reasonable degree of power it is important to set the expected value of the random function $Z(t)$ in a region, where data is observed and optimally in a region where realizations of the random function inducing the measure $\mu$ are able to distinguish potential differences in the samples. This could for example be done by choosing $w(t)$ dependent on the data. Taking the option used for the application in the original paper and two further possibilities, the following three ways of choosing the mean function might come to mind.
+			
+			\begin{enumerate}
+				\item In their application \cite{bugni_permutation_2021} set the distribution of the fourier coefficients manually, as $b_1 \sim \mathcal{N}(\mu_1, \frac{1}{K})$ and $b_k \sim \mathcal{N}(0, \frac{1}{K}) \quad k = 2, \dots, K$ where $\mu_1 = \textit{median}_i \left(\textit{max}_t\left\{X_i(t) \ | \ i = 1, \dots, n_1, t\in \mathcal{I}\right\}\right)$.
+				\item Similarly, one could set $w(t) = \mu_1(t)$ as this also ensures that the mean function of $Z$ lies in a region which allows the test to possess reasonable properties. However, this approach gives more freedom to the way the expected value of the random function is ensured by allowing the mean of all Fourier coefficients to be determined by the data.
+				\item It is also possible to choose a non-constant weight function according to the data. One option for this choice is the point-wise mean function of the reference sample: $w(t) = \textit{median}_i \{X_i(t) \ | \ i = 1, \dots n_1\}$. This allows the generated functions for the Monte-Carlo integration in the approximation of the Cram\'{e}r-von Mises statistic to resemble the reference data more closely, which could improve the properties of the test.
+			\end{enumerate}
 			
 			Additionally, the choice of the sequence $(\rho)_i$ is of importance. The authors do not recommend a procedure for choosing these coefficients, but it seems reasonable to choose parameters that lie in the vicinity of the standard deviations for the Fourier coefficients of the first sample. This method might be a reasonable possibility to choose these parameters dependent on the data.\\
 			
@@ -625,11 +631,13 @@ style=authoryear,
 	\section{Closed Testing Procedures}\label{closed_testing}
 		If we find a violation of the hypothesis it would be interesting to identify where or more precisely in what frequency the violation occurs. One approach to this question is to introduce what is called a closed testing procedure that identifies the basis functions that are relevant to the violation of the nullhypothesis. The underlying idea was developed by \cite{marcus_closed_1976} and is applicable in settings where we are interested in testing a set of Nullhypotheses that is closed under intersection.
 		
-	\section{Variant for Alternatives in Specific Frequency Ranges}\label{frequency_identification}
-		If we use the idea described in the previous section for the test introduced in \cite{bugni_permutation_2021}, this could lead to the following extension. To make it clear how to apply the principle of a closed testing procedure to this setting, it is useful to reformulate the Nullhypothesis as follows.		
+	\section{Test for Persistence Alternatives}\label{closed_persistence_test}
+		If we use the idea described in the previous section for the test introduced in \cite{bugni_permutation_2021}, this could lead to the following test for specific alternatives applying to the persistence of the data generating processes. There are many tests focusing on differences in the mean functions of processes such as for example the tests described by {\color{red} Hier tests auflisten}. There is also a large number of tests for differences in the variance functions of processes like {\color{red} Hier tests auflisten}. However, there are few tests that address differences in the persistence of processes and this proposed procedure adds to the limited arsenal.\\
+		
+		To make it clear how to apply the principle of a closed testing procedure to this setting, it is useful to reformulate the Nullhypothesis as follows.		
 		\begin{equation}
 			\begin{split}
-				H_0: \quad &F_X(z) = F_Y(z) \quad \text{a.e.} \quad \text{w.r.t.} \quad \mu_K \\
+				H_0: \quad &F_X(z) = F_Y(z) \quad \forall z \quad  f_{\mu}(z) \neq 0\\
 				H_1: \quad &\mathbb{P}_{\mu}\left[F_X(Z) \neq F_Y(Z)\right] > 0
 			\end{split}
 		\end{equation}
@@ -651,10 +659,10 @@ style=authoryear,
 				\item \cite{refund}
 			\end{itemize}
 			
-		\subsection{Use of High-Performance Computing}
+		\subsubsection{Use of High-Performance Computing}
 			The simulations presented as part of this thesis have been conducted on \textit{bonna}\footnote{\href{https://www.dice.uni-bonn.de/de/hpc/hpc-a-bonn/infrastruktur}{https://www.dice.uni-bonn.de/de/hpc/hpc-a-bonn/infrastruktur}}. \textit{bonna} is the high performance computing cluster provided by the University of Bonn. The implementation is heavily parallelized and makes use of a SLURM scheduling system. However, slight modifications of the provided code suffice to run it on personal computers.
 
-		\subsection{Particularities of the Implementation}
+		\subsubsection{Particularities of the Implementation}
 			For my implementation in the package that is provided in the GitHub repository corresponding to this thesis, I chose some slightly unusual methods to increase the package's performance. I want to present some in the following as they present opportunities for performance gains that are somewhat interesting on their own.
 			\begin{itemize}
 				\item For the evaluation of the empirical distribution function, I make use of a result \cite{boyd_computing_2006} that simplifies the problem of finding the zeroes of a finite Fourier series to an eigenvalue problem for a matrix that is defined in terms of the Fourier coefficients. If the chosen basis is the Fourier basis this is more rigorous than the grid based approach used for the other basis types and faster then potential numerical methods to approximate the zeroes in a more general setting.
@@ -816,8 +824,8 @@ style=authoryear,
 			Applying this test to the cleaned data leads to the following p-values for the two underlying tests.
 			\begin{multicols}{2}
 				\begin{itemize}
-					\item $p_\nu = $ {\color{red}hier p-value ergaenzen}
 					\item $p_\tau = $ {\color{red}hier p-value ergaenzen}
+					\item $p_\nu = $ {\color{red}hier p-value ergaenzen}
 				\end{itemize}
 			\end{multicols}
 			Therefore using the same decision rules as in the simulation study, we come to the following rejection decisions.
