@@ -46,7 +46,12 @@ fourier_coef_mean <- function(w_func, basis_func, domain = c(0, 1)) {
     return(w_func(x) * basis_func(x))
   })
   # integrate over product function
-  coef_mean <- integrate(f = prod_func, lower = domain[1], upper = domain[2], subdivisions = 1000)$value
+  coef_mean <- cubature::cubintegrate(
+    f = prod_func,
+    lower = domain[1],
+    upper = domain[2],
+    method = "hcubature"
+  )$integral
   # return appropriate mean object
   return(coef_mean)
 }

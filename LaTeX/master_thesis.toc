@@ -1,6 +1,6 @@
 \babel@toc {english}{}\relax 
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
-\contentsline {section}{\numberline {2}Functional Data Analysis}{1}{section.2}%
+\contentsline {section}{\numberline {2}Functional Data Analysis}{2}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Hilbert Space of Square Integrable Functions}{2}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}$\mathbb {L}_2(\mathcal {I})$ as defined in \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{4}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Bases of $\mathbb {L}_2$}{6}{subsection.2.3}%
@@ -15,7 +15,7 @@
 \contentsline {subsection}{\numberline {3.4}Two-Sample Cram\'{e}r-von Mises Statistic}{8}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}Asymptotic Distribution}{9}{subsection.3.5}%
 \contentsline {section}{\numberline {4}Permutation Tests}{9}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Functional Principle of Permutation Tests}{9}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.1}Functional Principle of Permutation Tests}{10}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Size and Power}{11}{subsection.4.2}%
 \contentsline {section}{\numberline {5}Test by Bugni and Horowitz (2021)}{11}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Assumptions}{11}{subsection.5.1}%

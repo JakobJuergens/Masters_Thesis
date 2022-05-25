@@ -54,20 +54,9 @@ main_simu <- function(seed = task_seeds_int[i]) {
   
   # second: values for the Cramer von Mises test
   # and the objects necessary to calculate them
-  w_func <- function(x) {
-    median(x = unlist(
-      purrr::map(
-        .x = samples$sample_1, .f = ~ max(.x$vals)
-      )
-    )
-    )
-  }
-  CvM_rho <- unlist(
-    purrr::map(
-      .x = 1:n_basis, 
-      .f = ~ sd(samples$sample_1_f[.x,])
-    )
-  )*2
+  w_func <- PermFDATest::w_func_construct_2(samples$sample_1_f, domain = c(0,1), q = 0.95)
+  
+  CvM_rho <- PermFDATest::rho_construct(sample = samples$sample_1_f, factor = 2)
   
   tau_vals <- PermFDATest::tau_realizations(
     full = FALSE, approxQ = approxQ, 
