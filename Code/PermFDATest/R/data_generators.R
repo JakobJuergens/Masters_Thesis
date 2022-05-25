@@ -47,15 +47,15 @@ sim_1_generator <- function(n_basis, n_obs_1, n_obs_2, mean, rho, sigma, grid) {
     nrow = n_obs_1, ncol = length(grid)
   )
   XI_2 <- matrix(
-    data = rnorm(n = n_obs_1 * length(grid), mean = 0, sd = 1),
-    nrow = n_obs_1, ncol = length(grid)
+    data = rnorm(n = n_obs_2 * length(grid), mean = 0, sd = 1),
+    nrow = n_obs_2, ncol = length(grid)
   )
   # Set up containers for the x's
   X_1_tilde <- matrix(data = NA, nrow = n_obs_1, ncol = length(grid))
-  X_2_tilde <- matrix(data = NA, nrow = n_obs_1, ncol = length(grid))
+  X_2_tilde <- matrix(data = NA, nrow = n_obs_2, ncol = length(grid))
 
   X_1 <- matrix(data = NA, nrow = n_obs_1, ncol = length(grid))
-  X_2 <- matrix(data = NA, nrow = n_obs_1, ncol = length(grid))
+  X_2 <- matrix(data = NA, nrow = n_obs_2, ncol = length(grid))
 
   # fill first column with the first column of XI matrices
   X_1_tilde[, 1] <- XI_1[, 1]
@@ -80,7 +80,7 @@ sim_1_generator <- function(n_basis, n_obs_1, n_obs_2, mean, rho, sigma, grid) {
     }
   )
   sample_2 <- purrr::map(
-    .x = 1:n_obs_1,
+    .x = 1:n_obs_2,
     .f = function(i) {
       list(args = grid, vals = X_2[i, ])
     }
@@ -119,15 +119,15 @@ sim_2_generator <- function(n_basis, n_obs_1, n_obs_2, mean, mean_shift, rho, si
     nrow = n_obs_1, ncol = length(grid)
   )
   XI_2 <- matrix(
-    data = rnorm(n = n_obs_1 * length(grid), mean = 0, sd = 1),
-    nrow = n_obs_1, ncol = length(grid)
+    data = rnorm(n = n_obs_2 * length(grid), mean = 0, sd = 1),
+    nrow = n_obs_2, ncol = length(grid)
   )
   # Set up containers for the x's
   X_1_tilde <- matrix(data = NA, nrow = n_obs_1, ncol = length(grid))
-  X_2_tilde <- matrix(data = NA, nrow = n_obs_1, ncol = length(grid))
+  X_2_tilde <- matrix(data = NA, nrow = n_obs_2, ncol = length(grid))
 
   X_1 <- matrix(data = NA, nrow = n_obs_1, ncol = length(grid))
-  X_2 <- matrix(data = NA, nrow = n_obs_1, ncol = length(grid))
+  X_2 <- matrix(data = NA, nrow = n_obs_2, ncol = length(grid))
 
   # fill first column with the first column of XI matrices
   X_1_tilde[, 1] <- XI_1[, 1]
@@ -152,7 +152,7 @@ sim_2_generator <- function(n_basis, n_obs_1, n_obs_2, mean, mean_shift, rho, si
     }
   )
   sample_2 <- purrr::map(
-    .x = 1:n_obs_1,
+    .x = 1:n_obs_2,
     .f = function(i) {
       list(args = grid, vals = X_2[i, ] + mean_shift)
     }
@@ -191,15 +191,15 @@ sim_3_generator <- function(n_basis, n_obs_1, n_obs_2, mean, rho, rho_shift, sig
     nrow = n_obs_1, ncol = length(grid)
   )
   XI_2 <- matrix(
-    data = rnorm(n = n_obs_1 * length(grid), mean = 0, sd = 1),
-    nrow = n_obs_1, ncol = length(grid)
+    data = rnorm(n = n_obs_2 * length(grid), mean = 0, sd = 1),
+    nrow = n_obs_2, ncol = length(grid)
   )
   # Set up containers for the x's
   X_1_tilde <- matrix(data = NA, nrow = n_obs_1, ncol = length(grid))
-  X_2_tilde <- matrix(data = NA, nrow = n_obs_1, ncol = length(grid))
+  X_2_tilde <- matrix(data = NA, nrow = n_obs_2, ncol = length(grid))
 
   X_1 <- matrix(data = NA, nrow = n_obs_1, ncol = length(grid))
-  X_2 <- matrix(data = NA, nrow = n_obs_1, ncol = length(grid))
+  X_2 <- matrix(data = NA, nrow = n_obs_2, ncol = length(grid))
 
   # fill first column with the first column of XI matrices
   X_1_tilde[, 1] <- XI_1[, 1]
@@ -224,7 +224,7 @@ sim_3_generator <- function(n_basis, n_obs_1, n_obs_2, mean, rho, rho_shift, sig
     }
   )
   sample_2 <- purrr::map(
-    .x = 1:n_obs_1,
+    .x = 1:n_obs_2,
     .f = function(i) {
       list(args = grid, vals = X_2[i, ])
     }
@@ -263,15 +263,15 @@ sim_4_generator <- function(n_basis, n_obs_1, n_obs_2, mean, rho, sigma, sigma_s
     nrow = n_obs_1, ncol = length(grid)
   )
   XI_2 <- matrix(
-    data = rnorm(n = n_obs_1 * length(grid), mean = 0, sd = 1),
-    nrow = n_obs_1, ncol = length(grid)
+    data = rnorm(n = n_obs_2 * length(grid), mean = 0, sd = 1),
+    nrow = n_obs_2, ncol = length(grid)
   )
   # Set up containers for the x's
   X_1_tilde <- matrix(data = NA, nrow = n_obs_1, ncol = length(grid))
-  X_2_tilde <- matrix(data = NA, nrow = n_obs_1, ncol = length(grid))
+  X_2_tilde <- matrix(data = NA, nrow = n_obs_2, ncol = length(grid))
 
   X_1 <- matrix(data = NA, nrow = n_obs_1, ncol = length(grid))
-  X_2 <- matrix(data = NA, nrow = n_obs_1, ncol = length(grid))
+  X_2 <- matrix(data = NA, nrow = n_obs_2, ncol = length(grid))
 
   # fill first column with the first column of XI matrices
   X_1_tilde[, 1] <- XI_1[, 1]
@@ -296,7 +296,7 @@ sim_4_generator <- function(n_basis, n_obs_1, n_obs_2, mean, rho, sigma, sigma_s
     }
   )
   sample_2 <- purrr::map(
-    .x = 1:n_obs_1,
+    .x = 1:n_obs_2,
     .f = function(i) {
       list(args = grid, vals = X_2[i, ])
     }

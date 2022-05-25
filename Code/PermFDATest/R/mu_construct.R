@@ -51,14 +51,14 @@ fourier_coef_mean <- function(w_func, basis_func, domain = c(0, 1)) {
   return(coef_mean)
 }
 
-#' This function implements the method of choosing the weight function
+#' This function implements method 2 of choosing the weight function
 #' described in my thesis
 #'
 #' @param sample: sample in the list format where each observation contains two
 #' vectors args and vals containing the x and y values
 #'
 #' @export
-w_func_construct <- function(sample) {
+w_func_construct_1 <- function(sample) {
   ret_f <- function(x) {
     return(
       median(
@@ -74,6 +74,24 @@ w_func_construct <- function(sample) {
   return(ret_f)
 }
 
+#' This function implements method 3 of choosing the weight function
+#' described in my thesis
+#'
+#' @param sample: functional sample in the fda format
+#' @param domain: domain of the functional observations
+#' @param q: chosen quantile for the mean function
+#'
+#' @export
+w_func_construct_2 <- function(sample, domain, q) {
+  ret_f <- function(x) {
+    unname(quantile(
+      x = fourier_eval(x = x, coefs = sample, domain = domain),
+      na.rm = FALSE, probs = q
+    ))
+  }
+  return(ret_f)
+}
+
 #' This function implements the method of choosing the sequence of rhos
 #' described in my thesis
 #'
@@ -81,13 +99,13 @@ w_func_construct <- function(sample) {
 #' @param factor: factor to multiplt the empirical standard deviation with
 #'
 #' @export
-rho_construct <- function(sample, factor){
+rho_construct <- function(sample, factor) {
   n_basis <- nrow(sample)
   rho <- unlist(
     purrr::map(
       .x = 1:n_basis,
-      .f = ~ sd(sample[.x,])
+      .f = ~ sd(sample[.x, ])
     )
-  )*factor
+  ) * factor
   return(rho)
 }

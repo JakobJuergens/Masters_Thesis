@@ -20,6 +20,8 @@ fourier_func <- function(x, domain = c(0, 1), num_func) {
 #' @param coefs: matrix or vector of coefficients identifying the functional objects
 #' @param domain: domain of the basis
 #' @param num_func: Which fourier function to evaluate
+#'
+#' @export
 fourier_eval <- function(x, coefs, domain = c(0, 1)) {
   # check if all points lie in the domain
   if (!all(x >= domain[1] & x <= domain[2])) {

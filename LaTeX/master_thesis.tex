@@ -528,13 +528,22 @@ style=authoryear,
 				\quad \text{s.t.} \quad
 				\sum_{k = 1}^{\infty} \rho_k^2 < \infty 
 			\end{equation}
-			To obtain a reasonable degree of power it is important to set the expected value of the random function $Z(t)$ in a region, where data is observed and optimally in a region where realizations of the random function inducing the measure $\mu$ are able to distinguish potential differences in the samples. This could for example be done by choosing $w(t)$ dependent on the data. Taking the option used for the application in the original paper and two further possibilities, the following three ways of choosing the mean function might come to mind.
+			To obtain a reasonable degree of power it is important to set the expected value of the random function $Z(t)$ in a region, where data is observed and optimally in a region where realizations of the random function inducing the measure $\mu$ are able to distinguish potential differences in the samples. This could for example be done by choosing $w(t)$ dependent on the data. Taking the option used for the application in the original paper and one further possibility, the following two ways of choosing the mean function might come to mind.
 			
 			\begin{enumerate}
 				\item In their application \cite{bugni_permutation_2021} set the distribution of the fourier coefficients manually, as $b_1 \sim \mathcal{N}(\mu_1, \frac{1}{K})$ and $b_k \sim \mathcal{N}(0, \frac{1}{K}) \quad k = 2, \dots, K$ where $\mu_1 = \textit{median}_i \left(\textit{max}_t\left\{X_i(t) \ | \ i = 1, \dots, n_1, t\in \mathcal{I}\right\}\right)$.
-				\item Similarly, one could set $w(t) = \mu_1(t)$ as this also ensures that the mean function of $Z$ lies in a region which allows the test to possess reasonable properties. However, this approach gives more freedom to the way the expected value of the random function is ensured by allowing the mean of all Fourier coefficients to be determined by the data.
-				\item It is also possible to choose a non-constant weight function according to the data. One option for this choice is the point-wise mean function of the reference sample: $w(t) = \textit{median}_i \{X_i(t) \ | \ i = 1, \dots n_1\}$. This allows the generated functions for the Monte-Carlo integration in the approximation of the Cram\'{e}r-von Mises statistic to resemble the reference data more closely, which could improve the properties of the test.
+				This method is identical to setting $w(t) = \mu_1(t)$, as the inner product of any constant function with Fourier basis functions of order two or higher will be zero due to their cyclical nature.
+				\item It is also possible to choose a non-constant weight function according to the data. One option for this choice is to use specific point-wise quantiles of the reference sample: $w(t) = \textit{quantile}_q \{X_i(t) \ | \ i = 1, \dots n_1\}$. This allows the generated functions for the Monte-Carlo integration in the approximation of the Cram\'{e}r-von Mises statistic to resemble the reference data more closely, which could improve the properties of the test.
 			\end{enumerate}
+		
+			\begin{figure}[H]
+				\makebox[\textwidth][c]{
+					\includegraphics[width = 1.1\textwidth]{../Graphics/mean\_functions.PDF}
+				}
+				\caption{Mean Functions calculated for a Reference Sample as described in Section \ref{Simulation_Study} for the 95\% Quantile.}
+				\label{mean_functions}
+			\end{figure}
+			
 			
 			Additionally, the choice of the sequence $(\rho)_i$ is of importance. The authors do not recommend a procedure for choosing these coefficients, but it seems reasonable to choose parameters that lie in the vicinity of the standard deviations for the Fourier coefficients of the first sample. This method might be a reasonable possibility to choose these parameters dependent on the data.\\
 			
@@ -634,7 +643,10 @@ style=authoryear,
 	\section{Test for Persistence Alternatives}\label{closed_persistence_test}
 		If we use the idea described in the previous section for the test introduced in \cite{bugni_permutation_2021}, this could lead to the following test for specific alternatives applying to the persistence of the data generating processes. There are many tests focusing on differences in the mean functions of processes such as for example the tests described by {\color{red} Hier tests auflisten}. There is also a large number of tests for differences in the variance functions of processes like {\color{red} Hier tests auflisten}. However, there are few tests that address differences in the persistence of processes and this proposed procedure adds to the limited arsenal.\\
 		
-		To make it clear how to apply the principle of a closed testing procedure to this setting, it is useful to reformulate the Nullhypothesis as follows.		
+		{\color{red} Hier Test beschreiben}
+		
+		\subsection{Closed Testing on the Frequency Domain}
+		With the test procedure described, it would be interesting to identify specific violations of the Nullhypothesis. In other words, to identify where, in the frequency domain sense, the differences in persistence lie. This could be done using a closed testing procedure as described in Section \ref{closed_testing}. To make it clear how to apply the principle of a closed testing procedure to this setting, it is useful to reformulate the Nullhypothesis as follows.		
 		\begin{equation}
 			\begin{split}
 				H_0: \quad &F_X(z) = F_Y(z) \quad \forall z \quad  f_{\mu}(z) \neq 0\\
@@ -747,7 +759,13 @@ style=authoryear,
 			\end{tabular}
 			\caption{Empirical Rejection Probabilities}
 		\end{table}
-		
+	
+		\subsection{Simulation - Test for Persistence Alternatives}
+		Using simulation setting 3, it is possible to also test the proposed test for persistence alternatives from Section \ref{closed_persistence_test}. But due to computational constraints, this simulation does not follow the real test structure and shall instead serve as a heuristic for the real test's performance. Mainly the simulation differs from the proposed test in the following two ways to reduce computational cost while staying reasonably accurate in the proposed simulation setting.
+		\begin{enumerate}
+			\item 
+		\end{enumerate}
+				
 	\section{Application}\label{Application}
 		To test the real-world merits of the method, I will compare electricity demand data from Adelaide which is provided as part of the \textit{fds}\footcite{fds} package for R. This data set presents half-hourly energy demand in megawatts and was originally used by \cite{magnano_generation_2007} and \cite{magnano_generation_2008}. It contains electricity demand curves for 3556 days from 6/7/1997 to 31/3/2007. Some of these curves, specifically a selection of curves observed on Wednesdays and Saturdays, is shown in Figure \ref{electricity_demand}.
 		\begin{figure}[H]
