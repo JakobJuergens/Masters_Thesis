@@ -121,9 +121,9 @@ ggsave(
 )
 ggsave(
   filename = "../../Graphics/estimate_months.PDF", plot = estimate_plots[[1]],
-  width = 20, height = 10, units = "in", dpi = 600
+  width = 20, height = 8, units = "in", dpi = 600
 )
 ggsave(
   filename = "../../Graphics/estimate_weekdays.PDF", plot = estimate_plots[[2]],
-  width = 20, height = 10, units = "in", dpi = 600
+  width = 20, height = 8, units = "in", dpi = 600
 )

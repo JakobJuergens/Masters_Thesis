@@ -533,7 +533,7 @@ style=authoryear,
 			\begin{enumerate}
 				\item In their application \cite{bugni_permutation_2021} set the distribution of the fourier coefficients manually, as $b_1 \sim \mathcal{N}(\mu_1, \frac{1}{K})$ and $b_k \sim \mathcal{N}(0, \frac{1}{K}) \quad k = 2, \dots, K$ where $\mu_1 = \textit{median}_i \left(\textit{max}_t\left\{X_i(t) \ | \ i = 1, \dots, n_1, t\in \mathcal{I}\right\}\right)$.
 				This method is identical to setting $w(t) = \mu_1(t)$, as the inner product of any constant function with Fourier basis functions of order two or higher will be zero due to their cyclical nature.
-				\item It is also possible to choose a non-constant weight function according to the data. One option for this choice is to use specific point-wise quantiles of the reference sample: $w(t) = \textit{quantile}_q \{X_i(t) \ | \ i = 1, \dots n_1\}$. This allows the generated functions for the Monte-Carlo integration in the approximation of the Cram\'{e}r-von Mises statistic to resemble the reference data more closely, which could improve the properties of the test.
+				\item Another idea is to choose a non-constant weight function based on the reference sample. One option for this choice is to use specific point-wise quantiles of the reference sample: $w(t) = \textit{quantile}_q \{X_i(t) \ | \ i = 1, \dots n_1\}$. This allows the generated functions for the Monte-Carlo integration in the approximation of the Cram\'{e}r-von Mises statistic to resemble the reference data more closely, which could improve the properties of the test.
 			\end{enumerate}
 		
 			\begin{figure}[H]
@@ -545,7 +545,7 @@ style=authoryear,
 			\end{figure}
 			
 			
-			Additionally, the choice of the sequence $(\rho)_i$ is of importance. The authors do not recommend a procedure for choosing these coefficients, but it seems reasonable to choose parameters that lie in the vicinity of the standard deviations for the Fourier coefficients of the first sample. This method might be a reasonable possibility to choose these parameters dependent on the data.\\
+			Additionally, the choice of the sequence $(\rho)_i$ is of importance. The authors do not recommend a procedure for choosing these coefficients, but it seems reasonable to choose parameters that lie in the vicinity of the standard deviations for the Fourier coefficients of the reference sample. This method might be a reasonable possibility to choose these parameters dependent on the data.\\
 			
 			In \cite{bugni_goodness--fit_2009}, the authors show that the approximation of the probability measure, which is induced by the approximation of the random variable in Equation \ref{truncation}, converges appropriately to the probability measure induced by the random variable in Equation \ref{non_truncated}. Here, appropriately means, that integrals with respect to the approximation, henceforth called $\mu_K$, converge to their corresponding integral evaluated with respect to $\mu$.\\
 			
@@ -654,8 +654,12 @@ style=authoryear,
 			\end{split}
 		\end{equation}
 		 For a specific measure $\mu_K$ induced by a random variable as described in Equation \ref{truncation} for a truncation parameter $K$, we can reformulate the Nullhypothesis as such, as the constructed test will have no power against alternatives of $\mu_K$-measure zero anyway.\\
-		 For a series of values for $K = 1, \dots, \mathcal{K}$, these hypotheses are closed under intersection. This becomes evident if we look at the space of possible realizations for each inducing random variable.
+		 For a series of values for $K = 1, \dots, \mathcal{K}$, these hypotheses are closed under intersection. This becomes evident if we look at the space of possible realizations for each inducing random variable.\\
 		 
+		 The proposed test is then given by the following algorithm.
+		 \begin{enumerate}
+		 	\item lorem ipsum
+		 \end{enumerate}
 		 {\color{red} HIER WEITERSCHREIBEN}
 
 		
