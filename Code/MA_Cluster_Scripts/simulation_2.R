@@ -51,6 +51,7 @@ main_simu <- function(seed = task_seeds_int[i]) {
     sample2 = samples$sample_2_f,
     domain = c(0, 1)
   )
+  message('Values of the CvM test statistic calculated.')
   
   # second: values for the Cramer von Mises test
   # and the objects necessary to calculate them
@@ -86,5 +87,9 @@ print(paste0(
 # perform simulations
 for (i in 1:n_runs) {
   print(paste0("Run ", i, " of ", n_runs, "."))
+  print(paste0('Run Start Time: ', Sys.time()))
+  
   main_simu(seed = task_seeds_int[i])
+  
+  print(paste0('Run End Time: ', Sys.time()))
 }

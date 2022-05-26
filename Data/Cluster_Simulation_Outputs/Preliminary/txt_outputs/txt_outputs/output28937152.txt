@@ -1,0 +1,20 @@
+Simulation 1 started. 
+R loaded 
+Starting Time: Thu May 26 21:31:29 CEST 2022
+[1] "Job started: Job_ID: 2893717 Running on node: "
+[1] "Run 1 of 3."
+Current Seed: 630678
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run 2 of 3."
+Current Seed: 126055
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run 3 of 3."
+Current Seed: 871806
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+Stopping Time: Thu May 26 22:01:22 CEST 2022

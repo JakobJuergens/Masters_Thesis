@@ -4,7 +4,7 @@ set.seed(1234)
 input_path <- "Inputs/"
 output_path <- "Outputs/"
 # number of seeds / simulation runs
-n_seeds <- 2
+n_seeds <- 12
 # generate seeds and save them as RDS object
 my_seeds <- sample(x = 1:10e5, size = n_seeds, replace = FALSE)
 saveRDS(object = my_seeds, file = paste0(input_path, "seeds.RDS"))

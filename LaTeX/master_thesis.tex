@@ -640,38 +640,112 @@ style=authoryear,
 		\subsection{Asymptotic Properties under the Alternative}
 		
 	\section{Closed Testing Procedures}\label{closed_testing}
-		If we find a violation of the hypothesis it would be interesting to identify where or more precisely in what frequency the violation occurs. One approach to this question is to introduce what is called a closed testing procedure that identifies the basis functions that are relevant to the violation of the nullhypothesis. The underlying idea was developed by \cite{marcus_closed_1976} and is applicable in settings where we are interested in testing a set of Nullhypotheses that is closed under intersection.
+		If we find a violation of the hypothesis it would be interesting to identify where or more precisely in what frequency the violation occurs. One approach to this question is to introduce what is called a closed testing procedure that identifies the basis functions that are relevant to the violation of the null-hypothesis. The underlying idea was developed by \cite{marcus_closed_1976} and is applicable in settings where we are interested in testing a set of Nullhypotheses that is closed under intersection.
+		
+		\subsection{Original Principle}
+		
+		\subsection{Modified Principle}
 		
 	\section{Test for Persistence Alternatives}\label{closed_persistence_test}
 		If we use the idea described in the previous section for the test introduced in \cite{bugni_permutation_2021}, this could lead to the following test for specific alternatives applying to the persistence of the data generating processes. There are many tests focusing on differences in the mean functions of processes such as for example the tests described by {\color{red} Hier tests auflisten}. There is also a large number of tests for differences in the variance functions of processes like {\color{red} Hier tests auflisten}. However, there are few tests that address differences in the persistence of processes and this proposed procedure adds to the limited arsenal.\\
 		
-		{\color{red} Hier Test beschreiben}
+		\subsection{Null-Hypothesis}
+		Let $\{X_i(t) \ | \  i = 1, \dots, n\}$ and $\{Y_i(t) \ | \  i = 1, \dots, m\}$ again denote the samples under consideration. We assume that the samples consist of i.i.d. realizations of random functions $X(t)$ and $Y(t)$ respectively.
+		To focus on the persistence properties of the random functions, we can define the standardized counterparts to these random functions in the following way. Define the following objects.
+		\begin{multicols}{2}
+			\noindent
+			\begin{equation*}
+				\begin{split}
+					\mu_{X}(t) = &\mathbb{E} X(t) \\
+					\sigma_{X}(t) = &\sqrt{\mathbb{E}\left[X(t) - \mu_{X}(t)\right]^2}
+				\end{split}
+			\end{equation*}
+			\begin{equation}
+				\begin{split}
+					\mu_{Y}(t) = &\mathbb{E} Y(t) \\
+					\sigma_{Y}(t) = &\sqrt{\mathbb{E}\left[Y(t) - \mu_{Y}(t)\right]^2}
+				\end{split}
+			\end{equation}
+		\end{multicols}
+		Then the standardized random variables can be defined as follows.
+		\begin{multicols}{2}
+			\noindent
+			\begin{equation*}
+				\tilde{X}(t) = \frac{X(t) - \mu_{X}(t)}{\sigma_{X}(t)}
+			\end{equation*}
+			\begin{equation}
+				\tilde{Y}(t) = \frac{Y(t) - \mu_{Y}(t)}{\sigma_{Y}(t)}
+			\end{equation}
+		\end{multicols}
+		Their distribution functions are defined analogously to Section \ref{Bugni_Horowitz_2021} and denoted by $F_{\tilde{X}}(z)$ and $F_{\tilde{Y}}(z)$ respectively. Then we can formulate a Null-hypothesis as in \cite{bugni_permutation_2021} with respect to the standardized random functions.
+		\begin{equation}
+			\begin{split}
+				H_0: \quad &F_{\tilde{X}}(z) = F_{\tilde{Y}}(z) \quad \forall z \in \mathbb{L}_2(\mathcal{I}) \\
+				H_1: \quad &\mathbb{P}_{\mu}\left[F_{\tilde{X}}(z) \neq F_{\tilde{Y}}(z)\right] > 0
+			\end{split}
+		\end{equation}
+		As all differences in the mean and variance patterns of these processes is eliminated by the standardization, one of the distinct remaining features that might differentiate these processes are their persistence properties. In the testing procedure, this standardization is performed on the level of the permuted samples which is described in more detail below.
+	
+%		Using these objects define the standardized samples in the following way.
+%		\begin{multicols}{2}
+%			\noindent
+%			\begin{equation*}
+%				\tilde{\mathcal{X}} = \left\{\frac{X_i(t) - \bar{X}(t)}{\sigma_{X}(t)} \ \vert \  i = 1, \dots, n\right\}
+%			\end{equation*}
+%			\begin{equation}
+%				\tilde{\mathcal{Y}} = \left\{\frac{Y_i(t) - \bar{Y}(t)}{\sigma_{Y}(t)} \ \vert \  i = 1, \dots, m\right\}
+%			\end{equation}
+%		\end{multicols}
+		
+		\subsection{Test-Procedure}
+		The test is functionally nearly identical to the Cram\'{e}r-von Mises type test described in \cite{bugni_permutation_2021}. However, it adds a standardization step in the calculation of the test statistic, to eliminate differences in the mean functions of the processes and their variance structure. In each permutation step, the calculation of the test statistic is thus described by the following algorithm.\\
+		
+		Let $\mathcal{W} = \{W_i(t) \ | \ i = 1, \dots, n\}$ be sample 1 and $\mathcal{V} = \{V_i(t) \ | \  i = 1, \dots, m\}$ be sample 2. These samples are generated by randomly permuting the original samples $\{X_i(t) \ | \  i = 1, \dots, n\}$ be sample 1 and $\{Y_i(t) \ | \  i = 1, \dots, m\}$.
+		\begin{enumerate}
+			\item Calculate the sample mean functions for the permuted samples: \\
+			$\bar{W}(t) = \frac{1}{n} \sum_{i = 1}^{n} W_i(t)$ and $\bar{V}(t) = \frac{1}{m} \sum_{i = 1}^{m} V_i(t)$
+			\item Center the sample curves to obtain centered permutation samples: \\
+			$\bar{\mathcal{W}} = \{W_i(t) - \bar{W}(t) \ | \ i = 1, \dots, n\}$ and $\bar{\mathcal{V}} = \{V_i(t) - \bar{V}(t) \ | \ i = 1, \dots, m\}$
+			\item Calculate the point-wise standard deviations: \\
+			$\sigma_{\mathcal{W}}(t) = \sqrt{\frac{1}{n}\sum_{i = 1}^{n}\left[W_i(t) - \bar{W}(t)\right]^2}$ and $\sigma_{\mathcal{V}}(t) = \sqrt{\frac{1}{m}\sum_{i = 1}^{m}\left[V_i(t) - \bar{V}(t)\right]^2}$
+			\item Standardize the observations in the permuted samples:\\
+			$\tilde{\mathcal{W}} = \{\frac{W_i(t) - \bar{W}(t)}{\sigma_{\mathcal{W}}(t)} \ | \ i = 1, \dots, n\}$ and $\tilde{\mathcal{V}} = \{ \frac{V_i(t) - \bar{V}(t)}{\sigma_{\mathcal{V}}(t)} \ | \ i = 1, \dots, m\}$
+			\item Calculate $\hat{\tau}_{n,m}$ for the standardized permutation samples $\tilde{\mathcal{W}}$ and $\tilde{\mathcal{V}}$ as described in Section \ref{Bugni_Horowitz_2021} for a chosen measure $\mu$.
+		\end{enumerate}
+		The overarching test procedure is again given by a derivation of a permutation distribution and a permutation test decision according to the rules stated in Section \ref{Permutation_Tests}.\\
+		
 		
 		\subsection{Closed Testing on the Frequency Domain}
-		With the test procedure described, it would be interesting to identify specific violations of the Nullhypothesis. In other words, to identify where, in the frequency domain sense, the differences in persistence lie. This could be done using a closed testing procedure as described in Section \ref{closed_testing}. To make it clear how to apply the principle of a closed testing procedure to this setting, it is useful to reformulate the Nullhypothesis as follows.		
-		\begin{equation}
+				
+		
+		With the test procedure described, it would be interesting to identify specific violations of the Null-hypothesis. In other words, to identify where, in the frequency domain sense, the differences in persistence lie. This could be done using a closed testing procedure as described in Section \ref{closed_testing}. To make it clear how to apply the principle of a closed testing procedure to this setting, it is useful to reformulate the Nullhypothesis.
+		\begin{equation}\label{closed_hypotheses}
 			\begin{split}
 				H_0: \quad &F_X(z) = F_Y(z) \quad \forall z \quad  f_{\mu}(z) \neq 0\\
 				H_1: \quad &\mathbb{P}_{\mu}\left[F_X(Z) \neq F_Y(Z)\right] > 0
 			\end{split}
 		\end{equation}
-		 For a specific measure $\mu_K$ induced by a random variable as described in Equation \ref{truncation} for a truncation parameter $K$, we can reformulate the Nullhypothesis as such, as the constructed test will have no power against alternatives of $\mu_K$-measure zero anyway.\\
-		 For a series of values for $K = 1, \dots, \mathcal{K}$, these hypotheses are closed under intersection. This becomes evident if we look at the space of possible realizations for each inducing random variable.\\
+		 For a specific measure $\mu_K$ induced by a random variable as described in Equation \ref{truncation} for a truncation parameter $K$, we can reformulate the Nullhypothesis as such, as the constructed test will have no power against alternatives of $\mu_K$-measure zero anyway. However, the measure needs to be constructed in a slightly modified way to actually allow this to work. Fix therefore a parameter $\mathcal{K}$ that is the upper limit on the number of Fourier basis functions that will be used in the closed testing procedure. For all $k = 1, \dots, \mathcal{K}$ calculate the expected values of the Fourier coefficients for a given weight function $w(t)$.
+		 \begin{equation}
+		 	\mathbb{E}\left[b_k\right] = \int_{\mathcal{I}}w(t)\psi_k(t) \mathrm{d}t
+		 \end{equation}
+	 	Then for a series of values $K = 1, \dots, \mathcal{K}$ define the random functions $Z_K(t)$ inducing the measures $\mu_K$ in one of the following two ways, where the $U_k$ are mean-zero scalar random variables as described in Section \ref{mu}.
+	 	\paragraph{High-to-Low-Frequency Exclusion}
+		 	\begin{equation}\label{closed_test_RF_1}
+		 		Z_K(t) = \sum_{k = 1}^{\mathcal{K}} \mathbb{E}\left[b_k\right] \psi_k(t) + \sum_{k' = 1}^{K} \rho_{k'} U_{k'} \psi_{k'}(t)
+		 		\quad \text{s.t.} \quad
+		 		\sum_{k = 1}^{\infty} \rho_k^2 < \infty 
+		 	\end{equation}
+ 		\paragraph{Low-to-High-Frequency Exclusion}
+		 	\begin{equation}\label{closed_test_RF_2}
+		 		Z_K(t) = \sum_{k = 1}^{\mathcal{K}} \mathbb{E}\left[b_k\right] \psi_k(t) + \sum_{k' = 0}^{K-1} \rho_{\mathcal{K} - k'} U_{\mathcal{K} - k'} \psi_{\mathcal{K} - k'}(t)
+		 		\quad \text{s.t.} \quad
+		 		\sum_{k = 1}^{\infty} \rho_k^2 < \infty 
+		 	\end{equation}
+			  
+		 For the chosen sequence $K = 1, \dots, \mathcal{K}$, the hypotheses as shown in \ref{closed_hypotheses} constructed using the measures induced by the corresponding random variables are closed under intersection. This becomes evident if we look at the space of possible realizations for each inducing random variable. As the $U_k$ are mean-zero, \\
 		 
-		 The proposed test is then given by the following algorithm for each permutation step. The overarching test procedure is again given by a derivation of a permutation distribution and a permutation test decision according to the rules stated in Section \ref{Permutation_Tests}.\\
-		 
-		 Let $\mathcal{W} = \{W_i(t) \ | \ i = 1, \dots, n\}$ be sample 1 and $\mathcal{V} = \{V_i(t) \ | \  i = 1, \dots, m\}$ be sample 2. These samples are generated by randomly permuting the original samples $\{X_i(t) \ | \  i = 1, \dots, n\}$ be sample 1 and $\{Y_i(t) \ | \  i = 1, \dots, m\}$ as previously described.
-		 \begin{enumerate}
-		 	\item Calculate the sample mean functions for the permuted samples: \\
-		 	$\bar{W}(t) = \frac{1}{n} \sum_{i = 1}^{n} W_i(t)$ and $\bar{V}(t) = \frac{1}{m} \sum_{i = 1}^{m} V_i(t)$
-		 	\item Center the sample curves to obtain centered permutation samples: \\
-		 	$\bar{\mathcal{W}} = \{W_i(t) - \bar{W}(t) \ | \ i = 1, \dots, n\}$ and $\bar{\mathcal{V}} = \{V_i(t) - \bar{V}(t) \ | \ i = 1, \dots, m\}$
-		 	\item Calculate the point-wise standard deviations: \\
-		 	$\sigma_{\mathcal{W}}(t) = \sqrt{\frac{1}{n}\sum_{i = 1}^{n}\left[W_i(t) - \bar{W}(t)\right]^2}$ and $\sigma_{\mathcal{V}}(t) = \sqrt{\frac{1}{m}\sum_{i = 1}^{m}\left[V_i(t) - \bar{V}(t)\right]^2}$
-		 	\item Standardize the observations in the permuted samples:\\
-		 	$\tilde{\mathcal{W}} = \{\frac{W_i(t) - \bar{W}(t)}{\sigma_{\mathcal{W}}(t)} \ | \ i = 1, \dots, n\}$ and $\tilde{\mathcal{V}} = \{ \frac{V_i(t) - \bar{V}(t)}{\sigma_{\mathcal{V}}(t)} \ | \ i = 1, \dots, m\}$
-		 	\item Calculate $\hat{\tau}_{n,m}$ for the standardized permutation samples $\tilde{\mathcal{W}}$ and $\tilde{\mathcal{V}}$ as described in Section \ref{Bugni_Horowitz_2021}.
-		 \end{enumerate}
+
 		 {\color{red} HIER WEITERSCHREIBEN}
 
 		
