@@ -420,14 +420,23 @@ style=authoryear,
 		
 	\section{Test by Bugni and Horowitz (2021)}\label{Bugni_Horowitz_2021}
 	
-		In \cite{bugni_permutation_2021}, the authors devise a permutation test for the equality of the distribution of two samples of functional data. To define the exact hypothesis, it is therefore necessary to define a distribution function for a random variable realizing in $\mathbb{L}_2(\mathcal{I})$.
+		In \cite{bugni_permutation_2021}, the authors devise a permutation test for the equality of the distribution of the data generating processes of two independent samples of functional data. 
+		To define the exact hypothesis, it is therefore necessary to define a distribution function for a random variable realizing in $\mathbb{L}_2(\mathcal{I})$.
 		\begin{definition}[Distribution Function of a Random Function]
 			Let $X:\Omega \rightarrow \mathbb{L}_2(\mathcal{I})$ be a random function realizing in the square-integrable functions. Then its distribution function is defined as the following object.
 			\begin{equation*}
 				F_X(z) = \mathbb{P}\left[X(t) \leq z(t) \quad \forall t \in \mathcal{I}\right] \quad z \in \mathbb{L}_2(\mathcal{I})
 			\end{equation*}
 		\end{definition}
-		Deviating from the norm in functional data analysis, the authors assume that two functions $z_1, z_2 \in \mathbb{L}_2(\mathcal{I})$ are distinct even if they only differ on a set of Lebesgue-measure zero.\footnote{Does this create a problem about the Fourier basis being a complete orthonormal basis of the space?}
+		Deviating from the norm in functional data analysis, the authors assume that two functions $z_1, z_2 \in \mathbb{L}_2(\mathcal{I})$ are distinct even if they only differ on a set of Lebesgue-measure zero.\\
+		
+		Tests of this nature exist in some forms already and the following list shall give a non-exhaustive overview of other procedures that could be applied.
+		\begin{itemize}
+			\item \cite{hall_permutation_2002}
+			\item \cite{hall_two-sample_2007}
+			\item \cite{pomann_two-sample_2016}
+			\item {\color{red} Andere Tests auffuehren}
+		\end{itemize}
 		
 		\subsection{Assumptions}
 		
@@ -647,7 +656,18 @@ style=authoryear,
 		\subsection{Modified Principle}
 		
 	\section{Test for Persistence Alternatives}\label{closed_persistence_test}
-		If we use the idea described in the previous section for the test introduced in \cite{bugni_permutation_2021}, this could lead to the following test for specific alternatives applying to the persistence of the data generating processes. There are many tests focusing on differences in the mean functions of processes such as for example the tests described by {\color{red} Hier tests auflisten}. There is also a large number of tests for differences in the variance functions of processes like {\color{red} Hier tests auflisten}. However, there are few tests that address differences in the persistence of processes and this proposed procedure adds to the limited arsenal.\\
+		If we use the idea described in the previous section for the test introduced in \cite{bugni_permutation_2021}, this could lead to the following test for differences in the persistence structure of the data generating processes. 
+		There are already many tests focusing on differences in the mean functions of processes. A non-exhaustive list of examples can be found in the following publications.
+		\begin{itemize}
+			\item \cite{lee_two_2015}
+			\item \cite{cox_pointwise_2008}
+			\item {\color{red} Hier tests auflisten}
+		\end{itemize}
+		There is also a large number of tests for differences in the variance functions of processes such as for example the tests presented in the following papers. 
+		\begin{itemize}
+			\item {\color{red} Hier tests auflisten}
+		\end{itemize}
+		However, there are few tests that address differences in the persistence of processes and the proposed procedure adds to the limited arsenal.\\
 		
 		\subsection{Null-Hypothesis}
 		Let $\{X_i(t) \ | \  i = 1, \dots, n\}$ and $\{Y_i(t) \ | \  i = 1, \dots, m\}$ again denote the samples under consideration. We assume that the samples consist of i.i.d. realizations of random functions $X(t)$ and $Y(t)$ respectively.
@@ -684,18 +704,7 @@ style=authoryear,
 				H_1: \quad &\mathbb{P}_{\mu}\left[F_{\tilde{X}}(z) \neq F_{\tilde{Y}}(z)\right] > 0
 			\end{split}
 		\end{equation}
-		As all differences in the mean and variance patterns of these processes is eliminated by the standardization, one of the distinct remaining features that might differentiate these processes are their persistence properties. In the testing procedure, this standardization is performed on the level of the permuted samples which is described in more detail below.
-	
-%		Using these objects define the standardized samples in the following way.
-%		\begin{multicols}{2}
-%			\noindent
-%			\begin{equation*}
-%				\tilde{\mathcal{X}} = \left\{\frac{X_i(t) - \bar{X}(t)}{\sigma_{X}(t)} \ \vert \  i = 1, \dots, n\right\}
-%			\end{equation*}
-%			\begin{equation}
-%				\tilde{\mathcal{Y}} = \left\{\frac{Y_i(t) - \bar{Y}(t)}{\sigma_{Y}(t)} \ \vert \  i = 1, \dots, m\right\}
-%			\end{equation}
-%		\end{multicols}
+		As all differences in the mean and variance patterns of these processes is eliminated by the standardization, one of the distinct remaining features that might differentiate these processes are their persistence properties. Therefore, as this test in its more general form is supposed to find very general alternatives, this focused approach could be tailored by choice of $\mu$ to detect differences in the persistence structure of the data generating processes. \\
 		
 		\subsection{Test-Procedure}
 		The test is functionally nearly identical to the Cram\'{e}r-von Mises type test described in \cite{bugni_permutation_2021}. However, it adds a standardization step in the calculation of the test statistic, to eliminate differences in the mean functions of the processes and their variance structure. In each permutation step, the calculation of the test statistic is thus described by the following algorithm.\\

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.13)  26 MAY 2022 16:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.13)  26 MAY 2022 23:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1072,123 +1072,133 @@ Underfull \hbox (badness 10000) in paragraph at lines 415--416
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 431--432
+
+ []
+
 [11] [12]
-Underfull \hbox (badness 10000) in paragraph at lines 499--500
+Underfull \hbox (badness 10000) in paragraph at lines 508--509
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 507.
+(hyperref)                removing `math shift' on input line 516.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mu' on input line 507.
+(hyperref)                removing `\mu' on input line 516.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 507.
+(hyperref)                removing `math shift' on input line 516.
 
 [13]
-<../Graphics/mean_functions.PDF, id=524, 1445.4pt x 433.62pt>
+<../Graphics/mean_functions.PDF, id=528, 1445.4pt x 433.62pt>
 File: ../Graphics/mean_functions.PDF Graphic file (type pdf)
 <use ../Graphics/mean_functions.PDF>
-Package pdftex.def Info: ../Graphics/mean_functions.PDF  used on input line 544
+Package pdftex.def Info: ../Graphics/mean_functions.PDF  used on input line 553
 .
 (pdftex.def)             Requested size: 500.77129pt x 150.22763pt.
  [14]
-Underfull \hbox (badness 10000) in paragraph at lines 550--551
+Underfull \hbox (badness 10000) in paragraph at lines 559--560
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 552--553
+Underfull \hbox (badness 10000) in paragraph at lines 561--562
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 554--557
+Underfull \hbox (badness 10000) in paragraph at lines 563--566
 
  []
 
 [15 <../Graphics/mean_functions.PDF>] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 650--651
+Underfull \hbox (badness 10000) in paragraph at lines 670--671
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 701--702
+Underfull \hbox (badness 10000) in paragraph at lines 706--708
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 715--716
+Underfull \hbox (badness 10000) in paragraph at lines 710--711
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 746--747
+Underfull \hbox (badness 10000) in paragraph at lines 724--725
 
  []
 
-[19] [20] [21]
-<../Graphics/Settings_comparison.PDF, id=649, 1445.4pt x 867.24pt>
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 755--756
+
+ []
+
+[20] [21]
+<../Graphics/Settings_comparison.PDF, id=651, 1445.4pt x 867.24pt>
 File: ../Graphics/Settings_comparison.PDF Graphic file (type pdf)
 <use ../Graphics/Settings_comparison.PDF>
 Package pdftex.def Info: ../Graphics/Settings_comparison.PDF  used on input lin
-e 816.
+e 825.
 (pdftex.def)             Requested size: 500.77129pt x 300.45526pt.
  [22] [23 <../Graphics/Settings_comparison.PDF>]
-<../Graphics/electricity_demand_curves.PDF, id=682, 1445.4pt x 433.62pt>
+<../Graphics/electricity_demand_curves.PDF, id=690, 1445.4pt x 433.62pt>
 File: ../Graphics/electricity_demand_curves.PDF Graphic file (type pdf)
 <use ../Graphics/electricity_demand_curves.PDF>
 Package pdftex.def Info: ../Graphics/electricity_demand_curves.PDF  used on inp
-ut line 864.
+ut line 873.
 (pdftex.def)             Requested size: 500.77129pt x 150.22763pt.
  [24]
-Underfull \hbox (badness 10000) in paragraph at lines 877--878
+Underfull \hbox (badness 10000) in paragraph at lines 886--887
 
  []
 
 [25 <../Graphics/electricity_demand_curves.PDF>] [26]
-<../Graphics/estimate_const_year.PDF, id=723, 1445.4pt x 433.62pt>
+<../Graphics/estimate_const_year.PDF, id=731, 1445.4pt x 433.62pt>
 File: ../Graphics/estimate_const_year.PDF Graphic file (type pdf)
 <use ../Graphics/estimate_const_year.PDF>
 Package pdftex.def Info: ../Graphics/estimate_const_year.PDF  used on input lin
-e 897.
+e 906.
 (pdftex.def)             Requested size: 500.77129pt x 150.22763pt.
-<../Graphics/estimate_months.PDF, id=724, 1445.4pt x 578.16pt>
+<../Graphics/estimate_months.PDF, id=732, 1445.4pt x 578.16pt>
 File: ../Graphics/estimate_months.PDF Graphic file (type pdf)
 <use ../Graphics/estimate_months.PDF>
-Package pdftex.def Info: ../Graphics/estimate_months.PDF  used on input line 90
-5.
+Package pdftex.def Info: ../Graphics/estimate_months.PDF  used on input line 91
+4.
 (pdftex.def)             Requested size: 500.77129pt x 200.3035pt.
-<../Graphics/estimate_weekdays.PDF, id=726, 1445.4pt x 578.16pt>
+<../Graphics/estimate_weekdays.PDF, id=734, 1445.4pt x 578.16pt>
 File: ../Graphics/estimate_weekdays.PDF Graphic file (type pdf)
 <use ../Graphics/estimate_weekdays.PDF>
 Package pdftex.def Info: ../Graphics/estimate_weekdays.PDF  used on input line 
-914.
+923.
 (pdftex.def)             Requested size: 500.77129pt x 200.3035pt.
  [27 <../Graphics/estimate_const_year.PDF> <../Graphics/estimate_months.PDF>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\cite' on input line 920.
+(hyperref)                removing `\cite' on input line 929.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 920.
+(hyperref)                removing `subscript' on input line 929.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 920.
+(hyperref)                removing `subscript' on input line 929.
 
-<../Graphics/electricity_demand_curves_cleaned.PDF, id=746, 1445.4pt x 433.62pt
+<../Graphics/electricity_demand_curves_cleaned.PDF, id=754, 1445.4pt x 433.62pt
 >
 File: ../Graphics/electricity_demand_curves_cleaned.PDF Graphic file (type pdf)
 
 <use ../Graphics/electricity_demand_curves_cleaned.PDF>
 Package pdftex.def Info: ../Graphics/electricity_demand_curves_cleaned.PDF  use
-d on input line 927.
+d on input line 936.
 (pdftex.def)             Requested size: 500.77129pt x 150.22763pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1199,27 +1209,36 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [30] [31] [32] [1
+ [30]
+Overfull \hbox (6.96138pt too wide) in paragraph at lines 993--993
+[][]\OT1/cmr/m/n/12 (-20) Pomann, Gina-Maria, Ana-Maria Staicu, and Su-jit Ghos
+h (2016). ``A two-sample distribution-
+ []
+
+[31] [32] [1
 
 ] [2] (./master_thesis.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `master_thesis.out' has not changed.
 (rerunfilecheck)             Checksum: A27717F940CAD9DC535959841F763F83;10188.
+
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
+
 Package logreq Info: Writing requests to 'master_thesis.run.xml'.
 \openout1 = `master_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23933 strings out of 478238
- 416320 string characters out of 5850456
- 1178660 words of memory out of 5000000
- 41437 multiletter control sequences out of 15000+600000
- 488443 words of font info for 180 fonts, out of 8000000 for 9000
+ 23857 strings out of 478238
+ 416147 string characters out of 5850456
+ 1175581 words of memory out of 5000000
+ 41353 multiletter control sequences out of 15000+600000
+ 488633 words of font info for 182 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,25n,68p,1010b,2738s stack positions out of 5000i,500n,10000p,200000b,80000s
-
-pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist
-, replaced by a fixed one
-
 
 pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exist
 , replaced by a fixed one
@@ -1267,10 +1286,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on master_thesis.pdf (37 pages, 1569880 bytes).
+Output written on master_thesis.pdf (37 pages, 1572472 bytes).
 PDF statistics:
- 992 PDF objects out of 1000 (max. 8388607)
- 881 compressed objects within 9 object streams
- 247 named destinations out of 1000 (max. 500000)
+ 1006 PDF objects out of 1200 (max. 8388607)
+ 895 compressed objects within 9 object streams
+ 251 named destinations out of 1000 (max. 500000)
  40422 words of extra memory for PDF output out of 42996 (max. 10000000)
 

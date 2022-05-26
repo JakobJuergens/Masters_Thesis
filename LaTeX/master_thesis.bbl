@@ -374,6 +374,52 @@
       \verb 10.1007/BF02392815
       \endverb
     \endentry
+    \entry{cox_pointwise_2008}{article}{}
+      \name{author}{2}{}{%
+        {{un=1,uniquepart=given,hash=cd50bfe5a3ededb5bdc309ad02245ce1}{%
+           family={Cox},
+           familyi={C\bibinitperiod},
+           given={Dennis\bibnamedelima D.},
+           giveni={D\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=1}}%
+        {{un=1,uniquepart=given,hash=24c73840f7e96de79507baf7be27a3b0}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Jong\bibnamedelima Soo},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=1}}%
+      }
+      \strng{namehash}{86a4d532eba6a26979e81e98a09c2ce0}
+      \strng{fullhash}{86a4d532eba6a26979e81e98a09c2ce0}
+      \strng{bibnamehash}{86a4d532eba6a26979e81e98a09c2ce0}
+      \strng{authorbibnamehash}{86a4d532eba6a26979e81e98a09c2ce0}
+      \strng{authornamehash}{86a4d532eba6a26979e81e98a09c2ce0}
+      \strng{authorfullhash}{86a4d532eba6a26979e81e98a09c2ce0}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0006-3444}
+      \field{journaltitle}{Biometrika}
+      \field{number}{3}
+      \field{title}{Pointwise {Testing} with {Functional} {Data} {Using} the {Westfall}-{Young} {Randomization} {Method}}
+      \field{urlday}{26}
+      \field{urlmonth}{5}
+      \field{urlyear}{2022}
+      \field{volume}{95}
+      \field{year}{2008}
+      \field{urldateera}{ce}
+      \field{pages}{621\bibrangedash 634}
+      \range{pages}{14}
+      \verb{urlraw}
+      \verb https://www.jstor.org/stable/20441490
+      \endverb
+      \verb{url}
+      \verb https://www.jstor.org/stable/20441490
+      \endverb
+    \endentry
     \entry{darling_kolmogorov-smirnov_1957}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=358393b08a304998becf153bd446d1e0}{%
@@ -650,6 +696,91 @@
       \verb https://CRAN.R-project.org/package=refund
       \endverb
     \endentry
+    \entry{hall_permutation_2002}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=8922d50f77e8cc98c9ac19d6edca3701}{%
+           family={Hall},
+           familyi={H\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=86fae30d12d75c64a9078d7eb3725efe}{%
+           family={Tajvidi},
+           familyi={T\bibinitperiod},
+           given={Nader},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c67a8c4bb297248bb6d26e1f233919ac}
+      \strng{fullhash}{c67a8c4bb297248bb6d26e1f233919ac}
+      \strng{bibnamehash}{c67a8c4bb297248bb6d26e1f233919ac}
+      \strng{authorbibnamehash}{c67a8c4bb297248bb6d26e1f233919ac}
+      \strng{authornamehash}{c67a8c4bb297248bb6d26e1f233919ac}
+      \strng{authorfullhash}{c67a8c4bb297248bb6d26e1f233919ac}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Biometrika}
+      \field{month}{6}
+      \field{number}{2}
+      \field{title}{Permutation tests for equality of distributions in high‐dimensional settings}
+      \field{urlday}{26}
+      \field{urlmonth}{5}
+      \field{urlyear}{2022}
+      \field{volume}{89}
+      \field{year}{2002}
+      \field{urldateera}{ce}
+      \field{pages}{359\bibrangedash 374}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1093/biomet/89.2.359
+      \endverb
+    \endentry
+    \entry{hall_two-sample_2007}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=8922d50f77e8cc98c9ac19d6edca3701}{%
+           family={Hall},
+           familyi={H\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1593c2c1ca8271bb986b36013a7fca22}{%
+           family={Van\bibnamedelima Keilegom},
+           familyi={V\bibinitperiod\bibinitdelim K\bibinitperiod},
+           given={Ingrid},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b0fd51225dde53438ec1ab865a9b7f17}
+      \strng{fullhash}{b0fd51225dde53438ec1ab865a9b7f17}
+      \strng{bibnamehash}{b0fd51225dde53438ec1ab865a9b7f17}
+      \strng{authorbibnamehash}{b0fd51225dde53438ec1ab865a9b7f17}
+      \strng{authornamehash}{b0fd51225dde53438ec1ab865a9b7f17}
+      \strng{authorfullhash}{b0fd51225dde53438ec1ab865a9b7f17}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1017-0405}
+      \field{journaltitle}{Statistica Sinica}
+      \field{number}{4}
+      \field{title}{{TWO}-{SAMPLE} {TESTS} {IN} {FUNCTIONAL} {DATA} {ANALYSIS} {STARTING} {FROM} {DISCRETE} {DATA}}
+      \field{volume}{17}
+      \field{year}{2007}
+      \field{pages}{1511\bibrangedash 1531}
+      \range{pages}{21}
+      \verb{urlraw}
+      \verb https://www.jstor.org/stable/24307686
+      \endverb
+      \verb{url}
+      \verb https://www.jstor.org/stable/24307686
+      \endverb
+    \endentry
     \entry{hsing_theoretical_2015}{book}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=396cd532137675b4da218b8464d025e8}{%
@@ -721,6 +852,50 @@
       \field{series}{Texts in statistical science series}
       \field{title}{Introduction to functional data analysis}
       \field{year}{2021}
+    \endentry
+    \entry{lee_two_2015}{article}{}
+      \name{author}{3}{}{%
+        {{un=1,uniquepart=given,hash=f8bd03fbc41258254543c90b3d69dca4}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Jong},
+           giveni={J\bibinitperiod},
+           givenun=1}}%
+        {{un=1,uniquepart=given,hash=e70abca595606c605c76ad4c8ce32705}{%
+           family={Cox},
+           familyi={C\bibinitperiod},
+           given={Dennis},
+           giveni={D\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=829c5b648ffc1649540ecc1e6539b10a}{%
+           family={Follen},
+           familyi={F\bibinitperiod},
+           given={Michele},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{54a8e3ed93bd1ae32070cfec475f7b78}
+      \strng{fullhash}{54a8e3ed93bd1ae32070cfec475f7b78}
+      \strng{bibnamehash}{54a8e3ed93bd1ae32070cfec475f7b78}
+      \strng{authorbibnamehash}{54a8e3ed93bd1ae32070cfec475f7b78}
+      \strng{authornamehash}{54a8e3ed93bd1ae32070cfec475f7b78}
+      \strng{authorfullhash}{54a8e3ed93bd1ae32070cfec475f7b78}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Communications for Statistical Applications and Methods}
+      \field{month}{3}
+      \field{title}{A {Two} {Sample} {Test} for {Functional} {Data}}
+      \field{volume}{22}
+      \field{year}{2015}
+      \field{pages}{121\bibrangedash 135}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.5351/CSAM.2015.22.2.121
+      \endverb
     \endentry
     \entry{lehmann_testing_2005}{book}{}
       \name{author}{2}{}{%
@@ -927,6 +1102,54 @@
       \range{pages}{8}
       \verb{doi}
       \verb 10.2307/2335097
+      \endverb
+    \endentry
+    \entry{pomann_two-sample_2016}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=c6630963eaf082586842cab16b370534}{%
+           family={Pomann},
+           familyi={P\bibinitperiod},
+           given={Gina-Maria},
+           giveni={G\bibinithyphendelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a57d057ef13702bde9f1c64bf43b567f}{%
+           family={Staicu},
+           familyi={S\bibinitperiod},
+           given={Ana-Maria},
+           giveni={A\bibinithyphendelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=afe1218a652af9da1e9cbc8eb0664c2c}{%
+           family={Ghosh},
+           familyi={G\bibinitperiod},
+           given={Sujit},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a96cca2661758df23b6260a677677df8}
+      \strng{fullhash}{a96cca2661758df23b6260a677677df8}
+      \strng{bibnamehash}{a96cca2661758df23b6260a677677df8}
+      \strng{authorbibnamehash}{a96cca2661758df23b6260a677677df8}
+      \strng{authornamehash}{a96cca2661758df23b6260a677677df8}
+      \strng{authorfullhash}{a96cca2661758df23b6260a677677df8}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0035-9254}
+      \field{journaltitle}{Journal of the Royal Statistical Society. Series C (Applied Statistics)}
+      \field{number}{3}
+      \field{title}{A two-sample distribution-free test for functional data with application to a diffusion tensor imaging study of multiple sclerosis}
+      \field{volume}{65}
+      \field{year}{2016}
+      \field{pages}{395\bibrangedash 414}
+      \range{pages}{20}
+      \verb{urlraw}
+      \verb https://www.jstor.org/stable/24773028
+      \endverb
+      \verb{url}
+      \verb https://www.jstor.org/stable/24773028
       \endverb
     \endentry
     \entry{R}{manual}{}
