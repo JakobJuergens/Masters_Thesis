@@ -1,0 +1,222 @@
+Simulation 1 started. 
+R loaded 
+Starting Time: Fri May 27 13:22:15 CEST 2022
+[1] "Job started: Job_ID: 2898207 Running on node: "
+[1] "Run 1 of 31."
+[1] "Run Start Time: 2022-05-27 13:22:15"
+Current Seed: 330424
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 13:32:19"
+[1] "Run 2 of 31."
+[1] "Run Start Time: 2022-05-27 13:32:19"
+Current Seed: 360662
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 13:41:42"
+[1] "Run 3 of 31."
+[1] "Run Start Time: 2022-05-27 13:41:42"
+Current Seed: 119397
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 13:51:37"
+[1] "Run 4 of 31."
+[1] "Run Start Time: 2022-05-27 13:51:37"
+Current Seed: 6600
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 14:01:40"
+[1] "Run 5 of 31."
+[1] "Run Start Time: 2022-05-27 14:01:40"
+Current Seed: 256929
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 14:11:22"
+[1] "Run 6 of 31."
+[1] "Run Start Time: 2022-05-27 14:11:22"
+Current Seed: 108305
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 14:21:09"
+[1] "Run 7 of 31."
+[1] "Run Start Time: 2022-05-27 14:21:09"
+Current Seed: 986291
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 14:31:03"
+[1] "Run 8 of 31."
+[1] "Run Start Time: 2022-05-27 14:31:03"
+Current Seed: 461362
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 14:40:36"
+[1] "Run 9 of 31."
+[1] "Run Start Time: 2022-05-27 14:40:36"
+Current Seed: 497829
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 14:49:43"
+[1] "Run 10 of 31."
+[1] "Run Start Time: 2022-05-27 14:49:43"
+Current Seed: 258836
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 14:59:24"
+[1] "Run 11 of 31."
+[1] "Run Start Time: 2022-05-27 14:59:24"
+Current Seed: 982166
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 15:09:06"
+[1] "Run 12 of 31."
+[1] "Run Start Time: 2022-05-27 15:09:06"
+Current Seed: 672697
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 15:18:32"
+[1] "Run 13 of 31."
+[1] "Run Start Time: 2022-05-27 15:18:32"
+Current Seed: 682518
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 15:28:00"
+[1] "Run 14 of 31."
+[1] "Run Start Time: 2022-05-27 15:28:00"
+Current Seed: 195990
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 15:37:47"
+[1] "Run 15 of 31."
+[1] "Run Start Time: 2022-05-27 15:37:47"
+Current Seed: 12806
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 15:47:48"
+[1] "Run 16 of 31."
+[1] "Run Start Time: 2022-05-27 15:47:48"
+Current Seed: 10688
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 15:57:47"
+[1] "Run 17 of 31."
+[1] "Run Start Time: 2022-05-27 15:57:47"
+Current Seed: 711367
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 16:07:29"
+[1] "Run 18 of 31."
+[1] "Run Start Time: 2022-05-27 16:07:29"
+Current Seed: 404378
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 16:16:52"
+[1] "Run 19 of 31."
+[1] "Run Start Time: 2022-05-27 16:16:52"
+Current Seed: 987166
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 16:26:07"
+[1] "Run 20 of 31."
+[1] "Run Start Time: 2022-05-27 16:26:07"
+Current Seed: 111124
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 16:35:25"
+[1] "Run 21 of 31."
+[1] "Run Start Time: 2022-05-27 16:35:25"
+Current Seed: 633369
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 16:45:01"
+[1] "Run 22 of 31."
+[1] "Run Start Time: 2022-05-27 16:45:01"
+Current Seed: 339875
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 16:54:36"
+[1] "Run 23 of 31."
+[1] "Run Start Time: 2022-05-27 16:54:36"
+Current Seed: 3314
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 17:04:05"
+[1] "Run 24 of 31."
+[1] "Run Start Time: 2022-05-27 17:04:05"
+Current Seed: 95901
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 17:13:49"
+[1] "Run 25 of 31."
+[1] "Run Start Time: 2022-05-27 17:13:49"
+Current Seed: 833608
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 17:23:27"
+[1] "Run 26 of 31."
+[1] "Run Start Time: 2022-05-27 17:23:27"
+Current Seed: 652799
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 17:32:54"
+[1] "Run 27 of 31."
+[1] "Run Start Time: 2022-05-27 17:32:54"
+Current Seed: 304896
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 17:42:25"
+[1] "Run 28 of 31."
+[1] "Run Start Time: 2022-05-27 17:42:25"
+Current Seed: 646180
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 17:51:40"
+[1] "Run 29 of 31."
+[1] "Run Start Time: 2022-05-27 17:51:40"
+Current Seed: 568567
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 18:01:11"
+[1] "Run 30 of 31."
+[1] "Run Start Time: 2022-05-27 18:01:11"
+Current Seed: 821491
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 18:10:23"
+[1] "Run 31 of 31."
+[1] "Run Start Time: 2022-05-27 18:10:23"
+Current Seed: 909134
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-27 18:19:50"
+Stopping Time: Fri May 27 18:19:50 CEST 2022

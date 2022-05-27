@@ -95,7 +95,9 @@ style=authoryear,
 		After explaining these concepts, section \ref{Bugni_Horowitz_2021} focuses on the test developed in \cite{bugni_permutation_2021} for the case of a two-sample test. 
 		The main contribution of this thesis is an extension to the original test that could be used to identify specific types of violations of the null hypothesis relating to the persistence of the data generating processes. Therefore, Section \ref{closed_testing} introduces the concept of closed testing procedures, which is used in Section \ref{closed_persistence_test} to describe said extension to the original test.
 		Section \ref{Simulation_Study} replicates the results from the simulation study in the paper, expands on certain aspects, and shows a heuristic simulation to motivate the proposed extension. Section \ref{Application} applies the test from \cite{bugni_permutation_2021} to half-hourly electricity demand data from Adelaide.
-		Finally, Section \ref{Outlook} gives an Outlook on possible further extensions of the underlying idea, addresses some problems and shortcomings of the presented results and outlines potential simulations that could be performed to better understand the properties of the procedures described in this thesis.
+		Finally, Section \ref{Outlook} gives an Outlook on possible further extensions of the underlying idea, addresses some problems and shortcomings of the presented results and outlines potential simulations that could be performed to better understand the properties of the procedures described in this thesis.\\
+		
+		I also want to shine light on Appendix \ref{Intuition} that gives a very informal description of the test scenario and the underlying idea of the test. It shall serve as a primer for readers without prior experience in functional data analysis and permutation testing. 
 	
 	\section{Functional Data Analysis}\label{FDA}
 		The overarching concept of functional data analysis is to incorporate observations that are functional in nature. In this context, a functional observation can often be understood as a smooth curve. A classical example of this is shown in Figure \ref{growth_curves}. It presents data provided in the R package \textit{fda}\footcite{fda} and shows growth curves of 93 humans up to the age of 18.
@@ -968,23 +970,24 @@ style=authoryear,
 	\section{Outlook}\label{Outlook}
 		After studying the method developed by \cite{bugni_permutation_2021} in detail there are a few points that might be interesting for further research. In the following I name a few that could be very interesting extension to this thesis.
 		
-		\paragraph{Simulations for Different Measures}
-		
-		\paragraph{Simulations comparing choices of $w(t)$ and  $\left(\rho_i\right)_{i = 1, \dots, K}$}
-		
-		\paragraph{Simulation Settings where the Distribution of Fourier Coefficients is changed}
-			\begin{itemize}
-				\item Use dgp similar to the way we construct the measure (draw fourier coefficients from some distribution)
-				\item Same mean for fourier coefficients, but different distribution of error terms
-			\end{itemize}
+		\subsection{Possible Further Simulations}
+			\paragraph{Simulations comparing choices of $w(t)$ and  $\left(\rho_i\right)_{i = 1, \dots, K}$\\}
+			In this thesis I only perform simulations for one intuitive choice of $w(t)$ and $\left(\rho_i\right)_{i = 1, \dots, K}$. It seems reasonable to assume that these parameter choices could have a significant impact on the performance of the method and it would therefore be interesting to compare different choices in a structured framework.
+			
+			\paragraph{Simulation Settings where the Distribution of Fourier Coefficients is changed}
+				\begin{itemize}
+					\item Use dgp similar to the way we construct the measure (draw fourier coefficients from some distribution)
+					\item Same mean for fourier coefficients, but different distribution of error terms
+				\end{itemize}
 		
 		\paragraph{Simulations for Unbalanced Sample Sizes}
 		
-		\paragraph{Application that has a more complex difference structure}
-			\begin{itemize}
-				\item Audio-Curves
-				\item Movement-Curves
-			\end{itemize}
+		\subsection{Potential Applications}
+			\paragraph{Application that has a more complex difference structure}
+				\begin{itemize}
+					\item Audio-Curves
+					\item Movement-Curves
+				\end{itemize}
 		
 		
 	
@@ -997,6 +1000,24 @@ style=authoryear,
 	\pagenumbering{roman}
 	\setcounter{page}{1}
 	\section{Appendix}
+	
+		\subsection{Informal Intuition}\label{Intuition}
+			For potential readers that are unfamiliar with the idea of functional data analysis and permutation testing, the initial hurdle of reading this thesis without any intuitive knowledge about the ideas at play might be very high. Therefore, this short informal introduction should shall serve as a primer that gives an intuitive idea about the following questions.
+			\begin{enumerate}
+				\item What setting are we in?
+				\item What do we want to test?
+				\item How do we want to test it?
+				\item Why should I care?
+			\end{enumerate}
+			By choice, this section will \textbf{not} be formal and it will \textbf{not} be precise as to not introduce too much detail that could hinder an intuitive understanding.\\
+			
+			Answering question one is relatively simple. This thesis deals with a statistical problem, where observations are continuously observed curves. But what does that mean intuitively? One scenario that is easy to imagine, is a curve over time for some variable such as speed: When driving a car at the 24 hour race at Le-Mans, it has a speed at every point in time during the race - for example $155.3$ km/h at 2 hours, 33 minutes and 7 seconds after the race has started. Observations in the sense of this thesis are similar to this curve: at every value of $x$ in some closed interval $[a,b] \subset \mathbb{R}$, we observe a value $y$.\\
+			
+			Question two is also simple. What we want to test is if two samples of curves are similar in a specific way. As in many statistical problems, we interpret the observations as realizations of some random variable. The only difference being that these observations are curves. So we can ask the question whether the curves in the two samples are dissimilar enough for us to say confidently that they were not generated by the same random variable. 
+			Staying with the example of Le-Mans, we could have two identical cars with two equally skillful drivers collect 24 hour speed curves for the next 10 years. We do this to find out if two different types of fuel change the way the cars act on the track. In this hypothetical scenario, we now have two samples each containing 3650 speed curves. 
+			We want to test statistically whether changing the fuel made any difference.\\
+			
+			Question three is more difficult. Therefore, I want to give the right intuition by answering simpler question instead. Let's return to the scalar setting for a moment - each observation is just a real number $x \in \mathbb{R}$ again. We want to find out whether two samples are different enough for us to say confidently: ``These samples are too dissimilar to be generated by the same random variable.'' If you have some statistical knowledge, your first intuition might be to perform a Kolmogoroff-Smirnov, Cram\'{e}r-von Mises or Anderson-Durbin test. But let's take one step back first and think about a more general idea.
 	
 		\subsection{Multiple Testing}\label{Multiple_Testing}
 			When testing statistical hypotheses, it is often helpful or even necessary to test multiple hypotheses independently of each other. One setting where this could be useful is when we want to combine the desirable properties of two tests, as is done by \cite{bugni_permutation_2021}. If the tests do not perfectly depend on each other, this creates a problem relating to the size of the combined test.
