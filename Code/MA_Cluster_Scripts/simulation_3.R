@@ -42,6 +42,7 @@ main_simu <- function(seed = task_seeds_int[i]) {
     n_basis = n_basis, n_obs_1 = sample_size, n_obs_2 = sample_size, 
     mean = gen_mean, grid = gen_grid, rho = gen_rho, sigma = gen_sigma, rho_shift = rho_shift
   )
+  message('Samples Generated')
 
   # calculate t-values using the package PermFDAtest
   # first: values for the means based test
@@ -51,7 +52,7 @@ main_simu <- function(seed = task_seeds_int[i]) {
     sample2 = samples$sample_2_f,
     domain = c(0, 1)
   )
-  message('Values of the CvM test statistic calculated.')
+  message('Values of the Mean-based test statistic calculated.')
   
   # second: values for the Cramer von Mises test
   # and the objects necessary to calculate them
@@ -74,7 +75,7 @@ main_simu <- function(seed = task_seeds_int[i]) {
                   tau_vals = tau_vals$tau_hat, tau_real = tau_vals$tau_realized)
   saveRDS(
     object = t_stats,
-    file = paste0(output_path, "simulation_1/", toString(seed), "tstats.RDS")
+    file = paste0(output_path, "simulation_3/", toString(seed), "tstats.RDS")
   )
 }
 
