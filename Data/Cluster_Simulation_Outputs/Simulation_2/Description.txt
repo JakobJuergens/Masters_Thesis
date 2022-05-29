@@ -1,0 +1,4 @@
+ 
+28_05_2022_test:    small run with 8 seeds.         mean_shift <- seq(from = -1.1, to = 1.1, length.out = length(gen_grid))^2 - 1.1^2
+29_05_2022:         full run with 1000 seeds.       mean_shift <- seq(from = -1.1, to = 1.1, length.out = length(gen_grid))^2 - 1.1^2
+Next run: mean_shift <- seq(from = -0.5, to = 0.5, length.out = length(gen_grid))^2 - 0.5^2
