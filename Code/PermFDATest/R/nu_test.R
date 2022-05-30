@@ -12,7 +12,7 @@
 #' @return: Realizations of the t-statistic for the Cramer-von Mises test
 #' @export
 nu_realizations <- function(sample1, sample2, full = FALSE, approxQ, domain) {
-  if (ncol(sample1) != ncol(sample2)) {
+  if (nrow(sample1) != nrow(sample2)) {
     stop("The samples have to be expressed in terms of the same basis.")
   }
 
