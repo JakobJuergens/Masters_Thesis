@@ -4,9 +4,9 @@
 
 #SBATCH --cpus-per-task=1
 
-#SBATCH --mem-per-cpu=6000M
+#SBATCH --mem-per-cpu=4000M
 
-#SBATCH --time=8:00:0
+#SBATCH --time=8:30:0
 
 #SBATCH --account=ag_ifs_liebl
 

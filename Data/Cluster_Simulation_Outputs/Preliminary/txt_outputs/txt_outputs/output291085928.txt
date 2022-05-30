@@ -1,0 +1,191 @@
+Simulation 2 started. 
+R loaded 
+Starting Time: Sun May 29 18:26:56 CEST 2022
+[1] "Job started: Job_ID: 2910887 Running on node: "
+[1] "Run 1 of 31."
+[1] "Run Start Time: 2022-05-29 18:26:57"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 18:39:04"
+[1] "Run 2 of 31."
+[1] "Run Start Time: 2022-05-29 18:39:04"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 18:51:58"
+[1] "Run 3 of 31."
+[1] "Run Start Time: 2022-05-29 18:51:58"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 19:04:05"
+[1] "Run 4 of 31."
+[1] "Run Start Time: 2022-05-29 19:04:05"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 19:16:24"
+[1] "Run 5 of 31."
+[1] "Run Start Time: 2022-05-29 19:16:24"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 19:29:09"
+[1] "Run 6 of 31."
+[1] "Run Start Time: 2022-05-29 19:29:09"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 19:41:27"
+[1] "Run 7 of 31."
+[1] "Run Start Time: 2022-05-29 19:41:27"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 19:53:41"
+[1] "Run 8 of 31."
+[1] "Run Start Time: 2022-05-29 19:53:41"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 20:06:38"
+[1] "Run 9 of 31."
+[1] "Run Start Time: 2022-05-29 20:06:38"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 20:19:08"
+[1] "Run 10 of 31."
+[1] "Run Start Time: 2022-05-29 20:19:08"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 20:31:28"
+[1] "Run 11 of 31."
+[1] "Run Start Time: 2022-05-29 20:31:28"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 20:43:58"
+[1] "Run 12 of 31."
+[1] "Run Start Time: 2022-05-29 20:43:58"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 20:56:12"
+[1] "Run 13 of 31."
+[1] "Run Start Time: 2022-05-29 20:56:12"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 21:08:59"
+[1] "Run 14 of 31."
+[1] "Run Start Time: 2022-05-29 21:08:59"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 21:21:48"
+[1] "Run 15 of 31."
+[1] "Run Start Time: 2022-05-29 21:21:48"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 21:34:36"
+[1] "Run 16 of 31."
+[1] "Run Start Time: 2022-05-29 21:34:36"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 21:46:52"
+[1] "Run 17 of 31."
+[1] "Run Start Time: 2022-05-29 21:46:52"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 21:58:49"
+[1] "Run 18 of 31."
+[1] "Run Start Time: 2022-05-29 21:58:49"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 22:11:17"
+[1] "Run 19 of 31."
+[1] "Run Start Time: 2022-05-29 22:11:17"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 22:23:40"
+[1] "Run 20 of 31."
+[1] "Run Start Time: 2022-05-29 22:23:40"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 22:35:55"
+[1] "Run 21 of 31."
+[1] "Run Start Time: 2022-05-29 22:35:55"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 22:48:27"
+[1] "Run 22 of 31."
+[1] "Run Start Time: 2022-05-29 22:48:27"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 23:00:18"
+[1] "Run 23 of 31."
+[1] "Run Start Time: 2022-05-29 23:00:18"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 23:12:43"
+[1] "Run 24 of 31."
+[1] "Run Start Time: 2022-05-29 23:12:43"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 23:24:16"
+[1] "Run 25 of 31."
+[1] "Run Start Time: 2022-05-29 23:24:16"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 23:36:42"
+[1] "Run 26 of 31."
+[1] "Run Start Time: 2022-05-29 23:36:42"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-29 23:49:00"
+[1] "Run 27 of 31."
+[1] "Run Start Time: 2022-05-29 23:49:00"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-30 00:01:11"
+[1] "Run 28 of 31."
+[1] "Run Start Time: 2022-05-30 00:01:11"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-30 00:13:35"
+[1] "Run 29 of 31."
+[1] "Run Start Time: 2022-05-30 00:13:35"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-30 00:25:57"
+[1] "Run 30 of 31."
+[1] "Run Start Time: 2022-05-30 00:25:57"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-30 00:37:40"
+[1] "Run 31 of 31."
+[1] "Run Start Time: 2022-05-30 00:37:40"
+Samples Generated
+Values of the Mean-based test statistic calculated.
+Values of the CvM test statistic calculated.
+[1] "Run End Time: 2022-05-30 00:49:42"
+Stopping Time: Mon May 30 00:49:42 CEST 2022
