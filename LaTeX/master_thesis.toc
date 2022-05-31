@@ -43,19 +43,19 @@
 \contentsline {subsection}{\numberline {8.3}Results}{24}{subsection.8.3}%
 \contentsline {subsection}{\numberline {8.4}Simulation - Test for Persistence Alternatives}{24}{subsection.8.4}%
 \contentsline {section}{\numberline {9}Application}{25}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Data Cleaning and Preprocessing}{25}{subsection.9.1}%
-\contentsline {subsubsection}{\numberline {9.1.1}Removal of Mondays and Fridays}{25}{subsubsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.1}Data Cleaning and Preprocessing}{26}{subsection.9.1}%
+\contentsline {subsubsection}{\numberline {9.1.1}Removal of Mondays and Fridays}{26}{subsubsection.9.1.1}%
 \contentsline {subsubsection}{\numberline {9.1.2}Holidays}{26}{subsubsection.9.1.2}%
 \contentsline {subsubsection}{\numberline {9.1.3}Detrending and Deseasoning}{26}{subsubsection.9.1.3}%
 \contentsline {subsection}{\numberline {9.2}Test from \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{28}{subsection.9.2}%
 \contentsline {section}{\numberline {10}Outlook}{29}{section.10}%
 \contentsline {subsection}{\numberline {10.1}Possible Further Simulations}{29}{subsection.10.1}%
 \contentsline {paragraph}{Simulations comparing choices of $w(t)$ and $\left (\rho _i\right )_{i = 1, \dots , K}$\\}{29}{subsection.10.1}%
-\contentsline {paragraph}{Simulation Settings where the Distribution of Fourier Coefficients is changed}{29}{subsection.10.1}%
-\contentsline {paragraph}{Simulations for Unbalanced Sample Sizes}{29}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}Potential Applications}{29}{subsection.10.2}%
-\contentsline {paragraph}{Application that has a more complex difference structure}{29}{subsection.10.2}%
-\contentsline {section}{\numberline {11}Bibliography}{30}{section.11}%
+\contentsline {paragraph}{Simulation Settings where the Distribution of Fourier Coefficients is changed}{30}{subsection.10.1}%
+\contentsline {paragraph}{Simulations for Unbalanced Sample Sizes}{30}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Potential Applications}{30}{subsection.10.2}%
+\contentsline {paragraph}{Application that has a more complex difference structure}{30}{subsection.10.2}%
+\contentsline {section}{\numberline {11}Bibliography}{31}{section.11}%
 \contentsline {section}{\numberline {12}Appendix}{i}{section.12}%
 \contentsline {subsection}{\numberline {12.1}Informal Intuition}{i}{subsection.12.1}%
 \contentsline {subsection}{\numberline {12.2}Multiple Testing}{ii}{subsection.12.2}%

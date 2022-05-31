@@ -20,7 +20,7 @@ sim_folders <- "../../Data/Cluster_Simulation_Outputs/"
 # set individual folder paths
 sim_1_path <- paste0(sim_folders, "Simulation_1/28_05_2022/")
 sim_2_path <- paste0(sim_folders, "Simulation_2/30_05_2022/")
-sim_3_path <- paste0(sim_folders, "Simulation_3/30_05_2022_test/")
+sim_3_path <- paste0(sim_folders, "Simulation_3/31_05_2022/")
 sim_4_path <- paste0(sim_folders, "Simulation_4/")
 # set Output path
 output_path <- "../../Data/Cluster_Simulation_Outputs/Evaluation/"

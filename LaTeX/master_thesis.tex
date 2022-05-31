@@ -848,14 +848,14 @@ style=authoryear,
 			\begin{tabular}{lccccc}\toprule
 				\textbf{Test}	&$\left(\alpha_{\tau}, \alpha_{\nu}\right) $ &\textbf{Setting 1} &\textbf{Setting 2}	&\textbf{Setting 3} &\textbf{Setting 4}\\
 				\midrule
-				Means-Test		&$\alpha_{\nu} = 0.05$	& 0.058			& 0.519  	 & - & - \\
-				CvM-Test 		&$\alpha_{\tau} = 0.05$	& 0.04147313	& 0.1842943  & - & - \\
+				Means-Test		&$\alpha_{\nu} = 0.05$	& 0.058			& 0.519  	 & 0.054 & - \\
+				CvM-Test 		&$\alpha_{\tau} = 0.05$	& 0.04147313	& 0.1842943  & 0.2503627 & - \\
 				\midrule
-				Combined		& (0.04, 0.01)			& 0.04353598	& 0.3652623  & - & - \\
-								& (0.03, 0.02)			& 0.0527092		& 0.4280618  & - & - \\
-								& (0.025, 0.025)		& 0.05417252	& 0.4456977  & - & - \\
-								& (0.02, 0.03)			& 0.05297339	& 0.4585891  & - & - \\
-								& (0.01, 0.04)			& 0.05927385	& 0.4860989  & - & - \\
+				Combined		& (0.04, 0.01)			& 0.04353598	& 0.3652623  & 0.2340607 & - \\
+								& (0.03, 0.02)			& 0.0527092		& 0.4280618  & 0.2150958 & - \\
+								& (0.025, 0.025)		& 0.05417252	& 0.4456977  & 0.2061784 & - \\
+								& (0.02, 0.03)			& 0.05297339	& 0.4585891  & 0.1915539 & - \\
+								& (0.01, 0.04)			& 0.05927385	& 0.4860989  & 0.1580812 & - \\
 				\bottomrule
 			\end{tabular}
 			\caption{Empirical Rejection Probabilities}
@@ -866,6 +866,33 @@ style=authoryear,
 		\begin{enumerate}
 			\item 
 		\end{enumerate}
+	
+		The results for different correlation parameters are given in the following tables. Again, the same reference process with $\rho_1(t) = 0.8$ generated the reference sample.
+		\begin{table}[h!]
+			\centering
+			\begin{tabular}{lccccc}\toprule
+				$\alpha_{\tau}$ &$\rho_2(t) = -0.9$ &$\rho_2(t) = -0.7$	&$\rho_2(t) = -0.5$ &$\rho_2(t) = -0.3$ &$\rho_2(t) = -0.1$ \\
+				\midrule
+				$0.05$	& -	& -  & - & - & - \\
+				$0.01$ & -	& -  & - & - & - \\
+				$0.001$	& -	& -  & - & - & - \\
+				\bottomrule
+			\end{tabular}
+			\caption{Empirical Rejection Probabilities}
+		\end{table}
+	
+		\begin{table}[h!]
+			\centering
+			\begin{tabular}{lcccccc}\toprule
+				$\alpha_{\tau}$ &$\rho_2(t) = 0$ &$\rho_2(t) = 0.1$ &$\rho_2(t) = 0.3$	&$\rho_2(t) = 0.5$ &$\rho_2(t) = 0.7$ &$\rho_2(t) = 0.9$\\
+				\midrule
+				$0.05$	& -	& -  & - & - & - & - \\
+				$0.01$ & -	& -  & - & - & - & - \\
+				$0.001$	& -	& -  & - & - & - & - \\
+				\bottomrule
+			\end{tabular}
+			\caption{Empirical Rejection Probabilities}
+		\end{table}
 				
 	\section{Application}\label{Application}
 		To test the real-world merits of the method, I will compare electricity demand data from Adelaide which is provided as part of the \textit{fds}\footcite{fds} package for R. This data set presents half-hourly energy demand in megawatts and was originally used by \cite{magnano_generation_2007} and \cite{magnano_generation_2008}. It contains electricity demand curves for 3556 days from 6/7/1997 to 31/3/2007. Some of these curves, specifically a selection of curves observed on Wednesdays and Saturdays, is shown in Figure \ref{electricity_demand}.

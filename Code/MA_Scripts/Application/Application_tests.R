@@ -22,7 +22,8 @@ saturday_coefficients <- cleaned_data$coefs[, which(reg_tibble$weekday == 'Samst
 # calculate t-values using the package PermFDAtest
 # first: values for the means based test
 nu_vals <- PermFDATest::nu_test_par(
-  full = FALSE, approxQ = approxQ,
+  cl = cl, seeds = seeds,
+  approxQ = approxQ,
   sample1 = workday_coefficients,
   sample2 = saturday_coefficients,
   domain = c(0, 1)
