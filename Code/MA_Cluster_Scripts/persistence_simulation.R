@@ -17,7 +17,8 @@ gen_rho <- inputs$gen_rho
 gen_sigma <- inputs$gen_sigma
 
 # set rho_shift manually to suit setting!
-rho_shift <- inputs$rho_shift
+rho_2 <- rep(0, times = length(gen_grid))
+rho_shift <- rho_2 - gen_rho
 
 comparison_grid <- inputs$comparison_grid
 
@@ -49,13 +50,13 @@ main_simu <- function(seed = task_seeds_int[i]) {
 
   # calculate t-values using the package PermFDAtest
   # first: values for the means based test
-  nu_vals <- PermFDATest::nu_realizations(
-    full = FALSE, approxQ = approxQ, 
-    sample1 = samples$sample_1_f,
-    sample2 = samples$sample_2_f,
-    domain = c(0, 1)
-  )
-  message('Values of the Mean-based test statistic calculated.')
+  # nu_vals <- PermFDATest::nu_realizations(
+  #   full = FALSE, approxQ = approxQ, 
+  #   sample1 = samples$sample_1_f,
+  #   sample2 = samples$sample_2_f,
+  #   domain = c(0, 1)
+  # )
+  # message('Values of the Mean-based test statistic calculated.')
   
   # second: values for the Cramer von Mises test
   # and the objects necessary to calculate them
@@ -74,7 +75,7 @@ main_simu <- function(seed = task_seeds_int[i]) {
   
   # save t_stats for further processing
   t_stats <- list(samples = samples, 
-                  nu_vals = nu_vals$nu_hat, nu_real = nu_vals$nu_realized,
+                  #nu_vals = nu_vals$nu_hat, nu_real = nu_vals$nu_realized,
                   tau_vals = tau_vals$tau_hat, tau_real = tau_vals$tau_realized)
   saveRDS(
     object = t_stats,

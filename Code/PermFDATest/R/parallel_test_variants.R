@@ -52,12 +52,27 @@ nu_test_par <- function(cl, seeds, approxQ = NULL, sample1, sample2, domain = c(
     return(nu_hat)
   }
 
-  tstats <- parallel::clusterApply(
+  tstats <- unlist(parallel::clusterApply(
     cl = cl, x = seeds,
-    fun = ~ helper_func(seed = x, comb_data = comb_data, n_1 = n_1, n_2 = n_2)
-  )
+    fun = function(x){helper_func(seed = x, comb_data = comb_data, n_1 = n_1, n_2 = n_2)}
+  ))
 
-  return(tstats)
+  # determine mean functions of samples
+  mean_s1 <- sample1
+  mean_s2 <- sample2
+
+  # determine difference function of mean functions
+  diff_coefs <- mean_s2 - mean_s1
+  diff_func <- function(x) {
+    fourier_eval(x = x, coefs = diff_coefs, domain = domain)^2
+  }
+
+  # calculate nu_hat
+  nu_realized <- (n_1 + n_2) * integrate(
+    f = diff_func, lower = domain[1], upper = domain[2], subdivisions = 1000
+  )$value
+
+  return(list(nu_hat = nu_hat, nu_realized = nu_realized))
 }
 
 #' This function is aimed at the application for my master's thesis and is
@@ -119,7 +134,7 @@ tau_test_par <- function(cl, approxQ = NULL, sample1, sample2, domain = c(0, 1),
 
   for (i in 1:(n_1 + n_2)) {
     func_a <- comb_data[, i]
-    parallel::clusterExport(cl = cl, varlist = "func_a")
+    parallel::clusterExport(cl = cl, varlist = "func_a", envir=environment())
     weakly_bigger[i, ] <- unlist(
       parallel::clusterApply(
         cl = cl, x = 1:n_func,

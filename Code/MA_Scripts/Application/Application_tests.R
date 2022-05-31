@@ -37,10 +37,10 @@ w_func <- PermFDATest::w_func_construct_2(workday_coefficients, domain = c(0,1),
 CvM_rho <- PermFDATest::rho_construct(sample = workday_coefficients, factor = 2)
 
 tau_vals <- PermFDATest::tau_test_par(
-  full = FALSE, approxQ = approxQ,
+  cl = cl, approxQ = approxQ,
   sample1 = workday_coefficients,
   sample2 = saturday_coefficients,
-  type = "fourier", domain = c(0, 1), w_func = w_func, rho = CvM_rho,
+  domain = c(0, 1), w_func = w_func, rho = CvM_rho,
   u_sample_func = PermFDATest::u_norm, n_func = n_func
 )
 message('Values of the CvM test statistic calculated.')
