@@ -10,13 +10,13 @@
 
 #SBATCH --account=ag_ifs_liebl
 
-#SBATCH --job-name=MA_Simulation_3
+#SBATCH --job-name=MA_Simulation_persistence
 
 #SBATCH --output=txt_outputs/output%A%a.txt
 
 ###beginning of executable commands
 
-printf "Simulation 3 started. \n"
+printf "Persistence Simulation started. \n"
 
 module load R
 printf "R loaded \n"
@@ -24,7 +24,7 @@ printf "R loaded \n"
 now=$(date)
 printf "Starting Time: %s\n" "$now"
 
-Rscript simulation_3.R
+Rscript persistence_simulation.R
 
 now=$(date)
 printf "Stopping Time: %s\n" "$now"

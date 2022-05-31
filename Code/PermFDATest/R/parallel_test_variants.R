@@ -134,7 +134,7 @@ tau_test_par <- function(cl, approxQ = NULL, sample1, sample2, domain = c(0, 1),
 
   for (i in 1:(n_1 + n_2)) {
     func_a <- comb_data[, i]
-    parallel::clusterExport(cl = cl, varlist = "func_a", envir=environment())
+    parallel::clusterExport(cl = cl, varlist = "func_a", envir = environment())
     weakly_bigger[i, ] <- unlist(
       parallel::clusterApply(
         cl = cl, x = 1:n_func,

@@ -79,7 +79,7 @@ main_simu <- function(seed = task_seeds_int[i]) {
                   tau_vals = tau_vals$tau_hat, tau_real = tau_vals$tau_realized)
   saveRDS(
     object = t_stats,
-    file = paste0(output_path, "simulation_3/", toString(seed), "tstats.RDS")
+    file = paste0(output_path, "persistence_sim/", toString(seed), "tstats.RDS")
   )
 }
 
