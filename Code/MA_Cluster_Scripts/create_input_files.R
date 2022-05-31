@@ -4,7 +4,7 @@ set.seed(1234)
 input_path <- "Inputs/"
 output_path <- "Outputs/"
 # number of seeds / simulation runs
-n_seeds <- 1000
+n_seeds <- 100
 # generate seeds and save them as RDS object
 my_seeds <- sample(x = 1:10e5, size = n_seeds, replace = FALSE)
 saveRDS(object = my_seeds, file = paste0(input_path, "seeds.RDS"))
@@ -31,7 +31,7 @@ gen_sigma <- rep(x = 1, length.out = length(gen_grid))
 # generate shift vectors for simulations
 shift_param <- 0.5
 mean_shift <- seq(from = -shift_param, to = shift_param, length.out = length(gen_grid))^2 - shift_param^2
-rho_shift <- rep(x = -0.5, times = length(gen_grid))
+rho_shift <- rep(x = -0.2, times = length(gen_grid))
 sigma_shift <- seq(from = 0, to = 0.5, length.out = length(gen_grid))
 # generate comparison grid for CvM statistic
 comparison_grid <- seq(from = 0, to = 1, length.out = 101)
