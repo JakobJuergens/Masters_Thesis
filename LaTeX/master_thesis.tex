@@ -848,18 +848,25 @@ style=authoryear,
 			\begin{tabular}{lccccc}\toprule
 				\textbf{Test}	&$\left(\alpha_{\tau}, \alpha_{\nu}\right) $ &\textbf{Setting 1} &\textbf{Setting 2}	&\textbf{Setting 3} &\textbf{Setting 4}\\
 				\midrule
-				Means-Test		&$\alpha_{\nu} = 0.05$	& 0.058			& 0.519  	 & - & - \\
-				CvM-Test 		&$\alpha_{\tau} = 0.05$	& 0.04147313	& 0.1842943  & - & - \\
+				Means-Test		&$\alpha_{\nu} = 0.05$	& 0.058			& 0.519  	 & - & 0.06 \\
+				CvM-Test 		&$\alpha_{\tau} = 0.05$	& 0.04147313	& 0.1842943  & - & 0.1412253 \\
 				\midrule
-				Combined		& (0.04, 0.01)			& 0.04353598	& 0.3652623  & - & - \\
-								& (0.03, 0.02)			& 0.0527092		& 0.4280618  & - & - \\
-								& (0.025, 0.025)		& 0.05417252	& 0.4456977  & - & - \\
-								& (0.02, 0.03)			& 0.05297339	& 0.4585891  & - & - \\
-								& (0.01, 0.04)			& 0.05927385	& 0.4860989  & - & - \\
+				Combined		& (0.04, 0.01)			& 0.04353598	& 0.3652623  & - & 0.1255949 \\
+								& (0.03, 0.02)			& 0.0527092		& 0.4280618  & - & 0.1342909 \\
+								& (0.025, 0.025)		& 0.05417252	& 0.4456977  & - & 0.1385758 \\
+								& (0.02, 0.03)			& 0.05297339	& 0.4585891  & - & 0.1453606 \\
+								& (0.01, 0.04)			& 0.05927385	& 0.4860989  & - & 0.1214303 \\
 				\bottomrule
 			\end{tabular}
 			\caption{Empirical Rejection Probabilities}
 		\end{table}
+	
+	
+	
+	
+	
+	
+	
 	
 		\subsection{Simulation - Test for Persistence Alternatives}
 		Using simulation setting 3, it is possible to also test the proposed test for persistence alternatives from Section \ref{closed_persistence_test}. But due to computational constraints, this simulation does not follow the real test structure and shall instead serve as a heuristic for the real test's performance. Mainly the simulation differs from the proposed test in the following two ways to reduce computational cost while staying reasonably accurate in the proposed simulation setting.
