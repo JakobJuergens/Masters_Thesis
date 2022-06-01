@@ -46,7 +46,7 @@
 \contentsline {subsection}{\numberline {9.1}Data Cleaning and Preprocessing}{26}{subsection.9.1}%
 \contentsline {subsubsection}{\numberline {9.1.1}Removal of Mondays and Fridays}{26}{subsubsection.9.1.1}%
 \contentsline {subsubsection}{\numberline {9.1.2}Holidays}{26}{subsubsection.9.1.2}%
-\contentsline {subsubsection}{\numberline {9.1.3}Detrending and Deseasoning}{26}{subsubsection.9.1.3}%
+\contentsline {subsubsection}{\numberline {9.1.3}Detrending and Deseasoning}{27}{subsubsection.9.1.3}%
 \contentsline {subsection}{\numberline {9.2}Test from \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{28}{subsection.9.2}%
 \contentsline {section}{\numberline {10}Outlook}{29}{section.10}%
 \contentsline {subsection}{\numberline {10.1}Possible Further Simulations}{29}{subsection.10.1}%

@@ -31,7 +31,7 @@ gen_sigma <- rep(x = 1, length.out = length(gen_grid))
 # generate shift vectors for simulations
 shift_param <- 0.5
 mean_shift <- seq(from = -shift_param, to = shift_param, length.out = length(gen_grid))^2 - shift_param^2
-rho_shift <- rep(x = -0.2, times = length(gen_grid))
+rho_shift <- rep(x = -0.3, times = length(gen_grid))
 sigma_shift <- seq(from = 0, to = 0.5, length.out = length(gen_grid))
 # generate comparison grid for CvM statistic
 comparison_grid <- seq(from = 0, to = 1, length.out = 101)

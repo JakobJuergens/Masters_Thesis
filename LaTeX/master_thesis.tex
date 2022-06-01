@@ -815,7 +815,7 @@ style=authoryear,
 				  $$\mu_2(t) = x (x-1) \quad t \in \mathcal{T}$$
 			\item \textbf{Correlation Shift}\\
 			 	  The third setting violates the Null hypothesis by changing the correlation structure between neighboring observations. Here, observations are less persistent due to a lower, but still constant choice of the correlation parameter.
-			 	  $$\rho_2(t) = 0.3 \quad \forall t = 0.01, \dots, 1$$
+			 	  $$\rho_2(t) = 0.2 \quad \forall t = 0.01, \dots, 1$$
 			\item \textbf{Variance Shift}\\
 				  In the fourth simulation setting, the variance function is altered in the following way.
 				  $$\sigma_2(t) = 1 + 0.5t \quad \quad t \in \mathcal{T}$$
@@ -861,17 +861,11 @@ style=authoryear,
 			\caption{Empirical Rejection Probabilities}
 		\end{table}
 	
-	
-	
-	
-	
-	
-	
-	
 		\subsection{Simulation - Test for Persistence Alternatives}
 		Using simulation setting 3, it is possible to also test the proposed test for persistence alternatives from Section \ref{closed_persistence_test}. But due to computational constraints, this simulation does not follow the real test structure and shall instead serve as a heuristic for the real test's performance. Mainly the simulation differs from the proposed test in the following two ways to reduce computational cost while staying reasonably accurate in the proposed simulation setting.
 		\begin{enumerate}
-			\item 
+			\item The standardization step makes it necessary to perform the comparison between functions that is performed in the calculation of the Cram\'{e}r-von Mises test statistic in each permutation step. This massively increases the computational cost. Therefore, as a heuristic for the real test, these simulations are performed without a standardization step. However, a data generating process with a mean function $\mu(t) = 0$ and a point-wise variance function $\sigma(t) = 1$ is used.\\
+			Therefore, in expectation sample equivalents will share these characteristics. However, individual samples may not.
 		\end{enumerate}
 	
 		The results for different correlation parameters are given in the following tables. Again, the same reference process with $\rho_1(t) = 0.5$ generated the reference sample.

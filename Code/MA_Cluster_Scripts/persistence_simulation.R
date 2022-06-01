@@ -17,7 +17,7 @@ gen_rho <- inputs$gen_rho
 gen_sigma <- inputs$gen_sigma
 
 # set rho_shift manually to suit setting!
-rho_2 <- rep(0, times = length(gen_grid))
+rho_2 <- rep(-0.9, times = length(gen_grid))
 rho_shift <- rho_2 - gen_rho
 
 comparison_grid <- inputs$comparison_grid
