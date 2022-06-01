@@ -402,11 +402,12 @@ style=authoryear,
 					\end{equation*}
 				
 			\end{definition}
+			This function can be interpreted as a decider of whether a Null hypothesis is rejected. If $\tau(X) = 1$, the Null hypothesis is rejected, if $\tau(X) = 0$ it cannot be rejected, and if $\tau(X) = a$, the decision is randomized using a Bernoulli variable that is $1$ with probability $a$. 
 			Under Assumption \ref{rand_hypo}, it is possible to show that, given a test statistic $T = T(X)$, the resulting test $\phi$ has size $\alpha$.
 			\begin{equation}
 				\mathbb{E}_{P}\left[\phi(X)\right] = \alpha \quad \forall P \in \Omega_0
 			\end{equation}
-			
+			This effectively means, that a permutation test constructed in the described way, always has the correct specified size. However, the power against alternatives can be highly sensitive to both the sample sizes and the number of permutations that was used to derive the permutation distribution.			
 		
 			\cite{lehmann_testing_2005} explore the example of testing for the equality of the generating probability laws of two independent samples. This is precisely the relevant application for the permutation variant of the two-sample Cram\'{e}r-von Mises test that \cite{bugni_permutation_2021} extend to the setting of functional data. \\
 			
@@ -424,9 +425,12 @@ style=authoryear,
 		 
 			Number of Combinations: $\binom{m+n}{m}$\\
 			
-			For my implementation, I chose the latter variant.
+			For my implementation of the test described in \cite{bugni_permutation_2021}, I chose the latter variant and focused on distinct combinations if it was feasible to calculate the test statistic for all combinations. If this approach was infeasible due to the number of combinations, I resorted to randomly sampling permutations.\\
+			
 	
 		\subsection{Size and Power}
+		
+		\subsection{Asymptotic Properties}
 		
 	\section{Test by Bugni and Horowitz (2021)}\label{Bugni_Horowitz_2021}
 	
@@ -1024,6 +1028,7 @@ style=authoryear,
 		
 		\subsection{Potential Applications}
 			\paragraph{Application that has a more complex difference structure}
+			As explained in Section \ref{Application}, the chosen setting is suitable to apply the test, but it is more of a showcase then what this method would be used for in reality. Therefore, it would be interesting to apply the method and the variant for persistence alternatives to data that is more fitting. Two ideas that could motivate further extensions are audio curves such as speech recordings or curves describing movement of, e.g., an athlete during a 100m sprint.
 				\begin{itemize}
 					\item Audio-Curves
 					\item Movement-Curves
