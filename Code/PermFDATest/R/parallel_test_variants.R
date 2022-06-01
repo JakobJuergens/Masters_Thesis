@@ -52,14 +52,16 @@ nu_test_par <- function(cl, seeds, approxQ = NULL, sample1, sample2, domain = c(
     return(nu_hat)
   }
 
+  parallel::clusterExport(cl = cl, varlist = "comb_data", envir = environment())
+
   tstats <- unlist(parallel::clusterApply(
     cl = cl, x = seeds,
     fun = function(x){helper_func(seed = x, comb_data = comb_data, n_1 = n_1, n_2 = n_2)}
   ))
 
   # determine mean functions of samples
-  mean_s1 <- sample1
-  mean_s2 <- sample2
+  mean_s1 <- rowMeans(sample1)
+  mean_s2 <- rowMeans(sample2)
 
   # determine difference function of mean functions
   diff_coefs <- mean_s2 - mean_s1
@@ -72,7 +74,7 @@ nu_test_par <- function(cl, seeds, approxQ = NULL, sample1, sample2, domain = c(
     f = diff_func, lower = domain[1], upper = domain[2], subdivisions = 1000
   )$value
 
-  return(list(nu_hat = nu_hat, nu_realized = nu_realized))
+  return(list(nu_hat = tstats, nu_realized = nu_realized))
 }
 
 #' This function is aimed at the application for my master's thesis and is
@@ -128,19 +130,21 @@ tau_test_par <- function(cl, approxQ = NULL, sample1, sample2, domain = c(0, 1),
   )
   # determine fourier coefficients of comparison sample
   func_coefs <- coef_means + coef_errors
+  message('Random Functions Generated.')
   # compare all functions in comb_data with all functions in func_coefs (!)
   # create container for indicators
   weakly_bigger <- matrix(data = NA, nrow = ncol(comb_data), ncol = n_func)
 
+  parallel::clusterExport(cl = cl, varlist = "comb_data", envir = environment())
+
   for (i in 1:(n_1 + n_2)) {
-    func_a <- comb_data[, i]
-    parallel::clusterExport(cl = cl, varlist = "func_a", envir = environment())
+    message(paste0('Currently in function ', i, ' out of ', n_1 + n_2))
     weakly_bigger[i, ] <- unlist(
       parallel::clusterApply(
         cl = cl, x = 1:n_func,
         fun = function(x) {
           PermFDATest::func_comparison_fourier(
-            func_a = func_a, func_b = func_coefs[, x], domain = domain
+            func_a = comb_data[, i], func_b = func_coefs[, x], domain = domain
           )
         }
       )

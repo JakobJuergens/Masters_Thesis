@@ -55,8 +55,8 @@
 \contentsline {paragraph}{Simulation Settings where the Distribution of Fourier Coefficients is changed}{31}{subsection.10.1}%
 \contentsline {paragraph}{Simulations for Unbalanced Sample Sizes}{31}{subsection.10.1}%
 \contentsline {subsection}{\numberline {10.2}Potential Applications}{31}{subsection.10.2}%
-\contentsline {paragraph}{Application that has a more complex difference structure}{31}{subsection.10.2}%
-\contentsline {section}{\numberline {11}Bibliography}{32}{section.11}%
+\contentsline {paragraph}{Application that has a more complex difference structure}{32}{subsection.10.2}%
+\contentsline {section}{\numberline {11}Bibliography}{33}{section.11}%
 \contentsline {section}{\numberline {12}Appendix}{i}{section.12}%
 \contentsline {subsection}{\numberline {12.1}Informal Intuition}{i}{subsection.12.1}%
 \contentsline {subsection}{\numberline {12.2}Multiple Testing}{ii}{subsection.12.2}%

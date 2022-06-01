@@ -7,8 +7,8 @@ library(lubridate)
 cl <- parallel::makeForkCluster(parallel::detectCores())
 
 # set parameters
-approxQ <- 1000
-n_func <- 10000
+approxQ <- 500
+n_func <- 4000
 seeds <- sample(1:10e5, size = approxQ)
 
 # read in data objects

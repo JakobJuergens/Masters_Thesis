@@ -50,7 +50,10 @@ fourier_coef_mean <- function(w_func, basis_func, domain = c(0, 1)) {
     f = prod_func,
     lower = domain[1],
     upper = domain[2],
-    method = "hcubature"
+    method = "hcubature",
+    # these tolerances are currently hardcoded... Adjust in future iterations
+    absTol = 1e-3,
+    relTol = 1e-2
   )$integral
   # return appropriate mean object
   return(coef_mean)
