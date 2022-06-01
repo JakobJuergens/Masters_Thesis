@@ -258,21 +258,29 @@ style=authoryear,
 			\end{definition}
 		
 		\subsection{Probability Measures on $\mathbb{L}_2$}\label{prob_measures_l2}
-			In later parts of this thesis, it will be important to evaluate expectations of a functional on $\mathbb{L}_2$. For this to make sense, it is necessary to explore how we can define probability measures on function spaces. However, due to the way probability measures on $\mathbb{L}_2[0,1]$ are constructed in the paper, I will restrict my description to probability measures that are induced by existing random functions. Assume therefore that $Z(t)$ is a random function realizing in $\mathbb{L}_2[0,1]$. Then, $Z(t)$ can be expressed in terms of a deterministic basis of $\mathbb{L}_2[0,1]$, e.g. the Fourier basis, in the following way.
+			In later parts of this thesis, it will be important to evaluate expectations of a functional on $\mathbb{L}_2$. For this to make sense, it is necessary to explore how we can define probability measures on function spaces. However, due to the way probability measures on $\mathbb{L}_2[0,1]$ are constructed in the paper, I will restrict my description to probability measures that are induced by existing random functions. Assume therefore that $Z(t)$ is a random function realizing in $\mathbb{L}_2[0,1]$ that induces a measure $\mu$. Then, $Z(t)$ can be expressed in terms of a deterministic basis of $\mathbb{L}_2[0,1]$, e.g. the Fourier basis, in the following way.
 			\begin{equation}
 				Z(t) = \sum_{k = 1}^{\infty} b_k \psi_k(t) \quad \text{s.t.} \quad \sum_{k = 1}^{\infty} b_k^2 \leq \infty \quad \text{a.s.}
 			\end{equation}
-			Here, the Fourier coefficients $b_k$ are a sequence of scalar random variables that are square summable with probability one. The latter property is needed to ensure square summability of the corresponding random function. The random function is therefore fully described by the joint distribution of a countably infinite set of scalar random variables $b_k$.\\
+			Here, the Fourier coefficients $b_k$ are a sequence of scalar random variables that are square summable with probability one. The latter property is needed to ensure square summability of the corresponding random function. The random function is therefore fully described by distribution of a countably infinite, almost surely square-summable sequence of scalar random variables $b_k$. The measure $\mu$ associated with the random variable is therefore equivalent to the measure on the countably infinite space, that the sequence of Fourier coefficients realizes in.\\
+			The theory of random sequences is out of the scope of this thesis. However, to understand the principle of how a random variable induces a measure, it suffices to look at a rather basic fact from probability theory. Paraphrasing from \cite{bauer_probability_2011}, let $X:\left(\Omega, \mathcal{A}, \mathcal{P}\right) \rightarrow \left(\Omega', \mathcal{A}'\right)$, then a measure on $\mathcal{A}'$ is induced as shown in Equation \ref{induced_measure}.
+			\begin{equation}\label{induced_measure}
+				\mathcal{P}_X(B) = \mathcal{P}(X \in B) = \mathcal{P}(X^{-1}(B)) \quad \forall B \in \mathcal{A}'
+			\end{equation}
 			
-			As a more general treatment of these aspects would be mathematically very involved, this section shall thus serve to give intuition. For readers that are interested in a more detailed mathematical analysis of the described testing procedure, \cite{gihman_theory_2004} and \cite{skorohod_integration_1974} give a rigorous treatment of the necessary theory on measures, probabilities and integration in Hilbert spaces. 
+			For the purposes of this paper, it is interesting to look at the relationship between the measure induced by the infinite sum shown above and the measure induced by its finite counterpart shown below.
+			\begin{equation}
+				Z_K(t) = \sum_{k = 1}^{K} b_k \psi_k(t)
+			\end{equation}
+			\cite{bugni_goodness--fit_2009} show that the measure induced by this finite version $\mu_K$ converges in an appropriate sense to the measure induced by the infinite version. Here, appropriately means, that integrals with respect to the approximation, henceforth called $\mu_K$, converge to their corresponding integral evaluated with respect to $\mu$.\\ {\color{red} Hier weiterschreiben.}\\
 			
-			\begin{theorem}[Kolmogorov Extension Theorem]
-				content
-			\end{theorem}
+			As a more general treatment of these aspects would be mathematically very involved, this section shall primarily serve to give intuition. For readers that are interested in a more detailed mathematical analysis of the described testing procedure, \cite{gihman_theory_2004} and \cite{skorohod_integration_1974} give a rigorous treatment of the necessary theory on measures, probabilities and integration in Hilbert spaces. 
 		
 		\subsection{Functional Integration on $\mathbb{L}_2$}
 		
-			In one of the test statistics used in \cite{bugni_permutation_2021}, it is necessary to integrate over a function space. Therefore, it is necessary to explore the ideas of functional integration and integration on separable Hilbert spaces.
+			In one of the test statistics used in \cite{bugni_permutation_2021}, it is necessary to integrate over a function space. Therefore, it is necessary to explore the ideas of functional integration and integration on separable Hilbert spaces. However, as the test statistic is in reality always calculated using Monte-Carlo integration, it is more useful to give a brief theoretical overview of functional integration and to instead introduce Monte-Carlo method with respect to some measure induced by a random variable.
+			As in the previous section, an in-depth treatment of integration on Hilbert spaces is provided in \cite{skorohod_integration_1974} and could be used to derive theoretical properties of the test in a more general setting.
+			
 			\begin{equation}
 				\int_{\mathbb{L}_2(\mathcal{I})} G\left[f\right] \left[Df\right] = \int_{-\infty}^{\infty}\dots\int_{-\infty}^{\infty} G\left[f\right] \prod_{x} \mathrm{d}f(x)
 			\end{equation}
@@ -282,7 +290,7 @@ style=authoryear,
 				\int_{\mathbb{L}_2(\mathcal{I})} G\left[f\right] \left[Df\right] = \int_{-\infty}^{\infty}\dots\int_{-\infty}^{\infty} G\left(f_1, f_2, \dots\right) \prod_{n} \mathrm{d}f_n
 			\end{equation}
 		
-			An in-depth treatment of integration on Hilbert spaces is available in \cite{skorohod_integration_1974}.
+			
 		
 	\section{Cram\'{e}r-von Mises Tests}\label{CvM_Tests}
 		In applied econometrics, it is often interesting to ask whether the same stochastic process generated the observations in two distinct data sets. In an experimental setting, we could ask whether a treatment assigned at random to a subset of agents changed the distribution of an outcome variable. 
@@ -560,7 +568,7 @@ style=authoryear,
 			
 			Additionally, the choice of the sequence $(\rho)_i$ is of importance. The authors do not recommend a procedure for choosing these coefficients, but it seems reasonable to choose parameters that lie in the vicinity of the standard deviations for the Fourier coefficients of the reference sample. This method might be a reasonable possibility to choose these parameters dependent on the data.\\
 			
-			In \cite{bugni_goodness--fit_2009}, the authors show that the approximation of the probability measure, which is induced by the approximation of the random variable in Equation \ref{truncation}, converges appropriately to the probability measure induced by the random variable in Equation \ref{non_truncated}. Here, appropriately means, that integrals with respect to the approximation, henceforth called $\mu_K$, converge to their corresponding integral evaluated with respect to $\mu$.\\
+			In \cite{bugni_goodness--fit_2009}, the authors show that the approximation of the probability measure, which is induced by the approximation of the random variable in Equation \ref{truncation}, converges appropriately to the probability measure induced by the random variable in Equation \ref{non_truncated}. 
 			
 			At this point it is again interesting to look at the convention that two elements of $\mathbb{L}_2(\mathcal{I})$ are distinct even if they differ only on a nonempty set of Lebesgue-measure zero. One problem that this convention entails is the fact that the Fourier basis is an almost everywhere basis of $\mathbb{L}_2\left(\mathcal{I}\right)$ as shown by \cite{carleson_convergence_1966}. However, in many cases point-wise convergence of a sum as shown in Equation \ref{non_truncated} is not fulfilled as for example {\color{red} Hier passenden Verweis einfuegen!!!}. In more basic terms, this implies that using the Fourier basis, it is impossible to construct some functions in $\mathbb{L}^{*}_2\left(\mathcal{I}\right)$ even using a non-truncated representation as shown in Equation \ref{non_truncated}.			
 			In a typical scenario where we would use $\mathbb{L}_2\left(\mathcal{I}\right)$, so only their equivalence classes of the functions, this does not pose a problem. 
@@ -658,7 +666,7 @@ style=authoryear,
 		\subsection{Modified Principle}
 		
 	\section{Test for Persistence Alternatives}\label{closed_persistence_test}
-		If we use the idea described in the previous section for the test introduced in \cite{bugni_permutation_2021}, this could lead to the following test for differences in the persistence structure of the data generating processes. 
+		One particularly interesting potential application for the Cram\'{e}r-von Mises type test presented in \cite{bugni_permutation_2021}, is a slight modification leading to the following test for differences in the persistence structure of the data generating processes. 
 		There are already many tests focusing on differences in the mean functions of processes. A non-exhaustive list of examples can be found in the following publications.
 		\begin{itemize}
 			\item \cite{lee_two_2015}
@@ -867,6 +875,8 @@ style=authoryear,
 			\item The standardization step makes it necessary to perform the comparison between functions that is performed in the calculation of the Cram\'{e}r-von Mises test statistic in each permutation step. This massively increases the computational cost. Therefore, as a heuristic for the real test, these simulations are performed without a standardization step. However, a data generating process with a mean function $\mu(t) = 0$ and a point-wise variance function $\sigma(t) = 1$ is used.\\
 			Therefore, in expectation sample equivalents will share these characteristics. However, individual samples may not.
 		\end{enumerate}
+		Due to this concession to limited computational resources the following simulation results could potentially overstate the power of the test against alternatives as described above. This is caused by potential differences in the sample mean and point-wise sample variance present in the permuted samples that would have been removed by standardization. 
+		However, in the proposed test structure the possibility to specifically test for alternatives in the persistence structure is a significant advantage.\\
 	
 		The results for different correlation parameters are given in the following tables. Again, the same reference process with $\rho_1(t) = 0.5$ generated the reference sample.
 		\begin{table}[h!]
@@ -905,7 +915,8 @@ style=authoryear,
 			\label{electricity_demand}
 		\end{figure}
 	
-		The question I want to study with the method presented in this thesis is whether electricity demand on working days and weekends can be seen as if they were generated by the same stochastic process. As this problem does not have the structure that an experiment as described in \cite{bugni_permutation_2021} possesses, a few problems have to be addressed before using the procedure. These adjustments are described below and some details are substantiated in Appendix \ref{Application_Appendix}.
+		The question I want to study with the method presented in this thesis is whether electricity demand on working days and weekends can be seen as if they were generated by the same stochastic process. However, due to information obtained during the data cleaning step, that indicates a violation of the i.i.d. assumption, the observations for the weekend will be limited to Saturdays. \\
+		As this problem does not have the structure that an experiment as described in \cite{bugni_permutation_2021} possesses, a few problems have to be addressed before using the procedure. These adjustments are described below and some details are substantiated in Appendix \ref{Application_Appendix}.
 	
 		\subsection{Data Cleaning and Preprocessing}
 			\subsubsection{Removal of Mondays and Fridays}
@@ -954,7 +965,8 @@ style=authoryear,
 				\caption{Estimates for the weekdays (Sunday as baseline)}
 				\label{estimates_weekdays}
 			\end{figure}
-			This diagram already hints at a considerable mean shift between the working days and the weekend. As these estimates also hint at a considerable difference between Saturdays and Sundays, it could be advisable to treat them as non-identically distributed. Therefore, a comparison between Saturdays on the one hand and Tuesdays, Wednesdays and Thursdays on the other might be better suited for the test procedure.
+			This diagram already hints at a considerable mean shift between the working days and the weekend. As these estimates also hint at a considerable difference between Saturdays and Sundays, it could be advisable to treat them as non-identically distributed. Therefore,the application is limited to a comparison of working days and Saturdays as the results of the regression provide clear evidence against the assumption that Saturday and Sunday can be seen as if they were generated by the same random variable.
+			
 			
 		\subsection{Test from \cite{bugni_permutation_2021}}
 			After cleaning the data as described in the previous section, we can now apply the method from \cite{bugni_permutation_2021}.
