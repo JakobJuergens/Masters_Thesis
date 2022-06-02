@@ -863,18 +863,19 @@ style=authoryear,
 			\begin{tabular}{lccccc}\toprule
 				\textbf{Test}	&$\left(\alpha_{\tau}, \alpha_{\nu}\right) $ &\textbf{Setting 1} &\textbf{Setting 2}	&\textbf{Setting 3} &\textbf{Setting 4}\\
 				\midrule
-				Means-Test		&$\alpha_{\nu} = 0.05$	& 0.058			& 0.519  	 & - & 0.06 \\
-				CvM-Test 		&$\alpha_{\tau} = 0.05$	& 0.04147313	& 0.1842943  & - & 0.1412253 \\
+				Means-Test		&$\alpha_{\nu} = 0.05$	& 0.058			& 0.519  	 & 0.057	  & 0.057 		\\
+				CvM-Test 		&$\alpha_{\tau} = 0.05$	& 0.04147313	& 0.1842943  & 0.09938171 & 0.1350278	\\
 				\midrule
-				Combined		& (0.04, 0.01)			& 0.04353598	& 0.3652623  & - & 0.1255949 \\
-								& (0.03, 0.02)			& 0.0527092		& 0.4280618  & - & 0.1342909 \\
-								& (0.025, 0.025)		& 0.05417252	& 0.4456977  & - & 0.1385758 \\
-								& (0.02, 0.03)			& 0.05297339	& 0.4585891  & - & 0.1453606 \\
-								& (0.01, 0.04)			& 0.05927385	& 0.4860989  & - & 0.1214303 \\
+				Combined		& (0.04, 0.01)			& 0.04353598	& 0.3652623  & 0.09063807 & 0.1272009 	\\
+								& (0.03, 0.02)			& 0.0527092		& 0.4280618  & 0.08540022 & 0.121842 	\\
+								& (0.025, 0.025)		& 0.05417252	& 0.4456977  & 0.08476733 & 0.1137233 	\\
+								& (0.02, 0.03)			& 0.05297339	& 0.4585891  & 0.07644395 & 0.1093622 	\\
+								& (0.01, 0.04)			& 0.05927385	& 0.4860989  & 0.06362453 & 0.1001554 	\\
 				\bottomrule
 			\end{tabular}
 			\caption{Empirical Rejection Probabilities}
 		\end{table}
+		Even though these rejection frequencies seem low at first, one has to keep in mind the magnitude of the violation of the Null hypothesis and the small sample size. Looking at Figure \ref{settings}, differences between the processes are not particularly stark visually and a low power therefore somewhat expected. Additionally, the power of permutation tests is highly dependent on the sample size of the underlying samples. Therefore, a rather small sample size of 20 as used in these simulations justifies the rejection frequencies.  It would be interesting to repeat these simulations for a number of different sample sizes as this could give a more precise idea of the context in which this procedure has higher power.
 	
 		\subsection{Simulation - Test for Persistence Alternatives}
 		Using simulation setting 3, it is possible to also test the proposed test for persistence alternatives from Section \ref{closed_persistence_test}. But due to computational constraints, this simulation does not follow the real test structure and shall instead serve as a heuristic for the real test's performance. Mainly the simulation differs from the proposed test in the following two ways to reduce computational cost while staying reasonably accurate in the proposed simulation setting.
@@ -904,9 +905,9 @@ style=authoryear,
 			\begin{tabular}{lcccccc}\toprule
 				$\alpha_{\tau}$ &$\rho_2(t) = 0$ &$\rho_2(t) = 0.1$ &$\rho_2(t) = 0.3$	&$\rho_2(t) = 0.5$ &$\rho_2(t) = 0.7$ &$\rho_2(t) = 0.9$\\
 				\midrule
-				$0.05$	& -	& -  & - & - & - & - \\
-				$0.01$ & -	& -  & - & - & - & - \\
-				$0.001$	& -	& -  & - & - & - & - \\
+				$0.05$	& 0.250		& -  & - & 0.0415 & - & - \\
+				$0.01$ 	& 0.119		& -  & - & 0.0104 & - & - \\
+				$0.001$	& 0.0492	& -  & - & 0.00261 & - & - \\
 				\bottomrule
 			\end{tabular}
 			\caption{Empirical Rejection Probabilities}
@@ -1033,13 +1034,11 @@ style=authoryear,
 		\paragraph{Simulations for Unbalanced Sample Sizes}
 		
 		\subsection{Potential Applications}
-			As explained in Section \ref{Application}, the chosen setting is suitable to apply the test, but it is more of a showcase then what this method would be used for in reality. Therefore, it would be interesting to apply the method and the variant for persistence alternatives to data that is more fitting.
-			\paragraph{Application that has a more complex difference structure}
-			 Two ideas that could motivate further extensions are audio curves such as speech recordings or curves describing movement of, e.g., an athlete during a 100m sprint.
-				\begin{itemize}
-					\item Audio-Curves
-					\item Movement-Curves
-				\end{itemize}
+			As explained in Section \ref{Application}, the chosen setting is suitable to apply the test, but it is more of a showcase then what this method would be used for in reality. Therefore, it would be interesting to apply the method and the variant for persistence alternatives to data that is more fitting. Some examples that could provide interesting applications for this method are listed in the following.
+			\begin{itemize}
+				\item \textbf{Audio-Curves} and specifically speech recordings are a typical scenario for functional data. The tests described in this thesis could be used to compare samples of recordings of spoken words. One interesting application could be to determine whether a set of recordings was manipulated when there is an appropriate reference sample that is known to be authentic. Especially in the context of computer generated speech imitation, sometimes known as voice deepfakes, a test that could reliably distinguish between original and imitated speech recordings could be highly relevant.
+				\item \textbf{Movement-Curves} such as for example curves describing the movement of a runner's legs during a 100m sprint might also be an interesting field for potential applications. Given a reference sample of movement curves of runners with a specific alteration to their movement due to e.g. a sickness, the test might be useful in the context of medical diagnostics.
+			\end{itemize}
 		
 		
 	
