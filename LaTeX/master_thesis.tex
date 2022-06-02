@@ -272,25 +272,35 @@ style=authoryear,
 			\begin{equation}
 				Z_K(t) = \sum_{k = 1}^{K} b_k \psi_k(t)
 			\end{equation}
-			\cite{bugni_goodness--fit_2009} show that the measure induced by this finite version $\mu_K$ converges in an appropriate sense to the measure induced by the infinite version. Here, appropriately means, that integrals with respect to the approximation, henceforth called $\mu_K$, converge to their corresponding integral evaluated with respect to $\mu$.\\ {\color{red} Hier weiterschreiben.}\\
+			\cite{bugni_goodness--fit_2009} show that the measure $\mu_K$ induced by this finite version converges in the following sense to the measure $\mu$ induced by the infinite version. Let $A$ be a $\mu$-measurable subset of $\mathbb{L}_2[0,1]$. Then $\forall a \in A$, there is a unique countably infinite sequence of Fourier coefficients $b(a) = (b_k(a))_{k \in \mathbb{N}}$ given by $b_k(a) = \int_{0}^{1} a(t) \psi_k(t) \mathrm{d}t$. As $a \in \mathbb{L}_2[0,1]$ these coefficients necessarily fulfill $\sum_{k = 1}^{\infty} b_k^2 < \infty$. Using the following definitions,
+			\begin{itemize}
+				\item $\textbf{B} = \left\{b(a) \ \vert \ a \in A\right\}$
+				\item $\textbf{B}_K = \left\{\left(b_1, \dots, b_K \right) \ \vert \ \exists b' \in B \  \forall k = 1, \dots, K \quad b_k = b'_k \right\}$
+				\item $\textbf{A}_K = \left\{ \sum_{i = 1}^{\infty} b_k \psi_k(t) \ \vert \ \left(b_1, \dots, b_K \right) \in \textbf{B}_K \quad \text{and} \quad \sum_{k = 1}^{\infty} b_k^2 < \infty \right\}$
+			\end{itemize}
+			the authors show that for any $A$ in the Borel sigma field of subsets of $\mathbb{L}_2[0,1]$, the following condition holds, where $\mathcal{P}$ denotes the probability measure associated with $\mu$.
+			\begin{equation}
+				\lim_{K \rightarrow \infty} \mathcal{P}(\textbf{A}_K) = \mathcal{P}(\textbf{A})
+			\end{equation}
+			In later steps of this thesis, this argument allows us to use a truncation of the basis in the construction of a measure at a reasonably high truncation parameter as integrals with respect to the  measure converge to their counterpart induced by the random variable constructed using a non-truncated basis as the truncation parameter goes to infinity.
+			\begin{equation}
+				\lim_{K \rightarrow \infty} \int_{\mathbb{L}_2(\mathcal{I})} \mathcal{F}(z) \mathrm{d}\mu_K = \int_{\mathbb{L}_2(\mathcal{I})} \mathcal{F}(z) \mathrm{d}\mu
+			\end{equation}
 			
 			As a more general treatment of these aspects would be mathematically very involved, this section shall primarily serve to give intuition. For readers that are interested in a more detailed mathematical analysis of the described testing procedure, \cite{gihman_theory_2004} and \cite{skorohod_integration_1974} give a rigorous treatment of the necessary theory on measures, probabilities and integration in Hilbert spaces. 
 		
-		\subsection{Functional Integration on $\mathbb{L}_2$}
+		\subsection{Functional Integration on $\mathbb{L}_2$}\label{Integration}
 		
-			In one of the test statistics used in \cite{bugni_permutation_2021}, it is necessary to integrate over a function space. Therefore, it is necessary to explore the ideas of functional integration and integration on separable Hilbert spaces. However, as the test statistic is in reality always calculated using Monte-Carlo integration, it is more useful to give a brief theoretical overview of functional integration and to instead introduce Monte-Carlo method with respect to some measure induced by a random variable.
-			As in the previous section, an in-depth treatment of integration on Hilbert spaces is provided in \cite{skorohod_integration_1974} and could be used to derive theoretical properties of the test in a more general setting.
-			
-			\begin{equation}
-				\int_{\mathbb{L}_2(\mathcal{I})} G\left[f\right] \left[Df\right] = \int_{-\infty}^{\infty}\dots\int_{-\infty}^{\infty} G\left[f\right] \prod_{x} \mathrm{d}f(x)
-			\end{equation}
-		
-			If a representation in terms of an orthogonal functional basis is possible:
+			In one of the test statistics used in \cite{bugni_permutation_2021}, it is necessary to integrate over a function space. Therefore, it is necessary to explore the ideas of functional integration and integration on separable Hilbert spaces. 
+			The formal definition of a functional integral over the functional $G[f]$ over some separable Hilbert space of functions is given as follows. 
 			\begin{equation}
 				\int_{\mathbb{L}_2(\mathcal{I})} G\left[f\right] \left[Df\right] = \int_{-\infty}^{\infty}\dots\int_{-\infty}^{\infty} G\left(f_1, f_2, \dots\right) \prod_{n} \mathrm{d}f_n
 			\end{equation}
 		
-			
+			However, as the test statistic is in reality always calculated using Monte-Carlo integration, it is more useful to give a brief theoretical overview of functional integration and to instead introduce Monte-Carlo method with respect to some measure induced by a random variable. Similar to the more general concept of Monte-Carlo simulation, Monte-Carlo integration relies on randomness to approximate an object that might be difficult to evaluate exactly.\\
+			For simplicity, assume that we want to approximate a 
+		
+			As in the previous section, an in-depth treatment of integration on Hilbert spaces is out of the scope of this thesis. However, a detailed overview on integration on Hilbert spaces is given in \cite{skorohod_integration_1974} and could be used to derive theoretical properties of the test in a more general setting.
 		
 	\section{Cram\'{e}r-von Mises Tests}\label{CvM_Tests}
 		In applied econometrics, it is often interesting to ask whether the same stochastic process generated the observations in two distinct data sets. In an experimental setting, we could ask whether a treatment assigned at random to a subset of agents changed the distribution of an outcome variable. 
@@ -511,7 +521,12 @@ style=authoryear,
 				\tau_{n,m} = (n+m) \int_{\mathbb{L}_2(\mathcal{I})}\left[\hat{F}_X(z) - \hat{F}_Y(z)\right]^2 \mathrm{d} \mu(z)
 			\end{equation}
 		
-			{\color{red} Explain Monte-Carlo Integration here as it is important for the implementation in the package.}
+			As algebraic functional integration is not suitable for this testing procedure due to the structure of the underlying objects, the authors use Monte-Carlo integration as explained in Section \ref{Integration} for the approximation of this integral. To perform the test, it is therefore necessary to choose a parameter $L$ that determines the number of functions $\left\{Z_l \ \vert \ l = 1, \dots, L\right\}$ that are used to approximate the value of $\tau_{n,m}$ by the following equation.
+			\begin{equation}
+				\hat{\tau}_{n,m} = \frac{n+m}{L} \sum_{l = 1}^{L} \left[\hat{F}_X(Z_l) - \hat{F}_Y(Z_l)\right]^2
+			\end{equation}
+			These functions are drawn from a random function associated with the chosen measure $\mu$ and their construction is explained in more detail in Section \ref{mu}.
+			 {\color{red} Hier weiterschreiben}
 		
 			Critical values for Permutation Test Statistic
 			\begin{equation}
@@ -575,9 +590,11 @@ style=authoryear,
 			
 			Additionally, the choice of the sequence $(\rho_k)_{k \in \mathbb{N}}$ is of importance. The authors do not recommend a procedure for choosing these coefficients, but it seems reasonable to choose parameters that lie in the vicinity of the standard deviations for the Fourier coefficients of the reference sample. This method might be a reasonable possibility to choose these parameters dependent on the data.\\
 			
-			In \cite{bugni_goodness--fit_2009}, the authors show that the approximation of the probability measure, which is induced by the approximation of the random variable in Equation \ref{truncation}, converges appropriately to the probability measure induced by the random variable in Equation \ref{non_truncated}. 
+			In \cite{bugni_goodness--fit_2009}, the authors show that the approximation of the probability measure, which is induced by the approximation of the random variable in Equation \ref{truncation}, converges appropriately to the probability measure induced by the random variable in Equation \ref{non_truncated}. {\color{red} Hier weiterschreiben}\\
 			
-			At this point it is again interesting to look at the convention that two elements of $\mathbb{L}_2(\mathcal{I})$ are distinct even if they differ only on a nonempty set of Lebesgue-measure zero. One problem that this convention entails is the fact that the Fourier basis is an almost everywhere basis of $\mathbb{L}_2\left(\mathcal{I}\right)$ as shown by \cite{carleson_convergence_1966}. However, in many cases point-wise convergence of a sum as shown in Equation \ref{non_truncated} is not fulfilled as for example {\color{red} Hier passenden Verweis einfuegen!!!}. In more basic terms, this implies that using the Fourier basis, it is impossible to construct some functions in $\mathbb{L}^{*}_2\left(\mathcal{I}\right)$ even using a non-truncated representation as shown in Equation \ref{non_truncated}.			
+			At this point it is again interesting to look at the convention that two elements of $\mathbb{L}_2(\mathcal{I})$ are distinct even if they differ only on a nonempty set of Lebesgue-measure zero. One problem that this convention entails is the fact that the Fourier basis is an almost everywhere basis of $\mathbb{L}_2\left(\mathcal{I}\right)$ as shown by \cite{carleson_convergence_1966}. However, in many cases point-wise convergence of a sum as shown in Equation \ref{non_truncated} is not fulfilled. This is simple to see for any function that does not have identical values on both sides of its domain. {\color{red} Hier weiterschreiben}\\
+			
+			In more basic terms, this implies that using the Fourier basis, it is impossible to construct some functions in $\mathbb{L}^{*}_2\left(\mathcal{I}\right)$ even using a non-truncated representation as shown in Equation \ref{non_truncated}.			
 			In a typical scenario where we would use $\mathbb{L}_2\left(\mathcal{I}\right)$, so only their equivalence classes of the functions, this does not pose a problem. 
 			This in turn implies that a probability measure that is constructed as shown in the previous section cannot give positive weight to many functions in the space $\mathbb{L}_2(\mathcal{I})$ if we use the convention used by the authors. Namely, for any function in $\mathbb{L}_2(\mathcal{I})$ for which the Fourier series fails to converge point-wise, we cannot assign a positive probability. This in turn could be a potential problem for the method described in the paper, if this is necessary for its working principle.\\
 			
@@ -1025,19 +1042,18 @@ style=authoryear,
 			\paragraph{Simulations comparing choices of $w(t)$ and  $\left(\rho_i\right)_{i = 1, \dots, K}$\\}
 			In this thesis I only perform simulations for one intuitive choice of $w(t)$ and $\left(\rho_i\right)_{i = 1, \dots, K}$. It seems reasonable to assume that these parameter choices could have a significant impact on the performance of the method and it would therefore be interesting to compare different choices in a structured framework.
 			
-			\paragraph{Simulation Settings where the Distribution of Fourier Coefficients is changed}
-				\begin{itemize}
-					\item Use dgp similar to the way we construct the measure (draw fourier coefficients from some distribution)
-					\item Same mean for fourier coefficients, but different distribution of error terms
-				\end{itemize}
+			\paragraph{Less restrictive Distributions of Fourier Coefficients\\}
+			The measures constructed as part of the Cram\'{e}r-von Mises type test described in this thesis drew their Fourier coefficients using independently distributed error terms. Even though this leads to a convenient implementation, using measures induced by random variables generated using error terms with a more general dependence structure might be beneficial to increase the power against specific alternatives. It would therefore be interesting to study the influence on the measure on the power of the test in more general settings both from a theoretical perspective and using simulations. 
 		
-		\paragraph{Simulations for Unbalanced Sample Sizes}
+			\paragraph{Simulations for Unbalanced Sample Sizes\\}
+			The simulations in this thesis only dealt with settings in which both the reference sample and the second sample contained the same number of curves. Even though there is no obvious theoretical reason for unbalanced sample sizes to influence the power of the test meaningfully, it would be interesting to study settings with unbalanced sample sizes in further simulations.		
 		
 		\subsection{Potential Applications}
 			As explained in Section \ref{Application}, the chosen setting is suitable to apply the test, but it is more of a showcase then what this method would be used for in reality. Therefore, it would be interesting to apply the method and the variant for persistence alternatives to data that is more fitting. Some examples that could provide interesting applications for this method are listed in the following.
 			\begin{itemize}
-				\item \textbf{Audio-Curves} and specifically speech recordings are a typical scenario for functional data. The tests described in this thesis could be used to compare samples of recordings of spoken words. One interesting application could be to determine whether a set of recordings was manipulated when there is an appropriate reference sample that is known to be authentic. Especially in the context of computer generated speech imitation, sometimes known as voice deepfakes, a test that could reliably distinguish between original and imitated speech recordings could be highly relevant.
+				\item \textbf{Audio-Curves} and specifically speech recordings are a typical scenario for functional data. The tests described in this thesis could be used to compare samples of recordings of spoken words. One interesting application could be to determine whether a set of recordings was manipulated when there is an appropriate reference sample that is known to be authentic. Especially in the context of computer generated speech imitation, sometimes known as voice deep-fakes, a test that could reliably distinguish between original and imitated speech recordings could be highly relevant.
 				\item \textbf{Movement-Curves} such as for example curves describing the movement of a runner's legs during a 100m sprint might also be an interesting field for potential applications. Given a reference sample of movement curves of runners with a specific alteration to their movement due to e.g. a sickness, the test might be useful in the context of medical diagnostics.
+				\item \textbf{}
 			\end{itemize}
 		
 		
