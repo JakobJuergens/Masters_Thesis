@@ -98,9 +98,10 @@ style=authoryear,
 		The main contribution of this thesis is a variant of the original test with the goal to identify specific violations of the null hypothesis relating to the persistence of the data generating processes. This variant of the original test is presented in Section \ref{variant}.
 		Section \ref{Simulation_Study} presents a set of simulations exploring the properties of the original test and shows a heuristic simulation to motivate the proposed extension. 
 		Section \ref{Application} applies the test from \cite{bugni_permutation_2021} to half-hourly electricity demand data from Adelaide.
-		Finally, Section \ref{Outlook} gives an Outlook on possible further extensions of the underlying idea, addresses some problems and shortcomings of the presented results and outlines potential simulations that could be performed to better understand the properties of the procedures described in this thesis.\\
+		Finally, Section \ref{Outlook} gives an Outlook on possible further extensions of the underlying idea, addresses some problems and shortcomings of the presented results and outlines potential simulations that could be performed to better understand the properties of the procedures described in this thesis.
 		
-		Additionally, Appendix \ref{Intuition} gives a very informal description of the test scenario and the underlying idea of the test. It shall serve as a primer for readers without prior experience in functional data analysis and permutation testing. 
+		Two additional aspects, that I want to shine light on are the following. First, all code and data that was used in this thesis is available in the following public GitHub repository: \url{https://github.com/JakobJuergens/Masters_Thesis}. 
+		Second, Appendix \ref{Intuition} gives a very informal description of the test scenario and the underlying idea of the test. It shall serve as a primer for readers without prior experience in functional data analysis and permutation testing. 
 	
 	\section{Functional Data Analysis}\label{FDA}
 		The overarching concept of functional data analysis is to incorporate observations that are functional in nature. In this context, a functional observation can often be understood as a smooth curve. A classical example of this is shown in Figure \ref{growth_curves}. It presents data provided in the R package \textit{fda}\footcite{fda} and shows growth curves of 93 humans up to the age of 18.
@@ -174,62 +175,11 @@ style=authoryear,
 				\begin{equation}
 					\int_{A} \left[f(t)\right]^2\mathrm{d}t < \infty
 				\end{equation}
-				To give the space the properties that are typically desired in Functional data analysis, it is typically defined as a space of equivalence classes, where to functions are seen as equivalent if they differ at most on a set of Lebesgue-measure zero. The Hilbert space of all square integrable functions on $\mathcal{I}$ is denoted by $\mathbb{L}_2(\mathcal{I})$.
+				To give the space the properties that are typically desired in Functional data analysis, it is typically defined as a space of equivalence classes, where to functions are seen as equivalent if they differ at most on a set of Lebesgue-measure zero. The Hilbert space of all square integrable functions on $\mathcal{I}$ is denoted by $\mathbb{L}_2(\mathcal{I})$. 	In most cases, $A$ is chosen as a closed interval of $\mathbb{R}$. Without loss of generality, we can reduce our treatment to the case of $\mathcal{I} = [0,1]$.
 			\end{definition}
 			
-			In most cases, $A$ is chosen as a closed interval of $\mathbb{R}$. Without loss of generality, we can reduce our treatment to the case of $\mathcal{I} = [0,1]$.
-			
-			\subsubsection{$\mathbb{L}_2(\mathcal{I})$ as defined in \cite{bugni_permutation_2021}}
-			Deviating from the norm in functional data analysis, \cite{bugni_permutation_2021} define two square-integrable functions to be distinct even if they differ only on a set of Lebesgue-measure zero. To distinguish between the typical case presented in the previous section, let $\mathbb{L}_2(\mathcal{I})$ denote the Hilbert space of square-integrable functions and $\mathbb{L}^{*}_2(\mathcal{I})$ the square-integrable functions under the the convention from \cite{bugni_permutation_2021}.\\
-			
-			Using $\mathbb{L}^{*}_2(\mathcal{I})$ creates some interesting theoretical challenges, as the resulting object is in fact not a Hilbert space. To understand the theoretical problems that can occur, I first introduce some additional concepts to illustrate the challenges.
-			\begin{definition}[Norm and Seminorm]
-				A function $p : \mathbb{V} \rightarrow \mathbb{F}$ on a vector space $\mathbb{V}$ over a field $\mathbb{F}$ is called a norm if the following four conditions hold for all $v,u \in \mathbb{V}$ and $s \in \mathbb{F}$.
-				\begin{multicols}{2}
-					\begin{enumerate}
-						\item $p(v + u) \leq p(v) + p(u)$
-						\item $p(sv) = |s| p(v)$
-						\item $p(v) \geq 0$
-						\item $p(v) = 0 \implies v = 0$
-					\end{enumerate}
-				\end{multicols}
-				If $p : \mathbb{V} \rightarrow \mathbb{F}$ fulfills only properties (1) to (3) it is called a seminorm.
-			\end{definition}
-			
-			In the same way a norm induces a distance on its corresponding normed vectorspace, a seminorm $p$ induces a so-called pseudometric $d$. It is given by $d(v,u) = p(u-v)$.
-			
-			{\color{red} This is from Wikipedia!!!}
-			\begin{definition}[Pseudometric Space]
-				A pseudometric space $\left(X, d\right)$ is a set $X$ together with a function $d:X\times X \rightarrow \mathbb{R}_{\geq 0}$, such that $\forall x,y,z \in X$ the following properties hold.
-				\begin{multicols}{2}
-					\begin{enumerate}
-						\item $d(x,x) = 0$
-						\item $d(x,y) = d(y,x)$
-						\item $d(x,z) \leq d(x,y) + d(y,z)$
-					\end{enumerate}
-				\end{multicols}
-				Therefore, deviating from a metric space, two distinct points in a pseudometric space can have a distance of zero $d(x,y) = 0$ for $x \neq y$.
-			\end{definition}
-			
-			That $\mathbb{L}^{*}_2(\mathcal{I})$ is not a Hilbert space becomes clear, when checking the for the properties of the norm induced by the inner product $\| v \| = \sqrt{\langle v, v\rangle}$.
-			One of the properties that has to be fulfilled by a norm is $\| v \| = 0 \Longleftrightarrow v = 0$.			
-			Let $f:[0,1] \rightarrow \mathbb{R}$ be given by $f(x) = \mathbbm{1}\left[x = 0.5\right]$. Then we can evaluate the following expression to create a contradiction to the norm properties.
-			\begin{equation}
-				\| f \| = \sqrt{\langle f, f\rangle} = \sqrt{\int_{0}^{1} \left[f(t)\right]^2\mathrm{d}t } = 0
-			\end{equation}
-			As $f$ is not the zero element of this space, this is a violation of positive definiteness. Positive definiteness applied to the case at hand, states that $\forall v \in \mathbb{L}_2\left(\mathcal{I}\right) \| v \| = 0 \implies v(x) = 0 \quad \forall x \in \mathcal{I}$  $\forall v \in $. Instead, $\| v \| = \sqrt{\langle v, v\rangle}$ is a seminorm and the defined space should more correctly be treated as a pseudometric space.\\
-			
-			{\color{red} This is from Wikipedia!!!}
-			\begin{definition}[Hausdorff Space]
-				A Hausdorff space is a topological space where for any two distinct points $x$ and $y$, there exist a neighborhood $U$ of $x$ and a nieghborhood $V$ of $y$ such that $U$ and $V$ are disjoint. This property is also called neighborhood-separability.
-			\end{definition}
-			
-			One problem of $\mathbb{L}^{*}_2(\mathcal{I})$ is, that if we give the space the topology induced by the obvious seminorm, the resulting space would not be Hausdorff. Thus, limits in the later part of \cite{bugni_permutation_2021} would not be defined.
-			A second problem is, that it is not clear how a Schauder basis would be defined for a pseudometric space such as $\mathbb{L}^{*}_2(\mathcal{I})$ and that typical existence results for orthonormal bases might not be available.\\			
-			
-			In the following, I will therefore restrict my analysis to {\color{red} Hier weiterschreiben!}
+		 Deviating from the norm in functional data analysis, \cite{bugni_permutation_2021} define two square-integrable functions to be distinct even if they differ only on a non-empty set of Lebesgue-measure zero. This detail makes the theoretical considerations somewhat more difficult if one were to derive the exact theoretical properties of the test. However, as this changed definition only adds alternatives against which the test cannot have any power by construction, I will restrict my treatment to the usual definition of  $\mathbb{L}_2(\mathcal{I})$. A non-exhaustive overview of the differences between the definitions is provided in Appendix \ref{deviation}.
 
-			
 			
 		\subsection{Bases of $\mathbb{L}_2$}\label{bases_L2}
 			
@@ -1076,6 +1026,53 @@ style=authoryear,
 			
 			Why should you care about this is the hardest question. I care about it, because it is cool from a mathematical perspective. But if you care about real-life problems there are also good reasons to be interested. Economic data is being observed at increasing frequencies as technology improves. Many problems that were previously low dimensional due to data constraints or suitable for classical time series methods, are becoming more complex as methodological challenges such as high-dimensionality and extreme correlation of neighboring observations arise. Functional data analysis is a comparatively new approach to many of these problems that transforms some of these problems into strengths by acknowledging the functional structure of the underlying processes. Permutation tests are also comparatively new, at least in our ability to apply them on a larger scale.
 			
+		\subsection{$\mathbb{L}_2(\mathcal{I})$ as defined in \cite{bugni_permutation_2021}}\label{deviation}
+		To distinguish between the typical case presented in the previous section, let $\mathbb{L}_2(\mathcal{I})$ denote the Hilbert space of square-integrable functions and $\mathbb{L}^{*}_2(\mathcal{I})$ the square-integrable functions under the the convention from \cite{bugni_permutation_2021}.\\
+		
+		Using $\mathbb{L}^{*}_2(\mathcal{I})$ creates some interesting theoretical challenges, as the resulting object is in fact not a Hilbert space. To understand the theoretical problems that can occur, I first introduce some additional concepts to illustrate the challenges.
+		\begin{definition}[Norm and Seminorm]
+			A function $p : \mathbb{V} \rightarrow \mathbb{F}$ on a vector space $\mathbb{V}$ over a field $\mathbb{F}$ is called a norm if the following four conditions hold for all $v,u \in \mathbb{V}$ and $s \in \mathbb{F}$.
+			\begin{multicols}{2}
+				\begin{enumerate}
+					\item $p(v + u) \leq p(v) + p(u)$
+					\item $p(sv) = |s| p(v)$
+					\item $p(v) \geq 0$
+					\item $p(v) = 0 \implies v = 0$
+				\end{enumerate}
+			\end{multicols}
+			If $p : \mathbb{V} \rightarrow \mathbb{F}$ fulfills only properties (1) to (3) it is called a seminorm.
+		\end{definition}
+		
+		In the same way a norm induces a distance on its corresponding normed vectorspace, a seminorm $p$ induces a so-called pseudometric $d$. It is given by $d(v,u) = p(u-v)$.
+		
+		{\color{red} This is from Wikipedia!!!}
+		\begin{definition}[Pseudometric Space]
+			A pseudometric space $\left(X, d\right)$ is a set $X$ together with a function $d:X\times X \rightarrow \mathbb{R}_{\geq 0}$, such that $\forall x,y,z \in X$ the following properties hold.
+			\begin{multicols}{2}
+				\begin{enumerate}
+					\item $d(x,x) = 0$
+					\item $d(x,y) = d(y,x)$
+					\item $d(x,z) \leq d(x,y) + d(y,z)$
+				\end{enumerate}
+			\end{multicols}
+			Therefore, deviating from a metric space, two distinct points in a pseudometric space can have a distance of zero $d(x,y) = 0$ for $x \neq y$.
+		\end{definition}
+		
+		That $\mathbb{L}^{*}_2(\mathcal{I})$ is not a Hilbert space becomes clear, when checking the for the properties of the norm induced by the inner product $\| v \| = \sqrt{\langle v, v\rangle}$.
+		One of the properties that has to be fulfilled by a norm is $\| v \| = 0 \Longleftrightarrow v = 0$.			
+		Let $f:[0,1] \rightarrow \mathbb{R}$ be given by $f(x) = \mathbbm{1}\left[x = 0.5\right]$. Then we can evaluate the following expression to create a contradiction to the norm properties.
+		\begin{equation}
+			\| f \| = \sqrt{\langle f, f\rangle} = \sqrt{\int_{0}^{1} \left[f(t)\right]^2\mathrm{d}t } = 0
+		\end{equation}
+		As $f$ is not the zero element of this space, this is a violation of positive definiteness. Positive definiteness applied to the case at hand, states that $\forall v \in \mathbb{L}_2\left(\mathcal{I}\right) \| v \| = 0 \implies v(x) = 0 \quad \forall x \in \mathcal{I}$  $\forall v \in $. Instead, $\| v \| = \sqrt{\langle v, v\rangle}$ is a seminorm and the defined space should more correctly be treated as a pseudometric space.\\
+		
+		{\color{red} This is from Wikipedia!!!}
+		\begin{definition}[Hausdorff Space]
+			A Hausdorff space is a topological space where for any two distinct points $x$ and $y$, there exist a neighborhood $U$ of $x$ and a nieghborhood $V$ of $y$ such that $U$ and $V$ are disjoint. This property is also called neighborhood-separability.
+		\end{definition}
+		
+		One problem of $\mathbb{L}^{*}_2(\mathcal{I})$ is, that if we give the space the topology induced by the obvious seminorm, the resulting space would not be Hausdorff. Thus, limits in the later part of \cite{bugni_permutation_2021} would not be defined.
+		A second problem is, that it is not clear how a Schauder basis would be defined for a pseudometric space such as $\mathbb{L}^{*}_2(\mathcal{I})$ and that typical existence results for orthonormal bases might not be available.\\				
 	
 		\subsection{Multiple Testing}\label{Multiple_Testing}
 			When testing statistical hypotheses, it is often helpful or even necessary to test multiple hypotheses independently of each other. One setting where this could be useful is when we want to combine the desirable properties of two tests, as is done by \cite{bugni_permutation_2021}. If the tests do not perfectly depend on each other, this creates a problem relating to the size of the combined test.

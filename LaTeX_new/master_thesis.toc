@@ -2,60 +2,60 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
 \contentsline {section}{\numberline {2}Functional Data Analysis}{2}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Hilbert Space of Square Integrable Functions}{2}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}$\mathbb {L}_2(\mathcal {I})$ as defined in \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{4}{subsubsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.2}Bases of $\mathbb {L}_2$}{6}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Random Functions}{6}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Probability Measures on $\mathbb {L}_2$}{7}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Functional Integration on $\mathbb {L}_2$}{8}{subsection.2.5}%
-\contentsline {section}{\numberline {3}Cram\'{e}r-von Mises Tests}{9}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Empirical Distribution Functions}{9}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Assumptions}{9}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Nullhypothesis}{9}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Two-Sample Cram\'{e}r-von Mises Statistic}{10}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Asymptotic Distribution}{10}{subsection.3.5}%
-\contentsline {section}{\numberline {4}Permutation Tests}{11}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Functional Principle of Permutation Tests}{11}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Size and Power}{12}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Asymptotic Properties}{12}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Test by Bugni and Horowitz (2021)}{12}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Assumptions}{13}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Nullhypothesis}{14}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Cram\'{e}r-von Mises type Test}{14}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Asymptotics for the Cram\'{e}r-von Mises type Test}{15}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Construction of the Measure $\mu $}{15}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}Mean focused Test}{18}{subsection.5.6}%
-\contentsline {subsection}{\numberline {5.7}Combined Permutation Test}{18}{subsection.5.7}%
-\contentsline {subsection}{\numberline {5.8}Finite Sample Properties under the Nullhypothesis}{19}{subsection.5.8}%
-\contentsline {subsection}{\numberline {5.9}Asymptotic Properties under the Alternative}{19}{subsection.5.9}%
-\contentsline {section}{\numberline {6}Test for Persistence Alternatives}{19}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Null-Hypothesis}{19}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Test-Procedure}{20}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Simulation Study}{21}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Implementation as an R package}{21}{subsection.7.1}%
-\contentsline {subsubsection}{\numberline {7.1.1}Use of High-Performance Computing}{22}{subsubsection.7.1.1}%
-\contentsline {subsubsection}{\numberline {7.1.2}Particularities of the Implementation}{22}{subsubsection.7.1.2}%
-\contentsline {subsection}{\numberline {7.2}Simulation Setup}{22}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Results}{25}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Simulation - Test for Persistence Alternatives}{26}{subsection.7.4}%
-\contentsline {section}{\numberline {8}Application}{27}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Data Cleaning and Preprocessing}{28}{subsection.8.1}%
-\contentsline {subsubsection}{\numberline {8.1.1}Removal of Mondays and Fridays}{28}{subsubsection.8.1.1}%
-\contentsline {subsubsection}{\numberline {8.1.2}Holidays}{29}{subsubsection.8.1.2}%
-\contentsline {subsubsection}{\numberline {8.1.3}Detrending and Deseasoning}{29}{subsubsection.8.1.3}%
-\contentsline {subsection}{\numberline {8.2}Test from \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{31}{subsection.8.2}%
-\contentsline {section}{\numberline {9}Outlook}{32}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Possible Further Simulations}{32}{subsection.9.1}%
-\contentsline {paragraph}{Comparing choices of $w(t)$ and $\left (\rho _i\right )_{i = 1, \dots , K}$\\}{32}{subsection.9.1}%
-\contentsline {paragraph}{Less restrictive Distributions of Fourier Coefficients\\}{33}{subsection.9.1}%
-\contentsline {paragraph}{Simulations for Unbalanced Sample Sizes\\}{33}{subsection.9.1}%
-\contentsline {paragraph}{Comparing Implementations using different orders of Operations\\}{33}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Potential Applications}{33}{subsection.9.2}%
-\contentsline {section}{\numberline {10}Bibliography}{35}{section.10}%
+\contentsline {subsection}{\numberline {2.2}Bases of $\mathbb {L}_2$}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Random Functions}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Probability Measures on $\mathbb {L}_2$}{5}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Functional Integration on $\mathbb {L}_2$}{7}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Cram\'{e}r-von Mises Tests}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Empirical Distribution Functions}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Assumptions}{8}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Nullhypothesis}{8}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Two-Sample Cram\'{e}r-von Mises Statistic}{9}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Asymptotic Distribution}{9}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Permutation Tests}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Functional Principle of Permutation Tests}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Size and Power}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Asymptotic Properties}{11}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Test by Bugni and Horowitz (2021)}{11}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Assumptions}{12}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Nullhypothesis}{13}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Cram\'{e}r-von Mises type Test}{13}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Asymptotics for the Cram\'{e}r-von Mises type Test}{14}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Construction of the Measure $\mu $}{14}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Mean focused Test}{16}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Combined Permutation Test}{17}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Finite Sample Properties under the Nullhypothesis}{17}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.9}Asymptotic Properties under the Alternative}{17}{subsection.5.9}%
+\contentsline {section}{\numberline {6}Test for Persistence Alternatives}{17}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Null-Hypothesis}{18}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Test-Procedure}{19}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Simulation Study}{20}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Implementation as an R package}{20}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}Use of High-Performance Computing}{20}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.2}Particularities of the Implementation}{20}{subsubsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.2}Simulation Setup}{21}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Results}{24}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Simulation - Test for Persistence Alternatives}{25}{subsection.7.4}%
+\contentsline {section}{\numberline {8}Application}{26}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Data Cleaning and Preprocessing}{27}{subsection.8.1}%
+\contentsline {subsubsection}{\numberline {8.1.1}Removal of Mondays and Fridays}{27}{subsubsection.8.1.1}%
+\contentsline {subsubsection}{\numberline {8.1.2}Holidays}{28}{subsubsection.8.1.2}%
+\contentsline {subsubsection}{\numberline {8.1.3}Detrending and Deseasoning}{28}{subsubsection.8.1.3}%
+\contentsline {subsection}{\numberline {8.2}Test from \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{30}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Outlook}{31}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Possible Further Simulations}{31}{subsection.9.1}%
+\contentsline {paragraph}{Comparing choices of $w(t)$ and $\left (\rho _i\right )_{i = 1, \dots , K}$\\}{31}{subsection.9.1}%
+\contentsline {paragraph}{Less restrictive Distributions of Fourier Coefficients\\}{32}{subsection.9.1}%
+\contentsline {paragraph}{Simulations for Unbalanced Sample Sizes\\}{32}{subsection.9.1}%
+\contentsline {paragraph}{Comparing Implementations using different orders of Operations\\}{32}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Potential Applications}{32}{subsection.9.2}%
+\contentsline {section}{\numberline {10}Bibliography}{34}{section.10}%
 \contentsline {section}{\numberline {11}Appendix}{i}{section.11}%
 \contentsline {subsection}{\numberline {11.1}Informal Intuition}{i}{subsection.11.1}%
-\contentsline {subsection}{\numberline {11.2}Multiple Testing}{ii}{subsection.11.2}%
-\contentsline {subsection}{\numberline {11.3}Derivation of Asymptotic Distribution}{iii}{subsection.11.3}%
-\contentsline {subsection}{\numberline {11.4}Application Data Cleaning}{iii}{subsection.11.4}%
-\contentsline {subsubsection}{\numberline {11.4.1}Excluded Holidays}{iii}{subsubsection.11.4.1}%
-\contentsline {subsubsection}{\numberline {11.4.2}Detrending and Deseasoning Results}{iii}{subsubsection.11.4.2}%
-\contentsline {subsection}{\numberline {11.5}Additional Figures}{iii}{subsection.11.5}%
+\contentsline {subsection}{\numberline {11.2}$\mathbb {L}_2(\mathcal {I})$ as defined in \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{ii}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Multiple Testing}{iii}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}Derivation of Asymptotic Distribution}{iv}{subsection.11.4}%
+\contentsline {subsection}{\numberline {11.5}Application Data Cleaning}{iv}{subsection.11.5}%
+\contentsline {subsubsection}{\numberline {11.5.1}Excluded Holidays}{iv}{subsubsection.11.5.1}%
+\contentsline {subsubsection}{\numberline {11.5.2}Detrending and Deseasoning Results}{v}{subsubsection.11.5.2}%
+\contentsline {subsection}{\numberline {11.6}Additional Figures}{v}{subsection.11.6}%
