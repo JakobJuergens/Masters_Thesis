@@ -32,24 +32,25 @@
 \contentsline {subsection}{\numberline {6.2}Test-Procedure}{20}{subsection.6.2}%
 \contentsline {section}{\numberline {7}Simulation Study}{21}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Implementation as an R package}{21}{subsection.7.1}%
-\contentsline {subsubsection}{\numberline {7.1.1}Use of High-Performance Computing}{21}{subsubsection.7.1.1}%
-\contentsline {subsubsection}{\numberline {7.1.2}Particularities of the Implementation}{21}{subsubsection.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.1}Use of High-Performance Computing}{22}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.2}Particularities of the Implementation}{22}{subsubsection.7.1.2}%
 \contentsline {subsection}{\numberline {7.2}Simulation Setup}{22}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Results}{25}{subsection.7.3}%
 \contentsline {subsection}{\numberline {7.4}Simulation - Test for Persistence Alternatives}{26}{subsection.7.4}%
-\contentsline {section}{\numberline {8}Application}{27}{section.8}%
+\contentsline {section}{\numberline {8}Application}{28}{section.8}%
 \contentsline {subsection}{\numberline {8.1}Data Cleaning and Preprocessing}{28}{subsection.8.1}%
 \contentsline {subsubsection}{\numberline {8.1.1}Removal of Mondays and Fridays}{28}{subsubsection.8.1.1}%
-\contentsline {subsubsection}{\numberline {8.1.2}Holidays}{28}{subsubsection.8.1.2}%
+\contentsline {subsubsection}{\numberline {8.1.2}Holidays}{29}{subsubsection.8.1.2}%
 \contentsline {subsubsection}{\numberline {8.1.3}Detrending and Deseasoning}{29}{subsubsection.8.1.3}%
 \contentsline {subsection}{\numberline {8.2}Test from \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{31}{subsection.8.2}%
 \contentsline {section}{\numberline {9}Outlook}{32}{section.9}%
 \contentsline {subsection}{\numberline {9.1}Possible Further Simulations}{32}{subsection.9.1}%
-\contentsline {paragraph}{Simulations comparing choices of $w(t)$ and $\left (\rho _i\right )_{i = 1, \dots , K}$\\}{32}{subsection.9.1}%
-\contentsline {paragraph}{Less restrictive Distributions of Fourier Coefficients\\}{32}{subsection.9.1}%
-\contentsline {paragraph}{Simulations for Unbalanced Sample Sizes\\}{32}{subsection.9.1}%
+\contentsline {paragraph}{Comparing choices of $w(t)$ and $\left (\rho _i\right )_{i = 1, \dots , K}$\\}{32}{subsection.9.1}%
+\contentsline {paragraph}{Less restrictive Distributions of Fourier Coefficients\\}{33}{subsection.9.1}%
+\contentsline {paragraph}{Simulations for Unbalanced Sample Sizes\\}{33}{subsection.9.1}%
+\contentsline {paragraph}{Comparing Implementations using different orders of Operations\\}{33}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}Potential Applications}{33}{subsection.9.2}%
-\contentsline {section}{\numberline {10}Bibliography}{34}{section.10}%
+\contentsline {section}{\numberline {10}Bibliography}{35}{section.10}%
 \contentsline {section}{\numberline {11}Appendix}{i}{section.11}%
 \contentsline {subsection}{\numberline {11.1}Informal Intuition}{i}{subsection.11.1}%
 \contentsline {subsection}{\numberline {11.2}Multiple Testing}{ii}{subsection.11.2}%
