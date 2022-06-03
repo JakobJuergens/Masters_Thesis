@@ -599,8 +599,9 @@ style=authoryear,
 			This in turn implies that a probability measure that is constructed as shown in the previous section cannot give positive weight to many functions in the space $\mathbb{L}_2(\mathcal{I})$ if we use the convention used by the authors. Namely, for any function in $\mathbb{L}_2(\mathcal{I})$ for which the Fourier series fails to converge point-wise, we cannot assign a positive probability. This in turn could be a potential problem for the method described in the paper, if this is necessary for its working principle.
 			
 		\subsection{Mean focused Test}
+			In addition to the Cram\'{e}r-von Mises type test, the authors use a second test statistic aimed at detecting violations due to a mean shift in the data generating process. This test is added due to low power against pure mean-shift alternatives in the original paper's simulations and is supposed to complement this weakness of the other test statistic.
 			
-			Test statistic
+			The variable $\mu$ on which this second test is based is the distance between the mean functions of the data generating processes as induced by the natural norm on $\mathbb{L}_2[0,1]$.
 			\begin{equation}
 				\nu = \int_{\mathcal{I}} \big(\mathbb{E}\left[X(t)\right] - \mathbb{E}\left[Y(t)\right]\big)^2 \mathrm{d}t
 			\end{equation}
@@ -676,12 +677,12 @@ style=authoryear,
 		
 		\subsection{Asymptotic Properties under the Alternative}
 		
-	\section{Closed Testing Procedures}\label{closed_testing}
-		If we find a violation of the hypothesis it would be interesting to identify where or more precisely in what frequency the violation occurs. One approach to this question is to introduce what is called a closed testing procedure that identifies the basis functions that are relevant to the violation of the null-hypothesis. The underlying idea was developed by \cite{marcus_closed_1976} and is applicable in settings where we are interested in testing a set of Nullhypotheses that is closed under intersection.
-		
-		\subsection{Original Principle}
-		
-		\subsection{Modified Principle}
+%	\section{Closed Testing Procedures}\label{closed_testing}
+%		If we find a violation of the hypothesis it would be interesting to identify where or more precisely in what frequency the violation occurs. One approach to this question is to introduce what is called a closed testing procedure that identifies the basis functions that are relevant to the violation of the null-hypothesis. The underlying idea was developed by \cite{marcus_closed_1976} and is applicable in settings where we are interested in testing a set of Nullhypotheses that is closed under intersection.
+%		
+%		\subsection{Original Principle}
+%		
+%		\subsection{Modified Principle}
 		
 	\section{Test for Persistence Alternatives}\label{closed_persistence_test}
 		One particularly interesting potential application for the Cram\'{e}r-von Mises type test presented in \cite{bugni_permutation_2021}, is a slight modification leading to the following test for differences in the persistence structure of the data generating processes. 
@@ -752,38 +753,38 @@ style=authoryear,
 		The overarching test procedure is again given by a derivation of a permutation distribution and a permutation test decision according to the rules stated in Section \ref{Permutation_Tests}.\\
 		
 		
-		\subsection{Closed Testing on the Frequency Domain}
-				
-		
-		With the test procedure described, it would be interesting to identify specific violations of the Null-hypothesis. In other words, to identify where, in the frequency domain sense, the differences in persistence lie. This could be done using a closed testing procedure as described in Section \ref{closed_testing}. To make it clear how to apply the principle of a closed testing procedure to this setting, it is useful to reformulate the Nullhypothesis.
-		\begin{equation}\label{closed_hypotheses}
-			\begin{split}
-				H_0: \quad &F_X(z) = F_Y(z) \quad \forall z \quad  f_{\mu}(z) \neq 0\\
-				H_1: \quad &\mathbb{P}_{\mu}\left[F_X(Z) \neq F_Y(Z)\right] > 0
-			\end{split}
-		\end{equation}
-		 For a specific measure $\mu_K$ induced by a random variable as described in Equation \ref{truncation} for a truncation parameter $K$, we can reformulate the Nullhypothesis as such, as the constructed test will have no power against alternatives of $\mu_K$-measure zero anyway. However, the measure needs to be constructed in a slightly modified way to actually allow this to work. Fix therefore a parameter $\mathcal{K}$ that is the upper limit on the number of Fourier basis functions that will be used in the closed testing procedure. For all $k = 1, \dots, \mathcal{K}$ calculate the expected values of the Fourier coefficients for a given weight function $w(t)$.
-		 \begin{equation}
-		 	\mathbb{E}\left[b_k\right] = \int_{\mathcal{I}}w(t)\psi_k(t) \mathrm{d}t
-		 \end{equation}
-	 	Then for a series of values $K = 1, \dots, \mathcal{K}$ define the random functions $Z_K(t)$ inducing the measures $\mu_K$ in one of the following two ways, where the $U_k$ are mean-zero scalar random variables as described in Section \ref{mu}.
-	 	\paragraph{High-to-Low-Frequency Exclusion}
-		 	\begin{equation}\label{closed_test_RF_1}
-		 		Z_K(t) = \sum_{k = 1}^{\mathcal{K}} \mathbb{E}\left[b_k\right] \psi_k(t) + \sum_{k' = 1}^{K} \rho_{k'} U_{k'} \psi_{k'}(t)
-		 		\quad \text{s.t.} \quad
-		 		\sum_{k = 1}^{\infty} \rho_k^2 < \infty 
-		 	\end{equation}
- 		\paragraph{Low-to-High-Frequency Exclusion}
-		 	\begin{equation}\label{closed_test_RF_2}
-		 		Z_K(t) = \sum_{k = 1}^{\mathcal{K}} \mathbb{E}\left[b_k\right] \psi_k(t) + \sum_{k' = 0}^{K-1} \rho_{\mathcal{K} - k'} U_{\mathcal{K} - k'} \psi_{\mathcal{K} - k'}(t)
-		 		\quad \text{s.t.} \quad
-		 		\sum_{k = 1}^{\infty} \rho_k^2 < \infty 
-		 	\end{equation}
-			  
-		 For the chosen sequence $K = 1, \dots, \mathcal{K}$, the hypotheses as shown in \ref{closed_hypotheses} constructed using the measures induced by the corresponding random variables are closed under intersection. This becomes evident if we look at the space of possible realizations for each inducing random variable. As the $U_k$ are mean-zero, \\
-		 
-
-		 {\color{red} HIER WEITERSCHREIBEN}
+%		\subsection{Closed Testing on the Frequency Domain}
+%				
+%		
+%		With the test procedure described, it would be interesting to identify specific violations of the Null-hypothesis. In other words, to identify where, in the frequency domain sense, the differences in persistence lie. This could be done using a closed testing procedure as described in Section \ref{closed_testing}. To make it clear how to apply the principle of a closed testing procedure to this setting, it is useful to reformulate the Nullhypothesis.
+%		\begin{equation}\label{closed_hypotheses}
+%			\begin{split}
+%				H_0: \quad &F_X(z) = F_Y(z) \quad \forall z \quad  f_{\mu}(z) \neq 0\\
+%				H_1: \quad &\mathbb{P}_{\mu}\left[F_X(Z) \neq F_Y(Z)\right] > 0
+%			\end{split}
+%		\end{equation}
+%		 For a specific measure $\mu_K$ induced by a random variable as described in Equation \ref{truncation} for a truncation parameter $K$, we can reformulate the Nullhypothesis as such, as the constructed test will have no power against alternatives of $\mu_K$-measure zero anyway. However, the measure needs to be constructed in a slightly modified way to actually allow this to work. Fix therefore a parameter $\mathcal{K}$ that is the upper limit on the number of Fourier basis functions that will be used in the closed testing procedure. For all $k = 1, \dots, \mathcal{K}$ calculate the expected values of the Fourier coefficients for a given weight function $w(t)$.
+%		 \begin{equation}
+%		 	\mathbb{E}\left[b_k\right] = \int_{\mathcal{I}}w(t)\psi_k(t) \mathrm{d}t
+%		 \end{equation}
+%	 	Then for a series of values $K = 1, \dots, \mathcal{K}$ define the random functions $Z_K(t)$ inducing the measures $\mu_K$ in one of the following two ways, where the $U_k$ are mean-zero scalar random variables as described in Section \ref{mu}.
+%	 	\paragraph{High-to-Low-Frequency Exclusion}
+%		 	\begin{equation}\label{closed_test_RF_1}
+%		 		Z_K(t) = \sum_{k = 1}^{\mathcal{K}} \mathbb{E}\left[b_k\right] \psi_k(t) + \sum_{k' = 1}^{K} \rho_{k'} U_{k'} \psi_{k'}(t)
+%		 		\quad \text{s.t.} \quad
+%		 		\sum_{k = 1}^{\infty} \rho_k^2 < \infty 
+%		 	\end{equation}
+% 		\paragraph{Low-to-High-Frequency Exclusion}
+%		 	\begin{equation}\label{closed_test_RF_2}
+%		 		Z_K(t) = \sum_{k = 1}^{\mathcal{K}} \mathbb{E}\left[b_k\right] \psi_k(t) + \sum_{k' = 0}^{K-1} \rho_{\mathcal{K} - k'} U_{\mathcal{K} - k'} \psi_{\mathcal{K} - k'}(t)
+%		 		\quad \text{s.t.} \quad
+%		 		\sum_{k = 1}^{\infty} \rho_k^2 < \infty 
+%		 	\end{equation}
+%			  
+%		 For the chosen sequence $K = 1, \dots, \mathcal{K}$, the hypotheses as shown in \ref{closed_hypotheses} constructed using the measures induced by the corresponding random variables are closed under intersection. This becomes evident if we look at the space of possible realizations for each inducing random variable. As the $U_k$ are mean-zero, \\
+%		 
+%
+%		 {\color{red} HIER WEITERSCHREIBEN}
 
 		
 	\section{Simulation Study}\label{Simulation_Study}
@@ -889,40 +890,53 @@ style=authoryear,
 		Even though these rejection frequencies seem low at first, one has to keep in mind the magnitude of the violation of the Null hypothesis and the small sample size. Looking at Figure \ref{settings}, differences between the processes are not particularly stark visually and a low power therefore somewhat expected. Additionally, the power of permutation tests is highly dependent on the sample size of the underlying samples. Therefore, a rather small sample size of 20 as used in these simulations justifies the rejection frequencies.  It would be interesting to repeat these simulations for a number of different sample sizes as this could give a more precise idea of the context in which this procedure has higher power.
 	
 		\subsection{Simulation - Test for Persistence Alternatives}
-		Using simulation setting 3, it is possible to also test the proposed test for persistence alternatives from Section \ref{closed_persistence_test}. But due to computational constraints, this simulation does not follow the real test structure and shall instead serve as a heuristic for the real test's performance. Mainly the simulation differs from the proposed test in the following two ways to reduce computational cost while staying reasonably accurate in the proposed simulation setting.
-		\begin{enumerate}
-			\item The standardization step makes it necessary to perform the comparison between functions that is performed in the calculation of the Cram\'{e}r-von Mises test statistic in each permutation step. This massively increases the computational cost. Therefore, as a heuristic for the real test, these simulations are performed without a standardization step. However, a data generating process with a mean function $\mu(t) = 0$ and a point-wise variance function $\sigma(t) = 1$ is used.\\
-			Therefore, in expectation sample equivalents will share these characteristics. However, individual samples may not.
-		\end{enumerate}
-		Due to this concession to limited computational resources the following simulation results could potentially overstate the power of the test against alternatives as described above. This is caused by potential differences in the sample mean and point-wise sample variance present in the permuted samples that would have been removed by standardization. 
+		Using simulation setting 3, it is possible to also test the proposed test for persistence alternatives from Section \ref{closed_persistence_test}. But due to computational constraints, this simulation does not follow the real test structure and shall instead serve as a heuristic for the real test's performance. Mainly the simulation differs from the proposed test in the following way to reduce computational cost while staying reasonably accurate in the proposed simulation setting. The standardization step makes it necessary to perform the comparison between functions that is performed in the calculation of the Cram\'{e}r-von Mises test statistic in each permutation step. This massively increases the computational cost. Therefore, as a heuristic for the real test, these simulations are performed without a standardization step. However, a data generating process with a mean function $\mu(t) = 0$ and a point-wise variance function $\sigma(t) = 1$ is used.
+		Therefore, in expectation sample equivalents will share these characteristics. However, individual samples may not. Due to this concession to limited computational resources the following simulation results could potentially overstate the power of the test against alternatives as described above. This is caused by potential differences in the sample mean and point-wise sample variance present in the permuted samples that would have been removed by standardization. 
 		However, in the proposed test structure the possibility to specifically test for alternatives in the persistence structure is a significant advantage.\\
 	
-		The results for different correlation parameters are given in the following tables. Again, the same reference process with $\rho_1(t) = 0.5$ generated the reference sample.
+		The results for different correlation parameters are given in the following tables. Again, the same reference process with $\rho_1(t) = 0.5$ generated the reference sample. A diagram showing samples generated by these processes is shown in Figure \ref{} in Appendix \ref{add_figures}. {\color{red} Hier noch Referenzen einfuegen.}
 		\begin{table}[h!]
 			\centering
 			\begin{tabular}{lccccc}\toprule
-				$\alpha_{\tau}$ &$\rho_2(t) = -0.9$ &$\rho_2(t) = -0.7$	&$\rho_2(t) = -0.5$ &$\rho_2(t) = -0.3$ &$\rho_2(t) = -0.1$ \\
+				$\alpha_{\tau}$ &$\rho_2(t) = -0.9$ &$\rho_2(t) = -0.5$ &$\rho_2(t) = 0$ &$\rho_2(t) = 0.5$ &$\rho_2(t) = 0.9$\\
 				\midrule
-				$0.05$	& -	& -  & - & - & - \\
-				$0.01$ & -	& -  & - & - & - \\
-				$0.001$	& -	& -  & - & - & - \\
+				$0.05$	& 0.830 & -  &  0.250	& 0.0415   & - \\
+				$0.01$ 	& 0.783	& -  &  0.119	& 0.0104   & -  \\
+				$0.001$	& 0.735	& -  &  0.0492	& 0.00261  & -  \\
 				\bottomrule
 			\end{tabular}
 			\caption{Empirical Rejection Probabilities}
 		\end{table}
-	
+	                                          	
+		The apparent power of this test comes in part from the basis that is used to fit the data. Even though standardization of the original observations ensures that the data itself has a point-wise sample variance of one, the method that is used to fit the observations can lead to curves that are highly dissimilar between samples once the data points are fitted. 
+		Figure \ref{curve_fitting_artefact} shows a rather extreme case for the case of $\rho_1(t) = 0.5$ and $\rho_2(t) = -0.9$. In Appendix \ref{add_figures} Figure \ref{persistence_samples} shows some original data sets generated for these simulations.These are contrasted by Figure \ref{persistence_samples_basis_problem} which shows the same samples fitted using a Fourier basis containing 25 functions. Even though the underlying data generating processes have an identical point-wise variance, the method that is used to fit the discrete observations, creates potentially distorting artifacts.
+		\begin{figure}[H]
+			\makebox[\textwidth][c]{
+			\includegraphics[width=1.1\textwidth]{../Graphics/rho0_9_comparison.PDF}
+			}
+		\caption{Artifact of the Curve Fitting Procedure}
+		\label{curve_fitting_artefact}
+		\end{figure}
+		In some settings this could be a desirable property of the test. However, it is difficult to predict how this property could influence the test's performance in real world settings. Therefore, it could be advisable to modify the test to not use a functional basis to fit the observed curves. Instead, using one of the following two methods could create more reliable results.
+		\begin{enumerate}
+			\item Compare only the actual discrete observations with their corresponding values on the functions generated for Monte-Carlo integration.
+			\item Use linear interpolation on the observations to compare points on a chosen grid with their corresponding values.
+		\end{enumerate} 
+		Using approach one in a second set of simulations leads to the results presented in Table \ref{rej_probs_cor}. These could potentially be a better approximation of the power of the test procedure as the rejections do not rely on artifacts created by the process of fitting a functional basis to the discrete observations.
 		\begin{table}[h!]
 			\centering
-			\begin{tabular}{lcccccc}\toprule
-				$\alpha_{\tau}$ &$\rho_2(t) = 0$ &$\rho_2(t) = 0.1$ &$\rho_2(t) = 0.3$	&$\rho_2(t) = 0.5$ &$\rho_2(t) = 0.7$ &$\rho_2(t) = 0.9$\\
+			\begin{tabular}{lccccc}\toprule
+				$\alpha_{\tau}$ &$\rho_2(t) = -0.9$ &$\rho_2(t) = -0.5$ &$\rho_2(t) = 0$ &$\rho_2(t) = 0.5$ &$\rho_2(t) = 0.9$\\
 				\midrule
-				$0.05$	& 0.250		& -  & - & 0.0415 & - & - \\
-				$0.01$ 	& 0.119		& -  & - & 0.0104 & - & - \\
-				$0.001$	& 0.0492	& -  & - & 0.00261 & - & - \\
+				$0.05$	& - & -  &  - & -   &  \\
+				$0.01$ 	& -	& -  &  - & -   &  \\
+				$0.001$	& -	& -  &  - & -  &  \\
 				\bottomrule
 			\end{tabular}
 			\caption{Empirical Rejection Probabilities}
+			\label{rej_probs_cor}
 		\end{table}
+
 				
 	\section{Application}\label{Application}
 		To test the real-world merits of the method, I will compare electricity demand data from Adelaide which is provided as part of the \textit{fds}\footcite{fds} package for R. This data set presents half-hourly energy demand in megawatts and was originally used by \cite{magnano_generation_2007} and \cite{magnano_generation_2008}. It contains electricity demand curves for 3556 days from 6/7/1997 to 31/3/2007. Some of these curves, specifically a selection of curves observed on Wednesdays and Saturdays, is shown in Figure \ref{electricity_demand}.
@@ -1108,8 +1122,26 @@ style=authoryear,
 		
 			\subsubsection{Detrending and Deseasoning Results}
 			
+		\subsection{Additional Figures}\label{add_figures}
+			\begin{figure}[H]
+				\makebox[\textwidth][c]{
+					\includegraphics[width=1.1\textwidth]{../Graphics/persistence_comparison.PDF}
+				}
+				\caption{Original Samples for Persistence Test}
+				\label{persistence_samples}
+			\end{figure}
 			
-			
+		
+			\begin{figure}[H]
+				\makebox[\textwidth][c]{
+					\includegraphics[width=1.1\textwidth]{../Graphics/persistence_comparison_basis.PDF}
+				}
+				\caption{Samples for Persistence Test fitted using a Fourier Basis with 25 functions}
+				\label{persistence_samples_basis_problem}
+			\end{figure}
+		
+		
+		
 	\newpage
 	\thispagestyle{empty}
 	\section*{Versicherung an Eides statt}	

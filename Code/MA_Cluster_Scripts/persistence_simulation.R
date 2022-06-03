@@ -17,8 +17,10 @@ gen_rho <- inputs$gen_rho
 gen_sigma <- inputs$gen_sigma
 
 # set rho_shift manually to suit setting!
-rho_2 <- rep(-0.7, times = length(gen_grid))
+rho_2 <- rep(-0.5, times = length(gen_grid))
 rho_shift <- rho_2 - gen_rho
+
+print(paste0('Persistence Parameter: ', rho_2[1]))
 
 comparison_grid <- inputs$comparison_grid
 

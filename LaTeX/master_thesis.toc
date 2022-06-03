@@ -25,41 +25,36 @@
 \contentsline {subsection}{\numberline {5.5}Construction of the Measure $\mu $}{15}{subsection.5.5}%
 \contentsline {subsection}{\numberline {5.6}Mean focused Test}{18}{subsection.5.6}%
 \contentsline {subsection}{\numberline {5.7}Combined Permutation Test}{18}{subsection.5.7}%
-\contentsline {subsection}{\numberline {5.8}Finite Sample Properties under the Nullhypothesis}{18}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.8}Finite Sample Properties under the Nullhypothesis}{19}{subsection.5.8}%
 \contentsline {subsection}{\numberline {5.9}Asymptotic Properties under the Alternative}{19}{subsection.5.9}%
-\contentsline {section}{\numberline {6}Closed Testing Procedures}{19}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Original Principle}{19}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Modified Principle}{19}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Test for Persistence Alternatives}{19}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Null-Hypothesis}{19}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Test-Procedure}{20}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Closed Testing on the Frequency Domain}{21}{subsection.7.3}%
-\contentsline {paragraph}{High-to-Low-Frequency Exclusion}{21}{equation.7.40}%
-\contentsline {paragraph}{Low-to-High-Frequency Exclusion}{22}{equation.7.41}%
-\contentsline {section}{\numberline {8}Simulation Study}{22}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Implementation as an R package}{22}{subsection.8.1}%
-\contentsline {subsubsection}{\numberline {8.1.1}Use of High-Performance Computing}{22}{subsubsection.8.1.1}%
-\contentsline {subsubsection}{\numberline {8.1.2}Particularities of the Implementation}{23}{subsubsection.8.1.2}%
-\contentsline {subsection}{\numberline {8.2}Simulation Setup}{23}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Results}{26}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}Simulation - Test for Persistence Alternatives}{27}{subsection.8.4}%
-\contentsline {section}{\numberline {9}Application}{28}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Data Cleaning and Preprocessing}{28}{subsection.9.1}%
-\contentsline {subsubsection}{\numberline {9.1.1}Removal of Mondays and Fridays}{28}{subsubsection.9.1.1}%
-\contentsline {subsubsection}{\numberline {9.1.2}Holidays}{29}{subsubsection.9.1.2}%
-\contentsline {subsubsection}{\numberline {9.1.3}Detrending and Deseasoning}{29}{subsubsection.9.1.3}%
-\contentsline {subsection}{\numberline {9.2}Test from \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{31}{subsection.9.2}%
-\contentsline {section}{\numberline {10}Outlook}{32}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Possible Further Simulations}{32}{subsection.10.1}%
-\contentsline {paragraph}{Simulations comparing choices of $w(t)$ and $\left (\rho _i\right )_{i = 1, \dots , K}$\\}{32}{subsection.10.1}%
-\contentsline {paragraph}{Less restrictive Distributions of Fourier Coefficients\\}{33}{subsection.10.1}%
-\contentsline {paragraph}{Simulations for Unbalanced Sample Sizes\\}{33}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}Potential Applications}{33}{subsection.10.2}%
-\contentsline {section}{\numberline {11}Bibliography}{34}{section.11}%
-\contentsline {section}{\numberline {12}Appendix}{i}{section.12}%
-\contentsline {subsection}{\numberline {12.1}Informal Intuition}{i}{subsection.12.1}%
-\contentsline {subsection}{\numberline {12.2}Multiple Testing}{ii}{subsection.12.2}%
-\contentsline {subsection}{\numberline {12.3}Derivation of Asymptotic Distribution}{iii}{subsection.12.3}%
-\contentsline {subsection}{\numberline {12.4}Application Data Cleaning}{iii}{subsection.12.4}%
-\contentsline {subsubsection}{\numberline {12.4.1}Excluded Holidays}{iii}{subsubsection.12.4.1}%
-\contentsline {subsubsection}{\numberline {12.4.2}Detrending and Deseasoning Results}{iii}{subsubsection.12.4.2}%
+\contentsline {section}{\numberline {6}Test for Persistence Alternatives}{19}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Null-Hypothesis}{19}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Test-Procedure}{20}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Simulation Study}{21}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Implementation as an R package}{21}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}Use of High-Performance Computing}{21}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.2}Particularities of the Implementation}{21}{subsubsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.2}Simulation Setup}{22}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Results}{25}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Simulation - Test for Persistence Alternatives}{26}{subsection.7.4}%
+\contentsline {section}{\numberline {8}Application}{27}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Data Cleaning and Preprocessing}{28}{subsection.8.1}%
+\contentsline {subsubsection}{\numberline {8.1.1}Removal of Mondays and Fridays}{28}{subsubsection.8.1.1}%
+\contentsline {subsubsection}{\numberline {8.1.2}Holidays}{28}{subsubsection.8.1.2}%
+\contentsline {subsubsection}{\numberline {8.1.3}Detrending and Deseasoning}{29}{subsubsection.8.1.3}%
+\contentsline {subsection}{\numberline {8.2}Test from \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{31}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Outlook}{32}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Possible Further Simulations}{32}{subsection.9.1}%
+\contentsline {paragraph}{Simulations comparing choices of $w(t)$ and $\left (\rho _i\right )_{i = 1, \dots , K}$\\}{32}{subsection.9.1}%
+\contentsline {paragraph}{Less restrictive Distributions of Fourier Coefficients\\}{32}{subsection.9.1}%
+\contentsline {paragraph}{Simulations for Unbalanced Sample Sizes\\}{32}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Potential Applications}{33}{subsection.9.2}%
+\contentsline {section}{\numberline {10}Bibliography}{34}{section.10}%
+\contentsline {section}{\numberline {11}Appendix}{i}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Informal Intuition}{i}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Multiple Testing}{ii}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Derivation of Asymptotic Distribution}{iii}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}Application Data Cleaning}{iii}{subsection.11.4}%
+\contentsline {subsubsection}{\numberline {11.4.1}Excluded Holidays}{iii}{subsubsection.11.4.1}%
+\contentsline {subsubsection}{\numberline {11.4.2}Detrending and Deseasoning Results}{iii}{subsubsection.11.4.2}%
+\contentsline {subsection}{\numberline {11.5}Additional Figures}{iii}{subsection.11.5}%
