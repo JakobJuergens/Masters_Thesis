@@ -272,10 +272,12 @@ style=authoryear,
 				\textit{Var}\left(\hat{V}\right) = \textit{Var}\left(\frac{1}{n}\sum_{i = 1}^{n} g(Z_i)\right) \stackrel{Z_i \ \text{i.i.d.}}{=} 
 				\frac{1}{n} \textit{Var}\left(g(Z)\right) \rightarrow 0 \quad \text{as} \quad n \rightarrow \infty
 			\end{equation}
-			Therefore, if it can be assumed that the expectation and the variance are finite, this approach will give approximations of the expectation that converge to the correct value as the number of realizations of $Z$ that is used in the Monte-Carlo integration goes to infinity.
-			As this principle of this method does not depend on the domain of $g$, it can analogously be used in the context of function spaces. It gives a convenient alternative to the theoretically complex methods mentioned before and is therefore a useful alternative in the context of this thesis.
+			Therefore, assuming that expectation and variance are finite, this approach will give approximations of the expectation that converge to the correct value as the number of realizations of $Z$ used in the Monte-Carlo integration goes to infinity.
+			As the principle of this method does not depend on the domain of $g$, it can analogously be used in the context of function spaces. It gives a convenient alternative to the theoretically complex methods mentioned before and is, therefore, a useful alternative in the context of this thesis. More information on Monte-Carlo methods in general and Monte-Carlo integration in particular can be found in \cite{shonkwiler_explorations_2009}.
 		
 	\section{Cram\'{e}r-von Mises Tests}\label{CvM_Tests}
+		The second prerequisite to understand the test presented in \cite{bugni_permutation_2021} is some knowledge about Cram\'er-con Mises type tests. To understand their working principle and to gain some intuition about how they interact with different scenarios, it is useful to start in a simple setting, which is why this section is limited to the case of scalar random variables.\\
+		
 		In applied econometrics, it is often interesting to ask whether the same stochastic process generated the observations in two distinct data sets. In an experimental setting, we could ask whether a treatment assigned at random to a subset of agents changed the distribution of an outcome variable. 
 		One approach to answering this question is given by the two-sample Cram\'{e}r-von Mises test.
 		

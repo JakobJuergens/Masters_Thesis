@@ -1324,6 +1324,44 @@
       \verb https://CRAN.R-project.org/package=fds
       \endverb
     \endentry
+    \entry{shonkwiler_explorations_2009}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=138c8d5acb1f0ecf9a61982c1b0880d1}{%
+           family={Shonkwiler},
+           familyi={S\bibinitperiod},
+           given={Ronald\bibnamedelima W.},
+           giveni={R\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9783caeec239744853615b5ccb84f378}{%
+           family={Mendivil},
+           familyi={M\bibinitperiod},
+           given={Franklin},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{publisher}{1}{%
+        {Springer Science \& Business Media}%
+      }
+      \strng{namehash}{6e201426c5ade24c0ad49e2391234db7}
+      \strng{fullhash}{6e201426c5ade24c0ad49e2391234db7}
+      \strng{bibnamehash}{6e201426c5ade24c0ad49e2391234db7}
+      \strng{authorbibnamehash}{6e201426c5ade24c0ad49e2391234db7}
+      \strng{authornamehash}{6e201426c5ade24c0ad49e2391234db7}
+      \strng{authorfullhash}{6e201426c5ade24c0ad49e2391234db7}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-387-87836-2}
+      \field{month}{8}
+      \field{title}{Explorations in {Monte} {Carlo} {Methods}}
+      \field{year}{2009}
+    \endentry
     \entry{skorohod_integration_1974}{book}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=cf74ce336d0e27c6293c0d0b210a8e1a}{%
