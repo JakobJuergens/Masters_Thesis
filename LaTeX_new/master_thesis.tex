@@ -104,7 +104,7 @@ style=authoryear,
 		Second, Appendix \ref{Intuition} gives a very informal description of the test scenario and the underlying idea of the test. It shall serve as a primer for readers without prior experience in functional data analysis and permutation testing. 
 	
 	\section{Functional Data Analysis}\label{FDA}
-		The overarching concept of functional data analysis is to incorporate observations that are functional in nature. In this context, a functional observation can often be understood as a smooth curve. A classical example of this is shown in Figure \ref{growth_curves}. It presents data provided in the R package \textit{fda}\footcite{fda} and shows growth curves of 93 humans up to the age of 18.
+		The overarching concept of functional data analysis is to analyze data that are functional in nature. Therefore, functional observation can often be understood as smooth curves. A classical example of this is shown in Figure \ref{growth_curves}. It  depicts growth curves of 93 humans up to the age of 18 provided in the R package \textit{fda}\footcite{fda}.
 		\begin{figure}[H]
 			\makebox[\textwidth][c]{
 			\includegraphics[width = 1.1\textwidth]{../Graphics/growth\_curves.PDF}
@@ -112,9 +112,9 @@ style=authoryear,
 			\caption{Human Growth Curves up to the Age of 18}
 			\label{growth_curves}
 		\end{figure}
-		Even though the measurements were taken at discrete ages, it is clear that each human has a height at every point in time. The data points are only measurements of this continuous curve. The higher the measurement frequency, the closer we get to data that resembles the curve itself.
-		In many cases functional data analysis restricts its scope to subsets of the functions $f:\mathbb{R} \rightarrow \mathbb{R}$.
-		As these are inherently infinite-dimensional, it is necessary to introduce additional theory to appropriately deal with their unique properties. Sections \ref{Square_Integrable_Functions} and \ref{bases_L2} closely follow \cite{hsing_theoretical_2015} who provide a detailed introduction into the theory of functional data analysis.
+		Even though measurements are only taken at discrete ages, it is clear that each human has a height at every point in time. Thus, the data are only measurements of this continuous curve. The higher the measurement frequency, the closer we get to data that resembles the curve itself.
+		In many cases, functional data analysis restricts its scope to subsets of the functions $f:\mathbb{R} \rightarrow \mathbb{R}$.
+		As these are inherently infinite-dimensional, it is necessary to introduce additional theory to deal with their unique properties appropriately. Sections \ref{Square_Integrable_Functions} and \ref{bases_L2} closely follow \cite{hsing_theoretical_2015} who provide a detailed introduction into the theory of functional data analysis.
 		
 		\begin{itemize}
 			\item \cite{ramsay_functional_2005}
@@ -122,6 +122,9 @@ style=authoryear,
 		\end{itemize}
 	
 		\subsection{Hilbert Space of Square Integrable Functions}\label{Square_Integrable_Functions}
+			For many methods, such as functional linear regression, it is necessary to put further restrictions on the analyzed functions. A typical assumption is that curves are square-integrable. The space of square-integrable functions is a so-called separable Hilbert space, which often simplifies theoretical considerations in functional data analysis. However, there is often potential to relax this assumption and generalize methods to less restrictive function spaces. 
+			
+			As \cite{bugni_permutation_2021} assume square-integrability, the following section introduces the necessary concepts around Hilbert spaces in general and the space of square-integrable functions in particular.
 			\begin{definition}[Inner Product]
 				A function $\langle \cdot , \cdot \rangle : \mathbb{V}^2 \rightarrow \mathbb{F}$ on a vector space $\mathbb{V}$ over a field $\mathbb{F}$ is called an inner product if the following four conditions hold for all $v, v_1, v_2 \in \mathbb{V}$ and $a_1, a_2 \in \mathbb{F}$.
 				\begin{multicols}{2}
@@ -133,57 +136,54 @@ style=authoryear,
 					\end{enumerate}
 				\end{multicols}
 			\end{definition}
-			As this thesis is limited to the case $\mathbb{F} = \mathbb{R}$, property 4 can be restated as $\langle v_1, v_2 \rangle = \langle v_2, v_1 \rangle$, as the complex conjugate of a real number is the number itself. Similar to the case of Euclidean space, we say that two elements $v_1$ and $v_2$ of the inner product space are orthogonal if $\langle v_1, v_2 \rangle = 0$.
+			As this thesis is limited to the case $\mathbb{F} = \mathbb{R}$, property 4 can be restated as $\langle v_1, v_2 \rangle = \langle v_2, v_1 \rangle$, since the complex conjugate of a real number is the number itself.
 			
 			\begin{definition}[Inner Product Spaces and Hilbert Spaces]
-				A vector space with an associated inner product is called an inner product space.
+				A vector space with an associated inner product is called an inner product space. Two elements $v_1$ and $v_2$ of an inner product space are orthogonal if $\langle v_1, v_2 \rangle = 0$.
 				An inner product space that is complete with respect to the distance induced by the norm $\| v \| = \sqrt{\langle v, v\rangle}$ is called a Hilbert space.
 			\end{definition}
-			Hilbert spaces play an important role in functional data analysis and many methods such as for example functional linear regression make extensive use of their properties. In the context of this thesis, the idea of Hilbert spaces is necessary to adequately describe objects such as random functions or probability measures on Hilbert spaces that are used extensively in \cite{bugni_permutation_2021}.\\
+			As previously mentioned, Hilbert spaces play an important role in functional data analysis and many methods such as for example functional linear regression make extensive use of their properties. In the context of this thesis, they are necessary to adequately describe objects such as random functions or probability measures on Hilbert spaces.
 			
-			Analogously to the case of a vector space, it is useful to express elements of a Hilbert space as linear combinations of a set of elements. However, as elements of Hilbert spaces can be potentially infinite dimensional, the classical idea of a finite basis that can be used to express every element has to be extended.
+			Analogously to vector spaces, it is useful to express elements of a Hilbert space as linear combinations of a basis. However, as elements of Hilbert spaces can be infinite dimensional, the classical idea of a finite basis used to express every element has to be extended. \cite{hsing_theoretical_2015} define the closed span and orthonormal sequences in the following ways, leading to subsequent definition of bases for Hilbert spaces.
 		
 			\begin{definition}[Closed Span]
 				The closed span of a subset $A$ of some normed space, e.g. a normed vector space or a Hilbert space, is the closure of $\textit{span}\left(A\right)$ with respect to the distance induced by the norm of the space. In the following it is denoted by $\overline{{\textit{span}\left(A\right)}}$.
 			\end{definition}
 		
-			{\color{red} This is verbatim!}
+%			{\color{red} This is verbatim!}
 			\begin{definition}[Orthonormal Sequence in a Hilbert Space]
 				Let $\{x_n\}$ be a countable collection of elements in a Hilbert space such that every finite subcollection of $\{x_n\}$ is linearly independent. Define $e_1 = \frac{x_1}{\| x_1 \|}$ and $e_i = \frac{v_i}{\| v_i \|}$ for 
 				$$v_i = x_i - \sum_{j = 1}^{i - 1}\langle x_i, e_j\rangle e_j.$$
 				Then, $\{e_n\}$ is an orthonormal sequence and $\overline{{\textit{span}\left(\{x_n\}\right)}} = \overline{{\textit{span}\left(\{e_n\}\right)}}$
 			\end{definition}
-		
-			The definition of the closed span and orthonormal sequences makes it possible to define the analogon of the basis in finite dimensional vector spaces for the case of potentially infinite-dimensional Hilbert spaces.
-		
-			{\color{red} This is verbatim!}
+			Using these definitions leads to a natural analogon of the basis in finite-dimensional vector spaces for the case of potentially infinite-dimensional Hilbert spaces.
 			\begin{definition}[Orthonormal Basis of a Hilbert Space]
-				An orthonormal sequence $\{e_n\}$ in a Hilbert space $\mathbb{H}$ is called an orthonormal basis of $\mathbb{H}$ if $\overline{{\textit{span}\left(\{e_n\}\right)}} = \mathbb{H}$. Bases like this are typically called Schauder bases to differentiate them from Hamel bases which are often used in the study of vector spaces. The difference between these is that a Schauder basis can represent elements of the corresponding space as infinite sums of its elements, whereas a Hamel basis can only use finite linear combinations.
+				An orthonormal sequence $\{e_n\}$ in a Hilbert space $\mathbb{H}$ is called an orthonormal basis of $\mathbb{H}$ if $\overline{{\textit{span}\left(\{e_n\}\right)}} = \mathbb{H}$. 
 			\end{definition}
 			
-			A special class of Hilbert spaces that is used in most contexts that are relevant in functional data analysis are so called separable Hilbert spaces. Their properties will allow significant simplifications in the calculation of specific test statistics that are at the core of \cite{bugni_permutation_2021}.
+			A special class of Hilbert spaces is separable Hilbert spaces. Their properties often allow for significant simplifications in the derivation of theoretical properties of methods in functional data analysis. One such case is the calculation of specific test statistics that are at the core of \cite{bugni_permutation_2021}.
 			\begin{definition}[Separable Hilbert Space]
 				A Hilbert space that possesses a countable complete orthonormal basis is called separable Hilbert space.
 			\end{definition}
-			Using the axiom of choice, it is possible to show that every Hilbert space possesses an orthonormal basis, which will be used in the derivation of an asymptotic distribution for a test statistic later in this thesis.\\
+%			Using the axiom of choice, it is possible to show that every Hilbert space possesses an orthonormal basis, which will be used in the derivation of an asymptotic distribution for a test statistic later in this thesis.\\
 			
-			The Hilbert space that is most important in functional data analysis is the space of square integrable functions. However, this leads to the case that often square integrability is assumed by default and it is interesting to consider whether this property is actually necessary.		
+			The most prevalent Hilbert space in functional data analysis is the space of square-integrable functions. However, it is often interesting to consider whether square-integrability is a necessary assumption. Due to its prevalence in functional data analysis, square-integrability is sometimes assumed even though generalizations to less restrictive function spaces are possible.
+			
 			\begin{definition}[Hilbert Space of Square Integrable Functions]
 				
-				The space of square integrable functions on a closed interval $\mathcal{I}$ together with the norm $\langle f,g\rangle = \int_{\mathcal{I}} f(t)g(t) \mathrm{d}t$ is a Hilbert space.
+				The space of square-integrable functions on a closed interval $\mathcal{I} \subset \mathbb{R}$ together with the norm $\langle f,g\rangle = \int_{\mathcal{I}} f(t)g(t) \mathrm{d}t$ is a Hilbert space, denoted by $\mathbb{L}_2(\mathcal{I})$.
+				
 				A function $f: \mathcal{I} \rightarrow \mathbb{R}$ is called square-integrable if the following condition holds.
 				\begin{equation}
-					\int_{A} \left[f(t)\right]^2\mathrm{d}t < \infty
+					\int_{\mathcal{I}} \left[f(t)\right]^2\mathrm{d}t < \infty
 				\end{equation}
-				To give the space the properties that are typically desired in Functional data analysis, it is typically defined as a space of equivalence classes, where to functions are seen as equivalent if they differ at most on a set of Lebesgue-measure zero. The Hilbert space of all square integrable functions on $\mathcal{I}$ is denoted by $\mathbb{L}_2(\mathcal{I})$. 	In most cases, $A$ is chosen as a closed interval of $\mathbb{R}$. Without loss of generality, we can reduce our treatment to the case of $\mathcal{I} = [0,1]$.
+				To give the space the properties that are typically desired, it is defined as a space of equivalence classes, where two functions are equivalent if they differ at most on a set of Lebesgue-measure zero. Without loss of generality we reduce our treatment to the case of $\mathcal{I} = [0,1]$.
 			\end{definition}
 			
-		 Deviating from the norm in functional data analysis, \cite{bugni_permutation_2021} define two square-integrable functions to be distinct even if they differ only on a non-empty set of Lebesgue-measure zero. This detail makes the theoretical considerations somewhat more difficult if one were to derive the exact theoretical properties of the test. However, as this changed definition only adds alternatives against which the test cannot have any power by construction, I will restrict my treatment to the usual definition of  $\mathbb{L}_2(\mathcal{I})$. A non-exhaustive overview of the differences between the definitions is provided in Appendix \ref{deviation}.
+		 Atypically, \cite{bugni_permutation_2021} define two square-integrable functions to be distinct if they differ on a non-empty set of Lebesgue-measure zero. This detail makes theoretical considerations, such as deriving the exact properties of the test, more complicated. However, as this definition only adds alternatives against which the test cannot have any power by construction, this thesis is limited to the classical definition of $\mathbb{L}_2[0,1]$. An overview of the differences between the definitions is provided in Appendix \ref{deviation}.
 
-			
-		\subsection{Bases of $\mathbb{L}_2$}\label{bases_L2}
-			
-			One commonly used orthonormal basis of $\mathbb{L}^2([0,1])$ is the Fourier Basis. It consists of a series of functions $\left(\psi_{i}^{F}(x)\right)_{i \in \mathbb{N}}$ taken from the terms of the sine-cosine form of the Fourier series.
+		\subsection{Bases of $\mathbb{L}_2[0,1]$}\label{bases_L2}
+			One commonly used orthonormal basis of $\mathbb{L}^2[0,1]$ is the Fourier Basis. It consists of a series of functions $\left(\psi_{i}^{F}(x)\right)_{i \in \mathbb{N}}$ taken from the sine-cosine form of the Fourier series.
 			\begin{equation}
 				\psi_{i}^{F}(x) = 
 				\begin{cases}
@@ -198,62 +198,82 @@ style=authoryear,
 				\caption{The first seven Fourier basis functions}
 				\label{fourier_basis}
 			\end{figure}
-			A proof that the Fourier basis is in fact an orthonormal basis of $\mathbb{L}^2([0,1])$ can be found in section 2.4 of \cite{hsing_theoretical_2015}. As the Fourier basis is a countable orthonormal basis of $\mathbb{L}^2([0,1])$, we can follow that $\mathbb{L}^2([0,1])$ is a separable Hilbert space, which will be useful in further parts of this thesis.
+			A proof that the Fourier basis is an orthonormal basis of $\mathbb{L}^2[0,1]$ is given in section 2.4 of \cite{hsing_theoretical_2015}. As the Fourier basis is a countable orthonormal basis of $\mathbb{L}^2[0,1]$, it follows that $\mathbb{L}^2[0,1]$ is a separable Hilbert space.
+			Many other bases are often used in functional data analysis, such as, for example, b-splines and orthogonal polynomials. The choice of the basis is typically motivated by the desired application, and the Fourier basis is therefore often chosen when the underlying curves are periodical.
 	
 		\subsection{Random Functions}
-			Random functions are a special case of general random variables. To understand their connection to the general concepts it is therefore useful to remind ourselves of the definition of a random variable. Paraphrasing from \cite{bauer_probability_2011} this can take the following form.
-			\begin{definition}[Random Variable]
+			In statistics, it is common to interpret data as realizations of random variables. In functional data analysis, the same is true. However, since the observations are now curves, it is relevant to consider the kinds of random variables that generate functional realizations. These are called random functions, and they are a special case of random variables. Paraphrasing from \cite{bauer_probability_2011} a general random variable is defined in the following way.
+			\begin{definition}[Random Variable]\label{rand_var}
 				Let $\left(\Omega, \mathcal{A}, \mathcal{P}\right)$ be a probability space and $\left(\Omega', \mathcal{A}'\right)$ be a measure space. Then every $\mathcal{A}$-$\mathcal{A}'$-measurable function $X:\Omega \rightarrow \Omega'$ is called a $\left(\Omega', \mathcal{A}'\right)$-random variable.
 			\end{definition}
-		
+			Since random functions are a special case, we can define them by specializing the objects in Definition \ref{rand_var}.
 			\begin{definition}[Random Function]
 				A random variable that realizes in a function space, e.g. $\mathbb{L}^2[0,1]$, is called a random function.
 			\end{definition}
 		
-		\subsection{Probability Measures on $\mathbb{L}_2$}\label{prob_measures_l2}
-			In later parts of this thesis, it will be important to evaluate expectations of a functional on $\mathbb{L}_2$. For this to make sense, it is necessary to explore how we can define probability measures on function spaces. However, due to the way probability measures on $\mathbb{L}_2[0,1]$ are constructed in the paper, I will restrict my description to probability measures that are induced by existing random functions. Assume therefore that $Z(t)$ is a random function realizing in $\mathbb{L}_2[0,1]$ that induces a measure $\mu$. Then, $Z(t)$ can be expressed in terms of a deterministic basis of $\mathbb{L}_2[0,1]$, e.g. the Fourier basis, in the following way.
-			\begin{equation}
-				Z(t) = \sum_{k = 1}^{\infty} b_k \psi_k(t) \quad \text{s.t.} \quad \sum_{k = 1}^{\infty} b_k^2 \leq \infty \quad \text{a.s.}
-			\end{equation}
-			Here, the Fourier coefficients $b_k$ are a sequence of scalar random variables that are square summable with probability one. The latter property is needed to ensure square summability of the corresponding random function. The random function is therefore fully described by distribution of a countably infinite, almost surely square-summable sequence of scalar random variables $b_k$. The measure $\mu$ associated with the random variable is therefore equivalent to the measure on the countably infinite space, that the sequence of Fourier coefficients realizes in.\\
-			The theory of random sequences is out of the scope of this thesis. However, to understand the principle of how a random variable induces a measure, it suffices to look at a rather basic fact from probability theory. Paraphrasing from \cite{bauer_probability_2011}, let $X:\left(\Omega, \mathcal{A}, \mathcal{P}\right) \rightarrow \left(\Omega', \mathcal{A}'\right)$ be a random variable, then a measure on $\mathcal{A}'$ is induced by $X$ as shown in Equation \ref{induced_measure}.
+		\subsection{Probability Measures on $\mathbb{L}_2[0,1]$}\label{prob_measures_l2}
+			For the test developed in \cite{bugni_permutation_2021}, it is important to evaluate expectations of a functional on $\mathbb{L}_2[0,1]$ with respect to some probability measure $\mu$. Thus, it is necessary to explore probability measures on $\mathbb{L}_2[0,1]$. However, due to the way measures are constructed in the paper, this description is limited to probability measures induced by existing random functions. 
+			To understand how a random variable induces a measure, it suffices to look at a relatively basic fact from probability theory. Paraphrasing from \cite{bauer_probability_2011}, let $X:\left(\Omega, \mathcal{A}, \mathcal{P}\right) \rightarrow \left(\Omega', \mathcal{A}'\right)$ be a random variable, then a probability measure $\mathcal{P}_X(B)$ on $\mathcal{A}'$ is induced by $X$ as shown in Equation \ref{induced_measure}.
 			\begin{equation}\label{induced_measure}
 				\mathcal{P}_X(B) = \mathcal{P}(X \in B) = \mathcal{P}(X^{-1}(B)) \quad \forall B \in \mathcal{A}'
 			\end{equation}
 			This idea specializes to the case of random functions realizing in $\mathbb{L}_2[0,1]$ and allows us to use measures induced by existing random variables.
-			For the purposes of this paper, it is interesting to look at the relationship between the measure induced by the infinite sum shown above and the measure induced by its finite counterpart shown below.
+			Therefore, assume that $Z(t)$ is a random function in $\mathbb{L}_2[0,1]$ inducing a measure $\mu$. As previously explained, $Z(t)$ can be expressed in terms of a functional basis.
 			\begin{equation}
+				Z(t) = \sum_{k = 1}^{\infty} b_k \psi_k(t) \quad \text{s.t.} \quad \sum_{k = 1}^{\infty} b_k^2 \leq \infty \quad \text{a.s.}
+			\end{equation}
+			The latter property is needed to ensure the square-integrability of the random function. The random function is, therefore, fully described by the distribution of a countably infinite, almost surely square-summable sequence of scalar random variables $b_k$. The theory of random sequences is out of the scope of this thesis. However, it is interesting to look at the relationship between the measure $\mu$ induced by the infinite sum and the measure $\mu_K$ induced by its finite counterpart shown in Equation \ref{finite_sum}.
+			\begin{equation}\label{finite_sum}
 				Z_K(t) = \sum_{k = 1}^{K} b_k \psi_k(t)
 			\end{equation}
-			\cite{bugni_goodness--fit_2009} show that the measure $\mu_K$ induced by this finite version converges in the following sense to the measure $\mu$ induced by the infinite version. Let $A$ be a $\mu$-measurable subset of $\mathbb{L}_2[0,1]$. Then $\forall a \in A$, there is a unique countably infinite sequence of Fourier coefficients $b(a) = (b_k(a))_{k \in \mathbb{N}}$ given by $b_k(a) = \int_{0}^{1} a(t) \psi_k(t) \mathrm{d}t$. As $a \in \mathbb{L}_2[0,1]$ these coefficients necessarily fulfill $\sum_{k = 1}^{\infty} b_k^2 < \infty$. Using the following definitions,
+			Understanding the relationship between these measures allows us to justify using a finite number of basis functions in the implementation of the test.
+			\cite{bugni_goodness--fit_2009} show that the measure $\mu_K$ induced by $Z_K(t)$ converges to the measure $\mu$ induced by $Z(t)$ in the following sense. Let $A$ be a $\mu$-measurable subset of $\mathbb{L}_2[0,1]$. Then $\forall a \in A$, there is a unique countably infinite sequence of Fourier coefficients $b(a) = (b_k(a))_{k \in \mathbb{N}}$ given by $b_k(a) = \int_{0}^{1} a(t) \psi_k(t) \mathrm{d}t$. As $a \in \mathbb{L}_2[0,1]$ these coefficients fulfill $\sum_{k = 1}^{\infty} b_k^2 < \infty$. \\
+			
+			\cite{bugni_goodness--fit_2009} define the following objects.
 			\begin{itemize}
 				\item $\textbf{B} = \left\{b(a) \ \vert \ a \in A\right\}$
 				\item $\textbf{B}_K = \left\{\left(b_1, \dots, b_K \right) \ \vert \ \exists b' \in B \  \forall k = 1, \dots, K \quad b_k = b'_k \right\}$
 				\item $\textbf{A}_K = \left\{ \sum_{i = 1}^{\infty} b_k \psi_k(t) \ \vert \ \left(b_1, \dots, b_K \right) \in \textbf{B}_K \quad \text{and} \quad \sum_{k = 1}^{\infty} b_k^2 < \infty \right\}$
 			\end{itemize}
-			the authors show that for any $A$ in the Borel sigma field of subsets of $\mathbb{L}_2[0,1]$, the following condition holds, where $\mathcal{P}$ denotes the probability measure associated with $\mu$.
+			The authors then show that for any $A$ in the Borel sigma field of subsets of $\mathbb{L}_2[0,1]$, the following condition holds, where $\mathcal{P}$ denotes the probability measure associated with $\mu$.
 			\begin{equation}
 				\lim_{K \rightarrow \infty} \mathcal{P}(\textbf{A}_K) = \mathcal{P}(\textbf{A})
 			\end{equation}
-			In later steps of this thesis, this argument allows us to use a truncation of the basis in the construction of a measure at a reasonably high truncation parameter as integrals with respect to the  measure converge to their counterpart induced by the random variable constructed using a non-truncated basis as the truncation parameter goes to infinity.
+			This argument allows us to use a truncated basis in the construction of a measure at a reasonably high truncation parameter $K$ as integrals with respect $\mu_K$ converge to their counterparts with respect to $\mu$ as the truncation parameter $K$ goes to infinity.
 			\begin{equation}
-				\lim_{K \rightarrow \infty} \int_{\mathbb{L}_2(\mathcal{I})} \mathcal{F}(z) \mathrm{d}\mu_K = \int_{\mathbb{L}_2(\mathcal{I})} \mathcal{F}(z) \mathrm{d}\mu
+				\lim_{K \rightarrow \infty} \int_{\mathbb{L}_2[0,1]} \mathcal{F}(z) \mathrm{d}\mu_K = \int_{\mathbb{L}_2[0,1]} \mathcal{F}(z) \mathrm{d}\mu
 			\end{equation}
 			
-			As a more general treatment of these aspects would be mathematically very involved, this section shall primarily serve to give intuition. For readers that are interested in a more detailed mathematical analysis of the described testing procedure, \cite{gihman_theory_2004} and \cite{skorohod_integration_1974} give a rigorous treatment of the necessary theory on measures, probabilities and integration in Hilbert spaces. 
+			A more general treatment of these aspects would be mathematically very involved. Therefore, this section shall primarily serve to give intuition. For readers that are interested in a more detailed mathematical analysis, \cite{gihman_theory_2004} and \cite{skorohod_integration_1974} give a rigorous treatment of the necessary theory on measures, probabilities, and integration in Hilbert spaces. 
 		
-		\subsection{Functional Integration on $\mathbb{L}_2$}\label{Integration}
-		
-			In one of the test statistics used in \cite{bugni_permutation_2021}, it is necessary to integrate over a function space. Therefore, it is necessary to explore the ideas of functional integration and integration on separable Hilbert spaces. 
-			The formal definition of a functional integral over the functional $G[f]$ over some separable Hilbert space of functions is given as follows. 
+		\subsection{Functional Integration on $\mathbb{L}_2[0,1]$}\label{Integration}
+			To evaluate the expected value of the functional mentioned at the beginning of Section \ref{prob_measures_l2}, it is necessary to integrate over a function space. Therefore, it is necessary to explore the ideas of functional integration and integration on separable Hilbert spaces. 
+			The formal definition of a functional integral over the functional $G[f]$ over $\mathbb{L}_2[0,1]$ is given as follows. 
 			\begin{equation}
-				\int_{\mathbb{L}_2(\mathcal{I})} G\left[f\right] \left[Df\right] = \int_{-\infty}^{\infty}\dots\int_{-\infty}^{\infty} G\left(f_1, f_2, \dots\right) \prod_{n} \mathrm{d}f_n
+				\int_{\mathbb{L}_2[0,1]} G\left[f\right] \left[Df\right] = \int_{-\infty}^{\infty}\dots\int_{-\infty}^{\infty} G\left(f_1, f_2, \dots\right) \prod_{n} \mathrm{d}f_n
 			\end{equation}
-		
-			However, as the test statistic is in reality always calculated using Monte-Carlo integration, it is more useful to give a brief theoretical overview of functional integration and to instead introduce Monte-Carlo method with respect to some measure induced by a random variable. Similar to the more general concept of Monte-Carlo simulation, Monte-Carlo integration relies on randomness to approximate an object that might be difficult to evaluate exactly.\\
-			For simplicity, assume that we want to approximate a 
-		
-			As in the previous section, an in-depth treatment of integration on Hilbert spaces is out of the scope of this thesis. However, a detailed overview on integration on Hilbert spaces is given in \cite{skorohod_integration_1974} and could be used to derive theoretical properties of the test in a more general setting.
+			As in the previous section, an in-depth treatment of integration on Hilbert spaces is out of the scope of this thesis. However, a detailed overview of integration on Hilbert spaces is given in \cite{skorohod_integration_1974} and could be used to derive theoretical properties of the test in a more general setting. In many cases, functional integrals over Hilbert spaces do not have closed solutions. Instead, it is often necessary to evaluate them using methods from perturbation theory. Because of the nature of the test in \cite{bugni_permutation_2021}, actually using these methods to approximate the functional integrals would be inadvisable due to the computational cost. Nevertheless, for theoretical considerations on the properties of Cram\'{e}r-von Mises type tests in a functional setting, perturbation theory could be an interesting approach. An introduction to the necessary theory is given in \cite{jeribi_perturbation_2021}.\\
+			
+			In \cite{bugni_permutation_2021}, the test statistic is instead calculated using Monte-Carlo integration. Therefore, it is more useful to introduce Monte-Carlo integration with respect to some measure induced by a random variable. Like the more general concept of Monte-Carlo simulations, Monte-Carlo integration relies on randomness to approximate an object that might be difficult or impossible to evaluate algebraically. 
+			
+			To illustrate the principle, assume that the following integral has a fixed value in $\mathbb{R}$ and that $\mu$ is induced by a continuous, scalar-valued random variable $Z$ realizing in $[0,1]$.
+			\begin{equation}
+				V = \int_{0}^{1} g(x) \mathrm{d}\mu = \int_{0}^{1} g(x) f_Z(x) \mathrm{d}x \quad \text{where} \quad g:[0,1] \rightarrow \mathbb{R}
+			\end{equation}
+			Assuming that it is possible to draw realizations of $Z$, an intuitive approach to approximate $V$ is given by the following two equations.
+			\begin{equation}
+				\hat{V} = \frac{1}{n} \sum_{i = 1}^{n} g(Z_i) \quad \text{where} \quad Z_i \sim_{\text{i.i.d.}} Z \quad i = 1, \dots, n
+			\end{equation}
+			Assuming that $\textit{Var}(g(Z)) < \infty$, this approach is justified because $\hat{V} \rightarrow_p V$ as shown by the following equations.
+			\begin{equation}
+					\mathbb{E}[\hat{V}] = \mathbb{E}\left[\frac{1}{n}\sum_{i = 1}^{n} g(Z_i)\right] = \frac{1}{n}\sum_{i = 1}^{n}\mathbb{E}\left[g(Z_i)\right] \stackrel{Z_i \ \text{i.i.d.}}{=} \mathbb{E}\left[g(Z)\right] = V
+			\end{equation}
+			\begin{equation}
+				\textit{Var}\left(\hat{V}\right) = \textit{Var}\left(\frac{1}{n}\sum_{i = 1}^{n} g(Z_i)\right) \stackrel{Z_i \ \text{i.i.d.}}{=} 
+				\frac{1}{n} \textit{Var}\left(g(Z)\right) \rightarrow 0 \quad \text{as} \quad n \rightarrow \infty
+			\end{equation}
+			Therefore, if it can be assumed that the expectation and the variance are finite, this approach will give approximations of the expectation that converge to the correct value as the number of realizations of $Z$ that is used in the Monte-Carlo integration goes to infinity.
+			As this principle of this method does not depend on the domain of $g$, it can analogously be used in the context of function spaces. It gives a convenient alternative to the theoretically complex methods mentioned before and is therefore a useful alternative in the context of this thesis.
 		
 	\section{Cram\'{e}r-von Mises Tests}\label{CvM_Tests}
 		In applied econometrics, it is often interesting to ask whether the same stochastic process generated the observations in two distinct data sets. In an experimental setting, we could ask whether a treatment assigned at random to a subset of agents changed the distribution of an outcome variable. 
@@ -398,14 +418,14 @@ style=authoryear,
 	\section{Test by Bugni and Horowitz (2021)}\label{Bugni_Horowitz_2021}
 	
 		Similar to the idea of the Cram\'{e}r-von Mises tests in a scalar setting, \cite{bugni_permutation_2021} devise a permutation test for the equality of the distributions of the data generating processes of two independent samples of functional data. 
-		To define the exact hypothesis, it is therefore necessary to define a distribution function for a random variable realizing in $\mathbb{L}_2(\mathcal{I})$.
-		\begin{definition}[Distribution Function of a Random Function]
-			Let $X:\Omega \rightarrow \mathbb{L}_2(\mathcal{I})$ be a random function realizing in the square-integrable functions. Then its distribution function is defined as the following object.
+		To define the exact hypothesis, it is therefore necessary to define a distribution function for a random variable realizing in $\mathbb{L}_2[0,1]$.
+		\begin{definition}[Distribution Function of a Random Function]\label{dist_func}
+			Let $X:\Omega \rightarrow \mathbb{L}_2[0,1]$ be a random function realizing in the square-integrable functions. Then its distribution function is defined as the following object.
 			\begin{equation*}
-				F_X(z) = \mathbb{P}\left[X(t) \leq z(t) \quad \forall t \in \mathcal{I}\right] \quad z \in \mathbb{L}_2(\mathcal{I})
+				F_X(z) = \mathbb{P}\left[X(t) \leq z(t) \quad \forall t \in [0,1]\right] \quad z \in \mathbb{L}_2[0,1]
 			\end{equation*}
 		\end{definition}
-		Deviating from the norm in functional data analysis, the authors assume that two functions $z_1, z_2 \in \mathbb{L}_2(\mathcal{I})$ are distinct even if they only differ on a set of Lebesgue-measure zero.\\
+		Deviating from the norm in functional data analysis, the authors assume that two functions $z_1, z_2 \in \mathbb{L}_2[0,1]$ are distinct even if they only differ on a set of Lebesgue-measure zero.\\
 		
 		Tests of this nature exist in some forms already and the following list shall give a non-exhaustive overview of other procedures that could be applied.
 		\begin{itemize}
@@ -432,11 +452,11 @@ style=authoryear,
 			In less theoretical terms this means that the process is determined by its values on a countable subset of points of its index set.
 		
 			\begin{assumption}
-				$\mathbb{E}X(t)$ and $\mathbb{E}Y(t)$ exist and are finite for all $t \in [0, T]$.
+				$\mathbb{E}X(t)$ and $\mathbb{E}Y(t)$ exist and are finite for all $t \in [0, 1]$.
 			\end{assumption}
 		
 			\begin{assumption}\label{continuous_observation}
-				$X_i(t)$ and $Y_i(t)$ are observed for all $t \in \mathcal{I}$.
+				$X_i(t)$ and $Y_i(t)$ are observed for all $t \in [0,1]$.
 			\end{assumption}
 			Assumption \ref{continuous_observation} can be relaxed and a similar test can be constructed for the case of discretely observed processes. This variation of the test will not be addressed in this thesis. However, \cite{bugni_permutation_2021} provide a description of how to extend their idea to this common scenario.
 	
@@ -444,34 +464,34 @@ style=authoryear,
 			As with most permutation tests, the null hypothesis of the test presented by \cite{bugni_permutation_2021} is distributional in nature and is formulated by the authors as follows.
 			\begin{equation}
 				\begin{split}
-					H_0: \quad &F_X(z) = F_Y(z) \quad \forall z \in \mathbb{L}_2(\mathcal{I}) \\
+					H_0: \quad &F_X(z) = F_Y(z) \quad \forall z \in \mathbb{L}_2[0,1] \\
 					H_1: \quad &\mathbb{P}_{\mu}\left[F_X(Z) \neq F_Y(Z)\right] > 0
 				\end{split}
 			\end{equation}
-			Here, $\mu$ is a probability measure on $\mathbb{L}_2(\mathcal{I})$ and $Z$ is a random function with probability distribution $\mu$. As can be seen by the formulation of the hypothesis, this test does not intend to have power against alternatives that differ only on a set of functions that have $\mu$-measure zero. Thereby, the choice of the measure is an important factor to consider when trying to use this test against a specific suspected alternative.  
+			Here, $\mu$ is a probability measure on $\mathbb{L}_2[0,1]$ and $Z$ is a random function with probability distribution $\mu$. As can be seen by the formulation of the hypothesis, this test does not intend to have power against alternatives that differ only on a set of functions that have $\mu$-measure zero. Thereby, the choice of the measure is an important factor to consider when trying to use this test against a specific suspected alternative.  
 		
 		\subsection{Cram\'{e}r-von Mises type Test}
-		
-			Empirical Distribution Functions
+			Similar to the Cram\'{e}r-von Mises test described in Section \ref{CvM_Tests}, the test constructed by \cite{bugni_permutation_2021} relies on the empirical distribution functions describing the samples. 
+			Therefore, it is necessary to define empirical distribution functions for the functional setting which is immediately inspired by the distribution functions described in Definition \ref{dist_func}.
 			\begin{multicols}{2}
 				\noindent
 				\begin{equation*}
-					\hat{F}_X(z) = \frac{1}{n} \sum_{i = 1}^{n}\mathbbm{1}\left[X_i(t) \leq z(t) \ \forall t \in \mathcal{I}\right]
+					\hat{F}_X(z) = \frac{1}{n} \sum_{i = 1}^{n}\mathbbm{1}\left[X_i(t) \leq z(t) \ \forall t \in [0,1]\right]
 				\end{equation*}
 				\begin{equation}
-					\hat{F}_Y(z) = \frac{1}{m} \sum_{i = 1}^{m}\mathbbm{1}\left[Y_i(t) \leq z(t) \ \forall t \in \mathcal{I}\right]
+					\hat{F}_Y(z) = \frac{1}{m} \sum_{i = 1}^{m}\mathbbm{1}\left[Y_i(t) \leq z(t) \ \forall t \in [0,1]\right]
 				\end{equation}
 			\end{multicols}
 			
 			
 			Test statistic
 			\begin{equation}
-				\tau = \int_{\mathbb{L}_2(\mathcal{I})}\left[F_X(z) - F_Y(z)\right]^2 \mathrm{d} \mu(z)
+				\tau = \int_{\mathbb{L}_2[0,1]}\left[F_X(z) - F_Y(z)\right]^2 \mathrm{d} \mu(z)
 			\end{equation}
 			
 			Sample analog:
 			\begin{equation}
-				\tau_{n,m} = (n+m) \int_{\mathbb{L}_2(\mathcal{I})}\left[\hat{F}_X(z) - \hat{F}_Y(z)\right]^2 \mathrm{d} \mu(z)
+				\tau_{n,m} = (n+m) \int_{\mathbb{L}_2[0,1]}\left[\hat{F}_X(z) - \hat{F}_Y(z)\right]^2 \mathrm{d} \mu(z)
 			\end{equation}
 		
 			As algebraic functional integration is not suitable for this testing procedure due to the structure of the underlying objects, the authors use Monte-Carlo integration as explained in Section \ref{Integration} for the approximation of this integral. To perform the test, it is therefore necessary to choose a parameter $L$ that determines the number of functions $\left\{Z_l \ \vert \ l = 1, \dots, L\right\}$ that are used to approximate the value of $\tau_{n,m}$ by the following equation.
@@ -514,7 +534,7 @@ style=authoryear,
 			\begin{equation}
 				\mathbb{E}\left[Z_K(t)\right] = \sum_{k = 1}^{K} \mathbb{E}\left[b_k\right] \psi_k(t)
 				\quad \text{where} \quad
-				\mathbb{E}\left[b_k\right] = \int_{\mathcal{I}}w(t)\psi_k(t) \mathrm{d}t
+				\mathbb{E}\left[b_k\right] = \int_{0}^{1}w(t)\psi_k(t) \mathrm{d}t
 			\end{equation}
 		
 			\begin{equation}\label{Fourier_coefs}
@@ -523,11 +543,11 @@ style=authoryear,
 				\sum_{k = 1}^{\infty} \rho_k^2 < \infty 
 			\end{equation}
 
-			To obtain a reasonable degree of power it is important to set the expected value of the random function $Z(t)$ in a region, where data is observed and optimally in a region where realizations of the random function inducing the measure $\mu$ are able to distinguish potential differences in the samples. This could for example be done by choosing $w(t)$ dependent on the data. 	The authors suggest to choose $w(t):\mathcal{I} \rightarrow \mathbb{R}$ to be comparatively large in the parts of $\mathcal{I}$ where possible differences between the empirical distribution functions are expected to be large.
+			To obtain a reasonable degree of power it is important to set the expected value of the random function $Z(t)$ in a region, where data is observed and optimally in a region where realizations of the random function inducing the measure $\mu$ are able to distinguish potential differences in the samples. This could for example be done by choosing $w(t)$ dependent on the data. 	The authors suggest to choose $w(t):[0,1] \rightarrow \mathbb{R}$ to be comparatively large in the parts of $[0,1]$ where possible differences between the empirical distribution functions are expected to be large.
 			Taking the option used for the application in the original paper and one further possibility, the following two ways of choosing the mean function might come to mind.
 			
 			\begin{enumerate}
-				\item In their application \cite{bugni_permutation_2021} set the distribution of the fourier coefficients manually, as $b_1 \sim \mathcal{N}(\mu_1, \frac{1}{K})$ and $b_k \sim \mathcal{N}(0, \frac{1}{K}) \quad k = 2, \dots, K$ where $\mu_1 = \textit{median}_i \left(\textit{max}_t\left\{X_i(t) \ | \ i = 1, \dots, n_1, t\in \mathcal{I}\right\}\right)$.
+				\item In their application \cite{bugni_permutation_2021} set the distribution of the fourier coefficients manually, as $b_1 \sim \mathcal{N}(\mu_1, \frac{1}{K})$ and $b_k \sim \mathcal{N}(0, \frac{1}{K}) \quad k = 2, \dots, K$ where $\mu_1 = \textit{median}_i \left(\textit{max}_t\left\{X_i(t) \ | \ i = 1, \dots, n_1, t\in [0,1]\right\}\right)$.
 				This method is identical to setting $w(t) = \mu_1(t)$, as the inner product of any constant function with Fourier basis functions of order two or higher will be zero due to their cyclical nature.
 				\item Another idea is to choose a non-constant weight function based on the reference sample. One option for this choice is to use specific point-wise quantiles of the reference sample: $w(t) = \textit{quantile}_q \{X_i(t) \ | \ i = 1, \dots n_1\}$. This allows the generated functions for the Monte-Carlo integration in the approximation of the Cram\'{e}r-von Mises statistic to resemble the reference data more closely, which could improve the properties of the test.
 			\end{enumerate}
@@ -545,18 +565,18 @@ style=authoryear,
 			
 			In \cite{bugni_goodness--fit_2009}, the authors show that the approximation of the probability measure, which is induced by the approximation of the random variable in Equation \ref{truncation}, converges appropriately to the probability measure induced by the random variable in Equation \ref{non_truncated}. {\color{red} Hier weiterschreiben}\\
 			
-			At this point it is again interesting to look at the convention that two elements of $\mathbb{L}_2(\mathcal{I})$ are distinct even if they differ only on a nonempty set of Lebesgue-measure zero. One problem that this convention entails is the fact that the Fourier basis is an almost everywhere basis of $\mathbb{L}_2\left(\mathcal{I}\right)$ as shown by \cite{carleson_convergence_1966}. However, in many cases point-wise convergence of a sum as shown in Equation \ref{non_truncated} is not fulfilled. This is simple to see for any function that does not have identical values on both sides of its domain. {\color{red} Hier weiterschreiben}\\
+			At this point it is again interesting to look at the convention that two elements of $\mathbb{L}_2[0,1]$ are distinct even if they differ only on a nonempty set of Lebesgue-measure zero. One problem that this convention entails is the fact that the Fourier basis is an almost everywhere basis of $\mathbb{L}_2[0,1]$ as shown by \cite{carleson_convergence_1966}. However, in many cases point-wise convergence of a sum as shown in Equation \ref{non_truncated} is not fulfilled. This is simple to see for any function that does not have identical values on both sides of its domain. {\color{red} Hier weiterschreiben}\\
 			
-			In more basic terms, this implies that using the Fourier basis, it is impossible to construct some functions in $\mathbb{L}^{*}_2\left(\mathcal{I}\right)$ even using a non-truncated representation as shown in Equation \ref{non_truncated}.			
-			In a typical scenario where we would use $\mathbb{L}_2\left(\mathcal{I}\right)$, so only their equivalence classes of the functions, this does not pose a problem. 
-			This in turn implies that a probability measure that is constructed as shown in the previous section cannot give positive weight to many functions in the space $\mathbb{L}_2(\mathcal{I})$ if we use the convention used by the authors. Namely, for any function in $\mathbb{L}_2(\mathcal{I})$ for which the Fourier series fails to converge point-wise, we cannot assign a positive probability. This in turn could be a potential problem for the method described in the paper, if this is necessary for its working principle.
+			In more basic terms, this implies that using the Fourier basis, it is impossible to construct some functions in $\mathbb{L}_2^{*}[0,1]$ even using a non-truncated representation as shown in Equation \ref{non_truncated}.			
+			In a typical scenario where we would use $\mathbb{L}_2[0,1]$, so only their equivalence classes of the functions, this does not pose a problem. 
+			This in turn implies that a probability measure that is constructed as shown in the previous section cannot give positive weight to many functions in the space $\mathbb{L}_2[0,1]$ if we use the convention used by the authors. Namely, for any function in $\mathbb{L}_2[0,1]$ for which the Fourier series fails to converge point-wise, we cannot assign a positive probability. This in turn could be a potential problem for the method described in the paper, if this is necessary for its working principle.
 			
 		\subsection{Mean focused Test}
 			In addition to the Cram\'{e}r-von Mises type test, the authors use a second test statistic aimed at detecting violations due to a mean shift in the data generating process. This test is added due to low power against pure mean-shift alternatives in the original paper's simulations and is supposed to complement this weakness of the other test statistic.
 			
 			The variable $\mu$ on which this second test is based is the distance between the mean functions of the data generating processes as induced by the natural norm on $\mathbb{L}_2[0,1]$.
 			\begin{equation}
-				\nu = \int_{\mathcal{I}} \big(\mathbb{E}\left[X(t)\right] - \mathbb{E}\left[Y(t)\right]\big)^2 \mathrm{d}t
+				\nu = \int_{0}^{1} \big(\mathbb{E}\left[X(t)\right] - \mathbb{E}\left[Y(t)\right]\big)^2 \mathrm{d}t
 			\end{equation}
 		
 			Mean Estimators
@@ -572,7 +592,7 @@ style=authoryear,
 		
 			Sample Analog
 			\begin{equation}
-				\nu_{n,m} = (n+m) \int_{\mathcal{I}} \left[\hat{\mathbb{E}}X(t) - \hat{\mathbb{E}}Y(t)\right]^2 \mathrm{d}t
+				\nu_{n,m} = (n+m) \int_{0}^{1} \left[\hat{\mathbb{E}}X(t) - \hat{\mathbb{E}}Y(t)\right]^2 \mathrm{d}t
 			\end{equation}
 		
 			Critical values for Permutation Test Statistic
@@ -675,7 +695,7 @@ style=authoryear,
 		Their distribution functions are defined analogously to Section \ref{Bugni_Horowitz_2021} and denoted by $F_{\tilde{X}}(z)$ and $F_{\tilde{Y}}(z)$ respectively. Then we can formulate a Null-hypothesis as in \cite{bugni_permutation_2021} with respect to the standardized random functions.
 		\begin{equation}
 			\begin{split}
-				H_0: \quad &F_{\tilde{X}}(z) = F_{\tilde{Y}}(z) \quad \forall z \in \mathbb{L}_2(\mathcal{I}) \\
+				H_0: \quad &F_{\tilde{X}}(z) = F_{\tilde{Y}}(z) \quad \forall z \in \mathbb{L}_2[0.1] \\
 				H_1: \quad &\mathbb{P}_{\mu}\left[F_{\tilde{X}}(z) \neq F_{\tilde{Y}}(z)\right] > 0
 			\end{split}
 		\end{equation}
@@ -741,7 +761,7 @@ style=authoryear,
 			\begin{enumerate}
 				\item $\mathbb{E}\left[X_s(t)\right] = \mu_s(t)$
 				\item $\text{Var}\left[X_s(t)\right] = \sigma^2_s(t)$
-				\item $\text{Corr}\left[X_s(t), X_s(t-1)\right] = \rho_s(t) \\ \forall t \in \mathcal{I} \ \text{with} \ t > 1$
+				\item $\text{Corr}\left[X_s(t), X_s(t-1)\right] = \rho_s(t) \\ \forall t \in [0,1] \ \text{with} \ t > 1$
 			\end{enumerate}
 		\end{multicols}
 		As can be seen in the mathematical description above, deviating from the original paper, I focus on the two sample setting and use a sample size of 20 observations per sample. I focus on three distinct violations of the Nullhypothesis described in the following. For each of the following settings I construct sample 1 identically as a reference point to compare the different settings. The parameters for sample 1 are therefore chosen as follows.
@@ -974,6 +994,10 @@ style=authoryear,
 		After studying the method developed by \cite{bugni_permutation_2021} in detail there are a few points that might be interesting for further research. In the following I name a few that could be very interesting extension to this thesis.
 		
 		\subsection{Possible Further Simulations}
+			\paragraph{Comparing different Functional Bases\\} 
+			For the construction of the measure and fitting the observations. 
+			{\color{red} Hier weiterschreiben.}
+		
 			\paragraph{Comparing choices of $w(t)$ and  $\left(\rho_i\right)_{i = 1, \dots, K}$\\}
 			In this thesis I only perform simulations for one intuitive choice of $w(t)$ and $\left(\rho_i\right)_{i = 1, \dots, K}$. It seems reasonable to assume that these parameter choices could have a significant impact on the performance of the method and it would therefore be interesting to compare different choices in a structured framework.
 			
@@ -1006,13 +1030,15 @@ style=authoryear,
 	\section{Appendix}
 	
 		\subsection{Informal Intuition}\label{Intuition}
-			For potential readers that are unfamiliar with the idea of functional data analysis and permutation testing, the initial hurdle of reading this thesis without any intuitive knowledge about the ideas at play might be very high. Therefore, this short informal introduction should shall serve as a primer that gives an intuitive idea about the following questions.
-			\begin{enumerate}
-				\item What setting are we in?
-				\item What do we want to test?
-				\item How do we want to test it?
-				\item Why should I care?
-			\end{enumerate}
+			For potential readers that are unfamiliar with the idea of functional data analysis and permutation testing, the initial hurdle of reading this thesis without any intuitive understanding might be high. Therefore, this short informal introduction should shall serve as a primer that gives an intuitive idea about the following questions.
+			\begin{multicols}{2}
+				\begin{enumerate}
+					\item What setting are we in?
+					\item What do we want to test?
+					\item How do we want to test it?
+					\item Why should I care?
+				\end{enumerate}
+			\end{multicols}
 			By choice, this section will \textbf{not} be formal and it will \textbf{not} be precise as to not introduce too much detail that could hinder an intuitive understanding.\\
 			
 			Answering question one is relatively simple. This thesis deals with a statistical problem, where observations are continuously observed curves. But what does that mean intuitively? One scenario that is easy to imagine, is a curve over time for some variable such as speed: When driving a car at the 24 hour race at Le-Mans, it has a speed at every point in time during the race - for example $155.3$ km/h at 2 hours, 33 minutes and 7 seconds after the race has started. Observations in the sense of this thesis are similar to this curve: at every value of $x$ in some closed interval $[a,b] \subset \mathbb{R}$, we observe a value $y$.\\
@@ -1026,10 +1052,10 @@ style=authoryear,
 			
 			Why should you care about this is the hardest question. I care about it, because it is cool from a mathematical perspective. But if you care about real-life problems there are also good reasons to be interested. Economic data is being observed at increasing frequencies as technology improves. Many problems that were previously low dimensional due to data constraints or suitable for classical time series methods, are becoming more complex as methodological challenges such as high-dimensionality and extreme correlation of neighboring observations arise. Functional data analysis is a comparatively new approach to many of these problems that transforms some of these problems into strengths by acknowledging the functional structure of the underlying processes. Permutation tests are also comparatively new, at least in our ability to apply them on a larger scale.
 			
-		\subsection{$\mathbb{L}_2(\mathcal{I})$ as defined in \cite{bugni_permutation_2021}}\label{deviation}
-		To distinguish between the typical case presented in the previous section, let $\mathbb{L}_2(\mathcal{I})$ denote the Hilbert space of square-integrable functions and $\mathbb{L}^{*}_2(\mathcal{I})$ the square-integrable functions under the the convention from \cite{bugni_permutation_2021}.\\
+		\subsection{$\mathbb{L}_2[0,1]$ as defined in \cite{bugni_permutation_2021}}\label{deviation}
+		To distinguish between the typical case presented in the previous section, let $\mathbb{L}_2[0,1]$ denote the Hilbert space of square-integrable functions and $\mathbb{L}^{*}_2[0,1]$ the square-integrable functions under the the convention from \cite{bugni_permutation_2021}.\\
 		
-		Using $\mathbb{L}^{*}_2(\mathcal{I})$ creates some interesting theoretical challenges, as the resulting object is in fact not a Hilbert space. To understand the theoretical problems that can occur, I first introduce some additional concepts to illustrate the challenges.
+		Using $\mathbb{L}^{*}_2[0.1]$ creates some interesting theoretical challenges, as the resulting object is in fact not a Hilbert space. To understand the theoretical problems that can occur, I first introduce some additional concepts to illustrate the challenges.
 		\begin{definition}[Norm and Seminorm]
 			A function $p : \mathbb{V} \rightarrow \mathbb{F}$ on a vector space $\mathbb{V}$ over a field $\mathbb{F}$ is called a norm if the following four conditions hold for all $v,u \in \mathbb{V}$ and $s \in \mathbb{F}$.
 			\begin{multicols}{2}
@@ -1058,21 +1084,21 @@ style=authoryear,
 			Therefore, deviating from a metric space, two distinct points in a pseudometric space can have a distance of zero $d(x,y) = 0$ for $x \neq y$.
 		\end{definition}
 		
-		That $\mathbb{L}^{*}_2(\mathcal{I})$ is not a Hilbert space becomes clear, when checking the for the properties of the norm induced by the inner product $\| v \| = \sqrt{\langle v, v\rangle}$.
+		That $\mathbb{L}^{*}_2[0,1]$ is not a Hilbert space becomes clear, when checking the for the properties of the norm induced by the inner product $\| v \| = \sqrt{\langle v, v\rangle}$.
 		One of the properties that has to be fulfilled by a norm is $\| v \| = 0 \Longleftrightarrow v = 0$.			
 		Let $f:[0,1] \rightarrow \mathbb{R}$ be given by $f(x) = \mathbbm{1}\left[x = 0.5\right]$. Then we can evaluate the following expression to create a contradiction to the norm properties.
 		\begin{equation}
 			\| f \| = \sqrt{\langle f, f\rangle} = \sqrt{\int_{0}^{1} \left[f(t)\right]^2\mathrm{d}t } = 0
 		\end{equation}
-		As $f$ is not the zero element of this space, this is a violation of positive definiteness. Positive definiteness applied to the case at hand, states that $\forall v \in \mathbb{L}_2\left(\mathcal{I}\right) \| v \| = 0 \implies v(x) = 0 \quad \forall x \in \mathcal{I}$  $\forall v \in $. Instead, $\| v \| = \sqrt{\langle v, v\rangle}$ is a seminorm and the defined space should more correctly be treated as a pseudometric space.\\
+		As $f$ is not the zero element of this space, this is a violation of positive definiteness. Positive definiteness applied to the case at hand, states that $\forall v \in \mathbb{L}_2[0,1] \| v \| = 0 \implies v(x) = 0 \quad \forall x \in [0,1]$  $\forall v \in $. Instead, $\| v \| = \sqrt{\langle v, v\rangle}$ is a seminorm and the defined space should more correctly be treated as a pseudometric space.\\
 		
 		{\color{red} This is from Wikipedia!!!}
 		\begin{definition}[Hausdorff Space]
 			A Hausdorff space is a topological space where for any two distinct points $x$ and $y$, there exist a neighborhood $U$ of $x$ and a nieghborhood $V$ of $y$ such that $U$ and $V$ are disjoint. This property is also called neighborhood-separability.
 		\end{definition}
 		
-		One problem of $\mathbb{L}^{*}_2(\mathcal{I})$ is, that if we give the space the topology induced by the obvious seminorm, the resulting space would not be Hausdorff. Thus, limits in the later part of \cite{bugni_permutation_2021} would not be defined.
-		A second problem is, that it is not clear how a Schauder basis would be defined for a pseudometric space such as $\mathbb{L}^{*}_2(\mathcal{I})$ and that typical existence results for orthonormal bases might not be available.\\				
+		One problem of $\mathbb{L}^{*}_2[0,1]$ is, that if we give the space the topology induced by the obvious seminorm, the resulting space would not be Hausdorff. Thus, limits in the later part of \cite{bugni_permutation_2021} would not be defined.
+		A second problem is, that it is not clear how a Schauder basis would be defined for a pseudometric space such as $\mathbb{L}^{*}_2[0,1]$ and that typical existence results for orthonormal bases might not be available.\\				
 	
 		\subsection{Multiple Testing}\label{Multiple_Testing}
 			When testing statistical hypotheses, it is often helpful or even necessary to test multiple hypotheses independently of each other. One setting where this could be useful is when we want to combine the desirable properties of two tests, as is done by \cite{bugni_permutation_2021}. If the tests do not perfectly depend on each other, this creates a problem relating to the size of the combined test.

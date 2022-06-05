@@ -817,6 +817,35 @@
       \field{title}{Theoretical foundations of functional data analysis, with an introduction to linear operators}
       \field{year}{2015}
     \endentry
+    \entry{jeribi_perturbation_2021}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4123602654b6f6076857c388f594ad46}{%
+           family={Jeribi},
+           familyi={J\bibinitperiod},
+           given={Aref},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Singapore Pte. Limited}%
+      }
+      \strng{namehash}{4123602654b6f6076857c388f594ad46}
+      \strng{fullhash}{4123602654b6f6076857c388f594ad46}
+      \strng{bibnamehash}{4123602654b6f6076857c388f594ad46}
+      \strng{authorbibnamehash}{4123602654b6f6076857c388f594ad46}
+      \strng{authornamehash}{4123602654b6f6076857c388f594ad46}
+      \strng{authorfullhash}{4123602654b6f6076857c388f594ad46}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9789811625275}
+      \field{month}{1}
+      \field{title}{Perturbation {Theory} for {Linear} {Operators}}
+      \field{year}{2021}
+    \endentry
     \entry{kokoszka_introduction_2021}{book}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=66f98311069b2eb80843b774d51c21c1}{%
@@ -1025,51 +1054,6 @@
       \range{pages}{18}
       \verb{doi}
       \verb 10.1002/env.905
-      \endverb
-    \endentry
-    \entry{marcus_closed_1976}{article}{}
-      \name{author}{3}{}{%
-        {{un=0,uniquepart=base,hash=ca67f80b5c3f582b5f04ff3cfa66c0f3}{%
-           family={Marcus},
-           familyi={M\bibinitperiod},
-           given={Ruth},
-           giveni={R\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=ebfa198bf47ee8acbe7a9bc237424baa}{%
-           family={Peritz},
-           familyi={P\bibinitperiod},
-           given={Eric},
-           giveni={E\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=baeee2068bd7682af16205488f205d60}{%
-           family={Gabriel},
-           familyi={G\bibinitperiod},
-           given={K.\bibnamedelimi R.},
-           giveni={K\bibinitperiod\bibinitdelim R\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{e8486d5bdb26481139820d1539599748}
-      \strng{fullhash}{e8486d5bdb26481139820d1539599748}
-      \strng{bibnamehash}{e8486d5bdb26481139820d1539599748}
-      \strng{authorbibnamehash}{e8486d5bdb26481139820d1539599748}
-      \strng{authornamehash}{e8486d5bdb26481139820d1539599748}
-      \strng{authorfullhash}{e8486d5bdb26481139820d1539599748}
-      \field{sortinit}{M}
-      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Biometrika}
-      \field{note}{Publisher: [Oxford University Press, Biometrika Trust]}
-      \field{number}{3}
-      \field{title}{On {Closed} {Testing} {Procedures} with {Special} {Reference} to {Ordered} {Analysis} of {Variance}}
-      \field{volume}{63}
-      \field{year}{1976}
-      \field{pages}{655\bibrangedash 660}
-      \range{pages}{6}
-      \verb{doi}
-      \verb 10.2307/2335748
       \endverb
     \endentry
     \entry{pettitt_two-sample_1976}{article}{}
