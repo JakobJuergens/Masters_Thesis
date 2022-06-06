@@ -342,12 +342,12 @@ style=authoryear,
 			
 	\section{Permutation Tests}\label{Permutation_Tests}
 		The third and final component to understanding \cite{bugni_permutation_2021} is to understand the principles of permutation testing.
-		In layman's terms, the idea of a permutation test is the following: if two samples show distinctly different properties, that will lead to differences in an appropriately chosen summary statistic. If we were to permute the elements of the groups randomly, we would expect these differences to disappear.
+		In layman's terms, the idea of a permutation test is the following: if two samples show distinctly different properties, that will lead to differences in an appropriately chosen summary statistic. If one were to permute the elements of the groups randomly, one would expect these differences in the test statistic to disappear.
 		Permutation tests formalize this intuition. The following section closely follows chapter 15 from \cite{lehmann_testing_2005} with some input from \cite{van_der_vaart_weak_1996}.
 	
 		\subsection{Functional Principle of Permutation Tests}
 		
-			One on the defining features of a test is its null hypothesis. For the case of randomization tests, it is typically very general. Let $X$ be data taking values in a sample space $\mathcal{X}$. Then, the hypothesis is that the probability law $P$ generating $X$ belongs to a family of distributions $\Omega_0$. \cite{lehmann_testing_2005} define an assumption called the randomization hypothesis that allows for the construction of randomization tests. As permutation tests are a special case of randomization tests, we can specialize this definition to the case under consideration.
+			One of the defining features of a test is its null hypothesis. For the case of randomization tests, it is typically very general. Let $X$ be data taking values in a sample space $\mathcal{X}$. Then, the hypothesis is that the probability law $P$ generating $X$ belongs to a family of distributions $\Omega_0$. \cite{lehmann_testing_2005} define an assumption called the randomization hypothesis that allows for the construction of randomization tests. As permutation tests are a special case of randomization tests, we can specialize this definition to the case under consideration.
 			\begin{assumption}[Randomization Hypothesis]\label{rand_hypo}
 				 Let $G$ be a finite group of transformations $g: \mathcal{X} \rightarrow \mathcal{X}$. Under the null hypothesis of the randomization test, the distribution of $X$ is invariant under the transformations $g \in G$. In other words, $gX$ and $X$ have the same distribution whenever $X$ has distribution $P \in \Omega_0$.
 			\end{assumption}
@@ -364,6 +364,7 @@ style=authoryear,
 				\end{equation}
 			\end{multicols}
 			
+			Using these objects, we can define a test function that decides whether the null hypothesis is rejected based on the value of the test statistic calculated on the non-permuted samples and a chosen size for the test.
 			\begin{definition}[Randomization Test Function]\label{RandTestFunc}
 				We define the Randomization Test Function as the following function $\phi: \mathcal{X} \rightarrow \mathbb{R}$.
 					\begin{equation*}
@@ -376,7 +377,7 @@ style=authoryear,
 					\end{equation*}
 				
 			\end{definition}
-			This function can be interpreted as a decider of whether a null hypothesis is rejected. If $\tau(X) = 1$, the null hypothesis is rejected, if $\tau(X) = 0$ it cannot be rejected, and if $\tau(X) = a$, the decision is randomized using a Bernoulli variable that is $1$ with probability $a$. 
+			This function can be interpreted as a decider of whether a null hypothesis is rejected. If $\phi(X) = 1$, the null hypothesis is rejected, if $\phi(X) = 0$ it cannot be rejected, and if $\phi(X) = a$, the decision is randomized using a Bernoulli variable that is $1$ with probability $a$. 
 			Under Assumption \ref{rand_hypo}, it is possible to show that, given a test statistic $T = T(X)$, the resulting test $\phi$ has size $\alpha$.
 			\begin{equation}
 				\mathbb{E}_{P}\left[\phi(X)\right] = \alpha \quad \forall P \in \Omega_0
@@ -409,7 +410,7 @@ style=authoryear,
 	\section{Test by Bugni and Horowitz (2021)}\label{Bugni_Horowitz_2021}
 	
 		Similar to the idea of the Cram\'{e}r-von Mises tests in a scalar setting, \cite{bugni_permutation_2021} devise a permutation test for the equality of the distributions of the data generating processes of two independent samples of functional data. 
-		To define the exact hypothesis, it is therefore necessary to define a distribution function for a random variable realizing in $\mathbb{L}_2[0,1]$.
+		To define the exact hypothesis, it is therefore necessary to define a distribution function for random variables realizing in $\mathbb{L}_2[0,1]$.
 		\begin{definition}[Distribution Function of a Random Function]\label{dist_func}
 			Let $X:\Omega \rightarrow \mathbb{L}_2[0,1]$ be a random function realizing in the square-integrable functions. Then its distribution function is defined as the following object.
 			\begin{equation*}
@@ -452,11 +453,11 @@ style=authoryear,
 			Assumption \ref{continuous_observation} can be relaxed and a similar test can be constructed for the case of discretely observed processes. This variation of the test will not be addressed in this thesis. However, \cite{bugni_permutation_2021} provide a description of how to extend their idea to this common scenario.
 	
 		\subsection{Null Hypothesis}
-			As with most permutation tests, the null hypothesis of the test presented by \cite{bugni_permutation_2021} is distributional in nature and is formulated by the authors as follows.
+			As with most permutation tests, the null hypothesis of the test presented by \cite{bugni_permutation_2021} is distributional in nature. In the following let $F(z)$ denote the distribution function of the random function $X(t)$ and $G(z)$ denote the distribution function of the random function $Y(t)$. Then the null hypothesis can be formulated in the following way.
 			\begin{equation}
 				\begin{split}
-					H_0: \quad &F_X(z) = F_Y(z) \quad \forall z \in \mathbb{L}_2[0,1] \\
-					H_1: \quad &\mathbb{P}_{\mu}\left[F_X(Z) \neq F_Y(Z)\right] > 0
+					H_0: \quad &F(z) = G(z) \quad \forall z \in \mathbb{L}_2[0,1] \\
+					H_1: \quad &\mathbb{P}_{\mu}\left[F(Z) \neq G(Z)\right] > 0
 				\end{split}
 			\end{equation}
 			Here, $\mu$ is a probability measure on $\mathbb{L}_2[0,1]$ and $Z$ is a random function with probability distribution $\mu$. As can be seen by the formulation of the hypothesis, this test does not intend to have power against alternatives that differ only on a set of functions that have $\mu$-measure zero. Thereby, the choice of the measure is an important factor to consider when trying to use this test against a specific suspected alternative.  
@@ -467,29 +468,28 @@ style=authoryear,
 			\begin{multicols}{2}
 				\noindent
 				\begin{equation*}
-					\hat{F}_X(z) = \frac{1}{n} \sum_{i = 1}^{n}\mathbbm{1}\left[X_i(t) \leq z(t) \ \forall t \in [0,1]\right]
+					\hat{F}_n(z) = \frac{1}{n} \sum_{i = 1}^{n}\mathbbm{1}\left[X_i(t) \leq z(t) \ \forall t \in [0,1]\right]
 				\end{equation*}
 				\begin{equation}
-					\hat{F}_Y(z) = \frac{1}{m} \sum_{i = 1}^{m}\mathbbm{1}\left[Y_i(t) \leq z(t) \ \forall t \in [0,1]\right]
+					\hat{G}_m(z) = \frac{1}{m} \sum_{i = 1}^{m}\mathbbm{1}\left[Y_i(t) \leq z(t) \ \forall t \in [0,1]\right]
 				\end{equation}
 			\end{multicols}
 			
-			
-			Test statistic
+			As in the scalar setting described in Section \ref{CvM_Tests}, the idea of the test is that the differences between these empirical distribution functions are expected to be comparatively small under the null hypothesis. 
 			\begin{equation}
-				\tau = \int_{\mathbb{L}_2[0,1]}\left[F_X(z) - F_Y(z)\right]^2 \mathrm{d} \mu(z)
+				\tau = \int_{\mathbb{L}_2[0,1]}\left[F(z) - G(z)\right]^2 \mathrm{d} \mu(z)
 			\end{equation}
 			
 			Sample analog:
 			\begin{equation}
-				\tau_{n,m} = (n+m) \int_{\mathbb{L}_2[0,1]}\left[\hat{F}_X(z) - \hat{F}_Y(z)\right]^2 \mathrm{d} \mu(z)
+				\tau_{n,m} = (n+m) \int_{\mathbb{L}_2[0,1]}\left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2 \mathrm{d} \mu(z)
 			\end{equation}
 		
 			As algebraic functional integration is not suitable for this testing procedure due to the structure of the underlying objects, the authors use Monte-Carlo integration as explained in Section \ref{Integration} for the approximation of this integral. To perform the test, it is therefore necessary to choose a parameter $L$ that determines the number of functions $\left\{Z_l \ \vert \ l = 1, \dots, L\right\}$ that are used to approximate the value of $\tau_{n,m}$ by the following equation.
 			\begin{equation}
-				\hat{\tau}_{n,m} = \frac{n+m}{L} \sum_{l = 1}^{L} \left[\hat{F}_X(Z_l) - \hat{F}_Y(Z_l)\right]^2
+				\hat{\tau}_{n,m} = \frac{n+m}{L} \sum_{l = 1}^{L} \left[\hat{F}_n(Z_l) - \hat{G}_m(Z_l)\right]^2
 			\end{equation}
-			These functions are drawn from a random function associated with the chosen measure $\mu$ and their construction is explained in more detail in Section \ref{mu}.
+			These functions are drawn from a random function associated with the chosen measure $\mu$, and their construction is explained in more detail in Section \ref{mu}. At this point, it is interesting to ask whether Monte-Carlo integration is a suitable approach in this specific setting; in other words, whether the mean and variance of $\left[\hat{F}_n(Z_l) - \hat{G}_m(Z_l)\right]^2$ with respect to $\mu$ exist.
 			 {\color{red} Hier weiterschreiben}
 		
 			Critical values for Permutation Test Statistic
@@ -502,7 +502,7 @@ style=authoryear,
 			
 			Under the null hypothesis and mild regularity conditions, it is possible to show that 
 			\begin{equation}
-				(n+m)^{\frac{1}{2}} \left[\hat{F}_X(z) - \hat{F}_Y(z)\right]
+				(n+m)^{\frac{1}{2}} \left[\hat{F}_n(z) - \hat{G}_m(z)\right]
 			\end{equation}
 			converges to a mean-zero Gaussian process. For the derivation look in Appendix \ref{asymp_deriv}.
 		
