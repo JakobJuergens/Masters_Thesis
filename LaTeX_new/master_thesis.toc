@@ -47,8 +47,8 @@
 \contentsline {paragraph}{Less restrictive Distributions of Fourier Coefficients\\}{33}{subsection.9.1}%
 \contentsline {paragraph}{Simulations for Unbalanced Sample Sizes\\}{33}{subsection.9.1}%
 \contentsline {paragraph}{Comparing Implementations using different orders of Operations\\}{33}{subsection.9.1}%
-\contentsline {paragraph}{Kolmogorov-Smirnov Variant of the test\\}{33}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Potential Applications}{33}{subsection.9.2}%
+\contentsline {paragraph}{Variants of the Test based on different Norms\\}{33}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Potential Applications}{34}{subsection.9.2}%
 \contentsline {section}{\numberline {10}Bibliography}{35}{section.10}%
 \contentsline {section}{\numberline {11}Appendix}{i}{section.11}%
 \contentsline {subsection}{\numberline {11.1}Informal Intuition}{i}{subsection.11.1}%

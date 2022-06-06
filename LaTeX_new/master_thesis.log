@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.13)  6 JUN 2022 14:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.13)  6 JUN 2022 18:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1203,28 +1203,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 961--981
  []
 
 [32] [33] [34] [35]
-Overfull \hbox (6.96138pt too wide) in paragraph at lines 1018--1018
+Overfull \hbox (6.96138pt too wide) in paragraph at lines 1026--1026
 [][]\OT1/cmr/m/n/12 (-20) Pomann, Gina-Maria, Ana-Maria Staicu, and Su-jit Ghos
 h (2016). ``A two-sample distribution-
  []
 
 [36] [37]
-Underfull \hbox (badness 10000) in paragraph at lines 1036--1037
+Underfull \hbox (badness 10000) in paragraph at lines 1044--1045
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1038--1039
+Underfull \hbox (badness 10000) in paragraph at lines 1046--1047
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1040--1043
+Underfull \hbox (badness 10000) in paragraph at lines 1048--1051
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1044--1046
+Underfull \hbox (badness 10000) in paragraph at lines 1052--1054
 
  []
 
@@ -1233,61 +1233,61 @@ Underfull \hbox (badness 10000) in paragraph at lines 1044--1046
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1049.
+(hyperref)                removing `math shift' on input line 1057.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1049.
+(hyperref)                removing `subscript' on input line 1057.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1049.
+(hyperref)                removing `math shift' on input line 1057.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\cite' on input line 1049.
+(hyperref)                removing `\cite' on input line 1057.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1049.
+(hyperref)                removing `subscript' on input line 1057.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1049.
+(hyperref)                removing `subscript' on input line 1057.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1050--1051
+Underfull \hbox (badness 10000) in paragraph at lines 1058--1059
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 1086--1088
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 1094--1096
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 1102--1104
+
+ []
+
 [3] [4]
-<../Graphics/ecdf.PDF, id=944, 1445.4pt x 433.62pt>
+<../Graphics/ecdf.PDF, id=947, 1445.4pt x 433.62pt>
 File: ../Graphics/ecdf.PDF Graphic file (type pdf)
 <use ../Graphics/ecdf.PDF>
-Package pdftex.def Info: ../Graphics/ecdf.PDF  used on input line 1139.
+Package pdftex.def Info: ../Graphics/ecdf.PDF  used on input line 1147.
 (pdftex.def)             Requested size: 500.77129pt x 150.22763pt.
-<../Graphics/persistence_comparison.PDF, id=945, 1445.4pt x 867.24pt>
+<../Graphics/persistence_comparison.PDF, id=948, 1445.4pt x 867.24pt>
 File: ../Graphics/persistence_comparison.PDF Graphic file (type pdf)
 <use ../Graphics/persistence_comparison.PDF>
 Package pdftex.def Info: ../Graphics/persistence_comparison.PDF  used on input 
-line 1147.
+line 1155.
 (pdftex.def)             Requested size: 500.77129pt x 300.45526pt.
  [5 <../Graphics/ecdf.PDF>]
-<../Graphics/persistence_comparison_basis.PDF, id=955, 1445.4pt x 867.24pt>
+<../Graphics/persistence_comparison_basis.PDF, id=958, 1445.4pt x 867.24pt>
 File: ../Graphics/persistence_comparison_basis.PDF Graphic file (type pdf)
 <use ../Graphics/persistence_comparison_basis.PDF>
 Package pdftex.def Info: ../Graphics/persistence_comparison_basis.PDF  used on 
-input line 1156.
+input line 1164.
 (pdftex.def)             Requested size: 500.77129pt x 300.45526pt.
  [6 <../Graphics/persistence_comparison.PDF> <../Graphics/persistence_compariso
 n_basis.PDF>] [7] (./master_thesis.aux)
@@ -1301,8 +1301,8 @@ Package logreq Info: Writing requests to 'master_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24067 strings out of 478238
- 419501 string characters out of 5850456
+ 24069 strings out of 478238
+ 419527 string characters out of 5850456
  1179197 words of memory out of 5000000
  41519 multiletter control sequences out of 15000+600000
  489563 words of font info for 189 fonts, out of 8000000 for 9000
@@ -1356,10 +1356,10 @@ pe1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/
 msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on master_thesis.pdf (47 pages, 2945546 bytes).
+Output written on master_thesis.pdf (47 pages, 2948182 bytes).
 PDF statistics:
- 1141 PDF objects out of 1200 (max. 8388607)
- 1008 compressed objects within 11 object streams
- 279 named destinations out of 1000 (max. 500000)
+ 1144 PDF objects out of 1200 (max. 8388607)
+ 1011 compressed objects within 11 object streams
+ 281 named destinations out of 1000 (max. 500000)
  44538 words of extra memory for PDF output out of 51595 (max. 10000000)
 

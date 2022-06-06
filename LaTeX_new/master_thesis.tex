@@ -999,10 +999,18 @@ style=authoryear,
 			The simulations in this thesis only dealt with settings in which both the reference sample and the second sample contained the same number of curves. Even though there is no obvious theoretical reason for unbalanced sample sizes to influence the power of the test meaningfully, it would be interesting to study settings with unbalanced sample sizes in further simulations.		
 			
 			\paragraph{Comparing Implementations using different orders of Operations\\}
-			As described in Sections \ref{persistence_test} and \ref{sim_persistence}, the actual implementation could be highly important for the properties of the proposed test for persistence alternatives. This thesis only provided two heuristic simulations to compare the performance of the proposed options due to computational limitations. Therefore, it would be interesting to actually compare these options in further simulations.
+			As described in Sections \ref{persistence_test} and \ref{sim_persistence}, the actual implementation could be highly important for the properties of the proposed test for persistence alternatives. This thesis only provides two heuristic simulations to compare the performance of the proposed options due to computational limitations. Therefore, it would be interesting to actually compare these options in further full-scale simulations.
 			
-			\paragraph{Kolmogorov-Smirnov Variant of the test\\}
-			{\color{red} Hier weiterschreiben}
+			\paragraph{Variants of the Test based on different Norms\\}
+			In the classical scalar setting one common alternative to the Cram\'{e}r-von Mises test is the Kolmogorov-Smirnov test. Instead of using the squared distance between to objects, it is based on the supremum norm. It could therefore be used to construct an alternative test statistic in the following way. 
+			\begin{equation}
+				\tau^{\textit{KS}}_{m,n} = \sup_{z \in \mathbb{L}_2[0,1]} \vert \hat{F}_n(z) - \hat{G}_m(z) \vert
+			\end{equation}
+			Similar to the approximation by Monte-Carlo integration in the main case, this would have to be approximated in an actual implementation. One obvious approach being the following, where $Z_i \stackrel{\text{i.i.d.}}{\sim} Z$ and $Z$ is a random function as described in Section \ref{mu}.
+			\begin{equation}
+				\hat{\tau}^{\textit{KS}}_{m,n} = \max_{i = 1, \dots, H}\left\{\vert \hat{F}_n(Z_i) - \hat{G}_m(Z_i) \vert \right\}
+			\end{equation}
+			Other variants could be used in a similar way leading to a plethora of possible test statistics. It would be interesting to compare them both from a theoretical perspective and using simulations to assess their power in different scenarios.
 		
 		\subsection{Potential Applications}
 			As explained in Section \ref{Application}, the chosen setting is suitable to apply the test, but it is more of a showcase then what this method would be used for in reality. Therefore, it would be interesting to apply the method and the variant for persistence alternatives to data that is more fitting. Two examples that could provide interesting applications for this method are listed in the following.
