@@ -114,12 +114,7 @@ style=authoryear,
 		\end{figure}
 		Even though measurements are only taken at discrete ages, it is clear that each human has a height at every point in time. Thus, the data are only measurements of this continuous curve. The higher the measurement frequency, the closer we get to data that resembles the curve itself.
 		In many cases, functional data analysis restricts its scope to subsets of the functions $f:\mathbb{R} \rightarrow \mathbb{R}$.
-		As these are inherently infinite-dimensional, it is necessary to introduce additional theory to deal with their unique properties appropriately. Sections \ref{Square_Integrable_Functions} and \ref{bases_L2} closely follow \cite{hsing_theoretical_2015} who provide a detailed introduction into the theory of functional data analysis.
-		
-		\begin{itemize}
-			\item \cite{ramsay_functional_2005}
-			\item \cite{kokoszka_introduction_2021}
-		\end{itemize}
+		As these are inherently infinite-dimensional, it is necessary to introduce additional theory to deal with their unique properties appropriately. Sections \ref{Square_Integrable_Functions} and \ref{bases_L2} closely follow the corresponding sections of \cite{hsing_theoretical_2015}. More information on specific topics such as potential applications or the implementation in statistical software is given in \cite{ramsay_functional_2005} and \cite{kokoszka_introduction_2021}.
 	
 		\subsection{Hilbert Space of Square Integrable Functions}\label{Square_Integrable_Functions}
 			For many methods, such as functional linear regression, it is necessary to put further restrictions on the analyzed functions. A typical assumption is that curves are square-integrable. The space of square-integrable functions is a so-called separable Hilbert space, which often simplifies theoretical considerations in functional data analysis. However, there is often potential to relax this assumption and generalize methods to less restrictive function spaces. 
@@ -346,8 +341,9 @@ style=authoryear,
 		Permutation tests formalize this intuition. The following section closely follows chapter 15 from \cite{lehmann_testing_2005} with some input from \cite{van_der_vaart_weak_1996}.
 	
 		\subsection{Functional Principle of Permutation Tests}
-		
-			One of the defining features of a test is its null hypothesis. For the case of randomization tests, it is typically very general. Let $X$ be data taking values in a sample space $\mathcal{X}$. Then, the hypothesis is that the probability law $P$ generating $X$ belongs to a family of distributions $\Omega_0$. \cite{lehmann_testing_2005} define an assumption called the randomization hypothesis that allows for the construction of randomization tests. As permutation tests are a special case of randomization tests, we can specialize this definition to the case under consideration.
+			One of the defining features of a test is its null hypothesis. For the case of randomization tests, it is often formulated in a sense of distributional equality making the approach particularly interesting for the questions studied in this thesis. 
+			
+			Let $X$ be data taking values in a sample space $\mathcal{X}$. Then, the hypothesis is that the probability law $P$ generating $X$ belongs to a family of distributions $\Omega_0$. \cite{lehmann_testing_2005} define an assumption called the randomization hypothesis that allows for the construction of randomization tests. As permutation tests are a special case of randomization tests, we can specialize this definition to the case under consideration.
 			\begin{assumption}[Randomization Hypothesis]\label{rand_hypo}
 				 Let $G$ be a finite group of transformations $g: \mathcal{X} \rightarrow \mathcal{X}$. Under the null hypothesis of the randomization test, the distribution of $X$ is invariant under the transformations $g \in G$. In other words, $gX$ and $X$ have the same distribution whenever $X$ has distribution $P \in \Omega_0$.
 			\end{assumption}
@@ -366,7 +362,7 @@ style=authoryear,
 			
 			Using these objects, we can define a test function that decides whether the null hypothesis is rejected based on the value of the test statistic calculated on the non-permuted samples and a chosen size for the test.
 			\begin{definition}[Randomization Test Function]\label{RandTestFunc}
-				We define the Randomization Test Function as the following function $\phi: \mathcal{X} \rightarrow \mathbb{R}$.
+				We define the Randomization Test Function as a function $\phi: \mathcal{X} \rightarrow \mathbb{R}$.
 					\begin{equation*}
 						\phi(x) = \begin{cases}
 							1 &\text{if} \ T > T_{(k)}(x) \\
@@ -489,8 +485,26 @@ style=authoryear,
 			\begin{equation}
 				\hat{\tau}_{n,m} = \frac{n+m}{L} \sum_{l = 1}^{L} \left[\hat{F}_n(Z_l) - \hat{G}_m(Z_l)\right]^2
 			\end{equation}
-			These functions are drawn from a random function associated with the chosen measure $\mu$, and their construction is explained in more detail in Section \ref{mu}. At this point, it is interesting to ask whether Monte-Carlo integration is a suitable approach in this specific setting; in other words, whether the mean and variance of $\left[\hat{F}_n(Z_l) - \hat{G}_m(Z_l)\right]^2$ with respect to $\mu$ exist.
-			 {\color{red} Hier weiterschreiben}
+			These functions are drawn from a random function associated with the chosen measure $\mu$, and their construction is explained in more detail in Section \ref{mu}. At this point, it is interesting to ask whether Monte-Carlo integration is a suitable approach in this specific setting; in other words, whether the mean and variance of $\left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2$ with respect to $\mu$ exist and are finite.
+			Concerning the mean, the following argument can be made.
+			\begin{equation}
+				\begin{split}
+					& \hat{F}_n(z) \in [0,1] 	\land \hat{G}_m(z) \in [0,1] \implies \left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2 \in [0,1] \quad \forall z \in \mathbb{L}_2[0,1]\\
+					& \int_{\mathbb{L}_2[0,1]} 1 \ \mathrm{d}\mu(z) = 1 \land \int_{\mathbb{L}_2[0,1]} 0 \ \mathrm{d}\mu(z) = 0 \implies \int_{\mathbb{L}_2[0,1]}\left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2 \mathrm{d}\mu(z) \in [0,1]
+				\end{split}
+			\end{equation}
+			 {\color{red} Hier weiterschreiben}\\
+			 
+			 The same argument can be made concerning the variance.
+			 \begin{equation}
+			 	\begin{split}
+			 		& \left(\left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2 \in [0,1] \quad \forall z \in \mathbb{L}_2[0,1]\right) \land \left(\int_{\mathbb{L}_2[0,1]}\left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2 \mathrm{d}\mu(z) \in [0,1] \right)\\
+			 		& \implies \left[ \left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2 - \int_{\mathbb{L}_2[0,1]}\left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2 \mathrm{d}\mu(z) \right]^2 \in [0,1] \ \forall z \in \mathbb{L}_2[0,1]\\
+			 		& \int_{\mathbb{L}_2[0,1]} 1 \ \mathrm{d}\mu(z) = 1 \land \int_{\mathbb{L}_2[0,1]} 0 \ \mathrm{d}\mu(z) = 0 \\
+			 		& \implies \int_{\mathbb{L}_2[0,1]}\left[ \left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2 - \int_{\mathbb{L}_2[0,1]}\left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2 \mathrm{d}\mu(z) \right]^2 \mathrm{d}\mu(z) \in [0,1] \\
+			 	\end{split}
+			 \end{equation}
+			 {\color{red} Hier weiterschreiben}\\
 		
 			Critical values for Permutation Test Statistic
 			\begin{equation}
