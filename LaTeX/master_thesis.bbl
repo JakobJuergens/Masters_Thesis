@@ -1027,51 +1027,6 @@
       \verb 10.1002/env.905
       \endverb
     \endentry
-    \entry{marcus_closed_1976}{article}{}
-      \name{author}{3}{}{%
-        {{un=0,uniquepart=base,hash=ca67f80b5c3f582b5f04ff3cfa66c0f3}{%
-           family={Marcus},
-           familyi={M\bibinitperiod},
-           given={Ruth},
-           giveni={R\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=ebfa198bf47ee8acbe7a9bc237424baa}{%
-           family={Peritz},
-           familyi={P\bibinitperiod},
-           given={Eric},
-           giveni={E\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=baeee2068bd7682af16205488f205d60}{%
-           family={Gabriel},
-           familyi={G\bibinitperiod},
-           given={K.\bibnamedelimi R.},
-           giveni={K\bibinitperiod\bibinitdelim R\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{e8486d5bdb26481139820d1539599748}
-      \strng{fullhash}{e8486d5bdb26481139820d1539599748}
-      \strng{bibnamehash}{e8486d5bdb26481139820d1539599748}
-      \strng{authorbibnamehash}{e8486d5bdb26481139820d1539599748}
-      \strng{authornamehash}{e8486d5bdb26481139820d1539599748}
-      \strng{authorfullhash}{e8486d5bdb26481139820d1539599748}
-      \field{sortinit}{M}
-      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Biometrika}
-      \field{note}{Publisher: [Oxford University Press, Biometrika Trust]}
-      \field{number}{3}
-      \field{title}{On {Closed} {Testing} {Procedures} with {Special} {Reference} to {Ordered} {Analysis} of {Variance}}
-      \field{volume}{63}
-      \field{year}{1976}
-      \field{pages}{655\bibrangedash 660}
-      \range{pages}{6}
-      \verb{doi}
-      \verb 10.2307/2335748
-      \endverb
-    \endentry
     \entry{pettitt_two-sample_1976}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=1e2f49d2bedfaec4541f716e87f3815f}{%

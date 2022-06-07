@@ -781,6 +781,39 @@
       \verb https://www.jstor.org/stable/24307686
       \endverb
     \endentry
+    \entry{hoeffding_large-sample_1952}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=26d3c01664dc4b0c60afbdf4153437e2}{%
+           family={Hoeffding},
+           familyi={H\bibinitperiod},
+           given={Wassily},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{26d3c01664dc4b0c60afbdf4153437e2}
+      \strng{fullhash}{26d3c01664dc4b0c60afbdf4153437e2}
+      \strng{bibnamehash}{26d3c01664dc4b0c60afbdf4153437e2}
+      \strng{authorbibnamehash}{26d3c01664dc4b0c60afbdf4153437e2}
+      \strng{authornamehash}{26d3c01664dc4b0c60afbdf4153437e2}
+      \strng{authorfullhash}{26d3c01664dc4b0c60afbdf4153437e2}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Annals of Mathematical Statistics}
+      \field{month}{6}
+      \field{number}{2}
+      \field{title}{The {Large}-{Sample} {Power} of {Tests} {Based} on {Permutations} of {Observations}}
+      \field{volume}{23}
+      \field{year}{1952}
+      \field{pages}{169\bibrangedash 192}
+      \range{pages}{24}
+      \verb{doi}
+      \verb 10.1214/aoms/1177729436
+      \endverb
+    \endentry
     \entry{hsing_theoretical_2015}{book}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=396cd532137675b4da218b8464d025e8}{%
