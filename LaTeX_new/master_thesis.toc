@@ -12,25 +12,25 @@
 \contentsline {subsection}{\numberline {3.3}Two-Sample Cram\'{e}r-von Mises Statistic}{10}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Permutation Tests}{10}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Functional Principle of Permutation Tests}{11}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Size and Power}{12}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Asymptotic Properties}{12}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Test by Bugni and Horowitz (2021)}{12}{section.5}%
+\contentsline {subsection}{\numberline {4.2}Size and Power}{13}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Asymptotic Properties}{13}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Test by Bugni and Horowitz (2021)}{13}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Assumptions}{13}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Null Hypothesis}{14}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Cram\'{e}r-von Mises type Test}{14}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}Asymptotics for the Cram\'{e}r-von Mises type Test}{16}{subsection.5.4}%
 \contentsline {subsection}{\numberline {5.5}Construction of the Measure $\mu $}{16}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}Mean focused Test}{18}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.6}Mean focused Test}{19}{subsection.5.6}%
 \contentsline {subsection}{\numberline {5.7}Combined Permutation Test}{19}{subsection.5.7}%
-\contentsline {subsection}{\numberline {5.8}Finite Sample Properties under the null hypothesis}{19}{subsection.5.8}%
-\contentsline {subsection}{\numberline {5.9}Asymptotic Properties under the Alternative}{19}{subsection.5.9}%
-\contentsline {section}{\numberline {6}Test for Persistence Alternatives}{19}{section.6}%
+\contentsline {subsection}{\numberline {5.8}Finite Sample Properties under the null hypothesis}{20}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.9}Asymptotic Properties under the Alternative}{20}{subsection.5.9}%
+\contentsline {section}{\numberline {6}Test for Persistence Alternatives}{20}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Null-Hypothesis}{20}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Test-Procedure}{21}{subsection.6.2}%
 \contentsline {section}{\numberline {7}Simulation Study}{22}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Implementation as an R package}{22}{subsection.7.1}%
-\contentsline {subsubsection}{\numberline {7.1.1}Use of High-Performance Computing}{22}{subsubsection.7.1.1}%
-\contentsline {subsubsection}{\numberline {7.1.2}Particularities of the Implementation}{22}{subsubsection.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.1}Use of High-Performance Computing}{23}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.2}Particularities of the Implementation}{23}{subsubsection.7.1.2}%
 \contentsline {subsection}{\numberline {7.2}Simulation Setup}{23}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Results}{26}{subsection.7.3}%
 \contentsline {subsection}{\numberline {7.4}Simulation - Test for Persistence Alternatives}{27}{subsection.7.4}%

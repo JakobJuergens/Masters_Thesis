@@ -277,11 +277,7 @@ style=authoryear,
 		
 		In economics, it is often interesting to ask whether the same stochastic process generated the observations in two distinct data sets. In an experimental setting, we could ask whether a treatment assigned at random to a subset of agents changed the distribution of an outcome variable. 
 		One approach to answering this question is given by the two-sample Cram\'{e}r-von Mises test.
-		
-		\begin{itemize}
-			\item \cite{darling_kolmogorov-smirnov_1957}
-		\end{itemize}
-	
+
 		\subsection{Empirical Distribution Functions}
 			The idea of Cram\'{e}r-von Mises type tests is to compare the distribution functions of the underlying random variables. However, as these are typically unknown, it is necessary to define a sample analog to construct a suitable test statistic.
 			\cite{gibbons_nonparametric_2021} define the order statistic of an observation in a sample and the empirical distribution function in the following way, allowing the construction of the test.
@@ -327,7 +323,7 @@ style=authoryear,
 			\begin{equation}\label{cvm_test_stat}
 				C_{m,n} = \frac{nm}{n+m} \int_{-\infty}^{\infty}\left(\hat{F}_{m}(t) - \hat{G}_{n}(t)\right)^{2} \mathrm{d} \left(\frac{m \hat{F}_{m}(t) + n \hat{G}_{n}(t)}{m+n}\right)
 			\end{equation}
-			\cite{anderson_distribution_1962} explores the small sample distribution of this test statistic and provides a comparison to the limiting distribution derived by \cite{rosenblatt_limit_1952} and \cite{fisz_result_1960}. The latter is given in Section \ref{asymp_CvM} in the Appendix. These distributions can be used to perform tests with appropriate critical values and have been implemented in many packages for statistical computing.\\
+			\cite{darling_kolmogorov-smirnov_1957} gives an overview on the Cram\'{e}r-von Mises test and some related tests in both the one-sample goodness-of-fit and the two-sample setting. \cite{anderson_distribution_1962} explores the small sample distribution of the two-sample test statistic and provides a comparison to the limiting distribution derived by \cite{rosenblatt_limit_1952} and \cite{fisz_result_1960} which is given in Section \ref{asymp_CvM} in the Appendix. These distributions can be used to perform tests with appropriate critical values and have been implemented in many packages for statistical computing.\\
 			
 			It is possible to generalize this test by introducing a weight function $w(x)$ in the following way. 
 			\begin{equation}
@@ -393,10 +389,9 @@ style=authoryear,
 				\end{split}
 			\end{equation}
 			
-		 
-			Number of Combinations: $\binom{m+n}{m}$\\
+			Assuming that the test statistic is invariant over intra-sample permutations, it is possible to obtain identical results using combinations instead of permutations. As the number of combinations is $\binom{m+n}{m}$ and thereby considerably smaller than the number of permutations, this approach can be beneficial in some scenarios.
 			
-			For my implementation of the test described in \cite{bugni_permutation_2021}, I chose the latter variant and focused on distinct combinations if it was feasible to calculate the test statistic for all combinations. If this approach was infeasible due to the number of combinations, I resorted to randomly sampling permutations.\\
+			For the implementation of the test described in \cite{bugni_permutation_2021} used in this thesis, distinct combinations were chosen if it was feasible to calculate the test statistic for all combinations. If this approach was infeasible due to the number of combinations, the implementation resorted to randomly sampling permutations with replacement instead.\\
 			
 	
 		\subsection{Size and Power}
@@ -406,14 +401,14 @@ style=authoryear,
 	\section{Test by Bugni and Horowitz (2021)}\label{Bugni_Horowitz_2021}
 	
 		Similar to the idea of the Cram\'{e}r-von Mises tests in a scalar setting, \cite{bugni_permutation_2021} devise a permutation test for the equality of the distributions of the data generating processes of two independent samples of functional data. 
-		To define the exact hypothesis, it is therefore necessary to define a distribution function for random variables realizing in $\mathbb{L}_2[0,1]$.
+		To define the exact hypothesis, it is necessary to define a distribution function for random variables realizing in $\mathbb{L}_2[0,1]$.
 		\begin{definition}[Distribution Function of a Random Function]\label{dist_func}
 			Let $X:\Omega \rightarrow \mathbb{L}_2[0,1]$ be a random function realizing in the square-integrable functions. Then its distribution function is defined as the following object.
 			\begin{equation*}
 				F_X(z) = \mathbb{P}\left[X(t) \leq z(t) \quad \forall t \in [0,1]\right] \quad z \in \mathbb{L}_2[0,1]
 			\end{equation*}
 		\end{definition}
-		Deviating from the norm in functional data analysis, the authors assume that two functions $z_1, z_2 \in \mathbb{L}_2[0,1]$ are distinct even if they only differ on a set of Lebesgue-measure zero.\\
+		As previously mentioned, the authors assume that two functions $z_1, z_2 \in \mathbb{L}_2[0,1]$ are distinct even if they only differ on a set of Lebesgue-measure zero. However, as this convention only adds alternatives against which the test cannot have any power by construction, this thesis will only cover the case created by the typical definition of $\mathbb{L}_2[0,1]$.\\
 		
 		Tests of this nature exist in some forms already and the following list shall give a non-exhaustive overview of other procedures that could be applied.
 		\begin{itemize}
@@ -486,15 +481,13 @@ style=authoryear,
 				\hat{\tau}_{n,m} = \frac{n+m}{L} \sum_{l = 1}^{L} \left[\hat{F}_n(Z_l) - \hat{G}_m(Z_l)\right]^2
 			\end{equation}
 			These functions are drawn from a random function associated with the chosen measure $\mu$, and their construction is explained in more detail in Section \ref{mu}. At this point, it is interesting to ask whether Monte-Carlo integration is a suitable approach in this specific setting; in other words, whether the mean and variance of $\left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2$ with respect to $\mu$ exist and are finite.
-			Concerning the mean, the following argument can be made.
+			Assuming existence, which depends on the chosen measure, the following argument can be made concerning the mean.
 			\begin{equation}
 				\begin{split}
 					& \hat{F}_n(z) \in [0,1] 	\land \hat{G}_m(z) \in [0,1] \implies \left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2 \in [0,1] \quad \forall z \in \mathbb{L}_2[0,1]\\
 					& \int_{\mathbb{L}_2[0,1]} 1 \ \mathrm{d}\mu(z) = 1 \land \int_{\mathbb{L}_2[0,1]} 0 \ \mathrm{d}\mu(z) = 0 \implies \int_{\mathbb{L}_2[0,1]}\left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2 \mathrm{d}\mu(z) \in [0,1]
 				\end{split}
-			\end{equation}
-			 {\color{red} Hier weiterschreiben}\\
-			 
+			\end{equation}			 
 			 The same argument can be made concerning the variance.
 			 \begin{equation}
 			 	\begin{split}
@@ -1046,7 +1039,7 @@ style=authoryear,
 	\section{Appendix}
 	
 		\subsection{Informal Intuition}\label{Intuition}
-			For potential readers that are unfamiliar with the idea of functional data analysis and permutation testing, the initial hurdle of reading this thesis without any intuitive understanding might be high. Therefore, this short informal introduction should shall serve as a primer that gives an intuitive idea about the following questions.
+			For potential readers unfamiliar with functional data analysis and permutation testing, the initial hurdle of reading this thesis without any intuitive understanding might be high. Therefore, this short informal introduction should serve as a primer that gives an intuitive idea about the following questions.
 			\begin{multicols}{2}
 				\begin{enumerate}
 					\item What setting are we in?
@@ -1055,18 +1048,19 @@ style=authoryear,
 					\item Why should I care?
 				\end{enumerate}
 			\end{multicols}
-			By choice, this section will \textbf{not} be formal and it will \textbf{not} be precise as to not introduce too much detail that could hinder an intuitive understanding.\\
+			By choice, this section will \textbf{not} be formal and it will \textbf{not} be precise so as not to introduce too much detail that could hinder an intuitive understanding.\\
 			
-			Answering question one is relatively simple. This thesis deals with a statistical problem, where observations are continuously observed curves. But what does that mean intuitively? One scenario that is easy to imagine, is a curve over time for some variable such as speed: When driving a car at the 24 hour race at Le-Mans, it has a speed at every point in time during the race - for example $155.3$ km/h at 2 hours, 33 minutes and 7 seconds after the race has started. Observations in the sense of this thesis are similar to this curve: at every value of $x$ in some closed interval $[a,b] \subset \mathbb{R}$, we observe a value $y$.\\
+			Answering question one is relatively simple. This thesis deals with a statistical problem where observations are continuously observed curves. But what does that mean intuitively? One scenario that is easy to imagine is a curve over time for some variable such as speed: When driving a car at the 24-hour race at Le-Mans, it has a speed at every point in time during the race - for example, $155.3$ km/h at 2 hours, 33 minutes and 7 seconds after the race has started. Observations in the sense of this thesis are similar to this curve: at every value of $x$ in some closed interval $[a,b] \subset \mathbb{R}$, we observe a value $y$.\\
 			
-			Question two is also simple. What we want to test is if two samples of curves are similar in a specific way. As in many statistical problems, we interpret the observations as realizations of some random variable. The only difference being that these observations are curves. So we can ask the question whether the curves in the two samples are dissimilar enough for us to say confidently that they were not generated by the same random variable. 
-			Staying with the example of Le-Mans, we could have two identical cars with two equally skillful drivers collect 24 hour speed curves for the next 10 years. We do this to find out if two different types of fuel change the way the cars act on the track. In this hypothetical scenario, we now have two samples each containing 3650 speed curves. 
+			Question two is also simple. We want to test if two samples of curves are similar in a specific way. As in many statistical problems, we interpret the observations as realizations of some random variable. The only difference is that these observations are curves. So we can ask the question of whether the curves in the two samples are dissimilar enough for us to say confidently that they were not generated by the same random variable. 
+			Staying with the example of Le-Mans, we could have two identical cars with two equally skillful drivers collect 24-hour speed curves for the next ten years. We do this to determine if two different types of fuel change the way the cars act on the track. We now have two samples, each containing 3650 speed curves in this hypothetical scenario. 
 			We want to test statistically whether changing the fuel made any difference.\\
 			
-			Question three is more difficult. Therefore, I want to give the right intuition by answering simpler question instead. Let's return to the scalar setting for a moment - each observation is just a real number $x \in \mathbb{R}$ again. We want to find out whether two samples are different enough for us to say confidently: ``These samples are too dissimilar to be generated by the same random variable.'' If you have some statistical knowledge, your first intuition might be to perform a Kolmogoroff-Smirnov, Cram\'{e}r-von Mises or Anderson-Durbin test. But let's take one step back first and think about a more general idea. \\
-			From an intuitive point of view, if the two samples were generated by the same random variable, the effect of randomly switching observations between the samples should be small. Formalizing this idea leads to the concept of permutation tests. By randomly permuting the samples and calculating a chosen test statistic on the permuted samples, one could derive a distribution for said test statistic that can be used for testing. If the test statistic calculated on the non-permuted samples is comparatively extreme, this could be an indicator that the samples were not generated by the same random variable.\\
+			Question three is more difficult. Therefore, let's give the correct intuition by answering a simpler question instead. Let us return to the scalar setting for a moment - each observation is just a real number $x \in \mathbb{R}$ again. We want to determine whether two samples are different enough for us to confidently say: ``These samples are too dissimilar to be generated by the same random variable.'' If you have some statistical knowledge, your first intuition might be to perform a Kolmogoroff-Smirnov, Cram\'{e}r-von Mises or Anderson-Durbin test. However, let us take one step back first and think about a more general idea.\\
 			
-			Why should you care about this is the hardest question. I care about it, because it is cool from a mathematical perspective. But if you care about real-life problems there are also good reasons to be interested. Economic data is being observed at increasing frequencies as technology improves. Many problems that were previously low dimensional due to data constraints or suitable for classical time series methods, are becoming more complex as methodological challenges such as high-dimensionality and extreme correlation of neighboring observations arise. Functional data analysis is a comparatively new approach to many of these problems that transforms some of these problems into strengths by acknowledging the functional structure of the underlying processes. Permutation tests are also comparatively new, at least in our ability to apply them on a larger scale.
+			From an intuitive point of view, if the two samples were generated by the same random variable, the effect of randomly switching observations between the samples should be small. Formalizing this idea leads to the concept of permutation tests. By randomly permuting the samples and calculating a chosen test statistic on the permuted samples, one could derive a distribution for the test statistic that can be used for testing. If the test statistic calculated on the non-permuted samples is comparatively extreme, this could be an indicator that the samples were not generated by the same random variable.\\
+			
+			Why you should care about this is the hardest question. I care about it because it is cool from a mathematical perspective. Nevertheless, if you care about real-life problems, there are also good reasons to be interested. Economic data is being observed at increasing frequencies as technology improves. Many problems that were previously low dimensional due to data constraints or suitable for classical time series methods are becoming more complex as methodological challenges such as high-dimensionality and extreme correlation of neighboring observations arise. Functional data analysis is a comparatively new approach to many of these problems that transform some of these problems into strengths by acknowledging the functional structure of the underlying processes. Permutation tests are also comparatively new, at least in our ability to apply them on a larger scale.
 			
 		\subsection{$\mathbb{L}_2[0,1]$ as defined in \cite{bugni_permutation_2021}}\label{deviation}
 		To distinguish between the typical case presented in the previous section, let $\mathbb{L}_2[0,1]$ denote the Hilbert space of square-integrable functions and $\mathbb{L}^{*}_2[0,1]$ the square-integrable functions under the the convention from \cite{bugni_permutation_2021}.\\
