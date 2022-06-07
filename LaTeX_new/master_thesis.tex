@@ -359,7 +359,7 @@ style=authoryear,
 			
 			Using these objects, we can define a test function that decides whether the null hypothesis is rejected based on the value of the test statistic calculated on the non-permuted samples $T$ and a chosen size $\alpha$ for the test.
 			\begin{definition}[Randomization Test Function]\label{RandTestFunc}
-				We define the Randomization Test Function as a function $\phi: \mathcal{X} \rightarrow \mathbb{R}$.
+				We define the Randomization Test Function as a function $\phi: \mathcal{X} \rightarrow \mathbb{R}$ in the following way.
 					\begin{equation*}
 						\phi(x) = \begin{cases}
 							1 &\text{if} \ T > T_{(k)}(x) \\
@@ -370,7 +370,7 @@ style=authoryear,
 					\end{equation*}
 				
 			\end{definition}
-			This function can be interpreted as a decider of whether a null hypothesis is rejected. If $\phi(X) = 1$, the null hypothesis is rejected, if $\phi(X) = 0$ it cannot be rejected, and if $\phi(X) = a$, the decision is randomized using a Bernoulli variable that is $1$ with probability $a$. 
+			This function can be interpreted as a decider of whether the corresponding null hypothesis is rejected. If $\phi(X) = 1$, the null hypothesis is rejected, if $\phi(X) = 0$ it cannot be rejected, and if $\phi(X) = a$, the decision is randomized using a Bernoulli variable that is $1$ with probability $a$. 
 			Under Assumption \ref{rand_hypo}, it is possible to show that, given a test statistic $T = T(X)$, the resulting test $\phi$ has size $\alpha$.
 			\begin{equation}
 				\mathbb{E}_{P}\left[\phi(X)\right] = \alpha \quad \forall P \in \Omega_0
@@ -395,13 +395,15 @@ style=authoryear,
 			\end{equation}
 			Using $G$ as described in Equation \ref{Permutations} in the construction of a randomization test leads to the concept of permutation tests. These are special cases of the testing procedure introduced before and rely on the specific choice of $G$. Assuming that the test statistic is invariant over intra-sample permutations, it is possible to obtain identical results using combinations instead of permutations. As the number of combinations is $\binom{m+n}{m}$ and thereby considerably smaller than the number of permutations, this approach can be beneficial in some scenarios.\\
 
-			In reality, it is often infeasible to calculate a test statistic on $M$ permuted samples. Therefore, it is typical to randomly sample a chosen number $B$ of permutations used to approximate the corresponding values.
-			For the implementation of the test described in \cite{bugni_permutation_2021} used in this thesis, distinct combinations were chosen if it was feasible to calculate the test statistic for all combinations. If this approach was infeasible due to the number of combinations, the implementation resorted to randomly sampling permutations with replacement instead.
+			In reality, it is often infeasible to calculate a test statistic on $M$ permuted samples. Therefore, it is typical to randomly sample a chosen number $B$ of permutations used to approximate the corresponding values. These stochastic approximations are justified for large numbers of samples permutations, as the corresponding p-values converge in probability to the p-value associated with the test using all permutations. 
+			
+			For the implementation of the test described in \cite{bugni_permutation_2021} used in this thesis, distinct combinations were chosen if it was feasible to calculate the test statistic for all combinations. If this approach is infeasible due to the number of combinations, the implementation resorts to randomly sampling permutations with replacement instead.
 			
 	
-		\subsection{Size and Power}
+%		\subsection{Size and Power}
 		
 		\subsection{Asymptotic Properties}
+			Concerning the asymptotic properties of randomization tests, it is possible to show that {\color{red} Hier weiterschreiben}
 		
 	\section{Test by Bugni and Horowitz (2021)}\label{Bugni_Horowitz_2021}
 	
