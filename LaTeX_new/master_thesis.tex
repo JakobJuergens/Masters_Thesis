@@ -201,7 +201,7 @@ style=authoryear,
 		\subsection{Random Functions}
 			In statistics, it is common to interpret data as realizations of random variables. In functional data analysis, the same is true. However, since the observations are now curves, it is relevant to consider the kinds of random variables that generate functional realizations. These are called random functions, and they are a special case of random variables. Paraphrasing from \cite{bauer_probability_2011} a general random variable is defined in the following way.
 			\begin{definition}[Random Variable]\label{rand_var}
-				Let $\left(\Omega, \mathcal{A}, \mathcal{P}\right)$ be a probability space and $\left(\Omega', \mathcal{A}'\right)$ be a measure space. Then every $\mathcal{A}$-$\mathcal{A}'$-measurable function $X:\Omega \rightarrow \Omega'$ is called a $\left(\Omega', \mathcal{A}'\right)$-random variable.
+				Let $\left(\Omega, \mathcal{A}, \mathbb{P}\right)$ be a probability space and $\left(\Omega', \mathcal{A}'\right)$ be a measure space. Then every $\mathcal{A}$-$\mathcal{A}'$-measurable function $X:\Omega \rightarrow \Omega'$ is called a $\left(\Omega', \mathcal{A}'\right)$-random variable.
 			\end{definition}
 			Since random functions are a special case, we can define them by specializing the objects in Definition \ref{rand_var}.
 			\begin{definition}[Random Function]
@@ -210,9 +210,9 @@ style=authoryear,
 		
 		\subsection{Probability Measures on $\mathbb{L}_2[0,1]$}\label{prob_measures_l2}
 			For the test developed in \cite{bugni_permutation_2021}, it is important to evaluate expectations of a functional on $\mathbb{L}_2[0,1]$ with respect to some probability measure $\mu$. Thus, it is necessary to explore probability measures on $\mathbb{L}_2[0,1]$. However, due to the way measures are constructed in the paper, this description is limited to probability measures induced by existing random functions. 
-			To understand how a random variable induces a measure, it suffices to look at a relatively basic fact from probability theory. Paraphrasing from \cite{bauer_probability_2011}, let $X:\left(\Omega, \mathcal{A}, \mathcal{P}\right) \rightarrow \left(\Omega', \mathcal{A}'\right)$ be a random variable, then a probability measure $\mathcal{P}_X(B)$ on $\mathcal{A}'$ is induced by $X$ as shown in Equation \ref{induced_measure}.
+			To understand how a random variable induces a measure, it suffices to look at a relatively basic fact from probability theory. Paraphrasing from \cite{bauer_probability_2011}, let $X:\left(\Omega, \mathcal{A}, \mathbb{P}\right) \rightarrow \left(\Omega', \mathcal{A}'\right)$ be a random variable, then a probability measure $\mathbb{P}_X(B)$ on $\mathcal{A}'$ is induced by $X$ as shown in Equation \ref{induced_measure}.
 			\begin{equation}\label{induced_measure}
-				\mathcal{P}_X(B) = \mathcal{P}(X \in B) = \mathcal{P}(X^{-1}(B)) \quad \forall B \in \mathcal{A}'
+				\mathbb{P}_X(B) = \mathbb{P}(X \in B) = \mathbb{P}(X^{-1}(B)) \quad \forall B \in \mathcal{A}'
 			\end{equation}
 			This idea specializes to the case of random functions realizing in $\mathbb{L}_2[0,1]$ and allows us to use measures induced by existing random variables.
 			Therefore, assume that $Z(t)$ is a random function in $\mathbb{L}_2[0,1]$ inducing a measure $\mu$. As previously explained, $Z(t)$ can be expressed in terms of a functional basis.
@@ -232,9 +232,9 @@ style=authoryear,
 				\item $\textbf{B}_K = \left\{\left(b_1, \dots, b_K \right) \ \vert \ \exists b' \in B \  \forall k = 1, \dots, K \quad b_k = b'_k \right\}$
 				\item $\textbf{A}_K = \left\{ \sum_{i = 1}^{\infty} b_k \psi_k(t) \ \vert \ \left(b_1, \dots, b_K \right) \in \textbf{B}_K \quad \text{and} \quad \sum_{k = 1}^{\infty} b_k^2 < \infty \right\}$
 			\end{itemize}
-			The authors then show that for any $A$ in the Borel sigma field of subsets of $\mathbb{L}_2[0,1]$, the following condition holds, where $\mathcal{P}$ denotes the probability measure associated with $\mu$.
+			The authors then show that for any $A$ in the Borel sigma field of subsets of $\mathbb{L}_2[0,1]$, the following condition holds, where $\mathbb{P}$ denotes the probability measure associated with $\mu$.
 			\begin{equation}
-				\lim_{K \rightarrow \infty} \mathcal{P}(\textbf{A}_K) = \mathcal{P}(\textbf{A})
+				\lim_{K \rightarrow \infty} \mathbb{P}(\textbf{A}_K) = \mathbb{P}(\textbf{A})
 			\end{equation}
 			This argument allows us to use a truncated basis in the construction of a measure at a reasonably high truncation parameter $K$ as integrals with respect $\mu_K$ converge to their counterparts with respect to $\mu$ as the truncation parameter $K$ goes to infinity.
 			\begin{equation}
@@ -411,17 +411,18 @@ style=authoryear,
 		\subsection{Asymptotic Properties}
 			One important question concerning the properties of randomization tests is their asymptotic properties when the number of observations goes to infinity. This section follows 15.2.2 from \cite{lehmann_testing_2005}. Concerning these asymptotic properties, it is necessary to consider not only a sequence of samples increasing in size but a sequence of settings, where the prerequisite objects change accordingly. Consider therefore a sequence of settings with $X = X^N$, $P = P_N$, $\mathcal{X} = \mathcal{X}_N$, $G = G_N$, $T = T_N$ etc. for an increasing sequence of total number of observations $N$.
 			Defining the randomization distribution of $T_N$ analogously to Definition \ref{rand_dist} as $\hat{R}_N(t) = \frac{1}{M_N} \sum_{g \in G_N} \mathbbm{1} \left[T_N(gX^N) \leq t\right]$ it is possible to analyze the limiting behavior of $\hat{R}_N(t)$ as $N \rightarrow \infty$ under the null hypothesis.\\
+			As previously mentioned, the value of the randomization distribution function is itself a random variable. Thus, observe that for a random variable $\mathcal{G}_N$ that is uniformly distributed on $G_N$, the following holds under the randomization hypothesis.
+			\begin{equation}
+				\mathbb{E}[\hat{R}_N(t)] = \mathbb{P}\left[T_N(\mathcal{G}_NX^N) \leq t\right] = \mathbb{P}\left[T_N(X^N) \leq t\right]
+			\end{equation}
+			Assuming that $T_N(X^N)$ converges in distribution to a stable limiting distribution with cumulative distribution function $R(t)$ continuous at $t$, it follows that $\mathbb{E}[\hat{R}_N(t)] \rightarrow R(t)$. In addition it is possible to show that under the null hypothesis $\hat{R}_N(t) \rightarrow_P R(t)$ at all continuity points $t$ of $R(t)$. The proof of the latter statement given in \cite{lehmann_testing_2005} courtesy of \cite{hoeffding_large-sample_1952} is given in Appendix \ref{hoeffding}.\\
 			
-			The proof of this statement given in \cite{lehmann_testing_2005} taken from \cite{hoeffding_large-sample_1952} is given in Appendix \ref{hoeffding}. \\
-			
-			In this setting, it should be noted that to make use of the stable limiting distribution of, for example, the Cram\'{e}r-von Mises test, as described in Appendix \ref{asymp_CvM}, it is necessary to let the ratio of observations in the two samples, $n$ and $m$, go to a constant $\lambda$ as the total number of observations $N$ increases. 
-			
-			 {\color{red} Hier weiterschreiben.}
+			It should be noted that to make use of the stable limiting distribution of, for example, the Cram\'{e}r-von Mises test, as described in Appendix \ref{asymp_CvM}, it is necessary to let the ratio of observations in the two samples, $n$ and $m$, go to a constant $\lambda$ as the total number of observations $N$ increases. A similar argument is necessary in the case of the Cram\'{e}r-von Mises type test in \cite{bugni_permutation_2021}.
 		
 	\section{Test by Bugni and Horowitz (2021)}\label{Bugni_Horowitz_2021}
 	
 		Similar to the idea of the Cram\'{e}r-von Mises tests in a scalar setting, \cite{bugni_permutation_2021} devise a permutation test for the equality of the distributions of the data generating processes of two independent samples of functional data. 
-		To define the exact hypothesis, it is necessary to define a distribution function for random variables realizing in $\mathbb{L}_2[0,1]$.
+		To define the exact hypothesis, they define a distribution function for random variables realizing in $\mathbb{L}_2[0,1]$ as follows.
 		\begin{definition}[Distribution Function of a Random Function]\label{dist_func}
 			Let $X:\Omega \rightarrow \mathbb{L}_2[0,1]$ be a random function realizing in the square-integrable functions. Then its distribution function is defined as the following object.
 			\begin{equation*}
@@ -449,7 +450,7 @@ style=authoryear,
 			\end{assumption}
 		
 			\begin{definition}[Separable Stochastic Process]
-				{\color{red} From Wikipedia:} A real-valued continuous time stochastic process $X$ with a probability space $\left(\Omega, \mathcal{F}, \mathcal{P}\right)$ is separable if its index set $T$ has a dense countable subset $U \subset T$ and there is a set $\Omega_0 \subset \Omega$ of probability zero, so $\mathcal{P}\left(\Omega_0\right) = 0$, such that for every open set $G \subset T$ and every closed set $F \subset \mathbb{R}$ the two events $\left\{X_t \in F \quad \forall t \in G \cap U\right\}$ and $\left\{X_t \in F \quad \forall t \in G\right\}$ differ from each other at most on a subset $\Omega_0$.
+				{\color{red} From Wikipedia:} A real-valued continuous time stochastic process $X$ with a probability space $\left(\Omega, \mathcal{F}, \mathbb{P}\right)$ is separable if its index set $T$ has a dense countable subset $U \subset T$ and there is a set $\Omega_0 \subset \Omega$ of probability zero, so $\mathbb{P}\left(\Omega_0\right) = 0$, such that for every open set $G \subset T$ and every closed set $F \subset \mathbb{R}$ the two events $\left\{X_t \in F \quad \forall t \in G \cap U\right\}$ and $\left\{X_t \in F \quad \forall t \in G\right\}$ differ from each other at most on a subset $\Omega_0$.
 			\end{definition}
 		
 			In less theoretical terms this means that the process is determined by its values on a countable subset of points of its index set.
@@ -939,23 +940,6 @@ style=authoryear,
 				\tilde{f} = f_{\textit{mean}} + \sum_{k = 2}^{7}\mathbbm{1}_{\left[\textit{day}\: = \: k\right]}\hat{f}_{\textit{day}, k} + \hat{f}_{\textit{random}}
 			\end{equation}
 			The function-on-scalar regression described in Equation \ref{Data_Cleaning} was performed in R using the \textit{fda}\footcite{fda} package and gave the following results. As these are the results of a function-on-scalar regression, it is convenient to plot the resulting estimates as they are functions instead of giving the estimated Fourier coefficients.
-			
-			\begin{figure}[H]
-				\makebox[\textwidth][c]{
-				\includegraphics[width=1.1\textwidth]{../Graphics/estimate_const_year.PDF}
-			}
-				\caption{Estimates for the constant and year}
-				\label{estimates_const_year}
-			\end{figure}
-		
-			\begin{figure}[H]
-				\makebox[\textwidth][c]{
-				\includegraphics[width=1.1\textwidth]{../Graphics/estimate_months.PDF}
-			}
-				\caption{Estimates for the months (January as baseline)}
-				\label{estimates_months}
-			\end{figure}
-		
 			The estimated coefficient functions for the different weekdays are of special interest as they are directly linked to the problem that is to be studied using the method from \cite{bugni_permutation_2021}. In this case Sunday is the baseline and these curves describe the deviation relative to it.
 			\begin{figure}[H]
 				\makebox[\textwidth][c]{
@@ -965,7 +949,7 @@ style=authoryear,
 				\label{estimates_weekdays}
 			\end{figure}
 			This diagram already hints at a considerable mean shift between the working days and the weekend. As these estimates also hint at a considerable difference between Saturdays and Sundays, it could be advisable to treat them as non-identically distributed. Therefore,the application is limited to a comparison of working days and Saturdays as the results of the regression provide clear evidence against the assumption that Saturday and Sunday can be seen as if they were generated by the same random variable.
-			
+			Further results of the regression including estimates of the constant and the coefficient functions for different months are shown in Appendix \ref{detrending}.
 			
 		\subsection{Test from \cite{bugni_permutation_2021}}
 			After cleaning the data as described in the previous section, we can now apply the method from \cite{bugni_permutation_2021}.
@@ -1146,8 +1130,35 @@ style=authoryear,
 			\end{itemize}
 		
 		\subsection{Proof from \cite{hoeffding_large-sample_1952}}\label{hoeffding}
+			\paragraph{Theorem as stated in \cite{lehmann_testing_2005} \\}
+			Suppose $X^N$ has distribution $P_N$ in $\mathcal{X}_N$, and $G_N$ is a finite group of transformations from $\mathcal{X}_N$ to $\mathcal{X}_N$. Let $\mathcal{G}_N$ be a random variable that is uniform on $G_N$. Also let $\mathcal{G}_N'$ have the same distribution as $\mathcal{G}_N$, with $X^N$, $\mathcal{G}_N$, and $\mathcal{G}_N'$ mutually independent. Suppose, under $P_N$,
+			\begin{equation}\label{convergence_hypo}
+				\left(T_N(\mathcal{G}_N X^N), T_N(\mathcal{G}_N' X^N)\right) \rightarrow_d (T, T'),
+			\end{equation}
+			where $T$ and $T'$ are independent, each with common cumulative distribution function $R(t)$. Then, under $P_N$,
+			\begin{equation}
+				\hat{R}_N(t) \rightarrow_P R(t)
+			\end{equation}
+			for every $t$ which is a continuity point of $R(t)$.
 		
-	
+			\paragraph{Proof as presented in \cite{lehmann_testing_2005}\\}
+			Let $t$ be a continuity point of $R(t)$. Then, 
+			\begin{equation}
+				\mathbb{E}_{P_N}\left[\hat{R}_N(t)\right] = P_N\left[T_N(\mathcal{G}_NX^N) \leq t\right] \rightarrow R(t),
+			\end{equation}
+			by the convergence hypothesis shown in Equation \ref{convergence_hypo}. It therefore suffices to show that $\textit{Var}_{P_N}\left[\hat{R}_N(t)\right] \rightarrow 0$ or, equivalently, that
+			\begin{equation}
+				\mathbb{E}_{P_N}\left[\hat{R}_N^2(t)\right] \rightarrow R^2(t).
+			\end{equation}
+			But, 
+			\begin{equation}
+				\begin{split}
+					\mathbb{E}_{P_N}\left[\hat{R}_N^2(t)\right] &= \frac{1}{M_N^2}\sum_{g \in G_N}\sum_{g' \in G_N} P_N\left[T_N(gX^N) \leq t \ \land \ T_N(g'X^N) \leq t\right] \\
+					&= P_N\left[T_N(\mathcal{G}_NX^N) \leq t \ \land \ T_N(\mathcal{G}_N'X^N) \leq t\right] \rightarrow R^2(t),
+				\end{split}
+			\end{equation}
+			again by the convergence hypothesis. Hence $\hat{R}_N(t) \rightarrow R(t)$ in $P_N$ probability.
+			
 		\subsection{Multiple Testing}\label{Multiple_Testing}
 			When testing statistical hypotheses, it is often helpful or even necessary to test multiple hypotheses independently of each other. One setting where this could be useful is when we want to combine the desirable properties of two tests, as is done by \cite{bugni_permutation_2021}. If the tests do not perfectly depend on each other, this creates a problem relating to the size of the combined test.
 			
@@ -1170,7 +1181,23 @@ style=authoryear,
 			
 			As Australia replaces some holidays that fall on weekends with substitute holidays on the next working day, these were also excluded. For the South Australia, this can occur for New Year's Day, Australia Day, ANZAC Day, Christmas Day, Proclamation Day and New Year's Eve.
 		
-			\subsubsection{Detrending and Deseasoning Results}
+			\subsubsection{Detrending and Deseasoning Results}\label{detrending}
+			
+			\begin{figure}[H]
+				\makebox[\textwidth][c]{
+					\includegraphics[width=1.1\textwidth]{../Graphics/estimate_const_year.PDF}
+				}
+				\caption{Estimates for the constant and year}
+				\label{estimates_const_year}
+			\end{figure}
+			
+			\begin{figure}[H]
+				\makebox[\textwidth][c]{
+					\includegraphics[width=1.1\textwidth]{../Graphics/estimate_months.PDF}
+				}
+				\caption{Estimates for the months (January as baseline)}
+				\label{estimates_months}
+			\end{figure}
 			
 		\subsection{Additional Figures}\label{add_figures}
 			\begin{figure}[H]
