@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.13)  8 JUN 2022 21:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.13)  8 JUN 2022 22:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1280,40 +1280,39 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 1140.
 
 [4]
-<../Graphics/estimate_const_year.PDF, id=974, 1445.4pt x 433.62pt>
+<../Graphics/estimate_const_year.PDF, id=977, 1445.4pt x 433.62pt>
 File: ../Graphics/estimate_const_year.PDF Graphic file (type pdf)
 <use ../Graphics/estimate_const_year.PDF>
 Package pdftex.def Info: ../Graphics/estimate_const_year.PDF  used on input lin
 e 1197.
 (pdftex.def)             Requested size: 500.77129pt x 150.22763pt.
  [5]
-<../Graphics/estimate_months.PDF, id=984, 1445.4pt x 578.16pt>
+<../Graphics/estimate_months.PDF, id=987, 1445.4pt x 578.16pt>
 File: ../Graphics/estimate_months.PDF Graphic file (type pdf)
 <use ../Graphics/estimate_months.PDF>
 Package pdftex.def Info: ../Graphics/estimate_months.PDF  used on input line 12
 05.
 (pdftex.def)             Requested size: 500.77129pt x 200.3035pt.
-<../Graphics/ecdf.PDF, id=985, 1445.4pt x 433.62pt>
+<../Graphics/ecdf.PDF, id=988, 1445.4pt x 433.62pt>
 File: ../Graphics/ecdf.PDF Graphic file (type pdf)
 <use ../Graphics/ecdf.PDF>
 Package pdftex.def Info: ../Graphics/ecdf.PDF  used on input line 1214.
 (pdftex.def)             Requested size: 500.77129pt x 150.22763pt.
-<../Graphics/persistence_comparison.PDF, id=986, 1445.4pt x 867.24pt>
+ [6 <../Graphics/estimate_const_year.PDF> <../Graphics/estimate_months.PDF>]
+<../Graphics/persistence_comparison.PDF, id=1005, 1445.4pt x 867.24pt>
 File: ../Graphics/persistence_comparison.PDF Graphic file (type pdf)
 <use ../Graphics/persistence_comparison.PDF>
 Package pdftex.def Info: ../Graphics/persistence_comparison.PDF  used on input 
 line 1222.
 (pdftex.def)             Requested size: 500.77129pt x 300.45526pt.
- [6 <../Graphics/estimate_const_year.PDF> <../Graphics/estimate_months.PDF> <..
-/Graphics/ecdf.PDF>]
-<../Graphics/persistence_comparison_basis.PDF, id=1008, 1445.4pt x 867.24pt>
+<../Graphics/persistence_comparison_basis.PDF, id=1006, 1445.4pt x 867.24pt>
 File: ../Graphics/persistence_comparison_basis.PDF Graphic file (type pdf)
 <use ../Graphics/persistence_comparison_basis.PDF>
 Package pdftex.def Info: ../Graphics/persistence_comparison_basis.PDF  used on 
 input line 1231.
 (pdftex.def)             Requested size: 500.77129pt x 300.45526pt.
- [7 <../Graphics/persistence_comparison.PDF> <../Graphics/persistence_compariso
-n_basis.PDF>] [8] (./master_thesis.aux)
+ [7 <../Graphics/ecdf.PDF> <../Graphics/persistence_comparison.PDF>]
+[8 <../Graphics/persistence_comparison_basis.PDF>] [9] (./master_thesis.aux)
 Package rerunfilecheck Info: File `master_thesis.out' has not changed.
 (rerunfilecheck)             Checksum: DD0B8651020C68C7D47053F089532427;10553.
 Package logreq Info: Writing requests to 'master_thesis.run.xml'.
@@ -1321,11 +1320,11 @@ Package logreq Info: Writing requests to 'master_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24103 strings out of 478238
- 420106 string characters out of 5850456
- 1178812 words of memory out of 5000000
+ 24106 strings out of 478238
+ 420127 string characters out of 5850456
+ 1178815 words of memory out of 5000000
  41539 multiletter control sequences out of 15000+600000
- 489504 words of font info for 188 fonts, out of 8000000 for 9000
+ 489554 words of font info for 189 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,25n,68p,1028b,2738s stack positions out of 5000i,500n,10000p,200000b,80000s
 
@@ -1376,10 +1375,10 @@ pe1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/
 msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on master_thesis.pdf (50 pages, 2964415 bytes).
+Output written on master_thesis.pdf (51 pages, 2965394 bytes).
 PDF statistics:
- 1198 PDF objects out of 1200 (max. 8388607)
- 1062 compressed objects within 11 object streams
- 297 named destinations out of 1000 (max. 500000)
+ 1205 PDF objects out of 1440 (max. 8388607)
+ 1068 compressed objects within 11 object streams
+ 298 named destinations out of 1000 (max. 500000)
  44538 words of extra memory for PDF output out of 51595 (max. 10000000)
 

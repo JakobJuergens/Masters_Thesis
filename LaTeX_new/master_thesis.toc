@@ -61,4 +61,4 @@
 \contentsline {subsection}{\numberline {11.7}Application Data Cleaning}{v}{subsection.11.7}%
 \contentsline {subsubsection}{\numberline {11.7.1}Excluded Holidays}{v}{subsubsection.11.7.1}%
 \contentsline {subsubsection}{\numberline {11.7.2}Detrending and Deseasoning Results}{vi}{subsubsection.11.7.2}%
-\contentsline {subsection}{\numberline {11.8}Additional Figures}{vi}{subsection.11.8}%
+\contentsline {subsection}{\numberline {11.8}Additional Figures}{vii}{subsection.11.8}%

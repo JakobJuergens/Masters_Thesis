@@ -440,7 +440,7 @@ style=authoryear,
 		\end{itemize}
 		
 		\subsection{Assumptions}
-		As for most tests, there are assumptions that are necessary for the test to work correctly. The authors explicitly make four assumptions, some of which can be relaxed to allow for a more general setting.
+		As for most tests, there are assumptions that have to be fulfilled for the test to work correctly. The authors explicitly make four assumptions, some of which can be relaxed to allow for a more general setting.
 			\begin{assumption} Contains two assumptions
 				\begin{enumerate}
 					\item $X(t)$ and $Y(t)$ are separable, $\mu$-measurable stochastic processes.
@@ -461,7 +461,7 @@ style=authoryear,
 					\item There is a set $\Omega_0 \subset \Omega$ of probability zero, so $\mathbb{P}\left(\Omega_0\right) = 0$, such that for an arbitrary open set $G \subset T$ and an arbitrary closed set $F \subset \mathbb{R}$ the two sets $\left\{\omega \ \vert \ X(t, \omega) \in F \quad \forall t \in G\right\}$ and $\left\{\omega \ \vert \ X(t, \omega) \in F \quad \forall t \in G \cap I\right\}$ differ from each other at most on $\Omega_0$
 				\end{enumerate}      
 			\end{definition}
-			In less theoretical terms this means that the properties of the process are determined by its behavior on a countable subset of points of its index set. This assumption is useful to prove some results on the asymptotic properties of the permutation test based on the Cram\'{e}r-von Mises statistic but could potentially be relaxed.
+			In less theoretical terms this means that the properties of the process are determined by its behavior on a countable subset of points of its index set. This assumption is useful to prove some results on the asymptotic properties of the permutation test based on the Cram\'{e}r-von Mises statistic. However, this assumption could potentially be relaxed.
 		
 			\begin{assumption}\label{mean_existence}
 				$\mathbb{E}\left[X(t)\right]$ and $\mathbb{E}\left[Y(t)\right]$ exist and are finite for all $t \in [0, 1]$.
@@ -620,7 +620,7 @@ style=authoryear,
 		
 			Sample Analog
 			\begin{equation}
-				\nu_{n,m} = (n+m) \int_{0}^{1} \left[\hat{\mathbb{E}}X(t) - \hat{\mathbb{E}}Y(t)\right]^2 \mathrm{d}t
+				\nu_{n,m} = (n+m) \int_{0}^{1} \left[\hat{\mathbb{E}}\left[X(t)\right] - \hat{\mathbb{E}}\left[Y(t)\right] \right]^2 \mathrm{d}t
 			\end{equation}
 		
 			Critical values for Permutation Test Statistic
@@ -659,7 +659,7 @@ style=authoryear,
 				\end{itemize} 
 			\end{multicols}
 			
-			Bonferroni inequality under $H_0$ leads to
+			To combine the two tests, the authors make use of the Bonferroni inequality. Under $H_0$ this approach leads to the following relationship motivating a choice of $\alpha_{\tau} + \alpha_{\nu} = \alpha$ for a chosen overall size for the combined test of $\alpha$.
 			\begin{equation}
 				\max(\alpha_{\tau}, \alpha_{\nu}) \leq \mathbb{P}\left[(\phi_{n,m} > 0) \cup (\tilde{\phi}_{n,m} > 0)\right] \leq \alpha_{\tau} + \alpha_{\nu}
 			\end{equation}
@@ -1190,7 +1190,7 @@ style=authoryear,
 			As Australia replaces some holidays that fall on weekends with substitute holidays on the next working day, these were also excluded. For the South Australia, this can occur for New Year's Day, Australia Day, ANZAC Day, Christmas Day, Proclamation Day and New Year's Eve.
 		
 			\subsubsection{Detrending and Deseasoning Results}\label{detrending}
-			
+			Figures \ref{estimates_const_year} and \ref{estimates_months} show the estimates for the coefficient functions as specified in Equation \ref{Data_Cleaning}. These curves were subtracted from the respective observations to eliminate the influence of, for example, the month the data was observed.
 			\begin{figure}[H]
 				\makebox[\textwidth][c]{
 					\includegraphics[width=1.1\textwidth]{../Graphics/estimate_const_year.PDF}
