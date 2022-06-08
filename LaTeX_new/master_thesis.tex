@@ -421,7 +421,7 @@ style=authoryear,
 		
 	\section{Test by Bugni and Horowitz (2021)}\label{Bugni_Horowitz_2021}
 	
-		Similar to the idea of the Cram\'{e}r-von Mises tests in a scalar setting, \cite{bugni_permutation_2021} devise a permutation test for the equality of the distributions of the data generating processes of two independent samples of functional data. 
+		Similar to the idea of the Cram\'{e}r-von Mises tests in a scalar setting, \cite{bugni_permutation_2021} devise a test for the equality of the distributions of the data generating processes of two independent samples of functional data. 
 		To define the exact hypothesis, they define a distribution function for random variables realizing in $\mathbb{L}_2[0,1]$ as follows.
 		\begin{definition}[Distribution Function of a Random Function]\label{dist_func}
 			Let $X:\Omega \rightarrow \mathbb{L}_2[0,1]$ be a random function realizing in the square-integrable functions. Then its distribution function is defined as the following object.
@@ -429,7 +429,7 @@ style=authoryear,
 				F_X(z) = \mathbb{P}\left[X(t) \leq z(t) \quad \forall t \in [0,1]\right] \quad z \in \mathbb{L}_2[0,1]
 			\end{equation*}
 		\end{definition}
-		As previously mentioned, the authors assume that two functions $z_1, z_2 \in \mathbb{L}_2[0,1]$ are distinct even if they only differ on a set of Lebesgue-measure zero. However, as this convention only adds alternatives against which the test cannot have any power by construction, this thesis will only cover the case created by the typical definition of $\mathbb{L}_2[0,1]$.\\
+		As previously mentioned, the authors assume that two functions $z_1, z_2 \in \mathbb{L}_2[0,1]$ are distinct even if they only differ on a set of Lebesgue-measure zero. However, as this convention only adds alternatives against which the test cannot have any power by construction, this thesis will only cover the case created by the typical definition of $\mathbb{L}_2[0,1]$. Appendix \ref{deviation} gives a short overview of how this convention influences the theoretical objects used by the test statistic.\\
 		
 		Tests of this nature exist in some forms already and the following list shall give a non-exhaustive overview of other procedures that could be applied.
 		\begin{itemize}
@@ -448,15 +448,23 @@ style=authoryear,
 					$\{Y_i(t) \: \vert \: i = 1, \dots, m\}$ is an independent random sample of $Y(t)$ and is independent of $\{X_i(t) \: \vert \: i = 1, \dots, n\}$.
 				\end{enumerate}
 			\end{assumption}
-		
-			\begin{definition}[Separable Stochastic Process]
-				{\color{red} From Wikipedia:} A real-valued continuous time stochastic process $X$ with a probability space $\left(\Omega, \mathcal{F}, \mathbb{P}\right)$ is separable if its index set $T$ has a dense countable subset $U \subset T$ and there is a set $\Omega_0 \subset \Omega$ of probability zero, so $\mathbb{P}\left(\Omega_0\right) = 0$, such that for every open set $G \subset T$ and every closed set $F \subset \mathbb{R}$ the two events $\left\{X_t \in F \quad \forall t \in G \cap U\right\}$ and $\left\{X_t \in F \quad \forall t \in G\right\}$ differ from each other at most on a subset $\Omega_0$.
+		This assumption contains multiple points that need to be addressed on their own.
+			\begin{itemize}
+				\item The assumptions carrying over from the scalar Cram\'{e}r-von Mises test, independence of observations in each sample and independence between the samples, carry over to allow for a construction of a Cram\'{e}r-von Mises type test in a functional setting.
+				\item The Cram\'{e}r-von Mises type test hinges on the measurability of the processes with respect to the chosen measure $\mu$. Therefore, measurability with respect to $\mu$ has to be fulfilled for the test to be applicable.
+				\item Separability of the stochastic processes is a less common assumption. Paraphrasing from \cite{gihman_theory_2004} a separable stochastic process is defined as shown in Definition \ref{separability}.
+			\end{itemize}
+			\begin{definition}[Separable Stochastic Process]\label{separability}
+				A real-valued random function $X(t, \omega)$ -- here denoted explicitly as a function of $\omega$ -- with an associated probability space $\left(\Omega, \mathcal{F}, \mathbb{P}\right)$ is separable if:
+				\begin{enumerate}
+					\item There is a dense countable subset $I \subset T$ of its index set $T$
+					\item There is a set $\Omega_0 \subset \Omega$ of probability zero, so $\mathbb{P}\left(\Omega_0\right) = 0$, such that for an arbitrary open set $G \subset T$ and an arbitrary closed set $F \subset \mathbb{R}$ the two sets $\left\{\omega \ \vert \ X(t, \omega) \in F \quad \forall t \in G\right\}$ and $\left\{\omega \ \vert \ X(t, \omega) \in F \quad \forall t \in G \cap I\right\}$ differ from each other at most on $\Omega_0$
+				\end{enumerate}      
 			\end{definition}
-		
-			In less theoretical terms this means that the process is determined by its values on a countable subset of points of its index set.
+			In less theoretical terms this means that the properties of the process are determined by its behavior on a countable subset of points of its index set. This assumption is useful to prove some results on the asymptotic properties of the permutation test based on the Cram\'{e}r-von Mises statistic but could potentially be relaxed.
 		
 			\begin{assumption}\label{mean_existence}
-				$\mathbb{E}X(t)$ and $\mathbb{E}Y(t)$ exist and are finite for all $t \in [0, 1]$.
+				$\mathbb{E}\left[X(t)\right]$ and $\mathbb{E}\left[Y(t)\right]$ exist and are finite for all $t \in [0, 1]$.
 			\end{assumption}
 			Assumption \ref{mean_existence} is necessary for one of the two tests used in \cite{bugni_permutation_2021}. The test uses the squared difference between the sample mean functions to detect differences in the respective mean functions. Therefore it relies on the existence and finiteness of the mean functions in every point of the domain.
 		
@@ -849,7 +857,7 @@ style=authoryear,
 		Even though these rejection frequencies seem low at first, one has to keep in mind the magnitude of the violation of the null hypothesis and the small sample size. Looking at Figure \ref{settings}, differences between the processes are not particularly stark visually and a low power therefore somewhat expected. Additionally, the power of permutation tests is highly dependent on the sample size of the underlying samples. Therefore, a rather small sample size of 20 as used in these simulations justifies the rejection frequencies.  It would be interesting to repeat these simulations for a number of different sample sizes as this could give a more precise idea of the context in which this procedure has higher power.
 	
 		\subsection{Simulation - Test for Persistence Alternatives}\label{sim_persistence}
-		Using simulation setting 3, it is possible to also test the proposed test for persistence alternatives from Section \ref{closed_persistence_test}. But due to computational constraints, this simulation does not follow the real test structure and shall instead serve as a heuristic for the real test's performance. Mainly the simulation differs from the proposed test in the following way to reduce computational cost while staying reasonably accurate in the proposed simulation setting. The standardization step makes it necessary to perform the comparison between functions that is performed in the calculation of the Cram\'{e}r-von Mises test statistic in each permutation step. This massively increases the computational cost. Therefore, as a heuristic for the real test, these simulations are performed without a standardization step. However, a data generating process with a mean function $\mu(t) = 0$ and a point-wise variance function $\sigma(t) = 1$ is used.
+		Using simulation setting 3, it is possible to also test the proposed test for persistence alternatives from Section \ref{variant}. But due to computational constraints, this simulation does not follow the real test structure and shall instead serve as a heuristic for the real test's performance. Mainly the simulation differs from the proposed test in the following way to reduce computational cost while staying reasonably accurate in the proposed simulation setting. The standardization step makes it necessary to perform the comparison between functions that is performed in the calculation of the Cram\'{e}r-von Mises test statistic in each permutation step. This massively increases the computational cost. Therefore, as a heuristic for the real test, these simulations are performed without a standardization step. However, a data generating process with a mean function $\mu(t) = 0$ and a point-wise variance function $\sigma(t) = 1$ is used.
 		Therefore, in expectation sample equivalents will share these characteristics. However, individual samples may not. Due to this concession to limited computational resources the following simulation results could potentially overstate the power of the test against alternatives as described above. This is caused by potential differences in the sample mean and point-wise sample variance present in the permuted samples that would have been removed by standardization. 
 		However, in the proposed test structure the possibility to specifically test for alternatives in the persistence structure is a significant advantage.\\
 	
