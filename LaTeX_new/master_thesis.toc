@@ -33,7 +33,7 @@
 \contentsline {subsection}{\numberline {7.2}Simulation Setup}{25}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Results}{28}{subsection.7.3}%
 \contentsline {subsection}{\numberline {7.4}Simulation - Test for Persistence Alternatives}{29}{subsection.7.4}%
-\contentsline {section}{\numberline {8}Application}{30}{section.8}%
+\contentsline {section}{\numberline {8}Application}{31}{section.8}%
 \contentsline {subsection}{\numberline {8.1}Data Cleaning and Preprocessing}{31}{subsection.8.1}%
 \contentsline {subsubsection}{\numberline {8.1.1}Removal of Mondays and Fridays}{31}{subsubsection.8.1.1}%
 \contentsline {subsubsection}{\numberline {8.1.2}Holidays}{32}{subsubsection.8.1.2}%
