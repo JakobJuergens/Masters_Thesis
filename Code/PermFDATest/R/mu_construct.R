@@ -85,7 +85,7 @@ w_func_construct_1 <- function(sample) {
 #' This function implements method 3 of choosing the weight function
 #' described in my thesis
 #'
-#' @param sample: functional sample in the fda format
+#' @param sample: sample in the original list format
 #' @param domain: domain of the functional observations
 #' @param q: chosen quantile for the mean function
 #'
@@ -96,6 +96,36 @@ w_func_construct_2 <- function(sample, domain, q) {
       x = fourier_eval(x = x, coefs = sample, domain = domain),
       na.rm = FALSE, probs = q
     ))
+  }
+  return(ret_f)
+}
+
+#' This function implements another of choosing the weight function
+#' described in my thesis
+#'
+#' @param sample: functional sample in the fda format
+#' @param domain: domain of the functional observations
+#' @param q: chosen quantile for the mean function
+#'
+#' @export
+w_func_construct_3 <- function(sample, domain, q) {
+  interpolation_functions <- purrr::map(
+    .x = sample,
+    .f = ~ approxfun(x = .x$args, y = .x$vals, method = 'linear')
+  )
+
+  ret_f <- function(x) {
+    unname(
+      quantile(
+        x = unlist(
+          purrr::map(
+            .x = interpolation_functions,
+            .f = ~ .x(x)
+          )
+        ),
+        na.rm = FALSE, probs = q
+      )
+    )
   }
   return(ret_f)
 }

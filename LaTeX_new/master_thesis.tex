@@ -1188,8 +1188,113 @@ style=authoryear,
 			\end{equation}
 		
 		\begin{proof}
-			Let $\left(\psi_k\right)_{k \in \mathbb{N}}$ be a complete orthonormal basis of $\mathbb{L}_2(\mu)$ where $\mathbb{L}_2(\mu)$ denotes the Hilbert space of functionals on $\mathbb{L}_2[0,1]$ that are square-integrable with respect to $\mu$.
+			Let $\left(\psi_k\right)_{k \in \mathbb{N}}$ be a complete orthonormal basis of $\mathbb{L}_2(\mu)$ where $\mathbb{L}_2(\mu)$ denotes the Hilbert space of functionals on $\mathbb{L}_2[0,1]$ that are square-integrable with respect to $\mu$. Using a countable basis is only possible if $\mathbb{L}_2(\mu)$ is a separable Hilbert space, which the original authors do not show.\\
+			
+			For any $z(t) \in \mathbb{L}_2[0,1]$ define:
+			\begin{equation}
+				H_N(z) = \frac{1}{N} \left[\sum_{i = 1}^{n} \frac{N}{n} \mathbbm{1}\left[X_i(t) \leq z(t)\ \forall t \in [0,1]\right]
+				+ \sum_{i = 1}^{m} \frac{N}{m} \mathbbm{1}\left[Y_i(t) \leq z(t)\ \forall t \in [0,1]\right]\right]
+			\end{equation} 
+			Then,
+			\begin{equation}
+				\tau_{n,m} = \int_{\mathbb{L}_2[0,1]} H_N^2(z) \mathrm{d}\mu(z)
+			\end{equation}
+			For any positive integer $K$, define the following objects.
+			\begin{multicols}{2}
+				\noindent
+				\begin{equation*}
+					H_{N,K1}(z) = \sum_{k = 1}^{K} c_{N,k}\psi_k(z)
+				\end{equation*}
+				\begin{equation}
+					H_{N,K2}(z) = \sum_{k = K=1}^{\infty} c_{N,k}\psi_k(z)
+				\end{equation}
+			\end{multicols}
+			where
+			\begin{equation}
+				c_{N,k} = \int_{\mathbb{L}_2[0,1]} H_N(z) \psi_k(z) \mathrm{d}\mu(z)
+			\end{equation}
+		and therefore
+		\begin{equation}
+			H_N(z) = \sum_{k = 1}^{\infty} c_{N,k}\psi_k(z) = H_{N,K1}(z) + H_{N,K2}(z).
+		\end{equation}
+		Similarly, define
+		\begin{multicols}{2}
+			\noindent
+			\begin{equation*}
+				\tau_{N,K1} = \int_{\mathbb{L}_2[0,1]} 	H_{N,K1}^2(z) \mathrm{d}\mu(z) = \sum_{k = 1}^{K} c_{N,k}^2
+			\end{equation*}
+			\begin{equation}
+				\tau_{N,K2} = \int_{\mathbb{L}_2[0,1]} 	H_{N,K2}^2(z) \mathrm{d}\mu(z) = \sum_{k = K+1}^{\infty} c_{N,k}^2
+			\end{equation}
+		\end{multicols}
+		and 
+		\begin{multicols}{2}
+			\noindent
+			\begin{equation*}
+				\Upsilon_{N,K1}(z) = \int_{\mathbb{L}_2[0,1]} b_k \psi_k(z) \mathrm{d}\mu(z) = \sum_{k = 1}^{K} c_{N,k}^2
+			\end{equation*}
+			\begin{equation}
+				\Upsilon_{N,K2}(z) = \int_{\mathbb{L}_2[0,1]} b_k \psi_k(z) \mathrm{d}\mu(z) = \sum_{k = K+1}^{\infty} c_{N,k}^2
+			\end{equation}
+		\end{multicols}
+		where
+		\begin{equation}
+			b_k = \int_{\mathbb{L}_2[0,1]}\Upsilon(z) \psi_k(z) \mathrm{d} \mu(z)
+		\end{equation}
+		and thus 
+		\begin{equation}
+			 \Upsilon(z) = \Upsilon_{N,K1}(z) + \Upsilon_{N,K2}(z).
+		\end{equation}
+		Additionally, define
+		\begin{multicols}{2}
+			\noindent
+			\begin{equation*}
+				\tau_{K1} = \int_{\mathbb{L}_2[0,1]} 	\Upsilon_{N,K1}^2(z) \mathrm{d}\mu(z)
+			\end{equation*}
+			\begin{equation}
+				\tau_{K2} = \int_{\mathbb{L}_2[0,1]} 	\Upsilon_{N,K2}^2(z) \mathrm{d}\mu(z).
+			\end{equation}
+		\end{multicols}
+		Now, it is necessary to show the following three points.
+		\begin{enumerate}
+			\item $\tau_{K1} \rightarrow \tau \quad \text{as} \quad K \rightarrow \infty$
+			\item $\tau_{N,K1} \rightarrow \tau_{K1} \quad \text{as} \quad N \rightarrow \infty \quad \forall K = 1,2,3, \dots$
+			\item $\left(\tau_N - \tau_{N,K1}\right) = \tau_{N,K2} \rightarrow_p 0 \quad \text{as} \quad N \rightarrow \infty \quad \text{followed by} \quad K \rightarrow \infty$
+		\end{enumerate}
+	
+		Concerning point one, the following is easy to see.
+		\begin{equation}
+			\mathbb{E}[\tau - \tau_{K1}] = \mathbb{E}[\tau_{K2}] = \sum_{k = K+1}^{\infty} \mathbb{E}[b_k^2] \rightarrow 0 \quad \text{as} \quad K \rightarrow \infty \quad \text{because} \quad \mathbb{E}[\Upsilon(z)] \in \mathbb{L}_2(\mu)
+		\end{equation}
+	
+		For point two, define the following matrix
+		\begin{equation}
+			\left(\Sigma_K\right)_{i,j} = \frac{(1 + \lambda)^2}{\lambda} \int_{z \in \mathbb{L}_2[0,1]}\int_{\tilde{z} \in \mathbb{L}_2[0,1]} \left[G(\min(z, \tilde{z})) - G(z)G(\tilde{z}))\right] \psi_i(z) \psi_j(\tilde{z}) \mathrm{d}\mu(z) \mathrm{d}\mu(\tilde{z})
+		\end{equation}
+		where the $\min(z, \tilde{z})$ is defined as in Section \ref{asymp}. Also define the following objects.
+		\begin{multicols}{2}
+			\noindent
+			\begin{equation*}
+				C_{N,K} = \left\{c_{N,k}\right\}_{k=1}^K
+			\end{equation*}
+			\begin{equation}
+				B_{K} = \left\{b_{k}\right\}_{k=1}^K
+			\end{equation}
+		\end{multicols}
+		By Lemma A.4, it follows that $C_{N,K} \rightarrow \mathcal{N}(0, \Sigma_K) \sim B_K$ as $N \rightarrow \infty$ which shows the point.\\
+		
+		Concerning point three, by Lemma A.3 the following holds.
+		\begin{equation}
+			\begin{split}
+				\mathbb{E}[\tau_{N,K2}] &= \sum_{k = K+1}^{\infty} \mathbb{E}[c_{N,k}^2] \\
+				&= \sum_{k = K+1}^{\infty} \Bigg\{ \frac{1}{\sqrt{N}} \left(1 + \frac{m}{n}\right) \int_{z_1 \in \mathbb{L}_2[0,1]} \int_{z_2 \in \mathbb{L}_2[0,1]} D\left[\min(z_1, z_2)\right] \psi_k(z_1) \psi_k(z_2) \mathrm{d}\mu(z_1) \mathrm{d}\mu(z_2) \\
+				& - \frac{2}{\sqrt{N}} \left(1 + \frac{m}{n}\right) \left[\int_{z \in \mathbb{L}_2[0,1]} D(z) \psi_k(z) \mathrm{d}\mu(z) \right] \left[\int_{z \in \mathbb{L}_2[0,1]} G(z) \psi_k(z) \mathrm{d}\mu(z) \right] \\
+				& + \left(\Sigma_K\right)_{k,k} \left(2 + \frac{n}{m} + \frac{m}{n}\right) \frac{\lambda}{(1 + \lambda)^2} + \frac{1}{N^2} \left[\int_{z \in \mathbb{L}_2[0,1]} D(z) \psi_k(z) \mathrm{d}\mu(z) \right] \sum_{i = 1}^{n}\sum_{j = 1}^{n} \mathbb{E}\left[U_i U_j\right]\Bigg\}
+			\end{split}
+		\end{equation}
+	The last expression is bounded as $n \rightarrow \infty$ for every positive integer $K$, which implies that $\lim_{K \rightarrow \infty} \lim_{N \rightarrow \infty} \mathbb{E}\left[\tau_{N,K2}\right] = 0$. Thus, by Markov's inequality, point three holds.
 		\end{proof}
+	
 			
 		\subsection{Multiple Testing}\label{Multiple_Testing}
 			When testing statistical hypotheses, it is often helpful or even necessary to test multiple hypotheses independently of each other. One setting where this could be useful is when we want to combine the desirable properties of two tests, as is done by \cite{bugni_permutation_2021}. If the tests do not perfectly depend on each other, this creates a problem relating to the size of the combined test.

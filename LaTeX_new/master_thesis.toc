@@ -58,8 +58,8 @@
 \contentsline {paragraph}{Proof as presented in \blx@tocontentsinit {0}\cite {lehmann_testing_2005}\\}{iv}{equation.11.51}%
 \contentsline {subsection}{\numberline {11.5}Argument for Finiteness}{v}{subsection.11.5}%
 \contentsline {subsection}{\numberline {11.6}Derivation of Asymptotic Distribution}{v}{subsection.11.6}%
-\contentsline {subsection}{\numberline {11.7}Multiple Testing}{v}{subsection.11.7}%
-\contentsline {subsection}{\numberline {11.8}Application Data Cleaning}{vi}{subsection.11.8}%
-\contentsline {subsubsection}{\numberline {11.8.1}Excluded Holidays}{vi}{subsubsection.11.8.1}%
-\contentsline {subsubsection}{\numberline {11.8.2}Detrending and Deseasoning Results}{vi}{subsubsection.11.8.2}%
-\contentsline {subsection}{\numberline {11.9}Additional Figures}{vii}{subsection.11.9}%
+\contentsline {subsection}{\numberline {11.7}Multiple Testing}{vii}{subsection.11.7}%
+\contentsline {subsection}{\numberline {11.8}Application Data Cleaning}{viii}{subsection.11.8}%
+\contentsline {subsubsection}{\numberline {11.8.1}Excluded Holidays}{viii}{subsubsection.11.8.1}%
+\contentsline {subsubsection}{\numberline {11.8.2}Detrending and Deseasoning Results}{viii}{subsubsection.11.8.2}%
+\contentsline {subsection}{\numberline {11.9}Additional Figures}{ix}{subsection.11.9}%
