@@ -17,12 +17,12 @@ gen_rho <- inputs$gen_rho
 gen_sigma <- inputs$gen_sigma
 
 # set rho_shift manually to suit setting!
-rho_2 <- rep(-0.5, times = length(gen_grid))
+rho_2 <- rep(-0.9, times = length(gen_grid))
 rho_shift <- rho_2 - gen_rho
 
 print(paste0('Persistence Parameter: ', rho_2[1]))
 
-comparison_grid <- inputs$comparison_grid
+# comparison_grid <- inputs$comparison_grid
 
 # read in seeds and generate string version
 full_seeds <- readRDS(paste0(input_path, "seeds.RDS"))
@@ -79,9 +79,14 @@ main_simu <- function(seed = task_seeds_int[i]) {
   t_stats <- list(samples = samples, 
                   #nu_vals = nu_vals$nu_hat, nu_real = nu_vals$nu_realized,
                   tau_vals = tau_vals$tau_hat, tau_real = tau_vals$tau_realized)
+  
+  if(!dir.exists(paste0(output_path, "persistence_sim2/rho2_", toString(rho_2[1])))){
+    dir.create(path = paste0(output_path, "persistence_sim2/rho2_", toString(rho_2[1])))
+  }
+  
   saveRDS(
     object = t_stats,
-    file = paste0(output_path, "persistence_sim/", toString(seed), "tstats.RDS")
+    file = paste0(output_path, "persistence_sim2/rho2_", toString(rho_2[1]), '/', toString(seed), "tstats.RDS")
   )
 }
 

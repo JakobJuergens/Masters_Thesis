@@ -672,6 +672,15 @@ style=authoryear,
 		
 		\subsection{Asymptotic Properties under the Alternative}
 		
+		\subsection{Implementation Choices}
+			As the method itself lets a few options open on how to implement it for real-world use, it is important to consider points like the order of operations and questions such as whether observations are fitted using a functional basis.
+		\begin{figure}[H]
+			\makebox[\textwidth][c]{
+				\includegraphics[width=1.1\textwidth]{../Graphics/rho0_9_comparison.PDF}
+			}
+			\caption{Artifact of the Curve Fitting Procedure}
+			\label{curve_fitting_artefacts}
+		\end{figure}
 	\section{Test for Persistence Alternatives}\label{variant}
 		One particularly interesting potential application for the Cram\'{e}r-von Mises type test presented in \cite{bugni_permutation_2021}, is a slight modification leading to the following test for differences in the persistence structure of the data generating processes. 
 		There are already many tests focusing on differences in the mean functions of processes. A non-exhaustive list of examples can be found in the following publications.
@@ -897,15 +906,16 @@ style=authoryear,
 			\begin{tabular}{lccccc}\toprule
 				$\alpha_{\tau}$ &$\rho_2(t) = -0.9$ &$\rho_2(t) = -0.5$ &$\rho_2(t) = 0$ &$\rho_2(t) = 0.5$ &$\rho_2(t) = 0.9$\\
 				\midrule
-				$0.05$	& - & -  &  - & -   &  \\
-				$0.01$ 	& -	& -  &  - & -   &  \\
-				$0.001$	& -	& -  &  - & -  &  \\
+				$0.05$	& 0.198 & 0.858  &  0.640 & 0.048   & 0.977  \\
+				$0.01$ 	& 0.044	& 0.623  &  0.393 & 0.009   & 0.913  \\
+				$0.001$	& 0.016	& 0.385  &  0.197 & 0.002   & 0.734  \\
 				\bottomrule
 			\end{tabular}
 			\caption{Empirical Rejection Probabilities}
 			\label{rej_probs_cor}
 		\end{table}
-
+		These results show multiple things. First, as expected the size of the test, approximated by the case $\rho_2(t) = 0.5$ is close to the chosen nominal level. Due to the properties of permutation tests, this is expected. Second, the other cases, which approximate power against specific alternatives, are interesting as they are in part counter-intuitive.\\
+		{\color{red} Hier weiterschreiben.}
 				
 	\section{Application}\label{Application}
 		To test the real-world merits of the method, I will compare electricity demand data from Adelaide which is provided as part of the \textit{fds}\footcite{fds} package for R. This data set presents half-hourly energy demand in megawatts and was originally used by \cite{magnano_generation_2007} and \cite{magnano_generation_2008}. It contains electricity demand curves for 3556 days from 6/7/1997 to 31/3/2007. Some of these curves, specifically a selection of curves observed on Wednesdays and Saturdays, is shown in Figure \ref{electricity_demand}.
@@ -1000,8 +1010,7 @@ style=authoryear,
 		
 		\subsection{Possible Further Simulations}
 			\paragraph{Comparing different Functional Bases\\} 
-			For the construction of the measure and fitting the observations. 
-			{\color{red} Hier weiterschreiben.}
+			For the construction of the measure and potentially also for fitting the observations a functional basis is used. Even in settings, where observations are not fitted using methods like this, the basis that is used to construct the measure might influence the properties of the test. From a theoretical perspective, the test is only justified for complete orthonormal bases, but it would be interesting to study its properties in simulations even for bases that do not have these properties, such as for example a b-spline basis.
 		
 			\paragraph{Comparing choices of $w(t)$ and  $\left(\rho_i\right)_{i = 1, the \dots, K}$\\}
 			In this thesis I only perform simulations for one intuitive choice of $w(t)$ and $\left(\rho_i\right)_{i = 1, \dots, K}$. It seems reasonable to assume that these parameter choices could have a significant impact on the performance of the method and it would therefore be interesting to compare different choices in a structured framework.
@@ -1182,12 +1191,75 @@ style=authoryear,
 		\subsection{Derivation of Asymptotic Distribution}\label{asymp_deriv}
 			This section presents an adapted proof for the limiting distribution of the Cram\'{e}r-von Mises permutation test as presented in an earlier working paper version of \cite{bugni_permutation_2021}, additional information was taken from the proof of Theorem 3.1 in \cite{bugni_goodness--fit_2009}.\\
 	
-			Let Assumptions \ref{Ass1} and \ref{mean_existence} be fulfilled and  and define $\Upsilon(z)$ as in Section \ref{asymp}. Then the following statement holds.
-			\begin{equation}
-				\tau_{n,m} \rightarrow_d \int_{\mathbb{L}_2[0,1]}\Upsilon^2(z) \mathrm{d}\mu(z)
-			\end{equation}
+			\begin{theorem}\label{asymp_proof}
+				Let Assumptions \ref{Ass1} and \ref{mean_existence} be fulfilled and  and define $\Upsilon(z)$ as in Section \ref{asymp}. Then the following statement holds.
+				\begin{equation}
+					\tau_{n,m} \rightarrow_d \int_{\mathbb{L}_2[0,1]}\Upsilon^2(z) \mathrm{d}\mu(z)
+				\end{equation}
+			\end{theorem}
+			
+			Additionally, it is useful to prove the following Lemmas taken from the working paper version of \cite{bugni_permutation_2021} before proving the main point.
+			Define the following objects
+				\begin{equation}
+					W_i(t) = \mathbbm{1}\left[i \leq n\right] X_i(t) + \mathbbm{1}\left[i > n\right] Y_{i-n}(t)
+				\end{equation}
+				\begin{equation}
+					U_i = \mathbbm{1}\left[i \leq n\right] \frac{N}{n} + \mathbbm{1}\left[i > n\right] \frac{N}{m}
+				\end{equation}
+				\begin{equation}
+					F_{nX}(z) = G(z) + \frac{1}{N}D(z)
+				\end{equation}
+				for a chosen function $D(z)$ fulfilling $\int_{\mathbb{L}_2[0,1]}D^2(z) \mathrm{d} \mu(z) < \infty$.
+			
+			\begin{theorem}[Lemma A.3]
+				content...
+			\end{theorem}
 		
-		\begin{proof}
+			\begin{proof}
+				content...
+			\end{proof}
+		
+			\begin{theorem}[Lemma A.4]
+				Let Assumptions \ref{Ass1} and \ref{mean_existence} be fulfilled. Then, 
+				\begin{equation}
+					\frac{1}{\sqrt{N}} \int_{\mathbb{L}_2[0,1]} \left[ \hat{F}_n(z) - \hat{G}_{m}(z) \right] \left\{\psi_k(z)\right\}_{k = 1}^K \mathrm{d}\mu(z)\rightarrow_d \mathcal{N}(\Xi, \Sigma_K)
+				\end{equation}
+				where 
+				\begin{equation}
+					\Xi = \int_{\mathbb{L}_2[0,1]}D(z) \left\{\psi_k(z)\right\}_{k = 1}^K \mathrm{d}\mu(z)
+				\end{equation}
+				and 
+				\begin{equation}
+					\left(\Sigma_K\right)_{i,j} = \frac{(1 + \lambda)^2}{\lambda} \int_{\mathbb{L}_2[0,1]}\int_{\mathbb{L}_2[0,1]} \left[G(\min(z, 	\tilde{z})) - G(z)G(\tilde{z}))\right] \psi_i(z) \psi_j(\tilde{z}) \mathrm{d}\mu(z) \mathrm{d}\mu(\tilde{z})
+				\end{equation}
+				where $\min(z, \tilde{z})$ is defined as in Section \ref{asymp}.
+			\end{theorem}
+		
+			\begin{proof}
+				We have
+				\begin{equation}\label{piece1}
+					\begin{split}
+						\frac{1}{\sqrt{N}}\left[F(z) - G(z)\right] &= \frac{1}{\sqrt{N}} \Bigg[ \sum_{i = 1}^{N} U_i \mathbbm{1}\left[W_i(t) \leq z(t) \ \forall t \in [0,1]\right] \Bigg]
+					\end{split}
+				\end{equation}
+				{\color{red} Hier Zwischenschritt ergaenzen}\\
+				For any $K = 1,2,3,\dots$
+				\begin{equation}\label{piece2}
+						\frac{1}{\sqrt{N}} \sum_{i = 1}^{N} U_i \bigg\{ \int_{\mathbb{L}_2[0,1]} \mathbbm{1}\left[W_i(t) \leq z(t) \ \forall t \in [0,1] \right] \psi_k(z) \mathrm{d} \mu(z) - \mu_{i,N,k}\bigg\}_{k = 1}^K  \rightarrow \mathcal{N}(0_K, \Sigma_K)
+				\end{equation}
+				where
+				\begin{equation}
+					\mu_{i,N,k} = \mathbbm{1}\left[i \leq n\right] \int_{\mathbb{L}_2[0,1]} F_{nX}(z) \psi_k(z) \mathrm{d} \mu(z) + 
+					\mathbbm{1}\left[i > n\right] \int_{\mathbb{L}_2[0,1]} G(z) \psi_k(z) \mathrm{d} \mu(z)
+				\end{equation}
+				Additionally,
+				\begin{equation}\label{piece3}
+					\frac{1}{\sqrt{N}} \left[ \sum_{i = 1}^{N} U_i \mu_{i,N,k}\right] = \frac{1}{\sqrt{N}} \int_{\mathbb{L}_2[0,1]} D(z) \psi_k(z) \mathrm{d}\mu(z)
+				\end{equation}
+				The Lemma holds by Equations \ref{piece1}, \ref{piece2} and \ref{piece3}.
+			\end{proof}
+		
+		\begin{proof}[Theorem \ref{asymp_proof}]
 			Let $\left(\psi_k\right)_{k \in \mathbb{N}}$ be a complete orthonormal basis of $\mathbb{L}_2(\mu)$ where $\mathbb{L}_2(\mu)$ denotes the Hilbert space of functionals on $\mathbb{L}_2[0,1]$ that are square-integrable with respect to $\mu$. Using a countable basis is only possible if $\mathbb{L}_2(\mu)$ is a separable Hilbert space, which the original authors do not show.\\
 			
 			For any $z(t) \in \mathbb{L}_2[0,1]$ define:
@@ -1267,11 +1339,7 @@ style=authoryear,
 			\mathbb{E}[\tau - \tau_{K1}] = \mathbb{E}[\tau_{K2}] = \sum_{k = K+1}^{\infty} \mathbb{E}[b_k^2] \rightarrow 0 \quad \text{as} \quad K \rightarrow \infty \quad \text{because} \quad \mathbb{E}[\Upsilon(z)] \in \mathbb{L}_2(\mu)
 		\end{equation}
 	
-		For point two, define the following matrix
-		\begin{equation}
-			\left(\Sigma_K\right)_{i,j} = \frac{(1 + \lambda)^2}{\lambda} \int_{z \in \mathbb{L}_2[0,1]}\int_{\tilde{z} \in \mathbb{L}_2[0,1]} \left[G(\min(z, \tilde{z})) - G(z)G(\tilde{z}))\right] \psi_i(z) \psi_j(\tilde{z}) \mathrm{d}\mu(z) \mathrm{d}\mu(\tilde{z})
-		\end{equation}
-		where the $\min(z, \tilde{z})$ is defined as in Section \ref{asymp}. Also define the following objects.
+		For point two, define the following objects.
 		\begin{multicols}{2}
 			\noindent
 			\begin{equation*}

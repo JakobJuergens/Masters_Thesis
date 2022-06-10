@@ -18,7 +18,7 @@ test_combine <- Vectorize(function(phi1, phi2) {
 })
 
 # set path to simulation folders
-sim_folders <- "../../Data/Cluster_Simulation_Outputs/Persistence_Test"
+sim_folders <- "../../Data/Cluster_Simulation_Outputs/Persistence_Test2"
 # set Output path
 output_path <- "../../Data/Cluster_Simulation_Outputs/Evaluation/"
 
@@ -83,8 +83,8 @@ summaries <- purrr::map(
   .f = ~ rejection_frequencies(test_tibble = .x))
 
 # give correct names to objects
-names <- substr(x = individual_simulation_folders, start = 56, stop = 100)
+names <- substr(x = individual_simulation_folders, start = 57, stop = 100)
 names(summaries) <- names
 
 # save summaries
-saveRDS(object = summaries, file = paste0(output_path, 'Persistence_test_rejection_frequencies.RDS'))
+saveRDS(object = summaries, file = paste0(output_path, 'Persistence_test2_rejection_frequencies.RDS'))
