@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.13)  9 JUN 2022 15:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.13)  9 JUN 2022 15:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -934,6 +934,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--94
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--102
+
+ []
+
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1086,19 +1091,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 541--542
  []
 
 [18]
-<../Graphics/mean_functions.PDF, id=608, 1445.4pt x 433.62pt>
+<../Graphics/mean_functions.PDF, id=607, 1445.4pt x 433.62pt>
 File: ../Graphics/mean_functions.PDF Graphic file (type pdf)
 <use ../Graphics/mean_functions.PDF>
 Package pdftex.def Info: ../Graphics/mean_functions.PDF  used on input line 580
 .
 (pdftex.def)             Requested size: 500.77129pt x 150.22763pt.
-
+ [19]
 Underfull \hbox (badness 10000) in paragraph at lines 586--587
-
- []
-
-[19 <../Graphics/mean_functions.PDF>]
-Underfull \hbox (badness 10000) in paragraph at lines 588--589
 
  []
 
@@ -1107,17 +1107,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 590--591
 
  []
 
-[20] [21]
+[20 <../Graphics/mean_functions.PDF>] [21]
 Underfull \hbox (badness 10000) in paragraph at lines 687--688
 
  []
 
-
+[22]
 Underfull \hbox (badness 10000) in paragraph at lines 723--725
 
  []
 
-[22]
+
 Underfull \hbox (badness 10000) in paragraph at lines 727--728
 
  []
@@ -1128,7 +1128,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 741--742
  []
 
 [23] [24] [25]
-<../Graphics/Settings_comparison.PDF, id=721, 1445.4pt x 867.24pt>
+<../Graphics/Settings_comparison.PDF, id=718, 1445.4pt x 867.24pt>
 File: ../Graphics/Settings_comparison.PDF Graphic file (type pdf)
 <use ../Graphics/Settings_comparison.PDF>
 Package pdftex.def Info: ../Graphics/Settings_comparison.PDF  used on input lin
@@ -1140,14 +1140,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 854--857
  []
 
 [28]
-<../Graphics/rho0_9_comparison.PDF, id=765, 1445.4pt x 433.62pt>
+<../Graphics/rho0_9_comparison.PDF, id=762, 1445.4pt x 433.62pt>
 File: ../Graphics/rho0_9_comparison.PDF Graphic file (type pdf)
 <use ../Graphics/rho0_9_comparison.PDF>
 Package pdftex.def Info: ../Graphics/rho0_9_comparison.PDF  used on input line 
 878.
 (pdftex.def)             Requested size: 500.77129pt x 150.22763pt.
  [29]
-<../Graphics/electricity_demand_curves.PDF, id=782, 1445.4pt x 433.62pt>
+<../Graphics/electricity_demand_curves.PDF, id=779, 1445.4pt x 433.62pt>
 File: ../Graphics/electricity_demand_curves.PDF Graphic file (type pdf)
 <use ../Graphics/electricity_demand_curves.PDF>
 Package pdftex.def Info: ../Graphics/electricity_demand_curves.PDF  used on inp
@@ -1159,7 +1159,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 929--930
  []
 
 [31 <../Graphics/electricity_demand_curves.PDF>]
-<../Graphics/estimate_weekdays.PDF, id=823, 1445.4pt x 578.16pt>
+<../Graphics/estimate_weekdays.PDF, id=820, 1445.4pt x 578.16pt>
 File: ../Graphics/estimate_weekdays.PDF Graphic file (type pdf)
 <use ../Graphics/estimate_weekdays.PDF>
 Package pdftex.def Info: ../Graphics/estimate_weekdays.PDF  used on input line 
@@ -1178,7 +1178,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 956.
 
-<../Graphics/electricity_demand_curves_cleaned.PDF, id=835, 1445.4pt x 433.62pt
+<../Graphics/electricity_demand_curves_cleaned.PDF, id=832, 1445.4pt x 433.62pt
 >
 File: ../Graphics/electricity_demand_curves_cleaned.PDF Graphic file (type pdf)
 
@@ -1287,25 +1287,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 1183--1184
  []
 
 [5]
-<../Graphics/estimate_const_year.PDF, id=1002, 1445.4pt x 433.62pt>
+<../Graphics/estimate_const_year.PDF, id=999, 1445.4pt x 433.62pt>
 File: ../Graphics/estimate_const_year.PDF Graphic file (type pdf)
 <use ../Graphics/estimate_const_year.PDF>
 Package pdftex.def Info: ../Graphics/estimate_const_year.PDF  used on input lin
 e 1220.
 (pdftex.def)             Requested size: 500.77129pt x 150.22763pt.
  [6]
-<../Graphics/estimate_months.PDF, id=1013, 1445.4pt x 578.16pt>
+<../Graphics/estimate_months.PDF, id=1010, 1445.4pt x 578.16pt>
 File: ../Graphics/estimate_months.PDF Graphic file (type pdf)
 <use ../Graphics/estimate_months.PDF>
 Package pdftex.def Info: ../Graphics/estimate_months.PDF  used on input line 12
 28.
 (pdftex.def)             Requested size: 500.77129pt x 200.3035pt.
-<../Graphics/ecdf.PDF, id=1014, 1445.4pt x 433.62pt>
+<../Graphics/ecdf.PDF, id=1011, 1445.4pt x 433.62pt>
 File: ../Graphics/ecdf.PDF Graphic file (type pdf)
 <use ../Graphics/ecdf.PDF>
 Package pdftex.def Info: ../Graphics/ecdf.PDF  used on input line 1237.
 (pdftex.def)             Requested size: 500.77129pt x 150.22763pt.
-<../Graphics/persistence_comparison.PDF, id=1015, 1445.4pt x 867.24pt>
+<../Graphics/persistence_comparison.PDF, id=1012, 1445.4pt x 867.24pt>
 File: ../Graphics/persistence_comparison.PDF Graphic file (type pdf)
 <use ../Graphics/persistence_comparison.PDF>
 Package pdftex.def Info: ../Graphics/persistence_comparison.PDF  used on input 
@@ -1313,7 +1313,7 @@ line 1245.
 (pdftex.def)             Requested size: 500.77129pt x 300.45526pt.
  [7 <../Graphics/estimate_const_year.PDF> <../Graphics/estimate_months.PDF> <..
 /Graphics/ecdf.PDF>]
-<../Graphics/persistence_comparison_basis.PDF, id=1036, 1445.4pt x 867.24pt>
+<../Graphics/persistence_comparison_basis.PDF, id=1033, 1445.4pt x 867.24pt>
 File: ../Graphics/persistence_comparison_basis.PDF Graphic file (type pdf)
 <use ../Graphics/persistence_comparison_basis.PDF>
 Package pdftex.def Info: ../Graphics/persistence_comparison_basis.PDF  used on 
@@ -1328,10 +1328,10 @@ Package logreq Info: Writing requests to 'master_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24121 strings out of 478238
- 420306 string characters out of 5850456
- 1180065 words of memory out of 5000000
- 41551 multiletter control sequences out of 15000+600000
+ 24120 strings out of 478238
+ 420294 string characters out of 5850456
+ 1180060 words of memory out of 5000000
+ 41550 multiletter control sequences out of 15000+600000
  489554 words of font info for 189 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,25n,68p,1028b,2738s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1383,10 +1383,10 @@ pe1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/
 msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on master_thesis.pdf (51 pages, 2970155 bytes).
+Output written on master_thesis.pdf (51 pages, 2969739 bytes).
 PDF statistics:
- 1226 PDF objects out of 1440 (max. 8388607)
- 1089 compressed objects within 11 object streams
+ 1223 PDF objects out of 1440 (max. 8388607)
+ 1086 compressed objects within 11 object streams
  301 named destinations out of 1000 (max. 500000)
  44546 words of extra memory for PDF output out of 51595 (max. 10000000)
 

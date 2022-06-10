@@ -98,7 +98,7 @@ style=authoryear,
 		The main contribution of this thesis is a variant of the original test with the goal to identify specific violations of the null hypothesis relating to the persistence of the data generating processes. This variant of the original test is presented in Section \ref{variant}.
 		Section \ref{Simulation_Study} presents a set of simulations exploring the properties of the original test and shows a heuristic simulation to motivate the proposed extension. 
 		Section \ref{Application} applies the test from \cite{bugni_permutation_2021} to half-hourly electricity demand data from Adelaide.
-		Finally, Section \ref{Outlook} gives an Outlook on possible further extensions of the underlying idea, addresses some problems and shortcomings of the presented results and outlines potential simulations that could be performed to better understand the properties of the procedures described in this thesis.
+		Finally, Section \ref{Outlook} gives an Outlook on possible further extensions, addresses some problems and shortcomings of the presented results and outlines simulations that could be performed to better understand the properties of the procedures described in this thesis.\\
 		
 		Two additional aspects, that I want to shine light on are the following. First, all code and data that was used in this thesis is available in the following public GitHub repository: \url{https://github.com/JakobJuergens/Masters_Thesis}. 
 		Second, Appendix \ref{Intuition} gives a very informal description of the test scenario and the underlying idea of the test. It shall serve as a primer for readers without prior experience in functional data analysis and permutation testing. 
@@ -496,7 +496,7 @@ style=authoryear,
 				\end{equation}
 			\end{multicols}
 			
-			As in the scalar setting described in Section \ref{CvM_Tests}, the idea of the test is that the differences between these empirical distribution functions are expected to be comparatively small under the null hypothesis. 
+			As in the scalar setting described in Section \ref{CvM_Tests}, the idea of the test is that the differences between these empirical distribution functions are expected to be comparatively small under the null hypothesis.
 			\begin{equation}
 				\tau = \int_{\mathbb{L}_2[0,1]}\left[F(z) - G(z)\right]^2 \mathrm{d} \mu(z)
 			\end{equation}
@@ -533,7 +533,7 @@ style=authoryear,
 			\begin{equation}
 				\tau_{n,m} \rightarrow_d \int_{\mathbb{L}_2[0,1]}\Upsilon^2(z) \mathrm{d}\mu(z)
 			\end{equation}
-			The derivation of this limiting distribution follows a similar argument as the proof of Theorem 3.1 given in \cite{bugni_goodness--fit_2009}. It is presented  in Appendix \ref{asymp_deriv}. Using the arguments presented in Appendix \ref{asymp_deriv} and Section \ref{perm_asymp}, it is possible to show that this limiting distribution also applies to the permutation test described in this thesis.\\
+			The derivation of this limiting distribution follows a similar argument as the proof of Theorem 3.1 given in \cite{bugni_goodness--fit_2009}. It is presented  in Appendix \ref{asymp_deriv}. Using the arguments presented in Appendix \ref{asymp_deriv} and Section \ref{perm_asymp}, it is possible to show that this limiting distribution also applies to the permutation variant of the Cram\'{e}r-von Mises type test described in this thesis.\\
 			
 			In the context of the limiting distribution, it is necessary to consider the implications of the definition of $\mathbb{L}_2[0,1]$ as given by \cite{bugni_permutation_2021}.  Where previously, it was sufficient to consider the classical definition of $\mathbb{L}_2[0,1]$, it can make a difference in the asymptotic considerations. Even though this distinction will not be considered further in this thesis, for theoretical considerations of this test, it is important that, for example, $\Upsilon(z)$ is defined with respect to the definition of $\mathbb{L}_2[0,1]$ from \cite{bugni_permutation_2021}.
 		
@@ -569,7 +569,7 @@ style=authoryear,
 			Taking the option used for the application in the original paper and one further possibility, the following two ways of choosing the mean function might come to mind.
 			
 			\begin{enumerate}
-				\item In their application \cite{bugni_permutation_2021} set the distribution of the fourier coefficients manually, as $b_1 \sim \mathcal{N}(\mu_1, \frac{1}{K})$ and $b_k \sim \mathcal{N}(0, \frac{1}{K}) \quad k = 2, \dots, K$ where $\mu_1 = \textit{median}_i \left(\textit{max}_t\left\{X_i(t) \ | \ i = 1, \dots, n_1, t\in [0,1]\right\}\right)$.
+				\item In their application \cite{bugni_permutation_2021} set the distribution of the fourier coefficients manually, as $b_1 \sim \mathcal{N}(\mu_1, \frac{1}{K})$ and $b_k \sim \mathcal{N}(0, \frac{1}{K}) \quad k = 2, \dots, K$ where $\mu_1 = \textit{median}_i \left(\max_t\left\{X_i(t) \ | \ i = 1, \dots, n_1, t\in [0,1]\right\}\right)$.
 				This method is identical to setting $w(t) = \mu_1(t)$, as the inner product of any constant function with Fourier basis functions of order two or higher will be zero due to their cyclical nature.
 				\item Another idea is to choose a non-constant weight function based on the reference sample. One option for this choice is to use specific point-wise quantiles of the reference sample: $w(t) = \textit{quantile}_q \{X_i(t) \ | \ i = 1, \dots n_1\}$. This allows the generated functions for the Monte-Carlo integration in the approximation of the Cram\'{e}r-von Mises statistic to resemble the reference data more closely, which could improve the properties of the test.
 			\end{enumerate}
@@ -585,7 +585,7 @@ style=authoryear,
 			
 			Additionally, the choice of the sequence $(\rho_k)_{k \in \mathbb{N}}$ is of importance. The authors do not recommend a procedure for choosing these coefficients, but it seems reasonable to choose parameters that lie in the vicinity of the standard deviations for the Fourier coefficients of the reference sample. This method might be a reasonable possibility to choose these parameters dependent on the data.\\
 			
-			In \cite{bugni_goodness--fit_2009}, the authors show that the approximation of the probability measure, which is induced by the approximation of the random variable in Equation \ref{truncation}, converges appropriately to the probability measure induced by the random variable in Equation \ref{non_truncated}. {\color{red} Hier weiterschreiben}\\
+%			In \cite{bugni_goodness--fit_2009}, the authors show that the approximation of the probability measure, which is induced by the approximation of the random variable in Equation \ref{truncation}, converges appropriately to the probability measure induced by the random variable in Equation \ref{non_truncated}. {\color{red} Hier weiterschreiben}\\
 			
 			At this point it is again interesting to look at the convention that two elements of $\mathbb{L}_2[0,1]$ are distinct even if they differ only on a nonempty set of Lebesgue-measure zero. One problem that this convention entails is the fact that the Fourier basis is an almost everywhere basis of $\mathbb{L}_2[0,1]$ as shown by \cite{carleson_convergence_1966}. However, in many cases point-wise convergence of a sum as shown in Equation \ref{non_truncated} is not fulfilled. This is simple to see for any function that does not have identical values on both sides of its domain. {\color{red} Hier weiterschreiben}\\
 			
