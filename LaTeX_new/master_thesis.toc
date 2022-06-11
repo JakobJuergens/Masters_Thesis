@@ -19,36 +19,33 @@
 \contentsline {subsection}{\numberline {5.3}Cram\'{e}r-von Mises type Test}{16}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}Asymptotics for the Cram\'{e}r-von Mises type Test}{17}{subsection.5.4}%
 \contentsline {subsection}{\numberline {5.5}Construction of the Measure $\mu $}{18}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}Mean focused Test}{20}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.6}Mean-focused Test}{20}{subsection.5.6}%
 \contentsline {subsection}{\numberline {5.7}Combined Permutation Test}{21}{subsection.5.7}%
-\contentsline {subsection}{\numberline {5.8}Finite Sample Properties under the null hypothesis}{22}{subsection.5.8}%
-\contentsline {subsection}{\numberline {5.9}Asymptotic Properties under the Alternative}{22}{subsection.5.9}%
-\contentsline {subsection}{\numberline {5.10}Implementation Choices}{22}{subsection.5.10}%
-\contentsline {paragraph}{Curve Fitting}{22}{subsection.5.10}%
-\contentsline {paragraph}{}{23}{Item.12}%
+\contentsline {subsection}{\numberline {5.8}Asymptotic Properties under the Alternative}{22}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.9}Problematic Curve Fitting}{22}{subsection.5.9}%
 \contentsline {section}{\numberline {6}Test for Persistence Alternatives}{23}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Null-Hypothesis}{23}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Test-Procedure}{24}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Simulation Study}{25}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Implementation as an R package}{25}{subsection.7.1}%
+\contentsline {subsection}{\numberline {6.1}Null-Hypothesis}{24}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Test-Procedure}{25}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Simulation Study}{26}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Implementation as an R package}{26}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Simulation Setup}{26}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Results}{29}{subsection.7.3}%
 \contentsline {subsection}{\numberline {7.4}Simulation - Test for Persistence Alternatives}{30}{subsection.7.4}%
-\contentsline {section}{\numberline {8}Application}{32}{section.8}%
+\contentsline {section}{\numberline {8}Application}{31}{section.8}%
 \contentsline {subsection}{\numberline {8.1}Data Cleaning and Preprocessing}{32}{subsection.8.1}%
 \contentsline {subsubsection}{\numberline {8.1.1}Removal of Mondays and Fridays}{32}{subsubsection.8.1.1}%
-\contentsline {subsubsection}{\numberline {8.1.2}Holidays}{33}{subsubsection.8.1.2}%
-\contentsline {subsubsection}{\numberline {8.1.3}Detrending and Deseasoning}{33}{subsubsection.8.1.3}%
+\contentsline {subsubsection}{\numberline {8.1.2}Holidays}{32}{subsubsection.8.1.2}%
+\contentsline {subsubsection}{\numberline {8.1.3}Detrending and Deseasoning}{32}{subsubsection.8.1.3}%
 \contentsline {subsection}{\numberline {8.2}Test from \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{34}{subsection.8.2}%
-\contentsline {section}{\numberline {9}Outlook}{36}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Possible Further Simulations}{36}{subsection.9.1}%
-\contentsline {paragraph}{Comparing different Functional Bases\\}{36}{subsection.9.1}%
-\contentsline {paragraph}{Comparing choices of $w(t)$ and $\left (\rho _i\right )_{i = 1, the \dots , K}$\\}{36}{subsection.9.1}%
-\contentsline {paragraph}{Less restrictive Distributions of Fourier Coefficients\\}{36}{subsection.9.1}%
+\contentsline {section}{\numberline {9}Outlook}{35}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Possible Further Simulations}{35}{subsection.9.1}%
+\contentsline {paragraph}{Comparing different Functional Bases\\}{35}{subsection.9.1}%
+\contentsline {paragraph}{Comparing choices of $w(t)$ and $\left (\rho _i\right )_{i = 1, the \dots , K}$\\}{35}{subsection.9.1}%
+\contentsline {paragraph}{Less restrictive Distributions of Fourier Coefficients\\}{35}{subsection.9.1}%
 \contentsline {paragraph}{Simulations for Unbalanced Sample Sizes\\}{36}{subsection.9.1}%
 \contentsline {paragraph}{Comparing Implementations using different orders of Operations\\}{36}{subsection.9.1}%
-\contentsline {paragraph}{Variants of the Test based on different Norms\\}{37}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Potential Applications}{37}{subsection.9.2}%
+\contentsline {paragraph}{Variants of the Test based on different Norms\\}{36}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Potential Applications}{36}{subsection.9.2}%
 \contentsline {section}{\numberline {10}Bibliography}{38}{section.10}%
 \contentsline {section}{\numberline {11}Appendix}{i}{section.11}%
 \contentsline {subsection}{\numberline {11.1}Informal Intuition}{i}{subsection.11.1}%
@@ -56,7 +53,7 @@
 \contentsline {subsection}{\numberline {11.3}Asymptotic Distribution of the Cram\'{e}r-von Mises Test}{iii}{subsection.11.3}%
 \contentsline {subsection}{\numberline {11.4}Proof from \blx@tocontentsinit {0}\cite {hoeffding_large-sample_1952}}{iv}{subsection.11.4}%
 \contentsline {paragraph}{Theorem as stated in \blx@tocontentsinit {0}\cite {lehmann_testing_2005} \\}{iv}{subsection.11.4}%
-\contentsline {paragraph}{Proof as presented in \blx@tocontentsinit {0}\cite {lehmann_testing_2005}\\}{iv}{equation.11.51}%
+\contentsline {paragraph}{Proof as presented in \blx@tocontentsinit {0}\cite {lehmann_testing_2005}\\}{iv}{equation.11.53}%
 \contentsline {subsection}{\numberline {11.5}Argument for Finiteness}{v}{subsection.11.5}%
 \contentsline {subsection}{\numberline {11.6}Derivation of Asymptotic Distribution}{v}{subsection.11.6}%
 \contentsline {subsection}{\numberline {11.7}Multiple Testing}{viii}{subsection.11.7}%

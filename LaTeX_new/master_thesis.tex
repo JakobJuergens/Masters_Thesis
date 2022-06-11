@@ -515,7 +515,7 @@ style=authoryear,
 		
 			Using the theory from Section \ref{permutation} the critical values for permutation test statistic are then calculated in the following way. Here $\tau_{n,m,q}$ denotes the test statistic calculated on the samples permuted using permutation $q$. 
 			\begin{equation}
-				t^{*}_{n,m}(1-\alpha) = \inf \left\{t \in \mathbb{R} \quad \vert \quad \frac{1}{Q} \sum_{i = 1}^{Q} \mathbbm{1}\left[\tau_{n,m,q} \leq t\right] \geq 1 - \alpha \right\}
+				t^{*, \tau}_{n,m}(1-\alpha) = \inf \left\{t \in \mathbb{R} \quad \vert \quad \frac{1}{Q} \sum_{i = 1}^{Q} \mathbbm{1}\left[\tau_{n,m,q} \leq t\right] \geq 1 - \alpha \right\}
 			\end{equation}
 			With these values it is now possible to perform the test at a chosen significance level.
 		
@@ -600,7 +600,7 @@ style=authoryear,
 %			In a typical scenario where we would use $\mathbb{L}_2[0,1]$, so only their equivalence classes of the functions, this does not pose a problem. 
 %			This in turn implies that a probability measure that is constructed as shown in the previous section cannot give positive weight to many functions in the space $\mathbb{L}_2[0,1]$ if we use the convention used by the authors. Namely, for any function in $\mathbb{L}_2[0,1]$ for which the Fourier series fails to converge point-wise, we cannot assign a positive probability. This in turn could be a potential problem for the method described in the paper, if this is necessary for its working principle.
 			
-		\subsection{Mean focused Test}\label{mean_based_test}
+		\subsection{Mean-focused Test}\label{mean_based_test}
 			In addition to the Cram\'{e}r-von Mises type test, the authors use a second test statistic aimed at detecting violations due to a mean shift in the data generating process. This test is added due to low power against pure mean-shift alternatives in the original paper's simulations and is supposed to complement this weakness of the other test statistic.
 			
 			The variable $\mu$ on which this second test is based is the distance between the mean functions of the data generating processes as induced by the natural norm on $\mathbb{L}_2[0,1]$.
@@ -622,9 +622,9 @@ style=authoryear,
 				\nu_{n,m} = (n+m) \int_{0}^{1} \left[\hat{\mathbb{E}}\left[X(t)\right] - \hat{\mathbb{E}}\left[Y(t)\right] \right]^2 \mathrm{d}t
 			\end{equation}
 		
-			In the same way the critical values for the Cram\'{e}r-von Mises test are derived using the techniques described in Section \ref{permutation}, the critical values for the mean based test are calculated in the following way. Analogous to the previous case, $\nu_{n,m,q}$ denotes the test statistic that was calculated on the permuted samples corresponding to permutation $q$.
+			In the same way the critical values for the Cram\'{e}r-von Mises test are derived using the techniques described in Section \ref{permutation}, the critical values for the mean-based test are calculated in the following way. Analogous to the previous case, $\nu_{n,m,q}$ denotes the test statistic that was calculated on the permuted samples corresponding to permutation $q$.
 			\begin{equation}
-				t^{*}_{n,m}(1-\alpha) = \inf \left\{t \in \mathbb{R} \quad \vert \quad \frac{1}{Q} \sum_{i = 1}^{Q} \mathbbm{1}\left[\nu_{n,m,q} \leq t\right] \geq 1 - \alpha \right\}
+				t^{*, \nu}_{n,m}(1-\alpha) = \inf \left\{t \in \mathbb{R} \quad \vert \quad \frac{1}{Q} \sum_{i = 1}^{Q} \mathbbm{1}\left[\nu_{n,m,q} \leq t\right] \geq 1 - \alpha \right\}
 			\end{equation}
 		
 		\subsection{Combined Permutation Test}
@@ -657,47 +657,56 @@ style=authoryear,
 					\item $Q_{\nu}^{0} = \sum_{q = 1}^{Q}\mathbbm{1}\left[\nu_{n,m,q} = t^{*}_{n,m}(1-\alpha_{\nu})\right]$
 				\end{itemize} 
 			\end{multicols}
+			By the theoretical considerations of Section \ref{permutation}, it is clear that under Assumption \ref{Ass1} and \ref{mean_existence} and under the null hypothesis and any $\alpha_{\tau}, \alpha_{\mu} \in (0,1)$, the following statements hold. This means, that regardless of most choices that had to be made during the construction of the test, the size of the individual tests will be equal to the corresponding $\alpha$.
+			\begin{multicols}{2}
+				\noindent
+				\begin{equation*}
+					\mathbb{E}_P\left(\phi_{n,m}\right) = \alpha_{\tau}
+				\end{equation*}			
+				\begin{equation}
+					\mathbb{E}_P\left(\tilde{\phi}_{n,m}\right) = \alpha_{\nu}
+				\end{equation}
+			\end{multicols}
 			
 			To combine the two tests, the authors make use of the Bonferroni inequality. Under $H_0$ this approach leads to the following relationship motivating a choice of $\alpha_{\tau} + \alpha_{\nu} = \alpha$ for a chosen overall size for the combined test of $\alpha$. More information on this approach is given in Appendix \ref{Multiple_Testing}.
 			\begin{equation}
 				\max(\alpha_{\tau}, \alpha_{\nu}) \leq \mathbb{P}\left[(\phi_{n,m} > 0) \cup (\tilde{\phi}_{n,m} > 0)\right] \leq \alpha_{\tau} + \alpha_{\nu}
 			\end{equation}
-			This opens the option to, for example, choose a size of $0.03$ for the Cram\'{e}r-von Mises type test and a level of $0.02$ for the mean based test, as the combined test will at most have a level of $0.05$.
-		
-		\subsection{Finite Sample Properties under the null hypothesis}
-		For any distribution $P$ that satisfies the null hypothesis and any $\alpha_{\tau}, \alpha_{\mu} \in (0,1)$, we have 
-		\begin{multicols}{2}
-			\noindent
-			\begin{equation*}
-				\mathbb{E}_P\left(\phi_{n,m}\right) = \alpha_{\tau}
-			\end{equation*}			
-			\begin{equation}
-				\mathbb{E}_P\left(\tilde{\phi}_{n,m}\right) = \alpha_{\nu}
-			\end{equation}
-		\end{multicols}
-		
-		\subsection{Asymptotic Properties under the Alternative}
-		
-		\subsection{Implementation Choices}
-			As the method itself leaves a few options open on how to implement it for real-world use. This section shall, therefore, address some central questions about how to use the theoretical ideas introduced in the previous Sections.
+			This opens the option to, for example, choose a size of $0.03$ for the Cram\'{e}r-von Mises type test and a level of $0.02$ for the mean-based test, as the combined test will at most have a level of $0.05$.
 			
-		\paragraph{Curve Fitting} One important question is whether to employ curve-fitting using a functional basis to the samples. It seems natural to fit the same basis that is used for the construction of the measure to the data. Then the comparison between functions, that is necessary for the approximation of the Cram\'{e}r-von Mises type statistic, would reduce to a problem of finding the zeroes of a finite Fourier-series, which could be approached with methods such as those presented in \cite{boyd_computing_2006}. However, this can lead to problems. One problem is illustrated by Figure \ref{curve_fitting_artefacts}, that shows curves that were fitted to samples generated by two data generating processes.			
-		\begin{figure}[H]
-			\makebox[\textwidth][c]{
-				\includegraphics[width=1.1\textwidth]{../Graphics/rho0_9_comparison.PDF}
-			}
-			\caption{Artifact of the Curve Fitting Procedure}
-			\label{curve_fitting_artefacts}
-		\end{figure}
-		These processes are as described in Section \ref{Simulation_Study} for a choice of $\rho_2(t) = -0.9$. This implies that the data generating process generates data with a point-wise variance of one. However, due to the structure of the data, the curve fitting procedure fails to conserve this property. Therefore, artifacts, such as the one shown in Figure \ref{curve_fitting_artefacts}, can heavily influence the power of the constructed test, meaning that it could be advisable to change the approach to one of the following.
-		\begin{enumerate}
-			\item \textbf{Comparisons at the discrete data points.} Suppose observations are discrete but dense enough to be interpreted as smooth curves. In that case, one could use the points where data is observed to compare the functions generated for the approximation of the Cram\'{e}r-von Mises test to the original samples. This approach is close to the one described in \cite{bugni_permutation_2021} for the case of discrete observations.
-			\item \textbf{Linear Interpolation.} Instead, one could use linear interpolation of the original curves to compare them to the generated curves. This would preserve the functional nature while not generating the fitting artifacts shown in Figure \ref{curve_fitting_artefacts}.
-		\end{enumerate}
-		The simulations in Sections \ref{Simulation_Study} use the first approach, as it limits the computational cost of the procedure while staying close to the original paper.
-		
-		\paragraph{}
-		
+		\subsection{Asymptotic Properties under the Alternative}
+			As alluded to in Sections \ref{CvM_Tests} and \ref{cvm_type_test}, for the asymptotic properties of the test, it is useful to make another assumption on the sequence of tests that is considered as the number of observations goes to infinity.
+			\begin{assumption}\label{lambda}
+				As $N = m + n \rightarrow \infty$ let $\frac{n}{m} \rightarrow \lambda$ for some $\lambda \in \mathbb{R}_{>0}$.
+			\end{assumption} 
+			This assumption allows the derivation of a stable limiting distribution and helps with the asymptotic properties of the test if the null hypothesis is incorrect.\\
+			
+			Under Assumptions \ref{Ass1} and \ref{lambda}, \cite{bugni_permutation_2021} show that the following statement holds.
+			\begin{equation}
+				\int_{\mathbb{L}_2[0,1]} \left[F(z) - G(z)\right]^2 \mathrm{d} \mu(z) > 0 \implies \lim_{N \rightarrow \infty} \mathbb{P}\left[\tau_{n,m} > t^{*, \tau}_{n,m}(1-\alpha_{\tau})\right] = 1 \quad \forall \alpha_{\tau} \in (0,1)
+			\end{equation}
+			If Additionally Assumption \ref{mean_existence} holds, then the analogous statement holds for the mean-focused test.
+			\begin{equation}
+				\int_{0}^{1} \left[\mathbb{E}\left[X(t)\right] - \mathbb{E}\left[Y(t)\right]\right]^2 \mathrm{d}t > 0 \implies \lim_{N \rightarrow \infty} \mathbb{P}\left[\nu_{n,m} > t^{*, \nu}_{n,m}(1-\alpha_{\nu})\right] = 1 \quad \forall \alpha_{\nu} \in (0,1)
+			\end{equation}
+			The combination of these statements implies that the combined test is consistent.
+			
+		\subsection{Problematic Curve Fitting}
+			One crucial question in implementing the method is whether to employ curve-fitting using a functional basis to the samples. It seems natural to fit the same basis to the data that is used for constructing the measure. Then the comparison between functions that is necessary for the approximation of the Cram\'{e}r-von Mises type statistic would reduce to a problem of finding the zeroes of a finite Fourier-series, which could be approached with methods such as those presented in \cite{boyd_computing_2006}. However, this can lead to problems. One problem is illustrated by Figure \ref{curve_fitting_artefacts}, which shows curves that were fitted to samples generated by two data generating processes.	
+			\begin{figure}[H]
+				\makebox[\textwidth][c]{
+					\includegraphics[width=1.1\textwidth]{../Graphics/rho0_9_comparison.PDF}
+				}
+				\caption{Artifact of the Curve Fitting Procedure}
+				\label{curve_fitting_artefacts}
+			\end{figure}
+			These processes are constructed as described in Section \ref{Simulation_Study} for a choice of $\rho_2(t) = -0.9$. This implies that the data generating process generates data with a point-wise variance of one. However, due to the structure of the data, the curve fitting procedure fails to conserve this property. Therefore, artifacts, such as the one shown in Figure \ref{curve_fitting_artefacts}, can heavily influence the power of the constructed test, meaning that it could be advisable to change the approach to one of the following.
+			\begin{enumerate}
+				\item \textbf{Comparisons at the discrete data points.} Suppose observations are discrete but dense enough to be interpreted as smooth curves. In that case, one could use the points where data is observed to compare the functions generated for the approximation of the Cram\'{e}r-von Mises test to the original samples. This approach is close to the one described in \cite{bugni_permutation_2021} for the case of discrete observations.
+				\item \textbf{Linear Interpolation.} Instead, one could use linear interpolation of the original curves to compare them to the generated curves. This would preserve the functional nature while not generating the fitting artifacts shown in Figure \ref{curve_fitting_artefacts}.
+			\end{enumerate}
+			The simulations in Sections \ref{Simulation_Study} use the first approach, as it limits the computational cost of the procedure while staying close to the original paper. The same problem occurs for the mean-focused test. In this case, linear interpolation between the discrete points is used to approximate the mean function.
+
 		
 	\section{Test for Persistence Alternatives}\label{variant}
 		One particularly interesting potential application for the Cram\'{e}r-von Mises type test presented in \cite{bugni_permutation_2021}, is a slight modification leading to the following test for differences in the persistence structure of the data generating processes. 
@@ -832,13 +841,15 @@ style=authoryear,
 			Sample 1 in red, Sample 2 in blue}
 			\label{settings}
 		\end{figure}
+		As shown in Figure \ref{settings}, the difference between the samples is optically quite subdued. Therefore, a high power against these alternatives is not expected. However, any nontrivial power shown in these settings is a good indicator for the qualities of the test.\\
+		
 		As described in the sections describing the test procedure theoretically, there is a number of parameter choices that has to be made to perform the simulation.
 		\begin{enumerate}
 			\item As shown in the mathematical construction of the data, I chose a smaller number of observations per sample $n=20$ and focus on the two-sample version of the test. Additionally each observation is constructed from a lower number of discrete observations (101) than in the original paper.
 			\item The truncation parameter $K$ for the construction of the random function inducing the measure $\mu$ as shown in Equation \ref{truncation}. The original authors argue that their simulations showed that the power of the test became flat at about $K = 20$ and chose $K = 25$. For the sake of reproducing their results I used the same choice.
 			\item The parameter $L$ determining the number of functions drawn according to $\mu$ in the approximation of the test statistic $\hat{\tau}_{n,m}$ of the Cram\'{e}r-von Mises type test. The authors of the original paper chose $L = 4000$ and preliminary testing confirmed that this choice seems to be reasonable in many settings when combined with reasonable choices for the construction of the measure $\mu$.
 			\item The number of permutations $Q$ used for the approximation of the permutation distribution of both test statistics. The authors chose a value of $Q = 500$ which I copied for the sake of reproducing their results.
-			\item For the construction of the measure $\mu$, the weight function $w(t)$ has to be chosen. For the purposes of this simulation, the weight function is given as the point-wise 95\% quantile of the observations of the reference sample. This is a potentially significant deviation from the approach chosen by the original authors.
+			\item For the construction of the measure $\mu$, the weight function $w(t)$ has to be chosen. For the purposes of this simulation, the weight function is chosen as in the empirical application in \cite{bugni_permutation_2021}. This approach is described in Section \ref{mu} as the first approach listed for the choice of $w(t)$. 
 			\item Deviating from the choice of the original authors due to the results of preliminary testing, I chose the sequence $\left(\rho_i\right)_{i = 1, \dots, K}$ by checking the sample standard deviation of the corresponding Fourier coefficients in the first sample. I then doubled these values to increase variability in the functions drawn from $\mu$. This higher variability seemed to improve performance in preliminary tests, but should be studied in further experiments.
 			\item Using the same choice as in the original paper, I chose to use independent standard normal error terms $U_k \quad k=1, \dots, K$ for the Fourier coefficients shown in Equation \ref{Fourier_coefs} for the construction of the measure. As the processes under consideration are Gaussian by construction, this choice is reasonable. For distributions with heavier tails, the authors recommend using different error terms and it would be interesting to study the effects of different choices.
 		\end{enumerate}
@@ -871,42 +882,25 @@ style=authoryear,
 		However, in the proposed test structure the possibility to specifically test for alternatives in the persistence structure is a significant advantage.\\
 	
 		The results for different correlation parameters are given in the following tables. Again, the same reference process with $\rho_1(t) = 0.5$ generated the reference sample.
-		\begin{table}[H]
-			\centering
-			\begin{tabular}{lccccc}\toprule
-				$\alpha_{\tau}$ &$\rho_2(t) = -0.9$ &$\rho_2(t) = -0.5$ &$\rho_2(t) = 0$ &$\rho_2(t) = 0.5$ &$\rho_2(t) = 0.9$\\
-				\midrule
-				$0.05$	& 0.830 & -  &  0.250	& 0.0415   & - \\
-				$0.01$ 	& 0.783	& -  &  0.119	& 0.0104   & -  \\
-				$0.001$	& 0.735	& -  &  0.0492	& 0.00261  & -  \\
-				\bottomrule
-			\end{tabular}
-			\caption{Empirical Rejection Probabilities}
-		\end{table}
-	                                          	
-		The apparent power of this test comes in part from the basis that is used to fit the data. Even though standardization of the original observations as described in approach one shown in Section \ref{persistence_test} ensures that the discrete data itself has a point-wise sample variance of one, the method that is used to fit the observations can lead to curves that are highly dissimilar between samples once the data points are fitted. 
-		Figure \ref{curve_fitting_artefact} shows a rather extreme case for the case of $\rho_1(t) = 0.5$ and $\rho_2(t) = -0.9$. In Appendix \ref{add_figures} Figure \ref{persistence_samples} shows some original data sets generated for these simulations.These are contrasted by Figure \ref{persistence_samples_basis_problem} which shows the same samples fitted using a Fourier basis containing 25 functions. 
-		Even though the underlying data generating processes have an identical point-wise variance, the method that is used to fit the discrete observations, creates potentially distorting artifacts.
-		\begin{figure}[H]
-			\makebox[\textwidth][c]{
-			\includegraphics[width=1.1\textwidth]{../Graphics/rho0_9_comparison.PDF}
-			}
-		\caption{Artifact of the Curve Fitting Procedure}
-		\label{curve_fitting_artefact}
-		\end{figure}
-		In some settings this could be a desirable property of the test. However, it is difficult to predict how this property could influence the test's performance in real world settings. Therefore, it could be advisable to modify the test in one of two ways to mitigate these artifacts.
-		\begin{enumerate}
-			\item Standardize the samples of fitted curves to have a point-wise mean of zero and a point-wise variance of one.
-			\item Using methods to compare the functions that do not rely on fitting a functional basis to the original observations.
-		\end{enumerate}
-		The first option 
-		The latter option could for example be implemented in the following ways.
-		\begin{enumerate}
-			\item Compare only the actual discrete observations with their corresponding values on the functions generated for Monte-Carlo integration.
-			\item Use linear interpolation on the observations to compare points on a chosen grid with their corresponding values.
-		\end{enumerate} 
-		Variant one can be seen as close to approach two from Section \ref{persistence_test} as the standardization is applied to every point that is actually considered during the comparison of the functions for the Cra\'{e}r-von Mises test. The point-wise functional standardization mentioned in \ref{persistence_test} is computationally intensive and requires a more advanced method of comparison between functions. 
-		However, as variant one described above can be seen as a heuristic for its performance, I performed a second simulation using this approach, leading to the results presented in Table \ref{rej_probs_cor}. These could potentially be a better approximation of the power of the test procedure as the rejections do not rely on artifacts created by the process of fitting a functional basis to the discrete observations.
+%		\begin{table}[H]
+%			\centering
+%			\begin{tabular}{lccccc}\toprule
+%				$\alpha_{\tau}$ &$\rho_2(t) = -0.9$ &$\rho_2(t) = -0.5$ &$\rho_2(t) = 0$ &$\rho_2(t) = 0.5$ &$\rho_2(t) = 0.9$\\
+%				\midrule
+%				$0.05$	& 0.830 & -  &  0.250	& 0.0415   & - \\
+%				$0.01$ 	& 0.783	& -  &  0.119	& 0.0104   & -  \\
+%				$0.001$	& 0.735	& -  &  0.0492	& 0.00261  & -  \\
+%				\bottomrule
+%			\end{tabular}
+%			\caption{Empirical Rejection Probabilities}
+%		\end{table}
+%	                                          	
+%		The apparent power of this test comes in part from the basis that is used to fit the data. Even though standardization of the original observations as described in approach one shown in Section \ref{persistence_test} ensures that the discrete data itself has a point-wise sample variance of one, the method that is used to fit the observations can lead to curves that are highly dissimilar between samples once the data points are fitted. 
+%		Figure \ref{curve_fitting_artefact} shows a rather extreme case for the case of $\rho_1(t) = 0.5$ and $\rho_2(t) = -0.9$. In Appendix \ref{add_figures} Figure \ref{persistence_samples} shows some original data sets generated for these simulations.These are contrasted by Figure \ref{persistence_samples_basis_problem} which shows the same samples fitted using a Fourier basis containing 25 functions. 
+%		Even though the underlying data generating processes have an identical point-wise variance, the method that is used to fit the discrete observations, creates potentially distorting artifacts.
+%
+%		Variant one can be seen as close to approach two from Section \ref{persistence_test} as the standardization is applied to every point that is actually considered during the comparison of the functions for the Cra\'{e}r-von Mises test. The point-wise functional standardization mentioned in \ref{persistence_test} is computationally intensive and requires a more advanced method of comparison between functions. 
+%		However, as variant one described above can be seen as a heuristic for its performance, I performed a second simulation using this approach, leading to the results presented in Table \ref{rej_probs_cor}. These could potentially be a better approximation of the power of the test procedure as the rejections do not rely on artifacts created by the process of fitting a functional basis to the discrete observations.
 		\begin{table}[H]
 			\centering
 			\begin{tabular}{lccccc}\toprule
@@ -937,6 +931,8 @@ style=authoryear,
 		As this problem does not have the structure that an experiment as described in \cite{bugni_permutation_2021} possesses, a few problems have to be addressed before using the procedure. These adjustments are described below and some details are substantiated in Appendix \ref{Application_Appendix}.
 	
 		\subsection{Data Cleaning and Preprocessing}
+		Before actually applying the test from \cite{bugni_permutation_2021}, it is important to prepare the data for the procedure.
+		
 			\subsubsection{Removal of Mondays and Fridays}
 			One potential problem of this procedure is the question whether observations on different weekdays or days of the weekend can be seen as independent and identically distributed. While it seems reasonable to assume that demand may be similar on Saturdays and Sundays, it is questionable whether the same can be said for working days. 
 			One potential problem is the ramping up and down of industrial production and commercial activity on Mondays and Fridays. Therefore, I decided to exclude these days from my analysis and only compare the weekend with Tuesdays, Wednesdays and Thursdays.

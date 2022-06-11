@@ -46,33 +46,29 @@ main_simu <- function(seed = task_seeds_int[i]) {
 
   # calculate t-values using the package PermFDAtest
   # first: values for the means based test
-  nu_vals <- PermFDATest::nu_realizations(
+  nu_vals <- PermFDATest::nu_realizations_alt(
     full = FALSE, approxQ = approxQ, 
-    sample1 = samples$sample_1_f,
-    sample2 = samples$sample_2_f,
+    sample1 = samples$sample_1,
+    sample2 = samples$sample_2,
     domain = c(0, 1)
   )
   message('Values of the Mean-based test statistic calculated.')
   
   # second: values for the Cramer von Mises test
   # and the objects necessary to calculate them
-  w_func <- PermFDATest::w_func_construct_2(samples$sample_1_f, domain = c(0,1), q = 0.95)
+  w_func <- PermFDATest::w_func_construct_1(samples$sample_1)
   
   CvM_rho <- PermFDATest::rho_construct(sample = samples$sample_1_f, factor = 2)
   
-  tau_vals <- PermFDATest::tau_realizations(
-    full = FALSE, approxQ = approxQ, 
-    sample1 = samples$sample_1_f,
-    sample2 = samples$sample_2_f,
+  tau_vals <- PermFDATest::tau_realizations_alt(
+    full = FALSE, approxQ = approxQ, n_basis = 25,
+    sample1 = samples$sample_1,
+    sample2 = samples$sample_2,
     type = "fourier", domain = c(0, 1), w_func = w_func, rho = CvM_rho, 
     u_sample_func = PermFDATest::u_norm, n_func = n_func
   )
   message('Values of the CvM test statistic calculated.')
   
-  # save t_stats for further processing
-  t_stats <- list(samples = samples, 
-                  nu_vals = nu_vals$nu_hat, nu_real = nu_vals$nu_realized,
-                  tau_vals = tau_vals$tau_hat, tau_real = tau_vals$tau_realized)
   saveRDS(
     object = t_stats,
     file = paste0(output_path, "simulation_2/", toString(seed), "tstats.RDS")
