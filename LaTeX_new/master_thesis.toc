@@ -21,7 +21,7 @@
 \contentsline {subsection}{\numberline {5.5}Construction of the Measure $\mu $}{18}{subsection.5.5}%
 \contentsline {subsection}{\numberline {5.6}Mean focused Test}{20}{subsection.5.6}%
 \contentsline {subsection}{\numberline {5.7}Combined Permutation Test}{21}{subsection.5.7}%
-\contentsline {subsection}{\numberline {5.8}Finite Sample Properties under the null hypothesis}{21}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.8}Finite Sample Properties under the null hypothesis}{22}{subsection.5.8}%
 \contentsline {subsection}{\numberline {5.9}Asymptotic Properties under the Alternative}{22}{subsection.5.9}%
 \contentsline {subsection}{\numberline {5.10}Implementation Choices}{22}{subsection.5.10}%
 \contentsline {section}{\numberline {6}Test for Persistence Alternatives}{22}{section.6}%

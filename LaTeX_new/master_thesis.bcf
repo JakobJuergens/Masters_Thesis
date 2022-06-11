@@ -2406,7 +2406,7 @@
     <bcf:citekey order="62">bugni_permutation_2021</bcf:citekey>
     <bcf:citekey order="63">bugni_permutation_2021</bcf:citekey>
     <bcf:citekey order="64">bugni_permutation_2021</bcf:citekey>
-    <bcf:citekey order="65">carleson_convergence_1966</bcf:citekey>
+    <bcf:citekey order="65">bugni_permutation_2021</bcf:citekey>
     <bcf:citekey order="66">bugni_permutation_2021</bcf:citekey>
     <bcf:citekey order="67">lee_two_2015</bcf:citekey>
     <bcf:citekey order="68">cox_pointwise_2008</bcf:citekey>
@@ -2473,17 +2473,16 @@
     <bcf:citekey order="129">hall_permutation_2002</bcf:citekey>
     <bcf:citekey order="130">hall_two-sample_2007</bcf:citekey>
     <bcf:citekey order="131">pomann_two-sample_2016</bcf:citekey>
-    <bcf:citekey order="132">carleson_convergence_1966</bcf:citekey>
-    <bcf:citekey order="133">lee_two_2015</bcf:citekey>
-    <bcf:citekey order="134">cox_pointwise_2008</bcf:citekey>
-    <bcf:citekey order="135">R</bcf:citekey>
-    <bcf:citekey order="136">tidyverse</bcf:citekey>
-    <bcf:citekey order="137">refund</bcf:citekey>
-    <bcf:citekey order="138">boyd_computing_2006</bcf:citekey>
-    <bcf:citekey order="139">fds</bcf:citekey>
-    <bcf:citekey order="140">magnano_generation_2007</bcf:citekey>
-    <bcf:citekey order="141">magnano_generation_2008</bcf:citekey>
-    <bcf:citekey order="142">dunn_multiple_1961</bcf:citekey>
+    <bcf:citekey order="132">lee_two_2015</bcf:citekey>
+    <bcf:citekey order="133">cox_pointwise_2008</bcf:citekey>
+    <bcf:citekey order="134">R</bcf:citekey>
+    <bcf:citekey order="135">tidyverse</bcf:citekey>
+    <bcf:citekey order="136">refund</bcf:citekey>
+    <bcf:citekey order="137">boyd_computing_2006</bcf:citekey>
+    <bcf:citekey order="138">fds</bcf:citekey>
+    <bcf:citekey order="139">magnano_generation_2007</bcf:citekey>
+    <bcf:citekey order="140">magnano_generation_2008</bcf:citekey>
+    <bcf:citekey order="141">dunn_multiple_1961</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

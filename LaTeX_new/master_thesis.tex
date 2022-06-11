@@ -483,7 +483,7 @@ style=authoryear,
 			\end{equation}
 			Here, $\mu$ is a probability measure on $\mathbb{L}_2[0,1]$ and $Z$ is a random function with probability distribution $\mu$. As can be seen by the formulation of the hypothesis, this test does not intend to have power against alternatives that differ only on a set of functions that have $\mu$-measure zero. Thereby, the choice of the measure is an important factor to consider when trying to use this test against a specific suspected alternative.  
 		
-		\subsection{Cram\'{e}r-von Mises type Test}
+		\subsection{Cram\'{e}r-von Mises type Test}\label{cvm_type_test}
 			Similar to the Cram\'{e}r-von Mises test described in Section \ref{CvM_Tests}, the test constructed by \cite{bugni_permutation_2021} relies on the empirical distribution functions describing the samples. 
 			Therefore, it is necessary to define empirical distribution functions for the functional setting which is immediately inspired by the distribution functions described in Definition \ref{dist_func}.
 			\begin{multicols}{2}
@@ -512,13 +512,12 @@ style=authoryear,
 			\end{equation}
 			These functions are drawn from a random function associated with the chosen measure $\mu$, and their construction is explained in more detail in Section \ref{mu}. At this point, it is interesting to ask whether Monte-Carlo integration is a suitable approach in this specific setting; in other words, whether the mean and variance of $\left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2$ with respect to $\mu$ exist and are finite.
 			Assuming existence, which depends on the chosen measure, an argument for finiteness is given in Appendix \ref{finiteness}.
-
-			 {\color{red} Hier weiterschreiben}\\
 		
-			Critical values for Permutation Test Statistic
+			Using the theory from Section \ref{permutation} the critical values for permutation test statistic are then calculated in the following way. Here $\tau_{n,m,q}$ denotes the test statistic calculated on the samples permuted using permutation $q$. 
 			\begin{equation}
 				t^{*}_{n,m}(1-\alpha) = \inf \left\{t \in \mathbb{R} \quad \vert \quad \frac{1}{Q} \sum_{i = 1}^{Q} \mathbbm{1}\left[\tau_{n,m,q} \leq t\right] \geq 1 - \alpha \right\}
 			\end{equation}
+			With these values it is now possible to perform the test at a chosen significance level.
 		
 		\subsection{Asymptotics for the Cram\'{e}r-von Mises type Test}\label{asymp}
 			Similar to the case presented in \cite{bugni_goodness--fit_2009}, it is possible to derive an asymptotic distribution for the Cram\'{e}r-von Mises type test. Even though this is not necessary to perform the described permutation test, it could be an interesting benchmark to compare the test procedure in future large sample simulations. In an earlier working paper version of \cite{bugni_permutation_2021}, the authors mention that under the null hypothesis and mild regularity conditions, $\frac{1}{\sqrt{n+m}}\left[\hat{F}_n(z) - \hat{G}_m(z)\right]$ converges to a mean zero Gaussian process $\Upsilon(z) \quad z \in \mathbb{L}_2[0,1]$. Here, $G(z)$ again denotes the distribution function corresponding to the second sample and $\hat{G}_m(z)$ its empirical equivalent. $\Upsilon(z)$ has the following covariance function. 
@@ -531,47 +530,46 @@ style=authoryear,
 			Here, as in the case of the limiting distribution of the scalar Cram\'{e}r-von Mises test described in Appendix \ref{asymp_CvM}, $\lambda$ denotes the limiting ratio of observations in the two samples as $N = n+m \rightarrow \infty$, meaning $\frac{n}{m} \rightarrow \lambda$. 
 			Thus, the following limiting distribution can be obtained for $\tau_{n,m}$.
 			\begin{equation}
-				\tau_{n,m} \rightarrow_d \int_{\mathbb{L}_2[0,1]}\Upsilon^2(z) \mathrm{d}\mu(z)
+				\tau_{n,m} \rightarrow_d \int_{\mathbb{L}_2[0,1]}\Upsilon^2(z) \ \mathrm{d}\mu(z)
 			\end{equation}
 			The derivation of this limiting distribution follows a similar argument as the proof of Theorem 3.1 given in \cite{bugni_goodness--fit_2009}. It is presented  in Appendix \ref{asymp_deriv}. Using the arguments presented in Appendix \ref{asymp_deriv} and Section \ref{perm_asymp}, it is possible to show that this limiting distribution also applies to the permutation variant of the Cram\'{e}r-von Mises type test described in this thesis.\\
 			
 			In the context of the limiting distribution, it is necessary to consider the implications of the definition of $\mathbb{L}_2[0,1]$ as given by \cite{bugni_permutation_2021}.  Where previously, it was sufficient to consider the classical definition of $\mathbb{L}_2[0,1]$, it can make a difference in the asymptotic considerations. Even though this distinction will not be considered further in this thesis, for theoretical considerations of this test, it is important that, for example, $\Upsilon(z)$ is defined with respect to the definition of $\mathbb{L}_2[0,1]$ from \cite{bugni_permutation_2021}.
 		
 		\subsection{Construction of the Measure $\mu$}\label{mu}
-			Another component of the test that has to be chosen is the probability measure with respect to which the hypothesis is formulated. This probability measure has a similar function to the weight function described in Section \ref{Two_sample_CvM} in that it determines against which alternatives the test has comparatively high power. It is therefore important to choose the measure according to the kind of violation of the null hypothesis that is suspected. If no specific type of violation is expected, a choice similar to a constant weight function can be made.\\
+			As can be seen in the fact that the null hypothesis is formulated with respect to a measure $\mu$ on $\mathbb{L}_2[0,1]$, this measure significantly impacts the test's performance. Compared to the scalar Cram\'{e}r-von Mises test described in Section \ref{CvM_Tests}, it fulfills a similar function to the weight function in that it determines against which alternatives the test has comparatively high power. It is, therefore, crucial to choose the measure according to the kind of violation of the null hypothesis that is suspected. If no specific type of violation is expected, a choice similar to a constant weight function can be made.\\
 			
-			For the calculation of the Cram\'{e}r-von Mises type test, we need to construct one such probability measure that is suitable to detect the kind of alternative we expect to find.
-			As hinted at in Section \ref{prob_measures_l2}, \cite{bugni_permutation_2021} approach this problem by constructing a random function that induces a suitable probability measure. Its construction is shown below.
-			
+			As hinted at in Section \ref{prob_measures_l2}, \cite{bugni_permutation_2021} approach this problem by constructing a random function $Z(t)$ that induces a suitable probability measure $\mu$ as described in Section \ref{prob_measures_l2}. 			
 			\begin{equation}\label{non_truncated}
 				Z(t) = \sum_{k = 1}^{\infty} b_k \psi_k(t)
 				\quad \text{s.t.} \quad
 				\sum_{k = 1}^{\infty} b_k^2 < \infty \quad \text{a.s.}
 			\end{equation}
-
+			By truncating the random function to use a finite amount of basis functions as shown in Equation \ref{truncation}, it is possible to draw realizations from it given distributions for the  Fourier coefficients. As explained in Section \ref{prob_measures_l2}, the measure induced by this truncated random variable converges to the measure induced by the full random variable as the truncation parameter $K$ goes to infinity. This fact justifies the approach theoretically.
 			\begin{equation}\label{truncation}
 				Z_K(t) = \sum_{k = 1}^{K} b_k \psi_k(t)
 			\end{equation}
-		
-			\begin{equation}
+			The construction now hinges on specifying appropriate distributions for the Fourier coefficients. To obtain a reasonable degree of power it is important to specify the distribution of the random function $Z(t)$ such that its realizations are able to distinguish potential differences in the samples. This could for example be done by choosing a function $w(t):[0,1] \rightarrow \mathbb{R}$ that is used to specify the expectation of $Z(t)$ dependent on the data. 
+			Specifying the expected values of the Fourier coefficients as shown in Equation \ref{fourier_ceof_exp} then leads to the expected value of the random function $Z_K(t)$.
+			\begin{equation}\label{fourier_ceof_exp}
+				\mathbb{E}\left[b_k\right] = \int_{0}^{1}w(t)\psi_k(t) \ \mathrm{d}t
+				\quad \text{leading to} \quad
 				\mathbb{E}\left[Z_K(t)\right] = \sum_{k = 1}^{K} \mathbb{E}\left[b_k\right] \psi_k(t)
-				\quad \text{where} \quad
-				\mathbb{E}\left[b_k\right] = \int_{0}^{1}w(t)\psi_k(t) \mathrm{d}t
 			\end{equation}
-		
+			Lastly, a distribution around the expected value has to be specified. In Equation \ref{Fourier_coefs} this takes the form of random errors $U_k$ and square-summable factors $(\rho_k)_{k \in \mathbb{N}}$.
 			\begin{equation}\label{Fourier_coefs}
 				b_k = \mathbb{E}\left[b_k\right] + \rho_k U_k
 				\quad \text{s.t.} \quad
 				\sum_{k = 1}^{\infty} \rho_k^2 < \infty 
 			\end{equation}
 
-			To obtain a reasonable degree of power it is important to set the expected value of the random function $Z(t)$ in a region, where data is observed and optimally in a region where realizations of the random function inducing the measure $\mu$ are able to distinguish potential differences in the samples. This could for example be done by choosing $w(t)$ dependent on the data. 	The authors suggest to choose $w(t):[0,1] \rightarrow \mathbb{R}$ to be comparatively large in the parts of $[0,1]$ where possible differences between the empirical distribution functions are expected to be large.
-			Taking the option used for the application in the original paper and one further possibility, the following two ways of choosing the mean function might come to mind.
+			The authors suggest choosing $w(t)$ to be comparatively large where possible differences between processes in the two samples are expected to be large. The following two ways of choosing the mean function are shown in Figure \ref{mean_functions}.
 			
 			\begin{enumerate}
-				\item In their application \cite{bugni_permutation_2021} set the distribution of the fourier coefficients manually, as $b_1 \sim \mathcal{N}(\mu_1, \frac{1}{K})$ and $b_k \sim \mathcal{N}(0, \frac{1}{K}) \quad k = 2, \dots, K$ where $\mu_1 = \textit{median}_i \left(\max_t\left\{X_i(t) \ | \ i = 1, \dots, n_1, t\in [0,1]\right\}\right)$.
-				This method is identical to setting $w(t) = \mu_1(t)$, as the inner product of any constant function with Fourier basis functions of order two or higher will be zero due to their cyclical nature.
-				\item Another idea is to choose a non-constant weight function based on the reference sample. One option for this choice is to use specific point-wise quantiles of the reference sample: $w(t) = \textit{quantile}_q \{X_i(t) \ | \ i = 1, \dots n_1\}$. This allows the generated functions for the Monte-Carlo integration in the approximation of the Cram\'{e}r-von Mises statistic to resemble the reference data more closely, which could improve the properties of the test.
+				\item In their application, \cite{bugni_permutation_2021} set the distribution of the Fourier coefficients manually, as $b_1 \sim \mathcal{N}(\mu_1, \frac{1}{K})$ and $b_k \sim \mathcal{N}(0, \frac{1}{K}) \quad k = 2, \dots, K$ where 
+				$$\mu_1 = \textit{median}_i \left\{\max_{t\in [0,1]} X_i(t) \ | \ i = 1, \dots, n, \right\}$$
+				This method is equivalent to setting $w(t) = \mu_1 \quad \forall t \in [0,1]$, as the inner product of any constant function with Fourier basis functions of order two or higher will be zero due to their cyclical nature.
+				\item Another idea is to choose a non-constant weight function based on the reference sample. One option is to use specific point-wise quantiles of the reference sample: $w(t) = \textit{quantile}_q \{X_i(t) \ | \ i = 1, \dots n\}$. This allows the generated functions for the approximation of the Cram\'{e}r-von Mises statistic to resemble the reference data more closely, which could improve the properties of the test.
 			\end{enumerate}
 		
 			\begin{figure}[H]
@@ -582,18 +580,27 @@ style=authoryear,
 				\label{mean_functions}
 			\end{figure}
 			
+			In addition to the mean function $w(t)$, the choice of the sequence $(\rho_k)_{k \in \mathbb{N}}$ and the distribution of the error terms $U_k$ is of importance.			
+			The authors do not recommend a procedure for choosing $(\rho_k)_{k \in \mathbb{N}}$. However, it seems reasonable to choose parameters that lie in the vicinity of the standard deviations for the Fourier coefficients of the reference sample when fitting a Fourier basis to the original observations. Other methods, such as specifying a sequence without consideration of the data, are possible. In the application part of \cite{bugni_permutation_2021}, the authors, for example, use $\frac{1}{K}$ for every Fourier coefficient. Even though this sequence would not be square-summable in the infinite case, for a finite variant, this should not pose a large problem.
 			
-			Additionally, the choice of the sequence $(\rho_k)_{k \in \mathbb{N}}$ is of importance. The authors do not recommend a procedure for choosing these coefficients, but it seems reasonable to choose parameters that lie in the vicinity of the standard deviations for the Fourier coefficients of the reference sample. This method might be a reasonable possibility to choose these parameters dependent on the data.\\
+			Concerning the choice of distribution for $U_k$, the authors recommend different choices depending on the properties of the samples. For samples that indicate a thin tailed distribution of $X(t)$, the authors recommend one of the following choices.
+			\begin{multicols}{2}
+				\begin{itemize}
+					\item $U_k \sim \mathcal{N}(0,1)$
+					\item $U_k \sim \textit{Unif}[-3^{\frac{1}{3}}, 3^{\frac{1}{3}}]$
+				\end{itemize}
+			\end{multicols}
+			If instead, the sample hints at a heavy-tailed distribution, one should consider a heavy-tailed distribution for the Fourier coefficients, such as a t-distribution with a low number of degrees of freedom.
 			
 %			In \cite{bugni_goodness--fit_2009}, the authors show that the approximation of the probability measure, which is induced by the approximation of the random variable in Equation \ref{truncation}, converges appropriately to the probability measure induced by the random variable in Equation \ref{non_truncated}. {\color{red} Hier weiterschreiben}\\
 			
-			At this point it is again interesting to look at the convention that two elements of $\mathbb{L}_2[0,1]$ are distinct even if they differ only on a nonempty set of Lebesgue-measure zero. One problem that this convention entails is the fact that the Fourier basis is an almost everywhere basis of $\mathbb{L}_2[0,1]$ as shown by \cite{carleson_convergence_1966}. However, in many cases point-wise convergence of a sum as shown in Equation \ref{non_truncated} is not fulfilled. This is simple to see for any function that does not have identical values on both sides of its domain. {\color{red} Hier weiterschreiben}\\
+%			At this point it is again interesting to look at the convention that two elements of $\mathbb{L}_2[0,1]$ are distinct even if they differ only on a nonempty set of Lebesgue-measure zero. One problem that this convention entails is the fact that the Fourier basis is an almost everywhere basis of $\mathbb{L}_2[0,1]$ as shown by \cite{carleson_convergence_1966}. However, for many square-integrable functions point-wise convergence of a weighted sum of basis functions as shown in Equation \ref{non_truncated} is not fulfilled. This is simple to see for any function that does not have identical values on both sides of its domain.\\
+%			
+%			In more basic terms, this implies that using the Fourier basis, it is impossible to construct some functions in $\mathbb{L}_2^{*}[0,1]$ even using a non-truncated representation as shown in Equation \ref{non_truncated}.			
+%			In a typical scenario where we would use $\mathbb{L}_2[0,1]$, so only their equivalence classes of the functions, this does not pose a problem. 
+%			This in turn implies that a probability measure that is constructed as shown in the previous section cannot give positive weight to many functions in the space $\mathbb{L}_2[0,1]$ if we use the convention used by the authors. Namely, for any function in $\mathbb{L}_2[0,1]$ for which the Fourier series fails to converge point-wise, we cannot assign a positive probability. This in turn could be a potential problem for the method described in the paper, if this is necessary for its working principle.
 			
-			In more basic terms, this implies that using the Fourier basis, it is impossible to construct some functions in $\mathbb{L}_2^{*}[0,1]$ even using a non-truncated representation as shown in Equation \ref{non_truncated}.			
-			In a typical scenario where we would use $\mathbb{L}_2[0,1]$, so only their equivalence classes of the functions, this does not pose a problem. 
-			This in turn implies that a probability measure that is constructed as shown in the previous section cannot give positive weight to many functions in the space $\mathbb{L}_2[0,1]$ if we use the convention used by the authors. Namely, for any function in $\mathbb{L}_2[0,1]$ for which the Fourier series fails to converge point-wise, we cannot assign a positive probability. This in turn could be a potential problem for the method described in the paper, if this is necessary for its working principle.
-			
-		\subsection{Mean focused Test}
+		\subsection{Mean focused Test}\label{mean_based_test}
 			In addition to the Cram\'{e}r-von Mises type test, the authors use a second test statistic aimed at detecting violations due to a mean shift in the data generating process. This test is added due to low power against pure mean-shift alternatives in the original paper's simulations and is supposed to complement this weakness of the other test statistic.
 			
 			The variable $\mu$ on which this second test is based is the distance between the mean functions of the data generating processes as induced by the natural norm on $\mathbb{L}_2[0,1]$.
@@ -601,29 +608,27 @@ style=authoryear,
 				\nu = \int_{0}^{1} \big(\mathbb{E}\left[X(t)\right] - \mathbb{E}\left[Y(t)\right]\big)^2 \mathrm{d}t
 			\end{equation}
 		
-			Mean Estimators
+			Replacing the expected values by their sample equivalents leads to a natural test statistic that can be used to perform a permutation test. The sample equivalents are defined as shown in Equation \ref{sample_means} and the resulting test statistic is shown in Equation \ref{mean_test}.
 			\begin{multicols}{2}
 				\noindent
 				\begin{equation*}
 					\hat{\mathbb{E}}\left[X(t)\right] = \frac{1}{n}\sum_{i = 1}^{n} X_i(t)
 				\end{equation*}
-				\begin{equation}
+				\begin{equation}\label{sample_means}
 					\hat{\mathbb{E}}\left[Y(t)\right] = \frac{1}{m}\sum_{i = 1}^{m} Y_i(t)
 				\end{equation}
 			\end{multicols}
-		
-			Sample Analog
-			\begin{equation}
+			\begin{equation}\label{mean_test}
 				\nu_{n,m} = (n+m) \int_{0}^{1} \left[\hat{\mathbb{E}}\left[X(t)\right] - \hat{\mathbb{E}}\left[Y(t)\right] \right]^2 \mathrm{d}t
 			\end{equation}
 		
-			Critical values for Permutation Test Statistic
+			In the same way the critical values for the Cram\'{e}r-von Mises test are derived using the techniques described in Section \ref{permutation}, the critical values for the mean based test are calculated in the following way. Analogous to the previous case, $\nu_{n,m,q}$ denotes the test statistic that was calculated on the permuted samples corresponding to permutation $q$.
 			\begin{equation}
 				t^{*}_{n,m}(1-\alpha) = \inf \left\{t \in \mathbb{R} \quad \vert \quad \frac{1}{Q} \sum_{i = 1}^{Q} \mathbbm{1}\left[\nu_{n,m,q} \leq t\right] \geq 1 - \alpha \right\}
 			\end{equation}
 		
 		\subsection{Combined Permutation Test}
-			Define for the two underlying tests the following permutation test functions as described in Definition \ref{RandTestFunc} for the general case of a randomization test.
+			Using the tests described in Sections \ref{cvm_type_test} and \ref{mean_based_test}, it is possible to combine both tests into one test trying to harness the advantageous properties of both test statistics. Therefore, define for the two underlying tests the following permutation test functions as described in Definition \ref{RandTestFunc} for the general case of a randomization test.
 			\begin{multicols}{2}
 				\noindent
 				\begin{equation*}
@@ -641,7 +646,7 @@ style=authoryear,
 					\end{cases}
 				\end{equation}
 			\end{multicols}
-			$a_\tau$ and $a_\nu$ are given by the following equations to ensure that the expected values of $\phi$ and $\tilde{\phi}$ have the desired values.
+			Here, $a_\tau$ and $a_\nu$ are once again given by the following equations to ensure that the expected values of $\phi$ and $\tilde{\phi}$ have the desired values.
 			\begin{multicols}{2}
 				\begin{itemize}
 					\item $a_{\tau} = \frac{Q\alpha_{\tau} - Q_{\tau}^{+}}{Q_{\tau}^{0}}$ 
@@ -657,6 +662,7 @@ style=authoryear,
 			\begin{equation}
 				\max(\alpha_{\tau}, \alpha_{\nu}) \leq \mathbb{P}\left[(\phi_{n,m} > 0) \cup (\tilde{\phi}_{n,m} > 0)\right] \leq \alpha_{\tau} + \alpha_{\nu}
 			\end{equation}
+			This opens the option to, for example, choose a size of $0.03$ for the Cram\'{e}r-von Mises type test and a level of $0.02$ for the mean based test, as the combined test will at most have a level of $0.05$.
 		
 		\subsection{Finite Sample Properties under the null hypothesis}
 		For any distribution $P$ that satisfies the null hypothesis and any $\alpha_{\tau}, \alpha_{\mu} \in (0,1)$, we have 
@@ -673,7 +679,7 @@ style=authoryear,
 		\subsection{Asymptotic Properties under the Alternative}
 		
 		\subsection{Implementation Choices}
-			As the method itself lets a few options open on how to implement it for real-world use, it is important to consider points like the order of operations and questions such as whether observations are fitted using a functional basis.
+			As the method itself leaves a few options open on how to implement it for real-world use, it is important to consider points like the order of operations and questions such as whether observations are fitted using a functional basis.
 		\begin{figure}[H]
 			\makebox[\textwidth][c]{
 				\includegraphics[width=1.1\textwidth]{../Graphics/rho0_9_comparison.PDF}
