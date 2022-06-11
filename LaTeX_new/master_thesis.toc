@@ -24,14 +24,14 @@
 \contentsline {subsection}{\numberline {5.8}Finite Sample Properties under the null hypothesis}{22}{subsection.5.8}%
 \contentsline {subsection}{\numberline {5.9}Asymptotic Properties under the Alternative}{22}{subsection.5.9}%
 \contentsline {subsection}{\numberline {5.10}Implementation Choices}{22}{subsection.5.10}%
-\contentsline {section}{\numberline {6}Test for Persistence Alternatives}{22}{section.6}%
+\contentsline {paragraph}{Curve Fitting}{22}{subsection.5.10}%
+\contentsline {section}{\numberline {6}Test for Persistence Alternatives}{23}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Null-Hypothesis}{23}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Test-Procedure}{23}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Simulation Study}{24}{section.7}%
+\contentsline {subsection}{\numberline {6.2}Test-Procedure}{24}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Simulation Study}{25}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Implementation as an R package}{25}{subsection.7.1}%
 \contentsline {subsubsection}{\numberline {7.1.1}Use of High-Performance Computing}{25}{subsubsection.7.1.1}%
-\contentsline {subsubsection}{\numberline {7.1.2}Particularities of the Implementation}{25}{subsubsection.7.1.2}%
-\contentsline {subsection}{\numberline {7.2}Simulation Setup}{25}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.2}Simulation Setup}{26}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Results}{28}{subsection.7.3}%
 \contentsline {subsection}{\numberline {7.4}Simulation - Test for Persistence Alternatives}{29}{subsection.7.4}%
 \contentsline {section}{\numberline {8}Application}{31}{section.8}%
