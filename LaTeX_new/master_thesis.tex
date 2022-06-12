@@ -507,24 +507,25 @@ style=authoryear,
 			\end{equation}
 		
 			As algebraic functional integration is not suitable for this testing procedure due to the structure of the underlying objects, the authors use Monte-Carlo integration as explained in Section \ref{Integration} for the approximation of this integral. To perform the test, it is therefore necessary to choose a parameter $L$ that determines the number of functions $\left\{Z_l \ \vert \ l = 1, \dots, L\right\}$ that are used to approximate the value of $\tau_{n,m}$ by the following equation.
-			\begin{equation}
+			\begin{equation}\label{tau_hat}
 				\hat{\tau}_{n,m} = \frac{n+m}{L} \sum_{l = 1}^{L} \left[\hat{F}_n(Z_l) - \hat{G}_m(Z_l)\right]^2
 			\end{equation}
 			These functions are drawn from a random function associated with the chosen measure $\mu$, and their construction is explained in more detail in Section \ref{mu}. At this point, it is interesting to ask whether Monte-Carlo integration is a suitable approach in this specific setting; in other words, whether the mean and variance of $\left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2$ with respect to $\mu$ exist and are finite.
 			Assuming existence, which depends on the chosen measure, an argument for finiteness is given in Appendix \ref{finiteness}.
 		
-			Using the theory from Section \ref{permutation} the critical values for permutation test statistic are then calculated in the following way. Here $\tau_{n,m,q}$ denotes the test statistic calculated on the samples permuted using permutation $q$. 
+			Using the theory from Section \ref{permutation} the critical values for the permutation test statistic are then calculated in the following way. Here $\tau_{n,m,q}$ denotes the test statistic calculated on the samples permuted using permutation $q$ assuming that $Q$ permutations were considered overall. 
 			\begin{equation}
 				t^{*, \tau}_{n,m}(1-\alpha) = \inf \left\{t \in \mathbb{R} \quad \vert \quad \frac{1}{Q} \sum_{i = 1}^{Q} \mathbbm{1}\left[\tau_{n,m,q} \leq t\right] \geq 1 - \alpha \right\}
 			\end{equation}
 			With these values it is now possible to perform the test at a chosen significance level.
 		
 		\subsection{Asymptotics for the Cram\'{e}r-von Mises type Test}\label{asymp}
-			Similar to the case presented in \cite{bugni_goodness--fit_2009}, it is possible to derive an asymptotic distribution for the Cram\'{e}r-von Mises type test. Even though this is not necessary to perform the described permutation test, it could be an interesting benchmark to compare the test procedure in future large sample simulations. The authors mention that under the null hypothesis and mild regularity conditions, $\frac{1}{\sqrt{n+m}}\left[\hat{F}_n(z) - \hat{G}_m(z)\right]$ converges to a mean zero Gaussian process $\Upsilon(z) \quad z \in \mathbb{L}_2[0,1]$. Here, $G(z)$ again denotes the distribution function corresponding to the second sample and $\hat{G}_m(z)$ its empirical equivalent. $\Upsilon(z)$ has the following covariance function. 
-			\begin{equation}
+			Similar to the case presented in \cite{bugni_goodness--fit_2009}, it is possible to derive an asymptotic distribution for the Cram\'{e}r-von Mises type test. Even though this is not necessary to perform the described permutation test, it could be an interesting benchmark to compare the test procedure in future large sample simulations. The authors mention that under the null hypothesis and mild regularity conditions, $\frac{1}{\sqrt{n+m}}\left[\hat{F}_n(z) - \hat{G}_m(z)\right]$ converges to a mean zero Gaussian process $\Upsilon(z) \quad z \in \mathbb{L}_2[0,1]$. Here, $G(z)$ again denotes the distribution function corresponding to the second sample and $\hat{G}_m(z)$ its empirical equivalent. $\Upsilon(z)$ has the covariance function shown in Equation \ref{cov_func}. 
+			
+			\begin{equation}\label{cov_func}
 				\begin{split}
 					\textit{cov}\left[\Upsilon(z), \Upsilon(\tilde{z})\right] &= \left[\frac{(1 + \lambda)^2}{\lambda}\right]\left\{G(\min\left(z, \tilde{z}\right)) - G(z)G(\tilde{z})\right\} \\
-					\min(z, \tilde{z})(t) &= \min\left(z(t), \tilde{z}(t)\right) \quad \forall t \in [0,1]
+					\text{where} \quad \min(z, \tilde{z})(t) &= \min\left(z(t), \tilde{z}(t)\right) \quad \forall t \in [0,1]
 				\end{split}
 			\end{equation}
 			Here, as in the case of the limiting distribution of the scalar Cram\'{e}r-von Mises test described in Appendix \ref{asymp_CvM}, $\lambda$ denotes the limiting ratio of observations in the two samples as $N = n+m \rightarrow \infty$, meaning $\frac{n}{m} \rightarrow \lambda$. 
@@ -841,9 +842,11 @@ style=authoryear,
 			\item \textbf{Correlation Shift}\\
 			 	  The third setting violates the null hypothesis by changing the correlation structure between neighboring observations. Here, observations are less persistent due to a lower, but still constant choice of the correlation parameter.
 			 	  $$\rho_2(t) = 0.2 \quad \forall t = 0.01, \dots, 1$$
+			 	  This setting can therefore be seen as testing for alternatives consisting of variations of the persistence structure of a random function.
 			\item \textbf{Variance Shift}\\
-				  In the fourth simulation setting, the variance function is altered in the following way.
+				  In the fourth simulation setting, the variance point-wise function is altered in the following way.
 				  $$\sigma_2(t) = 1 + 0.5t \quad \quad t \in \mathcal{T}$$
+				  Therefore, towards the end of the interval a higher variance in the realized curves is generated by the process.
 		\end{enumerate}
 	
 		\begin{figure}[H]
@@ -857,15 +860,21 @@ style=authoryear,
 		As shown in Figure \ref{settings}, the difference between the samples is optically quite subdued. Therefore, a high power against these alternatives is not expected. However, any nontrivial power shown in these settings is a good indicator for the qualities of the test.\\
 		
 		As described in the sections describing the test procedure theoretically, there is a number of parameter choices that has to be made to perform the simulation.
+		
+		\noindent\fbox{%
+			\parbox{\textwidth}{%
+				\vspace{0.3cm}
 		\begin{enumerate}
-			\item As shown in the mathematical construction of the data, I chose a smaller number of observations per sample $n=20$ and focus on the two-sample version of the test. Additionally each observation is constructed from a lower number of discrete observations (101) than in the original paper.
-			\item The truncation parameter $K$ for the construction of the random function inducing the measure $\mu$ as shown in Equation \ref{truncation}. The original authors argue that their simulations showed that the power of the test became flat at about $K = 20$ and chose $K = 25$. For the sake of reproducing their results I used the same choice.
-			\item The parameter $L$ determining the number of functions drawn according to $\mu$ in the approximation of the test statistic $\hat{\tau}_{n,m}$ of the Cram\'{e}r-von Mises type test. The authors of the original paper chose $L = 4000$ and preliminary testing confirmed that this choice seems to be reasonable in many settings when combined with reasonable choices for the construction of the measure $\mu$.
-			\item The number of permutations $Q$ used for the approximation of the permutation distribution of both test statistics. The authors chose a value of $Q = 500$ which I copied for the sake of reproducing their results.
-			\item For the construction of the measure $\mu$, the weight function $w(t)$ has to be chosen. For the purposes of this simulation, the weight function is chosen as in the empirical application in \cite{bugni_permutation_2021}. This approach is described in Section \ref{mu} as the first approach listed for the choice of $w(t)$. 
-			\item Deviating from the choice of the original authors due to the results of preliminary testing, I chose the sequence $\left(\rho_i\right)_{i = 1, \dots, K}$ by checking the sample standard deviation of the corresponding Fourier coefficients in the first sample. I then doubled these values to increase variability in the functions drawn from $\mu$. This higher variability seemed to improve performance in preliminary tests, but should be studied in further experiments.
-			\item Using the same choice as in the original paper, I chose to use independent standard normal error terms $U_k \quad k=1, \dots, K$ for the Fourier coefficients shown in Equation \ref{Fourier_coefs} for the construction of the measure. As the processes under consideration are Gaussian by construction, this choice is reasonable. For distributions with heavier tails, the authors recommend using different error terms and it would be interesting to study the effects of different choices.
+			\item As shown in the mathematical construction of the data, these simulations compare samples consisting of a smaller number of observations per sample $n=20$ and focus on the two-sample version of the test. Additionally, each observation is constructed from a lower number of discrete observations (101) than in the original paper.
+			\item Concerning the choice of the truncation parameter $K$, which is used in the construction of the measure $\mu$ as shown in Equation \ref{truncation}, the authors argue that their simulations showed that the power of the test became flat at about $K = 20$ and chose $K = 25$. For the sake of reproducing their results, the same parameter was used in this thesis.
+			\item Another parameter that has to be chosen is $L$, determining the number of functions used in the approximation of the test statistic $\hat{\tau}_{n,m}$ by Monte-Carlo integration as shown in Equation \ref{tau_hat}. \cite{bugni_permutation_2021} chose $L = 4000$ and preliminary testing confirmed that this choice seems reasonable in many settings when combined with reasonable choices for the construction of the measure $\mu$. However, problems such as the one described in Section \ref{problem_curve_fitting} might be closely connected to this choice.
+			\item For the number of permutations $Q$ used for the approximation of the permutation distribution of both test statistics the authors chose a value of $Q = 500$. This thesis uses the same parameter. However, absent strong computational limitations a higher choice for $Q$ could benefit the properties of the tests.
+			\item For the construction of the measure $\mu$, the weight function $w(t)$ has to be chosen. In this simulation, the weight function is chosen as in the empirical application in \cite{bugni_permutation_2021}. This approach is described in Section \ref{mu} as the first approach listed for the choice of $w(t)$. 
+			\item Deviating from the original authors' choice due to preliminary tests, the sequence $\left(\rho_i\right)_{i = 1, \dots, K}$ is determined by checking the sample standard deviation of the corresponding Fourier coefficients in the first sample obtained by fitting the same basis that is used in the construction of $\mu$ to the observations. These are then multiplied by a constant factor to increase variability in the functions drawn from $\mu$. This higher variability seemed to improve performance in preliminary tests, but should be studied in further experiments.
+			\item Using the same choice as in the original paper, the simulations use independent standard normal error terms $U_k \quad k=1, \dots, K$ for the Fourier coefficients shown in Equation \ref{Fourier_coefs} for the construction of the measure. As the processes under consideration are Gaussian by construction and thereby have thin tails, this choice should be reasonable following the authors' argumentation.
 		\end{enumerate}
+			}
+		}
 		
 		\subsection{Results}
 		Taking a look at the results from the simulation study, it is interesting to compare the empirical rejection probabilities for different types of violations of the null hypothesis.
@@ -935,7 +944,7 @@ style=authoryear,
 		{\color{red} Hier weiterschreiben.}
 				
 	\section{Application}\label{Application}
-		To test the real-world merits of the method, I will compare electricity demand data from Adelaide which is provided as part of the \textit{fds}\footcite{fds} package for R. This data set presents half-hourly energy demand in megawatts and was originally used by \cite{magnano_generation_2007} and \cite{magnano_generation_2008}. It contains electricity demand curves for 3556 days from 6/7/1997 to 31/3/2007. Some of these curves, specifically a selection of curves observed on Wednesdays and Saturdays, is shown in Figure \ref{electricity_demand}.
+		In order to give an example for the real-world merits of the method, this section will compare electricity demand data from Adelaide. This data is provided as part of the \textit{fds}\footcite{fds} package for R. It presents half-hourly energy demand in megawatts and was originally used by \cite{magnano_generation_2007} and \cite{magnano_generation_2008}. It contains electricity demand curves for 3556 days from 6/7/1997 to 31/3/2007. Some of these curves, specifically a selection of curves observed on Wednesdays and Saturdays fitted using a Fourier basis consisting of 25 functions, is shown in Figure \ref{electricity_demand}.
 		\begin{figure}[H]
 			\makebox[\textwidth][c]{
 				\includegraphics[width=1.1\textwidth]{../Graphics/electricity_demand_curves.PDF}
@@ -944,18 +953,26 @@ style=authoryear,
 			\label{electricity_demand}
 		\end{figure}
 	
-		The question I want to study with the method presented in this thesis is whether electricity demand on working days and weekends can be seen as if they were generated by the same stochastic process. However, due to information obtained during the data cleaning step, that indicates a violation of the i.i.d. assumption, the observations for the weekend will be limited to Saturdays. \\
-		As this problem does not have the structure that an experiment as described in \cite{bugni_permutation_2021} possesses, a few problems have to be addressed before using the procedure. These adjustments are described below and some details are substantiated in Appendix \ref{Application_Appendix}.
+		The specific question studied with the method presented in this thesis is whether electricity demand on working days and weekends can be seen as if they were generated by the same stochastic process. However, due to information obtained during the data cleaning step, that indicates a violation of the i.i.d. assumption, the observations for the weekend will be limited to Saturdays. 		
 	
 		\subsection{Data Cleaning and Preprocessing}
-		Before actually applying the test from \cite{bugni_permutation_2021}, it is important to prepare the data for the procedure.
+		Before actually applying the test from \cite{bugni_permutation_2021}, it is important to prepare the data for the procedure. As this problem does not have the structure that an experiment as described in \cite{bugni_permutation_2021} possesses, some problems have to be addressed before using the procedure. These adjustments are described below and some details are substantiated in Appendix \ref{Application_Appendix}.
 		
 			\subsubsection{Removal of Mondays and Fridays}
 			One potential problem of this procedure is the question whether observations on different weekdays or days of the weekend can be seen as independent and identically distributed. While it seems reasonable to assume that demand may be similar on Saturdays and Sundays, it is questionable whether the same can be said for working days. 
 			One potential problem is the ramping up and down of industrial production and commercial activity on Mondays and Fridays. Therefore, I decided to exclude these days from my analysis and only compare the weekend with Tuesdays, Wednesdays and Thursdays.
 			
 			\subsubsection{Holidays}
-			Furthermore, holidays could appear more regularly on specific weekdays than others. Whereas on weekends, a holiday would not significantly influence the electricity demand due to the already reduced economic activity, this is different for weekdays. Therefore if holidays would occur systematically more often on specific days - such as for example Thursdays for the case of Germany - this could create problems. Therefore public holidays in Southern Australia, the Australian federal territory containing Adelaide, were excluded in the analysis. A list of holidays that were excluded is given in Appendix \ref{Application_Appendix}. Additionally, days immediately before and after holidays are excluded due to the same reason as Mondays and Fridays. This procedure of eliminating holidays from the data set removed 299 out of 3556 curves from the data set which was used in further steps of the analysis. \\
+			Furthermore, holidays could appear more regularly on specific weekdays than others. Whereas on weekends, a holiday would not significantly influence the electricity demand due to the already reduced economic activity, this is different for weekdays. Therefore if holidays would occur systematically more often on specific days - such as for example Thursdays for the case of Germany - this could create problems. Therefore public holidays in Southern Australia, the Australian federal territory containing Adelaide, were excluded in the analysis. A list of holidays that were excluded is given in Appendix \ref{Application_Appendix}. Additionally, days immediately before and after holidays are excluded due to the same reason as Mondays and Fridays. This procedure of eliminating holidays from the data set removed 299 out of 3556 curves from the data set which was used in further steps of the analysis. 
+			
+			\subsubsection{Curve Fitting}
+			To employ methods that are suitable to remove trend and seasonal components from the data, it is useful to fit a functional basis to the underlying discrete observations. However, as described in Section \ref{problem_curve_fitting}, this can lead to problems, if the truncated functional basis is unable to capture the features of the discrete data. However, in the setting explored in this application, visual inspection of the resulting curves showed no signs of artifacts created by the curve fitting process. This makes sense from a theoretical perspective, as the curves are more persistent than those explored in the simulations. Therefore, the truncated basis, consisting of trigonometric functions of lower frequencies, should be able to capture the curves' properties appropriately.
+			
+			This, in turn, makes the removal of trend and seasonal components from the fitted curves more attractive, as it more closely addresses the functional nature of the underlying data generating processes. Therefore, for the purposes of this simulation, a Fourier basis consisting of 25 functions was fitted to the original data to perform the data cleaning step.
+			
+			
+			
+			{\color{red} Hier weiterschreiben}
 			
 			\subsubsection{Detrending and Deseasoning}
 			A third potential problem of this data set is its functional time series structure. For example, electricity demand might be systematically higher in the summer months due to the added energy consumption of air-conditioning units. Therefore, a simple interpretation of the data as generated by an i.i.d. process might be unsubstantiated and additional steps have to be made before the procedure can be justified. \\
@@ -1027,6 +1044,13 @@ style=authoryear,
 	\section{Outlook}\label{Outlook}
 		
 		\subsection{Potential Problems}
+			The results presented in this thesis give a good impression of the possibilities of the method developed in \cite{bugni_permutation_2021}. However, there are also potential problems that should not go unnamed.
+			
+			\paragraph{Implementation\\}
+				One source of problems that might influence the results of the simulations is the specific implementation that was used to perform the simulation. As addressed in Section \ref{problem_curve_fitting}, seemingly small choices such as whether to use a functional basis to represent the observations can have a significant impact on the performance and reliability of the simulation and its results.
+				
+			\paragraph{Definition of $\mathbb{L}_2[0,1]$ \\}
+				As mentioned multiple times in this thesis, \cite{bugni_permutation_2021} use an unconventional definition of $\mathbb{L}_2[0,1]$ that makes some theoretical considerations of the methods considerably harder. Therefore, questions such as how this convention interacts with the type of measures that is used in the Cram\'{e}r-von Mises type test should be studied further. Similarly, parts of the proofs presented in the supplementary material to their paper hinge on the assumption that the space of square-integrable functionals with respect to the chosen measure $\mu$ is a separable Hilbert space. As this is not shown in the proofs, they seem to be incomplete and further consideration should be given to fill these gaps.
 	
 		\subsection{Theoretical Extensions}
 			\paragraph{Variants of the Test based on different Norms\\}

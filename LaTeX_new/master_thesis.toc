@@ -28,26 +28,29 @@
 \contentsline {subsection}{\numberline {6.2}Test-Procedure}{25}{subsection.6.2}%
 \contentsline {section}{\numberline {7}Simulation Study}{26}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Simulation Setup}{26}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Results}{29}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.2}Results}{30}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Simulation - Test for Persistence Alternatives}{30}{subsection.7.3}%
 \contentsline {section}{\numberline {8}Application}{31}{section.8}%
 \contentsline {subsection}{\numberline {8.1}Data Cleaning and Preprocessing}{32}{subsection.8.1}%
 \contentsline {subsubsection}{\numberline {8.1.1}Removal of Mondays and Fridays}{32}{subsubsection.8.1.1}%
 \contentsline {subsubsection}{\numberline {8.1.2}Holidays}{32}{subsubsection.8.1.2}%
-\contentsline {subsubsection}{\numberline {8.1.3}Detrending and Deseasoning}{33}{subsubsection.8.1.3}%
-\contentsline {subsection}{\numberline {8.2}Test from \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{34}{subsection.8.2}%
-\contentsline {section}{\numberline {9}Outlook}{35}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Potential Problems}{35}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Theoretical Extensions}{35}{subsection.9.2}%
-\contentsline {paragraph}{Variants of the Test based on different Norms\\}{35}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}Possible Further Simulations}{36}{subsection.9.3}%
-\contentsline {paragraph}{Comparing different Functional Bases\\}{36}{subsection.9.3}%
-\contentsline {paragraph}{Comparing choices of $w(t)$ and $\left (\rho _i\right )_{i = 1, the \dots , K}$\\}{36}{subsection.9.3}%
-\contentsline {paragraph}{Less restrictive Distributions of Fourier Coefficients\\}{36}{subsection.9.3}%
-\contentsline {paragraph}{Simulations for Unbalanced Sample Sizes\\}{36}{subsection.9.3}%
-\contentsline {paragraph}{Comparing Implementations using different orders of Operations\\}{37}{subsection.9.3}%
-\contentsline {subsection}{\numberline {9.4}Potential Applications}{37}{subsection.9.4}%
-\contentsline {section}{\numberline {10}Bibliography}{38}{section.10}%
+\contentsline {subsubsection}{\numberline {8.1.3}Curve Fitting}{33}{subsubsection.8.1.3}%
+\contentsline {subsubsection}{\numberline {8.1.4}Detrending and Deseasoning}{33}{subsubsection.8.1.4}%
+\contentsline {subsection}{\numberline {8.2}Test from \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{35}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Outlook}{36}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Potential Problems}{36}{subsection.9.1}%
+\contentsline {paragraph}{Implementation\\}{36}{subsection.9.1}%
+\contentsline {paragraph}{Definition of $\mathbb {L}_2[0,1]$ \\}{36}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Theoretical Extensions}{36}{subsection.9.2}%
+\contentsline {paragraph}{Variants of the Test based on different Norms\\}{36}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Possible Further Simulations}{37}{subsection.9.3}%
+\contentsline {paragraph}{Comparing different Functional Bases\\}{37}{subsection.9.3}%
+\contentsline {paragraph}{Comparing choices of $w(t)$ and $\left (\rho _i\right )_{i = 1, the \dots , K}$\\}{37}{subsection.9.3}%
+\contentsline {paragraph}{Less restrictive Distributions of Fourier Coefficients\\}{37}{subsection.9.3}%
+\contentsline {paragraph}{Simulations for Unbalanced Sample Sizes\\}{37}{subsection.9.3}%
+\contentsline {paragraph}{Comparing Implementations using different orders of Operations\\}{38}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Potential Applications}{38}{subsection.9.4}%
+\contentsline {section}{\numberline {10}Bibliography}{39}{section.10}%
 \contentsline {section}{\numberline {11}Appendix}{i}{section.11}%
 \contentsline {subsection}{\numberline {11.1}Informal Intuition}{i}{subsection.11.1}%
 \contentsline {subsection}{\numberline {11.2}$\mathbb {L}_2[0,1]$ as defined in \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{ii}{subsection.11.2}%

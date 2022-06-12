@@ -69,6 +69,11 @@ main_simu <- function(seed = task_seeds_int[i]) {
   )
   message('Values of the CvM test statistic calculated.')
   
+  # save t_stats for further processing
+  t_stats <- list(samples = samples, 
+                  nu_vals = nu_vals$nu_hat, nu_real = nu_vals$nu_realized,
+                  tau_vals = tau_vals$tau_hat, tau_real = tau_vals$tau_realized)
+  
   saveRDS(
     object = t_stats,
     file = paste0(output_path, "simulation_2/", toString(seed), "tstats.RDS")
