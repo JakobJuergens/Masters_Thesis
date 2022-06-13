@@ -123,12 +123,8 @@
       \field{month}{12}
       \field{number}{268}
       \field{title}{A {Test} of {Goodness} of {Fit}}
-      \field{urlday}{24}
-      \field{urlmonth}{5}
-      \field{urlyear}{2022}
       \field{volume}{49}
       \field{year}{1954}
-      \field{urldateera}{ce}
       \field{pages}{765\bibrangedash 769}
       \range{pages}{5}
       \verb{doi}
@@ -338,40 +334,6 @@
       \endverb
       \verb{url}
       \verb https://www.degruyter.com/document/doi/10.1515/9783110902990/html?lang=en
-      \endverb
-    \endentry
-    \entry{carleson_convergence_1966}{article}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=40cbe052f687ef31356587fb6d5235fd}{%
-           family={Carleson},
-           familyi={C\bibinitperiod},
-           given={Lennart},
-           giveni={L\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{40cbe052f687ef31356587fb6d5235fd}
-      \strng{fullhash}{40cbe052f687ef31356587fb6d5235fd}
-      \strng{bibnamehash}{40cbe052f687ef31356587fb6d5235fd}
-      \strng{authorbibnamehash}{40cbe052f687ef31356587fb6d5235fd}
-      \strng{authornamehash}{40cbe052f687ef31356587fb6d5235fd}
-      \strng{authorfullhash}{40cbe052f687ef31356587fb6d5235fd}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Acta Mathematica}
-      \field{month}{1}
-      \field{note}{Publisher: Institut Mittag-Leffler}
-      \field{number}{none}
-      \field{title}{On convergence and growth of partial sums of {Fourier} series}
-      \field{volume}{116}
-      \field{year}{1966}
-      \field{pages}{135\bibrangedash 157}
-      \range{pages}{23}
-      \verb{doi}
-      \verb 10.1007/BF02392815
       \endverb
     \endentry
     \entry{cox_pointwise_2008}{article}{}
@@ -597,103 +559,6 @@
       \field{year}{2004}
       \verb{doi}
       \verb 10.1007/978-3-642-61943-4
-      \endverb
-    \endentry
-    \entry{refund}{manual}{}
-      \name{author}{12}{}{%
-        {{un=0,uniquepart=base,hash=1e725b50859e5359bb3c22b54ab55ddf}{%
-           family={Goldsmith},
-           familyi={G\bibinitperiod},
-           given={Jeff},
-           giveni={J\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=a44c794012e6e499f66afeaebee76e4f}{%
-           family={Scheipl},
-           familyi={S\bibinitperiod},
-           given={Fabian},
-           giveni={F\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=ebcb470ee777cbc56984a83379d29819}{%
-           family={Huang},
-           familyi={H\bibinitperiod},
-           given={Lei},
-           giveni={L\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=4565c402b678753a62abcbb4855bf12f}{%
-           family={Wrobel},
-           familyi={W\bibinitperiod},
-           given={Julia},
-           giveni={J\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=c502e7a28923e79c87b81a3d2ae9ff6f}{%
-           family={Di},
-           familyi={D\bibinitperiod},
-           given={Chongzhi},
-           giveni={C\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=a931a4758ad98edf768fe00f8d9c4121}{%
-           family={Gellar},
-           familyi={G\bibinitperiod},
-           given={Jonathan},
-           giveni={J\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=19dfd621e18552bb23e3bfc901f25323}{%
-           family={Harezlak},
-           familyi={H\bibinitperiod},
-           given={Jaroslaw},
-           giveni={J\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=26756161186091df3d8705c361bbc30d}{%
-           family={McLean},
-           familyi={M\bibinitperiod},
-           given={Mathew\bibnamedelima W.},
-           giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=3a89c9a5ce6a89304955a652f2737469}{%
-           family={Swihart},
-           familyi={S\bibinitperiod},
-           given={Bruce},
-           giveni={B\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=efc59ab67e5d51b34872a810caa296bb}{%
-           family={Xiao},
-           familyi={X\bibinitperiod},
-           given={Luo},
-           giveni={L\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=cf33b67afe8f813caa335813c7a16970}{%
-           family={Crainiceanu},
-           familyi={C\bibinitperiod},
-           given={Ciprian},
-           giveni={C\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=33ded7c05af7de063bce348114a01c8b}{%
-           family={Reiss},
-           familyi={R\bibinitperiod},
-           given={Philip\bibnamedelima T.},
-           giveni={P\bibinitperiod\bibinitdelim T\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{adb6a37d1fb0084bbd59fb0180c96201}
-      \strng{fullhash}{648222f797672e6c8d6dfc9a8c246994}
-      \strng{bibnamehash}{adb6a37d1fb0084bbd59fb0180c96201}
-      \strng{authorbibnamehash}{adb6a37d1fb0084bbd59fb0180c96201}
-      \strng{authornamehash}{adb6a37d1fb0084bbd59fb0180c96201}
-      \strng{authorfullhash}{648222f797672e6c8d6dfc9a8c246994}
-      \field{sortinit}{G}
-      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{R package version 0.1-24}
-      \field{title}{refund: Regression with Functional Data}
-      \field{year}{2021}
-      \verb{urlraw}
-      \verb https://CRAN.R-project.org/package=refund
-      \endverb
-      \verb{url}
-      \verb https://CRAN.R-project.org/package=refund
       \endverb
     \endentry
     \entry{hall_permutation_2002}{article}{}
