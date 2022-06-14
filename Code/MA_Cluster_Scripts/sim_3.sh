@@ -1,12 +1,12 @@
 #!/bin/bash
 
-#SBATCH --array=1-32%32
+#SBATCH --array=1-11%11
 
 #SBATCH --cpus-per-task=1
 
 #SBATCH --mem-per-cpu=4000M
 
-#SBATCH --time=10:00:0
+#SBATCH --time=00:45:0
 
 #SBATCH --account=ag_ifs_liebl
 

@@ -32,22 +32,30 @@ mu_1 <- median(
 
 # create functional objects
 w_func1 <- Vectorize(PermFDATest::w_func_construct_1(sample = sample1))
-w_func2 <- Vectorize(PermFDATest::w_func_construct_2(sample = sample1_f, domain = c(0,1), q = 0.95))
+w_func2 <- Vectorize(PermFDATest::w_func_construct_3(sample = sample1, q = 0.95))
 
 # create tibbles for plotting
 plot_grid <- seq(from = 0, to = 1, by = 0.01)
 
 # evaluate sample at grid points
-sample_tibble <- cbind(
-  tibble(
+sample_tibble <- tibble(
     supertype = 'Observations',
-    type = paste0("obs_", rep(x = 1:50, each = length(plot_grid))),
-    x = rep(x = plot_grid, times = 50),
+    type = paste0("obs_", rep(x = 1:50, each = length(my_grid))),
+    x = unlist(
+      purrr::map(
+        .x = sample1,
+        .f = ~.x$args
+      )
+    ),
+    y = unlist(
+      purrr::map(
+        .x = sample1,
+        .f = ~.x$vals
+      )
+    ),
     alpha = 0.2
-  ),
-  as_tibble(t(PermFDATest::fourier_eval(x = plot_grid, coefs = sample1_f, domain = c(0, 1)))) %>%
-    pivot_longer(cols = everything())
-) %>%
+  ) %>%
+  pivot_longer(cols = everything()) %>%
   rename(y = value) %>%
   dplyr::select(!name)
 

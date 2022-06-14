@@ -17,7 +17,7 @@ gen_rho <- inputs$gen_rho
 gen_sigma <- inputs$gen_sigma
 
 # set rho_shift manually to suit setting!
-rho_2 <- rep(-0.9, times = length(gen_grid))
+rho_2 <- rep(0.5, times = length(gen_grid))
 rho_shift <- rho_2 - gen_rho
 
 print(paste0('Persistence Parameter: ', rho_2[1]))
@@ -25,7 +25,7 @@ print(paste0('Persistence Parameter: ', rho_2[1]))
 # comparison_grid <- inputs$comparison_grid
 
 # read in seeds and generate string version
-full_seeds <- readRDS(paste0(input_path, "seeds.RDS"))
+full_seeds <- sample(1:10e5, size = 10000) #readRDS(paste0(input_path, "seeds.RDS"))
 string_seeds <- sapply(full_seeds, toString)
 
 # get environment variables from SLURM

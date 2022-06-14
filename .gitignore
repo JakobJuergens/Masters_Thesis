@@ -2,3 +2,11 @@
 .Rhistory
 .RData
 .Ruserdata
+Data/Cluster_Simulation_Outputs/Persistence_Test/
+Data/Cluster_Simulation_Outputs/Persistence_Test2/
+Data/Cluster_Simulation_Outputs/Preliminary/
+Data/Cluster_Simulation_Outputs/Simulation1/**/
+Data/Cluster_Simulation_Outputs/Simulation2/**/
+Data/Cluster_Simulation_Outputs/Simulation3/**/
+Data/Cluster_Simulation_Outputs/Simulation4/**/
+Code/MA_Cluster_Scripts/Outputs
