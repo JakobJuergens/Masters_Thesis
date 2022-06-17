@@ -54,10 +54,7 @@ sample_tibble <- tibble(
       )
     ),
     alpha = 0.2
-  ) %>%
-  pivot_longer(cols = everything()) %>%
-  rename(y = value) %>%
-  dplyr::select(!name)
+  )
 
 mean_curve_tibble <- tibble(
   type = c(

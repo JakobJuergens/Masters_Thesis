@@ -162,5 +162,5 @@ comb_plot <- ((plots[[1]] | plots[[2]]) /
 # save plots
 ggsave(
   filename = paste0("../../Graphics/Settings_comparison.PDF"), plot = comb_plot,
-  width = 20, height = 12, units = "in", dpi = 600
+  width = 20, height = 10, units = "in", dpi = 600
 )
