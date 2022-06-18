@@ -486,10 +486,6 @@ style=authoryear,
 			\cite{hall_two-sample_2007} develop a very similar approach to \cite{bugni_permutation_2021}by using the integrated squared difference between estimates of the empirical distribution functions. However, their approach is not based on permutation testing but on bootstrapping to derive critical values for a test and specific smoothing approaches for the observed data. Additionally, their method uses the Karhunen-Lo\`{e}ve expansion to construct a measure in a similar sense as presented in this thesis.
 			\cite{pomann_two-sample_2016} develop a framework for discretely observed functional curves using an approach called marginal functional principal components to reduce the problem to a finite number of dimensions. Their approach then makes use of finite-dimensional variants of tests such as the Anderson-Darling test mentioned in Section \ref{CvM_Tests}.
 			\cite{corain_new_2014} propose a test using so called derived variables that are calculated from the data, such as, for example, the functional principal components. They reformulate the null hypothesis in terms of these derived variables and suggest a framework combining multiple dependent randomization tests for the individual hypotheses relating to the different derived variables.
-			
-			\begin{itemize}
-				\item {\color{red} Andere Tests auffuehren}
-			\end{itemize}
 		
 		\subsection{Cram\'{e}r-von Mises type Test}\label{cvm_type_test}
 			Similar to the CvM test described in Section \ref{CvM_Tests}, the test constructed by \cite{bugni_permutation_2021} relies on the empirical distribution functions describing the samples. 
@@ -719,18 +715,21 @@ style=authoryear,
 
 		
 	\section{Test for Persistence Alternatives}\label{variant}
-		One particular application for the CvM type test presented in \cite{bugni_permutation_2021} is a slight modification leading to the following test for differences in the persistence structure of the data generating processes. 
-		There are already many tests focusing on differences in the mean functions of processes. A non-exhaustive list of examples can be found in the following publications.
+		One particular application for the CvM type test presented in \cite{bugni_permutation_2021} is a slight modification leading to a test for differences in the persistence structure of the data generating processes. This test is an interesting extension as there are few existing methods that test a similar null hypothesis.		
+		To give some context, in the literature there are already many methods to test whether two samples share a common mean function.
 		\begin{itemize}
+			\item \cite{ramsay_functional_2005} point-wise t-test
 			\item \cite{lee_two_2015}
 			\item \cite{cox_pointwise_2008}
 			\item {\color{red} Hier tests auflisten}
 		\end{itemize}
-		There is also a large number of tests for differences in the variance functions of processes such as for example the tests presented in the following papers. 
+		There is also a large number of tests for differences in the covariance functions of processes such as for example the tests presented in the following papers. 
 		\begin{itemize}
+			\item \cite{guo_testing_2018}
+			\item \cite{guo_new_2019}
 			\item {\color{red} Hier tests auflisten}
 		\end{itemize}
-		However, there are few tests that address differences in the persistence of processes and the proposed procedure adds to the limited arsenal.\\
+		However, there are few tests that specifically address differences in the persistence of processes including higher cross-moment functions and the proposed procedure adds to the limited arsenal.\\
 		
 		\subsection{Null-Hypothesis}
 		Let $\{X_i(t) \ | \  i = 1, \dots, n\}$ and $\{Y_i(t) \ | \  i = 1, \dots, m\}$ again denote the samples under consideration. Assume that the samples consist of i.i.d. realizations of random functions $X(t)$ and $Y(t)$.
@@ -767,7 +766,9 @@ style=authoryear,
 				H_1: \quad &\mathbb{P}_{\mu}\left[F_{\tilde{X}}(z) \neq F_{\tilde{Y}}(z)\right] > 0
 			\end{split}
 		\end{equation}
-		As the standardization eliminates all differences in these processes' mean and variance patterns, one of the distinct remaining features that might differentiate these processes is their persistence properties. Therefore, as the more general form is supposed to find very general alternatives, this focused approach could be tailored by choice of $\mu$ to detect differences in the persistence structure of the data generating processes. \\
+		As the standardization eliminates all differences in these processes' mean and variance patterns, one of the distinct remaining features that might differentiate these processes are their persistence properties.
+		Somewhat more technical, this hypothesis is linked to the equality of the cross-moment functions of the underlying processes after standardization.
+		Therefore, this focused approach could be tailored by choosing an appropriate $\mu$ to detect differences in this general idea of persistence of the data generating processes. \\
 		
 		\subsection{Test-Procedure}\label{persistence_test}
 		The modified test is functionally nearly identical to the CvM type test described in \cite{bugni_permutation_2021}. However, it adds a standardization step in the calculation of the test statistic to eliminate differences in the mean functions of the processes and their variance structure. In each permutation step, the calculation of the test statistic is thus described by the following algorithm.\\
@@ -1053,7 +1054,7 @@ style=authoryear,
 				As mentioned multiple times in this thesis, \cite{bugni_permutation_2021} use an unconventional definition of $\mathbb{L}_2[0,1]$ that makes some theoretical considerations of the methods considerably harder. Therefore, questions such as how this convention interacts with the type of measures that is used in the CvM type test should be studied further. 
 				
 			\paragraph{Potential Gap in a Proof\\}
-				Parts of the proofs presented in the supplementary material to \cite{bugni_permutation_2021} hinge on the assumption that the space of square-integrable functionals with respect to the chosen measure $\mu$ is a separable Hilbert space. In many cases square-integrability is a property that easily allows to show the properties of a separable Hilbert space. However, as it is not shown in the proofs to be a general property or follow from the type of measure the authors construct, they seem to be incomplete and further consideration should be given to fill these gaps.
+				Parts of the proofs presented in the supplementary material to \cite{bugni_permutation_2021} hinge on the assumption that the space of square-integrable functionals with respect to the chosen measure $\mu$ is a separable Hilbert space. In many cases square-integrability is a property that easily allows to show the properties of separable Hilbert spaces. However, as it is not shown in the proofs to be a general property or follow from the type of measure the authors construct, they seem to be incomplete and further consideration should be given to fill these gaps.
 	
 		\subsection{Theoretical Extensions}
 			\paragraph{Variants of the Test based on different Norms\\}

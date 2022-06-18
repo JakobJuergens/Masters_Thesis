@@ -612,6 +612,101 @@
       \verb 10.1007/978-3-642-61943-4
       \endverb
     \endentry
+    \entry{guo_testing_2018}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=5dfa2e1cec77c8779469085a05d6a696}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Jia},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=33118e8508038ae75c8f842e643e1345}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Bu},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7ff251e46d60a380bcaf8e1556aec4ac}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Jin-Ting},
+           giveni={J\bibinithyphendelim T\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{ee7f5f92b011b7e56a9eb00005c34249}
+      \strng{fullhash}{ee7f5f92b011b7e56a9eb00005c34249}
+      \strng{bibnamehash}{ee7f5f92b011b7e56a9eb00005c34249}
+      \strng{authorbibnamehash}{ee7f5f92b011b7e56a9eb00005c34249}
+      \strng{authornamehash}{ee7f5f92b011b7e56a9eb00005c34249}
+      \strng{authorfullhash}{ee7f5f92b011b7e56a9eb00005c34249}
+      \field{extraname}{1}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computational Statistics \& Data Analysis}
+      \field{month}{8}
+      \field{title}{Testing the equality of several covariance functions for functional data: {A} supremum-norm based test}
+      \field{volume}{124}
+      \field{year}{2018}
+      \field{pages}{15\bibrangedash 26}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1016/j.csda.2018.02.002
+      \endverb
+    \endentry
+    \entry{guo_new_2019}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=5dfa2e1cec77c8779469085a05d6a696}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Jia},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=33118e8508038ae75c8f842e643e1345}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Bu},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7ff251e46d60a380bcaf8e1556aec4ac}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Jin-Ting},
+           giveni={J\bibinithyphendelim T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ee7f5f92b011b7e56a9eb00005c34249}
+      \strng{fullhash}{ee7f5f92b011b7e56a9eb00005c34249}
+      \strng{bibnamehash}{ee7f5f92b011b7e56a9eb00005c34249}
+      \strng{authorbibnamehash}{ee7f5f92b011b7e56a9eb00005c34249}
+      \strng{authornamehash}{ee7f5f92b011b7e56a9eb00005c34249}
+      \strng{authorfullhash}{ee7f5f92b011b7e56a9eb00005c34249}
+      \field{extraname}{2}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the American Statistical Association}
+      \field{month}{7}
+      \field{note}{Publisher: Taylor \& Francis \_eprint: https://doi.org/10.1080/01621459.2018.1483827}
+      \field{number}{527}
+      \field{title}{New {Tests} for {Equality} of {Several} {Covariance} {Functions} for {Functional} {Data}}
+      \field{volume}{114}
+      \field{year}{2019}
+      \field{pages}{1251\bibrangedash 1263}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1080/01621459.2018.1483827
+      \endverb
+    \endentry
     \entry{hall_permutation_2002}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=8922d50f77e8cc98c9ac19d6edca3701}{%
