@@ -336,6 +336,57 @@
       \verb https://www.degruyter.com/document/doi/10.1515/9783110902990/html?lang=en
       \endverb
     \endentry
+    \entry{corain_new_2014}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=bf3b7e0ee8ac89a775d2c89b9a6714f4}{%
+           family={Corain},
+           familyi={C\bibinitperiod},
+           given={Livio},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ef1b3f6811e395f03b40043e63dc4f9a}{%
+           family={Melas},
+           familyi={M\bibinitperiod},
+           given={Viatcheslav\bibnamedelima B.},
+           giveni={V\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f1482653246a19d3a6ca03e96dea3b98}{%
+           family={Pepelyshev},
+           familyi={P\bibinitperiod},
+           given={Andrey},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=00a0da9f80eb8488a8081cda3286d44d}{%
+           family={Salmaso},
+           familyi={S\bibinitperiod},
+           given={Luigi},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c151a3aeb94dfc2d1cfb7ad7759496ce}
+      \strng{fullhash}{667068d7d85d277eadc651282afc954c}
+      \strng{bibnamehash}{c151a3aeb94dfc2d1cfb7ad7759496ce}
+      \strng{authorbibnamehash}{c151a3aeb94dfc2d1cfb7ad7759496ce}
+      \strng{authornamehash}{c151a3aeb94dfc2d1cfb7ad7759496ce}
+      \strng{authorfullhash}{667068d7d85d277eadc651282afc954c}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in Data Analysis and Classification}
+      \field{month}{9}
+      \field{number}{3}
+      \field{title}{New insights on permutation approach for hypothesis testing on functional data}
+      \field{volume}{8}
+      \field{year}{2014}
+      \field{pages}{339\bibrangedash 356}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1007/s11634-013-0162-2
+      \endverb
+    \endentry
     \entry{cox_pointwise_2008}{article}{}
       \name{author}{2}{}{%
         {{un=1,uniquepart=given,hash=cd50bfe5a3ededb5bdc309ad02245ce1}{%
