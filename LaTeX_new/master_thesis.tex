@@ -717,17 +717,14 @@ style=authoryear,
 	\section{Test for Persistence Alternatives}\label{variant}
 		One particular application for the CvM type test presented in \cite{bugni_permutation_2021} is a slight modification leading to a test for differences in the persistence structure of the data generating processes. This test is an interesting extension as there are few existing methods that test a similar null hypothesis.\\
 		
-		To give some context, in the literature there are already many methods to test whether two samples share a common mean function. 
-		\cite{cox_pointwise_2008} propose a method that compares functions point-wise using a multiple comparison procedure introduced by \cite{westfall_resampling-based_1993}. They show that this approach can be used to approximate a continuum of comparisons as the grid that is used to compare points gets finer.
+		To give some context: in the literature, there are already many methods to test whether two samples share a common mean function. 
+		\cite{cox_pointwise_2008} propose a method that compares functions point-wise using a multiple comparison procedure introduced by \cite{westfall_resampling-based_1993}. They show that this approach can be used to approximate a continuum of comparisons as the grid used to compare points gets finer.
 		\cite{lee_two_2015} introduce a method based on the adaptive Neyman methodology and a functional principal component approach to test whether two samples share a common mean function.
-		\cite{fan_test_1998} also develop a method based on adaptive Neyman methodology to compare multiple samples. However, their procedure makes use of so called wavelet thresholding techniques developed in the authors earlier works. 
+		\cite{fan_test_1998} also develop a method based on adaptive Neyman methodology to compare multiple samples. However, their procedure uses wavelet thresholding techniques developed in the authors' earlier works. 
+		
+		There is also a considerable number of tests for differences in the covariance functions of processes, such as the tests presented in the following papers. 
+		\cite{guo_testing_2018} develop a method based on the supremum of the integrated squared difference between the sample covariance functions of the individual samples and the pooled sample. Test decisions are then made using critical values derived via bootstrapping approaches.		Building on their previous work, \cite{guo_new_2019} propose an additional test that generalizes the idea of the point-wise F-test as described, for example, in \cite{ramsay_functional_2005}. In their approach, the authors extend existing ideas such as the $F_{\textit{max}}$-test or the quasi-GPF trying to answer the corresponding global hypothesis to compare the covariance functions of multiple functional populations.
 
-		There is also a considerable number of tests for differences in the covariance functions of processes such as for example the tests presented in the following papers. 
-		\begin{itemize}
-			\item \cite{guo_testing_2018}
-			\item \cite{guo_new_2019}
-			\item {\color{red} Hier tests auflisten}
-		\end{itemize}
 		However, there are few tests that specifically address differences in the persistence of processes including higher cross-moment functions and the proposed procedure adds to the limited arsenal.\\
 		
 		\subsection{Null-Hypothesis}
