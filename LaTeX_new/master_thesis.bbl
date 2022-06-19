@@ -499,6 +499,45 @@
       \verb 10.1080/01621459.1961.10482090
       \endverb
     \endentry
+    \entry{fan_test_1998}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=2eb00838f3cea970c7377bfea9631787}{%
+           family={Fan},
+           familyi={F\bibinitperiod},
+           given={Jianqing},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=48352aa80da47290f684716793f588da}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Sheng-Kuei},
+           giveni={S\bibinithyphendelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2090cebad872c35de57ce02934f4c7da}
+      \strng{fullhash}{2090cebad872c35de57ce02934f4c7da}
+      \strng{bibnamehash}{2090cebad872c35de57ce02934f4c7da}
+      \strng{authorbibnamehash}{2090cebad872c35de57ce02934f4c7da}
+      \strng{authornamehash}{2090cebad872c35de57ce02934f4c7da}
+      \strng{authorfullhash}{2090cebad872c35de57ce02934f4c7da}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the American Statistical Association}
+      \field{month}{9}
+      \field{number}{443}
+      \field{title}{Test of {Significance} {When} {Data} are {Curves}}
+      \field{volume}{93}
+      \field{year}{1998}
+      \field{pages}{1007\bibrangedash 1021}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1080/01621459.1998.10473763
+      \endverb
+    \endentry
     \entry{fisz_result_1960}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=a5ab54ceaf75bfe2366f93ea4678a1f5}{%
@@ -1480,6 +1519,44 @@
       \verb{doi}
       \verb 10.1007/978-1-4757-2545-2
       \endverb
+    \endentry
+    \entry{westfall_resampling-based_1993}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=00daf180933da47a4a60b307b6324f1b}{%
+           family={Westfall},
+           familyi={W\bibinitperiod},
+           given={Peter\bibnamedelima H.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b0b21dcd79c24fae4aee1ff5a4047ca6}{%
+           family={Young},
+           familyi={Y\bibinitperiod},
+           given={S.\bibnamedelimi Stanley},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{b20fb0c7be297a434642cc8a578e1eec}
+      \strng{fullhash}{b20fb0c7be297a434642cc8a578e1eec}
+      \strng{bibnamehash}{b20fb0c7be297a434642cc8a578e1eec}
+      \strng{authorbibnamehash}{b20fb0c7be297a434642cc8a578e1eec}
+      \strng{authornamehash}{b20fb0c7be297a434642cc8a578e1eec}
+      \strng{authorfullhash}{b20fb0c7be297a434642cc8a578e1eec}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-471-55761-6}
+      \field{series}{Wiley series in probability and mathematical statistics}
+      \field{title}{Resampling-based multiple testing: examples and methods for {P}-value adjustment}
+      \field{year}{1993}
     \endentry
     \entry{tidyverse}{article}{}
       \name{author}{24}{}{%

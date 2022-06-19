@@ -715,15 +715,14 @@ style=authoryear,
 
 		
 	\section{Test for Persistence Alternatives}\label{variant}
-		One particular application for the CvM type test presented in \cite{bugni_permutation_2021} is a slight modification leading to a test for differences in the persistence structure of the data generating processes. This test is an interesting extension as there are few existing methods that test a similar null hypothesis.		
-		To give some context, in the literature there are already many methods to test whether two samples share a common mean function.
-		\begin{itemize}
-			\item \cite{ramsay_functional_2005} point-wise t-test
-			\item \cite{lee_two_2015}
-			\item \cite{cox_pointwise_2008}
-			\item {\color{red} Hier tests auflisten}
-		\end{itemize}
-		There is also a large number of tests for differences in the covariance functions of processes such as for example the tests presented in the following papers. 
+		One particular application for the CvM type test presented in \cite{bugni_permutation_2021} is a slight modification leading to a test for differences in the persistence structure of the data generating processes. This test is an interesting extension as there are few existing methods that test a similar null hypothesis.\\
+		
+		To give some context, in the literature there are already many methods to test whether two samples share a common mean function. 
+		\cite{cox_pointwise_2008} propose a method that compares functions point-wise using a multiple comparison procedure introduced by \cite{westfall_resampling-based_1993}. They show that this approach can be used to approximate a continuum of comparisons as the grid that is used to compare points gets finer.
+		\cite{lee_two_2015} introduce a method based on the adaptive Neyman methodology and a functional principal component approach to test whether two samples share a common mean function.
+		\cite{fan_test_1998} also develop a method based on adaptive Neyman methodology to compare multiple samples. However, their procedure makes use of so called wavelet thresholding techniques developed in the authors earlier works. 
+
+		There is also a considerable number of tests for differences in the covariance functions of processes such as for example the tests presented in the following papers. 
 		\begin{itemize}
 			\item \cite{guo_testing_2018}
 			\item \cite{guo_new_2019}
@@ -1422,12 +1421,12 @@ style=authoryear,
 				The family-wise error rate is the probability of making at least one type-1 error when performing multiple hypothesis tests.
 			\end{definition}
 		
-				The most straightforward correction for this multiple testing problem is the so-called Bonferroni Correction. Introduced by \cite{dunn_multiple_1961}, it is based on Boole's Inequality, which is sometimes referred to as the Bonferroni Inequality.
-				\begin{equation}
-						\mathbb{P}\left[\bigcup_{i = 1}^{\infty} A_i\right] \leq \sum_{i = 1}^{\infty} \mathbb{P}\left[A_i\right]
-					\end{equation}
-				for a countable set of events $A_1, A_2, \dots$.
-		
+			The most straightforward correction for this multiple testing problem is the so-called Bonferroni Correction. Introduced by \cite{dunn_multiple_1961}, it is based on Boole's Inequality shown in Equation \ref{bonferroni}, which is sometimes referred to as the Bonferroni Inequality.
+			\begin{equation}\label{bonferroni}
+				\mathbb{P}\left[\bigcup_{i = 1}^{\infty} A_i\right] \leq \sum_{i = 1}^{\infty} \mathbb{P}\left[A_i\right]
+			\end{equation}
+			for a countable set of events $A_1, A_2, \dots$.
+			This inequality motivates the idea to control the family wise error rate when performing multiple tests by choosing the individual tests' size such that they add up to the desired overall family-wise error rate. However, as tests might be correlated, this could lead to an overall test that is conservative. Still, if little information is known about the correlation structure of the individual test statistics, this idea ensures that the family-wise error rate is at most the sum of the individual test sizes.		
 
 			
 		\subsection{Application Data Cleaning}\label{Application_Appendix}
