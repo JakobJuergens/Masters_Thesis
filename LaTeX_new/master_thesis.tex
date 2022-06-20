@@ -229,6 +229,7 @@ style=authoryear,
 			Understanding this relationship between these measures allows the justification of using a finite number of basis functions in the implementation of the test.
 			\cite{bugni_goodness--fit_2009} show that the measure $\mu_K$ induced by $Z_K(t)$ converges to the measure $\mu$ induced by $Z(t)$ in the following sense. Let $A$ be a $\mu$-measurable subset of $\mathbb{L}_2[0,1]$. Then $\forall a \in A$, there is a unique countably infinite sequence of Fourier coefficients $b(a) = (b_k(a))_{k \in \mathbb{N}}$ given by $b_k(a) = \int_{0}^{1} a(t) \psi_k(t) \mathrm{d}t$. As $a \in \mathbb{L}_2[0,1]$ these coefficients fulfill $\sum_{k = 1}^{\infty} b_k^2 < \infty$. \\
 			
+			\newpage
 			To define the specific mode of convergence \cite{bugni_goodness--fit_2009} define the following objects.
 			\begin{itemize}
 				\item $\textbf{B} = \left\{b(a) \ \vert \ a \in A\right\}$
@@ -307,7 +308,7 @@ style=authoryear,
 		
 			An example showing the empirical distribution function for a selection of samples drawn from a standard normal distribution is given in Figure \ref{ecdf_plot} in Appendix \ref{add_figures}. As this plot illustrates, the empirical distribution function gets increasingly close to the theoretical distribution function of the underlying random variable as the number of realizations increases. In fact, using the strong law of large numbers it is easy to show that $\hat{F}_n(x) \stackrel{\text{a.s.}}{\rightarrow} F(x) \quad  \forall x$ implying that $\hat{F}_n(x)$ is a consistent estimator of $F(x)$.
 			
-		
+		\newpage
 		\subsection{Null Hypothesis}
 			As previously mentioned, the null hypothesis of CvM tests relates to distributional equality of random variables. 
 %			This is different from tests such as the t-test which only tests for differences in specific properties of random variables like their mean.			
@@ -438,6 +439,7 @@ style=authoryear,
 		\end{definition}
 		As previously mentioned, the authors assume that two functions $z_1, z_2 \in \mathbb{L}_2[0,1]$ are distinct even if they only differ on a set of Lebesgue-measure zero. However, as this convention only adds alternatives against which the test cannot have any power by construction, this thesis will only cover the case created by the typical definition of $\mathbb{L}_2[0,1]$. Appendix \ref{deviation} gives a short overview of how this convention influences the theoretical objects used by the test statistic.
 		
+		\newpage
 		\subsection{Assumptions}
 		As for most tests, there are assumptions that have to be fulfilled for the test to work correctly. The authors explicitly make four assumptions, some of which can be relaxed to allow for a more general setting.
 			\begin{assumption}\label{Ass1}\hfill\vspace{-0.8cm}
@@ -514,6 +516,7 @@ style=authoryear,
 			\begin{equation}\label{tau_hat}
 				\hat{\tau}_{n,m} = \frac{n+m}{L} \sum_{l = 1}^{L} \left[\hat{F}_n(Z_l) - \hat{G}_m(Z_l)\right]^2
 			\end{equation}
+		
 			These functions are drawn from a random function associated with the chosen measure $\mu$, and their construction is explained in more detail in Section \ref{mu}. At this point, it is interesting to ask whether Monte-Carlo integration is a suitable approach in this specific setting; in other words, whether the mean and variance of $\left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2$ with respect to $\mu$ exist and are finite.
 			Assuming existence, which depends on the chosen measure, an argument for finiteness is given in Appendix \ref{finiteness}.
 		
@@ -706,7 +709,7 @@ style=authoryear,
 				sample 1 in red, sample 2 in blue}
 				\label{curve_fitting_artefacts}
 			\end{figure}
-			These processes are constructed as described in Section \ref{Simulation_Study} for a choice of $\rho_2(t) = -0.9$. This implies that the data generating process generates data with a point-wise variance of one. However, due to the structure of the data, the curve fitting procedure fails to conserve this property. Therefore, artifacts, such as the one shown in Figure \ref{curve_fitting_artefacts}, can heavily influence the power of the constructed test, meaning that it could be advisable to change the approach to one of the following.
+			These processes are constructed as described in Section \ref{Simulation_Study} for a choice of $\rho_2(t) = -0.9$ ensuring that the data generating process exhibit a point-wise variance of one. However, the curve fitting procedure fails to conserve this property. Therefore, artifacts, such as the one shown in Figure \ref{curve_fitting_artefacts}, can heavily influence the power of the constructed test, meaning that it could be advisable to change the approach to one of the following.
 			\begin{enumerate}
 				\item \textbf{Comparisons at the discrete data points.} Suppose observations are discrete but dense enough to be interpreted as smooth curves. In that case, one could use the points where data is observed to compare the functions generated for the approximation of the CvM test to the original samples. This approach is close to the one described in \cite{bugni_permutation_2021} for the case of discrete observations.
 				\item \textbf{Linear Interpolation.} Instead, one could use linear interpolation of the original curves to compare them to the generated curves. This would preserve the functional nature while not generating the fitting artifacts shown in Figure \ref{curve_fitting_artefacts}.
@@ -797,7 +800,7 @@ style=authoryear,
 		
 		The simulations presented as part of this thesis have been conducted on \textit{bonna}\footnote{\href{https://www.dice.uni-bonn.de/de/hpc/hpc-a-bonn/infrastruktur}{https://www.dice.uni-bonn.de/de/hpc/hpc-a-bonn/infrastruktur}}. \textit{bonna} is the high performance computing cluster provided by the University of Bonn. However, slight modifications of the provided code suffice to run it on personal computers.\\
 
-		All analyses in this thesis have been conducted with R\footcite{R}. As a supplement to this thesis, the two-sample variant of the test taken from \cite{bugni_permutation_2021} is implemented in an R package called \textit{PermFDATest}. The R package and all code that has been used to produce the following results is publicly available as part of a GitHub repository\footnote{\href{https://github.com/JakobJuergens/Masters_Thesis}{https://github.com/JakobJuergens/Masters\_Thesis}} that complements this thesis.
+		All analyses in this thesis have been conducted with R\footcite{R}. As a supplement to this thesis, the two-sample variant of the test taken from \cite{bugni_permutation_2021} is implemented in an R package called \textit{PermFDATest}. The R package and all code that has been used to produce the following results is publicly available as part of a GitHub repository\footnote{\href{https://github.com/JakobJuergens/Masters_Thesis}{https://github.com/JakobJuergens/Masters\_Thesis}} that complements this thesis. As previously mentioned in Section \ref{problem_curve_fitting}, the CvM type test statistic is calculated by comparing the generated curves at the points where the corresponding discrete observations of each sample curve lie. However, the package additionally provides functions that can be used to perform the test on curves that have been fitted using a Fourier basis.
 		The package makes extensive use of the implementations by \cite{fda} and \cite{tidyverse}.
 
 		\subsection{Simulation Setup}
@@ -842,6 +845,7 @@ style=authoryear,
 			\item \textbf{Mean Shift}\\
 				  The second setting introduces a shifted mean function. This is one possible violation where \cite{bugni_permutation_2021} describe weak power of the Cramer-von Mises type test. Deviating from sample 1, sample 2 has mean function 
 				  $$\mu_2(t) = x (x-1) \quad t \in \mathcal{T}$$
+			\newpage
 			\item \textbf{Correlation Shift}\\
 			 	  The third setting violates the null hypothesis by changing the correlation structure between neighboring observations. Here, observations are less persistent due to a lower, but still constant choice of the correlation parameter.
 			 	  $$\rho_2(t) = 0 \quad \forall t = 0.01, \dots, 1$$
