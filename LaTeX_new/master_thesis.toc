@@ -38,7 +38,7 @@
 \contentsline {subsubsection}{\numberline {8.1.4}Detrending and Deseasoning}{35}{subsubsection.8.1.4}%
 \contentsline {subsection}{\numberline {8.2}Test from \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{36}{subsection.8.2}%
 \contentsline {section}{\numberline {9}Outlook}{37}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Potential Problems}{37}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.1}Potential Problems}{38}{subsection.9.1}%
 \contentsline {paragraph}{Implementation\\}{38}{subsection.9.1}%
 \contentsline {paragraph}{Definition of $\mathbb {L}_2[0,1]$ \\}{38}{subsection.9.1}%
 \contentsline {paragraph}{Potential Gap in a Proof\\}{38}{subsection.9.1}%
@@ -49,7 +49,7 @@
 \contentsline {paragraph}{Comparing choices of $w(t)$ and $\left (\rho _i\right )_{i = 1, the \dots , K}$\\}{39}{subsection.9.3}%
 \contentsline {paragraph}{Less restrictive Distributions of Fourier Coefficients\\}{39}{subsection.9.3}%
 \contentsline {paragraph}{Simulations for Unbalanced Sample Sizes\\}{39}{subsection.9.3}%
-\contentsline {paragraph}{Comparing Implementations using different orders of Operations\\}{39}{subsection.9.3}%
+\contentsline {paragraph}{Comparing Implementations using different orders of Operations\\}{40}{subsection.9.3}%
 \contentsline {subsection}{\numberline {9.4}Potential Applications}{40}{subsection.9.4}%
 \contentsline {section}{\numberline {10}Bibliography}{41}{section.10}%
 \contentsline {section}{\numberline {11}Appendix}{i}{section.11}%
