@@ -1333,6 +1333,40 @@
       \verb 10.1007/b98888
       \endverb
     \endentry
+    \entry{richmond_general_2020}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=130f59539b8523c05c3cae92e4c3c2b1}{%
+           family={Richmond},
+           familyi={R\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{publisher}{1}{%
+        {De Gruyter}%
+      }
+      \strng{namehash}{130f59539b8523c05c3cae92e4c3c2b1}
+      \strng{fullhash}{130f59539b8523c05c3cae92e4c3c2b1}
+      \strng{bibnamehash}{130f59539b8523c05c3cae92e4c3c2b1}
+      \strng{authorbibnamehash}{130f59539b8523c05c3cae92e4c3c2b1}
+      \strng{authornamehash}{130f59539b8523c05c3cae92e4c3c2b1}
+      \strng{authorfullhash}{130f59539b8523c05c3cae92e4c3c2b1}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{7}
+      \field{title}{General {Topology}: {An} {Introduction}}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.1515/9783110686579
+      \endverb
+    \endentry
     \entry{rosenblatt_limit_1952}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=c4f89a917e2c0b620d8d49d9c5b7c5d3}{%

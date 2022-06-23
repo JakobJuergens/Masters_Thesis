@@ -55,14 +55,14 @@
 \contentsline {section}{\numberline {11}Appendix}{i}{section.11}%
 \contentsline {subsection}{\numberline {11.1}Informal Intuition}{i}{subsection.11.1}%
 \contentsline {subsection}{\numberline {11.2}$\mathbb {L}_2[0,1]$ as defined in \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{ii}{subsection.11.2}%
-\contentsline {subsection}{\numberline {11.3}Asymptotic Distribution of the Cram\'{e}r-von Mises Test}{iii}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.3}Asymptotic Distribution of the Cram\'{e}r-von Mises Test}{iv}{subsection.11.3}%
 \contentsline {subsection}{\numberline {11.4}Proof from \blx@tocontentsinit {0}\cite {hoeffding_large-sample_1952}}{iv}{subsection.11.4}%
 \contentsline {paragraph}{Theorem as stated in \blx@tocontentsinit {0}\cite {lehmann_testing_2005} \\}{iv}{subsection.11.4}%
 \contentsline {paragraph}{Proof as presented in \blx@tocontentsinit {0}\cite {lehmann_testing_2005}\\}{iv}{equation.11.53}%
 \contentsline {subsection}{\numberline {11.5}Argument for Finiteness}{v}{subsection.11.5}%
 \contentsline {subsection}{\numberline {11.6}Derivation of Asymptotic Distribution}{v}{subsection.11.6}%
-\contentsline {subsection}{\numberline {11.7}Multiple Testing}{viii}{subsection.11.7}%
+\contentsline {subsection}{\numberline {11.7}Multiple Testing}{ix}{subsection.11.7}%
 \contentsline {subsection}{\numberline {11.8}Application Data Cleaning}{ix}{subsection.11.8}%
 \contentsline {subsubsection}{\numberline {11.8.1}Excluded Holidays}{ix}{subsubsection.11.8.1}%
-\contentsline {subsubsection}{\numberline {11.8.2}Detrending and Deseasoning Results}{ix}{subsubsection.11.8.2}%
-\contentsline {subsection}{\numberline {11.9}Additional Figures}{x}{subsection.11.9}%
+\contentsline {subsubsection}{\numberline {11.8.2}Detrending and Deseasoning Results}{x}{subsubsection.11.8.2}%
+\contentsline {subsection}{\numberline {11.9}Additional Figures}{xi}{subsection.11.9}%
