@@ -174,7 +174,9 @@ style=authoryear,
 			\end{definition}
 			Without loss of generality it is possible to reduce theoretical considerations to the case of $\mathcal{I} = [0,1]$. Therefore, all treatment in this thesis focuses on the case of the unit interval.
 			
-		 Atypically, \cite{bugni_permutation_2021} define two square-integrable functions to be distinct if they differ on a non-empty set of Lebesgue-measure zero. However, as will become clear in later parts of this thesis, using this definition in the context of \cite{bugni_permutation_2021} only adds alternatives against which the test cannot have any power by construction. Therefore, this thesis is limited to the classical definition of $\mathbb{L}_2[0,1]$. However, the distinction can be important for proving asymptotic properties of the test and should be kept in mind. An overview of the differences between the definitions is provided in Appendix \ref{deviation}.
+		 Atypically, \cite{bugni_permutation_2021} define two square-integrable functions to be distinct if they differ on a non-empty set of Lebesgue-measure zero. However, as will become clear in later parts of this thesis, using this definition in the context of \cite{bugni_permutation_2021} only adds alternatives against which the test cannot have any power by construction. 
+		 In most parts of this thesis it is, therefore, sufficient to consider only the classical definition. However, in some places it is necessary to use the definition from \cite{bugni_permutation_2021} and in those cases the relevant differences will be explicitly named.
+		 An overview of the differences between the definitions is provided in Appendix \ref{deviation}.
 
 		\subsection{Bases of $\mathbb{L}_2[0,1]$}\label{bases_L2}
 			One commonly used orthonormal basis of $\mathbb{L}^2[0,1]$ is the Fourier Basis. It consists of a series of functions $\left(\psi_{i}^{F}(x)\right)_{i \in \mathbb{N}}$ taken from the sine-cosine form of the famous Fourier series.
@@ -422,7 +424,8 @@ style=authoryear,
 				F_X(z) = \mathbb{P}\left[X(t) \leq z(t) \quad \forall t \in [0,1]\right] \quad z \in \mathbb{L}_2[0,1]
 			\end{equation*}
 		\end{definition}
-		As previously mentioned, the authors assume that two functions $z_1, z_2 \in \mathbb{L}_2[0,1]$ are distinct even if they only differ on a set of Lebesgue-measure zero. However, as this convention only adds alternatives against which the test cannot have any power by construction, this thesis will only cover the case created by the typical definition of $\mathbb{L}_2[0,1]$. Appendix \ref{deviation} gives a short overview of how this convention influences the theoretical objects used by the test statistic.
+		As previously mentioned, \cite{bugni_permutation_2021} assume that two functions $z_1, z_2 \in \mathbb{L}_2[0,1]$ are distinct even if they only differ on a set of Lebesgue-measure zero. In this case, this distinction is important to appropriately define the distribution function. This can be seen by checking whether the distribution function evaluated at two functions from the same equivalence class will necessarily evaluate to the same value, which is trivially not the case. Therefore, for the definition of the distribution function of a random variable in the sense of \cite{bugni_permutation_2021}, it is necessary to use their definition of $\mathbb{L}_2[0,1]$.
+		However, as previously mentioned, this distinction will not have an influence in practice due to the construction of the test statistic and the chosen measure.
 		
 		\subsection{Assumptions}
 		As for most tests, there are assumptions that have to be fulfilled for the test to work correctly. The authors explicitly make four assumptions, some of which can be relaxed to allow for a more general setting.
