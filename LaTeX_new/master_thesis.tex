@@ -127,17 +127,16 @@ style=authoryear,
 			
 			To define Hilbert spaces, it is necessary to first define inner product spaces as Hilbert spaces are special cases of this larger category of spaces.
 			\begin{definition}[Inner Product]
-				A function $\langle \cdot , \cdot \rangle : \mathbb{V}^2 \rightarrow \mathbb{F}$ on a vector space $\mathbb{V}$ over a field $\mathbb{F}$ is called an inner product if the following four conditions hold for all $v, v_1, v_2 \in \mathbb{V}$ and $a_1, a_2 \in \mathbb{F}$.
+				A function $\langle \cdot , \cdot \rangle : \mathbb{V}^2 \rightarrow \mathbb{F}$ on a vector space $\mathbb{V}$ over $\mathbb{R}$ is called an inner product if the following four conditions hold for all $v, v_1, v_2 \in \mathbb{V}$ and $a_1, a_2 \in \mathbb{F}$.
 				\begin{multicols}{2}
 					\begin{enumerate}
 						\item $\langle v,v \rangle \geq 0$
 						\item $\langle v,v \rangle = 0$ if $v = 0$
 						\item $\langle a_1 v_1 + a_2 v_2, v \rangle = a_1 \langle v_1, v \rangle + a_2 \langle v_2, v \rangle$
-						\item $\langle v_1, v_2 \rangle = \overline{\langle v_2, v_1 \rangle}$
+						\item $\langle v_1, v_2 \rangle = \langle v_2, v_1 \rangle$
 					\end{enumerate}
 				\end{multicols}
 			\end{definition}
-			As this thesis is limited to the case $\mathbb{F} = \mathbb{R}$, property 4 can be restated as $\langle v_1, v_2 \rangle = \langle v_2, v_1 \rangle$, since the complex conjugate of a real number is the number itself.
 			
 			\begin{definition}[Inner Product Spaces and Hilbert Spaces]
 				A vector space with an associated inner product is called an inner product space. Two elements $v_1$ and $v_2$ of an inner product space are orthogonal if $\langle v_1, v_2 \rangle = 0$.
@@ -147,7 +146,7 @@ style=authoryear,
 			Analogously to vector spaces, it is useful to express elements of a Hilbert space as linear combinations of a basis. However, as elements of Hilbert spaces can be infinite dimensional, the classical idea of a finite basis used to express every element has to be extended. \cite{hsing_theoretical_2015} define the closed span and orthonormal sequences in the following way, leading to a subsequent definition of bases for Hilbert spaces.
 		
 			\begin{definition}[Closed Span]
-				The closed span of a subset $A$ of some normed space, e.g. a normed vector space or a Hilbert space, is the closure of $\textit{span}\left(A\right)$ with respect to the distance induced by the norm of the space. In the following it is denoted by $\overline{{\textit{span}\left(A\right)}}$.
+				The closed span of a subset $A$ of some normed space, e.g. a Hilbert space, is the closure of $\textit{span}\left(A\right)$ with respect to the distance induced by the norm of the space. In the following it is denoted by $\overline{{\textit{span}\left(A\right)}}$.
 			\end{definition}
 		
 %			{\color{red} This is verbatim!}
@@ -159,22 +158,19 @@ style=authoryear,
 			These definitions lead to a natural analogon of the basis in finite-dimensional vector spaces for the case of potentially infinite-dimensional Hilbert spaces.
 			\begin{definition}[Orthonormal Basis of a Hilbert Space]
 				An orthonormal sequence $\{e_n\}$ in a Hilbert space $\mathbb{H}$ is called an orthonormal basis of $\mathbb{H}$ if $\overline{{\textit{span}\left(\{e_n\}\right)}} = \mathbb{H}$. 
-			\end{definition}
-			
-			A special class of Hilbert spaces are separable Hilbert spaces. Their properties often allow for significant simplifications in the derivation of theoretical properties of methods in functional data analysis. One such case is the calculation of specific test statistics that are at the core of \cite{bugni_permutation_2021}.
-			\begin{definition}[Separable Hilbert Space]
 				A Hilbert space that possesses a countable complete orthonormal basis is called separable Hilbert space.
 			\end{definition}
 			
+			A special class of Hilbert spaces are separable Hilbert spaces. Their properties often allow for significant simplifications in the derivation of theoretical properties of methods in functional data analysis. One such case is the calculation of specific test statistics that are at the core of \cite{bugni_permutation_2021}.
 			The most prevalent separable Hilbert space in functional data analysis is the space of square-integrable functions. However, it is often interesting to consider whether square-integrability is a necessary assumption. Due to its prevalence in functional data analysis, square-integrability is sometimes assumed even though generalizations to less restrictive function spaces might be possible.
 			
 			\begin{definition}[Hilbert Space of Square Integrable Functions]
-				The space of square-integrable functions on a closed interval $\mathcal{I} \subset \mathbb{R}$ together with the norm $\langle f,g\rangle = \int_{\mathcal{I}} f(t)g(t) \mathrm{d}t$ is a Hilbert space, denoted by $\mathbb{L}_2(\mathcal{I})$.
+				The space of square-integrable functions on a compact interval $\mathcal{I} \subset \mathbb{R}$ together with the norm $\langle f,g\rangle = \int_{\mathcal{I}} f(t)g(t) \mathrm{d}t$ is a Hilbert space, denoted by $\mathbb{L}_2(\mathcal{I})$.
 				A function $f: \mathcal{I} \rightarrow \mathbb{R}$ is called square-integrable if the following condition holds.
 				\begin{equation}
 					\int_{\mathcal{I}} \left[f(t)\right]^2\mathrm{d}t < \infty
 				\end{equation}
-				To give the space the properties that are typically desired, it is defined as a space of equivalence classes, where two functions are equivalent if they differ at most on a set of Lebesgue-measure zero. 
+			More precisely, it is defined as a space of equivalence classes, where two functions are equivalent if they differ at most on a set of Lebesgue-measure zero. 
 			\end{definition}
 			Without loss of generality it is possible to reduce theoretical considerations to the case of $\mathcal{I} = [0,1]$. Therefore, all treatment in this thesis focuses on the case of the unit interval.
 			
@@ -220,7 +216,7 @@ style=authoryear,
 			This idea specializes to the case of random functions realizing in $\mathbb{L}_2[0,1]$ and thereby introduces the option to use measures induced by existing random functions.
 			Therefore, assume that $Z(t)$ is a random function in $\mathbb{L}_2[0,1]$ inducing a measure $\mu$. As previously explained, $Z(t)$ can be expressed in terms of a functional basis.
 			\begin{equation}
-				Z(t) = \sum_{k = 1}^{\infty} b_k \psi_k(t) \quad \text{s.t.} \quad \sum_{k = 1}^{\infty} b_k^2 \leq \infty \quad \text{a.s.}
+				Z(t) = \sum_{k = 1}^{\infty} b_k \psi_k(t) \quad \text{s.t.} \quad \sum_{k = 1}^{\infty} b_k^2 < \infty
 			\end{equation}
 			The latter property is needed to ensure the square-integrability of the random function. As shown by this Equation, the random function is fully described by the distribution of a countably infinite, almost surely square-summable sequence of scalar random variables $b_k$. The theory of random sequences is out of the scope of this thesis. However, it is interesting to look at the relationship between the measure $\mu$ induced by the infinite sum and the measure $\mu_K$ induced by its finite counterpart shown in Equation \ref{finite_sum}.
 			\begin{equation}\label{finite_sum}
@@ -234,18 +230,18 @@ style=authoryear,
 			\begin{itemize}
 				\item $\textbf{B} = \left\{b(a) \ \vert \ a \in A\right\}$
 				\item $\textbf{B}_K = \left\{\left(b_1, \dots, b_K \right) \ \vert \ \exists b' \in B \  \forall k = 1, \dots, K \quad b_k = b'_k \right\}$
-				\item $\textbf{A}_K = \left\{ \sum_{i = 1}^{\infty} b_k \psi_k(t) \ \vert \ \left(b_1, \dots, b_K \right) \in \textbf{B}_K \quad \text{and} \quad \sum_{k = 1}^{\infty} b_k^2 < \infty \right\}$
+				\item $\textbf{A}_K = \left\{ \sum_{k = 1}^{\infty} b_k \psi_k(t) \ \vert \ \left(b_1, \dots, b_K \right) \in \textbf{B}_K \quad \text{and} \quad \sum_{k = 1}^{\infty} b_k^2 < \infty \right\}$
 			\end{itemize}
 			The authors then show that for any $A$ in the Borel sigma field of subsets of $\mathbb{L}_2[0,1]$, the following condition holds, where $\mathbb{P}$ denotes the probability measure associated with $\mu$.
 			\begin{equation}
 				\lim_{K \rightarrow \infty} \mathbb{P}(\textbf{A}_K) = \mathbb{P}(\textbf{A})
 			\end{equation}
-			This argument allows using a truncated basis in the construction of a measure at a reasonably high truncation parameter $K$ as integrals with respect $\mu_K$ converge to their counterparts with respect to $\mu$ as the truncation parameter $K$ goes to infinity.
+			This argument allows using a truncated basis in the construction of a measure at a reasonably high truncation parameter $K$ as integrals with respect $\mu_K$ over a functional $\mathcal{F}(z)$ converge to their counterparts with respect to $\mu$ as the truncation parameter $K$ goes to infinity.
 			\begin{equation}
-				\lim_{K \rightarrow \infty} \int_{\mathbb{L}_2[0,1]} \mathcal{F}(z) \mathrm{d}\mu_K = \int_{\mathbb{L}_2[0,1]} \mathcal{F}(z) \mathrm{d}\mu
+				\lim_{K \rightarrow \infty} \int_{\mathbb{L}_2[0,1]} \mathcal{F}(z) \mathrm{d}\mu_K(z) = \int_{\mathbb{L}_2[0,1]} \mathcal{F}(z) \mathrm{d}\mu(z)
 			\end{equation}
 			
-			A more general treatment of these aspects is outside the scope of this thesis. Therefore, this section shall primarily serve to give intuition. For readers that are interested in a more detailed mathematical analysis, \cite{gihman_theory_2004} and \cite{skorohod_integration_1974} give a rigorous treatment of the necessary theory on measures, probabilities, and integration in Hilbert spaces. 
+			A more detailed treatment of these aspects is outside the scope of this thesis. Therefore, this section shall primarily serve to give intuition. For readers that are interested in a more detailed mathematical analysis, \cite{gihman_theory_2004} and \cite{skorohod_integration_1974} give a rigorous treatment of the necessary theory on measures, probabilities, and integration in Hilbert spaces. 
 		
 		\subsection{Functional Integration on $\mathbb{L}_2[0,1]$}\label{Integration}
 			To evaluate the expected value of the functional mentioned at the beginning of Section \ref{prob_measures_l2}, it is necessary to integrate over a function space. Therefore, it is necessary to explore the ideas of functional integration and integration on separable Hilbert spaces. 
@@ -260,21 +256,14 @@ style=authoryear,
 %			Like the more general concept of Monte-Carlo simulations, Monte-Carlo integration relies on randomness to approximate an object that might be difficult or impossible to evaluate algebraically. 
 			To illustrate the principle, assume that the following integral has a fixed value in $\mathbb{R}$ and that $\mu$ is induced by a continuous, scalar-valued random variable $Z$ realizing in $[0,1]$.
 			\begin{equation}
-				V = \int_{0}^{1} g(x) \mathrm{d}\mu = \int_{0}^{1} g(x) f_Z(x) \mathrm{d}x \quad \text{where} \quad g:[0,1] \rightarrow \mathbb{R}
+				V = \int_{0}^{1} g(x) \mathrm{d}\mu(x) = \int_{0}^{1} g(x) f_Z(x) \mathrm{d}x \quad \text{where} \quad g:[0,1] \rightarrow \mathbb{R}
 			\end{equation}
-			Assuming that it is possible to draw independent realizations of $Z$, an intuitive approach to approximate $V$ is given by the following two equations.
-			\begin{equation}
+			Assuming that it is possible to draw independent realizations of $Z$, an intuitive approach to approximate $V$ is given by the Equation \ref{MC_int}.
+			\begin{equation}\label{MC_int}
 				\hat{V} = \frac{1}{n} \sum_{i = 1}^{n} g(Z_i) \quad \text{where} \quad Z_i \sim_{\text{i.i.d.}} Z \quad i = 1, \dots, n
 			\end{equation}
-			Assuming that $\textit{Var}(g(Z)) < \infty$, this approach is justified because $\hat{V} \rightarrow_p V$ as shown by the following equations.
-			\begin{equation}
-					\mathbb{E}[\hat{V}] = \mathbb{E}\left[\frac{1}{n}\sum_{i = 1}^{n} g(Z_i)\right] = \frac{1}{n}\sum_{i = 1}^{n}\mathbb{E}\left[g(Z_i)\right] \stackrel{Z_i \ \text{i.i.d.}}{=} \mathbb{E}\left[g(Z)\right] = V
-			\end{equation}
-			\begin{equation}
-				\textit{Var}\left(\hat{V}\right) = \textit{Var}\left(\frac{1}{n}\sum_{i = 1}^{n} g(Z_i)\right) \stackrel{Z_i \ \text{i.i.d.}}{=} 
-				\frac{1}{n} \textit{Var}\left(g(Z)\right) \rightarrow 0 \quad \text{as} \quad n \rightarrow \infty
-			\end{equation}
-			Therefore, assuming that expectation and variance are finite, this approach can give approximations of the expectation that converge to the correct value as the number of realizations of $Z$ goes to infinity.
+			This approach is justified because $\hat{V} \rightarrow_p V$ by the law of large numbers.
+			Therefore, assuming that the expectation is finite, this approach can give approximations of the expectation that converge to the correct value as the number of realizations of $Z$ goes to infinity.
 			As the principle of this method does not depend on the domain of $g$, it can analogously be used in the context of function spaces. It gives a convenient alternative to the theoretically complex methods mentioned before and is, therefore, a useful alternative in the context of this thesis. More information on Monte-Carlo methods in general and Monte-Carlo integration in particular can be found in \cite{shonkwiler_explorations_2009}.
 		
 	\section{Cram\'{e}r-von Mises Tests}\label{CvM_Tests}
@@ -308,7 +297,6 @@ style=authoryear,
 		
 			An example showing the empirical distribution function for a selection of samples drawn from a standard normal distribution is given in Figure \ref{ecdf_plot} in Appendix \ref{add_figures}. As this plot illustrates, the empirical distribution function gets increasingly close to the theoretical distribution function of the underlying random variable as the number of realizations increases. In fact, using the strong law of large numbers it is easy to show that $\hat{F}_n(x) \stackrel{\text{a.s.}}{\rightarrow} F(x) \quad  \forall x$ implying that $\hat{F}_n(x)$ is a consistent estimator of $F(x)$.
 			
-		\newpage
 		\subsection{Null Hypothesis}
 			As previously mentioned, the null hypothesis of CvM tests relates to distributional equality of random variables. 
 %			This is different from tests such as the t-test which only tests for differences in specific properties of random variables like their mean.			
@@ -331,22 +319,23 @@ style=authoryear,
 			\end{equation}
 			\cite{darling_kolmogorov-smirnov_1957} gives an overview on the CvM test and some related tests in both the one-sample goodness-of-fit and the two-sample setting. \cite{anderson_distribution_1962} explores the small sample distribution of the two-sample test statistic and provides a comparison to the limiting distribution derived by \cite{rosenblatt_limit_1952} and \cite{fisz_result_1960} which is given in Section \ref{asymp_CvM} in the Appendix. These distributions can be used to perform tests with appropriate critical values and have been implemented in many packages for statistical computing.\\
 			
-			It is possible to generalize this test by introducing a weight function $w(x)$ in the following way. 
-			\begin{equation}
-				T^{\textit{EDF}}_{m,n} = \frac{nm}{n+m} \int_{-\infty}^{\infty}\left(\hat{F}_{m}(t) - \hat{G}_{n}(t)\right)^{2} w(t) \mathrm{d} \left(\frac{m \hat{F}_{m}(t) + n \hat{G}_{n}(t)}{m+n}\right)
-			\end{equation}
-			The CvM test corresponds to $w(t) = 1$. It is advisable to think about the desired properties of the test when choosing a specific weight function as it can affect the power against different types of alternatives. A well-known weight function for the one-sample CvM goodness of fit test was proposed by \cite{anderson_asymptotic_1952} and \cite{anderson_test_1954} and adapted to the two-sample setting by \cite{pettitt_two-sample_1976}. The latter is given by $w(t) = \frac{m \hat{F}_m(t) + n \hat{G}_n(t)}{m+n}$ and has been shown to have better properties in some scenarios.					
+%			It is possible to generalize this test by introducing a weight function $w(x)$ in the following way. 
+%			\begin{equation}
+%				T^{\textit{EDF}}_{m,n} = \frac{nm}{n+m} \int_{-\infty}^{\infty}\left(\hat{F}_{m}(t) - \hat{G}_{n}(t)\right)^{2} w(t) \mathrm{d} \left(\frac{m \hat{F}_{m}(t) + n \hat{G}_{n}(t)}{m+n}\right)
+%			\end{equation}
+%			The CvM test corresponds to $w(t) = 1$. It is advisable to think about the desired properties of the test when choosing a specific weight function as it can affect the power against different types of alternatives. A well-known weight function for the one-sample CvM goodness of fit test was proposed by \cite{anderson_asymptotic_1952} and \cite{anderson_test_1954} and adapted to the two-sample setting by \cite{pettitt_two-sample_1976}. The latter is given by $w(t) = \frac{m \hat{F}_m(t) + n \hat{G}_n(t)}{m+n}$ and has been shown to have better properties in some scenarios.					
 			
 	\section{Permutation Tests}\label{Permutation_Tests}
 		The third component to understanding \cite{bugni_permutation_2021} is to understand the principles of permutation testing.
 		In layman's terms, the idea of a permutation test is the following: if two samples show distinctly different properties, that will lead to differences in an appropriately chosen summary statistic. If one were to permute the elements of the samples randomly, one would expect these differences in the test statistic to disappear.
-		Permutation tests formalize this intuition. The following section closely follows chapter 15 from \cite{lehmann_testing_2005} with some additional input from \cite{van_der_vaart_weak_1996}.
+		Permutation tests formalize this intuition. The following section closely follows chapter 15 from \cite{lehmann_testing_2005}.
 	
 		\subsection{Functional Principle of Permutation Tests}
-			One of the defining features of a test is its null hypothesis. For the case of randomization tests, it is often formulated in the sense of distributional equality making the approach particularly interesting for the questions studied in this thesis. 
-%			Therefore, the following section gives an overview of the principles of randomization testing in general and permutation testing in particular.
-			
+			One of the defining features of a test is its null hypothesis. For the case of randomization tests, which are a generalization of permutation tests, it is often formulated in the sense of distributional equality.  This makes the approach particularly interesting for the questions studied in this thesis. \\
+						
 			Let $X$ be a random variable realizing in a sample space $\mathcal{X}$. Then, a typical null hypothesis in randomization testing is that the distribution $P$ generating $X$ belongs to a family of distributions $\Omega_0$. For this very general setting, \cite{lehmann_testing_2005} define an assumption called the randomization hypothesis that allows for the construction of randomization tests.
+			
+			\newpage
 			\begin{assumption}[Randomization Hypothesis]\label{rand_hypo}
 				 Let $G$ be a finite group of transformations $g: \mathcal{X} \rightarrow \mathcal{X}$. Under the null hypothesis of the randomization test, the distribution of $X$ is invariant under the transformations $g \in G$. In other words, $gX$ and $X$ have the same distribution whenever $X$ has distribution $P \in \Omega_0$.
 			\end{assumption}
@@ -370,7 +359,7 @@ style=authoryear,
 				\end{equation}
 			\end{multicols}
 			
-			Using these objects, we can define a test function that decides whether the null hypothesis is rejected based on the value of the test statistic calculated on the non-permuted samples $T$ and a chosen size $\alpha$ for the test.
+			Using these objects, it is possible to define a test function that decides whether the null hypothesis is rejected based on the value of the test statistic calculated on the non-permuted samples $T$ and a chosen size $\alpha$ for the test.
 			\begin{definition}[Randomization Test Function]\label{RandTestFunc}
 				The Randomization Test Function is a function $\phi: \mathcal{X} \rightarrow \mathbb{R}$ defined in the following way.
 					\begin{equation*}
@@ -417,7 +406,7 @@ style=authoryear,
 %		\subsection{Size and Power}
 		
 		\subsection{Asymptotic Properties}\label{perm_asymp}
-			One important question concerning the properties of randomization tests is their asymptotic properties when the number of observations goes to infinity. This section follows 15.2.2 from \cite{lehmann_testing_2005}. Concerning these asymptotic properties, it is necessary to consider not only a sequence of samples increasing in size but a sequence of settings, where the prerequisite objects change accordingly. Consider therefore a sequence of settings with $X = X^N$, $P = P_N$, $\mathcal{X} = \mathcal{X}_N$, $G = G_N$, $T = T_N$ etc. for an increasing sequence of total number of observations $N$.
+			One important question concerning the properties of randomization tests is their asymptotic properties when the number of observations goes to infinity. This section follows 15.2.2 from \cite{lehmann_testing_2005}. Concerning these asymptotic properties, it is helpful to consider not only a sequence of samples increasing in size but a sequence of settings, where the prerequisite objects change accordingly. Consider therefore a sequence of settings with $X = X^N$, $P = P_N$, $\mathcal{X} = \mathcal{X}_N$, $G = G_N$, $T = T_N$ etc. for an increasing sequence of total number of observations $N$.
 			Defining the randomization distribution of $T_N$ analogously to Definition \ref{rand_dist} as $\hat{R}_N(t) = \frac{1}{M_N} \sum_{g \in G_N} \mathbbm{1} \left[T_N(gX^N) \leq t\right]$ it is possible to analyze the limiting behavior of $\hat{R}_N(t)$ as $N \rightarrow \infty$ under the null hypothesis.\\
 			As previously mentioned, the value of the randomization distribution function is itself a random variable. Thus, for a random variable $\mathcal{G}_N$ that is uniformly distributed on $G_N$, the following statement holds under the randomization hypothesis.
 			\begin{equation}
@@ -439,14 +428,13 @@ style=authoryear,
 		\end{definition}
 		As previously mentioned, the authors assume that two functions $z_1, z_2 \in \mathbb{L}_2[0,1]$ are distinct even if they only differ on a set of Lebesgue-measure zero. However, as this convention only adds alternatives against which the test cannot have any power by construction, this thesis will only cover the case created by the typical definition of $\mathbb{L}_2[0,1]$. Appendix \ref{deviation} gives a short overview of how this convention influences the theoretical objects used by the test statistic.
 		
-		\newpage
 		\subsection{Assumptions}
 		As for most tests, there are assumptions that have to be fulfilled for the test to work correctly. The authors explicitly make four assumptions, some of which can be relaxed to allow for a more general setting.
 			\begin{assumption}\label{Ass1}\hfill\vspace{-0.8cm}
 				\begin{enumerate}
 					\item $X(t)$ and $Y(t)$ are separable, $\mu$-measurable stochastic processes.
-					\item $\{X_i(t) \: \vert \: i = 1, \dots, n\}$ is an independent random sample of the process $X(t)$. \\
-					$\{Y_i(t) \: \vert \: i = 1, \dots, m\}$ is an independent random sample of $Y(t)$ and is independent of $\{X_i(t) \: \vert \: i = 1, \dots, n\}$.
+					\item $\{X_i(t) \: \vert \: i = 1, \dots, n\}$ is a random sample of the process $X(t)$. \\
+					$\{Y_i(t) \: \vert \: i = 1, \dots, m\}$ is a random sample of $Y(t)$ independent of $\{X_i(t) \: \vert \: i = 1, \dots, n\}$.
 				\end{enumerate}
 			\end{assumption}
 		As this assumption contains multiple points, it is useful to address them individually.
@@ -502,7 +490,7 @@ style=authoryear,
 				\end{equation}
 			\end{multicols}
 			
-			As in the scalar setting described in Section \ref{CvM_Tests}, the idea of the test is that the differences between these empirical distribution functions are expected to be comparatively small under the null hypothesis.
+			As in the scalar setting described in Section \ref{CvM_Tests}, the idea of the test is that the differences between these empirical distribution functions are expected to be comparatively small under the null hypothesis. This difference can be quantified using the integrated squared difference leading to the following equation.
 			\begin{equation}
 				\tau = \int_{\mathbb{L}_2[0,1]}\left[F(z) - G(z)\right]^2 \mathrm{d} \mu(z)
 			\end{equation}
@@ -545,9 +533,10 @@ style=authoryear,
 			In the context of the limiting distribution, it is necessary to consider the implications of the definition of $\mathbb{L}_2[0,1]$ as given by \cite{bugni_permutation_2021}.  Where previously, it was sufficient to consider the classical definition of $\mathbb{L}_2[0,1]$, it can make a difference in the asymptotic considerations. Even though this distinction will not be considered further in this thesis, for theoretical considerations of this test, it is important that, for example, $\Upsilon(z)$ is defined with respect to the definition of $\mathbb{L}_2[0,1]$ from \cite{bugni_permutation_2021}.
 		
 		\subsection{Construction of the Measure $\mu$}\label{mu}
-			As can be seen in the fact that the null hypothesis is formulated with respect to a measure $\mu$ on $\mathbb{L}_2[0,1]$, this measure significantly impacts the test's performance. Compared to the scalar CvM test described in Section \ref{CvM_Tests}, it fulfills a similar function to the weight function in that it determines against which alternatives the test has comparatively high power. It is, therefore, crucial to choose the measure according to the kind of violation of the null hypothesis that is suspected. If no specific type of violation is expected, a choice similar to a constant weight function can be made.\\
+			As can be seen in the fact that the null hypothesis is formulated with respect to a measure $\mu$ on $\mathbb{L}_2[0,1]$, this measure significantly impacts the test's performance. Compared to the scalar CvM test described in Section \ref{CvM_Tests}, it fulfills a similar function to the weight function in that it determines against which alternatives the test has comparatively high power. It is, therefore, crucial to choose the measure according to the kind of violation of the null hypothesis that is suspected. If no specific type of violation is expected, a choice similar to a constant weight function can be made. However, this latter case is functionally different from the scalar setting. In a scalar  CvM type test a constant weight function gives the same weight to the whole domain. Intuitively this corresponds to some uniform distribution on $\mathbb{L}_2[0,1]$ which does not exist. Instead, the original authors refer to a constant mean function of the inducing random variable.
 			
-			As hinted at in Section \ref{prob_measures_l2}, \cite{bugni_permutation_2021} approach this problem by constructing a random function $Z(t)$ that induces a suitable probability measure $\mu$ as described in Section \ref{prob_measures_l2}. 			
+			\newpage
+			As hinted at in Section \ref{prob_measures_l2}, \cite{bugni_permutation_2021} approach the problem of choosing a measure by constructing a random function $Z(t)$ that induces a suitable probability measure $\mu$ as described in Section \ref{prob_measures_l2}. 			
 			\begin{equation}\label{non_truncated}
 				Z(t) = \sum_{k = 1}^{\infty} b_k \psi_k(t)
 				\quad \text{s.t.} \quad
@@ -577,7 +566,7 @@ style=authoryear,
 				\item In their application, \cite{bugni_permutation_2021} set the distribution of the Fourier coefficients manually, as $b_1 \sim \mathcal{N}(\mu_1, \frac{1}{K})$ and $b_k \sim \mathcal{N}(0, \frac{1}{K}) \quad k = 2, \dots, K$ where 
 				$$\mu_1 = \textit{median}_i \left\{\max_{t\in [0,1]} X_i(t) \ | \ i = 1, \dots, n, \right\}$$
 				This method is equivalent to setting $w(t) = \mu_1 \quad \forall t \in [0,1]$, as the inner product of any constant function with Fourier basis functions of order two or higher will be zero due to their cyclical nature.
-				\item Another idea is to choose a non-constant weight function based on the reference sample. One option is to use specific point-wise quantiles. e.g. the 95\% quantile, of the reference sample: $w(t) = \textit{quantile}_q \{X_i(t) \ | \ i = 1, \dots n\}$. This allows the generated functions for the approximation of the CvM statistic to resemble the reference data more closely, which could improve the properties of the test.
+				\item Another idea is to choose a non-constant weight function based on the sample 1. One option is to use specific point-wise quantiles. e.g. the 95\% quantile, of the reference sample: $w(t) = \textit{quantile}_q \{X_i(t) \ | \ i = 1, \dots n\}$. This allows the generated functions for the approximation of the CvM statistic to resemble the reference data more closely, which could improve the properties of the test.
 			\end{enumerate}
 		
 			\begin{figure}[H]
@@ -719,7 +708,7 @@ style=authoryear,
 			\end{enumerate}
 			The simulations presented in Section \ref{Simulation_Study} use the first approach as it limits the computational cost of the procedure while staying close to the original paper. The same problem occurs for the mean-focused test. In this case, linear interpolation between the discrete points is used to approximate the mean function on the full interval.
 
-		
+	\newpage
 	\section{Test for Persistence Alternatives}\label{variant}
 		One particular application for the CvM type test presented in \cite{bugni_permutation_2021} is a slight modification leading to a test for differences in the persistence structure of the data generating processes. This test is an interesting extension as there are few existing methods that test a similar null hypothesis.\\
 		
@@ -773,7 +762,7 @@ style=authoryear,
 		Therefore, this focused approach could be tailored by choosing an appropriate $\mu$ to detect differences in this general idea of persistence of the data generating processes. 
 		
 		\subsection{Test-Procedure}\label{persistence_test}
-		The modified test is functionally nearly identical to the CvM type test described in \cite{bugni_permutation_2021}. However, it adds a standardization step to eliminate differences in the mean functions of the processes and their variance structure. In each permutation step, the calculation of the test statistic is thus described by the following algorithm.\\
+		The modified test is functionally nearly identical to the CvM type test described in \cite{bugni_permutation_2021}. However, it adds a standardization step to eliminate differences in the mean functions of the processes and their variance structure. In each permutation step, the calculation of the test statistic is thus described by the following algorithm.
 		
 		\noindent\fbox{%
 			\parbox{\textwidth}{%
@@ -833,6 +822,7 @@ style=authoryear,
 		}
 		\vspace{0.2cm}
 		
+		\newpage
 		This thesis focuses on three distinct violations of the null hypothesis described in the following. For each of the following settings sample 1 is generated by the same process as a reference point to compare the different settings. Therefore, the parameters for sample 1 are therefore chosen as follows.
 		\begin{multicols}{2}
 			\begin{enumerate}
@@ -848,13 +838,12 @@ style=authoryear,
 				  The first setting is the benchmark where both samples are generated using the same random function. This setting is meant to support the theoretical points arguing that the permutation tests described in this thesis have the correct size.
 			\item \textbf{Mean Shift}\\
 				  The second setting introduces a shifted mean function. Deviating from sample 1, sample 2 has mean function that is smaller for points in the center of the unit interval.
-				  $$\mu_2(t) = x (x-1) \quad t \in \mathcal{T}$$
+				  $$\mu_2(t) = t (t-1) \quad t \in \mathcal{T}$$
 				  Pure shifts of the mean function are one scenario where \cite{bugni_permutation_2021} describe weak power of the Cramer-von Mises type test. 
-			\newpage
 			\item \textbf{Correlation Shift}\\
 			 	  The third setting violates the null hypothesis by changing the correlation structure between neighboring observations. Here, observations are less persistent due to a lower, but still constant choice of the correlation parameter.
 			 	  $$\rho_2(t) = 0 \quad \forall t = 0.01, \dots, 1$$
-%			 	  This setting can therefore be seen as testing for alternatives consisting of variations of the persistence structure of a random function.
+			 	  For this specific choice, each observation in sample 2 is a sequence of independent observations that follow a standard normal distribution.
 			\item \textbf{Variance Shift}\\
 				  In the fourth simulation setting, the point-wise variance function is altered in the following way.
 				  $$\sigma_2(t) = 1 + 0.5t \quad \quad t \in \mathcal{T}$$
@@ -872,8 +861,6 @@ style=authoryear,
 		
 		Before performing the simulations, there is a number of parameter choices that has to be made to as explained in the theoretical description of the test. These parameter choices have a considerable influence on the properties of the test. Therefore, further simulations comparing different parameter choices might be useful to inform future usage in applied settings.
 		
-		\noindent\fbox{%
-			\parbox{\textwidth}{%
 		\begin{enumerate}
 			\item As shown in the mathematical construction of the data, these simulations compare samples consisting of a smaller number of observations per sample $n=20$ and focus on the two-sample version of the test. Additionally, each observation is constructed from a lower number of discrete observations (101) than in the original paper.
 			\item Concerning the choice of the truncation parameter $K$, which is used in the construction of the measure $\mu$ as shown in Equation \ref{truncation}, the authors argue that their simulations showed that the power of the test became flat at about $K = 20$ and chose $K = 25$. For the sake of reproducing their results, the same parameter was used in this thesis.
@@ -882,9 +869,8 @@ style=authoryear,
 			\item For the construction of the measure $\mu$, the weight function $w(t)$ has to be chosen. In this simulation, the weight function is chosen as in the empirical application in \cite{bugni_permutation_2021}. This approach is described in Section \ref{mu} as the first approach listed for the choice of $w(t)$. 
 			\item Deviating from the original authors' choice due to preliminary tests, the sequence $\left(\rho_i\right)_{i = 1, \dots, K}$ is determined by checking the sample standard deviation of the corresponding Fourier coefficients in the first sample obtained by fitting the same basis that is used in the construction of $\mu$ to the observations. These are then multiplied by a constant factor to increase variability in the functions drawn from $\mu$. This higher variability seemed to improve performance in preliminary tests, but should be studied in further experiments.
 			\item Using the same choice as in the original paper, the simulations use independent standard normal error terms $U_k \quad k=1, \dots, K$ for the Fourier coefficients shown in Equation \ref{Fourier_coefs} for the construction of the measure. As the processes under consideration are Gaussian by construction and thereby have thin tails, this choice should be reasonable following the authors' argumentation.
+			\item For each setting described in the following 1000 simulation runs were performed to approximate the power of the test against the described alternatives. Since some parts of the simulation are computationally quite intensive, this choice was guided by runtime restrictions and \cite{bugni_permutation_2021} where the authors also chose to to perform 1000 runs per simulation.
 		\end{enumerate}
-			}
-		}
 		
 		\subsection{Results}
 		Taking a look at the results from the simulation study, it is interesting to compare the empirical rejection probabilities for different types of violations of the null hypothesis.
@@ -1050,7 +1036,6 @@ style=authoryear,
 	\section{Outlook}\label{Outlook}
 		This Outlook section will present some problems that came up during the process of writing this thesis that might be interesting to study in further research. Additionally, it presents some ideas for simulations that could improve the understanding of methods such as CvM type tests in a functional data setting and presents real-world scenarios that might be interesting applications for the methods introduced in this thesis.
 		
-		\newpage
 		\subsection{Potential Problems}
 			The results presented in this thesis give a good impression of the possibilities of the method developed in \cite{bugni_permutation_2021}. However, there are also potential problems that should not go unnamed.
 			
@@ -1236,15 +1221,6 @@ style=authoryear,
 				& \int_{\mathbb{L}_2[0,1]} 1 \ \mathrm{d}\mu(z) = 1 \land \int_{\mathbb{L}_2[0,1]} 0 \ \mathrm{d}\mu(z) = 0 \implies \int_{\mathbb{L}_2[0,1]}\left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2 \mathrm{d}\mu(z) \in [0,1]
 			\end{split}
 		\end{equation}			 
-		The same argument can be made concerning the variance.
-		\begin{equation}the 
-			\begin{split}
-				& \left(\left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2 \in [0,1] \quad \forall z \in \mathbb{L}_2[0,1]\right) \land \left(\int_{\mathbb{L}_2[0,1]}\left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2 \mathrm{d}\mu(z) \in [0,1] \right)\\
-				& \implies \left[ \left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2 - \int_{\mathbb{L}_2[0,1]}\left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2 \mathrm{d}\mu(z) \right]^2 \in [0,1] \ \forall z \in \mathbb{L}_2[0,1]\\
-				& \int_{\mathbb{L}_2[0,1]} 1 \ \mathrm{d}\mu(z) = 1 \land \int_{\mathbb{L}_2[0,1]} 0 \ \mathrm{d}\mu(z) = 0 \\
-				& \implies \int_{\mathbb{L}_2[0,1]}\left[ \left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2 - \int_{\mathbb{L}_2[0,1]}\left[\hat{F}_n(z) - \hat{G}_m(z)\right]^2 \mathrm{d}\mu(z) \right]^2 \mathrm{d}\mu(z) \in [0,1] \\
-			\end{split}
-		\end{equation}
 	
 		\subsection{Derivation of Asymptotic Distribution}\label{asymp_deriv}
 			This section presents an adapted proof for the limiting distribution of the CvM permutation test as presented in the supporting information of \cite{bugni_permutation_2021}, additional information was taken from the proof of Theorem 3.1 in \cite{bugni_goodness--fit_2009}.\\
@@ -1256,7 +1232,6 @@ style=authoryear,
 				\end{equation}
 			\end{theorem}
 			
-			\newpage
 			Additionally, it is useful to prove the following Lemmas taken from the supporting information of \cite{bugni_permutation_2021} before proving the main point.
 			Define the following objects
 				\begin{equation}
@@ -1337,7 +1312,7 @@ style=authoryear,
 					H_{N,K1}(z) = \sum_{k = 1}^{K} c_{N,k}\psi_k(z)
 				\end{equation*}
 				\begin{equation}
-					H_{N,K2}(z) = \sum_{k = K=1}^{\infty} c_{N,k}\psi_k(z)
+					H_{N,K2}(z) = \sum_{k = K+1}^{\infty} c_{N,k}\psi_k(z)
 				\end{equation}
 			\end{multicols}
 			where
