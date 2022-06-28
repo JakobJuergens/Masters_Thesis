@@ -170,12 +170,11 @@ style=authoryear,
 				\begin{equation}
 					\int_{\mathcal{I}} \left[f(t)\right]^2\mathrm{d}t < \infty
 				\end{equation}
-			More precisely, it is defined as a space of equivalence classes, where two functions are equivalent if they differ at most on a set of Lebesgue-measure zero. 
+			It is defined as a space of equivalence classes, where two functions are equivalent if they differ at most on a set of Lebesgue-measure zero. 
 			\end{definition}
 			Without loss of generality it is possible to reduce theoretical considerations to the case of $\mathcal{I} = [0,1]$. Therefore, all treatment in this thesis focuses on the case of the unit interval.
 			
-		 Atypically, \cite{bugni_permutation_2021} define two square-integrable functions to be distinct if they differ on a non-empty set of Lebesgue-measure zero. This detail makes theoretical considerations, such as deriving the exact properties of the test, more complicated. However, as will become clear in later parts of this thesis, using this definition in the context of \cite{bugni_permutation_2021} only adds alternatives against which the test cannot have any power by construction. Therefore, this thesis is limited to the classical definition of $\mathbb{L}_2[0,1]$. However, the distinction can be important for proving some aysmptotic properties of the test and should therefore be kept in mind.
-		 An overview of the differences between the definitions is provided in Appendix \ref{deviation}.
+		 Atypically, \cite{bugni_permutation_2021} define two square-integrable functions to be distinct if they differ on a non-empty set of Lebesgue-measure zero. However, as will become clear in later parts of this thesis, using this definition in the context of \cite{bugni_permutation_2021} only adds alternatives against which the test cannot have any power by construction. Therefore, this thesis is limited to the classical definition of $\mathbb{L}_2[0,1]$. However, the distinction can be important for proving asymptotic properties of the test and should be kept in mind. An overview of the differences between the definitions is provided in Appendix \ref{deviation}.
 
 		\subsection{Bases of $\mathbb{L}_2[0,1]$}\label{bases_L2}
 			One commonly used orthonormal basis of $\mathbb{L}^2[0,1]$ is the Fourier Basis. It consists of a series of functions $\left(\psi_{i}^{F}(x)\right)_{i \in \mathbb{N}}$ taken from the sine-cosine form of the famous Fourier series.
@@ -225,7 +224,6 @@ style=authoryear,
 			Understanding this relationship between these measures allows the justification of using a finite number of basis functions in the implementation of the test.
 			\cite{bugni_goodness--fit_2009} show that the measure $\mu_K$ induced by $Z_K(t)$ converges to the measure $\mu$ induced by $Z(t)$ in the following sense. Let $A$ be a $\mu$-measurable subset of $\mathbb{L}_2[0,1]$. Then $\forall a \in A$, there is a unique countably infinite sequence of Fourier coefficients $b(a) = (b_k(a))_{k \in \mathbb{N}}$ given by $b_k(a) = \int_{0}^{1} a(t) \psi_k(t) \mathrm{d}t$. As $a \in \mathbb{L}_2[0,1]$ these coefficients fulfill $\sum_{k = 1}^{\infty} b_k^2 < \infty$. \\
 			
-			\newpage
 			To define the specific mode of convergence \cite{bugni_goodness--fit_2009} define the following objects.
 			\begin{itemize}
 				\item $\textbf{B} = \left\{b(a) \ \vert \ a \in A\right\}$
@@ -267,8 +265,7 @@ style=authoryear,
 			As the principle of this method does not depend on the domain of $g$, it can analogously be used in the context of function spaces. It gives a convenient alternative to the theoretically complex methods mentioned before and is, therefore, a useful alternative in the context of this thesis. More information on Monte-Carlo methods in general and Monte-Carlo integration in particular can be found in \cite{shonkwiler_explorations_2009}.
 		
 	\section{Cram\'{e}r-von Mises Tests}\label{CvM_Tests}
-		The second prerequisite to understanding the test presented in \cite{bugni_permutation_2021} is some knowledge about two-sample Cram\'er-von Mises (abbreviated as CvM in the following) type tests. To understand their working principle it is useful to start in a simple setting, which is why this section is limited to the case of scalar random variables.\\
-		
+		The second prerequisite to understanding the test presented in \cite{bugni_permutation_2021} is some knowledge about two-sample Cram\'er-von Mises (abbreviated as CvM in the following) type tests. To understand their working principle it is useful to start in a simple setting, which is why this section is limited to the case of scalar random variables.
 		As mentioned in the introduction, it is often interesting to ask whether the same stochastic process generated the observations in two distinct data sets. In an experimental setting, one could, for example, ask whether a treatment assigned at random to a subset of agents changed the distribution of an outcome variable. 
 		One approach to answering this question is given by the two-sample CvM test. 
 
@@ -319,11 +316,11 @@ style=authoryear,
 			\end{equation}
 			\cite{darling_kolmogorov-smirnov_1957} gives an overview on the CvM test and some related tests in both the one-sample goodness-of-fit and the two-sample setting. \cite{anderson_distribution_1962} explores the small sample distribution of the two-sample test statistic and provides a comparison to the limiting distribution derived by \cite{rosenblatt_limit_1952} and \cite{fisz_result_1960} which is given in Section \ref{asymp_CvM} in the Appendix. These distributions can be used to perform tests with appropriate critical values and have been implemented in many packages for statistical computing.\\
 			
-%			It is possible to generalize this test by introducing a weight function $w(x)$ in the following way. 
-%			\begin{equation}
-%				T^{\textit{EDF}}_{m,n} = \frac{nm}{n+m} \int_{-\infty}^{\infty}\left(\hat{F}_{m}(t) - \hat{G}_{n}(t)\right)^{2} w(t) \mathrm{d} \left(\frac{m \hat{F}_{m}(t) + n \hat{G}_{n}(t)}{m+n}\right)
-%			\end{equation}
-%			The CvM test corresponds to $w(t) = 1$. It is advisable to think about the desired properties of the test when choosing a specific weight function as it can affect the power against different types of alternatives. A well-known weight function for the one-sample CvM goodness of fit test was proposed by \cite{anderson_asymptotic_1952} and \cite{anderson_test_1954} and adapted to the two-sample setting by \cite{pettitt_two-sample_1976}. The latter is given by $w(t) = \frac{m \hat{F}_m(t) + n \hat{G}_n(t)}{m+n}$ and has been shown to have better properties in some scenarios.					
+			It is possible to generalize this test by introducing a weight function $w(x)$ in the following way. 
+			\begin{equation}
+				T^{\textit{EDF}}_{m,n} = \frac{nm}{n+m} \int_{-\infty}^{\infty}\left(\hat{F}_{m}(t) - \hat{G}_{n}(t)\right)^{2} w(t) \mathrm{d} \left(\frac{m \hat{F}_{m}(t) + n \hat{G}_{n}(t)}{m+n}\right)
+			\end{equation}
+			The CvM test corresponds to $w(t) = 1$. It is advisable to think about the desired properties of the test when choosing a specific weight function as it can affect the power against different types of alternatives. A well-known weight function for the one-sample CvM goodness of fit test was proposed by \cite{anderson_asymptotic_1952} and \cite{anderson_test_1954} and adapted to the two-sample setting by \cite{pettitt_two-sample_1976}. The latter is given by $w(t) = \frac{m \hat{F}_m(t) + n \hat{G}_n(t)}{m+n}$ and has been shown to have better properties in some scenarios.					
 			
 	\section{Permutation Tests}\label{Permutation_Tests}
 		The third component to understanding \cite{bugni_permutation_2021} is to understand the principles of permutation testing.
@@ -335,7 +332,6 @@ style=authoryear,
 						
 			Let $X$ be a random variable realizing in a sample space $\mathcal{X}$. Then, a typical null hypothesis in randomization testing is that the distribution $P$ generating $X$ belongs to a family of distributions $\Omega_0$. For this very general setting, \cite{lehmann_testing_2005} define an assumption called the randomization hypothesis that allows for the construction of randomization tests.
 			
-			\newpage
 			\begin{assumption}[Randomization Hypothesis]\label{rand_hypo}
 				 Let $G$ be a finite group of transformations $g: \mathcal{X} \rightarrow \mathcal{X}$. Under the null hypothesis of the randomization test, the distribution of $X$ is invariant under the transformations $g \in G$. In other words, $gX$ and $X$ have the same distribution whenever $X$ has distribution $P \in \Omega_0$.
 			\end{assumption}
@@ -535,7 +531,6 @@ style=authoryear,
 		\subsection{Construction of the Measure $\mu$}\label{mu}
 			As can be seen in the fact that the null hypothesis is formulated with respect to a measure $\mu$ on $\mathbb{L}_2[0,1]$, this measure significantly impacts the test's performance. Compared to the scalar CvM test described in Section \ref{CvM_Tests}, it fulfills a similar function to the weight function in that it determines against which alternatives the test has comparatively high power. It is, therefore, crucial to choose the measure according to the kind of violation of the null hypothesis that is suspected. If no specific type of violation is expected, a choice similar to a constant weight function can be made. However, this latter case is functionally different from the scalar setting. In a scalar  CvM type test a constant weight function gives the same weight to the whole domain. Intuitively this corresponds to some uniform distribution on $\mathbb{L}_2[0,1]$ which does not exist. Instead, the original authors refer to a constant mean function of the inducing random variable.
 			
-			\newpage
 			As hinted at in Section \ref{prob_measures_l2}, \cite{bugni_permutation_2021} approach the problem of choosing a measure by constructing a random function $Z(t)$ that induces a suitable probability measure $\mu$ as described in Section \ref{prob_measures_l2}. 			
 			\begin{equation}\label{non_truncated}
 				Z(t) = \sum_{k = 1}^{\infty} b_k \psi_k(t)
@@ -708,7 +703,6 @@ style=authoryear,
 			\end{enumerate}
 			The simulations presented in Section \ref{Simulation_Study} use the first approach as it limits the computational cost of the procedure while staying close to the original paper. The same problem occurs for the mean-focused test. In this case, linear interpolation between the discrete points is used to approximate the mean function on the full interval.
 
-	\newpage
 	\section{Test for Persistence Alternatives}\label{variant}
 		One particular application for the CvM type test presented in \cite{bugni_permutation_2021} is a slight modification leading to a test for differences in the persistence structure of the data generating processes. This test is an interesting extension as there are few existing methods that test a similar null hypothesis.\\
 		
@@ -822,7 +816,6 @@ style=authoryear,
 		}
 		\vspace{0.2cm}
 		
-		\newpage
 		This thesis focuses on three distinct violations of the null hypothesis described in the following. For each of the following settings sample 1 is generated by the same process as a reference point to compare the different settings. Therefore, the parameters for sample 1 are therefore chosen as follows.
 		\begin{multicols}{2}
 			\begin{enumerate}
@@ -1045,8 +1038,8 @@ style=authoryear,
 			\paragraph{Definition of $\mathbb{L}_2[0,1]$ \\}
 				As mentioned multiple times in this thesis, \cite{bugni_permutation_2021} use an unconventional definition of $\mathbb{L}_2[0,1]$ that makes some theoretical considerations of the methods considerably harder. Therefore, questions such as how this convention interacts with the type of measures that is used in the CvM type test should be studied further. 
 				
-			\paragraph{Potential Gap in a Proof\\}
-				Parts of the proofs presented in the supplementary material to \cite{bugni_permutation_2021} hinge on the assumption that the space of square-integrable functionals with respect to the chosen measure $\mu$ is a separable Hilbert space. In many cases square-integrability is a property that easily allows to show the properties of separable Hilbert spaces. However, as it is not shown in the proofs to be a general property or follow from the type of measure the authors construct, they seem to be incomplete and further consideration should be given to fill these gaps.
+%			\paragraph{Potential Gap in a Proof\\}
+%				Parts of the proofs presented in the supplementary material to \cite{bugni_permutation_2021} hinge on the assumption that the space of square-integrable functionals with respect to the chosen measure $\mu$ is a separable Hilbert space. In many cases square-integrability is a property that easily allows to show the properties of separable Hilbert spaces. However, as it is not shown in the proofs to be a general property or follow from the type of measure the authors construct, they seem to be incomplete and further consideration should be given to fill these gaps.
 	
 		\subsection{Theoretical Extensions}
 			\paragraph{Variants of the Test based on different Norms\\}
