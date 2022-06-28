@@ -46,11 +46,11 @@
 \contentsline {subsection}{\numberline {9.3}Possible Further Simulations}{38}{subsection.9.3}%
 \contentsline {paragraph}{Comparing different Functional Bases\\}{38}{subsection.9.3}%
 \contentsline {paragraph}{Comparing choices of $w(t)$ and $\left (\rho _i\right )_{i = 1, the \dots , K}$\\}{38}{subsection.9.3}%
-\contentsline {paragraph}{Less restrictive Distributions of Fourier Coefficients\\}{38}{subsection.9.3}%
+\contentsline {paragraph}{Less restrictive Distributions of Fourier Coefficients\\}{39}{subsection.9.3}%
 \contentsline {paragraph}{Simulations for Unbalanced Sample Sizes\\}{39}{subsection.9.3}%
 \contentsline {paragraph}{Comparing Implementations using different orders of Operations\\}{39}{subsection.9.3}%
 \contentsline {subsection}{\numberline {9.4}Potential Applications}{39}{subsection.9.4}%
-\contentsline {section}{\numberline {10}Bibliography}{40}{section.10}%
+\contentsline {section}{\numberline {10}Bibliography}{41}{section.10}%
 \contentsline {section}{\numberline {11}Appendix}{i}{section.11}%
 \contentsline {subsection}{\numberline {11.1}Informal Intuition}{i}{subsection.11.1}%
 \contentsline {subsection}{\numberline {11.2}$\mathbb {L}_2[0,1]$ as defined in \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{ii}{subsection.11.2}%
