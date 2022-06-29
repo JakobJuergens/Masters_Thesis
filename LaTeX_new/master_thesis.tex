@@ -333,7 +333,7 @@ style=authoryear,
 		In layman's terms, the idea of a permutation test is the following: if two samples show distinctly different properties, that will lead to differences in an appropriately chosen summary statistic. If one were to permute the elements of the samples randomly, one would expect these differences in the test statistic to disappear.
 		Permutation tests formalize this intuition. The following section closely follows chapter 15 from \cite{lehmann_testing_2005}.
 	
-		\subsection{Functional Principle of Permutation Tests}
+		\subsection{Functional Principle of Permutation Tests}\label{perm_tests}
 			One of the defining features of a test is its null hypothesis. For the case of randomization tests, which are a generalization of permutation tests, it is often formulated in the sense of distributional equality.  This makes the approach particularly interesting for the questions studied in this thesis. \\
 						
 			Let $X$ be a random variable realizing in a sample space $\mathcal{X}$. Then, a typical null hypothesis in randomization testing is that the distribution $P$ generating $X$ belongs to a family of distributions $\Omega_0$. For this very general setting, \cite{lehmann_testing_2005} define an assumption called the randomization hypothesis that allows for the construction of randomization tests.
@@ -522,7 +522,7 @@ style=authoryear,
 			
 			\begin{equation}\label{cov_func}
 				\begin{split}
-					\textit{cov}\left[\Upsilon(z), \Upsilon(\tilde{z})\right] &= \left[\frac{(1 + \lambda)^2}{\lambda}\right]\left\{G(\min\left(z, \tilde{z}\right)) - G(z)G(\tilde{z})\right\} \\
+					\textit{cov}\left[\Upsilon(z), \Upsilon(\tilde{z})\right] &= \frac{(1 + \lambda)^2}{\lambda}\left\{G(\min\left(z, \tilde{z}\right)) - G(z)G(\tilde{z})\right\} \\
 					\text{where} \quad \min(z, \tilde{z})(t) &= \min\left(z(t), \tilde{z}(t)\right) \quad \forall t \in [0,1]
 				\end{split}
 			\end{equation}
@@ -576,12 +576,12 @@ style=authoryear,
 				\makebox[\textwidth][c]{
 					\includegraphics[width = 1.1\textwidth]{../Graphics/mean\_functions.PDF}
 				}
-				\caption{Mean Functions calculated for a Reference Sample as described in Section \ref{Simulation_Study} for the 95\% Quantile.}
+				\caption{Mean Functions calculated for a Reference Sample}
 				\label{mean_functions}
 			\end{figure}
 			
 			In addition to the mean function $w(t)$, the choice of the sequence $(\rho_k)_{k \in \mathbb{N}}$ and the distribution of the error terms $U_k$ is of importance.			
-			The authors do not recommend a procedure for choosing $(\rho_k)_{k \in \mathbb{N}}$. However, it seems reasonable to choose parameters that lie in the vicinity of the standard deviations for the Fourier coefficients of the reference sample when fitting a Fourier basis to the original observations. Other methods, such as specifying a sequence without consideration of the data, are possible. In the application part of \cite{bugni_permutation_2021}, the authors, for example, use $\frac{1}{K}$ for every Fourier coefficient. Even though this sequence would not be square-summable in the infinite case, for a finite variant, this should not pose a large problem.
+			The authors do not recommend a procedure for choosing $(\rho_k)_{k \in \mathbb{N}}$. However, it seems reasonable to choose parameters that lie in the vicinity of the standard deviations for the Fourier coefficients of the reference sample when fitting a Fourier basis to the original observations. Other methods, such as specifying a sequence without consideration of the data, are possible. For example, in the application part of \cite{bugni_permutation_2021}, the authors use $\frac{1}{K}$ for every Fourier coefficient. 
 			
 			Concerning the choice of distribution for $U_k$, the authors recommend different choices depending on the properties of the samples. For samples that indicate a thin tailed distribution of $X(t)$, the authors recommend one of the following choices.
 			\begin{multicols}{2}
@@ -601,7 +601,7 @@ style=authoryear,
 %			This in turn implies that a probability measure that is constructed as shown in the previous section cannot give positive weight to many functions in the space $\mathbb{L}_2[0,1]$ if we use the convention used by the authors. Namely, for any function in $\mathbb{L}_2[0,1]$ for which the Fourier series fails to converge point-wise, we cannot assign a positive probability. This in turn could be a potential problem for the method described in the paper, if this is necessary for its working principle.
 			
 		\subsection{Mean-focused Test}\label{mean_based_test}
-			In addition to the CvM type test, the authors use a second test statistic aimed at detecting violations due to a mean shift in the data generating process. This test is added due to low power against pure mean-shift alternatives in the original paper's simulations and is supposed to complement this weakness of the other test statistic.
+			In addition to the CvM type test, the authors use a second test statistic aimed at detecting violations due to a mean shift in the data generating process. This test is added due to low power against pure mean-shift alternatives of the CvM type test in the original paper's simulations and is supposed to complement this weakness of the other test statistic.
 			
 			The variable $\nu$ on which this second test is based is the distance between the mean functions of the data generating processes as induced by the natural norm on $\mathbb{L}_2[0,1]$.
 			\begin{equation}
@@ -626,7 +626,9 @@ style=authoryear,
 			\begin{equation}\label{crit_nu}
 				t^{*, \nu}_{n,m}(1-\alpha) = \inf \left\{t \in \mathbb{R} \quad \vert \quad \frac{1}{Q} \sum_{i = 1}^{Q} \mathbbm{1}\left[\nu_{n,m,q} \leq t\right] \geq 1 - \alpha \right\}
 			\end{equation}
-		
+			Similarly to the CvM type test, it is possible to show that $\nu_{n,m}$ weakly converges to a mean-zero Gaussian process as $n \rightarrow \infty$, $m \rightarrow \infty$ and $\frac{n}{m} \rightarrow \lambda$. As explained before, this limiting distribution carries over to the permutation test under the conditions outlined in Section \ref{Permutation_Tests}.
+
+		\newpage
 		\subsection{Combined Permutation Test}
 			Using the test statistics described in Sections \ref{cvm_type_test} and \ref{mean_based_test}, it is possible to combine both into one test trying to harness the advantageous properties of both test statistics. Therefore, define for the two underlying tests the following permutation test functions as described in Definition \ref{RandTestFunc} for the general case of a randomization test.
 			\begin{multicols}{2}
@@ -869,8 +871,8 @@ style=authoryear,
 			\item Concerning the choice of the truncation parameter $K$ as shown in Equation \ref{truncation}, the authors argue that their simulations showed that the power of the test became flat at about $K = 20$ and chose $K = 25$. For the sake of reproducing their results, the same parameter was used in this thesis.
 			\item Another parameter that has to be chosen is the number of functions $L$ used in the approximation of the test statistic $\hat{\tau}_{n,m}$ by Monte-Carlo integration as shown in Equation \ref{tau_hat}. \cite{bugni_permutation_2021} chose $L = 4000$ and preliminary testing confirmed that this choice seems reasonable in many settings when combined with reasonable choices for the construction of the measure $\mu$.
 			\item For the number of permutations $Q$ used for the approximation of the permutation distribution of both test statistics the authors chose a value of $Q = 500$. This thesis uses the same parameter. However, absent strong computational limitations a higher choice for $Q$ could benefit the properties of the tests.
-			\item For the construction of the measure $\mu$ the weight function $w(t)$ has to be chosen. This simulation uses the same weight function as in the empirical application in \cite{bugni_permutation_2021}. This approach is described in Section \ref{mu} as the first approach listed for the choice of $w(t)$. 
-			\item Deviating from the original authors' choice due to preliminary tests, the sequence $\left(\rho_i\right)_{i = 1, \dots, K}$ is determined by checking the sample standard deviation of the corresponding Fourier coefficients in the first sample obtained by fitting the same basis that is used in the construction of $\mu$ to the observations. These are then multiplied by a constant factor of 2 to increase variability in the functions drawn from $\mu$. This higher variability seemed to improve performance in preliminary tests, but should be studied in further experiments.
+			\item For the construction of the measure $\mu$ the weight function $w(t)$ has to be chosen. This simulation uses the same weight function as in the empirical application in \cite{bugni_permutation_2021} as described in Section \ref{mu}.
+			\item Deviating from the original authors' choice, $\left(\rho_i\right)_{i = 1, \dots, K}$ is determined by checking the sample standard deviation of the corresponding Fourier coefficients in the first sample obtained by fitting the same basis used in the construction of $\mu$ to the observations. These are then multiplied by a constant factor of 2 to increase variability in the functions drawn from $\mu$. This higher variability seemed to improve performance in preliminary tests, but should be studied in further experiments.
 			\item Using the same choice as in the original paper, the simulations use independent standard normal error terms $U_k \quad k=1, \dots, K$ for the Fourier coefficients shown in Equation \ref{Fourier_coefs} for the construction of the measure. As the processes under consideration are Gaussian by construction and thereby have thin tails, this choice should be reasonable following the authors' argumentation.
 			\item For each setting 1000 simulation runs were performed to approximate the power of the test against the described alternatives. Since some parts of the simulation are computationally quite intensive, this choice was guided by runtime restrictions and \cite{bugni_permutation_2021} where the authors also chose to to perform 1000 runs per simulation.
 		\end{enumerate}
