@@ -430,7 +430,7 @@ style=authoryear,
 		As previously mentioned, \cite{bugni_permutation_2021} assume that two functions $z_1, z_2 \in \mathbb{L}_2[0,1]$ are distinct even if they only differ on a set of Lebesgue-measure zero. In this case, this distinction is important to appropriately define the distribution function. This can be seen by checking whether the distribution function evaluated at two functions from the same equivalence class will necessarily evaluate to the same value, which is trivially not the case. Therefore, for the definition of the distribution function of a random variable in the sense of \cite{bugni_permutation_2021}, it is necessary to use their definition of $\mathbb{L}_2[0,1]$.
 		However, as previously mentioned, this distinction will not have an influence in practice due to the construction of the test statistic and the chosen measure.
 		
-		\subsection{Assumptions}
+		\subsection{Assumptions}\label{Assumptions}
 		As for most tests, there are assumptions that have to be fulfilled for the test to work correctly. The authors explicitly make four assumptions, some of which can be relaxed to allow for a more general setting.
 		
 			\newpage
@@ -950,9 +950,8 @@ style=authoryear,
 		These results show multiple things. First, as expected, the rejection frequency for the case $\rho_2(t) = 0.5$ is close to the chosen nominal level. Due to the properties of permutation tests, this is not a surprise as it holds by construction. 
 		
 		Second, the other cases, which approximate power against specific alternatives, are interesting as they are in part counter-intuitive.		
-		In most settings, one would typically assume that the rejection frequency increases as the parameter that specifies the deviation from the null hypothesis changes away from its equivalent in the reference sample. These simulations, however, show that for the case of $\rho_2(t) = -0.9$ the opposite happens. Even though the persistence parameter is even further away from $0.5$ than for the case of $\rho_2(t) = -0.5$, the rejection frequency decreases. This could be linked to the measure that is used for the calculation of the test statistic. As the parameter decreases, the curves are less persistent, meaning that Fourier functions of higher frequency would be needed to approximate them. However, if due to the truncation, it is not possible to use appropriately high-frequent functions in the CvM test, the performance might suffer. This is just a first hypothesis that could be studied in more detail using further simulations with different persistence parameters and different truncation parameters for the basis used to construct the measure.\\
-		
-		{\color{red} Hier weiterschreiben.}
+		In most settings, one would typically assume that the rejection frequency increases as the parameter that specifies the deviation from the null hypothesis changes away from its equivalent in the reference sample. These simulations, however, show that for the case of $\rho_2(t) = -0.9$ the opposite happens. Even though the persistence parameter is even further away from $0.5$ than for the case of $\rho_2(t) = -0.5$, the rejection frequency decreases. This could be linked to the measure that is used for the calculation of the test statistic. As the parameter decreases, the curves are less persistent, meaning that Fourier functions of higher frequency would be needed to approximate them. However, if due to the truncation, it is not possible to use appropriately high-frequent functions in the CvM test, the performance might suffer. This is just a first hypothesis that could be studied in more detail using further simulations with different persistence parameters and different truncation parameters for the basis used to construct the measure.
+		Apart from this unexpected behavior for extremely high-frequent alternatives, the results are as expected and the test shows considerable non trivial power against changes in the persistence structure of the process. This is a promising indicator for the potential of this extended testing procedure, and further simulations to study its properties in more detail would be highly interesting due to the test's unique approach.
 				
 	\section{Application}\label{Application}
 		In order to give an example for the real-world merits of the method, this section will compare electricity demand data from Adelaide. This data is provided as part of the \textit{fds}\footcite{fds} package for R. It presents half-hourly energy demand in megawatts and was originally used by \cite{magnano_generation_2007} and \cite{magnano_generation_2008}. It contains electricity demand curves for 3556 days from 6/7/1997 to 31/3/2007. Some of these curves, specifically a selection of curves observed on Wednesdays and Saturdays fitted using a Fourier basis consisting of 25 functions, is shown in Figure \ref{electricity_demand}.
@@ -1043,6 +1042,7 @@ style=authoryear,
 	\section{Outlook}\label{Outlook}
 		This Outlook section will present some problems that came up during the process of writing this thesis that might be interesting to study in further research. Additionally, it presents some ideas for simulations that could improve the understanding of methods such as CvM type tests in a functional data setting and presents real-world scenarios that might be interesting applications for the methods introduced in this thesis.
 		
+		\newpage
 		\subsection{Potential Problems}
 			The results presented in this thesis give a good impression of the possibilities of the method developed in \cite{bugni_permutation_2021}. However, there are also potential problems that should not go unnamed.
 			
@@ -1068,6 +1068,9 @@ style=authoryear,
 			One interesting property of a test such as this, is that it would open up the possibility to identify which function $z$ caused the rejection of the null hypothesis. In practice this might lead to useful information on the difference between the processes.
 			
 			Other variants could be used in a similar way leading to a plethora of possible test statistics. It would be interesting to compare them both from a theoretical perspective and using simulations to assess their power in different scenarios.
+			
+			\paragraph{Extension to Non-separable Processes\\}
+			As mentioned in Section \ref{Assumptions}, it might be possible to extend the theoretical arguments in favor of the test to processes that are non-separable. This potential extension would be interesting to justify applying the test to a broader class of processes. However, some steps in the proofs of \cite{bugni_permutation_2021} would have to be approached from a different angle to allow for these generalizations.
 		
 		\subsection{Possible Further Simulations}
 			After studying the method developed by \cite{bugni_permutation_2021} in detail there are a few points that might be interesting for further research. The following section describes a multitude of simulations that could be interesting extensions to this thesis.
@@ -1082,7 +1085,7 @@ style=authoryear,
 			The measures constructed as part of the CvM type test described in this thesis drew their Fourier coefficients using independently distributed error terms. Even though this leads to a convenient implementation, using measures induced by random variables generated using error terms with a more general dependence structure might be beneficial to increase the power against specific alternatives. It would therefore be interesting to study the influence on the measure on the power of the test in more general settings both from a theoretical perspective and using simulations. 
 		
 			\paragraph{Simulations for Unbalanced Sample Sizes\\}
-			The simulations in this thesis only dealt with settings in which both the reference sample and the second sample contained the same number of curves. Even though there is no obvious theoretical reason for unbalanced sample sizes to influence the power of the test meaningfully, it would be interesting to study settings with unbalanced sample sizes in further simulations.		
+			The simulations in this thesis only deal with settings in which both the reference sample and the second sample contained the same number of curves. Even though there is no obvious theoretical reason for unbalanced sample sizes to influence the power of the test meaningfully, it would be interesting to study settings with unbalanced sample sizes in further simulations.		
 			
 			\paragraph{Comparing Implementations using different orders of Operations\\}
 			As described in Sections \ref{persistence_test} and \ref{sim_persistence}, the actual implementation could be highly important for the properties of the proposed test for persistence alternatives. This thesis only provides two heuristic simulations to compare the performance of the proposed options due to computational limitations. Therefore, it would be interesting to actually compare these options in further full-scale simulations.
