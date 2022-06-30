@@ -518,7 +518,7 @@ style=authoryear,
 			Here $\tau_{n,m,q}$ denotes the test statistic calculated on the samples permuted using permutation $q$ assuming that $Q$ permutations were considered overall. Using these critical values it is possible to perform the test at a chosen significance level.
 		
 		\subsection{Asymptotics for the Cram\'{e}r-von Mises type Test}\label{asymp}
-			Similar to the case presented in \cite{bugni_goodness--fit_2009}, it is possible to derive an asymptotic distribution for the CvM type test. Even though this is not necessary to perform the described permutation test, it could be an interesting benchmark to compare the test procedure in future large sample simulations. The authors mention that under the null hypothesis and mild regularity conditions, $\frac{1}{\sqrt{n+m}}\left[\hat{F}_n(z) - \hat{G}_m(z)\right]$ converges to a mean zero Gaussian process $\Upsilon(z) \quad z \in \mathbb{L}_2[0,1]$. Here, $G(z)$ again denotes the distribution function corresponding to the second sample and $\hat{G}_m(z)$ its empirical equivalent. $\Upsilon(z)$ has the covariance function shown in Equation \ref{cov_func}. 
+			Similar to the case presented in \cite{bugni_goodness--fit_2009}, it is possible to derive an asymptotic distribution for the CvM type test. Even though this is not necessary to perform the described permutation test, it could be an interesting benchmark to compare the test procedure in future large sample simulations. The authors mention that under the null hypothesis and mild regularity conditions, $\frac{1}{\sqrt{n+m}}\left[\hat{F}_n(z) - \hat{G}_m(z)\right]$ converges to a mean zero Gaussian process $\Upsilon(z) \quad z \in \mathbb{L}_2[0,1]$. Here, $F(z)$ and $G(z)$ again denote the distribution functions corresponding to the samples and $\hat{F}_n(z)$ and $\hat{G}_m(z)$ their empirical equivalents. $\Upsilon(z)$ has the covariance function shown in Equation \ref{cov_func}. 
 			
 			\begin{equation}\label{cov_func}
 				\begin{split}
@@ -531,7 +531,8 @@ style=authoryear,
 			\begin{equation}
 				\tau_{n,m} \rightarrow_d \int_{\mathbb{L}_2[0,1]}\Upsilon^2(z) \ \mathrm{d}\mu(z)
 			\end{equation}
-			The derivation of this limiting distribution follows a similar argument as the proof of Theorem 3.1 given in \cite{bugni_goodness--fit_2009}. It is presented  in Appendix \ref{asymp_deriv}. Using the arguments presented in Appendix \ref{asymp_deriv} and Section \ref{perm_asymp}, it is possible to show that this limiting distribution also applies to the permutation variant of the CvM type test described in this thesis.
+			The derivation of this limiting distribution follows a similar argument as the proof of Theorem 3.1 given in \cite{bugni_goodness--fit_2009}. It is presented in the supplementary material to \cite{bugni_permutation_2021}.
+			Using the arguments presented in the proof and in Section \ref{perm_asymp}, it is possible to show that this limiting distribution also applies to the permutation variant of the CvM type test described in this thesis.
 			In the context of the limiting distribution, it is necessary to consider the implications of the definition of $\mathbb{L}_2[0,1]$ as given by \cite{bugni_permutation_2021}. Even though this distinction will not be considered in detail in this thesis, for theoretical considerations of this test, it is again important that, for example, $\Upsilon(z)$ is defined with respect to the definition of $\mathbb{L}_2[0,1]$ from \cite{bugni_permutation_2021}.
 		
 		\subsection{Construction of the Measure $\mu$}\label{mu}
@@ -1230,182 +1231,197 @@ style=authoryear,
 			\end{split}
 		\end{equation}			 
 	
-		\subsection{Derivation of Asymptotic Distribution}\label{asymp_deriv}
-			This section presents an adapted proof for the limiting distribution of the CvM permutation test as presented in the supporting information of \cite{bugni_permutation_2021}, additional information was taken from the proof of Theorem 3.1 in \cite{bugni_goodness--fit_2009}.\\
+%		\subsection{Derivation of Asymptotic Distribution}\label{asymp_deriv}
+%			This section presents an adapted proof for the limiting distribution of the CvM permutation test as presented in the supporting information of \cite{bugni_permutation_2021}, additional information was taken from the proof of Theorem 3.1 in \cite{bugni_goodness--fit_2009}.\\
+%	
+%			\begin{theorem}\label{asymp_proof}
+%				Let Assumptions \ref{Ass1} and \ref{mean_existence} be fulfilled and  and define $\Upsilon(z)$ as in Section \ref{asymp}. Then the following statement holds.
+%				\begin{equation}
+%					\tau_{n,m} \rightarrow_d \int_{\mathbb{L}_2[0,1]}\Upsilon^2(z) \mathrm{d}\mu(z)
+%				\end{equation}
+%			\end{theorem}
+%			
+%			It is useful to prove the following Lemmas taken from the supporting information of \cite{bugni_permutation_2021} before proving the main point.
+%			Define the following objects
+%				\begin{equation}
+%					W_i(t) = \mathbbm{1}\left[i \leq n\right] X_i(t) + \mathbbm{1}\left[i > n\right] Y_{i-n}(t)
+%				\end{equation}
+%				\begin{equation}
+%					U_i = \mathbbm{1}\left[i \leq n\right] \frac{N}{n} - \mathbbm{1}\left[i > n\right] \frac{N}{m}
+%				\end{equation}
+%				\begin{equation}
+%					F_{nX}(z) = G(z) + \frac{1}{N}D(z)
+%				\end{equation}
+%				for a chosen function $D(z)$ fulfilling $\int_{\mathbb{L}_2[0,1]}D^2(z) \mathrm{d} \mu(z) < \infty$.
+%			
+%			\begin{theorem}[Lemma A.3]
+%				content...
+%			\end{theorem}
+%		
+%			\begin{proof}
+%				content...
+%			\end{proof}
+%		
+%			\begin{theorem}[Lemma A.4]
+%				Let Assumptions \ref{Ass1} and \ref{mean_existence} be fulfilled. Then, 
+%				\begin{equation}
+%					\sqrt{N} \int_{\mathbb{L}_2[0,1]} \left[ \hat{F}_n(z) - \hat{G}_{m}(z) \right] \left\{\psi_k(z)\right\}_{k = 1}^K \mathrm{d}\mu(z)\rightarrow_d \mathcal{N}(\Xi, \Sigma_K)
+%				\end{equation}
+%				where 
+%				\begin{equation}
+%					\Xi = \int_{\mathbb{L}_2[0,1]}D(z) \left\{\psi_k(z)\right\}_{k = 1}^K \mathrm{d}\mu(z)
+%				\end{equation}
+%				and 
+%				\begin{equation}
+%					\left(\Sigma_K\right)_{i,j} = \frac{(1 + \lambda)^2}{\lambda} \int_{\mathbb{L}_2[0,1]}\int_{\mathbb{L}_2[0,1]} \left[G(\min(z, 	\tilde{z})) - G(z)G(\tilde{z}))\right] \psi_i(z) \psi_j(\tilde{z}) \mathrm{d}\mu(z) \mathrm{d}\mu(\tilde{z})
+%				\end{equation}
+%				where $\min(z, \tilde{z})$ is defined as in Section \ref{asymp}.
+%			\end{theorem}
+%		
+%			\begin{proof}
+%				We have
+%				\begin{equation}\label{piece1}
+%					\begin{split}
+%						\sqrt{N}\left[F(z) - G(z)\right] &= \frac{1}{\sqrt{N}} \Bigg[ \sum_{i = 1}^{N} U_i \mathbbm{1}\left[W_i(t) \leq z(t) \ \forall t \in [0,1]\right] \Bigg]
+%					\end{split}
+%				\end{equation}
+%				Let $\gamma \in \mathbb{R}^K$ and define the following object.
+%				\begin{equation}
+%					\Upsilon_i = \sum_{k = 1}^{K} \gamma_k U_i \left\{\int_{\mathbb{L}_2[0,1]} \mathbbm{1}\left[ W_i(t) \leq z(t) \forall t \in [0,1]\right] \psi_k(z) \mathrm{d}\mu(z) - \mu_{i,N,k}\right\}
+%				\end{equation}
+%				where
+%				\begin{equation}
+%					\mu_{i,N,k} = \mathbbm{1}\left[i \leq n\right] \int_{\mathbb{L}_2[0,1]} F_{nX}(z) \psi_k(z) \mathrm{d} \mu(z) + 
+%					\mathbbm{1}\left[i > n\right] \int_{\mathbb{L}_2[0,1]} G(z) \psi_k(z) \mathrm{d} \mu(z)
+%				\end{equation}
+%				Then $\left\{\Upsilon_i\right\}_{i = 1}^K$ is a sequence of independent mean-zero random variables with variances $\sigma_{i,N}^2$.
+%				\begin{equation}
+%					\begin{split}
+%						\sigma_{i,N} = \sum_{k = 1}^{K} \sum_{\tilde{k} = 1}^{K} \gamma_k \gamma_{\tilde{k}} U_i^2 \Bigg\{ &\mathbbm{1}\left[i\leq n\right] \int_{z} \int_{\tilde{z}} \Big( F_{nX} \left[ \min(z, \tilde{z}) \right] - F_{nX}(z)F_{nX}(\tilde{z}) \Big) \psi_k(z) \psi_{\tilde{k}}(\tilde{z}) \mathrm{d}\mu(\tilde{z}) \mathrm{d} \mu(z)\\
+%						& \mathbbm{1}\left[i > n\right] \int_{z} \int_{\tilde{z}} \Big( F_{Y} \left[ \min(z, \tilde{z}) \right] - F_{Y}(z)F_{Y}(\tilde{z}) \Big) \psi_k(z) \psi_{\tilde{k}}(\tilde{z}) \mathrm{d}\mu(\tilde{z}) \mathrm{d} \mu(z) \Bigg\}
+%					\end{split}
+%				\end{equation}
+%				
+%				{\color{red} Hier Zwischenschritt ergaenzen}\\
+%				For any $K = 1,2,3,\dots$
+%				\begin{equation}\label{piece2}
+%						\frac{1}{\sqrt{N}} \sum_{i = 1}^{N} U_i \bigg\{ \int_{\mathbb{L}_2[0,1]} \mathbbm{1}\left[W_i(t) \leq z(t) \ \forall t \in [0,1] \right] \psi_k(z) \mathrm{d} \mu(z) - \mu_{i,N,k}\bigg\}_{k = 1}^K  \rightarrow \mathcal{N}(0_K, \Sigma_K)
+%				\end{equation}
+%				\begin{equation}\label{piece3}
+%					\sqrt{N} \left[ \sum_{i = 1}^{N} U_i \mu_{i,N,k}\right] = \frac{1}{\sqrt{N}} \int_{\mathbb{L}_2[0,1]} D(z) \psi_k(z) \mathrm{d}\mu(z)
+%				\end{equation}
+%				The Lemma holds by Equations \ref{piece1}, \ref{piece2} and \ref{piece3}.
+%			\end{proof}
+%		
+%		\begin{theorem}
+%			
+%		\end{theorem}
+%		
+%		\begin{proof}[Proof of Theorem \ref{asymp_proof}]
+%			
+%			Let $\left(\psi_k\right)_{k \in \mathbb{N}}$ be a complete orthonormal basis of $\mathbb{L}_2(\mu)$ where $\mathbb{L}_2(\mu)$ denotes the Hilbert space of functionals on $\mathbb{L}_2[0,1]$ that are square-integrable with respect to $\mu$. Using a countable basis is only possible if $\mathbb{L}_2(\mu)$ is a separable Hilbert space, which the original authors do not show.\\
+%			
+%			For any $z(t) \in \mathbb{L}_2[0,1]$ define:
+%			\begin{equation}
+%				H_N(z) = \frac{1}{N} \left[\sum_{i = 1}^{n} \frac{N}{n} \mathbbm{1}\left[X_i(t) \leq z(t)\ \forall t \in [0,1]\right]
+%				+ \sum_{i = 1}^{m} \frac{N}{m} \mathbbm{1}\left[Y_i(t) \leq z(t)\ \forall t \in [0,1]\right]\right]
+%			\end{equation} 
+%			Then,
+%			\begin{equation}
+%				\tau_{n,m} = \int_{\mathbb{L}_2[0,1]} H_N^2(z) \mathrm{d}\mu(z)
+%			\end{equation}
+%			For any positive integer $K$, define the following objects.
+%			\begin{multicols}{2}
+%				\noindent
+%				\begin{equation*}
+%					H_{N,K1}(z) = \sum_{k = 1}^{K} c_{N,k}\psi_k(z)
+%				\end{equation*}
+%				\begin{equation}
+%					H_{N,K2}(z) = \sum_{k = K+1}^{\infty} c_{N,k}\psi_k(z)
+%				\end{equation}
+%			\end{multicols}
+%			where
+%			\begin{equation}
+%				c_{N,k} = \int_{\mathbb{L}_2[0,1]} H_N(z) \psi_k(z) \mathrm{d}\mu(z)
+%			\end{equation}
+%		and therefore
+%		\begin{equation}
+%			H_N(z) = \sum_{k = 1}^{\infty} c_{N,k}\psi_k(z) = H_{N,K1}(z) + H_{N,K2}(z).
+%		\end{equation}
+%		Similarly, define
+%		\begin{multicols}{2}
+%			\noindent
+%			\begin{equation*}
+%				\tau_{N,K1} = \int_{\mathbb{L}_2[0,1]} 	H_{N,K1}^2(z) \mathrm{d}\mu(z) = \sum_{k = 1}^{K} c_{N,k}^2
+%			\end{equation*}
+%			\begin{equation}
+%				\tau_{N,K2} = \int_{\mathbb{L}_2[0,1]} 	H_{N,K2}^2(z) \mathrm{d}\mu(z) = \sum_{k = K+1}^{\infty} c_{N,k}^2
+%			\end{equation}
+%		\end{multicols}
+%		and 
+%		\begin{multicols}{2}
+%			\noindent
+%			\begin{equation*}
+%				\Upsilon_{N,K1}(z) = \sum_{k = 1}^{K} b_k  \psi_k(z)
+%			\end{equation*}
+%			\begin{equation}
+%				\Upsilon_{N,K2}(z) = \sum_{k = K+1}^{\infty} b_k  \psi_k(z)
+%			\end{equation}
+%		\end{multicols}
+%		where
+%		\begin{equation}
+%			b_k = \int_{\mathbb{L}_2[0,1]}\Upsilon(z) \psi_k(z) \mathrm{d} \mu(z)
+%		\end{equation}
+%		and thus 
+%		\begin{equation}
+%			 \Upsilon(z) = \Upsilon_{N,K1}(z) + \Upsilon_{N,K2}(z).
+%		\end{equation}
+%		Additionally, define
+%		\begin{multicols}{2}
+%			\noindent
+%			\begin{equation*}
+%				\tau_{K1} = \int_{\mathbb{L}_2[0,1]} 	\Upsilon_{N,K1}^2(z) \mathrm{d}\mu(z) = \sum_{k = 1}^{K} b_{k}^2
+%			\end{equation*}
+%			\begin{equation}
+%				\tau_{K2} = \int_{\mathbb{L}_2[0,1]} 	\Upsilon_{N,K2}^2(z) \mathrm{d}\mu(z) = \sum_{k = K+1}^{\infty} b_{k}^2
+%			\end{equation}
+%		\end{multicols}
+%		Now, it is necessary to show the following three points.
+%		\begin{enumerate}
+%			\item $\tau_{K1} \rightarrow \tau \quad \text{as} \quad K \rightarrow \infty$
+%			\item $\tau_{N,K1} \rightarrow \tau_{K1} \quad \text{as} \quad N \rightarrow \infty \quad \forall K = 1,2,3, \dots$
+%			\item $\left(\tau_N - \tau_{N,K1}\right) = \tau_{N,K2} \rightarrow_p 0 \quad \text{as} \quad N \rightarrow \infty \quad \text{followed by} \quad K \rightarrow \infty$
+%		\end{enumerate}
+%	
+%		Concerning point one, the following is easy to see.
+%		\begin{equation}
+%			\mathbb{E}[\tau - \tau_{K1}] = \mathbb{E}[\tau_{K2}] = \sum_{k = K+1}^{\infty} \mathbb{E}[b_k^2] \rightarrow 0 \quad \text{as} \quad K \rightarrow \infty \quad \text{because} \quad \mathbb{E}[\Upsilon(z)] \in \mathbb{L}_2(\mu)
+%		\end{equation}
+%	
+%		For point two, define the following objects.
+%		\begin{multicols}{2}
+%			\noindent
+%			\begin{equation*}
+%				C_{N,K} = \left\{c_{N,k}\right\}_{k=1}^K
+%			\end{equation*}
+%			\begin{equation}
+%				B_{K} = \left\{b_{k}\right\}_{k=1}^K
+%			\end{equation}
+%		\end{multicols}
+%		By Lemma A.4, it follows that $C_{N,K} \rightarrow \mathcal{N}(0, \Sigma_K) \sim B_K$ as $N \rightarrow \infty$ which shows the point.\\
+%		
+%		Concerning point three, by Lemma A.3 the following holds.
+%		\begin{equation}
+%			\begin{split}
+%				\mathbb{E}[\tau_{N,K2}] &= \sum_{k = K+1}^{\infty} \mathbb{E}[c_{N,k}^2] \\
+%				&= \sum_{k = K+1}^{\infty} \Bigg\{ \frac{1}{\sqrt{N}} \left(1 + \frac{m}{n}\right) \int_{z_1 \in \mathbb{L}_2[0,1]} \int_{z_2 \in \mathbb{L}_2[0,1]} D\left[\min(z_1, z_2)\right] \psi_k(z_1) \psi_k(z_2) \mathrm{d}\mu(z_1) \mathrm{d}\mu(z_2) \\
+%				& - \frac{2}{\sqrt{N}} \left(1 + \frac{m}{n}\right) \left[\int_{z \in \mathbb{L}_2[0,1]} D(z) \psi_k(z) \mathrm{d}\mu(z) \right] \left[\int_{z \in \mathbb{L}_2[0,1]} G(z) \psi_k(z) \mathrm{d}\mu(z) \right] \\
+%				& + \left(\Sigma_K\right)_{k,k} \left(2 + \frac{n}{m} + \frac{m}{n}\right) \frac{\lambda}{(1 + \lambda)^2} + \frac{1}{N^2} \left[\int_{z \in \mathbb{L}_2[0,1]} D(z) \psi_k(z) \mathrm{d}\mu(z) \right] \sum_{i = 1}^{n}\sum_{j = 1}^{n} \mathbb{E}\left[U_i U_j\right]\Bigg\}
+%			\end{split}
+%		\end{equation}
+%	The last expression is bounded as $n \rightarrow \infty$ for every positive integer $K$, which implies that $\lim_{K \rightarrow \infty} \lim_{N \rightarrow \infty} \mathbb{E}\left[\tau_{N,K2}\right] = 0$. Thus, by Markov's inequality, point three holds.
+%		\end{proof}
 	
-			\begin{theorem}\label{asymp_proof}
-				Let Assumptions \ref{Ass1} and \ref{mean_existence} be fulfilled and  and define $\Upsilon(z)$ as in Section \ref{asymp}. Then the following statement holds.
-				\begin{equation}
-					\tau_{n,m} \rightarrow_d \int_{\mathbb{L}_2[0,1]}\Upsilon^2(z) \mathrm{d}\mu(z)
-				\end{equation}
-			\end{theorem}
-			
-			Additionally, it is useful to prove the following Lemmas taken from the supporting information of \cite{bugni_permutation_2021} before proving the main point.
-			Define the following objects
-				\begin{equation}
-					W_i(t) = \mathbbm{1}\left[i \leq n\right] X_i(t) + \mathbbm{1}\left[i > n\right] Y_{i-n}(t)
-				\end{equation}
-				\begin{equation}
-					U_i = \mathbbm{1}\left[i \leq n\right] \frac{N}{n} + \mathbbm{1}\left[i > n\right] \frac{N}{m}
-				\end{equation}
-				\begin{equation}
-					F_{nX}(z) = G(z) + \frac{1}{N}D(z)
-				\end{equation}
-				for a chosen function $D(z)$ fulfilling $\int_{\mathbb{L}_2[0,1]}D^2(z) \mathrm{d} \mu(z) < \infty$.
-			
-			\begin{theorem}[Lemma A.3]
-				content...
-			\end{theorem}
-		
-			\begin{proof}
-				content...
-			\end{proof}
-		
-			\begin{theorem}[Lemma A.4]
-				Let Assumptions \ref{Ass1} and \ref{mean_existence} be fulfilled. Then, 
-				\begin{equation}
-					\frac{1}{\sqrt{N}} \int_{\mathbb{L}_2[0,1]} \left[ \hat{F}_n(z) - \hat{G}_{m}(z) \right] \left\{\psi_k(z)\right\}_{k = 1}^K \mathrm{d}\mu(z)\rightarrow_d \mathcal{N}(\Xi, \Sigma_K)
-				\end{equation}
-				where 
-				\begin{equation}
-					\Xi = \int_{\mathbb{L}_2[0,1]}D(z) \left\{\psi_k(z)\right\}_{k = 1}^K \mathrm{d}\mu(z)
-				\end{equation}
-				and 
-				\begin{equation}
-					\left(\Sigma_K\right)_{i,j} = \frac{(1 + \lambda)^2}{\lambda} \int_{\mathbb{L}_2[0,1]}\int_{\mathbb{L}_2[0,1]} \left[G(\min(z, 	\tilde{z})) - G(z)G(\tilde{z}))\right] \psi_i(z) \psi_j(\tilde{z}) \mathrm{d}\mu(z) \mathrm{d}\mu(\tilde{z})
-				\end{equation}
-				where $\min(z, \tilde{z})$ is defined as in Section \ref{asymp}.
-			\end{theorem}
-		
-			\begin{proof}
-				We have
-				\begin{equation}\label{piece1}
-					\begin{split}
-						\frac{1}{\sqrt{N}}\left[F(z) - G(z)\right] &= \frac{1}{\sqrt{N}} \Bigg[ \sum_{i = 1}^{N} U_i \mathbbm{1}\left[W_i(t) \leq z(t) \ \forall t \in [0,1]\right] \Bigg]
-					\end{split}
-				\end{equation}
-				{\color{red} Hier Zwischenschritt ergaenzen}\\
-				For any $K = 1,2,3,\dots$
-				\begin{equation}\label{piece2}
-						\frac{1}{\sqrt{N}} \sum_{i = 1}^{N} U_i \bigg\{ \int_{\mathbb{L}_2[0,1]} \mathbbm{1}\left[W_i(t) \leq z(t) \ \forall t \in [0,1] \right] \psi_k(z) \mathrm{d} \mu(z) - \mu_{i,N,k}\bigg\}_{k = 1}^K  \rightarrow \mathcal{N}(0_K, \Sigma_K)
-				\end{equation}
-				where
-				\begin{equation}
-					\mu_{i,N,k} = \mathbbm{1}\left[i \leq n\right] \int_{\mathbb{L}_2[0,1]} F_{nX}(z) \psi_k(z) \mathrm{d} \mu(z) + 
-					\mathbbm{1}\left[i > n\right] \int_{\mathbb{L}_2[0,1]} G(z) \psi_k(z) \mathrm{d} \mu(z)
-				\end{equation}
-				Additionally,
-				\begin{equation}\label{piece3}
-					\frac{1}{\sqrt{N}} \left[ \sum_{i = 1}^{N} U_i \mu_{i,N,k}\right] = \frac{1}{\sqrt{N}} \int_{\mathbb{L}_2[0,1]} D(z) \psi_k(z) \mathrm{d}\mu(z)
-				\end{equation}
-				The Lemma holds by Equations \ref{piece1}, \ref{piece2} and \ref{piece3}.
-			\end{proof}
-		
-		\begin{proof}[Theorem \ref{asymp_proof}]
-			Let $\left(\psi_k\right)_{k \in \mathbb{N}}$ be a complete orthonormal basis of $\mathbb{L}_2(\mu)$ where $\mathbb{L}_2(\mu)$ denotes the Hilbert space of functionals on $\mathbb{L}_2[0,1]$ that are square-integrable with respect to $\mu$. Using a countable basis is only possible if $\mathbb{L}_2(\mu)$ is a separable Hilbert space, which the original authors do not show.\\
-			
-			For any $z(t) \in \mathbb{L}_2[0,1]$ define:
-			\begin{equation}
-				H_N(z) = \frac{1}{N} \left[\sum_{i = 1}^{n} \frac{N}{n} \mathbbm{1}\left[X_i(t) \leq z(t)\ \forall t \in [0,1]\right]
-				+ \sum_{i = 1}^{m} \frac{N}{m} \mathbbm{1}\left[Y_i(t) \leq z(t)\ \forall t \in [0,1]\right]\right]
-			\end{equation} 
-			Then,
-			\begin{equation}
-				\tau_{n,m} = \int_{\mathbb{L}_2[0,1]} H_N^2(z) \mathrm{d}\mu(z)
-			\end{equation}
-			For any positive integer $K$, define the following objects.
-			\begin{multicols}{2}
-				\noindent
-				\begin{equation*}
-					H_{N,K1}(z) = \sum_{k = 1}^{K} c_{N,k}\psi_k(z)
-				\end{equation*}
-				\begin{equation}
-					H_{N,K2}(z) = \sum_{k = K+1}^{\infty} c_{N,k}\psi_k(z)
-				\end{equation}
-			\end{multicols}
-			where
-			\begin{equation}
-				c_{N,k} = \int_{\mathbb{L}_2[0,1]} H_N(z) \psi_k(z) \mathrm{d}\mu(z)
-			\end{equation}
-		and therefore
-		\begin{equation}
-			H_N(z) = \sum_{k = 1}^{\infty} c_{N,k}\psi_k(z) = H_{N,K1}(z) + H_{N,K2}(z).
-		\end{equation}
-		Similarly, define
-		\begin{multicols}{2}
-			\noindent
-			\begin{equation*}
-				\tau_{N,K1} = \int_{\mathbb{L}_2[0,1]} 	H_{N,K1}^2(z) \mathrm{d}\mu(z) = \sum_{k = 1}^{K} c_{N,k}^2
-			\end{equation*}
-			\begin{equation}
-				\tau_{N,K2} = \int_{\mathbb{L}_2[0,1]} 	H_{N,K2}^2(z) \mathrm{d}\mu(z) = \sum_{k = K+1}^{\infty} c_{N,k}^2
-			\end{equation}
-		\end{multicols}
-		and 
-		\begin{multicols}{2}
-			\noindent
-			\begin{equation*}
-				\Upsilon_{N,K1}(z) = \int_{\mathbb{L}_2[0,1]} b_k \psi_k(z) \mathrm{d}\mu(z) = \sum_{k = 1}^{K} c_{N,k}^2
-			\end{equation*}
-			\begin{equation}
-				\Upsilon_{N,K2}(z) = \int_{\mathbb{L}_2[0,1]} b_k \psi_k(z) \mathrm{d}\mu(z) = \sum_{k = K+1}^{\infty} c_{N,k}^2
-			\end{equation}
-		\end{multicols}
-		where
-		\begin{equation}
-			b_k = \int_{\mathbb{L}_2[0,1]}\Upsilon(z) \psi_k(z) \mathrm{d} \mu(z)
-		\end{equation}
-		and thus 
-		\begin{equation}
-			 \Upsilon(z) = \Upsilon_{N,K1}(z) + \Upsilon_{N,K2}(z).
-		\end{equation}
-		Additionally, define
-		\begin{multicols}{2}
-			\noindent
-			\begin{equation*}
-				\tau_{K1} = \int_{\mathbb{L}_2[0,1]} 	\Upsilon_{N,K1}^2(z) \mathrm{d}\mu(z)
-			\end{equation*}
-			\begin{equation}
-				\tau_{K2} = \int_{\mathbb{L}_2[0,1]} 	\Upsilon_{N,K2}^2(z) \mathrm{d}\mu(z).
-			\end{equation}
-		\end{multicols}
-		Now, it is necessary to show the following three points.
-		\begin{enumerate}
-			\item $\tau_{K1} \rightarrow \tau \quad \text{as} \quad K \rightarrow \infty$
-			\item $\tau_{N,K1} \rightarrow \tau_{K1} \quad \text{as} \quad N \rightarrow \infty \quad \forall K = 1,2,3, \dots$
-			\item $\left(\tau_N - \tau_{N,K1}\right) = \tau_{N,K2} \rightarrow_p 0 \quad \text{as} \quad N \rightarrow \infty \quad \text{followed by} \quad K \rightarrow \infty$
-		\end{enumerate}
-	
-		Concerning point one, the following is easy to see.
-		\begin{equation}
-			\mathbb{E}[\tau - \tau_{K1}] = \mathbb{E}[\tau_{K2}] = \sum_{k = K+1}^{\infty} \mathbb{E}[b_k^2] \rightarrow 0 \quad \text{as} \quad K \rightarrow \infty \quad \text{because} \quad \mathbb{E}[\Upsilon(z)] \in \mathbb{L}_2(\mu)
-		\end{equation}
-	
-		For point two, define the following objects.
-		\begin{multicols}{2}
-			\noindent
-			\begin{equation*}
-				C_{N,K} = \left\{c_{N,k}\right\}_{k=1}^K
-			\end{equation*}
-			\begin{equation}
-				B_{K} = \left\{b_{k}\right\}_{k=1}^K
-			\end{equation}
-		\end{multicols}
-		By Lemma A.4, it follows that $C_{N,K} \rightarrow \mathcal{N}(0, \Sigma_K) \sim B_K$ as $N \rightarrow \infty$ which shows the point.\\
-		
-		Concerning point three, by Lemma A.3 the following holds.
-		\begin{equation}
-			\begin{split}
-				\mathbb{E}[\tau_{N,K2}] &= \sum_{k = K+1}^{\infty} \mathbb{E}[c_{N,k}^2] \\
-				&= \sum_{k = K+1}^{\infty} \Bigg\{ \frac{1}{\sqrt{N}} \left(1 + \frac{m}{n}\right) \int_{z_1 \in \mathbb{L}_2[0,1]} \int_{z_2 \in \mathbb{L}_2[0,1]} D\left[\min(z_1, z_2)\right] \psi_k(z_1) \psi_k(z_2) \mathrm{d}\mu(z_1) \mathrm{d}\mu(z_2) \\
-				& - \frac{2}{\sqrt{N}} \left(1 + \frac{m}{n}\right) \left[\int_{z \in \mathbb{L}_2[0,1]} D(z) \psi_k(z) \mathrm{d}\mu(z) \right] \left[\int_{z \in \mathbb{L}_2[0,1]} G(z) \psi_k(z) \mathrm{d}\mu(z) \right] \\
-				& + \left(\Sigma_K\right)_{k,k} \left(2 + \frac{n}{m} + \frac{m}{n}\right) \frac{\lambda}{(1 + \lambda)^2} + \frac{1}{N^2} \left[\int_{z \in \mathbb{L}_2[0,1]} D(z) \psi_k(z) \mathrm{d}\mu(z) \right] \sum_{i = 1}^{n}\sum_{j = 1}^{n} \mathbb{E}\left[U_i U_j\right]\Bigg\}
-			\end{split}
-		\end{equation}
-	The last expression is bounded as $n \rightarrow \infty$ for every positive integer $K$, which implies that $\lim_{K \rightarrow \infty} \lim_{N \rightarrow \infty} \mathbb{E}\left[\tau_{N,K2}\right] = 0$. Thus, by Markov's inequality, point three holds.
-		\end{proof}
-	
-		\newpage
 		\subsection{Multiple Testing}\label{Multiple_Testing}
 			When testing statistical hypotheses, it is often helpful or even necessary to test multiple hypotheses independently of each other. One setting where this could be useful is when trying to combine the desirable properties of two tests, as done by \cite{bugni_permutation_2021}. If the tests do not perfectly depend on each other, this creates a problem relating to the size of the combined test.
 			
