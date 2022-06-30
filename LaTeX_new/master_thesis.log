@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.13)  30 JUN 2022 12:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.13)  30 JUN 2022 13:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1149,14 +1149,14 @@ Overfull \hbox (10.71661pt too wide) in paragraph at lines 810--829
  []
 
 [27] [28]
-<../Graphics/Settings_comparison.PDF, id=792, 1445.4pt x 722.7pt>
+<../Graphics/Settings_comparison.PDF, id=791, 1445.4pt x 722.7pt>
 File: ../Graphics/Settings_comparison.PDF Graphic file (type pdf)
 <use ../Graphics/Settings_comparison.PDF>
 Package pdftex.def Info: ../Graphics/Settings_comparison.PDF  used on input lin
-e 860.
+e 861.
 (pdftex.def)             Requested size: 500.77129pt x 250.37938pt.
 
-Overfull \hbox (10.71661pt too wide) in paragraph at lines 868--882
+Overfull \hbox (10.71661pt too wide) in paragraph at lines 869--883
 [] 
  []
 
@@ -1165,7 +1165,7 @@ Overfull \vbox (3.7036pt too high) has occurred while \output is active []
 
 
 [30] [31]
-Underfull \hbox (badness 10000) in paragraph at lines 912--916
+Underfull \hbox (badness 10000) in paragraph at lines 913--917
 
  []
 
@@ -1174,27 +1174,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 912--916
 File: ../Graphics/electricity_demand_curves.PDF Graphic file (type pdf)
 <use ../Graphics/electricity_demand_curves.PDF>
 Package pdftex.def Info: ../Graphics/electricity_demand_curves.PDF  used on inp
-ut line 961.
+ut line 962.
 (pdftex.def)             Requested size: 500.77129pt x 150.22763pt.
  [33 <../Graphics/electricity_demand_curves.PDF>] [34]
 <../Graphics/estimate_weekdays.PDF, id=875, 1445.4pt x 578.16pt>
 File: ../Graphics/estimate_weekdays.PDF Graphic file (type pdf)
 <use ../Graphics/estimate_weekdays.PDF>
 Package pdftex.def Info: ../Graphics/estimate_weekdays.PDF  used on input line 
-1001.
+1002.
 (pdftex.def)             Requested size: 500.77129pt x 200.3035pt.
  [35]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\cite' on input line 1008.
+(hyperref)                removing `\cite' on input line 1009.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1008.
+(hyperref)                removing `subscript' on input line 1009.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1008.
+(hyperref)                removing `subscript' on input line 1009.
 
 <../Graphics/electricity_demand_curves_cleaned.PDF, id=887, 1445.4pt x 433.62pt
 >
@@ -1202,125 +1202,125 @@ File: ../Graphics/electricity_demand_curves_cleaned.PDF Graphic file (type pdf)
 
 <use ../Graphics/electricity_demand_curves_cleaned.PDF>
 Package pdftex.def Info: ../Graphics/electricity_demand_curves_cleaned.PDF  use
-d on input line 1015.
+d on input line 1016.
 (pdftex.def)             Requested size: 500.77129pt x 150.22763pt.
 [36 <../Graphics/estimate_weekdays.PDF> <../Graphics/electricity_demand_curves_
 cleaned.PDF>] [37] [38] [39] [40] [41] [42]
-Overfull \hbox (6.96138pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (6.96138pt too wide) in paragraph at lines 1108--1108
 [][]\OT1/cmr/m/n/12 (-20) Pomann, Gina-Maria, Ana-Maria Staicu, and Su-jit Ghos
 h (2016). ``A two-sample distribution-
  []
 
 [43]
-Underfull \hbox (badness 10000) in paragraph at lines 1122--1123
+Underfull \hbox (badness 10000) in paragraph at lines 1126--1127
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1124--1125
+Underfull \hbox (badness 10000) in paragraph at lines 1128--1129
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1126--1129
+Underfull \hbox (badness 10000) in paragraph at lines 1130--1133
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1130--1131
+Underfull \hbox (badness 10000) in paragraph at lines 1134--1135
 
  []
 
 [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1132--1133
+Underfull \hbox (badness 10000) in paragraph at lines 1136--1137
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1136.
+(hyperref)                removing `math shift' on input line 1140.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1136.
+(hyperref)                removing `subscript' on input line 1140.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1136.
+(hyperref)                removing `math shift' on input line 1140.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\cite' on input line 1136.
+(hyperref)                removing `\cite' on input line 1140.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1136.
+(hyperref)                removing `subscript' on input line 1140.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1136.
+(hyperref)                removing `subscript' on input line 1140.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1137--1138
+Underfull \hbox (badness 10000) in paragraph at lines 1141--1142
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 1172--1174
+Underfull \hbox (badness 10000) in paragraph at lines 1176--1178
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1180--1182
+Underfull \hbox (badness 10000) in paragraph at lines 1184--1186
 
  []
 
 [3]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\cite' on input line 1198.
+(hyperref)                removing `\cite' on input line 1202.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1198.
+(hyperref)                removing `subscript' on input line 1202.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1198.
+(hyperref)                removing `subscript' on input line 1202.
 
 [4] [5]
 <../Graphics/estimate_const_year.PDF, id=1066, 1445.4pt x 433.62pt>
 File: ../Graphics/estimate_const_year.PDF Graphic file (type pdf)
 <use ../Graphics/estimate_const_year.PDF>
 Package pdftex.def Info: ../Graphics/estimate_const_year.PDF  used on input lin
-e 1454.
+e 1458.
 (pdftex.def)             Requested size: 500.77129pt x 150.22763pt.
 <../Graphics/estimate_months.PDF, id=1067, 1445.4pt x 578.16pt>
 File: ../Graphics/estimate_months.PDF Graphic file (type pdf)
 <use ../Graphics/estimate_months.PDF>
 Package pdftex.def Info: ../Graphics/estimate_months.PDF  used on input line 14
-62.
+66.
 (pdftex.def)             Requested size: 500.77129pt x 200.3035pt.
  [6 <../Graphics/estimate_const_year.PDF>]
 <../Graphics/ecdf.PDF, id=1081, 1445.4pt x 433.62pt>
 File: ../Graphics/ecdf.PDF Graphic file (type pdf)
 <use ../Graphics/ecdf.PDF>
-Package pdftex.def Info: ../Graphics/ecdf.PDF  used on input line 1471.
+Package pdftex.def Info: ../Graphics/ecdf.PDF  used on input line 1475.
 (pdftex.def)             Requested size: 500.77129pt x 150.22763pt.
 <../Graphics/persistence_comparison.PDF, id=1082, 1445.4pt x 867.24pt>
 File: ../Graphics/persistence_comparison.PDF Graphic file (type pdf)
 <use ../Graphics/persistence_comparison.PDF>
 Package pdftex.def Info: ../Graphics/persistence_comparison.PDF  used on input 
-line 1479.
+line 1483.
 (pdftex.def)             Requested size: 500.77129pt x 300.45526pt.
  [7 <../Graphics/estimate_months.PDF> <../Graphics/ecdf.PDF>]
 <../Graphics/persistence_comparison_basis.PDF, id=1098, 1445.4pt x 867.24pt>
 File: ../Graphics/persistence_comparison_basis.PDF Graphic file (type pdf)
 <use ../Graphics/persistence_comparison_basis.PDF>
 Package pdftex.def Info: ../Graphics/persistence_comparison_basis.PDF  used on 
-input line 1488.
+input line 1492.
 (pdftex.def)             Requested size: 500.77129pt x 300.45526pt.
  [8 <../Graphics/persistence_comparison.PDF> <../Graphics/persistence_compariso
 n_basis.PDF>] [9] (./master_thesis.aux)
@@ -1398,7 +1398,7 @@ pe1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/
 msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on master_thesis.pdf (55 pages, 2236184 bytes).
+Output written on master_thesis.pdf (55 pages, 2236806 bytes).
 PDF statistics:
  1289 PDF objects out of 1440 (max. 8388607)
  1148 compressed objects within 12 object streams

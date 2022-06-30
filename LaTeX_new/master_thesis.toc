@@ -44,11 +44,12 @@
 \contentsline {subsection}{\numberline {9.2}Theoretical Extensions}{38}{subsection.9.2}%
 \contentsline {paragraph}{Variants of the Test based on different Norms\\}{38}{subsection.9.2}%
 \contentsline {paragraph}{Extension to Non-separable Processes\\}{39}{equation.9.48}%
+\contentsline {paragraph}{Functional Principal Component Version of the CvM type Test\\}{39}{equation.9.48}%
 \contentsline {subsection}{\numberline {9.3}Possible Further Simulations}{39}{subsection.9.3}%
 \contentsline {paragraph}{Comparing different Functional Bases\\}{39}{subsection.9.3}%
 \contentsline {paragraph}{Comparing choices of $w(t)$ and $\left (\rho _i\right )_{i = 1, the \dots , K}$\\}{39}{subsection.9.3}%
 \contentsline {paragraph}{Less restrictive Distributions of Fourier Coefficients\\}{39}{subsection.9.3}%
-\contentsline {paragraph}{Simulations for Unbalanced Sample Sizes\\}{39}{subsection.9.3}%
+\contentsline {paragraph}{Simulations for Unbalanced Sample Sizes\\}{40}{subsection.9.3}%
 \contentsline {paragraph}{Comparing Implementations using different orders of Operations\\}{40}{subsection.9.3}%
 \contentsline {subsection}{\numberline {9.4}Potential Applications}{40}{subsection.9.4}%
 \contentsline {section}{\numberline {10}Bibliography}{41}{section.10}%
