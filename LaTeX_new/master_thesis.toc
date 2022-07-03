@@ -38,12 +38,12 @@
 \contentsline {subsubsection}{\numberline {8.1.4}Detrending and Deseasoning}{35}{subsubsection.8.1.4}%
 \contentsline {subsection}{\numberline {8.2}Test from \blx@tocontentsinit {0}\cite {bugni_permutation_2021}}{36}{subsection.8.2}%
 \contentsline {section}{\numberline {9}Outlook}{37}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Potential Problems}{38}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.1}Potential Problems}{37}{subsection.9.1}%
 \contentsline {paragraph}{Implementation\\}{38}{subsection.9.1}%
 \contentsline {paragraph}{Definition of $\mathbb {L}_2[0,1]$ \\}{38}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}Theoretical Extensions}{38}{subsection.9.2}%
 \contentsline {paragraph}{Variants of the Test based on different Norms\\}{38}{subsection.9.2}%
-\contentsline {paragraph}{Extension to Non-separable Processes\\}{39}{equation.9.48}%
+\contentsline {paragraph}{Extension to Non-separable Processes\\}{38}{equation.9.48}%
 \contentsline {paragraph}{Functional Principal Component Version of the CvM type Test\\}{39}{equation.9.48}%
 \contentsline {subsection}{\numberline {9.3}Possible Further Simulations}{39}{subsection.9.3}%
 \contentsline {paragraph}{Comparing different Functional Bases\\}{39}{subsection.9.3}%

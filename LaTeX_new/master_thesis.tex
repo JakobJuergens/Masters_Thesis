@@ -424,11 +424,11 @@ style=authoryear,
 		\end{definition}
 		As previously mentioned, \cite{bugni_permutation_2021} assume that two functions $z_1, z_2 \in \mathbb{L}_2[0,1]$ are distinct even if they only differ on a set of Lebesgue-measure zero. In this case, this distinction is important to appropriately define the distribution function. This can be seen by checking whether the distribution function evaluated at two functions from the same equivalence class will necessarily evaluate to the same value, which is trivially not the case. Therefore, for the definition of the distribution function of a random variable in the sense of \cite{bugni_permutation_2021}, it is necessary to use their definition of $\mathbb{L}_2[0,1]$.
 		However, as previously mentioned, this distinction will not have an influence in practice due to the construction of the test statistic and the chosen measure.
-		
+
 		\subsection{Assumptions}\label{Assumptions}
 		The authors explicitly make four assumptions, some of which can be relaxed to allow for a more general setting.
 		
-			\newpage
+		\newpage
 			\begin{assumption}\label{Ass1}\hfill\vspace{-0.8cm}
 				\begin{enumerate}
 					\item $X(t)$ and $Y(t)$ are separable, $\mu$-measurable stochastic processes. 
@@ -553,6 +553,7 @@ style=authoryear,
 				\mathbb{E}\left[Z_K(t)\right] = \sum_{k = 1}^{K} \mathbb{E}\left[b_k\right] \psi_k(t)
 			\end{equation}
 		
+			\newpage
 			Lastly, a distribution around the expected value has to be specified. In Equation \ref{Fourier_coefs} this takes the form of random errors $U_k$ and non-stochastic square-summable factors $(\rho_k)_{k \in \mathbb{N}}$.
 			\begin{equation}\label{Fourier_coefs}
 				b_k = \mathbb{E}\left[b_k\right] + \rho_k U_k
@@ -671,7 +672,7 @@ style=authoryear,
 				\max(\alpha_{\tau}, \alpha_{\nu}) \leq \mathbb{P}\left[(\phi_{n,m} > 0) \cup (\tilde{\phi}_{n,m} > 0)\right] \leq \alpha_{\tau} + \alpha_{\nu}
 			\end{equation}
 			This opens the option to, for example, choose a size of $0.03$ for the CvM type test and a level of $0.02$ for the mean-based test, as the combined test will at most have a level of $0.05$. One critique of this approach is that combined tests constructed using a Bonferroni correction are typically conservative. However, even though more advanced techniques can be used in some settings to combat this problem, this seems infeasible for the case of the test statistics presented in \cite{bugni_permutation_2021}.
-			
+		
 		\newpage
 		\subsection{Asymptotic Properties under the Alternative}
 			As alluded to in Sections \ref{CvM_Tests} and \ref{cvm_type_test}, for the asymptotic properties of the test, it is useful to make another assumption on the sequence of tests that is considered as the number of observations goes to infinity.
@@ -799,9 +800,11 @@ style=authoryear,
 
 		\subsection{Simulation Setup}
 		The simulations presented in this thesis, are inspired by the simulation study from \cite{bugni_permutation_2021} and shine more light on specific settings that offer insight into the potential benefits and problems of the method. 
-		To describe the specific processes used in the simulation, this Section introduces the notation used in \cite{bugni_permutation_2021} shortly to then describe the data generating processes mathematically. \\
+		To describe the specific processes used in the simulation, this Section introduces the notation used in \cite{bugni_permutation_2021} shortly to then describe the data generating processes mathematically. 
 		
-		Deviating from \cite{bugni_permutation_2021}, these simulations focus on the two-sample variant of the test. Additionally, the data are generated on the closed interval $\left[0,1\right]$ and use a smaller sample size of $20$ observations per sample. Therefore, let $\mathcal{T} = \left\{0, 0.01, 0.02, \dots, 1\right\}$ be the index set of the discrete points on the unit interval, then the observations are constructed in the following way.\\
+		Deviating from \cite{bugni_permutation_2021}, these simulations focus on the two-sample variant of the test. Additionally, the data are generated on the closed interval $\left[0,1\right]$ and use a smaller sample size of $20$ observations per sample. 
+		
+		Therefore, let $\mathcal{T} = \left\{0, 0.01, 0.02, \dots, 1\right\}$ be the index set of the discrete points on the unit interval, then the observations are constructed in the following way.\\
 		
 		\noindent\fbox{%
 			\parbox{\textwidth}{%
@@ -897,11 +900,8 @@ style=authoryear,
 		\end{table}
 		Looking first at setting 1, which is a simulation under the null hypothesis, the rejection probabilities seem to be compatible with the chosen size of $0.05$. However, the size of the rejection frequency for the CvM test seems slightly low, which could be an artifact caused by the relatively low number of simulation runs. A larger simulation using 10,000 runs for the CvM type test resulted in a rejection frequency of 0.0469 and therefore seems to confirm this hypothesis.
 		Next, looking at the rejection frequencies of the mean-based test in settings 3 and 4, the test shows only trivial power. This is expected as the samples were explicitly generated by processes sharing a common mean function. 
-		
 		For setting 2, which is a mean shift between the processes the power of both tests is relatively high considering the low sample size of $20$. Especially considering the fact that the authors mentioned that the power of the CvM type test in pure mean shift settings is somewhat lacking. However, this can be remedied by the fact, that even thought the mean shift is rather subdued visually, it is stronger than the mean shift used in the simulation study of \cite{bugni_permutation_2021}.
-		
 		Due to the change in setting 3, picking up the differences in the persistence structure might be difficult with a measure induced by a random variable that was truncated at a low truncation parameter $K$. However, for a choice of $K = 25$, the simulation shows considerable non-trivial power against this alternative. The fact that the combined tests keep a lot of their power as the level of the CvM test decreases while the mean-focused test shows no non-trivial power, indicates that even at higher significance levels, a comparatively high fraction of violations of the null hypothesis can be identified by the CvM test.
-		
 		In setting 4, the rejection frequencies are extremely high, which in light of the other three settings and the visual presentation of exemplary samples in Figure \ref{settings} is unsurprising. In the Figure, setting 4 showed the clearest difference between the reference sample and sample 2 and the test was able to pick up on it. Similar to setting 3, the rejection frequencies for the combined tests indicate that the rejection frequency of the CvM type test remained high even at stricter significance levels.
 	
 		\subsection{Simulation - Test for Persistence Alternatives}\label{sim_persistence}
@@ -1038,7 +1038,6 @@ style=authoryear,
 	\section{Outlook}\label{Outlook}
 		This Outlook section will present some problems that came up during the process of writing this thesis that might be interesting to study in further research. Additionally, it presents some ideas for simulations that could improve the understanding of methods such as CvM type tests in a functional data setting and presents real-world scenarios that might be interesting applications for the methods introduced in this thesis.
 		
-		\newpage
 		\subsection{Potential Problems}
 			The results presented in this thesis give a good impression of the possibilities of the method developed in \cite{bugni_permutation_2021}. However, there are also potential problems that should not go unnamed.
 			
