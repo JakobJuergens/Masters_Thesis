@@ -389,25 +389,25 @@
     \endentry
     \entry{cox_pointwise_2008}{article}{}
       \name{author}{2}{}{%
-        {{un=1,uniquepart=given,hash=cd50bfe5a3ededb5bdc309ad02245ce1}{%
+        {{un=0,uniquepart=base,hash=e70abca595606c605c76ad4c8ce32705}{%
            family={Cox},
            familyi={C\bibinitperiod},
-           given={Dennis\bibnamedelima D.},
-           giveni={D\bibinitperiod\bibinitdelim D\bibinitperiod},
-           givenun=1}}%
-        {{un=1,uniquepart=given,hash=24c73840f7e96de79507baf7be27a3b0}{%
+           given={Dennis},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f8bd03fbc41258254543c90b3d69dca4}{%
            family={Lee},
            familyi={L\bibinitperiod},
-           given={Jong\bibnamedelima Soo},
-           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod},
-           givenun=1}}%
+           given={Jong},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
       }
-      \strng{namehash}{86a4d532eba6a26979e81e98a09c2ce0}
-      \strng{fullhash}{86a4d532eba6a26979e81e98a09c2ce0}
-      \strng{bibnamehash}{86a4d532eba6a26979e81e98a09c2ce0}
-      \strng{authorbibnamehash}{86a4d532eba6a26979e81e98a09c2ce0}
-      \strng{authornamehash}{86a4d532eba6a26979e81e98a09c2ce0}
-      \strng{authorfullhash}{86a4d532eba6a26979e81e98a09c2ce0}
+      \strng{namehash}{29066c1426c290704ea1020c3049fe27}
+      \strng{fullhash}{29066c1426c290704ea1020c3049fe27}
+      \strng{bibnamehash}{29066c1426c290704ea1020c3049fe27}
+      \strng{authorbibnamehash}{29066c1426c290704ea1020c3049fe27}
+      \strng{authornamehash}{29066c1426c290704ea1020c3049fe27}
+      \strng{authorfullhash}{29066c1426c290704ea1020c3049fe27}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{extradatescope}{labelyear}
@@ -967,18 +967,18 @@
     \endentry
     \entry{lee_two_2015}{article}{}
       \name{author}{3}{}{%
-        {{un=1,uniquepart=given,hash=f8bd03fbc41258254543c90b3d69dca4}{%
+        {{un=0,uniquepart=base,hash=f8bd03fbc41258254543c90b3d69dca4}{%
            family={Lee},
            familyi={L\bibinitperiod},
            given={Jong},
            giveni={J\bibinitperiod},
-           givenun=1}}%
-        {{un=1,uniquepart=given,hash=e70abca595606c605c76ad4c8ce32705}{%
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e70abca595606c605c76ad4c8ce32705}{%
            family={Cox},
            familyi={C\bibinitperiod},
            given={Dennis},
            giveni={D\bibinitperiod},
-           givenun=1}}%
+           givenun=0}}%
         {{un=0,uniquepart=base,hash=829c5b648ffc1649540ecc1e6539b10a}{%
            family={Follen},
            familyi={F\bibinitperiod},
@@ -1511,47 +1511,6 @@
       \field{year}{1974}
       \verb{doi}
       \verb 10.1007/978-3-642-65632-3
-      \endverb
-    \endentry
-    \entry{van_der_vaart_weak_1996}{book}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=50ecd82941206d166c646a1aa82a4871}{%
-           family={Vaart},
-           familyi={V\bibinitperiod},
-           given={Aad\bibnamedelima W.},
-           giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod},
-           givenun=0,
-           prefix={van\bibnamedelima der},
-           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod},
-           prefixun=0}}%
-        {{un=0,uniquepart=base,hash=363d21d4cc0f18259dc989aee106e978}{%
-           family={Wellner},
-           familyi={W\bibinitperiod},
-           given={Jon\bibnamedelima A.},
-           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{publisher}{1}{%
-        {Springer New York}%
-      }
-      \strng{namehash}{725ccd84b5cc8d7c20db3bddf5497f87}
-      \strng{fullhash}{725ccd84b5cc8d7c20db3bddf5497f87}
-      \strng{bibnamehash}{725ccd84b5cc8d7c20db3bddf5497f87}
-      \strng{authorbibnamehash}{725ccd84b5cc8d7c20db3bddf5497f87}
-      \strng{authornamehash}{725ccd84b5cc8d7c20db3bddf5497f87}
-      \strng{authorfullhash}{725ccd84b5cc8d7c20db3bddf5497f87}
-      \field{sortinit}{V}
-      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{978-1-4757-2547-6 978-1-4757-2545-2}
-      \field{series}{Springer {Series} in {Statistics}}
-      \field{title}{Weak {Convergence} and {Empirical} {Processes}}
-      \field{year}{1996}
-      \verb{doi}
-      \verb 10.1007/978-1-4757-2545-2
       \endverb
     \endentry
     \entry{westfall_resampling-based_1993}{book}{}
