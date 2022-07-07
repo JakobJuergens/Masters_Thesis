@@ -948,7 +948,7 @@ style=authoryear,
 		Apart from this unexpected behavior for extremely high-frequent alternatives, the results are as expected, and the test shows considerable non-trivial power against changes in the persistence structure of the process. This is a promising indicator of the potential of this extended testing procedure, and further simulations to study its properties in more detail would be highly interesting due to the test's unique approach.
 				
 	\section{Application}\label{Application}
-		In order to give an example of the real-world merits of the method, this section will compare electricity demand data from Adelaide. This data is provided as part of the \textit{fds}\footcite{fds} package for R. It presents half-hourly energy demand in megawatts and was originally used by \cite{magnano_generation_2007} and \cite{magnano_generation_2008}. It contains electricity demand curves for 3556 days from 6/7/1997 to 31/3/2007. Some of these curves, specifically a selection of curves observed on Wednesdays and Saturdays fitted using a Fourier basis consisting of 25 functions, is shown in Figure \ref{electricity_demand}.
+		In order to give an example of the real-world merits of the method, this section will compare electricity demand data from Adelaide for different days of the week. This data is provided as part of the \textit{fds}\footcite{fds} package for R. It consists of half-hourly energy demand in megawatts and was originally used by \cite{magnano_generation_2007} and \cite{magnano_generation_2008}. The data set contains electricity demand curves for 3556 days from 6/7/1997 to 31/3/2007. Some of these curves, specifically a selection observed on Wednesdays and Saturdays fitted using a Fourier basis consisting of 25 functions, is shown in Figure \ref{electricity_demand}.
 		\begin{figure}[H]
 			\makebox[\textwidth][c]{
 				\includegraphics[width=1.0\textwidth]{../Graphics/electricity_demand_curves.PDF}
@@ -961,7 +961,7 @@ style=authoryear,
 	
 		\newpage
 		\subsection{Data Cleaning and Preprocessing}
-		Before actually applying the test from \cite{bugni_permutation_2021}, it is important to prepare the data for the procedure. As this problem does not have the structure that an experiment as described in \cite{bugni_permutation_2021} possesses, some problems must be addressed before using the procedure. These adjustments are described below, and some details are substantiated in Appendix \ref{Application_Appendix}.
+		Before actually applying the test from \cite{bugni_permutation_2021}, it is important to prepare the data for the procedure. As the problem does not have the structure that an experiment as described in \cite{bugni_permutation_2021} possesses, some problems must be addressed before using the procedure. These adjustments are described below, and some details are substantiated in Appendix \ref{Application_Appendix}.
 		
 			\subsubsection{Removal of Mondays and Fridays}
 			One potential problem of this procedure is whether observations on different weekdays or days of the weekend can be seen as independent and identically distributed. While it seems reasonable to assume that demand may be similar on Saturdays and Sundays, it is questionable whether the same can be said for working days. 
@@ -971,7 +971,7 @@ style=authoryear,
 			Furthermore, holidays could appear more regularly on specific weekdays than others. Whereas on weekends, a holiday would not significantly influence the electricity demand due to the already reduced economic activity, this is different for weekdays. Therefore if holidays would occur systematically more often on specific days - such as Thursdays in the case of Germany - this could create problems. Therefore public holidays in Southern Australia, the Australian federal territory containing Adelaide, were excluded from the analysis. A list of holidays that were excluded is given in Appendix \ref{Application_Appendix}. Additionally, days immediately before and after holidays are excluded for the same reason as Mondays and Fridays. This procedure of eliminating holidays from the data set removed 299 out of 3556 curves from the data set which was used in further steps of the analysis. 
 			
 			\subsubsection{Curve Fitting}
-			To employ methods that are suitable to remove trend and seasonal components from the data, it is useful to fit a functional basis to the underlying discrete observations. However, as described in Section \ref{problem_curve_fitting}, this can lead to problems if the truncated functional basis is unable to capture the features of the discrete data. However, in the setting explored in this application, visual inspection of the resulting curves showed no signs of artifacts created by the curve fitting process. This makes sense from a theoretical perspective, as the curves are more persistent than those explored in the simulations. Therefore, the truncated basis, consisting of trigonometric functions of lower frequencies, should be able to capture the curves' properties appropriately.
+			To employ methods that are suitable to remove trend and seasonal components from the data, it is useful to fit a functional basis to the underlying discrete observations. However, as described in Section \ref{problem_curve_fitting}, this can lead to problems if the truncated functional basis is unable to capture the features of the discrete data. However, in the setting explored in this application, visual inspection of the resulting curves showed no signs of artifacts created by the curve fitting process. This makes sense from a theoretical perspective, as the curves are more persistent than those explored in the simulations and do not show pronounced high-frequency variations. Therefore, the truncated basis, consisting of trigonometric functions of lower frequencies, should be able to capture the curves' properties appropriately.
 			
 			This, in turn, makes the removal of trend and seasonal components from the fitted curves more attractive, as it more closely addresses the functional nature of the underlying data generating processes. Therefore, for the purposes of this simulation, a Fourier basis consisting of 25 functions was fitted to the original data to perform the data cleaning step.
 			
@@ -984,12 +984,12 @@ style=authoryear,
 					 &+ \sum_{k = 2}^{7}\mathbbm{1}_{\left[\textit{day}\: = \: k\right]}f_{\textit{day}, k} + f_{\textit{random}}
 				\end{split}	
 			\end{equation}
-			This is estimated with the usual theory for function-on-scalar regression, which is described, for example, in \cite{ramsay_functional_2005}. Then, the following objects are used for further treatment.
+			The model described in Equation \ref{Data_Cleaning} is estimated with the usual theory for function-on-scalar regression, which is described, for example, in \cite{ramsay_functional_2005}. Specifically, the implementation from the R package \textit{fda}\footcite{fda} was used to estimate the coefficient functions. Then, the following curves are used for further treatment.
 			\begin{equation}
 				\tilde{f} = f_{\textit{mean}} + \sum_{k = 2}^{7}\mathbbm{1}_{\left[\textit{day}\: = \: k\right]}\hat{f}_{\textit{day}, k} + \hat{f}_{\textit{random}}
 			\end{equation}
-			The function-on-scalar regression described in Equation \ref{Data_Cleaning} was performed in R using the \textit{fda}\footcite{fda} package and gave the following results. As these are the results of a function-on-scalar regression, it is convenient to plot the resulting estimates as they are functions instead of giving the estimated Fourier coefficients.
-			The estimated coefficient functions for the different weekdays are of special interest as they are directly linked to the problem that will be studied using the method from \cite{bugni_permutation_2021}. In this case, Sunday is the baseline, and these curves describe the deviation relative to it.
+			As the resulting estimates of a function-on-scalar regression are functional, it is more convenient to plot the estimates instead of giving the estimated Fourier coefficients.			
+			The estimated coefficient functions for the different weekdays are of special interest as they are directly linked to the problem that will be studied using the method from \cite{bugni_permutation_2021}. In this case, Sunday is the baseline, and the curves shown in Figure \ref{estimates_weekdays} describe the deviation relative to it.
 			\begin{figure}[H]
 				\makebox[\textwidth][c]{
 				\includegraphics[width=1.0\textwidth]{../Graphics/estimate_weekdays.PDF}
@@ -1012,7 +1012,9 @@ style=authoryear,
 				\label{electricity_demand_cleaned}
 			\end{figure}
 			As Figure \ref{electricity_demand_cleaned} already shows a considerable mean shift that is more extreme than those shown in the simulation, the test is expected to pick up on these differences. 
-			Additionally, the sample size is considerably bigger in this scenario, with 478 observations and 1404 observations corresponding to Saturdays and working days, respectively. As the power of permutation tests is typically quite sensitive to the sample size, this is another reason to assume strong power against the apparent violation of the null hypothesis.
+			Additionally, the sample size is considerably bigger in this scenario, with 478 observations and 1404 observations corresponding to Saturdays and working days, respectively.
+			
+			As the power of permutation tests is typically quite sensitive to the sample size, this is another reason to assume strong power against the apparent violation of the null hypothesis.
 			Using the same decision rules as in the simulation study leads to the following rejection decisions.
 			\begin{table}[H]
 				\centering
@@ -1033,57 +1035,61 @@ style=authoryear,
 				\caption{Results of the Test from \cite{bugni_permutation_2021}}
 			\end{table}
 			As mentioned before, these rejections of the null hypothesis are unsurprising when looking at the curves generated for the different days in the data cleaning step. There, it was obvious that the difference in mean alone was stark between workdays and Saturdays. Therefore, it was expected for the mean-based test to find the violation of the null hypothesis in this comparatively large sample problem. Due to the large differences in mean alone, it is also unsurprising that the CvM type test picked up on the violation.
-			This application can therefore serve more as a real-world proof of concept for the test. In reality, most scenarios where applying this test will be interesting will be less obvious in the violation of the null hypothesis. Especially violations created by differing persistence structures will typically be difficult to identify. Therefore, applying this test to more challenging settings would be interesting. Section \ref{pot_appl} presents a small selection of settings that might be interesting for further application of the procedures described in this thesis.
+			This application can therefore serve more as a real-world proof of concept for the test. In most real-world scenarios where the test from \cite{bugni_permutation_2021} might be applied a potential violation of the null hypothesis will be less obvious. Especially violations created by differing persistence structures will typically be difficult to identify. Therefore, applying this test to more challenging settings would be interesting. Section \ref{pot_appl} presents a small selection of settings that might be interesting for further application of the procedures described in this thesis.
 	
 	\section{Outlook}\label{Outlook}
-		This Outlook section will present some problems that came up while writing this thesis that might be interesting to study in further research. Additionally, it presents some ideas for simulations that could improve the understanding of methods such as CvM type tests in a functional data setting and presents real-world scenarios that might be interesting applications for the methods introduced in this thesis.
+		The results presented in this thesis gives an impression of the possibilities of the method developed in \cite{bugni_permutation_2021}. 
+		However, there are problems which came up while writing this thesis that should not go unnamed. Additionally, this outlook presents ideas for further simulations that could improve the understanding of methods such as CvM type tests in a functional data setting and presents real-world scenarios that might be interesting applications for the methods introduced in this thesis.
 		
 		\subsection{Potential Problems}
-			The results presented in this thesis give a good impression of the possibilities of the method developed in \cite{bugni_permutation_2021}. However, there are also potential problems that should not go unnamed.
+			
 			
 			\paragraph{Implementation\\}
-				One source of problems that might influence the results of the simulations is the specific implementation that was used to perform the simulation. As addressed in Section \ref{problem_curve_fitting}, seemingly small choices such as whether to use a functional basis to represent the observations can have a significant impact on the performance and reliability of the simulation and its results.
+				One source of problems that might influence the results of the simulations is the chosen implementation. As addressed in Section \ref{problem_curve_fitting}, seemingly small choices such as whether to use a functional basis to represent the observations can have a significant impact on the performance and reliability of the simulation. Additionally, better optimization could lead to definite improvements in the usability of the method in real-world applications due to the immense computational costs associated with specific steps of the testing procedure.
 				
 			\paragraph{Definition of $\mathbb{L}_2[0,1]$ \\}
-				As mentioned multiple times in this thesis, \cite{bugni_permutation_2021} use an unconventional definition of $\mathbb{L}_2[0,1]$ that makes some theoretical considerations of the methods considerably harder. Therefore, questions such as how this convention interacts with the type of measures that is used in the CvM type test should be studied further. 
+				As mentioned multiple times in this thesis, \cite{bugni_permutation_2021} use an unconventional definition of $\mathbb{L}_2[0,1]$ that makes some theoretical considerations of the methods considerably harder. Therefore, questions such as how this convention interacts with the type of measure that is used in the CvM type test should be studied further. 
 	
 		\subsection{Theoretical Extensions}
 			\paragraph{Variants of the Test based on different Norms\\}
-			In the classical scalar setting, one common alternative to the CvM test is the Kolmogorov-Smirnov test. Instead of using the squared distance between two objects, it is based on the supremum norm. It could therefore be used to construct an alternative test statistic in the following way. 
-			\begin{equation}
+			In the classical scalar setting, one common alternative to the CvM test is the Kolmogorov-Smirnov test. Instead of using the squared distance between two objects, it is based on the supremum norm. Analogously, it could be used to construct an alternative test statistic in the functional setting as shown in Equation \ref{KS_test}. 
+			\begin{equation}\label{KS_test}
 				\tau^{\textit{KS}}_{m,n} = \sup_{z \in \mathbb{L}_2[0,1]} \vert \hat{F}_n(z) - \hat{G}_m(z) \vert
 			\end{equation}
-			Similar to the approximation by Monte-Carlo integration in the main case, this would have to be approximated in an actual implementation. One obvious approach being the following, where $Z_i \stackrel{\text{i.i.d.}}{\sim} Z$ and $Z$ is a random function as described in Section \ref{mu}.
+			Similar to the approximation by Monte-Carlo integration in the main case, it would have to be approximated in an actual implementation. One obvious approach being the following, where $Z_i \stackrel{\text{i.i.d.}}{\sim} Z$ and $Z$ is a random function as described in Section \ref{mu}.
 			\begin{equation}
 				\hat{\tau}^{\textit{KS}}_{m,n} = \max_{i = 1, \dots, H}\left\{\vert \hat{F}_n(Z_i) - \hat{G}_m(Z_i) \vert \right\}
 			\end{equation}
-			One interesting property of a test such as this is that it would open up the possibility of identifying which function $z$ caused the rejection of the null hypothesis. In practice, this might lead to useful information on the difference between the processes.
+			One property of a test such as this is that it would open up the possibility of identifying which function $z$ caused the rejection of the null hypothesis. In practice, this approach might lead to useful information on the difference between the processes that generated the samples.
+			\begin{equation}\label{func_dist}
+				\tilde{\tau} = \mathcal{F}_{\textit{distance}}\left(\hat{F}_n(z), \hat{G}_m(z)\right)
+			\end{equation}
+			Other variants could be constructed in a similar way from other functional distances between the empirical distribution functions as shown in Equation \ref{func_dist} leading to a plethora of possible test statistics. It would be interesting to compare them both from a theoretical perspective and to use simulations to assess their power in different scenarios.
 			
-			Other variants could be used in a similar way leading to a plethora of possible test statistics. It would be interesting to compare them both from a theoretical perspective and use simulations to assess their power in different scenarios.
-			
+			\newpage
 			\paragraph{Extension to Non-separable Processes\\}
 			As mentioned in Section \ref{Assumptions}, it might be possible to extend the theoretical arguments in favor of the test to processes that are non-separable. This potential extension would be interesting to justify applying the test to a broader class of processes. However, some steps in the proofs of \cite{bugni_permutation_2021} would have to be approached from a different angle to allow for these generalizations.
 			
 			\paragraph{Functional Principal Component Version of the CvM type Test\\}
-			One potential extension of the method could be to use the functional principal components obtained from the samples to construct the measure used in the CvM type test. This would be interesting both from a theoretical perspective and in practical applications. One potential aspect that would have to be addressed is that the empirical FPCs do not necessarily form a complete basis of $\mathbb{L}_2[0,1]$. Thus, additional arguments would have to be made to justify the method. However, as the basis used to construct the measure could be better suited to generate functions similar to the original samples, the test's performance might be superior in real-world applications.
+			One potential extension of the method could be to use the functional principal components obtained from the samples to construct the measure. This would be interesting both from a theoretical perspective and in practical applications. 
+			One aspect that would have to be addressed is that the empirical FPCs do not necessarily form a complete basis of $\mathbb{L}_2[0,1]$. Thus, additional arguments would have to be made to justify the method. However, as the basis used to construct the measure could be better suited to generate functions similar to the original samples, the test's performance might be superior in real-world applications.
 		
 		\subsection{Possible Further Simulations}
-			After studying the method developed by \cite{bugni_permutation_2021} in detail, there are a few points that might be interesting for further research. The following section describes a multitude of simulations that could be interesting extensions to this thesis.
 			
 			\paragraph{Comparing different Functional Bases\\} 
-			A functional basis is used for constructing the measure and potentially fitting smooth curves to discrete observations. Even in settings where observations are not fitted using methods like this, the basis used to construct the measure might influence the properties of the test. From a theoretical perspective, the test is only justified for complete orthonormal bases. It would be interesting to study its properties in simulations both for complete orthonormal bases and bases that do not have these properties, such as different spline bases.
+			A functional basis is used for constructing the measure and potentially for fitting smooth curves to discrete observations. Even in settings where observations are not altered, the basis used to construct the measure heavily influences the test. From a theoretical perspective, the test is only justified for complete orthonormal bases. It would be interesting to study its properties in simulations both for additional complete orthonormal bases and bases that do not have these properties, such as different spline bases.
 		
 			\paragraph{Comparing choices of $w(t)$ and  $\left(\rho_i\right)_{i = 1, the \dots, K}$\\}
 			This thesis only presents simulations for one intuitive choice of $w(t)$ and $\left(\rho_i\right)_{i = 1, \dots, K}$. It seems reasonable to assume that these parameter choices could have a significant impact on the performance of the method, and it would therefore be interesting to compare different choices in a structured framework.
 			
 			\paragraph{Less restrictive Distributions of Fourier Coefficients\\}
-			The measures constructed as part of the CvM type test described in this thesis drew their Fourier coefficients using independently distributed error terms. Even though this leads to a convenient implementation, using measures induced by random variables generated using error terms with a more general dependence structure might be beneficial to increase the power against specific alternatives. It would be interesting to study the influence on the measure on the power of the test in more general settings, both from a theoretical perspective and using simulations. 
+			The measures constructed as part of the CvM type test described in this thesis drew their Fourier coefficients using independently distributed error terms. Even though this leads to a convenient implementation, using measures induced by random variables generated using error terms with a more general dependence structure might be beneficial to increase the power against specific alternatives. It would be interesting to study the influence on the power of the test in more general settings, both from a theoretical perspective and using simulations. 
 		
 			\paragraph{Simulations for Unbalanced Sample Sizes\\}
 			The simulations in this thesis only deal with settings where both the reference sample and the second sample contained the same number of curves. Even though there is no obvious theoretical reason for unbalanced sample sizes to influence the power of the test meaningfully, it would be interesting to study settings with unbalanced sample sizes in further simulations.		
 			
 			\paragraph{Comparing Implementations using different orders of Operations\\}
-			As described in Sections \ref{persistence_test} and \ref{sim_persistence}, the actual implementation could be highly important for the properties of the proposed test for persistence alternatives. This thesis only provides two heuristic simulations to compare the performance of the proposed options due to computational limitations. Therefore, it would be interesting to actually compare these options in further full-scale simulations.
+			As described in Sections \ref{persistence_test} and \ref{sim_persistence}, the actual implementation could be highly important for the properties of the proposed test for persistence alternatives. This thesis only provides two heuristic simulations to compare the performance of the proposed options due to computational limitations. Thus, further full-scale simulations studying the properties of the proposed procedure are crucial to investigate its properties in a real-world setting.
 		
 		\subsection{Potential Applications}\label{pot_appl}
 			As explained in Section \ref{Application}, the chosen setting is suitable for applying the test, but it is more of a showcase than what this method would be used for in reality. Therefore, it would be interesting to apply the method and the variant for persistence alternatives to data that is more fitting. Two examples that could provide interesting applications for this method are listed in the following.
