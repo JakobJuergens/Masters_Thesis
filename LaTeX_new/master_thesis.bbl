@@ -336,6 +336,40 @@
       \verb https://www.degruyter.com/document/doi/10.1515/9783110902990/html?lang=en
       \endverb
     \endentry
+    \entry{carleson_convergence_1966}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=40cbe052f687ef31356587fb6d5235fd}{%
+           family={Carleson},
+           familyi={C\bibinitperiod},
+           given={Lennart},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{40cbe052f687ef31356587fb6d5235fd}
+      \strng{fullhash}{40cbe052f687ef31356587fb6d5235fd}
+      \strng{bibnamehash}{40cbe052f687ef31356587fb6d5235fd}
+      \strng{authorbibnamehash}{40cbe052f687ef31356587fb6d5235fd}
+      \strng{authornamehash}{40cbe052f687ef31356587fb6d5235fd}
+      \strng{authorfullhash}{40cbe052f687ef31356587fb6d5235fd}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Acta Mathematica}
+      \field{month}{1}
+      \field{note}{Publisher: Institut Mittag-Leffler}
+      \field{number}{none}
+      \field{title}{On convergence and growth of partial sums of {Fourier} series}
+      \field{volume}{116}
+      \field{year}{1966}
+      \field{pages}{135\bibrangedash 157}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1007/BF02392815
+      \endverb
+    \endentry
     \entry{corain_new_2014}{article}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=bf3b7e0ee8ac89a775d2c89b9a6714f4}{%
