@@ -59,7 +59,7 @@
 \contentsline {subsection}{\numberline {11.3}Asymptotic Distribution of the Cram\'{e}r-von Mises Test}{iv}{subsection.11.3}%
 \contentsline {subsection}{\numberline {11.4}Proof from \blx@tocontentsinit {0}\cite {hoeffding_large-sample_1952}}{iv}{subsection.11.4}%
 \contentsline {paragraph}{Theorem as stated in \blx@tocontentsinit {0}\cite {lehmann_testing_2005} \\}{iv}{subsection.11.4}%
-\contentsline {paragraph}{Proof as presented in \blx@tocontentsinit {0}\cite {lehmann_testing_2005}\\}{v}{equation.11.53}%
+\contentsline {paragraph}{Proof as presented in \blx@tocontentsinit {0}\cite {lehmann_testing_2005}\\}{iv}{equation.11.53}%
 \contentsline {subsection}{\numberline {11.5}Argument for Finiteness}{v}{subsection.11.5}%
 \contentsline {subsection}{\numberline {11.6}Multiple Testing}{v}{subsection.11.6}%
 \contentsline {subsection}{\numberline {11.7}Application Data Cleaning}{vi}{subsection.11.7}%
