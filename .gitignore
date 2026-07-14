@@ -3,6 +3,20 @@
 .RData
 .Ruserdata
 
+# LaTeX intermediate files
+*.aux
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
 Data/Cluster_Simulation_Outputs/Persistence_Test/
 
 Data/Cluster_Simulation_Outputs/Persistence_Test2/

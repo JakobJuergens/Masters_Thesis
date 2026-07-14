@@ -28,7 +28,7 @@ The thesis also explores a persistence-focused variant of the Cramér-von Mises-
 
 ## Repository guide
 
-- [`LaTeX/`](LaTeX/) contains the submitted PDF, thesis source, bibliography, and compilation artifacts.
+- [`LaTeX/`](LaTeX/) contains the submitted PDF, thesis source, and bibliography.
 - [`Code/PermFDATest/`](Code/PermFDATest/) contains the package-style implementation and its tests and function documentation.
 - [`Code/MA_Cluster_Scripts/`](Code/MA_Cluster_Scripts/) contains the simulation inputs, R scripts, Slurm launch scripts, and some saved cluster outputs.
 - [`Code/MA_Scripts/Simulation_Analysis/`](Code/MA_Scripts/Simulation_Analysis/) contains the simulation post-processing scripts.
